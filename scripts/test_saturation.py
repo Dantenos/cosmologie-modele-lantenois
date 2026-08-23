@@ -12,7 +12,6 @@ Aucune n'a de justification cosmologique. C'est le point."""
 import numpy as np, sys
 from scipy.optimize import minimize
 from scipy.special import gammainc
-sys.path.insert(0,'/home/claude/desi_fit'); sys.path.insert(0,'/home/claude/selection')
 import vraisemblance_reelle as V, test_wE_v3 as T
 np.seterr(all='ignore'); T.ZCUT=None
 C_KM=299792.458; OM0,ZEQ=0.3113,3387.

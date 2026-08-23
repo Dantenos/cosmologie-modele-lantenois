@@ -22,7 +22,6 @@ audit_edo.py — Quatre contrôles sur l'EDO d'hérédité.
 """
 import numpy as np, sys
 from scipy.optimize import brentq
-sys.path.insert(0, '/home/claude/selection')
 from gradient_v2 import Cosmo, REF
 np.seterr(all='ignore')
 

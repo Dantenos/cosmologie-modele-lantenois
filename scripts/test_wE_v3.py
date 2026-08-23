@@ -39,7 +39,6 @@ Motif : l_A est mesure a 0,03 %, contre 0,32 % pour le D_M(z*)/r_d que j'utilisa
 import numpy as np, sys
 from scipy.optimize import minimize
 from scipy.interpolate import RectBivariateSpline
-sys.path.insert(0, '/home/claude/desi_fit')
 import vraisemblance_reelle as V
 
 C_KM = 299792.458

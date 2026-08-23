@@ -31,7 +31,6 @@ LA VRAIE AMBIGUÏTÉ, elle, est ailleurs et vaut un facteur 2 sur beta lui-même
       xi_barre ∝ sigma^2 ∝ M^{-(n+3)/3}, alors epsilon = (n+3)/3 et beta = 2/(n+3)
 """
 import numpy as np, sys
-sys.path.insert(0, '/home/claude/selection')
 from gradient_v2 import Cosmo, REF
 from scipy.optimize import brentq
 

@@ -23,7 +23,6 @@ CRITERE PRE-ENREGISTRE (avant execution) :
 """
 import numpy as np, sys
 from scipy.optimize import brentq
-sys.path.insert(0, '/home/claude/desi_fit'); sys.path.insert(0, '/home/claude/selection')
 import duel_ccbh as D
 import test_wE_v3 as T
 np.seterr(all='ignore')

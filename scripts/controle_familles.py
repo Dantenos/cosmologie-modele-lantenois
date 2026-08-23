@@ -22,7 +22,6 @@ AUCUN modele, pour que la comparaison isole la loi de taux. Difference declaree.
 """
 import numpy as np, sys
 from scipy.optimize import minimize
-sys.path.insert(0, '/home/claude/desi_fit'); sys.path.insert(0, '/home/claude/selection')
 import vraisemblance_reelle as V
 from test_wE import zg, ZEQ, ZSTAR, DM_STAR, SIG_STAR
 

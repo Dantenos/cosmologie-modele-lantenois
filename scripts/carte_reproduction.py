@@ -7,7 +7,6 @@ pic). Toute dependance de M_graine en beta_parent est NON MODELISEE en v0 : si e
 f' change — limite ecrite, pas cachee."""
 import numpy as np, sys
 from scipy.optimize import brentq
-sys.path.insert(0,'/home/claude/selection')
 from gradient_v2 import Cosmo, REF
 np.seterr(all='ignore')
 c=Cosmo(REF['Om'],REF['Ob'],REF['h'],REF['ns'],s8=REF['s8']); H=REF['h']; DC=1.686

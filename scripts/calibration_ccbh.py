@@ -25,7 +25,6 @@ CRITERE PRE-ENREGISTRE (avant execution), et il est severe apres la semaine ecou
 """
 import numpy as np, sys
 from scipy.optimize import fsolve, brentq
-sys.path.insert(0, '/home/claude/desi_fit'); sys.path.insert(0, '/home/claude/selection')
 import duel_ccbh as D
 import test_wE_v3 as T
 np.seterr(all='ignore')

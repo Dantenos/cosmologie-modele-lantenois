@@ -26,7 +26,6 @@ du tableau parce qu il nous depasse. Les k sont comptes de la meme facon pour to
 """
 import numpy as np, sys
 from scipy.optimize import minimize
-sys.path.insert(0, '/home/claude/desi_fit'); sys.path.insert(0, '/home/claude/selection')
 import test_wE_v3 as T, duel_ccbh as D
 np.seterr(all='ignore')
 T.ZCUT = None

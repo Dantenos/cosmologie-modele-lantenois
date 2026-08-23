@@ -33,7 +33,6 @@ CRITERE DE LECTURE, si et seulement si V1 et V2 passent :
 import numpy as np, sys
 from scipy.optimize import minimize
 from scipy.interpolate import RectBivariateSpline
-sys.path.insert(0, '/home/claude/desi_fit')
 import vraisemblance_reelle as V
 
 C_KM = 299792.458

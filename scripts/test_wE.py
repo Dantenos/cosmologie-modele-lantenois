@@ -31,7 +31,6 @@ q = c/(H0 rd) profile analytiquement.
 import numpy as np
 from scipy.optimize import minimize
 import sys
-sys.path.insert(0, '/home/claude/desi_fit')
 import vraisemblance_reelle as V
 
 ZEQ = 3387.0

@@ -27,7 +27,6 @@ import numpy as np
 from scipy.optimize import brentq
 from scipy.integrate import solve_ivp
 import sys
-sys.path.insert(0, '/home/claude/selection')
 from gradient_v2 import Cosmo, REF
 
 np.seterr(all='ignore')

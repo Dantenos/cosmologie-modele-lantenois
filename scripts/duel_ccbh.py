@@ -31,7 +31,6 @@ CRITERE PRE-ENREGISTRE (avant execution) :
 """
 import numpy as np, sys
 from scipy.optimize import minimize
-sys.path.insert(0, '/home/claude/desi_fit'); sys.path.insert(0, '/home/claude/selection')
 import vraisemblance_reelle as V
 import test_wE_v3 as T
 

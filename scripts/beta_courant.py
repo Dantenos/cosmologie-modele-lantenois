@@ -24,7 +24,6 @@ On calcule le taux de variation prédit, puis on le confronte aux données.
 """
 import numpy as np, sys
 from scipy.optimize import minimize
-sys.path.insert(0, '/home/claude/selection'); sys.path.insert(0, '/home/claude/desi_fit')
 from gradient_v2 import Cosmo, REF
 np.seterr(all='ignore')
 

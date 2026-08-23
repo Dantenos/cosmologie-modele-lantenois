@@ -49,8 +49,9 @@ def psi_MD14(z):
 
 AG = np.logspace(-7, 0, 30000)
 
-def fond_ccbh(wc, wb_proj, Xi, ai=1/(1+ZI)):
+def fond_ccbh(wc, wb_proj, Xi, ai=None):
     """Integre le systeme (2.7). Retourne z, E-equivalent, h derive, w_b(1)."""
+    if ai is None: ai = 1/(1+ZI)   # resolu a l'appel : ZI peut etre modifie (test de sensibilite)
     a = AG
     wb = np.full_like(a, wb_proj)      # densite comobile de baryons
     wde = np.zeros_like(a)
@@ -135,7 +136,14 @@ if __name__ == '__main__':
         print(f"  {n:>24s} {k:>2d} {c:>10.3f} {c+2*k:>10.3f} {c+2*k-base:>+7.3f}   {d}")
 
     print("\n  SENSIBILITE de CCBH a l'epoque de premiere lumiere z_i :")
+    print("    (a) a (wc, wb, Xi) FIXES au fit z_i=20 ; (b) REAJUSTES a chaque z_i (regle 5 :"
+          " ce que le rival a le droit de reajuster, on le lui accorde)")
     for zi in [10.0, 20.0, 30.0]:
         globals()['ZI'] = zi
-        c = chi2_ccbh(*best.x)
-        print(f"    z_i = {zi:>4.0f} -> chi2 = {c:.3f}")
+        c = chi2_ccbh(*best.x); o = fond_ccbh(*best.x); h_fixe = 100*o[2] if o else np.nan
+        rr = minimize(lambda p: chi2_ccbh(*p), best.x, method='Nelder-Mead',
+                      options=dict(xatol=1e-6, fatol=1e-4, maxiter=4000))
+        o2 = fond_ccbh(*rr.x); h_re = 100*o2[2] if o2 else np.nan
+        print(f"    z_i = {zi:>4.0f} -> (a) fixes : chi2 = {c:.3f}, H0 = {h_fixe:.2f}   "
+              f"(b) reajustes : chi2 = {rr.fun:.3f}, H0 = {h_re:.2f}, Xi = {rr.x[2]:.3f}")
+    globals()['ZI'] = 20.0

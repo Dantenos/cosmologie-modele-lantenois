@@ -2,7 +2,7 @@
 
 ## Ce qui a été trouvé
 Une loi empirique : **w(z) = −β/(3Ht)**, un paramètre, β = 2,42-2,60 sur toutes les
-combinaisons de données, croisement fantôme à z = 0,46, ajustement au niveau des meilleurs
+combinaisons de données, croisement fantôme à bas redshift (z_× = 0,21-0,46 selon β ; retiré comme prédiction chiffrée, #111), ajustement au niveau des meilleurs
 rivaux à cinquante paramétrisations près. Autour d'elle, quatre résultats qui tiendront quoi
 qu'il arrive :
 

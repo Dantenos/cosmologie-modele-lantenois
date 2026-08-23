@@ -11,19 +11,19 @@
 ## Démo en 30 secondes
 
 ```console
-$ python3 registre.py freeze voile_cisaillement.py frb_strategie.py registre.py
-[registre] gelé : voile_cisaillement.py  (11b036bf3483)
-[registre] gelé : frb_strategie.py       (74ee54c0c0a6)
-[registre] gelé : registre.py            (10787c914430)   # il se gèle lui-même
+$ python3 outils/registre.py freeze scripts/voile_cisaillement.py scripts/frb_strategie.py outils/registre.py
+[registre] gelé : scripts/voile_cisaillement.py  (11b036bf3483)
+[registre] gelé : scripts/frb_strategie.py       (74ee54c0c0a6)
+[registre] gelé : outils/registre.py            (10787c914430)   # il se gèle lui-même
 
-$ python3 registre.py verify
-[registre] OK    voile_cisaillement.py
-[registre] OK    frb_strategie.py
-[registre] OK    registre.py             # exit 0
+$ python3 outils/registre.py verify
+[registre] OK    scripts/voile_cisaillement.py
+[registre] OK    scripts/frb_strategie.py
+[registre] OK    outils/registre.py      # exit 0   (24 fichiers gelés au 23/08/2026)
 
-$ sed -i 's/O(0,1-1)/O(0,01-10)/' voile_cisaillement.py   # on élargit un critère... après coup
-$ python3 registre.py verify voile_cisaillement.py
-[registre] ÉCHEC voile_cisaillement.py  <- critère modifié APRÈS gel
+$ sed -i 's/O(0,1-1)/O(0,01-10)/' scripts/voile_cisaillement.py   # on élargit un critère... après coup
+$ python3 outils/registre.py verify scripts/voile_cisaillement.py
+[registre] ÉCHEC scripts/voile_cisaillement.py  <- critère modifié APRÈS gel
 # exit 1 — bloquant en CI
 ```
 
@@ -34,7 +34,7 @@ qui l'a engendré — et Registre se protège lui-même.
 
 Cet outil est né d'une campagne réelle de neuf jours en cosmologie (août 2026) : un modèle
 d'énergie noire audité contre Pantheon+, DESI DR2 et Planck, avec un registre adversarial tenu
-à la main — **116 entrées, dont 41 affirmations rétractées, la plupart produites par l'IA qui
+à la main — **116 entrées à la naissance de l'outil, 142 au 23/08/2026, dont 54 affirmations rétractées, la plupart produites par l'IA qui
 assistait l'analyse**. Le motif mesuré : les erreurs allaient dans le sens de la thèse défendue,
 et *aucune relecture ne les attrapait*. Ce qui les attrapait : des critères écrits avant le
 calcul, et des garde-fous automatiques.
@@ -57,10 +57,10 @@ Les tests protègent le code. Rien ne protège les conclusions. Registre fait ç
 Zéro dépendance. Python ≥ 3.9.
 
 ```console
-$ python3 registre.py freeze mon_analyse.py     # avant d'exécuter l'analyse
-$ python3 registre.py verify                    # à tout moment, et en CI
-$ python3 registre.py log                       # état du gel
-$ python3 registre.py freeze --amend f.py       # amendement public
+$ python3 outils/registre.py freeze scripts/mon_analyse.py   # avant d'exécuter l'analyse
+$ python3 outils/registre.py verify                 # à tout moment, et en CI
+$ python3 outils/registre.py log                    # état du gel
+$ python3 outils/registre.py freeze --amend f.py    # amendement public
 ```
 
 ## Intégration CI (GitHub Actions)
@@ -73,12 +73,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 registre.py verify   # exit 1 = conclusion inopposable = build rouge
+      - run: python3 outils/registre.py verify   # exit 1 = conclusion inopposable = build rouge
 ```
 
 ## Les règles dont il est fait
 
-Héritées de la campagne, payées au prix de cinquante rétractations :
+Héritées de la campagne, payées au prix de cinquante-quatre rétractations :
 
 - Critères pré-enregistrés **avant** exécution, toujours.
 - Tout écart > 3σ exige un contrôle d'équité (recalculer avec les valeurs de l'adversaire).

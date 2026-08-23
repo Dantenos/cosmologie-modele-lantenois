@@ -13,6 +13,8 @@ R = pathlib.Path(__file__).resolve().parent / "audience.json"
 def _l(): return json.loads(R.read_text(encoding="utf-8")) if R.exists() else {"affaires":{}, "acteurs":{}}
 def inscrire(p):
     d=_l(); a=json.loads(pathlib.Path(p).read_text(encoding="utf-8"))
+    if a["id"] in d["affaires"]:
+        sys.exit(f"[audience] {a['id']} déjà au rôle ({d['affaires'][a['id']]['hash']}) — pas de double inscription.")
     a["inscrite_le"]=datetime.date.today().isoformat()
     a["hash"]=hashlib.sha256(json.dumps(a,sort_keys=True).encode()).hexdigest()[:12]
     d["affaires"][a["id"]]=a

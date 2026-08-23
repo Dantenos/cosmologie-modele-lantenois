@@ -113,5 +113,10 @@
   "sha256": "550e064a49c8270011a69c5eaa76b56e3f1324b00b93898feb699dae96aed76f",
   "gele_le": "2026-08-23T20:25:56",
   "extrait": "ligne_de_base v1 — la reproduction du corpus, en CI. CRITERES PRE-ENREGISTRES (g"
+ },
+ "scripts/frb_likelihood.py": {
+  "sha256": "27f3cdafc0452c0c9b5880fba8cfe17f744a34b38846970406db03eaf7b0516c",
+  "gele_le": "2026-08-23T20:30:49",
+  "extrait": "frb_likelihood.py — La vraisemblance FRB complete, refittee DANS chaque fond."
  }
 }

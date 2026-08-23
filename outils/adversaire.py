@@ -49,13 +49,15 @@ def audit(mpath):
             ecart = abs(v - a["publie"])
             verdict = "VALIDÉE" if ecart <= a["tolerance"] else "**RÉFUTÉE**"
             ex = f"{v:.4g}"
-        ok &= verdict != "**NON REPRODUITE**" or False
+        ok &= verdict != "**NON REPRODUITE**"
         lignes.append(f"| {a['nom']} | {a['publie']} {a.get('unite','')} | {ex} | ±{a['tolerance']} | {verdict} |")
     lignes += ["", "Règle appliquée : aucune opinion — chaque verdict provient d'une valeur exécutée.",
                "Rétractations éventuelles : RETRACTATIONS.md (via registre)."]
     out = ROOT / "registres" / f"RAPPORT_{m['papier']}.md"
     out.write_text("\n".join(lignes), encoding="utf-8", newline="\n")
     print(f"[adversaire] rapport écrit : {out}")
+    if not ok: sys.exit("[adversaire] ECHEC : au moins une affirmation sans valeur exécutée — "
+                        "critère v1 : aucun verdict sans exécution.")
 
 if __name__ == "__main__":
     if len(sys.argv) == 3 and sys.argv[1] == "audit": audit(sys.argv[2])

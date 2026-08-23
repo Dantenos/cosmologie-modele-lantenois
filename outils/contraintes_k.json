@@ -25,8 +25,8 @@
   {
    "id": "jwst_agn",
    "source": "Lei et al., SCPMA 67 229811 (2024)",
-   "statut": "verifie",
-   "note": "~2 sigma selon 2312.12344 (indirect) -> REFUSE pour combinaison par la regle E5",
+   "statut": "refuse_E5",
+   "note": "~2 sigma selon 2312.12344 (indirect) -> REFUSE pour combinaison par la regle E5 (statut aligne sur la note, 23/08)",
    "borne": "k = -0,03 +/- 1,334 (68%) sur 3 hotes early-type z~4,5-7 ; tension avec k=3 a ~2 sigma",
    "relecteur": "abstract+corps primaires 2305.03408, 24/08"
   },

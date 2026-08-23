@@ -3,5 +3,5 @@ scipy
 camb      # test_wE_v2/v3 : r_d ; scelle via test_wE_v3
 emcee     # mcmc_wE.py
 matplotlib  # etude_E7_viabilite.py, fit_accretion_de.py (figures)
-# planck_lite_py : planck_theta.py / jackknife_planck.py (Delta_chi2 = -12,6, Planck complet).
-#   Paquet externe non fourni ici : github.com/heatherprince/planck-lite-py (+ son dossier data/).
+# planck_lite_py : planck_theta.py / jackknife_planck.py (Delta_chi2 = -12,6, Planck complet) :
+#   clone par donnees/TELECHARGER.sh dans donnees/pantheon_plus/planck-lite-py (Prince & Dunkley).

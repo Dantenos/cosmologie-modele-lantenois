@@ -31,6 +31,14 @@ get vides_douglass2023/table1.dat "$B/table1.dat"
 get vides_douglass2023/table2.dat "$B/table2.dat.gz" gunzip
 get vides_douglass2023/table3.dat "$B/table3.dat.gz" gunzip
 
+
+# Vraisemblance Planck 2018 compressée (Prince & Dunkley) — planck_theta.py et jackknife_planck.py
+# (le Δχ² = −12,6 « Planck complet » du papier A). Dépôt externe, cloné à côté des données.
+if [ ! -f pantheon_plus/planck-lite-py/planck_lite_py.py ]; then
+  echo "[donnees] planck-lite-py (git clone)"
+  git clone -q --depth 1 https://github.com/heatherprince/planck-lite-py pantheon_plus/planck-lite-py
+fi
+
 sha256sum -c --ignore-missing --quiet SHA256SUMS && echo "[donnees] empreintes OK"
 # noms attendus par scripts/vraisemblance_reelle.py (lus dans le CWD)
 cp pantheon_plus/Pantheon+SH0ES.dat pantheon_plus/pantheon.dat

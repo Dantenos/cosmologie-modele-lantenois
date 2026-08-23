@@ -29,3 +29,6 @@ donnees/pantheon_plus/Pantheon+SH0ES_STAT+SYS.cov
 donnees/pantheon_plus/pantheon.dat
 donnees/pantheon_plus/pantheon_cov.cov
 scripts/sorties/
+donnees/pantheon_plus/planck-lite-py/
+donnees/pantheon_plus/state_*.json
+donnees/pantheon_plus/jk_state_*.json

@@ -183,5 +183,10 @@
   "sha256": "580a983e775f009693455ce76cb89a49c35e1a0595201c701a222fddeb500fdd",
   "gele_le": "2026-08-23T23:50:33",
   "extrait": "ATLAS v1 — 19 modeles d'energie noire, un pipeline, un classement. CRITERES"
+ },
+ "outils/genere_atlas.py": {
+  "sha256": "cccc8bc622a198afa157dd9178cfcca5683de5b1d58f6528bfaf1fbb00b8031c",
+  "gele_le": "2026-08-24T01:28:07",
+  "extrait": "genere_atlas v1 — le visuel de l'atlas, GÉNÉRÉ depuis atlas_leaderboard.json (24"
  }
 }

@@ -29,6 +29,7 @@ SNe retenues : 1580 (z>0.01, hors calibrateurs)
 VERDICT E1 v0 : UNIVERSEL a cette precision — manche 2 au goulet
 ```
 Durée : 153 s. Python 3.12.10, numpy 2.5.2, scipy 1.18.1.
+*Note (audit 23/08) : 2,516 ± 0,124 est β SN-seules à Ω_m = 0,314 fixé (machinerie #116) ; 2,447 est β du fit joint SN+BAO avec Ω_m libre. Deux quantités, pas une contradiction.*
 
 ## Ce qui a été validé en chemin
 - **Ligne de base rejouée sur données publiques fraîches** (`vraisemblance_reelle.py`,

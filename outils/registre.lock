@@ -118,5 +118,10 @@
   "sha256": "27f3cdafc0452c0c9b5880fba8cfe17f744a34b38846970406db03eaf7b0516c",
   "gele_le": "2026-08-23T20:30:49",
   "extrait": "frb_likelihood.py — La vraisemblance FRB complete, refittee DANS chaque fond."
+ },
+ "scripts/etude_E1_robustesse.py": {
+  "sha256": "af15f3a5aedcdf59909c3a2607f1946c8a4dd6fd3e23c5fac5ae289efa20c576",
+  "gele_le": "2026-08-23T20:34:51",
+  "extrait": "E1 ROBUSTESSE — deux doutes sur la manche 2, creuses avant d'etre crus. CRITERES"
  }
 }

@@ -49,3 +49,13 @@ universel, < 1,4σ partout, signes incohérents. **Deux manches au goulet.** L'h
 pas tuée — son discriminant est simplement hors de portée des SNe actuelles à ~0,4 près sur β.
 Troisième catalogue possible : Malandrino 2026 (100 vides bayésiens). Valeur attendue : faible,
 même empreinte de SNe.
+
+## Addendum 23/08 — deux doutes creusés (`scripts/etude_E1_robustesse.py`, gelé af15f3a5aedc)
+**Ω_m fixé.** Δβ des quatre partages à Ω_m = 0,30 / 0,314 / 0,33 : variations < 0,02 σ_Δ partout
+(Stopyra +0,099 / +0,096 / +0,093 ; VoidFinder +0,520 / +0,521 / +0,520 ; VIDE −0,398 / −0,399 /
+−0,400 ; REVOLVER −0,035 / −0,041 / −0,047). **ROBUSTE** : le choix d'Ω_m ne porte pas le verdict.
+**Signes opposés VoidFinder/VIDE.** Jaccard des sous-échantillons « vides » : VF–VIDE 0,329,
+VF–REVOLVER 0,333, VIDE–REVOLVER 0,407. Les trois algorithmes trient des SNe largement
+différentes : le désaccord de signe est **expliqué** (l'environnement « vide » n'est pas univoque
+à cette précision), ce n'est pas une incohérence de la machinerie. Cœur commun VF ∩ VIDE (113
+vides / 112 murs) : Δβ = +0,70 ± 0,57 — rapporté sans verdict, échantillon déclaré trop petit.

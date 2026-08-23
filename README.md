@@ -11,7 +11,7 @@ auditée contre Pantheon+, DESI DR2 et Planck, avec un registre adversarial tenu
 critères gelés avant chaque calcul, et des juges convoqués à date fixe. Le tout est ici, y
 compris les erreurs.
 
-[![registre](https://img.shields.io/badge/registre-28%20crit%C3%A8res%20gel%C3%A9s-blue)](outils/README_registre.md)
+[![registre](https://img.shields.io/badge/registre-30%20crit%C3%A8res%20gel%C3%A9s-blue)](outils/README_registre.md)
 <!-- une fois le dépôt en ligne : ![CI](https://github.com/ORG/REPO/actions/workflows/registre.yml/badge.svg) -->
 
 ---
@@ -87,14 +87,14 @@ Python ≥ 3.9. Ils survivront au verdict, quel qu'il soit.
 **Registre** est le socle : le critère vit dans le docstring du script, `freeze` le fige par
 SHA-256 dans [`registre.lock`](outils/registre.lock), `verify` échoue (exit 1, bloquant en CI)
 s'il a bougé. L'amendement est possible — mais public, dans `RETRACTATIONS.md`.
-28 fichiers du corpus sont gelés, Registre compris : il se protège lui-même.
+30 fichiers du corpus sont gelés, Registre compris : il se protège lui-même.
 
 ```console
 $ python3 outils/registre.py verify
 [registre] OK    scripts/voile_cisaillement.py
 [registre] OK    outils/registre.py
 [registre] OK    outils/scelle.py
-…                                          # 28 fichiers, exit 0
+…                                          # 30 fichiers, exit 0
 ```
 
 ---
@@ -105,7 +105,7 @@ $ python3 outils/registre.py verify
 CLAUDE.md        constitution du projet : les neuf règles, appliquées à chaque session
 papiers/         tex, pdf, et les figures qu'ils incluent
 outils/          registre, adversaire, audience, ktracker, scelle + registre.lock + .json
-scripts/         les 48 scripts de calcul (critères pré-enregistrés en docstring)
+scripts/         les 50 scripts de calcul (critères pré-enregistrés en docstring)
 registres/       MANQUEMENTS, TRIAGE, TROIS_CHANTIERS, CONCLUSION, théories, carnet
 visuels/         html interactifs, planches
 donnees/         données publiques (Pantheon+, vides Stopyra 2023 et Douglass DR7) + SHA256SUMS + TELECHARGER.sh
@@ -125,7 +125,7 @@ Payées au prix de cinquante-quatre rétractations ([`CLAUDE.md`](CLAUDE.md)) :
 ## Et ensuite
 
 Les six études 2026 sont spécifiées et gelées dans [`scripts/etudes_2026.py`](scripts/etudes_2026.py).
-**E1 v0 exécutée (23/08)** : [`registres/ETUDE_E1_v0.md`](registres/ETUDE_E1_v0.md) — Stopyra : Δβ = +0,10 ± 0,24 ; [manche 2 Douglass DR7](registres/ETUDE_E1_manche2.md) : trois algorithmes, tous nuls (< 1,4σ, signes opposés). **UNIVERSEL sur deux juges.** Puis E4 → E3 → E2. E5, E6, E7 closes.
+**E1 v0 exécutée (23/08)** : [`registres/ETUDE_E1_v0.md`](registres/ETUDE_E1_v0.md) — Stopyra : Δβ = +0,10 ± 0,24 ; [manche 2 Douglass DR7](registres/ETUDE_E1_manche2.md) : trois algorithmes, tous nuls (< 1,4σ, signes opposés). **UNIVERSEL sur deux juges.** [E3 sur la table réelle](registres/ETUDE_E3_v1.md) (69 FRB, Connor 2025) : validation passée, **Δχ²(CCBH) = +4,7 (~2,2σ), f_d saturé au bord** ; accrétion indiscernable de ΛCDM — les mocks du papier C ont maintenant leur contrepartie réelle (#148). Puis E4 → E2 (E3 close en v1, #148). E5, E6, E7 closes.
 
 Données publiques : `sh donnees/TELECHARGER.sh` (empreintes vérifiées). Ligne de base rejouée : β = 2,447 (SN+BAO) ; **Planck complet rejoué : Δχ² = −12,60, β = 2,589** (`planck_theta.py`, ~40 min, #146).
 

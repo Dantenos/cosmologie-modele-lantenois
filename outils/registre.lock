@@ -138,5 +138,15 @@
   "sha256": "8cb6e7d24f9bd04bfa24d95a58c2975be35a133c070b15fec4fc2d50e40e68ed",
   "gele_le": "2026-08-23T21:45:01",
   "extrait": "LE CROISEMENT FANTOME z_x(beta) — arbitrage entre quatre valeurs du papier A."
+ },
+ "scripts/etude_E3_frb_reelles.py": {
+  "sha256": "77e8bff5d7b599b56330ab963006bc4e8a9201be3d798bf8b18581fbfadba317",
+  "gele_le": "2026-08-23T22:07:18",
+  "extrait": "E3 v0 — FRB SUR DONNEES REELLES : la table de Connor et al. 2025, plus les mocks"
+ },
+ "scripts/etude_E3_frb_reelles_v1.py": {
+  "sha256": "b4db633032379b63b776e0e03e35947fe5277d570a3ccbe2e373c6e050b1d8e1",
+  "gele_le": "2026-08-23T22:08:53",
+  "extrait": "E3 v1 — FRB SUR DONNEES REELLES, critere de validation CORRIGE ET DECLARE."
  }
 }

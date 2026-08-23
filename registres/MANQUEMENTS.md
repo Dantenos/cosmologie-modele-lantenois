@@ -2018,3 +2018,14 @@ Et **A = 1,551, B = 3,119 n'étaient dérivés par aucun script** (en dur dans a
 attaque_croker_fond). Dérivés maintenant par `calibration_ccbh.py` : à ω_c = 0,1237 (le leur),
 **A = 1,551, B = 3,119** exactement ; à ω_c = 0,1194 (le nôtre), 1,532 / 3,168. Le script imprime
 les deux procédures sous leurs vrais noms. Rien ne change au verdict du duel.
+
+## 23/08 (Claude Code) — #148 E3 EXÉCUTÉE SUR LA TABLE RÉELLE : 2,2σ, LE BORD SATURÉ — ET UN CRITÈRE GELÉ SUR UNE VARIABLE NON IDENTIFIABLE
+v0 (gelée 77e8bff5d7b5) applique le critère de la spec (f_IGM = 0,80 ± 0,10) aux 69 FRB de
+Connor 2025 : ÉCHEC à 0,002 → NON EXPLOITÉ, conservé. Cause structurelle : dans la vraisemblance
+gelée f_IGM et f_X n'entrent que par leur somme (prouvé : logL identique à 10 décimales à somme
+fixée) — le critère de la spec portait une coordonnée arbitraire d'un plateau. Même famille que
+#49. v1 (gelée b4db63303237, correction déclarée AVANT exécution, table des −lnL de v0 vue et
+dit) : **VALIDATION PASSE** (f_d = 0,905 vs 0,91 publié ; hôte 123 vs ~120) ; **Δχ²(CCBH−ΛCDM)
+= +4,71 (~2,2σ) sur données réelles**, cohérent avec les mocks (#99 : 2,1σ) ; accrétion −0,01
+(s = 1 indiscernable, prédit) ; **CCBH sature f_d = 1** — le déficit n'est pas absorbable.
+Rapports : ETUDE_E3_v1.md. Substitution aux mocks du papier C : à l'auteur. E3 close en v1.

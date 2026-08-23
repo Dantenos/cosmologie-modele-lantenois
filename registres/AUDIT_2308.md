@@ -10,7 +10,7 @@ touche jamais un docstring gelé ni les octets de `scelle.py` ; le reste est du 
 | | |
 |---|---|
 | Scripts rejoués | **38 / 45 exit 0** (depuis `donnees/pantheon_plus/`, Python 3.12, numpy 2.5, scipy 1.18, camb 2.0.3) |
-| Bloqués par une dépendance externe | `planck_theta.py`, `jackknife_planck.py` — **`planck_lite_py` absent du dépôt**. Ce sont les deux scripts du Δχ² = −12,6 (Planck complet) du papier A et de son jackknife : **non reproductibles par un tiers** tant que le paquet (github.com/heatherprince/planck-lite-py + `data/`) n'est pas fourni ou documenté. |
+| Bloqués par une dépendance externe | `planck_theta.py`, `jackknife_planck.py` — `planck_lite_py` était absent du dépôt (les deux scripts du Δχ² = −12,6 Planck complet et de son jackknife). **Réglé le jour même** : `TELECHARGER.sh` clone planck-lite-py (Prince & Dunkley) ; `planck_theta.py lcdm 2` tourne (8 s). La minimisation complète (heures) reste à relancer par l'auteur. |
 | Non rejoués | `mcmc_wE.py` (chaîne de plusieurs heures ; `emcee.EnsembleSampler` **non seedé** — la chaîne n'est pas reproductible à l'identique) |
 | Ligne de base | `vraisemblance_reelle.py` : 1580 SNe, β = 2,447, Δχ² = −4,41 → **gardée en CI** (`outils/ligne_de_base.py`, gelé) |
 | Critères gelés | 20 → **25** (+ `etude_E1_vides`, `etude_E1_manche2`, `etude_E1_robustesse`, `ligne_de_base`, `frb_likelihood`) |

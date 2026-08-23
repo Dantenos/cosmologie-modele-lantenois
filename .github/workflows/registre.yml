@@ -1,0 +1,27 @@
+# Registre — la falsification-as-code, en CI.
+# Build rouge = un critère pré-enregistré a bougé après gel = conclusion inopposable.
+name: registre
+
+on: [push, pull_request]
+
+jobs:
+  criteres:
+    name: critères gelés (registre.lock)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Les 20 critères gelés : chaque docstring est re-hashé et comparé à registre.lock.
+      # exit 1 = critère modifié APRÈS gel = build rouge. L'amendement n'est possible que
+      # par `freeze --amend`, qui l'écrit publiquement dans RETRACTATIONS.md.
+      - name: registre verify
+        run: python3 outils/registre.py verify
+
+      # Le sceau DR3. scelle.py scelle ses propres octets (read_bytes) : ce hash est celui
+      # publié (README, CONCLUSION.md, réseaux). Il est épinglé ici : toute modification de
+      # scelle.py — seuils, verdicts, corps — casse le build. Personne ne touche l'arbitre,
+      # nous compris.
+      - name: sceau DR3 intact
+        run: |
+          echo "68d06bcccbecf2276919c05dc841c6d878ca2516427e533af38d64344aed45a2  outils/scelle.py" | sha256sum -c -
+          echo "sceau : $(sha256sum outils/scelle.py)"

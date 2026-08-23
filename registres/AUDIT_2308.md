@@ -24,8 +24,14 @@ de l'écriture ; complété ci-dessous).
    à z_i » faisait `globals()['ZI'] = zi` sans effet : **trois χ² identiques (1425,279)**.
    MANQUEMENTS #80 déclarait ce bug « corrigé » — le fichier livré ne l'était pas. Corrigé ; le
    script imprime désormais la sensibilité **à paramètres fixés** (reproduit les 67,97–70,91
-   publiés) **et réajustés** (règle 5) : H₀ = 70,22–70,43, Ξ = 3,97–4,53, ΔAIC = +3,5 à +6,1.
-   → Papier C l.208 amendé : z_i est un paramètre caché **absorbé par Ξ**, pas un levier sur H₀.
+   publiés) **et réajustés** (règle 5). Creusé plus loin : `duel_ccbh.py` seul ajuste le taux **non
+   calibré** (Ξ = 4,08, son propre contrôle de sanité « même ordre que 1,40 » échoue sans le dire —
+   il le dit maintenant) ; le CCBH **publié** (papier C : Ξ = 1,382, AIC 1426,31) est la version
+   calibrée d'`atlas_rivaux.py` l.96. Sensibilité z_i **sur la version calibrée** : fixés,
+   H₀ = 65,70–70,69 ; réajustés, **H₀ = 69,57–69,79, Ξ = 1,32–1,65, égalité AIC inchangée**
+   (ΔAIC = −0,5 à −1,0 pour CCBH). → Papier C l.208 amendé avec ces chiffres : z_i est un
+   paramètre caché **absorbé par Ξ**, pas un levier sur H₀. Les 67,97–70,91 publiés venaient du
+   taux non calibré — deux implémentations du rival coexistent, il faut n'en garder qu'une.
 2. `adversaire.py:50` — `ok` calculé, jamais utilisé : le critère gelé « v1 échoue si un verdict
    apparaît sans valeur exécutée » n'était pas implémenté. `exit 1` désormais. Chemins relatifs
    à la racine ; clés du lock préfixées ; rapport écrit dans `registres/`.
@@ -139,6 +145,54 @@ nu et n'affiche jamais le hash du pipeline. Le fichier est scellé par ses octet
 - `mcmc_wE.py` : sampler non seedé. `jackknife_planck.py`, `planck_theta.py` : `open()` non fermés.
 - `horloge_poussiere_v2.py:30` : variables qui fuient de la boucle (NameError possible).
 
-## 6. Ancres numériques — rejeu contre les docstrings
+## 6. Ancres numériques — rejeu contre les docstrings (36 scripts à sortie non vide)
 
-*(section complétée par le balayage, voir ci-dessous)*
+**Reproduit à l'identique** (chiffres du registre retrouvés) : `atlas_rivaux` (H₀ 68,66, Ω_m 0,2976,
+Ξ 1,382, χ² 1420,309), `attaque_croker_fond` (69,94 / 0,700), `audit_131`, `beta_courant` (β₁ = +0,060),
+`carte_reproduction` (2,052 / 4,105), `cmb_evidence` (ln B = −0,80), `controle_familles` (PC3 2,70σ),
+`derivation_beta`, `eps_nu` (2,05), `flux_paroi` (ε_c 2,3-4,5), `heredite_creusee`, `horloge_poussiere`
+(0,0052/0,0464, x₀ ≲ 0,648), `horloge_poussiere_v2` (0,023/0,212, x₀ ≲ 0,320), `horloge_vaidya` (0,0516),
+`identite_PC` (6,4σ), `perturbations_derivees` (+3,71 %), `robustesse` (−11,9σ), `test_saturation`
+(+5,14/+5,11/+4,46), `test_wE` (0,66), `test_wE_v2` (0,08, r_d 147,105), `test_wE_v3` (V1/V2), `voile_cisaillement`.
+
+**Écarts ou verdicts absents, à lire par l'auteur :**
+1. **Deux implémentations du rival CCBH** : `duel_ccbh.py` (taux non calibré, Ξ = 4,08, χ² 1425,28,
+   dernier sur AIC, contrôle de sanité violé) et `atlas_rivaux.py` (calibré, Ξ = 1,382, χ² 1420,31,
+   premier d'un point — le chiffre publié). Le verdict « match nul » dépend de laquelle on lit.
+   `duel_ccbh.py` annonce désormais son échec de sanité ; il faut unifier.
+2. **`calibration_ccbh.py` imprime ÉCHEC** (Ξ = 2,149, écart 53 % > seuil 30 %, « aucun chiffre FRB
+   exploité ») là où #91 consigne « le critère de validation passe » (A = 1,55). Deux versions coexistent
+   (`attaque_croker_fond.py` réussit — par construction : A et B sont résolus sur les deux cibles).
+3. **Chaîne FRB, trois valeurs pour un test** : 5,4σ (`frb_ccbh`, sur la mesure que #95 déclare fausse —
+   script étiqueté SUPERSÉDÉ ce jour), 4,9σ (#95), ~2,1σ (#99, médiane de 12 tirages). `frb_likelihood`
+   sort 2,6σ sur un tirage unique sans le dire.
+4. **Critères gelés échoués sans verdict imprimé** : `gradient_v2` (|dlnF/dlnθ| = +3,67 (Ω_m) et +10,34
+   (n_s) contre un seuil de 1 — « la sélection-comme-maximisation est FAUSSE », écrit dans le docstring,
+   jamais dans la sortie) ; `test_saturation` (les trois > 4 AIC, réfutée — consignée dans le registre,
+   pas dans le log) ; `horloge_poussiere_v2` (κ < 0,12 désormais violé : 0,125 et 0,217) ; `test_wE*`
+   (β = inf à w_E = −1, instabilité jamais signalée malgré le critère).
+5. **`convention.py`** : « k = π/R_L reproduit les nombres publiés » avec N(>M_cut) = 7,4e7 contre 4e7
+   (+86 %), M_cut −30 %, élimination 100,00 % vs 99,6 % — et réémet le contrôle π³ qu'`audit_v2` déclare
+   tautologique. Trois résultats de tête du papier B (#52) sont suspendus à cet appariement.
+6. **Deux χ² pour le même modèle le même jour** : accrétion w_E = 0 → 1419,309 (`duel_ccbh`, `atlas`)
+   et 1420,922 (`test_wE_v3`), paramètres quasi identiques : convergence du minimiseur à vérifier.
+7. **β aval** : `croissance`, `voile`, `identite_PC`, `audit_131`, `couche_limite`, `horloge_*` tournent
+   à β = 2,42 ; le v3 consigne 2,595 (−6,8 %). `croissance.py` donne fσ8 **−0,35 %** là où
+   `perturbations_derivees` donne **+3,71 %** (signe opposé ; #136 tranche pour +3,7, `croissance` jamais
+   annoté). `fit_accretion_de.py` ajuste des **pseudo-données** CPL, pas DESI.
+8. Tautologies : `audit_131 §2` (`flux_ext = flux_int = v0²`, différence nulle par construction) ;
+   `attaque_croker_fond` (deux paramètres résolus sur deux cibles, rien ne peut échouer).
+9. `heredite_edo §D` conclut « durée de vie prédite » avec les deux bords « hors de la plage intégrée » ;
+   `audit_edo §1` : invariance ×6 sur la dernière colonne, non commentée ; `convexite_entropie §2` :
+   une seule ligne (t/t₀ = 1), ne teste pas z → −1 ; `couche_limite` : d/R = 0,12-0,24 selon l'époque,
+   pas « 0,25 uniformément » (#131).
+10. `nan`/`inf`/warnings : `horloge_poussiere*` (4 nan, colonnes de référence), `test_wE*` (β = inf),
+    `identite_PC` (divide by zero à a → 0, valeurs aval saines).
+
+## 7. Outils ajoutés ce jour
+- `outils/ligne_de_base.py` (gelé) — reproduction en CI : 1580 SNe, β ∈ [2,42 ; 2,60], Δχ² < 0.
+- `outils/perime.py` + `outils/valeurs_canoniques.json` (gelé) — **le linter de valeurs périmées de la
+  règle 7**, enfin écrit. Quinze occurrences trouvées au premier passage (dont une que j'avais moi-même
+  écrite) ; treize corrigées ou marquées `[historique]` ; **une reste, volontairement rouge : papier B
+  l.148 (R ~ 10^7,6 et M_cut, retirés par #52)**. Job CI bloquant, comme la spec l'exige.
+- `RETRACTATIONS.md` — le canal `--amend`, vide.

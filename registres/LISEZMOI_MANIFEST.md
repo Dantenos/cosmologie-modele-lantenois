@@ -10,7 +10,7 @@
 
 ## I. COSMOLOGIE — papiers A et B
 - `papierA_fluide_source_externe.pdf` / `.tex` — **17 p., RÉVISÉ le 19/08** : ajout au résumé de la sensibilité de calibration SNe (±0,04 mag ⇒ ~30 unités de χ² contre 4,4 de signal) et d'une section « décomposition par lot + jackknife BAO ». La forme est robuste (β = 2,2-2,7) ; l'évidence basse-z est conditionnelle.
-- `papierB_hierarchie.pdf` / `.tex` — 8 p. Hérédité spectrale, démographie (R ~ 10^7,6), borne GSL β < 4,35, grand livre de Penrose.
+- `papierB_hierarchie.pdf` / `.tex` — 14 p. Hérédité spectrale, démographie (R ~ 10^7,6 [historique : #52 → 10^10,3]), borne GSL β < 4,35, grand livre de Penrose.
 - `etude_complete_v2.md` (v4.9) et `etude_complete.txt` — le document maître, tous les audits.
 - `revue_litterature_annexeA.md` — état de l'art et positionnement.
 - `email_experts_brouillon.md` — brouillon pour Popławski (papier B en pièce jointe).

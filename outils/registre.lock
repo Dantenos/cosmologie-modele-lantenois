@@ -123,5 +123,10 @@
   "sha256": "af15f3a5aedcdf59909c3a2607f1946c8a4dd6fd3e23c5fac5ae289efa20c576",
   "gele_le": "2026-08-23T20:34:51",
   "extrait": "E1 ROBUSTESSE — deux doutes sur la manche 2, creuses avant d'etre crus. CRITERES"
+ },
+ "outils/perime.py": {
+  "sha256": "37add057ef88922cd95397431d0b4ece387353a0b878eac4743c340a41fa0eec",
+  "gele_le": "2026-08-23T20:49:43",
+  "extrait": "perime v0 — le linter de valeurs périmées, écrit le 23/08/2026 d'après la spec d"
  }
 }

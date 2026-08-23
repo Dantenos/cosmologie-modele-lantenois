@@ -11,7 +11,7 @@ auditée contre Pantheon+, DESI DR2 et Planck, avec un registre adversarial tenu
 critères gelés avant chaque calcul, et des juges convoqués à date fixe. Le tout est ici, y
 compris les erreurs.
 
-[![registre](https://img.shields.io/badge/registre-25%20crit%C3%A8res%20gel%C3%A9s-blue)](outils/README_registre.md)
+[![registre](https://img.shields.io/badge/registre-26%20crit%C3%A8res%20gel%C3%A9s-blue)](outils/README_registre.md)
 <!-- une fois le dépôt en ligne : ![CI](https://github.com/ORG/REPO/actions/workflows/registre.yml/badge.svg) -->
 
 ---
@@ -70,7 +70,7 @@ Tout ce qui est tombé, numéroté, daté, avec le mécanisme de la chute :
 
 ## II. L'écosystème d'outils
 
-Cinq outils nés des cicatrices de la campagne, dans [`outils/`](outils/). Zéro dépendance,
+Sept outils nés des cicatrices de la campagne, dans [`outils/`](outils/) — cinq d'août, deux du 23/08. Zéro dépendance,
 Python ≥ 3.9. Ils survivront au verdict, quel qu'il soit.
 *Sous Windows : `$env:PYTHONUTF8 = 1` avant de les lancer (les registres sont en UTF-8).*
 
@@ -81,18 +81,20 @@ Python ≥ 3.9. Ils survivront au verdict, quel qu'il soit.
 | **Audience** | les prédictions sans date — l'échéancier public, acteurs et casiers | `python3 outils/audience.py inscrire aff.json` · `role` · `verdict <id>` |
 | **k-tracker** | le postérieur figé — combinaison vivante des bornes sur le couplage k | `python3 outils/ktracker.py etat contraintes_k.json` |
 | **Scellé** | l'analyse retouchée après les données — l'arbitre DR3 sous hash | `python3 outils/scelle.py sceau` · `verdict <donnees_dr3>` |
+| **Ligne de base** | le corpus qui cesse de se reproduire sans qu'on le voie — β rejoué en CI sur données publiques | `python3 outils/ligne_de_base.py` |
+| **Périmé** | les chiffres morts qui survivent dans les documents (mode de défaillance n°1) — linter contre `valeurs_canoniques.json`, bloquant en CI | `python3 outils/perime.py [--tout]` |
 
 **Registre** est le socle : le critère vit dans le docstring du script, `freeze` le fige par
 SHA-256 dans [`registre.lock`](outils/registre.lock), `verify` échoue (exit 1, bloquant en CI)
 s'il a bougé. L'amendement est possible — mais public, dans `RETRACTATIONS.md`.
-25 fichiers du corpus sont gelés, Registre compris : il se protège lui-même.
+26 fichiers du corpus sont gelés, Registre compris : il se protège lui-même.
 
 ```console
 $ python3 outils/registre.py verify
 [registre] OK    scripts/voile_cisaillement.py
 [registre] OK    outils/registre.py
 [registre] OK    outils/scelle.py
-…                                          # 25 fichiers, exit 0
+…                                          # 26 fichiers, exit 0
 ```
 
 ---

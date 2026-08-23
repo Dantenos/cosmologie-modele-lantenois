@@ -13,7 +13,7 @@ H₀ = 66,7 (5,6σ), Lyman-α hors-échantillon contre. Verdict : conditionnel a
 rejouable en 2027 (DR3).
 
 **B — Hérédité et démographie (8 p.).** Le β de l'enfant hérite du spectre parent
-(β = 4/(n_eff+3)) ; la démographie donne R ~ 10^7,6 enfants viables par univers (Smolin en
+(β = 4/(n_eff+3)) ; la démographie donne R ~ 10^7,6 enfants viables par univers [historique : #52 corrige en 10^10,3, contraste affaibli] (Smolin en
 demandait 10^19 de moins) ; la borne GSL impose β < 4,35 ; et l'improbabilité de Penrose
 (exp(10^125)) se dissout en 3,9 % par génération. Le festin doit finir pour que la comptabilité
 ferme — ce qui contredit l'attracteur éternel de A (contradiction détectée le 19/08, consignée).

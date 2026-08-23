@@ -29,7 +29,7 @@ du flux qui le nourrit.**
 5. Le flux traité traverse ; la réalisation intérieure est une création homogène de masse sans
    pression, Γ = β/t — l'identité exacte du corpus. Homogénéité et pression de création locale
    par construction (lecture A). [CORPUS : identité PC, 5e famille soluble]
-6. Loi observable : **w(z) = −β/(3Ht)**, β = β_p·g, mesuré 2,42-2,60 ; croisement z = 0,463 ;
+6. Loi observable : **w(z) = −β/(3Ht)**, β = β_p·g, mesuré 2,42-2,60 ; croisement z = 0,463 [historique : retiré comme prédiction chiffrée, #111 ; 0,21-0,46 selon β] ;
    attracteur −0,548 ; fin du festin 16-36 Ga. [CORPUS : papier A entier]
 
 ## Ce qu'elle prédit, et ce qui la tue

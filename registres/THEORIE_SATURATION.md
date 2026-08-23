@@ -110,7 +110,7 @@ que six formes arbitraires ratent ? C'est un vrai sujet, et je ne l'ai pas.
    Donc « avoir un croisement fantôme » n'est **pas** la propriété partagée. Hypothèse retirée.
 3. **Et la question elle-même était mal posée.** Mesure directe : en déformant f(z) par un
    facteur multiplicatif borné, nul en z = 0, le χ² répond quadratiquement avec
-   **σ(déformation) = 1,8 %**.
+   **σ(déformation) = 1,8 %**. [historique — réfuté #139 : σ(tilt) = 0,67 %, voir la correction finale]
 
 **Conséquence, et c'est la réponse.** Les données ne sélectionnent pas une *propriété* : elles
 **mesurent une courbe**, f(z) = ρ_de(z)/ρ_de(0), à 1,8 % près. Il n'y a donc aucune structure
@@ -128,7 +128,7 @@ ordinaire que deux familles assez souples contiennent la réponse mesurée.
 
 **Et le papier C n'en sort pas affaibli, il en sort quantifié** : le fond ne départage pas
 accrétion et CCBH *parce que* leur écart (4,6 %) est sous le seuil de trois écarts-types de
-ce que les données résolvent (1,8 %). Ce n'est plus une observation, c'est un calcul.
+ce que les données résolvent (1,8 %). Ce n'est plus une observation, c'est un calcul. [historique — réfuté #139]
 
 
 ---

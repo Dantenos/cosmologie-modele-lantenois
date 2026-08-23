@@ -1944,10 +1944,13 @@ que l'horloge soit tuée. Rapport : ETUDE_E1_manche2.md.
 Rapport complet : AUDIT_2308.md. Les trois points qui comptent :
 1. **`duel_ccbh.py` : le test de sensibilité à z_i était inopérant** (`ai=1/(1+ZI)` évalué à la
    définition ; trois χ² identiques). #80 le disait « corrigé » — le fichier livré ne l'était pas.
-   Rejoué corrigé : à paramètres fixés, H₀ = 67,97–70,91 (les chiffres publiés, papier C l.208) ;
-   **réajustés (règle 5), H₀ = 70,22–70,43, Ξ = 3,97–4,53 absorbe z_i**, ΔAIC CCBH−accrétion de +3,5
-   à +6,1. La phrase « paramètre caché du rival » était survendue : Ξ l'absorbe. Papier C amendé.
-   Verdict du duel inchangé.
+   Rejoué corrigé, **sur le taux calibré du papier C** (Ξ = 1,382, χ² = 1420,31 retrouvés) : à
+   paramètres fixés H₀ = 65,70–70,69 (les 67,97–70,91 publiés venaient du taux non calibré de
+   `duel_ccbh.py`, dont le contrôle de sanité Ξ ~ 1,40 échoue : Ξ = 4,08) ; **réajustés (règle 5),
+   H₀ = 69,57–69,79, Ξ = 1,32–1,65 absorbe z_i, égalité AIC inchangée** (ΔAIC = −0,5 à −1,0 pour
+   CCBH). La phrase « paramètre caché du rival » était survendue : Ξ l'absorbe. Papier C amendé.
+   Verdict du duel inchangé. Deux implémentations du rival coexistent (duel_ccbh non calibré,
+   atlas_rivaux calibré) : à unifier.
 2. **Six rétractations déclarées appliquées aux papiers survivaient ailleurs** : erratum β/−12,6
    (corps de A l.96/100, seul l'abstract l'avait), « plausible » (A l.405), « un quart pas la
    moitié » (A l.459/465, six lignes sous la correction), fσ8 « canal le plus propre » (A l.567),

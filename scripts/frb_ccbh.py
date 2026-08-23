@@ -102,17 +102,20 @@ for zlo, zhi, lab in [(0.05, 0.5, 'plage Macquart 2020'), (0.05, 1.0, 'plage DSA
     ratio = np.sum(num*den)/np.sum(den*den)
     print(f"  {lab:>26s} ({zlo}<z<{zhi}) : Omega_b^eff = {ratio:.5f}")
 print()
-print(f"  mesure FRB : Omega_b = 0.0490 +/- 0.0035")
+print("  [SUPERSEDE] #95 : la mesure est Omega_b h70 = 0,049 +/- 0,003 (Connor et al. 2025) et la fraction diffuse")
+print("  employee ici etait inventee ; le test vivant est frb_likelihood.py (#98-#99 : ~2,1 sigma, mediane de 12 tirages).")
+print("  Ce script est conserve comme etape historique ; son verdict n'est plus exploite.")
+print(f"  mesure FRB : Omega_b = 0.049 +/- 0.003")
 zs = np.linspace(0.05, 1.0, 60)
 num = np.array([dm_kernel(z, E_c, r_c)/hc for z in zs])
 den = np.array([dm_kernel(z, E_l, lambda zz: np.full_like(np.atleast_1d(zz), 1.0, dtype=float))/h_l for z in zs])
 obeff = np.sum(num*den)/np.sum(den*den)
-print(f"  CCBH -> Omega_b^eff = {obeff:.5f}  ->  ecart = {abs(0.0490-obeff)/0.0035:.1f} sigma")
+print(f"  CCBH -> Omega_b^eff = {obeff:.5f}  ->  ecart = {abs(0.049-obeff)/0.003:.1f} sigma")
 print(f"  (hier, comparaison naive a s x Omega_b : 0.0282, soit 5.9 sigma)")
 print()
-if abs(0.0490-obeff)/0.0035 < 2:
+if abs(0.049-obeff)/0.003 < 2:
     print("  VERDICT : la compensation integrale SAUVE CCBH. Le test d'hier est RETIRE.")
-elif abs(0.0490-obeff)/0.0035 < 3:
+elif abs(0.049-obeff)/0.003 < 3:
     print("  VERDICT : tension reduite mais presente. A ecrire comme tension, pas refutation.")
 else:
     print("  VERDICT : la tension survit a la compensation integrale.")

@@ -128,6 +128,11 @@ if __name__ == '__main__':
         if best is None or rr.fun < best.fun: best = rr
     o = fond_ccbh(*best.x)
     hcc = o[2] if o else np.nan
+    # CONTROLE DE SANITE (critere gele) : le Xi ajuste doit etre du meme ordre que leur 1,40.
+    sanite = 0.5 < best.x[2]/1.403 < 2.0
+    print(f"\n  CONTROLE DE SANITE : Xi ajuste = {best.x[2]:.3f} contre leur 1,403 -> "
+          + ("OK" if sanite else "ECHEC : taux NON CALIBRE (le CCBH publie, papier C, est la version "
+             "calibree A=1,551 B=3,119 de atlas_rivaux.py : Xi=1,382, chi2=1420,31)"))
     res['CCBH (Madau psi)'] = (best.fun, 3,
         f"H0={100*hcc:.2f} (derive) wc={best.x[0]:.4f} Xi={best.x[2]:.3f}")
     base = min(c+2*k for c, k, _ in res.values())

@@ -21,6 +21,7 @@
   (1re manche hémisphères : Δβ=+0,22±0,23, universel).
 - Scripts : ancres numériques en tête ; les rejouer en CI (ligne de base gardée : outils/ligne_de_base.py).
 - Lancer les scripts depuis donnees/pantheon_plus/ (vraisemblance_reelle.py lit pantheon.dat dans le CWD) ; sous Windows PYTHONUTF8=1.
+- Avant tout commit : python3 outils/perime.py (valeurs périmées) et outils/registre.py verify.
 - Ne jamais toucher un docstring gelé (outils/registre.lock) ni les octets de outils/scelle.py ; corps seulement, et RETRACTATIONS.md via freeze --amend.
 
 ## File d'attente

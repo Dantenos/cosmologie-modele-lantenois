@@ -1,0 +1,147 @@
+{
+ "_doc": "LA vérité courante du corpus, une quantité = une entrée datée, avec ses valeurs dépréciées (regex). Lu par outils/perime.py. Une valeur ne se met à jour qu'ici ; le linter attrape les documents qui citent encore une dépréciée sans contexte de rétractation.",
+ "quantites": [
+  {
+   "nom": "croisement fantôme z_x",
+   "valeur_courante": "bas redshift, 0,21 (β=2,595) à 0,46 (β=2,42) — retiré comme prédiction chiffrée",
+   "source": "MANQUEMENTS #111, papier A tableau l.632",
+   "date": "2026-08-22",
+   "valeurs_depreciees": [
+    "(?<![\\d.\\-])0[.,]463(?!\\d)",
+    "z\\s*(=|≈|\\\\simeq|\\\\approx)\\s*0[.,]46\\b",
+    "z_?\\\\?times\\s*=\\s*0[.,]50\\b"
+   ]
+  },
+  {
+   "nom": "σ(tilt) — ce que le fond résout sur f(z)",
+   "valeur_courante": "0,67 %",
+   "source": "MANQUEMENTS #139",
+   "date": "2026-08-24",
+   "valeurs_depreciees": [
+    "(σ|sigma|tilt|déformation|deformation|résolv|resolv)[^.\\n]{0,60}1[.,]8\\s*\\\\?%",
+    "1[.,]8\\s*\\\\?%[^.\\n]{0,40}(σ|sigma|tilt|f\\(z\\))"
+   ]
+  },
+  {
+   "nom": "FRB pour 3σ",
+   "valeur_courante": "82-120 sursauts à levier bien choisi, 239 sinon",
+   "source": "MANQUEMENTS #106/#110, papier C",
+   "date": "2026-08-22",
+   "valeurs_depreciees": [
+    "142\\s+(localized|localised|sursauts|bursts|FRB)",
+    "\\b142\\s*/\\s*253\\s*/\\s*395"
+   ]
+  },
+  {
+   "nom": "β du Planck complet apparié à −12,6",
+   "valeur_courante": "β = 2,56 (+0,08/−0,02) ; 2,49 coûte +4,4",
+   "source": "MANQUEMENTS #2 (erratum majeur)",
+   "date": "2026-08-19",
+   "valeurs_depreciees": [
+    "2[.,]49\\s*\\\\?(pm|±)\\s*0[.,]05",
+    "band to \\$?2[.,]39\\$?--\\$?2[.,]55"
+   ]
+  },
+  {
+   "nom": "levier 40 mmag",
+   "valeur_courante": "3,8σ de l'offset budgété : stress test extrême, pas un scénario plausible",
+   "source": "TRIAGE #1",
+   "date": "2026-08-19",
+   "valeurs_depreciees": [
+    "plausible systematic"
+   ]
+  },
+  {
+   "nom": "part du signal bas-z achetable par recalibration",
+   "valeur_courante": "un quart (−1,15 avec le prior), trois quarts de forme",
+   "source": "TRIAGE #2",
+   "date": "2026-08-19",
+   "valeurs_depreciees": [
+    "half of the evolving",
+    "roughly half calibration"
+   ]
+  },
+  {
+   "nom": "fσ8 comme discriminant",
+   "valeur_courante": "1-2 % sous-horizon, sous la sensibilité actuelle ; +3,7 % dérivé (E9 en attente) — pas un discriminant vivant",
+   "source": "TRIAGE #32, MANQUEMENTS #136",
+   "date": "2026-08-23",
+   "valeurs_depreciees": [
+    "cleanest available falsification channel"
+   ]
+  },
+  {
+   "nom": "attribution Toussaint",
+   "valeur_courante": "attribution fabriquée, purgée ; source = MNRAS 548 (arXiv:2509.13220) sans auteur",
+   "source": "TRIAGE #8",
+   "date": "2026-08-19",
+   "valeurs_depreciees": [
+    "Toussaint"
+   ]
+  },
+  {
+   "nom": "nombre d'entrées du registre",
+   "valeur_courante": "142 (23/08/2026)",
+   "source": "MANQUEMENTS #142",
+   "date": "2026-08-23",
+   "valeurs_depreciees": [
+    "\\b116 entrées(?! à la naissance)",
+    "\\b123 entrées",
+    "cent seize entrées"
+   ]
+  },
+  {
+   "nom": "nombre d'affirmations rétractées",
+   "valeur_courante": "54 (TRIAGE bilan)",
+   "source": "TRIAGE bilan l.365",
+   "date": "2026-08-24",
+   "valeurs_depreciees": [
+    "\\b41 affirmations",
+    "\\b46 affirmations",
+    "cinquante rétractations",
+    "\\b53 réfutées"
+   ]
+  },
+  {
+   "nom": "critères gelés",
+   "valeur_courante": "26 (23/08/2026)",
+   "source": "outils/registre.lock",
+   "date": "2026-08-23",
+   "valeurs_depreciees": [
+    "\\b2[0-4] (critères|fichiers|scripts) (gelés|du corpus sont gelés)"
+   ]
+  },
+  {
+   "nom": "borne x₀ (horloge)",
+   "valeur_courante": "x₀ ≲ 0,30 (branche nulle) ; 0,32 en temps poussière",
+   "source": "MANQUEMENTS #134, TROIS_CHANTIERS",
+   "date": "2026-08-24",
+   "valeurs_depreciees": [
+    "x_?[0₀]?\\s*(≲|\\\\lesssim|<|~)\\s*0[.,]65"
+   ]
+  },
+  {
+   "nom": "résultats de tête du papier B retirés (#52)",
+   "valeur_courante": "M_cut 3,0e12, graines 5/2 1,3e15, N(z=0) = 1e6 (fermeture morte), R ~ 10^10,3 — retirés",
+   "source": "MANQUEMENTS #52",
+   "date": "2026-08-19",
+   "valeurs_depreciees": [
+    "N\\s*\\(?\\s*z\\s*=\\s*0\\s*\\)?\\s*[=≈]\\s*0[.,]007",
+    "10\\^?\\{?7[.,]6\\b"
+   ]
+  },
+  {
+   "nom": "pagination des papiers",
+   "valeur_courante": "A 33 p., B 14 p., C 7 p.",
+   "source": "MANQUEMENTS #138, PDF recompilés 23/08",
+   "date": "2026-08-23",
+   "valeurs_depreciees": [
+    "Papier A \\((1[7-9]|2\\d|3[0-2]) p\\.\\)",
+    "\\bA ?= ?3[0-2] p\\.",
+    "Papier C \\(6 p\\.\\)",
+    "compilations\\* \\(3[0-2] p\\.\\)",
+    "identical data\\* \\(6 p\\.\\)"
+   ]
+  }
+ ]
+}

@@ -4,7 +4,7 @@
 ## Table exhaustive — inclus et refusés, avec motifs
 | système | verdict | motif |
 |---|---|---|
-| notre univers | **SCORÉ** | équation native ; β=2,42-2,60 ; x(t)=−w calculé : x=1 franchi à z=0,46, x₀=0,85, attracteur 0,548 |
+| notre univers | **SCORÉ** | équation native ; β=2,42-2,60 ; x(t)=−w calculé : x=1 franchi à z=0,46 (à β=2,42 ; dépend de β, #111), x₀=0,85, attracteur 0,548 |
 | épidémies à taux déclinant | **SCORÉ (β seul)** | isomorphisme EXACT (dI/dt=(μ/t)I) ; plage d'exposants de la littérature 2020 recouvre notre β — même équation, exposants voisins ; x REFUSÉ (pas d'analogue pression) |
 | étoiles AGB | placé qualitatif | auto-consommation, sortie de fenêtre observée ; pas d'exposant unique publiable en plage propre → pas de nombre |
 | villes (Bettencourt), Kleiber | **REFUSÉ** | loi d'échelle en TAILLE, pas en temps : autre équation → écho, pas un score |

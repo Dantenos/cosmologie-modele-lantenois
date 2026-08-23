@@ -41,3 +41,14 @@ jobs:
       # exit 1 = le corpus ne se reproduit plus = build rouge.
       - name: ligne de base
         run: python3 outils/ligne_de_base.py
+
+  perime:
+    name: valeurs périmées (outils/valeurs_canoniques.json)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Le linter de la règle 7 (ATLAS_falsification_spec.md) : un document de façade qui cite
+      # une valeur dépréciée sans contexte de rétractation fait rougir le build. Bloquant, comme
+      # la spec l'exige. Au 23/08 : rouge sur papiers/papierB_hierarchie.tex l.148 (R ~ 10^7,6,
+      # corrigé en 10^10,3 par MANQUEMENTS #52) — à trancher par l'auteur, pas à masquer.
+      - run: python3 outils/perime.py

@@ -328,7 +328,7 @@ seul mécanisme de la campagne qui n'a jamais failli.
 
 **Bilan : 9 attaques justes, 46 affirmations fausses ou mal fondées.** Trois théories nées et
 mortes en une nuit, plus une question retirée. Aucune n'a survécu à son propre test — et le
-résultat final (σ(f(z)) = 1,8 %) est plus utile que les trois théories réunies.
+résultat final (σ(f(z)) = 1,8 %) est plus utile que les trois théories réunies. [historique — le 1,8 % est réfuté 32 lignes plus bas (#63/#139, σ(tilt) = 0,67 %) ; la phrase est conservée comme trace, sa conclusion ne l'est pas]
 
 | 56 | mon « κ(σ) existe, la clé de voûte tient » (#124-125) | **RÉTROGRADÉ par mon propre doute #2, exécuté** : ε_c = 2,3-4,5, σ-const non auto-cohérent, κ encadré à ±(0,6-1,2) près. Énoncé de branche, pas prédiction. L'identité cinématique survit (double dérivation + ancre 0,2408). |
 

@@ -168,5 +168,15 @@
   "sha256": "9bf4dc5e7b9d2be0bf35ab93fb9a32cad162bac9e11184ea0a186b1dc3a11f53",
   "gele_le": "2026-08-23T22:31:19",
   "extrait": "genere_ciel v1 — generateur de visuels/ciel_pantheon_v2.html (23/08/2026)."
+ },
+ "outils/fig_frb.py": {
+  "sha256": "523d5f49266b3f01716b5b1d30198880054705515c4ad0f90dc6550b5d7c19e9",
+  "gele_le": "2026-08-23T22:32:55",
+  "extrait": "fig_frb v1 — la figure du canal FRB sur donnees reelles (papier C). CRITERES"
+ },
+ "outils/etat.py": {
+  "sha256": "c2156644a743515ba93aef2d7effd5b2b3507e7c2efcc05cecf7469295eefbcd",
+  "gele_le": "2026-08-23T22:35:29",
+  "extrait": "etat v1 — l'état du dépôt, GÉNÉRÉ depuis les sources (23/08/2026). Jamais écrit "
  }
 }

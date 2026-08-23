@@ -11,7 +11,7 @@ auditée contre Pantheon+, DESI DR2 et Planck, avec un registre adversarial tenu
 critères gelés avant chaque calcul, et des juges convoqués à date fixe. Le tout est ici, y
 compris les erreurs.
 
-[![registre](https://img.shields.io/badge/registre-33%20crit%C3%A8res%20gel%C3%A9s-blue)](outils/README_registre.md)
+[![registre](https://img.shields.io/badge/registre-36%20crit%C3%A8res%20gel%C3%A9s-blue)](outils/README_registre.md)
 <!-- une fois le dépôt en ligne : ![CI](https://github.com/ORG/REPO/actions/workflows/registre.yml/badge.svg) -->
 
 ---
@@ -64,13 +64,14 @@ Tout ce qui est tombé, numéroté, daté, avec le mécanisme de la chute :
 [`TROIS_CHANTIERS.md`](registres/TROIS_CHANTIERS.md) ·
 [`THEORIE_GOULET.md`](registres/THEORIE_GOULET.md) / [`THEORIE_HORLOGE.md`](registres/THEORIE_HORLOGE.md) ·
 [`CONCLUSION.md`](registres/CONCLUSION.md) ·
+[`ETAT.md`](registres/ETAT.md) (généré, jamais écrit à la main) ·
 [`AUDIT_2308.md`](registres/AUDIT_2308.md) (audit du dépôt du 23/08 : 38 scripts rejoués, un contrôle publié inopérant, six corrections propagées, ce qui reste à faire).
 
 ---
 
 ## II. L'écosystème d'outils
 
-Huit outils nés des cicatrices de la campagne, dans [`outils/`](outils/) — cinq d'août, deux du 23/08. Zéro dépendance,
+Neuf outils nés des cicatrices de la campagne, dans [`outils/`](outils/) — cinq d'août, deux du 23/08. Zéro dépendance,
 Python ≥ 3.9. Ils survivront au verdict, quel qu'il soit.
 *Sous Windows : `$env:PYTHONUTF8 = 1` avant de les lancer (les registres sont en UTF-8).*
 
@@ -84,18 +85,19 @@ Python ≥ 3.9. Ils survivront au verdict, quel qu'il soit.
 | **Ligne de base** | le corpus qui cesse de se reproduire sans qu'on le voie — β rejoué en CI sur données publiques | `python3 outils/ligne_de_base.py` |
 | **Périmé** | les chiffres morts qui survivent dans les documents (mode de défaillance n°1) — linter contre `valeurs_canoniques.json`, bloquant en CI | `python3 outils/perime.py [--tout]` |
 | **Rejouer** | les résultats qui cessent de se reproduire sans qu'on le voie — 14 scripts rejoués contre `ancres.json`, bloquant en CI | `python3 outils/rejouer.py` |
+| **État** | les comptes recopiés à la main qui divergent — ETAT.md généré depuis lock, index, triage, audience | `python3 outils/etat.py` |
 
 **Registre** est le socle : le critère vit dans le docstring du script, `freeze` le fige par
 SHA-256 dans [`registre.lock`](outils/registre.lock), `verify` échoue (exit 1, bloquant en CI)
 s'il a bougé. L'amendement est possible — mais public, dans `RETRACTATIONS.md`.
-33 fichiers du corpus sont gelés, Registre compris : il se protège lui-même.
+36 fichiers du corpus sont gelés, Registre compris : il se protège lui-même.
 
 ```console
 $ python3 outils/registre.py verify
 [registre] OK    scripts/voile_cisaillement.py
 [registre] OK    outils/registre.py
 [registre] OK    outils/scelle.py
-…                                          # 33 fichiers, exit 0
+…                                          # 36 fichiers, exit 0
 ```
 
 ---

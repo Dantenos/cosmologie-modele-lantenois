@@ -1,0 +1,5 @@
+{"papier":"Croker2024_JCAP10_094",
+ "affirmations":[
+  {"nom":"H0_derive","publie":69.94,"tolerance":0.5,"unite":"km/s/Mpc"},
+  {"nom":"survie_s","publie":0.70,"tolerance":0.02,"unite":""}],
+ "attaques":["attaque_croker_fond.py"]}

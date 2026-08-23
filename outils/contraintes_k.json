@@ -1,0 +1,54 @@
+{
+ "hypothese": "M_BH ∝ a^k ; CCBH exige k≈3 (Farrah 2023, Croker 2024)",
+ "contraintes": [
+  {
+   "id": "ngc3201",
+   "source": "Rodriguez, ApJL 947 L12 (2023), arXiv:2302.12386",
+   "statut": "verifie",
+   "borne": "k=3 exige les deux BH quasi face-on, P<=1e-4, ou une masse de formation < 2,2 Msun ; facteur de croissance requis (1+z)^3~55 depuis z=2,8",
+   "relecteur": "Claude+Ed session 24/08/2026, texte primaire (conclusions)"
+  },
+  {
+   "id": "gaia_dormants",
+   "source": "Andrae & El-Badry, A&A 673 L10 (2023), arXiv:2305.01307",
+   "statut": "verifie",
+   "borne": "k=3 => masse de formation < TOV 2,2 Msun a 77% (BH2) et 70% (BH1) ; P(les deux viables)=6,9%",
+   "relecteur": "Claude+Ed 24/08/2026, section Discussion primaire"
+  },
+  {
+   "id": "smbh_lacy",
+   "source": "Lacy et al., ApJL (2024), arXiv:2312.12344",
+   "statut": "verifie",
+   "borne": "0 < k <~ 2 sous densite SMBH standard (M-Mbulge) ; CAVEAT DECLARE : densite favorisee par les PTA (7,4e6 Msun/Mpc3) rend k=3 viable",
+   "relecteur": "Claude+Ed 24/08/2026, abstract primaire"
+  },
+  {
+   "id": "jwst_agn",
+   "source": "Lei et al., SCPMA 67 229811 (2024)",
+   "statut": "verifie",
+   "note": "~2 sigma selon 2312.12344 (indirect) -> REFUSE pour combinaison par la regle E5",
+   "borne": "k = -0,03 +/- 1,334 (68%) sur 3 hotes early-type z~4,5-7 ; tension avec k=3 a ~2 sigma",
+   "relecteur": "abstract+corps primaires 2305.03408, 24/08"
+  },
+  {
+   "id": "jwst_2025",
+   "source": "Lei et al., arXiv:2506.19589 (juin 2025)",
+   "statut": "verifie",
+   "borne": "echantillon JWST elargi (LRD/ellipticals z~0,7-2,5 + tres haut z) : k=3 REJETE a ~11 sigma",
+   "relecteur": "abstract primaire, 24/08 — DECOUVERTE de session, absente du registre initial"
+  },
+  {
+   "id": "pulsars",
+   "source": "Calzà et al., Sci Rep 14 31296 (2024)",
+   "statut": "a_verifier",
+   "note": "borne numerique propre non extraite d une source primaire cette session"
+  },
+  {
+   "id": "fond_desi",
+   "source": "papier C (ce depot)",
+   "statut": "verifie",
+   "borne": "k:=3 viable sur fond (AIC 1426,31) — compatibilite, pas une borne",
+   "relecteur": "session 23/08"
+  }
+ ]
+}

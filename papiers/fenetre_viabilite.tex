@@ -1,0 +1,186 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,graphicx,booktabs}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+\title{\textbf{A common viability window for self-consuming systems:\\ from autophagic flux to dark energy}}
+\author{\'Edouard Lantenois\thanks{Independent researcher, Lille, France. Prepared with AI assistance (Claude, Anthropic); all claims verified against the cited sources.}}
+\date{August 19, 2026 --- v0 working paper}
+\begin{document}
+\maketitle
+\begin{abstract}
+Systems that maintain themselves by processing their own substance --- autophagic cells, whole
+metazoans, fire-adapted ecosystems, economic capital stocks, and (in a companion cosmological
+model) a universe fed by its parent black hole --- appear to share a common, dimensionless
+viability window. We define $x \equiv \tau_c/\tau_s$, the ratio of the independently defined
+structural-renewal time to the self-processing time, under a pre-registered protocol with four
+kill conditions (dispersion, controls, definition-sensitivity, edge universality) fixed
+\emph{before} data collection. Across eight systems spanning $\sim$32 orders of magnitude in
+mass, $x \in [0.37, 1.95]$ (0.7 decades). Inert or non-renewing controls fall at $x \le 10^{-2}$.
+Documented deaths-by-rate bracket the window on both sides, including a natural experiment with
+control (fire suppression vs.\ the unsuppressed Gila Wilderness). The \emph{sustained} upper edges
+of four independent classes --- mammalian alimentary ceiling, cellular energetic bankruptcy,
+generalized-second-law bound, ecosystem regeneration failure --- lie within 0.44 decades
+(0.17 excluding the weakest), with all four mechanisms in the throughput/budget family. A
+two-ingredient minimal model (clutter dynamics; linear maintenance cost anchored to the published
+$\sim$20\% autophagic calorie budget) reproduces both bounds at order level. Finally, under the
+guard-compliant definition for the cosmological case ($\tau_c = $ dilution time), the viability
+variable is exactly $x = -w$: the dark-energy equation of state is the viability variable, with
+$\Lambda$ the critical-maintenance point and the DESI phantom crossing the passage through
+criticality. All kill conditions have been faced; none has fired. We state plainly what would
+still kill the hypothesis.
+\end{abstract}
+
+\section{Question and protocol}
+Any system that persists by digesting its own substance seems to face two deaths: too slow, and
+un-processed damage accumulates (clutter); too fast, and the system devours itself (autosis-like
+failure). We ask whether, once non-dimensionalized, the viable band is \emph{common across scales}
+--- a law --- or merely the dimensional truism that homeostasis is $O(1)$.
+
+\paragraph{The variable.} $x \equiv \tau_c/\tau_s$, where $\tau_s$ is the time to process one
+self-equivalent of substance (or energy) at the current rate, and $\tau_c$ is the required
+structural-renewal time, defined \emph{independently} of the flux (spontaneous component decay,
+obsolescence, dilution). Systems whose $\tau_c$ can only be defined circularly (e.g.\ epithelia,
+where renewal time \emph{is} the flux time) are excluded by a tautology guard. Two admissible
+readings are declared and labelled per system: $x_{\rm self}$ (strict self-processing: cell,
+universe, fire, capital) and $x_{\rm thru}$ (total throughput normalized to self-content: whole
+mammal, whose basal $\tau_s$ is alimentary). The two readings join physically at the alimentary
+ceiling, where saturated external intake forces any excess expenditure to become
+self-consumption \cite{Thurber2019}; where both are computable they agree within a factor $\sim$2.
+
+\paragraph{Pre-registered kill conditions.} (M1) post-guard dispersion of living systems
+$>2$ decades; (M2) controls (non-renewing consumers, inert objects) inside the window as often
+as outside; (M3) any defensible alternative $\tau_c$ moving a system across the window by
+$>1$ decade; (M4, added before the edge data were collected) sustained death-edges of different
+classes scattered by $>1$ decade.
+
+\section{Data}
+\begin{table}[h]\centering\small
+\begin{tabular}{lccll}
+\toprule
+System & $\tau_s$ & $\tau_c$ & $x$ & Source status\\
+\midrule
+Cell, basal autophagy ($\sim$0.7\%/h) & 143 h & 53 h & \textbf{0.37} & mixed$^a$\\
+Cell, starved ($+3$\%/h) & 27 h & 53 h & \textbf{1.95} & sourced \cite{PMC387,PMC616}\\
+Whole mammal (human; \emph{thru}) & 65 d & 33 d & \textbf{0.51} & order\\
+Mitochondrial pool (mitophagy) & 20 d & 15 d & \textbf{0.75} & order\\
+Fire-adapted ecosystem & 30 y & 25 y & \textbf{0.83} & sourced \cite{Parks2023}\\
+Economic capital stock & 20 y & 18 y & \textbf{0.90} & order\\
+Post-mitotic neuron (young) & $\sim$50 d & $\sim$20 d & $\sim$\textbf{0.4} & order\\
+Universe--hierarchy ($\beta=2.42$; self) & 5.7 Gyr & 4.8 Gyr & \textbf{0.85} & computed \cite{PaperA}\\
+\midrule
+\emph{Control: Sun (burns, never rebuilds)} & 1400 Gyr & 10 Gyr & \emph{0.007} & outside \checkmark\\
+\emph{Control: mountain (passive erosion)} & --- & --- & $\sim$\emph{$10^{-7}$} & outside \checkmark\\
+\bottomrule
+\end{tabular}
+\caption{\small Eight self-renewing systems over $\sim$32 orders of magnitude of mass:
+$x \in [0.37, 1.95]$, 0.7 decades. $^a$Basal rate is an order-of-magnitude literature value
+(Mortimore); the \emph{sourced} numbers are the starvation increment $+3\%/$h \cite{PMC387},
+the 2--3\%/4 h starvation proteome flux \cite{PMC616}, the $\sim$20\% calorie budget
+\cite{PMC636}, and $\tau_c$ from the median protein half-life $\sim$36 h/$\ln 2$
+\cite{Schwan2011}.}
+\end{table}
+
+M1 passes (0.7 decades); M2 passes on inert controls; M3 was executed on four systems with
+alternative defensible $\tau_c$ choices (short/long proteome half-lives, cell cycle, cellular
+vs.\ protein turnover, age vs.\ Hubble time vs.\ doubling time, low/high fire-return intervals):
+maximal displacement 0.6 decades, no crossing.
+
+\section{Deaths by rate, and the edge rail (M4)}
+Documented rate-deaths bracket the window on both sides. \emph{Low side}: a century of fire
+suppression in western US dry forests stretched the effective interval $3$--$6\times$
+($x \sim 0.15$--$0.3$), yielding $2.9$--$13.6\times$ more stand-replacing fire and conversions
+to non-forest, while the unsuppressed Gila Wilderness ($x$ maintained $\sim$0.8) sits at only
+$1.8\times$ --- a natural experiment with control \cite{Parks2023}; ageing neurons, unable to
+dilute damage mitotically, drift below the window into aggregate accumulation and a
+senescence--autophagy vicious circle, gene-dose dependent and rapamycin-reversible
+\cite{Neuron2024}. \emph{High side}: short-interval boreal reburns ($x \sim 3$--$4$) cause
+regeneration failure \cite{Boreal2025}; sustained starvation-level autophagy kills a
+dose-dependent subpopulation (autosis) at the window's edge \cite{Liu2013}; and hierarchy
+offspring with $\beta > 4.35$ ($x > 1.53$) are GSL-unviable \cite{PaperB}.
+
+\paragraph{The sustained-edge rail.} Four classes on one rail --- honestly labelled: two edges are external and measured (mammalian ceiling, boreal regeneration; these two alone span 0.43 decades), two are derived within our own frameworks (GSL, cellular budget); the content is the internal--external concordance
+(Table~2): mammalian indefinite ceiling $2.5\times$ basal \cite{Thurber2019,HD1997,DrentDaan}
+$\Rightarrow x \simeq 1.3$; GSL bound $x \le 1.53$; cellular energetic bankruptcy $x \simeq 1.9$;
+boreal regeneration $x \simeq 3.5$ (weakest). Scatter: \textbf{0.44 decades} (0.17 without the
+boreal case) --- M4 passes. A two-tier structure emerges: the ceiling \emph{decreases with
+exposure duration} (7$\times$ basal for days, 2.5$\times$ indefinitely, measured in humans
+\cite{Thurber2019}; transiently survivable starvation vs.\ sustained autosis in cells; the GSL
+bounding the attractor, i.e.\ the sustained regime, by construction). Transient excursions live
+at $x \sim 2$--$4$; the true, sustained edge at $x \sim 1.3$--$2$. All four mechanisms belong to
+the throughput/budget family: the concordance is mechanistic, not merely numerical.
+
+\section{A minimal model derives the window}
+\emph{Lower bound (clutter).} Components damage spontaneously at rate $1/\tau_c$;
+self-processing at rate $x/\tau_c$ removes material with selectivity $\sigma$ for damaged units.
+The steady state $(1-d)(\sigma d + 1 - d) = x\sigma d$ drives the damaged fraction $d^*$ toward
+saturation below a threshold: for $\sigma \in [3,10]$, tolerable damage $d_{\max} \in [0.5,0.7]$,
+$x_{\min} = 0.31$--$0.66$ (illustrative; the biological vicious circle corresponds to a
+machinery feedback deliberately left outside this minimal model). \emph{Upper bound (budget),
+anchored to a sourced number.} With linear maintenance cost and the published $\sim$20\% of
+caloric intake devoted to autophagic renewal at $x_{\rm basal} = 0.37$ \cite{PMC636}, the entire
+budget is devoured at $x_{\max} = 0.37/0.20 = 1.85$ --- and the observed autotic edge
+($\sim$1.95) sits 5\% \emph{beyond} the bankruptcy point: dying just past 100\% of budget is
+the expected physics (transient excursions possible, sustained regime impossible). Order-level
+agreement from an independent number (nominal 5\%; realistic uncertainties $\pm 30$\% on both
+sides; the 20\% figure is organismal, applied here at cell level --- order-consistent).
+
+\section{The identity $x = -w$}
+For the cosmological member, the guard-compliant degradation is \emph{dilution}: unmaintained,
+the injected density would redshift as $a^{-3}$; feeding maintains it. With
+$\tau_c = 1/(3H)$ and $\tau_s = t/\beta$, the viability variable is
+\begin{equation}
+x \;=\; \frac{\beta}{3Ht} \;=\; -\,w \qquad \text{(exactly)},
+\end{equation}
+and the identity is general under the declared convention of a pressureless bare substance:
+for any dark fluid, $-w$ is the fraction of dilution compensated by maintenance
+($\rho \propto a^{-3(1+w)}$). Dictionary: $\Lambda$ is \emph{exactly critical maintenance}
+($x=1$); phantom is over-maintenance (the autotic side); quintessence is under-maintenance
+(clutter side); the DESI phantom crossing is \emph{the passage through criticality} --- the
+universe over-maintained, has under-maintained since $z \approx 0.4$--$0.5$, and today sits at
+$x = 0.85$, in the heart of the living pack. Formal kin: a recent thermodynamic reconstruction
+writes $w = -1 + \dot S_h/(3H S_h)$ \cite{Reco2026} (rate-ratio identity on the horizon side,
+where ours is on the substance side); classical fluid-entropy positivity requires $w \ge -1$
+\cite{Duarte2019}, whereas our total-entropy GSL bound ($w \ge -1.53$) is more permissive ---
+a contentful difference; and the $-1$ crossing is thermodynamically a smooth crossover, not a
+phase transition \cite{Crossing}, consistent with the criticality reading. The window bounds
+become bounds on $w$: \textbf{viability $\Leftrightarrow$ $w \in [-1.53, -0.35]$} (GSL +
+depth-freezing), with observed dark energy at $-0.85$, mid-window (the $\beta\to w$ map uses $Ht$ fixed at best fit, a $\sim$10--15\% effect over the window). The universe's full life trajectory can then be read in the window: $x(z) = -w(z)$ starts at $1.35$ in the deep past --- $\sim 88\%$ of its own sustained (GSL) edge --- below it within current uncertainties ($\pm$10--15\% on the map, $\pm 0.07$ on $\beta$) --- descends through criticality at $z = 0.46$, sits at $0.85$ today, and settles on the attractor at $0.55$: an entire cosmic history lived \emph{inside} the sustained window, edge-proximal in youth, pack-central in age. Both faces are declared:
+the identity is partly definitional ($w \sim -1 \Rightarrow x \sim 1$), and its content lies in
+the derived bounds and the shared vocabulary.
+
+\section{Ancestry, limits, and what would kill this}
+The window's ancestors are the rate-of-living hypothesis \cite{Pearl1928,Speakman2005} --- of
+which $x$ is the corrected version, normalized to required maintenance time rather than lifespan
+--- and the disposable soma \cite{Kirkwood1977}, of which our upper bound is the quantitative
+form: $x_{\max}$ is where the maintenance/function trade-off becomes impossible
+(cf.\ the prudent-parent sustained scope \cite{DrentDaan}). Remaining honestly open: four of
+eight rows are order-of-magnitude (basal cell flux mixed-status); the quantitative autosis
+threshold is unpublished; the boreal edge is the rail's weakest; the survivor-bias concern is
+addressed by the deaths and the Gila control but not eliminated; and the identity's definitional
+face invites the tautology back through the cosmological door. The hypothesis dies if: a
+guard-compliant system class is found far outside $[0.3, 2]$; the sustained edges of new classes
+scatter the rail beyond a decade; or the two-tier duration structure fails in a class where it
+is measurable. Each is a concrete assignment. A final stress test deserves record: hibernation --- months at 1--5\% of basal metabolism, far below the window --- proves to be the window's \emph{periodic solution} rather than its counterexample: damage accrues during torpor while cold-inactivated processing machinery idles, survivable torpor duration is bounded (\emph{the} classic mystery), and the costly interbout arousals restore accumulated metabolites at every cycle, with a repayment/debt ratio spanning $[0.7, 4]$ over the full plausible parameter grid ($Q_{10}$ damage slowdown, arousal processing rate): \emph{compatible} with balance, not a demonstrated closure. Attribution is owed: homeostasis restoration is the leading \emph{published} explanation of arousals (Carey et al.\ 2003; metabolomic confirmation 2011), and the bout-length--temperature relation belongs to that literature; the window's contribution is only the dimensionless bookkeeping placing this mechanism on the same axis as autosis and the GSL bound. Systems that cannot reside in the window transit it periodically.
+
+\begin{thebibliography}{99}\small
+\bibitem{PMC387} Nutrient signaling review, PMC3879708 (starvation $+3\%$/h hepatocyte proteolysis, autophagic).
+\bibitem{PMC616} Mejlvang et al., J.\ Cell Biol.\ (2018), PMC6168274 (2--3\% of proteome in first 4 h of starvation).
+\bibitem{PMC636} Vacuolar peduncle study, PMC6368412 (autophagic renewal $\approx$20\% of daily caloric intake).
+\bibitem{Schwan2011} B.\ Schwanh\"ausser et al., Nature 473, 337 (2011).
+\bibitem{Liu2013} Y.\ Liu et al., PNAS 110, 20364 (2013) (autosis).
+\bibitem{Neuron2024} Autophagy, aging and neurodegeneration, Neuron (2024), S0896-6273(24)00663-9.
+\bibitem{Parks2023} S.\ Parks et al., stand-replacing fire increase 2.9--13.6$\times$; Gila 1.8$\times$ (2023--2026 syntheses).
+\bibitem{Boreal2025} Short-interval boreal reburns and regeneration failure, Fire Ecology (2025).
+\bibitem{Thurber2019} C.\ Thurber et al., Sci.\ Adv.\ 5, eaaw0341 (2019).
+\bibitem{HD1997} K.\ A.\ Hammond, J.\ Diamond, Nature 386, 457 (1997); Physiol.\ Zool.\ 65, 952 (1992).
+\bibitem{DrentDaan} R.\ H.\ Drent, S.\ Daan, Ardea 68, 225--252 (1980).
+\bibitem{Pearl1928} R.\ Pearl, \emph{The Rate of Living} (1928).
+\bibitem{Speakman2005} J.\ R.\ Speakman, J.\ Exp.\ Biol.\ 208, 1717 (2005).
+\bibitem{Kirkwood1977} T.\ B.\ L.\ Kirkwood, Nature 270, 301 (1977).
+\bibitem{Reco2026} Model-independent reconstruction of cosmic thermodynamics, arXiv:2604.18723.
+\bibitem{Duarte2019} Duarte, Silva, Eur.\ Phys.\ J.\ C 79 (2019).
+\bibitem{Crossing} Thermodynamics of $w(a)$ across $-1$: smooth crossover, Class.\ Quant.\ Grav.
+\bibitem{PaperA} \'E.\ Lantenois, companion paper A: accretion-fed dark energy, $w(z) = -(\beta/3)/(Ht)$ (2026).
+\bibitem{PaperB} \'E.\ Lantenois, companion paper B: heredity, demography and thermodynamic selection (2026).
+\end{thebibliography}
+\end{document}

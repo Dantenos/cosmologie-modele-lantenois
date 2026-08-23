@@ -1,0 +1,84 @@
+{
+ "affaires": {
+  "DR3-beta": {
+   "id": "DR3-beta",
+   "affirmation": "w=-beta/(3Ht) avec beta dans [2,42;2,60], beta1=+0,06+/-0,31, |kappa|<0,24",
+   "acteurs": [
+    "Lantenois2026",
+    "Claude_campagne0826"
+   ],
+   "juge": "DESI DR3",
+   "echeance": "2027",
+   "arbitre_a_geler": "test_wE_v3.py",
+   "inscrite_le": "2026-08-22",
+   "hash": "dc8ab8e53b9f"
+  },
+  "FRB-s": {
+   "id": "FRB-s",
+   "affirmation": "survie baryonique s=1 (accretion) contre s=0,70 (CCBH), 3 sigma a 82-120 sursauts a levier",
+   "acteurs": [
+    "Lantenois2026",
+    "Croker2024"
+   ],
+   "juge": "catalogue FRB localisees N>=120",
+   "echeance": "2027-2028",
+   "arbitre_a_geler": "frb_likelihood.py",
+   "inscrite_le": "2026-08-22",
+   "hash": "d103d6ebbcf0"
+  },
+  "W-universel": {
+   "id": "W-universel",
+   "affirmation": "w(z) universel par environnement (goulet) contre dependance vides/murs (horloge) ; manche 1: dBeta=+0,22+/-0,23",
+   "acteurs": [
+    "Goulet",
+    "Horloge",
+    "Claude_campagne0826"
+   ],
+   "juge": "Pantheon+ x catalogue de vides",
+   "echeance": "ouverte",
+   "arbitre_a_geler": "protocole THEORIE_HORLOGE.md",
+   "inscrite_le": "2026-08-22",
+   "hash": "b652a956509b"
+  },
+  "k3-vs-0": {
+   "id": "k3-vs-0",
+   "affirmation": "couplage cosmologique k=3 (CCBH) contre k=0 (accretion et LCDM) — posterieur vivant k-tracker",
+   "acteurs": [
+    "Croker2024",
+    "Lantenois2026"
+   ],
+   "juge": "GWOSC O4 + Gaia + compilations AGN, apres relecture des 5 bornes",
+   "echeance": "continue",
+   "arbitre_a_geler": "ktracker.py",
+   "inscrite_le": "2026-08-22",
+   "hash": "fbf93c9a69b6"
+  }
+ },
+ "acteurs": {
+  "Lantenois2026": {
+   "validees": 0,
+   "refutees": 0,
+   "en_attente": 3
+  },
+  "Claude_campagne0826": {
+   "validees": 0,
+   "refutees": 0,
+   "en_attente": 2
+  },
+  "Croker2024": {
+   "validees": 0,
+   "refutees": 0,
+   "en_attente": 2
+  },
+  "Goulet": {
+   "validees": 0,
+   "refutees": 0,
+   "en_attente": 1
+  },
+  "Horloge": {
+   "validees": 0,
+   "refutees": 0,
+   "en_attente": 1
+  }
+ }
+}

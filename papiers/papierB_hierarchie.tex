@@ -1,0 +1,383 @@
+\documentclass[11pt]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage{authblk}
+\title{\bf The nested-hierarchy reading of externally sourced dark energy:\\ parent accretion, self-similar sinking, and the linearity of time}
+\author[1]{\'Edouard Lantenois}
+\affil[1]{\small Independent researcher, Lille, France --- \texttt{github.com/Dantenos}}
+\date{August 16, 2026 --- Companion (Paper B) to arXiv:XXXX (Paper A). Draft, not peer-reviewed.}
+\newcommand{\Macc}{M_{\rm acc}}
+\begin{document}
+\maketitle
+\begin{abstract}
+Paper A establishes, at the likelihood level, that current data mildly prefer an \emph{externally sourced} dark-energy fluid --- energy entering the total budget with matter dilution untouched --- over $\Lambda$CDM, over CPL by parsimony, over internal-transfer models at equal complexity, and over geometric (unimodular-type) bookkeeping. This companion develops, and stress-tests against its own obstructions, the physical reading that motivated that fluid: our universe as the interior of an accreting parent black hole (Einstein--Cartan bounce cosmology). We state the causality obstruction precisely and reformulate the framework's central assumption accordingly; we quantify and then \emph{retire} the late-time torsion channel; we present the self-similar nesting identity and the clock-fixing conjecture with their teleology problem posed rather than hidden; and we define the research programme --- the causal interior solution of a fed bounce --- in the extended-McVittie formalism where it is well-posed.
+\end{abstract}
+
+\section{Status and scope}
+\paragraph{A presupposition, declared up front (added in revision; corrected).} Both papers
+presuppose that the \emph{bare} vacuum energy does not gravitate. This is not decoration: the
+injected component is normalised against the measured $\Omega_{\rm de}$, so a gravitating bare
+vacuum would either swamp it or require cancellation to the same accuracy. Degravitation is
+inherited, not supplied. Unimodular gravity supplies it for the \emph{old} problem and explicitly
+not for the new one --- why $\Lambda$ takes its observed value is left open there
+\cite{Weinberg1989b,Salvio2024b} --- which is the half this framework attempts dynamically. A first
+version of this paragraph claimed that unimodular gravity ``averages nothing'' and that
+Kaloper--Padilla sequestering is therefore \emph{excluded}; both claims are withdrawn in Paper~A's
+revised discussion, since the unimodular resolution itself rests on a global four-volume constraint
+\cite{Jirousek2023b} and a manifestly local sequestering formulation exists \cite{KPSZ2016b}. What
+survives is only that the constraint may be anchored between two \emph{past} hypersurfaces, so no
+future collapse is required of this cosmology.
+
+Nothing in this paper is required for the empirical results of Paper A, which stand or fall on their own. This paper asks what physical picture could \emph{produce} an externally sourced fluid with $M_{\rm acc} \propto t^{\beta}$, $\beta \simeq 5/2$, and confronts that picture with its sharpest known obstructions. We work within black-hole cosmology: the observable universe as the interior of a black hole formed by a torsion-induced bounce \cite{Pop2010,Pop2016}, itself heir to a lineage of interior constructions --- de Sitter cores behind horizons \cite{FMM1989,Dymnikova1992}, universe generation from black-hole interiors \cite{EB2001}, and the observable universe as interior \cite{Pathria1972,Stuckey1994}.
+
+\section{The causality obstruction, stated and answered by re-scoping}
+\label{sec:caus}
+The naive reading of the Paper-A continuity equation, $\mathrm{d}(\rho V)/\mathrm{d}t = \dot M$, asserts that energy crossing the boundary at interior time $t$ is available \emph{uniformly everywhere} at $t$. This is inadmissible: influence propagates within light cones, and the boundary lies beyond our cosmological horizon. Birkhoff is not the obstruction (it is a vacuum theorem, inapplicable to a matter-filled interior); \emph{causality} is. We therefore replace the instantaneous-uniformity assumption H3 by:
+
+\medskip
+\noindent\textbf{H3$'$ (asymptotic homogenization).} \emph{The boundary inflow modifies the interior as a causal boundary condition; on scales well inside the horizon and on timescales long compared to the homogenization time $\tau_{\rm hom}$, the volume-averaged interior admits an FLRW description in which the averaged injected component obeys $\mathrm{d}(\bar\rho V)/\mathrm{d}t = \dot M$.}
+\medskip
+
+Three consequences. (i)~The background-level fits of Paper A are valid \emph{conditional on} $\tau_{\rm hom} \ll H^{-1}$, now an explicit assumption rather than a hidden one. (ii)~The reading acquires its own falsifiable signature: at early times and near-horizon scales the description must break down, predicting scale- and redshift-dependent departures from the mean-fluid behaviour --- unconstrained by current data (the component is dynamically negligible at high $z$) but a target for future large-scale anisotropy tests. (iii)~The burden shifts to an existence question: exhibit the causal interior solution of a \emph{fed} bounce. This is precisely the class of problems addressed by the extended-McVittie constructions, in which the horizon-scale expansion rate $H_{\rm hor}$ demonstrably differs between accreting and non-accreting black holes \cite{Pop2024}: the boundary condition propagates. What remains --- the genuinely open problem of this programme --- is the interior profile and its homogenization time. It is well-posed in an existing formalism.
+
+\section{The torsion channel, quantified and retired for late times}
+The spin--torsion correction of Einstein--Cartan theory scales as $-\kappa^2 s^2$ with $s \propto n\hbar$ the fermion spin density: decisive at bounce densities, it is today of order $10^{-60}$ of the matter density. We therefore \emph{withdraw} any suggestion that torsion carries the late-time injection: torsion buys the bounce (H1) and nothing else. The late-time channel must be gravitational --- the causal response of Section~\ref{sec:caus} --- and the earlier ``torsion is co-located with matter'' argument is retracted as quantitatively empty at $z \sim 0$. Systematic results for EC cosmology with spin fluids \cite{ECtheorems} remain the correct arena for the bounce era only.
+
+\section{Self-similar nesting and the clock conjecture, with their problem posed}
+On the attractor the interior expands as $a \propto t^{n}$, $n = (\beta+2)/3$, and two dimensionless depths grow identically: the margin inside the parent, $\propto t^{\beta - n}$, and the interior's own black-hole depth $\chi \equiv (H R_p/c)^2 \propto t^{2n-2}$, with the exact identity $\beta - n = 2n - 2 = 2(\beta-1)/3$. Among scale-compatible clocks $\tau = t^{p}$, the identity holds only for $p = 1$: self-similar closure selects the linear clock. Read with the one-way character of interior motion (the arrow), the hierarchy would account for both defining properties of cosmic time. Setting the sinking exponent to unity --- \emph{linear-depth postulate} --- fixes $\beta = 5/2$ with no freedom; Paper A shows this zero-dark-energy-parameter point beats $\Lambda$CDM by $\Delta\chi^2 \simeq -9$ on the full likelihood at equal parameter count.
+
+Two objections are hereby recorded as open problems, not footnotes. \emph{(a) Teleology:} $\beta$ is set by the feeding history during the matter era, while the postulate constrains the asymptotic attractor; absent a feedback mechanism (the deepening regulating the feeding), the postulate demands that the cause obey a condition on its consequence. The required structure is a dynamical fixed point $\mathrm{d}\chi/\mathrm{d}t \to \mathrm{const}$; whether the coupled boundary--interior system of Section~\ref{sec:caus} possesses it is a calculable question and the natural sequel to the interior-solution programme. \emph{(b) Covariance:} $\chi$ is built on the particle horizon, an initial-condition-dependent, non-local scale. A covariant reformulation (e.g.\ via the Misner--Sharp mass ratio of the averaged interior) is required before the identity can claim geometric meaning. Until (a) and (b) are resolved, $\beta = 5/2$ should be quoted as what Paper A makes it: a distinguished, pre-registrable point of the family that the data currently favour --- and the clock reading as a conjecture with one measurement in its favour (no running of $\beta$ at $1\sigma$) and two theoretical debts against it.
+
+\section{The common-causal-past resolution of H3$'$}
+Section~\ref{sec:caus} left the homogenization time $\tau_{\rm hom}$ as an open quantity. We now argue that, in the actual collapse geometry, no homogenization \emph{transport} is required at all --- for the same reason the CMB is uniform. The envelope shells that feed the hole at late interior times and the inner shells that became our universe were parts of \emph{one causally connected region before collapse}: the pre-collapse cloud. The feeding history $\dot M(t)$ is therefore not new information arriving from an acausal boundary; it is encoded in the initial data shared by boundary and interior --- injection uniformity is \emph{inherited}, exactly as CMB uniformity is inherited from the pre-inflationary causal patch, not transported after the fact. This dissolves the superluminal-transport reading of H3$'$ and replaces $\tau_{\rm hom}$ by a correlation condition on initial data. It also gives the perturbation sector (P3) a physical source model: fluctuations of the injected component trace the pre-collapse inhomogeneities of the envelope, predicting super-horizon-correlated $\delta\rho_{\rm de}$ with a spectrum computable, in principle, from the envelope's initial power spectrum.
+
+\section{The parent's density profile, measured from inside}
+Self-similar secondary-infall theory \cite{FG84,Bertschinger85} maps feeding histories to pre-collapse environments: an initial mass excess $\delta m_i/m_i \propto m_i^{-1/s}$ around the seed yields $M \propto a_{\rm parent}^{s}$, i.e.\ $M_{\rm acc} \propto t^{2s/3}$ in an EdS parent --- so $\beta = 2s/3$. Two consequences. \emph{(i)}~A pointlike collapsed seed gives $M \propto t^{2/3}$ ($\beta = 2/3$): \emph{excluded} by the data at high significance --- the interior dark-energy measurements require the parent seed to be embedded in an \emph{extended} overdensity. \emph{(ii)}~The measured $\beta = 2.42 \pm 0.07$ translates into $s = 3.63 \pm 0.11$, i.e.\ a pre-collapse profile $\delta m/m \propto m^{-0.276 \pm 0.008}$ --- remarkably shallow, close to scale-invariant, of the kind generic gravitational instability produces; the distinguished point $\beta = 5/2$ corresponds to the rational $s = 15/4$. The exponent that Paper~A fits to Planck, DESI and three supernova compilations is thereby reinterpreted: \emph{it is a measurement of the primordial density profile of the parent universe around our seed} --- to our knowledge the first quantitative statement about the environment of a parent universe extracted from interior data. This also closes a loop within the study: the data had independently rejected the Bondi class in favour of near-self-similar feeding, and self-similar infall is precisely the regime in which the FG mapping holds.
+
+\section{Heredity instead of teleology: $\beta = 4/(n_{\rm eff}+3)$}\label{sec:heredity}
+The teleology objection to the linear-depth postulate (Section~5) dissolves if $\beta$ is \emph{inherited} rather than tuned. The chain: around a peak of a Gaussian density field, the mean mass excess scales as the field's rms, $\delta m/m \propto \sigma(m) \propto m^{-(n+3)/6}$ with $n$ the local power-spectrum slope; Fillmore--Goldreich then gives $M_{\rm acc} \propto t^{2s/3}$ with $s = 6/(n+3)$, hence
+\begin{equation} \beta \;=\; \frac{4}{n_{\rm eff}+3}, \end{equation}
+\emph{the child's dark-energy exponent is the processed power-spectrum slope of the parent at the seed's feeding scale}.
+
+\emph{The relation, derived --- and what the derivation costs us (added in revision; this
+supersedes the convention discussion below, and retracts two of the three results that follow).}
+The relation is not new: it is the self-similar secondary-infall exponent. Fillmore \&
+Goldreich \cite{FG84} characterise the initial perturbation by the mass excess within a shell,
+$\delta M_i/M_i = (M_i/M_0)^{-\epsilon}$, with $M_i$ the \emph{unperturbed} mass inside $r_i$; in
+an Einstein--de Sitter background this yields $M \propto a^{1/\epsilon}$, hence
+\begin{equation}
+\beta \;=\; \frac{2}{3\epsilon}.
+\end{equation}
+The formula is anchored: $\epsilon = 1$ gives $\beta = 2/3$, which is exactly Bertschinger's
+$M \propto t^{2/3}$ for secondary infall onto a point mass \cite{Bertschinger85}.
+
+Two consequences, one clarifying and one damaging.
+\emph{Clarifying.} $\epsilon$ is a logarithmic slope \emph{in mass}: no wavenumber appears
+anywhere in the derivation. The pairing question raised below --- whether a mass should be
+associated with $1/k$, $\pi/k$ or $2\pi/k$ --- therefore does not arise. It was manufactured by
+evaluating $\mathrm{d}\ln P/\mathrm{d}\ln k$ at a wavenumber assigned to a mass, a step the
+derivation never requires. The correct and only needed reading is
+$n_{\rm eff}(M) = -6\,\mathrm{d}\ln\sigma/\mathrm{d}\ln M - 3$.
+\emph{Damaging, and resolved against us.} What $\epsilon$ measures admits two readings differing
+by a factor of two. If $\delta M/M$ at mass scale $M$ is the \emph{rms} fluctuation,
+$\sigma(M) \propto M^{-(n+3)/6}$, then $\epsilon = (n+3)/6$ and $\beta = 4/(n+3)$ --- the relation
+we had used. If instead it is the profile of an individual peak, the standard treatment since
+Hoffman \& Shaham \cite{HS85} approximates that profile by the two-point correlation function,
+$\delta(r) \sim \xi(r) \propto \sigma^2 \propto M^{-(n+3)/3}$ \cite{BBKS86}, giving
+$\epsilon = (n+3)/3$ and $\beta = 2/(n+3)$.
+
+The second is the literature standard for haloes forming at maxima of a Gaussian field, and it is
+the correct object here: $\epsilon$ describes the actual profile of the perturbation that
+collapses, not the rms amplitude of a random location. Two independent lines confirm it.
+\emph{(a)} Consistency: Hoffman \& Shaham's profile $\rho \propto r^{-3(3+n)/(4+n)}$ is recovered
+by inserting $\epsilon = (n+3)/3$ into Fillmore \& Goldreich's $\gamma = 9\epsilon/(1+3\epsilon)$.
+\emph{(b)} The data, through a consequence neither reading anticipated. A real CDM spectrum is not
+a power law, so $n_{\rm eff}$ runs --- we measure
+$\mathrm{d}n_{\rm eff}/\mathrm{d}\ln M \simeq 0.07$--$0.16$ over $10^{12}$--$10^{15}\,M_\odot$ ---
+hence $\epsilon$ runs, hence \emph{$\beta$ is not constant}. Writing
+$\beta(t) = \beta_0 + \beta_1\ln(t/t_0)$, the two readings predict
+$\beta_1 \simeq -0.9$ to $-1.6$ (rms) against $-0.23$ to $-0.40$ (peak). Refitting Paper~A's
+likelihood with $\beta_1$ free gives $\beta_1 = +0.06 \pm 0.31$: the peak prediction costs
+$\Delta\chi^2 = 1.5$--$2.5$, the rms prediction $\Delta\chi^2 \geq 7.5$ and worse at its central
+values. \textbf{We therefore replace $\beta = 4/(n_{\rm eff}+3)$ by $\beta = 2/(n_{\rm eff}+3)$},
+and record that our original relation was a factor of two too large.
+
+\emph{A circularity in the replacement, found on inspection (added in revision).} The peak
+reading is justified when the mean profile around a maximum dominates the general field, i.e.\ for
+$\nu \gg 1$. But the scale it designates fails that test: our measured $\beta = 2.42$ maps to
+$n_{\rm eff} = -2.17$, hence $M = 7\times10^{11}\,M_\odot$, where $\sigma = 2.32$ and
+$\nu = 0.73$ --- typical fluctuations, not rare peaks. Symmetrically, the rms reading, which is
+appropriate for $\nu \sim 1$, designates $M = 1.8\times10^{15}\,M_\odot$ where $\nu = 3.3$.
+\emph{Each reading designates a scale at which the other one is the appropriate approximation.}
+Neither is self-consistent, and they fail in opposite directions, so the truth lies between them.
+Taking $\epsilon \in [(n+3)/6,\,(n+3)/3]$ as a rigorous bracket gives
+$n_{\rm eff} \in [-2.17, -1.35]$ and a seed feeding scale bracketed only to
+\[
+7\times10^{11}\,M_\odot \;\lesssim\; M_{\rm seed} \;\lesssim\; 1.8\times10^{15}\,M_\odot ,
+\]
+three and a half orders of magnitude. Imposing self-consistency through $\nu = 1$, where the peak
+profile just begins to dominate, selects $M_\star = 6.2\times10^{12}\,M_\odot$ and
+$n_{\rm eff} = -2.03$, at which the two readings give $\beta = 2.05$ and $\beta = 4.11$ against the
+measured $2.42$--$2.60$ --- bracketing it, but neither reproducing it. \emph{We therefore state the
+heredity relation as a bracket rather than an equality}, and note that the correction of the
+previous paragraph, while right in direction against the original $4/(n+3)$, cannot be pushed to
+the peak limit without contradiction. One thing the correction does buy unambiguously: the seed
+scale moves from $1.4\times10^{16}\,M_\odot$ --- more massive than any structure that exists --- to
+a range whose lower half is populated by ordinary galaxy haloes.
+
+Two caveats on the replacement, both from the same literature. The true radial profile of a peak
+is \emph{steeper} than $\xi$ \cite{Diemand2004}, so $\epsilon \geq (n+3)/3$ and
+$\beta = 2/(n+3)$ is an \emph{upper bound} at fixed $n$, not an equality. And Hoffman \& Shaham's
+treatment for $n < -1$ --- precisely our regime --- rests on an assumption rather than a derivation
+\cite{DelPopolo2009}. Nothing in Paper~A depends on any of this: there $\beta = 2.42$ is measured
+from data, not inferred from a spectrum. What does depend on it is every scale quoted below, and
+the consequences are recorded with the results. The distinguished point acquires a spectral meaning: $\beta = 5/2 \Leftrightarrow n_{\rm eff} = -7/5$; the measured band $2.3$--$2.6$ maps to $n_{\rm eff} \in [-1.46, -1.26]$; and the GSL bound $\beta < 4.35$ becomes $n_{\rm eff} > -2.08$. (Bookkeeping note added in revision: $n_{\rm eff} = -1.4$ is the image of $\beta = 5/2$ \emph{exactly}; our fitted $\beta = 2.42$ maps to $-1.347$ and the profile value $\beta = 2.56$ to $-1.437$. Where the text below pairs ``our $\beta$'' with $n_{\rm eff} = -1.4$ it is using the distinguished point, not the fit; the seed scale shifts by $\sim 25\%$ in mass between the two, which is small against the convention ambiguity declared later but is stated here rather than left implicit.) Illustration in a universe like ours (CAMB at our own best fit, BAO-smoothed slope --- an earlier unsmoothed estimate, $k \simeq 0.24$, was wiggle-contaminated and is corrected here): $n_{\rm eff} = -1.4$ occurs at $k \simeq 0.08$--$0.1\,h$/Mpc, comoving scales of $\sim$30--40~Mpc$/h$, enclosing $M \simeq 1.4\times10^{16}\,M_\odot$ --- supercluster cores. (Deflating caveat: the map is surjective onto occupied territory --- \emph{any} $\beta \in [1.3, 8]$ lands at some populated scale, so landing is guaranteed; the non-trivial content is only the \emph{specific} location, its temporal-closure consequence, and the inverted parent constraint below.) Teleology is thereby replaced by a \emph{reproduction map}: a universe's structure statistics set the seed environments of its children, whose $\beta$ then sets their structure statistics; a self-similar hierarchy sits at a fixed point of this map, and the fixed-point condition is a statement about spectra, not about the future. \emph{The closure, computed.} Three results. \textbf{(i)}~Our universe's reproduction table spans $\beta_{\rm child} \simeq 1.5$ (near-horizon seeds) to $\sim 8$ (dwarf-scale seeds), crossing $5/2$ at supercluster-core seeds ($M \simeq 1.4\times10^{16}\,M_\odot$, $\sim$30--40~Mpc$/h$) --- precisely the objects that form \emph{after} dark energy fades and structure growth resumes in the branching future: the map closes \emph{temporally}, our $5/2$-children being seeded in the post-feeding collapse era. \textbf{Result (i) is withdrawn (revision).} With $\beta = 2/(n_{\rm eff}+3)$ the GSL bound $\beta < 4.35$ reads $n_{\rm eff} > -2.54$, which falls below $10^{8}\,M_\odot$: the second law then excises essentially nothing from the halo population, and the seed feeding scale implied by our own $\beta = 2.42$ is $n_{\rm eff} = -2.17$, i.e.\ $7\times10^{11}\,M_\odot$ --- a galaxy halo, not a cluster. Even under the superseded rms relation the conclusion was already lost: the bound $n_{\rm eff} > -2.08$ falls at $M_{\rm cut} = 3.0\times10^{12}\,M_\odot$, not at a few$\times10^{14}$: two orders lower, at group rather than cluster scales. Consequently the GSL \emph{culls nothing at cluster scales} --- every halo above $10^{14}\,M_\odot$ is viable, and the viable count exceeds the cluster count by a factor $\sim$100 --- and the $5/2$-seed environments sit at $1.3\times10^{15}\,M_\odot$ rather than $1.4\times10^{16}$, with $N(z=0) \simeq 1.0\times10^{6}$ in the observable volume instead of $0.007$. The claim that they ``do not yet exist'', and with it the temporal closure of the reproduction map, does not survive. What survives is only the weaker statement that the map has a fixed point at all. \textbf{(ii)}~The super-horizon limit was an identity only under the superseded rms reading. Under the relation we now adopt it gives $\beta \to 2/(n_s+3) = 0.504$, and exact scale invariance gives $1/2$, not $1$ --- so a universe-mass seed yields a \emph{non-accelerating} child ($\beta < 1$) rather than a marginally accelerating one. The identity below is withdrawn as an identity and retained only as the statement that the boundary $\beta = 1$ sits at $n_{\rm eff} = -1$: a universe-mass seed sees the bare primordial spectrum, $n_{\rm eff} \to n_s$, so $\beta_{\rm child} \to 4/(n_s+3) = 1.009$ for the measured $n_s = 0.9649$ --- and exact Harrison--Zeldovich scale invariance ($n_s = 1$) gives $\beta = 1$ \emph{exactly}: the depth-frozen case, $2(\beta-1)/3 = 0$. Primordial scale invariance $\Leftrightarrow$ non-sinking children. \textbf{(iii)}~Turning the map around: for \emph{our} $\beta = 2.42$ with our seed mass $M_m \simeq 10^{54}$~kg, the parent's spectrum must place $n_{\rm eff} = -1.4$ at a scale $\sim$325$\times$ larger in $k^{-1}$ than ours does, i.e.\ $(\Omega_m h^2)_{\rm parent} \sim 4\times10^{-4}$ at transfer-function-shape logic --- the first quantitative constraint on the parent's cosmological parameters, and evidence that the hierarchy is \emph{not} parameter-identical level to level: equality scales grow going up. Caveats, declared: the FG mapping is Newtonian and assumes an EdS parent during feeding; mean-peak profiles are approximated by $\sigma(m)$; and closure of the map across levels (whether realistic hierarchies actually reproduce $n_{\rm eff} = -7/5$ at their seed scales) is the open calculation that would complete the de-teleologization.
+
+\section{The entropic clock, and the NESS problem}
+The covariance objection to the depth $\chi = (HR_p/c)^2$ is partially answered by an exact rewriting: with $R_A = c/H$ the apparent-horizon radius of the flat interior, $\chi = (R_p/R_A)^2 = A_{\rm PH}/A_{\rm AH} = S_{\rm PH}/S_{\rm AH}$ --- \emph{the depth clock is the ratio of the holographic entropies of the two canonical screens}: how much causal past the universe holds, per unit of causal-future capacity. The linear-depth postulate then reads: cosmic time is the uniform growth of this entropy ratio, $\mathrm{d}(S_{\rm PH}/S_{\rm AH})/\mathrm{d}t = \mathrm{const}$ at $\beta = 5/2$. The particle-horizon dependence on initial data remains (inherited, in the common-causal-past resolution, from the pre-collapse patch --- arguably a feature: the clock remembers its origin), but the object now lives in the holographic-screen language where such areas carry thermodynamic meaning. The remaining deep problem is modular: the injection state is a non-equilibrium steady state with constant entropy production, outside the KMS framework of the thermal-time hypothesis; the appropriate arena is the NESS modular theory of Ruelle and Jak\v{s}i\'c--Pillet, and the conjecture --- that the modular flow of the injection NESS, where defined, is generated by the entropy-ratio clock --- is stated here as the framework's final open problem, in the hope that someone better armed will find it worth killing.
+
+\section{The three arrows are one: an entropy audit of the hierarchy}
+The framework contains three candidate arrows of time: geometric (one-way motion behind the horizon \cite{Pop2016}), flux (time as cumulative exchange through the nesting), and thermodynamic (entropy growth). A Bekenstein--Hawking audit shows they are quantitatively the same arrow. The entropy ladder, computed (formula validated on the solar-mass case): our universe's horizon \emph{as seen from the parent side} carries $S \simeq 2.5\times10^{125}\,k$; our own causal horizon, $2.2\times10^{122}\,k$; the entire entropy content of our interior (dominated by supermassive black holes, Egan--Lineweaver 2010), $3.1\times10^{104}\,k$ --- each level of nesting dwarfs everything inside it by $\sim$18--21 orders of magnitude, with the internal geometric check $(R_s/R_H)^2 = 1128$ matching the parent/horizon entropy ratio exactly. Consequences. \emph{(i)}~The second law at cosmological scale \emph{is} the feeding: $S \propto M_p^2 \propto t^{2\beta}$, so $\mathrm{d}S/\mathrm{d}t \propto t^{2\beta-1} > 0$ for as long as the parent eats --- at the current rate, the parent-side entropy grows by $\sim 6\times10^{3}$ times \emph{the total entropy content of our universe, every second}: the thermodynamic arrow is not merely aligned with the flux arrow, it is enslaved to it. \emph{(ii)}~At $\beta = 5/2$ the exponents are again integers: $S \propto t^{5}$, $\mathrm{d}S/\mathrm{d}t \propto t^{4}$. \emph{(iii)}~When feeding ends, the parent-level entropy freezes, but the interior black holes' horizons keep growing: the arrow is handed \emph{down} the hierarchy --- the entropy cascade is the time cascade, matching the branching picture of Section~7. The three arrows --- geometric, flux, thermodynamic --- are one arrow, and it points inward.
+
+\paragraph{The GSL bounds $\beta$: an independent thermodynamic prior.} The injection layer is the most irreversible locus of the hierarchy: with our horizon's parent-side Hawking temperature $T_H = 4\times10^{-32}$~K, each kilogram swallowed multiplies its entropy by $\sim 10^{43}$. On the interior side, the phantom pathology is the known danger --- phantom-dominated expansion shrinks the apparent horizon and violates the generalized second law. Scanning the model: $w_{\rm tot}(z) > -1$ everywhere for $\beta \leq 4.35$, with the first violation at $\beta_{\rm crit} = 4.35$ (today, as dark energy dominates while still too phantom). The bound is nontrivial --- $\beta = 5$ would violate it --- and \emph{thermodynamics thereby imposes $\beta < 4.4$ independently of any fit} (a move with direct precedent: \cite{Faraoni2011} uses the generalized second law to discard an exact Brans--Dicke solution as unphysical): the measured band ($2.31$--$2.59$) and the distinguished point $5/2$ sit comfortably inside, and the asymptotic attractor $w_* = -\beta/(\beta+2) > -1$ is safe for all $\beta$. (The DESI CPL best fit is likewise GSL-safe; no discrimination there.) The model's phantom era is structurally GSL-compatible because the crossing precedes domination --- a consistency generic phantom models fail.
+
+\paragraph{The depth clock, tested.} The linear-depth reading predicts sinking exponent $p_\chi \equiv 2(\beta-1)/3 = 1$. Against the three error treatments of Paper A: $p_\chi = 0.947 \pm 0.047$ (marginalised), $0.993 \pm 0.033$ (full Planck), $0.967 \pm 0.067$ (dispersion) --- consistent with exact linearity at $1.1\sigma$, $0.2\sigma$ and $0.5\sigma$ respectively. The hypothesis that cosmic time is the sinking is, at present precision, in agreement with the data; among the canonical clocks of the framework (proper $t$; conformal, which converges; e-folds, logarithmic; parent-horizon modular, $\propto t^{1-\beta}$, convergent), the depth clock is the unique one linear in $t$ at $\beta = 5/2$. The exact history $\chi(t) = (HR_p/c)^2$, computed on the full background, refines the statement: the clock has \emph{three ages} --- an exact plateau $\chi = 4$ during matter domination (the EdS identity $HR_p/c = 2$), a transient \emph{overshoot} in which we currently live ($\chi(t_0) = 10.2$, local slope $p_{\rm loc}(t_0) \simeq 1.3$, instantaneous depth-doubling $\simeq 10$~Gyr), and the linear attractor approached \emph{from above}. The linearity statements of this section are therefore attractor statements, which is precisely what the $\beta$-mapped exponent tests; The full trajectory, computed on the future-extended background: the local slope first crosses unity at $z \simeq 0.36$ (correcting a coarser first estimate of $0.45$) --- inside the same transition window ($z \sim 0.35$--$1.5$) where the phantom crossing, the $c_a^2$ divergence and the Union3 pull already cluster --- the overshoot peaks at $p_{\rm loc} \simeq 1.5$ only in $\sim$9~Gyr, and the descent back through linearity occurs at $t \simeq 9\,t_0$ ($\sim$110~Gyr hence): the linear clock is a far-future asymptote, and we live in the rising flank of the overshoot. The apparent-horizon ingredients follow standard horizon thermodynamics \cite{Faraoni2011}; the closest precedent identifies cosmological time with the \emph{radiation} entropy of the causally connected region (arXiv:1505.02052); the present construction differs --- a ratio of two holographic screens, no radiation weighting --- and is, to our knowledge, new.
+
+\section{The Penrose ledger: birth specialness, quantified}\label{sec:penrose}
+Penrose's past hypothesis \cite{Penrose1979} prices our universe's low-entropy start at one part in $\exp(S_{\rm max})$ under uniform sampling of the state space. The hierarchy replaces the sampling assumption by \emph{determined inheritance}, and the replacement can now be priced. \emph{(i) The specialness law.} A child of matter mass $M$ is born with the reprocessed radiation entropy of its progenitor, $S_{\rm init} \simeq (s_b/m_p)\,M$ ($s_b \approx 5.8\times10^{9}\,k$ per baryon), against a capacity $S_{\rm cap} = 4\pi G M^2/(\hbar c)$: the birth specialness is $\varepsilon(M) = S_{\rm init}/S_{\rm cap} \simeq 1.3\times10^{20}/M[\mathrm{kg}]$ --- \emph{larger children are born more special}, automatically. For our level, the law gives $\varepsilon \sim 10^{-34}$ and the measured entropies give $4\times10^{-36}$ (two routes, agreement to a factor $\sim$40): thirty-five orders below ceiling, by construction rather than by luck --- and the Penrose factor $\exp(S_{\rm cap}) \sim \exp(10^{125})$ is never charged. \emph{(ii) The per-level cost.} What replaces it is the branching efficiency: from our own spectrum, the mass fraction of a universe flowing into GSL-viable seeds is $f_{\rm coll}(>M_{\rm cut}) = 0.039$ --- the conditional improbability per generation is $O(25)$, not $\exp(10^{123})$, and with $R \sim 10^{7.6}$ viable offspring the tree grows despite the culling. \emph{(iii) The ledger.} The cumulative cost over $N$ levels is $\sim 25^{N}$ --- geometric in depth with a modest per-level base and, decisively, \emph{independent of the entropy}: never $\exp(S)$. The improbability is not paid but displaced to the root of the tree, and dissolved outright if the tree has no root. The nearest kin in the literature is the Carroll--Chen mechanism \cite{CarrollChen} --- babies dissolving the arrow --- but their birth channel is a rare thermal fluctuation purchased with infinite waiting time, whereas here birth is deterministic gravitational collapse at $f_{\rm coll} \simeq 4\%$ per generation with no waiting; the shape-dynamics arrow of Barbour--Koslowski--Mercati \cite{BKM2014}, generic without babies, is the other adjacent programme. Caveats, declared: Penrose's measure is Weyl (gravitational) entropy, and our $\varepsilon$ prices the thermal part; the Weyl smoothness at birth is inherited through the same common-causal-past channel as the injection uniformity (Section~3), its spectrum being the open transfer computation of Section~2; and the bounce itself must produce entropy $\ll S_{\rm cap}$ --- plausible for a non-singular torsion bounce at finite density, and named here as an assumption. Against Penrose's own dissolution --- conformal cyclic aeons \cite{PenroseCCC}, which reset entropy via conformal rescaling and contested information loss --- the branching reset needs no information-loss postulate: children inherit only the matter entropy, while the horizon capacity is born fresh with the horizon itself.
+
+\section{Portrait of the parent and demographic outlook}\label{sec:smolin-scope}
+Inverting a capture rate for the required $\dot M(t_0) \simeq 10^{37}$~kg\,s$^{-1}$ at $M_p = 3.1\times10^{54}$~kg shows the environmental demands to be extraordinarily modest (from $10^{-15}$ of our critical density for cold gas to $1.3\%$ for pure radiation); the total growth since the bounce is $\times 3.2$; and the rising $\dot M \propto t^{1.4}$ matches a parent overdensity still collapsing --- with the caveat that Eddington-type comparisons at these scales are illustrative dimensional statements, not tests. If the reading is correct, the hierarchy branches when feeding ends: expansion decelerates, structure resumes, and each interior black hole seeds the next level --- the fecundity intuition of \cite{Smolin1997} --- now with a \emph{census}. Computing the Press--Schechter mass function \cite{PS74} from our own best-fit spectrum ($\sigma_8 = 0.803$ recovered, a further pipeline check): the observable volume contains $2\times10^{8}$ cluster-scale environments above $10^{14}\,M_\odot$, (a count our revised pipeline reproduces exactly, $2.00\times10^{8}$, which validates the mass function and volume used here). \emph{Revised (see the derivation in Section~\ref{sec:heredity}):} with the GSL cut at its derived location, $M_{\rm cut} = 3.0\times10^{12}\,M_\odot$, the reproduction number becomes $R \sim 10^{10.3}$ rather than $10^{7.6}$, and the thermodynamic culling claimed here --- $99.6\%$ of the naive SMBH offspring --- \emph{is withdrawn}: at cluster scales the second law removes nothing. Cosmological natural selection is not restructured by the second law at these scales; the GSL bound bites only below the group scale, where it excises the small-seed tail. The figure $R \sim 10^{10.3}$ is now within three orders of Smolin's stellar counting rather than twelve below it, which weakens, rather than strengthens, the demographic contrast we had claimed. \emph{A scope consequence, stated (added in revision).} Because the viability cut sits at cluster scales, stellar-mass black holes produce no viable children in this version, and Smolin's sharpest falsifier --- an upper bound near $1.6$--$2\,M_\odot$ on neutron-star masses, since a lower bound would raise stellar black-hole counts \cite{Smolin2006} --- simply \emph{does not apply} here. We are immunised against that test and correspondingly lose it; what replaces it is the gradient test set out below, which is failed. \emph{The junction condition, derived (added in revision; this supersedes the specification below
+for point (i)).} Identify the exterior Vaidya mass function $M(v)$ of the accreting parent hole with
+the Misner--Sharp mass of the interior FRW ball, $M = \tfrac{4\pi}{3}\rho_{\rm tot}R^3$ with
+$R = a\chi$ and $\dot R = HR$. Differentiating and using interior conservation
+$\dot\rho + 3H(\rho+p) = 0$,
+\begin{equation}
+\frac{dM}{dt} = \frac{4\pi}{3}R^3\left[3H\rho + \dot\rho\right] = -4\pi R^3 H p
+\qquad \Longleftrightarrow \qquad
+\boxed{\,w_{\rm tot} = -\frac{\dot M}{3HM}\,}.
+\end{equation}
+Three consequences. \emph{(a) The sign is derived, not assumed}: $\dot M > 0$ --- the parent accreting
+--- requires $p < 0$ inside, hence acceleration; and for pressureless content $dM/dt = 0$ exactly, so
+\emph{only} negative interior pressure can make the hole grow as seen from outside. This closes the
+gap the equivalence-principle argument could only motivate. \emph{(b) It reproduces the model}: with
+$M_{\rm acc} \propto t^\beta$ and $M_{\rm acc} = \Omega_{\rm de}M_{\rm tot}$, one gets
+$w_{\rm de} = w_{\rm tot}/\Omega_{\rm de} = -\beta/(3Ht)$, the companion paper's equation of state,
+recovered from the matching rather than posited. \emph{(c) A consistency check that was not designed
+as one}: the relation forces $M_{\rm acc}/M_{\rm tot} = \Omega_{\rm de}$; the fitted values give
+$2.12/3.09 = 0.686$ against $\Omega_{\rm de} = 0.689$, agreeing to $0.4\%$ --- two numbers obtained
+independently a week apart. What remains genuinely open: the matching \emph{assumes} an exactly FRW
+interior, so homogeneity is still an input (the junction says the accretion acts as a pressure, which
+is homogeneous by FRW construction, not that the interior stays FRW); the Israel surface layer
+$[K_{ab}]$ and its stability are not analysed; and the rotating case (Kerr--Vaidya) is untouched.
+
+\emph{Multipoles, surface layer, and rotation (added in revision).} Three further pieces of the
+matching can now be stated precisely. \emph{(a) Multipole transmission.} Solving Laplace's equation
+inside a boundary carrying an $\ell$-pole of relative amplitude $\epsilon$ gives
+$\Phi_{\rm int} \propto \epsilon\,(r/R)^\ell/(2\ell+1)$: the monopole is screened entirely (shell
+theorem), but $\ell = 2$ transmits with factor $\simeq 0.58$ at the last-scattering surface
+($r/R \simeq 0.98$). Requiring the induced quadrupole not to exceed the observed large-angle
+anomalies ($\lesssim 20\%$) bounds the parent's accretion asymmetry at $\epsilon \lesssim 0.35$.
+\emph{Superseded in revision by a channel three orders of magnitude stronger, which we had
+missed.} The bound above is static --- a transmitted potential quadrupole. But the injection is
+\emph{continuous}: an anisotropic flux sources Bianchi~I shear throughout the dark-energy era, and
+the CMB quadrupole integrates that shear from last scattering to today. This is the anisotropic
+dark-energy channel of Koivisto \& Mota \cite{KoivistoMota2008}, whose published quadrupole bound
+for constant-$w$ skewness is $|\delta| \lesssim 10^{-4}$ \cite{Campanelli2011}; late-sourced shear
+escapes the usual $1/\mathrm{volume}$ dilution precisely because it arises after decoupling. To
+transfer that bound to our history without trusting our own $O(1)$ coefficients, we solve
+$\dot\sigma + 3H\sigma = C\,8\pi G\rho_{\rm de}(t)\,\delta$ for both histories with the \emph{same}
+$C$ and compare only the ratio of quadrupole responses
+$K = \int_{t_{\rm ls}}^{t_0}\!\sigma\,\mathrm{d}t/\delta$: we find
+$K_{\rm ours}/K_{\Lambda} = 0.977$ --- our dark energy, weaker in the past, responds essentially
+identically. The published bound therefore applies to us unchanged, $|\delta| \lesssim 1.0\times
+10^{-4}$, and with the $\ell=2$ transmission taken as $O(1)$,
+\[
+\epsilon \;\lesssim\; 2\times10^{-4},
+\]
+a tightening of the constraint on the parent's accretion asymmetry by a factor $\sim\!2\times10^3$.
+Two consequences, in opposite directions. The hoped-for \emph{observable} --- a growth/lensing
+split $\Phi \neq \Psi$ from boundary stress --- is dead: at $\delta \lesssim 10^{-4}$ it sits far
+below any $E_G$-type measurement. And the bound cannot be evaded: recent work shows constant
+anisotropic stress is excluded by the ISW quadrupole and survives only through tuned time profiles
+that cancel the line-of-sight shear integral \cite{HowIsotropic2026}; our time profile is
+\emph{fixed} by $\rho_{\rm de} = \rho_0(t/t_0)^\beta/a^3$ and has no such freedom. The model cannot
+hide --- which we count as a strength. Caveats, declared: the flux-to-skewness transmission is
+taken as order unity rather than computed, and the calibration transfers only the published
+constant-$w$ bound, not a re-analysis. \emph{(b) Surface layer.}
+Israel's no-surface-layer condition $[K_{ab}] = 0$ for an Oppenheimer--Snyder-type matching requires
+exactly $M = \tfrac{4\pi}{3}\rho R^3$ --- i.e.\ our Misner--Sharp identification \emph{is} the
+statement that no exotic shell is needed; the derivation is self-consistent in that sense. What is
+not verified is the flux condition: with ingoing Vaidya there is a null flux across the boundary,
+and its continuity with an interior flux has not been checked here. \emph{(c) Rotation --- the
+framework's most serious remaining problem.} Astrophysical black holes spin ($a_* \sim 0.5$--$1$),
+while global vorticity of our universe is constrained to $\omega/H \lesssim 10^{-9}$ (Collins \&
+Hawking 1973 and subsequent CMB analyses). The framework must therefore explain why essentially
+\emph{none} of the parent's angular momentum survives inside, to nine orders of magnitude. We quantify it, correcting two errors of our own first pass. The
+observable ratio $\omega/H$ does \emph{not} decay in the early universe: for a perfect fluid with
+$\omega \propto a^{-(2-3c_s^2)}$, radiation domination gives $\omega/H \propto a^{+1}$ --- it
+\emph{grows} --- and matter domination only $a^{-1/2}$. Only accelerated expansion erases it, and
+the rigorous basis for that is the cosmic no-hair theorem (Wald 1983), not the fluid scaling, which
+for $c_s^2 = 1$ would perversely predict growth. Counting the radiation era from reheating rather
+than from equality (our first estimate wrongly started at $z_{\rm eq}$, understating the required
+suppression threefold), the requirement to bring an inherited $\omega/H \sim 1$ down to
+$10^{-9}$ today is
+\begin{equation}
+N \;\gtrsim\; \tfrac{1}{2}\ln\!\left[\frac{a_{\rm eq}}{a_{\rm reh}}\,(1+z_{\rm eq})^{-1/2}\,10^{9}\right]
+\;\simeq\; 22\ (T_{\rm reh}\!\sim\!10^{3}\,\mathrm{GeV})\ \text{to}\ 36\ (10^{15}\,\mathrm{GeV}).
+\end{equation}
+Whether the framework supplies this is now decided by a specific and contested piece of literature.
+Torsion \emph{alone} does not: a recent budget for a Weyssenhoff spin fluid with barotropic source
+finds the post-bounce accelerated window spans $N_e = \ln[4/(1+3w)]/[3(1-w)] \le \tfrac{1}{3}\ln 4
+\simeq 0.46$ e-folds, the torsional fuel diluting as $a^{-6}$ --- two orders of magnitude short
+(arXiv:2608.11453). What can supply it is quantum particle production near the bounce, which
+Popławski finds gives \emph{more than} 60 e-folds for a range of the production coefficient
+(ApJ \textbf{832}, 96, 2016). The honest statement is therefore conditional and sharp: our
+framework's freedom from global rotation rests entirely on the particle-production mechanism, not
+on torsion, and if that mechanism fails to deliver $\gtrsim 36$ e-folds the inherited vorticity is
+not erased and the scenario is excluded by CMB isotropy. We have verified the adverse budget
+independently rather than merely citing it. For a spin fluid in a radiation-dominated interior,
+the Einstein--Cartan Friedmann equations give $H^2 \propto \varepsilon_r a^{-4} - \varepsilon_s a^{-6}$
+with the spin term acting as a stiff negative-energy component; the bounce ($H = 0$) occurs at
+$a_b^2 = B/A$ and acceleration ends ($\ddot a = 0$, using $(\varepsilon+3p)_s = 4\varepsilon_s$)
+at $a_f^2 = 2B/A$, so
+\begin{equation}
+N_e = \ln(a_f/a_b) = \tfrac{1}{2}\ln 2 \simeq 0.35\ \text{e-folds},
+\end{equation}
+reproducing the published bound from a different route. Torsion alone is thus refuted as a source
+of the required expansion, by two orders of magnitude, and the scenario's viability rests entirely
+on quantum particle production near the bounce --- a real effect (Parker), but with a free
+coefficient that must simultaneously deliver $\gtrsim 36$ e-folds, switch off to avoid eternal
+inflation, and leave exactly the observed entropy. We state the status plainly: our construction
+\emph{inherits} an unresolved problem of the Einstein--Cartan literature; it neither worsens nor
+solves it, and its own dark-energy results are logically independent of that resolution. This is
+the cleanest inherited falsification condition in the whole construction. Finally, inherited rotation and non-spherical
+accretion imprint the \emph{same} observable --- a preferred axis in the microwave background ---
+so one measurement constrains both.
+
+\emph{What the junction problem must still settle (specification, items (ii) and (iii) below remain open).} The interior/exterior matching is not solved here, and the gap is worth stating
+as a specification rather than a caveat, since a single calculation would decide three separate
+claims. (i) \emph{Sign and magnitude of the interior response}: whether the parent's boundary
+accretion appears inside as a uniform effective source with the sign required by $w > -1$, or with
+the opposite sign --- the physical-equivalence argument (a decelerated frame hosts a homogeneous
+pseudo-force) motivates but does not establish it. (ii) \emph{The injection's homogeneity}: our
+background treatment assumes $\dot\rho_{\rm inj}$ spatially uniform on the interior slice; the
+junction fixes whether this holds beyond the common-causal-past argument of Section~3, and hence
+whether the perturbation source term of the companion paper is homogeneous or clustered.
+(iii) \emph{The generational closure}: the heredity relation $\beta = 4/(n_{\rm eff}+3)$ maps a
+parent spectrum to a child exponent, but nothing yet maps the child's exponent back to the spectrum
+it will transmit, so the reproduction map has no fixed point and no attractor in $\beta$; closing it
+requires exactly the same perturbative matching. The three gaps are one gap, and it is the framework's
+principal open computation.
+
+\emph{The selection test, run and failed (added in revision).} Losing Smolin's neutron-star
+prediction (Section~\ref{sec:smolin-scope}) costs the framework its cleanest falsifier, so we
+replaced it by one intrinsic to this version and \emph{pre-registered the reading before
+computing}: if cosmological natural selection operates here, the observed parameters should sit
+near a stationary point of the fecundity $F = n(>M_{\rm cut})$, and $|\mathrm{d}\ln F/\mathrm{d}\ln\theta| \lesssim 1$
+for $\theta \in \{\Omega_m, \sigma_8, n_s\}$; a large unbounded gradient falsifies
+selection-as-maximisation for this version. Crucially, the GSL threshold is \emph{not} a fixed
+mass --- it is defined by $n_{\rm eff}(M_{\rm cut}) = -2.08$ --- so it moves with the parameters,
+and that motion is the conjectured counter-pressure. Computing both effects with an
+Eisenstein--Hu spectrum and the same Press--Schechter machinery used above:
+$\mathrm{d}\ln F/\mathrm{d}\ln\Omega_m = +3.8$ at fixed $\sigma_8$ and $+3.7$ at fixed primordial
+amplitude (the latter with a $k_{\rm piv} = 0.05\,\mathrm{Mpc}^{-1}$ pivot and the growth factor
+included --- a first version of this test omitted both and gave $+4.0$),
+$\mathrm{d}\ln F/\mathrm{d}\ln n_s = +10.5$ ($+10.3$), $\mathrm{d}\ln F/\mathrm{d}\ln\sigma_8 = +0.2$
+($+0.05$ in $A_s$);
+$F$ rises \emph{monotonically} with $\Omega_m$ across the whole scanned range, by a factor $29$
+between $\Omega_m = 0.315$ and $\Omega_m = 1$, with no interior maximum. \textbf{The criterion is
+failed, and we record it as such.} Two consequences follow, both negative. First, the threshold
+motion is real ($\mathrm{d}\ln M_{\rm cut}/\mathrm{d}\ln\Omega_m = -2.6$,
+$\mathrm{d}\ln M_{\rm cut}/\mathrm{d}\ln n_s = -10.2$) but carries the \emph{same} sign as the
+direct effect: raising $\Omega_m$ lowers the viability cut and thus admits more offspring. The
+conjecture that $\beta$-viability supplies a restoring force is therefore \emph{refuted by
+calculation} --- it bounds $\Omega_m$ from below, which was never the difficulty, and steepens
+the runaway upward, which was. This is the long-standing runaway objection to cosmological natural selection --- first that parameter changes need not reduce black-hole counts \cite{RothmanEllis1993}, then sharpened into explicit unbounded directions by Susskind \cite{Susskind2004} and by Vilenkin, who showed that raising $\Lambda$ raises the black-hole formation rate \cite{Vilenkin2006} (contested by Smolin on quantum-gravity grounds \cite{Smolin2006}). Our version does not escape it; it relocates it, from $\Lambda$ to $\Omega_m$ and $n_s$, and supplies the numbers.
+Second, the near-stationarity in $\sigma_8$ is not evidence: repeating the scan at fixed
+thresholds shows the maximising $\sigma_8$ sliding from $0.88$ to $3.0$ as $M_{\rm cut}$ runs from
+$2\times10^{12}$ to $10^{15}\,M_\odot$, so ``our $\sigma_8$ sits at the optimum'' is a property of
+the threshold chosen, not of the world; even at the self-consistent threshold the optimum is
+$0.883$ against the measured $0.811$. What survives is the weaker and non-teleological reading
+already preferred here: $\beta$ is \emph{inherited}, which requires transmission but no optimum. That retreat is not ours: selection acting jointly on fitness and on fidelity of inheritance is known to admit evolved parameters that are compromises rather than local optima, so that observed non-optimality may itself point to the inheritance mechanism \cite{Altenberg2013} --- which is precisely the position the failed gradient forces on us.
+Fecundity maximisation is not a live component of this framework, and Section~\ref{sec:penrose}'s
+ledger should be read accordingly.
+
+\emph{Threshold convention --- raised, then resolved (revision).} An earlier revision flagged that
+all seed masses here depend on how a wavenumber is paired with a mass, the published numbers
+corresponding to $R = \pi/k$, and called deriving the pairing ``the most consequential open item in
+this paper''. It has been derived (Section~\ref{sec:heredity}) and the answer is that no pairing is
+needed: the secondary-infall exponent is a mass-space slope. The item is closed, at the cost of the
+three results retracted above, and replaced by a different open item --- the factor-two ambiguity in
+$\epsilon$ itself, which we have not been able to close.
+
+\emph{Mass-function robustness (added in revision):} Press--Schechter is known to undercount the massive tail, and replacing it by the simulation-calibrated Sheth--Tormen form \cite{ST1999} raises the count above our cut by a factor $1.5$ ($\nu \simeq 2.5$), rising to $2.5$ at $10^{15}\,M_\odot$; the ratio is stable to $\pm 0.1$ against the local spectral slope ($n_{\rm eff} = -1.8$ to $-2.2$). $R$ therefore shifts to $\sim 10^{7.8}$ and the conclusion is \emph{strengthened}, not threatened --- we quote the conservative Press--Schechter value throughout, and note that the naive-to-viable culling fraction, being a ratio of counts computed with the same mass function, is largely insensitive to this choice. (The sharpening previously claimed here --- that the $5/2$-seed environments do not yet exist, $N(z=0) = 0.007$, tying the map's closure to the finiteness of the parent's feast --- rested on the superseded scale assignment and is withdrawn; the derived value is $N(z=0) \simeq 10^{6}$.) And with a measured coupling --- restated in revision, twice. \emph{First correction.} An earlier
+version compared Farrah's $k$ to the interior quantity $k_{\rm eff} = -3w$ and claimed agreement at
+$0.1\sigma$; a subsequent revision recomputed $-3w$ and reported $0.4$--$0.7\sigma$ instead.
+\emph{Both were comparing the wrong quantity.} Farrah's $k$ is measured as a mass-growth ratio
+across a redshift window, so the matching model prediction is the window-averaged
+$k_{\rm equiv} = \Delta\ln M_{\rm acc}/\Delta\ln a$, exactly as computed in Paper~A. At $\beta =
+2.49$ this gives $k_{\rm equiv} = 2.95$, $3.05$, $3.17$ for windows $z < 0.7$, $1.0$, $1.5$
+(verified independently here), against $k = 3.09 \pm 0.76$: agreement at $0.05$--$0.18\sigma$
+depending on the window. The original $0.1\sigma$ was therefore substantively right and formally
+misattributed; the intermediate ``$0.4$--$0.7\sigma$'' correction was an over-correction and is
+itself withdrawn. \emph{Second correction, which stands.} Two caveats previously compressed into
+the single word ``contested''. The cosmological coupling of black holes faces several independent
+astrophysical constraints disfavouring $k \simeq 3$ for stellar-mass objects --- wide binaries from
+Gaia \cite{AndraeElBadry2023}, the globular cluster NGC~3201 \cite{Rodriguez2023}, high-redshift
+JWST AGN \cite{Lei2024}, the supermassive accretion history \cite{Lacy2024}, and pulsar timing
+\cite{Calza2024} --- so this is a comparison with a contested measurement, not an established one.
+And the uniqueness claim previously made here is withdrawn: cosmologically coupled black holes make
+a cross-object prediction of the same kind, and have been argued to reproduce the DESI dark-energy
+evolution \cite{Croker2024}. That framework is a direct rival on our own data, absent from our
+rivals study --- a gap we declare rather than repair here.
+
+\section*{Acknowledgements}
+Developed with the assistance of Claude (Anthropic). All numerical claims are reproducible with the Paper-A pipeline.
+
+\begin{thebibliography}{99}
+\bibitem{Pop2010} N.~J. Pop{\l}awski, Phys. Lett. B \textbf{694}, 181 (2010).
+\bibitem{Pop2016} N.~J. Pop{\l}awski, Astrophys. J. \textbf{832}, 96 (2016).
+\bibitem{FMM1989} V.~P. Frolov, M.~A. Markov, V.~F. Mukhanov, Phys. Lett. B \textbf{216}, 272 (1989); Phys. Rev. D \textbf{41}, 383 (1990).
+\bibitem{Dymnikova1992} I.~Dymnikova, Gen. Rel. Grav. \textbf{24}, 235 (1992).
+\bibitem{EB2001} D.~A. Easson, R.~H. Brandenberger, JHEP \textbf{06}, 024 (2001).
+\bibitem{Pathria1972} R.~K. Pathria, Nature \textbf{240}, 298 (1972).
+\bibitem{Stuckey1994} W.~M. Stuckey, Am. J. Phys. \textbf{62}, 788 (1994).
+\bibitem{Faraoni2011} V.~Faraoni, \emph{Cosmological apparent and trapping horizons}, Phys. Rev. D \textbf{84}, 024003 (2011), arXiv:1106.4427.
+\bibitem{CarrollChen} S.~M. Carroll, J.~Chen, arXiv:hep-th/0410270 (2004).
+\bibitem{BKM2014} J.~Barbour, T.~Koslowski, F.~Mercati, Phys. Rev. Lett. \textbf{113}, 181101 (2014).
+\bibitem{Penrose1979} R.~Penrose, in \emph{General Relativity: An Einstein Centenary Survey}, eds.\ S.~W. Hawking, W.~Israel (CUP, 1979), p.~581.
+\bibitem{PenroseCCC} R.~Penrose, \emph{Cycles of Time} (Bodley Head, 2010).
+\bibitem{Weinberg1989b} S.~Weinberg, Rev. Mod. Phys. \textbf{61}, 1 (1989).
+\bibitem{Salvio2024b} A.~Salvio, Phys. Lett. B (2024), arXiv:2406.12958.
+\bibitem{Jirousek2023b} P.~Jirou\v{s}ek, Universe \textbf{9}, 131 (2023), arXiv:2301.01662.
+\bibitem{KPSZ2016b} N.~Kaloper, A.~Padilla, D.~Stefanyszyn, G.~Zahariade, Phys. Rev. Lett. \textbf{116}, 051302 (2016), arXiv:1505.01492.
+\bibitem{RothmanEllis1993} T.~Rothman, G.~F.~R.~Ellis, \emph{Smolin's natural selection hypothesis}, QJRAS \textbf{34}, 201 (1993).
+\bibitem{Susskind2004} L.~Susskind, \emph{Cosmic natural selection}, arXiv:hep-th/0407266.
+\bibitem{Vilenkin2006} A.~Vilenkin, \emph{On cosmic natural selection}, arXiv:hep-th/0610051.
+\bibitem{Smolin2006} L.~Smolin, \emph{The status of cosmological natural selection}, arXiv:hep-th/0612185.
+\bibitem{Altenberg2013} L.~Altenberg, \emph{Implications of the reduction principle for cosmological natural selection}, arXiv:1302.1293.
+\bibitem{HS85} Y.~Hoffman, J.~Shaham, \emph{Local density maxima: progenitors of structure}, Astrophys. J. \textbf{297}, 16 (1985).
+\bibitem{Diemand2004} J.~Diemand et al.; see also A.~Del Popolo, on the radial shape of peaks being steeper than the correlation function.
+\bibitem{DelPopolo2009} A.~Del Popolo, \emph{The cusp/core problem and the secondary infall model}, Astrophys. J. \textbf{698}, 2093 (2009).
+\bibitem{BBKS86} J.~M.~Bardeen, J.~R.~Bond, N.~Kaiser, A.~S.~Szalay, Astrophys. J. \textbf{304}, 15 (1986).
+\bibitem{ST1999} R.~K.~Sheth, G.~Tormen, MNRAS \textbf{308}, 119 (1999).
+\bibitem{PS74} W.~H. Press, P.~Schechter, Astrophys. J. \textbf{187}, 425 (1974).
+\bibitem{FG84} J.~A. Fillmore, P.~Goldreich, Astrophys. J. \textbf{281}, 1 (1984).
+\bibitem{Bertschinger85} E.~Bertschinger, Astrophys. J. Suppl. \textbf{58}, 39 (1985).
+\bibitem{Pop2024} N.~J. Pop{\l}awski, arXiv:2405.16673; arXiv:2509.11468.
+\bibitem{ECtheorems} arXiv:2303.03104.
+\bibitem{Smolin1997} L.~Smolin, \emph{The Life of the Cosmos}, OUP (1997).
+\bibitem{AndraeElBadry2023} R.~Andrae, K.~El-Badry, Astron. Astrophys. \textbf{673}, L10 (2023), arXiv:2305.01307.
+\bibitem{Rodriguez2023} C.~L.~Rodriguez, Astrophys. J. Lett. \textbf{947}, L12 (2023), arXiv:2302.12386.
+\bibitem{Lei2024} L.~Lei et al., Sci. China Phys. Mech. Astron. \textbf{67}, 229811 (2024), arXiv:2305.03408.
+\bibitem{Lacy2024} M.~Lacy, A.~Engholm, D.~Farrah, K.~Ejercito, Astrophys. J. Lett. \textbf{961}, L33 (2024), arXiv:2312.12344.
+\bibitem{Calza2024} M.~Calz\`a, F.~Gianesello, M.~Rinaldi, S.~Vagnozzi, Sci. Rep. \textbf{14}, 31296 (2024), arXiv:2409.01801.
+\bibitem{Croker2024} K.~S.~Croker et al., \emph{DESI dark energy time evolution is recovered by cosmologically coupled black holes}, JCAP \textbf{10}, 094 (2024), arXiv:2405.12282.
+\bibitem{KoivistoMota2008} T.~Koivisto, D.~F.~Mota, \emph{Anisotropic dark energy: dynamics of the background and perturbations}, JCAP \textbf{06}, 018 (2008), arXiv:0801.3676.
+\bibitem{Campanelli2011} L.~Campanelli et al., \emph{Anisotropic dark energy and ellipsoidal universe}, Int. J. Mod. Phys. D \textbf{20}, 1153 (2011): $|\delta| \sim 10^{-4}$, $|\Sigma_0| \sim 10^{-5}$ from the CMB quadrupole.
+\bibitem{HowIsotropic2026} \emph{How isotropic is dark energy?}, Phys. Rev. D (2026), arXiv:2601.22351.
+\bibitem{Farrah2023} D.~Farrah et al., Astrophys. J. Lett. \textbf{944}, L31 (2023), arXiv:2302.07878; contested: T.~Mistele, Res. Notes AAS \textbf{7}, 101 (2023), arXiv:2304.09817.
+\end{thebibliography}
+\end{document}

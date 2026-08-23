@@ -1,0 +1,81 @@
+# cobaya_accretion.yaml — Chaines MCMC completes pour le modele d'accretion
+# =========================================================================
+# Usage (sur ta machine, ~1-3 jours CPU selon coeurs) :
+#   pip install cobaya camb
+#   cobaya-install planck_2018_highl_plik.TTTEEE_lite_native planck_2018_lowl.TT planck_2018_lowl.EE
+#   cobaya-run cobaya_accretion.yaml
+# Le modele d'accretion entre via une table w(a) calculee par la classe theorie
+# externe ci-dessous (a coller dans accretion_de.py, module importable).
+#
+# --- accretion_de.py (a creer a cote de ce yaml) ---
+# import numpy as np
+# def w_of_a_accretion(beta, Om, n_a=300, n_iter=4):
+#     Or = 4.15e-5/0.68**2; Ode = 1-Om-Or
+#     a = np.logspace(-7, 0, 30000)
+#     E2 = (Om+Ode)/a**3 + Or/a**4
+#     for _ in range(n_iter):
+#         E = np.sqrt(E2); integ = 1/(a*E)
+#         t = np.concatenate([[0], np.cumsum(0.5*(integ[1:]+integ[:-1])*np.diff(a))]); t/=t[-1]
+#         E2 = (Om + Ode*np.clip(t,1e-30,None)**beta)/a**3 + Or/a**4
+#     w = -(beta/3.0)/np.clip(np.sqrt(E2)*t, 1e-10, None)
+#     a_tab = np.logspace(-6, 0, n_a)
+#     return a_tab, np.interp(a_tab, a, np.clip(w, -20, 0.9))
+# ---------------------------------------------------
+
+likelihood:
+  planck_2018_highl_plik.TTTEEE_lite_native: null
+  planck_2018_lowl.TT: null
+  planck_2018_lowl.EE: null
+  bao.desi_dr2: null            # si absent de ta version cobaya : bao.desi_2024 ou likelihood custom 13 pts
+  sn.pantheonplus: null
+
+theory:
+  camb:
+    extra_args:
+      dark_energy_model: ppf
+      # la table w(a) est fixee par (beta, omegam) a chaque point via le hook
+      # 'external' ci-dessous ; en pratique le plus simple est un wrapper CAMB
+      # custom — voir la doc cobaya "Using your own theory class".
+
+params:
+  # --- Modele d'accretion ---
+  beta:
+    prior: {min: 0.5, max: 5.0}
+    ref: {dist: norm, loc: 2.42, scale: 0.2}
+    proposal: 0.1
+    latex: \beta
+  # --- Cosmologie standard ---
+  logA:
+    prior: {min: 2.9, max: 3.2}
+    ref: {dist: norm, loc: 3.044, scale: 0.01}
+    proposal: 0.005
+    drop: true
+  As: {value: 'lambda logA: 1e-10*np.exp(logA)', latex: A_\mathrm{s}}
+  ns:
+    prior: {min: 0.92, max: 1.01}
+    ref: {dist: norm, loc: 0.9649, scale: 0.004}
+    proposal: 0.002
+  H0:
+    prior: {min: 55, max: 80}
+    ref: {dist: norm, loc: 67.7, scale: 0.5}
+    proposal: 0.3
+  ombh2:
+    prior: {min: 0.019, max: 0.026}
+    ref: {dist: norm, loc: 0.02237, scale: 0.0001}
+    proposal: 0.0001
+  omch2:
+    prior: {min: 0.09, max: 0.15}
+    ref: {dist: norm, loc: 0.1190, scale: 0.001}
+    proposal: 0.0008
+  tau:
+    prior: {dist: norm, loc: 0.0544, scale: 0.0073}
+    ref: {dist: norm, loc: 0.0544, scale: 0.005}
+    proposal: 0.003
+
+sampler:
+  mcmc:
+    Rminus1_stop: 0.01
+    max_tries: 1000
+    covmat: auto
+
+output: chains/accretion_full

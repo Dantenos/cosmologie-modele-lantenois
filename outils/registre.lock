@@ -1,0 +1,102 @@
+{
+ "scripts/voile_cisaillement.py": {
+  "sha256": "11b036bf34833c411a61e2552deed86caa40ce112020bc380f1f9f829be74a77",
+  "gele_le": "2026-08-22T08:57:02",
+  "extrait": "voile_cisaillement.py — Le canal que le corpus n'a jamais calcule : le cisaillem"
+ },
+ "scripts/frb_strategie.py": {
+  "sha256": "74ee54c0c0a6296e8993ff5e12fb03a33bbe3f0432875330df34db0c1236cfd5",
+  "gele_le": "2026-08-22T08:57:02",
+  "extrait": "frb_strategie.py — D'ou vient le pouvoir discriminant ? Du NOMBRE ou du LEVIER ?"
+ },
+ "outils/registre.py": {
+  "sha256": "10787c9144307a6de1b18998ccbfef1333efd530d1c553cb79cf05ca3b56f91c",
+  "gele_le": "2026-08-22T08:57:02",
+  "extrait": "registre v0 — la falsification-as-code. Né du corpus cosmologie (116 entrées, ao"
+ },
+ "outils/adversaire.py": {
+  "sha256": "33fb49c1b2b7f37f44952a4b212902d407d3c5e636c887df6a633666790298e0",
+  "gele_le": "2026-08-22T11:36:59",
+  "extrait": "adversaire v1 — audit contradictoire automatisé. Né le 24/08/2026 du corpus cosm"
+ },
+ "scripts/attaque_croker_fond.py": {
+  "sha256": "d64472310abc5b82946002b68b85076334a969f7a5e55d588176fd08980d123b",
+  "gele_le": "2026-08-22T11:36:59",
+  "extrait": "Attaque exécutable — Croker et al. 2024, classe « fond cosmologique »."
+ },
+ "outils/audience.py": {
+  "sha256": "486e5e380f27846dcab04aba16015442ed461bd09039dd47119265ae65cd475d",
+  "gele_le": "2026-08-22T11:46:52",
+  "extrait": "audience v1 — l'échéancier public des prédictions. Né le 24/08/2026."
+ },
+ "outils/ktracker.py": {
+  "sha256": "7eba82ff8d957d5d161fb1bd43da5c70a2ab88a45b0a7184453d49dee3bf120a",
+  "gele_le": "2026-08-22T11:50:27",
+  "extrait": "k-tracker v1 — posterieur vivant du couplage cosmologique des trous noirs (M ∝ a"
+ },
+ "outils/scelle.py": {
+  "sha256": "38c88d33cbdfae1315a440c72a6e3361bba3a2245785c924d1c66f58014c2428",
+  "gele_le": "2026-08-22T11:55:06",
+  "extrait": "scellé v1 — l'arbitre de l'affaire DR3-beta, construit AVANT l'arrivée du juge ("
+ },
+ "scripts/test_wE_v3.py": {
+  "sha256": "30c7a96430333e8c016a0fbf6ef818e9428179d09dd5b48576362956a7b24454",
+  "gele_le": "2026-08-22T11:55:06",
+  "extrait": "test_wE_v2.py — LE TEST, VERSION DIMENSIONNEE."
+ },
+ "scripts/etudes_2026.py": {
+  "sha256": "d17e9f2dd1ddef5a1087d4f3cc9c01f77dbcccb962452f61cf540a7ad95fd6a9",
+  "gele_le": "2026-08-22T15:46:12",
+  "extrait": "ÉTUDES 2026 — les six specs, gelées ensemble (24/08/2026). Fichier .py pour que"
+ },
+ "scripts/carte_reproduction.py": {
+  "sha256": "5a8d40943b2540a29c462ef021fed605093cdcfcd9ac2d0963c1137b4f14a7bb",
+  "gele_le": "2026-08-22T15:50:03",
+  "extrait": "E6 — Carte de reproduction beta_enfant = f(beta_parent). CRITERES PRE-ENREGISTRE"
+ },
+ "scripts/etude_E7_viabilite.py": {
+  "sha256": "f764514dc47775119a03cac71bd7deea2ff7bb7f5d0a041274cd11d00864bec0",
+  "gele_le": "2026-08-22T16:01:33",
+  "extrait": "E7 — L'INDICE DE VIABILITE HORS COSMOLOGIE. CRITERES PRE-ENREGISTRES (geles avan"
+ },
+ "scripts/test_saturation.py": {
+  "sha256": "04e47b1ff75724d44a8a74d6a9807776f15ecccbc2985766b1d8eadacd593214",
+  "gele_le": "2026-08-22T19:34:36",
+  "extrait": "TEST DE LA THEORIE DE LA SATURATION. CRITERE PRE-ENREGISTRE (gele avant executio"
+ },
+ "scripts/eps_nu.py": {
+  "sha256": "3ee9f32b6f4fe47718b310890e9cc0ea624c12deee2bc866940877a8f3ddafe9",
+  "gele_le": "2026-08-23T01:21:10",
+  "extrait": "CHANTIER 3 — eps(nu) : la hauteur de pic peut-elle sauver la lecture pic sans ho"
+ },
+ "scripts/flux_paroi.py": {
+  "sha256": "7de006aeda135b28c430a92b35f26e400737192a183124a8cff9018d25dca32a",
+  "gele_le": "2026-08-23T05:11:53",
+  "extrait": "DOUTE #2 EXECUTE — la condition de flux a travers la paroi. CRITERES PRE-ENREGIS"
+ },
+ "scripts/couche_limite.py": {
+  "sha256": "16340edd870fc160aa6fb63802d23abdb66b50cb7e3e1b5e5760750b873e3761",
+  "gele_le": "2026-08-23T05:23:07",
+  "extrait": "LA COUCHE LIMITE — mecanisme, identite, domaine. CRITERES PRE-REGISTRES :"
+ },
+ "scripts/audit_131.py": {
+  "sha256": "0869c63b68e7cdfd1948cc29c226b94f271b2032a65859ccca99f7272e71495a",
+  "gele_le": "2026-08-23T05:27:42",
+  "extrait": "AUDIT DE #131 PAR #131. CRITERES PRE-ENREGISTRES :"
+ },
+ "scripts/horloge_poussiere.py": {
+  "sha256": "d20bca3333ff85038d49eda9322465da5994b1fe00aca41be241478d1e334685",
+  "gele_le": "2026-08-23T05:33:37",
+  "extrait": "E8 — L'HORLOGE REFONDEE DANS LE TEMPS PROPRE DU COURANT DE POUSSIERE."
+ },
+ "scripts/horloge_poussiere_v2.py": {
+  "sha256": "f1966b76e638591d4b354a5a2efacaaa3a75e126cdaeaf8d735e2a43e1b52196",
+  "gele_le": "2026-08-23T05:40:45",
+  "extrait": "E8-v2 — CORRECTION DE #133 APRES AUDIT. L'erreur d'hier : j'ai pris dtau_p/dt = "
+ },
+ "scripts/perturbations_derivees.py": {
+  "sha256": "d3a4111831c3036d1eef3fbf30eda4fe5e031befccefddf1127577a72ed8b58c",
+  "gele_le": "2026-08-23T10:40:06",
+  "extrait": "CHANTIER 2 EXECUTE — les perturbations DERIVEES, plus supposees."
+ }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>9 jours — la campagne</title>
+<style>
+html,body{margin:0;height:100%;background:#0d0c0a;color:#efe9dc;font-family:Georgia,serif;overflow:hidden}
+.sc{position:fixed;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;
+ text-align:center;padding:8vh 10vw;opacity:0;transition:opacity 1.1s}
+.sc.on{opacity:1}
+h1{font-size:min(9vw,72px);font-weight:normal;letter-spacing:.08em;margin:.1em 0}
+h2{font-size:min(4.2vw,30px);font-weight:normal;color:#cfc8b8;line-height:1.5;max-width:22em}
+.g{color:#c96a4a}.mono{font-family:ui-monospace,monospace;font-size:min(2.6vw,15px);color:#8f8878}
+.big{font-size:min(16vw,130px);color:#c96a4a;font-family:ui-monospace,monospace}
+#bar{position:fixed;top:0;left:0;height:3px;background:#8B2500;width:0;transition:width .4s linear;z-index:9}
+#skip{position:fixed;bottom:18px;right:22px;color:#6f6a5e;font-size:12px;font-family:ui-monospace,monospace;cursor:pointer}
+.cache{border-bottom:1px solid #3a362f;padding-bottom:.15em}
+</style></head><body>
+<div id="bar"></div><div id="skip">cliquer : scène suivante · R : rejouer</div>
+
+<div class="sc" data-t="4200"><h1>9&nbsp;JOURS</h1><h2>une campagne de cosmologie<br>menée comme un procès</h2></div>
+
+<div class="sc" data-t="6200"><h2>DESI préfère une énergie noire <span class="g">qui évolue</span>.<br><br>
+Cinquante modèles s'en réclament.<br>Presque tous s'ajustent aussi bien.</h2></div>
+
+<div class="sc" data-t="6200"><h2>Un modèle&nbsp;: la masse injectée d'ailleurs.</h2>
+<h1 class="mono" style="font-size:min(7vw,52px)">w(z) = −β / (3Ht)</h1>
+<h2><span class="g">un seul paramètre</span> · β = 2,42–2,60 sur toutes les données</h2></div>
+
+<div class="sc" data-t="7200"><h2>La règle, avant chaque calcul&nbsp;:<br>
+<span class="cache">écrire ce qui compterait comme un échec.</span></h2>
+<h2 class="mono" style="margin-top:3vh">123 entrées au registre · <span class="g">46 affirmations réfutées</span><br>
+— la plupart produites par l'IA assistante, comptées, datées.</h2></div>
+
+<div class="sc" data-t="6800"><h2>Le duel&nbsp;: ce modèle contre les trous noirs couplés,<br>
+sur données strictement identiques.</h2>
+<h1 style="font-size:min(6vw,44px)">match nul — ΔAIC = 1</h1>
+<h2>Deux ontologies sans rapport. Une même courbe. <span class="g">Pourquoi&nbsp;?</span></h2></div>
+
+<div class="sc" data-t="8200"><h2>Réponse, mesurée puis corrigée :<br>la vraisemblance a <span class="g">une seule direction quasi-plate</span> —<br>et les deux modèles diffèrent le long d'elle.</h2>
+<div class="big">Δχ² = +1,1</div>
+<h2>pour 4,6 % d'écart. Toutes les autres directions : verrouillées<br>(six formes témoins rejetées de +4,5 à +30).</h2></div>
+
+<div class="sc" data-t="7200"><h2>Trois théories sont nées cette nuit.<br>
+<span class="g">Les trois sont mortes</span> — tuées par leurs propres critères,<br>écrits avant l'exécution.</h2>
+<h2 class="mono">le résidu vaut plus que les théories</h2></div>
+
+<div class="sc" data-t="7600"><h2>Les juges sont convoqués&nbsp;:</h2>
+<h2><span class="g">DESI DR3</span> — 2027 · <span class="g">120 sursauts radio</span> · les catalogues de vides</h2>
+<h2 class="mono">analyse sous scellés — sha256&nbsp;: 68d06bcc…<br>modifiable par personne, pas même par nous</h2></div>
+
+<div class="sc" data-t="9000"><h2>On ne prouve pas un modèle.</h2>
+<h1 style="font-size:min(6.5vw,50px)">On écrit ce qui le tuerait.</h1>
+<h2 class="mono" style="margin-top:4vh">É. Lantenois · github.com/Dantenos · verdicts&nbsp;: 2027</h2></div>
+
+<script>
+const S=[...document.querySelectorAll('.sc')],bar=document.getElementById('bar');
+let i=-1,tm,T=S.reduce((a,s)=>a+ +s.dataset.t,0),acc=0;
+function go(n){clearTimeout(tm);if(i>=0)S[i].classList.remove('on');
+ if(n>=S.length){bar.style.width='100%';return}
+ i=n;S[i].classList.add('on');
+ acc=S.slice(0,i).reduce((a,s)=>a+ +s.dataset.t,0);
+ bar.style.width=(100*acc/T)+'%';
+ tm=setTimeout(()=>go(i+1),+S[i].dataset.t)}
+addEventListener('click',()=>go(i+1));
+addEventListener('keydown',e=>{if(e.key==='r'||e.key==='R')go(0)});
+go(0);
+</script></body></html>

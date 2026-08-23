@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+
+# États intermédiaires des scripts MCMC/jackknife (régénérables)
+scripts/jk_state_*.json
+scripts/state_*.json
+
+# LaTeX — produits de compilation (les PDF finaux sont versionnés volontairement)
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

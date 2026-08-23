@@ -1,0 +1,1918 @@
+# MANQUEMENTS DU CORPUS — audit transversal (19/08, dernière passe)
+Liste exhaustive de ce qui manque, par artefact. Chaque entrée = une tâche nommée, pas une réserve vague.
+
+## Papier A (18 p.)
+1. ~~Jackknife Planck non fait~~ → **FAIT (19/08, à paramètres fixés)** : Δχ² ∈ [−14,30 ; −9,65] sur les 13 retraits (complet −12,60), erreur jackknife ±4,3 ; critère pré-enregistré (tous ≤ −9) PASSÉ ; mêmes deux LRG identifiées avec les mêmes rôles qu'à bas-z. Reste : la version avec ré-optimisation complète (script prêt). Ancien texte : — le −12,6 n'a pas subi le test que le −4,4 a subi. Script prêt (`jackknife_planck.py`).
+2. ~~MCMC non fait~~ → **PROFIL DE VRAISEMBLANCE FAIT (19/08)** : neuf valeurs de β sur Planck complet, omch2 et lnAs ré-optimisés → **β = 2,56 (+0,08/−0,02)**, fortement asymétrique. **ERRATUM MAJEUR découvert** : le papier appariait Δχ² = −12,6 avec β = 2,49, or β = 2,49 coûte +4,4 et ne donne que −7,6 ; le −12,6 appartient à β ≈ 2,56-2,59. Corrigé. Le MCMC complet (marginalisation, pas profil) reste souhaitable.
+3. ~~F_AP non extrait~~ → **FAIT (19/08)** : F_AP = 4,572 ± 0,046 extrait de DR2-IV v3. Test exécuté : notre modèle prédit 4,492-4,503 (−1,5 à −1,7σ), ΛCDM 4,537 (−0,8σ), CPL 4,486 (−1,9σ). **DÉFAITE gravée dans A** : le test géométrique le plus net à z>1 tire contre le modèle.
+4. ~~Pas de test DES-SN5YR~~ → **FAIT (19/08)** : DES-SN5YR recalibré Dovekie (1820 SNe, stat+sys, format officiel inverse-triangulaire) → DES seules −1,69 (β=2,56) ; DES+BAO −6,55 (β=2,44), contre −0,12 et −4,41 pour Pantheon+. Préférence PLUS forte, exposant stable. **Union3 FAIT aussi (19/08)** : −2,16 seule, −9,16 avec BAO (β=2,28). Les trois compilations : Δχ² de −4,4 à −9,2, β de 2,28 à 2,45. Manquement #4 FERMÉ. Ancien texte : — tout repose sur Pantheon+, la compilation la plus conservatrice (ce qui joue CONTRE nous : à dire comme tel).
+5. ~~Perturbations non traitées~~ → **SPÉCIFIÉ (19/08)** : le papier A liste désormais les quatre entrées exactes requises (profil spatial de l'injection, c_s², ISW, fσ8 — canal de falsification le plus propre). **CALCUL FAIT (19/08)** : perturbations linéaires sous-horizon. Résultat : l'injection amortit le contraste à Q/ρ = 3H|w| ≈ 2,5H > taux de croissance → la douceur est FORCÉE, pas supposée ; pas de catastrophe d'agglomération. Prédiction : fσ8 supprimé de 1,3-1,9 % sur z=0,15-0,5, rehaussé de ~1 % à z=1,5. Restent : c_s² si pression non nulle, ISW, et l'homogénéité de Q (jonction).
+6. ~~Jonction absente~~ → **DÉRIVÉE (19/08)** : w_tot = −Ṁ/(3HM) par la masse de Misner-Sharp (intérieur FRW / extérieur Vaidya). Le SIGNE est dérivé (accrétion ⇔ pression négative ⇔ accélération), l equation d etat du papier A est retrouvée, et la contrainte M_acc/M_tot = Ω_de est vérifiée à 0,4 %. Restent : homogénéité (toujours une hypothèse), couche d Israel, cas Kerr. Ancien statut : spécifiée : le papier B liste les trois claims qu'un seul calcul de raccordement déciderait (signe/amplitude de la réponse intérieure ; homogénéité de l'injection ; fermeture générationnelle). Les trois trous n'en font qu'un.
+
+## Papier B (8 p.)
+7. ~~Contradiction A/B~~ → **RÉSOLUE DANS LE TEXTE (19/08)** : A déclare désormais que l'attracteur est un transitoire (fin du festin à 16-36 Ga, w → 0 ensuite), en faveur de B.
+8. ~~Fonction de masse PS seulement~~ → **ROBUSTESSE TESTÉE (19/08)** : Sheth-Tormen (calibrée sur simulations) donne ×1,5 au seuil (×2,5 à 10¹⁵ M☉), stable à ±0,1 contre la pente spectrale. R passe à ~10⁷·⁸ : conclusion RENFORCÉE. La valeur conservatrice PS est conservée dans le texte.
+8 bis. **La boucle générationnelle n'est pas fermée** (identifié le 19/08 par l'image du télescope) :
+   B calcule n_eff(parent) → β(enfant) mais jamais β(enfant) → n_eff transmis. Sans ce demi-tour,
+   la hiérarchie n'a ni point fixe ni attracteur calculable, et l'hérédité reste unidirectionnelle.
+   **Même trou que #5** : les deux exigent un calcul de perturbations. Priorité théorique n°1.
+9. Popławski non contacté (mail rédigé, non envoyé).
+
+## Étude fenêtre (v1, 5 p.)
+10. ~~FAIT (19/08) : v2 publiée avec stratification, suspension du foie, risque PIM déclaré.~~ (ancien texte : la v1 ne contenait pas la stratification par qualité de source** ni la suspension du foie ni le risque PIM cellulaire — le document maître est en avance sur le papier. **v2 livrée : fenetre_viabilite_v2.pdf.**)
+11. τ_c cellulaire nu : **route testée et REJETÉE (19/08)** — l'inhibition protéasomale mesure le pool régulateur rapide (pic ~12 h) et est lésionnelle, donc échoue à notre propre loi des privations. La ligne fondatrice reste du mauvais côté du garde-fou ; piste restante : protéines carbonylées / oxydation in vitro. **Résultat négatif documenté, pas contourné.**
+12. M4 : seulement 2 bords externes mesurés.
+
+## Taxonomie (v1, 3 p.)
+13. Aucune quantification propre de D par classe de modèles inflationnaires (distribution citée, non calculée).
+14. Le R du CCC reste contesté et non chiffré.
+
+## Étude adversariale
+15. 4 rivaux sur 6 non testés sur Planck ; aucune convergence pleine.
+16. La matrice de tension par paire de sondes (l'étude proposée) n'est pas faite — et la littérature l'a déjà partiellement faite (MNRAS 548).
+
+## Transverse
+17. **Aucune relecture externe.** Le manquement dominant, non réparable en interne.
+18. Corpus bilingue (papiers en anglais, documents maîtres en français) — à uniformiser avant diffusion.
+19. ~~Poster périmé~~ → **SUPPRIMÉ du corpus (19/08).**
+20. ~~Figures périmées~~ → **w_z_fit.png RÉGÉNÉRÉE (19/08)** avec les nombres courants (croisement z=0,463 ; bande β=2,42±0,07 ; attracteur −0,548).
+
+## Statut au 19/08 (fin de session)
+**FERMÉS** : #5 (spécifié), #7 (résolu dans A), #10 (v2 fenêtre livrée), #19 (poster supprimé),
+#20 (figure régénérée).
+**OUVERTS, faisables par Ed** : #1 jackknife Planck (script prêt), #2 MCMC Cobaya, #9 mail Popławski,
+#15 rivaux restants, #18 uniformisation linguistique.
+**OUVERTS, hors de portée d'une session** : #3 F_AP (papier source), #4 DES-SN5YR/Union3 (données non
+publiques individuellement), #6 solution de jonction, #8 fonction de masse simulée, #8 bis boucle
+générationnelle, #11 τ_c cellulaire nu, #12 bords M4 externes, #13-14 taxonomie, #16 matrice de
+tension, **#17 relecture externe — le manquement dominant**.
+
+
+## Percée du 19/08 (soir) — le bloc théorique
+- **Perturbations** : dérivées et intégrées. L amortissement par injection (3H|w| ≈ 2,5H) FORCE la douceur. fσ8 −1,3 à −1,9 % ; ISW +5,4 %. Canaux opposés ⇒ test conjoint discriminant.
+- **c_s²** : le modèle y est insensible (<0,5 % sur [0,1]) — pas de paramètre libre caché.
+- **CMB/PPF** : l hypothèse de lissage de PPF est justifiée a posteriori par la dérivation.
+- **Jonction** : w_tot = −Ṁ/(3HM) par Misner-Sharp. Signe DÉRIVÉ ; équation d état retrouvée ; contrainte M_acc/M_tot = Ω_de vérifiée à 0,4 %.
+- **Homogénéité** : dérivée au monopôle (théorème des couches / Birkhoff). OUVERTE aux multipôles ℓ≥2 — et l ouverture est une prédiction (axe privilégié ~ asymétrie du disque parent), pas seulement un trou.
+**Traités le 19/08 au soir** :
+- **Propagation multipolaire** : calculée (Laplace intérieur). ℓ=0 écranté ; ℓ=2 transmis à 0,58 à la dernière diffusion → **contrainte ε ≲ 0,35 sur l asymétrie d accrétion du parent** — une contrainte observationnelle sur un objet extérieur à notre univers.
+- **Couche d Israel** : la condition [K_ab]=0 EXIGE M=(4π/3)ρR³, c est-à-dire exactement notre identification Misner-Sharp. Auto-cohérent. NON vérifié : la continuité du flux nul (Vaidya entrant).
+- **Kerr-Vaidya / ROTATION** : **QUANTIFIÉ (19/08)**. ω/H ne décroît PAS avant l accélération (radiation : croît en a⁺¹ ; matière : a⁻⁰·⁵). Seule une phase accélérée efface. Depuis ω/H ~ 1 au rebond vers 1e−9 : **N ≳ 22-36 e-plis** selon le réchauffage (mon 12 d hier ne comptait la radiation que depuis z_eq : erreur ×3 ; et ma justification par c_s² prédisait une CROISSANCE en inflation — base correcte : théorème de non-chevelure de Wald 1983). **Verdict conditionnel** : la torsion SEULE ne donne que 0,46 e-pli (arXiv:2608.11453, août 2026) — deux ordres trop court ; seule la production de particules de Popławski (ApJ 832, 96) fournit >60. La liberté de rotation du cadre repose donc ENTIÈREMENT sur ce mécanisme contesté. **Condition de falsification héritée la plus nette du corpus.**
+- **Boltzmann complet** : non fait ; borné par les résultats fσ8/ISW, et PPF justifié a posteriori.
+**Restent** : continuité du flux, rotation, Boltzmann, relecture externe.
+
+
+---
+
+## 19/08, nuit — TEST DE SÉLECTION EXÉCUTÉ, ET DEUX RÉSULTATS NÉGATIFS
+
+**#22 — Le gradient de fécondité : critère pré-enregistré, critère ÉCHOUÉ.**
+Question posée avant calcul : si la sélection opère, les paramètres observés doivent siéger près
+d'un point stationnaire de F = n(>M_cut), soit |dlnF/dlnθ| ≲ 1. Calcul complet (spectre
+Eisenstein-Hu, seuil GSL recalculé à chaque jeu de paramètres via n_eff(M_cut) = −2,08) :
+
+| θ | dlnF/dlnθ | dont déplacement du seuil | verdict |
+|---|---|---|---|
+| Ω_m | **+3,8** (σ₈ fixe) / +4,0 (A_s fixe) | +2,5 | monotone croissant, ×29 jusqu'à Ω_m = 1, **aucun maximum** |
+| n_s | **+10,5** | +9,7 | monotone croissant, **aucun maximum** |
+| σ₈ | +0,2 | 0,0 | quasi stationnaire — **mais artefact, voir ci-dessous** |
+
+→ **La sélection-comme-maximisation est fausse pour notre version.** Écrit tel quel dans B.
+Ce qui survit est l'hérédité (β transmis), qui n'exige aucun optimum.
+
+**#23 — Ma contre-pression proposée est RÉFUTÉE par le calcul.**
+L'idée (le seuil de viabilité en β borne Ω_m par le bas, ce que Smolin n'a pas) est *vraie* mais
+*inutile* : dlnM_cut/dlnΩ_m = **−2,61**, c'est-à-dire que monter Ω_m ABAISSE le seuil et admet
+donc PLUS d'enfants. La contre-pression porte le même signe que la pression : elle borde le côté
+qui n'a jamais posé problème et **raidit** la fuite vers le haut. L'objection de Vilenkin est
+héritée intacte, désormais chiffrée. (Note : l'estimation +ν² = 6,2 de la veille était elle aussi
+fausse — elle supposait le seuil dans la queue exponentielle, ν = 2,5, alors que le seuil
+auto-cohérent donne ν = 0,89.)
+
+**#24 — Le quasi-zéro en σ₈ n'est PAS une réussite.** À seuil figé, le σ₈ maximisant glisse de
+0,88 à 3,0 quand M_cut va de 2×10¹² à 10¹⁵ M☉. « Nos paramètres sont à l'optimum » est donc une
+propriété du seuil retenu, pas du monde. Même au seuil auto-cohérent, l'optimum est 0,883 contre
+0,811 mesuré (−8,2 %, soit 12σ Planck). **Refusé comme victoire.**
+
+**#25 — CONVENTION k ↔ M : un facteur π³ = 31 sous trois résultats de tête du papier B.**
+Les deux ancrages spectraux de B (n_eff = −1,4 à 1,4×10¹⁶ M☉ ; n_eff = −2,08 à 2,5×10¹⁴ M☉) sont
+**mutuellement cohérents** — ils utilisent tous deux R = π/k. Aucune faute de calcul interne.
+Mais ce rayon est ensuite injecté dans σ(M) et Press-Schechter, définis avec le rayon lagrangien
+top-hat R_L. Vérification : rapport observé 31,0 contre π³ = 31,0 attendu ; et le N(>M_5/2) publié
+(0,007) est reproduit à 0,0067 sous R = π/k. **Sous k = 1/R_L** : M_cut tombe à ~6×10¹² M☉
+(échelle des groupes, plus des amas), R monte de deux ordres, et surtout **N(>M_5/2) passe de
+0,007 à ~2×10⁷** — ce qui **efface l'argument de fermeture temporelle** (résultat (i) de B).
+La littérature admet 1/R, π/R et 2π/R : c'est une convention non déclarée, pas une erreur. Mais
+elle doit être *dérivée* de la relation β = 4/(n_eff+3), pas choisie. **Manquement le plus
+conséquent du papier B.** Déclaré dans le texte, non résolu.
+
+**Fait le 19/08 au soir, ~~puis largement RÉTRACTÉ le 20/08~~** : présupposition du vide nu écrite
+dans A et B. Ce qui tient : le modèle présuppose que le vide nu ne gravite pas, et la distinction
+d'avec le bookkeeping unimodulaire de Josset-Perez-Sudarsky que A teste et que les données rejettent
+(Δχ² = 4,9). **Trois affirmations retirées après confrontation à la littérature** — voir #26.
+
+**Scripts reprenables** : gradient_fecondite.py (conventions), gradient_v2.py (gradients),
+robustesse.py (le maximum en σ₈ dépend-il du seuil ?), convention.py (impact du facteur π³).
+Critères pré-enregistrés dans les en-têtes, avant exécution.
+
+
+---
+
+## 20/08 — PASSE D'AUDIT SUR LES AJOUTS DE LA VEILLE : cinq corrections
+
+**#26 — Le paragraphe du vide était faux sur trois points. Réécrit dans A et B.**
+- ~~« la gravité unimodulaire ne moyenne rien »~~ → **FAUX.** La résolution du problème ancien en
+  gravité unimodulaire repose précisément sur une **contrainte globale de 4-volume** (elle tient si Λ
+  est fixé par cette contrainte, elle tombe s'il est fixé par une condition initiale sur le
+  multiplicateur de Lagrange). Cela rapproche l'unimodulaire de la séquestration au lieu de l'en
+  séparer. *Jiroušek, Universe 9, 131 (2023), arXiv:2301.01662 ; Padilla & Saltas, EPJC 75, 561.*
+- ~~« la séquestration est exclue »~~ → **TROP FORT.** Vrai de la proposition globale d'origine
+  (paramètres du secteur matière = fonctionnelles du 4-volume ⟹ univers fini dans le temps, KP PRL
+  112, 091304 ; d'où « the end of the universe », PRL 114, 101302). Faux en général : une
+  **formulation locale** existe, sans structure globale (Kaloper, Padilla, Stefanyszyn, Zahariade,
+  PRL 116, 051302, 2016). Ce qui survit : les deux hypersurfaces bornant le 4-volume peuvent être
+  toutes deux dans le **passé**, donc aucun effondrement futur n'est exigé de notre cosmologie.
+- ~~« elle annulerait 104,5 % de notre composante »~~ → **MAUVAIS OBJET MOYENNÉ.** La séquestration
+  fixe Λ_eff = ⟨T⟩/4, une trace, pas ⟨ρ_de⟩. Recalcul sur notre propre fond : **⟨T⟩/4 = 1,41 ρ_de,0**
+  (matière 0,41 ; fluide injecté 1,00). Donc pas effacement mais **dégénérescence** : un résiduel
+  séquestré serait du même ordre que ce que nous calculons. C'est un problème *plus dur* que celui
+  que j'annonçais. Et il fait apparaître **un rival absent de l'étude des rivaux** : Lombriser
+  (arXiv:1805.05918), séquestration dans les structures effondrées, prédit **Ω_Λ = 0,697** contre
+  notre 0,689 — non discriminé sur les données présentes.
+- Ajout utile au passage : l'unimodulaire ne traite que le problème **ancien** ; il ne dit rien de la
+  valeur observée (Weinberg 1989 ; Salvio arXiv:2406.12958). C'est exactement la moitié que notre
+  modèle tente dynamiquement. **Répartition des rôles : dégravitation pour l'ancien, injection pour
+  le nouveau.** C'est plus propre que ce que j'avais écrit.
+
+**#27 — Ma « vérification π³ = 31,0 contre 31,0 » était CIRCULAIRE.** M ∝ R³ et R_B = π R_L par
+construction : le rapport *vaut* π³, cela ne vérifie rien. Le vrai diagnostic, refait : **k = π/R_L
+tombe à 33-44 % des masses publiées** (1,74e14 vs 2,5e14 ; 1,05e16 vs 1,4e16), **k = 1/R_L les rate
+d'un facteur 41 et 45**. Conclusion inchangée, preuve remplacée.
+
+**#28 — Le protocole « amplitude primordiale fixe » était mal posé** (pas de pivot, pas de facteur de
+croissance D(a=1) qui dépend de Ω_m). Refait avec k_piv = 0,05 Mpc⁻¹ et D(a) : **Ω_m +3,70** (au lieu
+de +4,00), **n_s +10,25** (+10,34), **A_s +0,05**. Contrôle de normalisation : A_s = 2,1e-9 → σ₈ =
+0,835 (+3 % vs Planck, acceptable pour un transfert sans oscillations). **Les conclusions ne bougent
+pas** — le critère reste échoué — mais les chiffres publiés sont maintenant défendables.
+
+**#29 — Glissement β / n_eff dans le papier B.** n_eff = −1,400 est l'image de β = **5/2 exactement**,
+pas de β = 2,42 (qui donne −1,347) ni de β = 2,56 (−1,437). Le papier écrivait « notre β = 2,42 » à
+côté de « n_eff = −1,4 ». Écart sur l'échelle des graines : 1,33e16 vs 1,05e16, soit ~25 % en masse —
+petit devant l'ambiguïté de convention (#25), mais déclaré au lieu d'être tu.
+
+**#30 — Un renvoi pendant et une attribution manquante, tous deux réparés.** (a) Ma phrase « perdre la
+prédiction des étoiles à neutrons de Smolin » renvoyait à une section qui **ne contenait pas ce
+résultat** : le papier ne l'énonçait nulle part. Le résultat de portée est maintenant écrit à sa
+place. (b) J'avais écrit « l'objection de Vilenkin » sans citation et sans l'énoncer. Chaîne correcte
+rétablie : **Rothman & Ellis, QJRAS 34, 201 (1993)** (les variations de paramètres ne réduisent pas
+nécessairement le comptage) → **Susskind, hep-th/0407266** → **Vilenkin, hep-th/0610051** (monter Λ
+augmente le taux de formation de trous noirs) → **réponse de Smolin, hep-th/0612185**. Notre version
+ne s'en échappe pas : elle la **déplace** de Λ vers Ω_m et n_s, et fournit les chiffres.
+Et notre repli (« ce qui survit est l'hérédité, pas la maximisation ») a un précédent :
+**Altenberg, arXiv:1302.1293** — sélection sur la fitness *et* sur la fidélité de transmission,
+d'où des paramètres qui sont des compromis et non des optima locaux.
+
+**Contrôles numériques passés** : intégrales de fécondité convergées à 3×10⁻⁵ près (Mmax 1e16→1e18,
+n 200→1200) ; M_cut insensible à δ_c par construction ; M_cut(n_eff) = 1,1e13 / 5,6e12 / 2,5e12 pour
+n_eff = −2,00 / −2,08 / −2,16.
+
+
+---
+
+## 20/08, suite — LE MODÈLE A UNE MAISON THÉORIQUE, ET ELLE EXISTE DÉJÀ
+
+**#31 — Identité exacte avec la création de particules gravitationnellement induite.**
+Cadre : thermodynamique des systèmes ouverts (Prigogine et al. 1989 ; Calvão-Lima-Waga 1992),
+révisé récemment par Schiavone, De Angelis, Escamilla, Montani, Di Valentino, **arXiv:2601.14222
+(PRD 2026)**. Leur relation maîtresse : w_DE^eff = w_E − (Γ/3H)(1 + w_E).
+Avec **w_E = 0** (masse créée sans pression — ce qu'est la matière accrétée) et
+**Γ = Ṁ_acc/M_acc = β/t**, on obtient w = −β/(3Ht) : **notre équation d'état, écart 0,00e+00**.
+Les deux équations de continuité coïncident aussi (Γ ρ a³ = (Ṁ/M)·M = Ṁ ; vérifié à 1,7e−4).
+
+**Conséquence sur la dette théorique** : l'injection n'a PAS besoin d'être comptabilisée comme
+une violation de la conservation. Elle s'écrit comme une **pression de création**
+Π = −(Γ/3H)ρ à l'intérieur d'un tenseur covariamment conservé. Les identités de Bianchi sont
+intactes. Ce qui reste supposé est l'**homogénéité de Γ** — c'est H3′ dans une autre notation,
+pas H3′ résolu. À ne pas surestimer.
+
+**Ce que nous apportons au champ** : leur propre conclusion est que la paramétrisation de Γ
+« reste phénoménologique » et qu'il faut un mécanisme microphysique. **Notre Γ est dérivé**
+(Ṁ/M du parent), et **Γ ∝ 1/t est une cinquième famille absente de leur tableau I** (ils testent
+Γ ∝ H^α, ∝ H, constant, et la somme). Ajusté sur PC1 : β_PC = 0,99, α = 1,14 — **les deux dans
+leurs intervalles à 68 %** — mais résidu 17 %, donc bien une loi distincte.
+
+**#32 — Le danger, nommé.** Le même papier **exclut w_E = 0 à 4,7-5,6σ** dans PC1/PC3/PC4. Notre
+modèle EST w_E = 0. L'exclusion n'est pas transférable telle quelle (elle est conditionnée à des
+lois de taux que nous n'utilisons pas : la projection sur la famille à taux constant donne
+ξ = 0,455 contre ξ = −0,011 ± 0,073, soit 6,4σ — mais cette projection impose w constant à
+−0,848 jusqu'à z = 3, ce qui n'est pas notre modèle et serait exclu pour cette raison seule).
+**Test à faire, non fait, et il peut tuer le modèle** : refaire tourner Γ ∝ 1/t dans leur
+pipeline avec w_E libre. C'est le contrôle externe le plus informatif aujourd'hui disponible —
+peu coûteux et décisif.
+
+**Bénéfices collatéraux de la reconnaissance du cadre** : le formalisme des perturbations existe
+déjà (à confronter à nos fσ8 −1,3 à −1,9 % et ISW +5,4 %) ; la validité de la seconde loi
+généralisée y est établie ; les liens avec la viscosité de volume et les couplages non minimaux
+courbure-matière (revue Lobo-Harko-Pinto, arXiv:2510.24371) fournissent des rivaux nommés ; et le
+champ est actif et publiable (leur Δχ² ≈ 8 sur CC+SN+SH0ES+BAO+CMB avec jusqu'à 3 paramètres,
+évidence bayésienne faiblement positive, PC préférés à w₀wₐCDM — à comparer prudemment à notre
+−12,6 avec 1 paramètre, sur des jeux de données différents : Planck complet chez nous, CMB
+comprimé chez eux).
+
+**Script** : identite_PC.py (quatre tests, critères dans l'en-tête).
+
+
+---
+
+## 20/08, suite — LE TEST w_E LIBRE : LANCÉ, ET SOUS-DIMENSIONNÉ
+
+**#33 — Solution analytique du modèle dans le formalisme de création de particules.**
+L'EDO de Schiavone et al. (leur éq. 19) s'intègre en fermé pour Γ = β/t :
+**g(z) = (1+z)^{3(1+w_E)} · (t/t₀)^{β(1+w_E)}**, vérifiée contre l'intégration numérique de
+leur EDO à **1,4×10⁻⁶**. Notre modèle est donc le cas w_E = 0 d'une famille à **deux**
+paramètres, et c'est une **cinquième famille analytiquement soluble** (trois de leurs quatre
+exigent une résolution numérique, cf. leur tableau I). Contribution réelle et publiable.
+
+**#34 — Pipeline validé, puis résultat.** Reproduction du corpus au centième : SN+BAO seuls
+donnent Δχ² = **−4,39**, β = **2,446** (corpus : −4,41 et 2,45). *Bug attrapé en route* : ma
+grille démarrait à z = 10⁻⁴, donc D_c(0) ≠ 0 — un décalage de distance qui mord précisément à
+bas z. Avant correction : Δχ² = −6,73 (faussement favorable). Après : −4,39. **Une erreur qui
+allait dans mon sens et que seul le contrôle contre un résultat connu a révélée.**
+
+Sur Pantheon+ + DESI DR2 + CMB comprimé (D_M(z*)/r_d = 94,31 ± 0,30) :
+
+| modèle | k | χ² | AIC | ΔAIC |
+|---|---|---|---|---|
+| **NOTRE (w_E = 0, Γ ∝ 1/t)** | 2 | 1396,482 | **1400,482** | — |   *(tableau du pipeline v1, périmé — voir #43 pour la version v3)*
+| Γ ∝ 1/t, w_E libre | 3 | 1395,822 | 1401,822 | +1,34 |
+| ΛCDM | 1 | 1401,211 | 1403,211 | +2,73 |
+| PC1 (Γ = 3b H₀E^α) | 4 | 1395,592 | 1403,592 | +3,11 |
+| PC3 (Γ = 3γH₀) | 3 | 1398,532 | 1404,532 | +4,05 |
+
+Profil en w_E avec Γ ∝ 1/t : **Δχ²(w_E = 0) = 0,66, soit 0,8σ**, et β reste dans [2,19 ; 2,46]
+sur tout le profil — **toujours dans la bande GSL**. Libérer w_E coûte un paramètre pour gagner
+0,66 : notre modèle à un paramètre bat sa propre extension par AIC.
+
+**#35 — MAIS le test est SOUS-DIMENSIONNÉ, et c'est le vrai résultat.** Contrôle décisif
+(pré-enregistré) : leurs familles dans MON pipeline. **PC1 donne Δχ²(w_E = 0) = 0,03**, c'est-à-dire
+que **je ne reproduis pas du tout leur exclusion à 4,7σ dans leur propre famille** ; PC3 n'atteint
+que 2,7σ contre 5,6σ publié. Diagnostic : leur pouvoir de contrainte sur w_E vient de ce que je
+n'ai pas — **le prior SH0ES sur H₀ et ω_m du CMB** — et mon profilage analytique de
+q = c/(H₀r_d) marginalise précisément cette information.
+
+**Conclusion honnête : mon 0,8σ ne démontre PAS que l'exclusion publiée ne se transfère pas.**
+Il mesure la faiblesse de mon CMB comprimé, pas la robustesse du modèle. **Je retire le « peu
+coûteux et décisif » annoncé hier** : c'était peu coûteux, ce n'était pas décisif. Pour le rendre
+décisif il faut dé-profiler q, donc modéliser r_d (formule EH98 à ~2 % près, insuffisant) ou
+passer par leur pipeline. **Statut : test à refaire correctement, priorité haute.**
+
+**Scripts** : test_wE.py, controle_familles.py (critères pré-enregistrés en en-tête des deux).
+
+
+---
+
+## 20/08, nuit — TEST DIMENSIONNÉ : V1 PASSE, V2 ÉCHOUE TROIS FOIS. RÉSULTAT NON EXPLOITÉ.
+
+**#36 — Pipeline dé-profilé construit et validé sur ΛCDM.** q = c/(H₀r_d) n'est plus profilé :
+r_d vient de CAMB (arrière-plan, r_d(0,02237 ; 0,1430) = **147,105 Mpc** contre 147,09 publié),
+tabulé sur grille (ω_b, ω_m). Paramètres libres h, ω_b, Ω_m + taux + w_E. Données : Pantheon+
+(1580), DESI DR2 (13), CMB comprimé (ω_b, ω_m, D_M(z*)/r_d), prior SH0ES. Manquent : les 15
+chronomètres cosmiques et la covariance du CMB comprimé (traité en gaussiennes indépendantes).
+
+**V1 PASSE** : ΛCDM donne **H₀ = 69,02, Ω_m = 0,2996, ω_m = 0,1427** contre leur table V
+(68,85 ± 0,43 ; 0,296 ± 0,005). Le pipeline reproduit leur ajustement de base.
+
+**#37 — V2 ÉCHOUE, et j'ai éliminé trois explications sur quatre.**
+Critère : reproduire leur exclusion de w_E = 0 dans **leur propre famille PC1** (publié 4,7σ).
+
+| tentative | résultat | verdict |
+|---|---|---|
+| profil, q profilé (v1) | 0,17σ | échec |
+| profil, q dé-profilé + r_d CAMB + SH0ES | **1,02σ** | échec |
+| **MCMC marginalisé**, leurs priors exacts (32×1400) | w_E = **−1,12 (+1,41/−1,27)**, soit **0,80σ** | échec |
+| profil **avec leur coupure z < 3** | **0,28σ** | échec |
+
+Éliminés : (a) le profilage de q, (b) profil contre marginalisation — *ma propre hypothèse de la
+dernière fois, réfutée*, (c) leur coupure à z = 3. **Restent** : les 15 chronomètres cosmiques que
+je n'ai pas, et la covariance du CMB comprimé que j'ai approximée. La position du pic concorde
+(je trouve −1,12, ils publient −0,98) ; c'est la **largeur** qui diffère d'un facteur ~7.
+
+**Conséquence, appliquée : je n'exploite pas le résultat sur notre loi de taux.** C'est le critère
+pré-enregistré, et il mord contre moi. Pour mémoire seulement, marqué non exploitable :
+Γ ∝ 1/t donne Δχ²(w_E = 0) = **1,29** (1,1σ) sans coupure, **1,34** avec ; β(w_E=0) = **2,577**,
+dans la bande GSL et compatible avec le profil β = 2,56 du corpus.
+
+**#38 — Ce qui est solide et ne dépend d'aucune reproduction : la dégénérescence structurelle.**
+w_eff(z) = w_E − (Γ/3H)(1 + w_E) : tout w_E peut être compensé en réajustant Γ. Mesuré dans PC1 :
+le profil est plat à **Δχ² = 0,08 sur w_E ∈ [−1,5 ; 0]**. Et près de w_E = −1 le facteur (1+w_E)
+annule l'effet du taux, de sorte que **tout** le volume de prior sur (b, α) donne un bon ajustement,
+alors qu'ailleurs seule une lame mince convient — un effet de volume qui concentre mécaniquement la
+postérieure vers w_E ≈ −1. **Une contrainte serrée sur w_E dans ce cadre est donc portée par la
+structure des priors autant que par les données.** C'est une question à poser aux auteurs, pas une
+affirmation à publier.
+
+**Action** : demander leurs chaînes, ou récupérer les 15 chronomètres avec covariance (Moresco et
+al. 2020) et la covariance des distances-priors CMB. Tant que V2 échoue, aucun chiffre de ce test
+n'entre dans les papiers.
+
+**Scripts** : test_wE_v2.py (r_d CAMB, coupure z<3 optionnelle, critères V1/V2 en en-tête),
+mcmc_wE.py (leurs priors exacts).
+
+
+---
+
+## 20/08, fin — DISTANCE-PRIORS CORRÉLÉS : V2 ÉCHOUE ENCORE. DIAGNOSTIC STRUCTUREL.
+
+**#39 — Distance-priors Planck 2018 complets implémentés.** Remplacement de mon CMB comprimé
+bricolé par les vrais (R, l_A, ω_b) avec **covariance complète** (arXiv:2405.06618 annexe E,
+cohérents avec Chen-Huang-Wang, JCAP 02 (2019) 028). Motif : **l_A est mesuré à 0,03 %** contre
+0,32 % pour le D_M(z*)/r_d que j'utilisais — dix fois plus serré. CAMB tabule maintenant r_d,
+r_* et z_* (147,105 / 144,446 / 1089,91 contre 147,09 / 144,43 / 1089,92 publiés).
+
+**V1 passe, et mieux qu'avant** : ΛCDM donne H₀ = **68,66**, Ω_m = **0,2976** (leur table V :
+68,85 ± 0,43 ; 0,296 ± 0,005).
+
+**V2 ÉCHOUE : Δχ²(w_E = 0 | PC1) = 0,29, soit 0,54σ**, contre 4,7 publié.
+
+**#40 — QUATRE explications éliminées, et une CINQUIÈME trouvée, structurelle.**
+
+| hypothèse testée | résultat |
+|---|---|
+| profilage de q | éliminée (1,02σ après dé-profilage) |
+| profil contre marginalisation (MCMC, leurs priors) | éliminée (0,80σ marginalisé) |
+| leur coupure z < 3 | éliminée (0,28σ avec) |
+| précision du CMB comprimé (→ R, l_A, ω_b corrélés) | **éliminée (0,54σ)** |
+
+**La cinquième, et elle est démontrée** : dans PC1, w_eff(0) = w_E − b(1 + w_E). Pour **toute**
+cible c, l'équation b = (w_E − c)/(1 + w_E) admet une solution pour tout w_E ≠ −1. **Le profil en
+w_E est donc plat par construction à z = 0.** Vérifié numériquement : le long de tout le profil,
+w_eff(0) reste à **−0,945 ± 0,002** de w_E = −1,5 à w_E = 0 — les sept modèles sont
+*la même fonction* à bas z, et ne divergent qu'à z ≳ 2 où les données BAO/SN sont ténues.
+
+**Conséquence pour la lecture de leur résultat.** Leur table VI donne
+w_DE^eff(0) = **−0,99 (+0,02/−0,03)**, soit une contrainte à 2-3 % sur w₀ — plus serrée que leur
+propre w₀wₐCDM (−0,93 ± 0,05). Combinée à l'algèbre ci-dessus, une contrainte serrée sur w_eff(0)
+force mécaniquement w_E → −1 : c'est une **inférence de paramétrisation**, pas une mesure de
+l'équation d'état intrinsèque du composant créé. Le « w_E = 0 exclu à 4,7σ » se lit donc
+« w_eff(0) = −1 à 2 % près, et dans cette paramétrisation cela implique w_E ≈ −1 ».
+
+**Statut du test.** V2 échoue après quatre corrections successives du pipeline, dont trois
+hypothèses à moi réfutées. Je ne peux pas reproduire leur contrainte à partir de la description
+publique. **Aucun chiffre de ce test n'entre dans les papiers.** Ce qui entre, éventuellement, est
+la dégénérescence structurelle — elle est démontrée, indépendante de toute reproduction, et
+constitue une question précise à poser aux auteurs.
+
+**Reste non testé** : les 15 chronomètres cosmiques (seule différence de données subsistante).
+Attente a priori : faible, 15 points à 5-10 % ne resserrent pas w_E d'un facteur 7 face à
+SN+BAO+CMB. À déclarer comme non testé plutôt qu'à supposer négligeable.
+
+**Action concrète** : écrire à Schiavone/Montani/Di Valentino avec la dégénérescence
+w_eff(0) = w_E − b(1+w_E) et demander soit les chaînes, soit ce qui brise cette dégénérescence
+dans leur analyse. C'est un deuxième courrier utile, à côté de celui à Popławski.
+
+**Scripts** : test_wE_v3.py (distance-priors corrélés, CAMB pour r_d/r_*/z_*, V1-V2 en en-tête).
+
+
+**#41 — Les chronomètres cosmiques éliminés eux aussi, par PRÉVISION (pas par ajustement).**
+Plutôt que de risquer d'inventer la table publiée, j'ai construit 15 points synthétiques aux
+redshifts représentatifs du lot Moresco (0,18 < z < 1,97) avec le budget d'erreur publié
+(Moresco et al. 2020, ApJ 898, 82) : **5 % statistique diagonal + 8 % systématique corrélé**
+(modèle SPS ~4,5 %, bibliothèque stellaire ~6,6 %, IMF < 0,5 %). Résultat : PC1 passe de
+**0,54σ à 0,53σ**. Le systématique étant très corrélé, les CC ne contraignent H₀ qu'à ~8 %
+(±5,5 km/s/Mpc), sans commune mesure avec SH0ES et le CMB ; et sur la *forme*, BAO+SN dominent
+déjà. **Les 15 chronomètres ne peuvent pas combler un facteur 7.**
+
+*Réserve déclarée* : c'est une prévision sur le pouvoir de contrainte, pas un ajustement sur les
+vraies valeurs. Elle répond à « les CC peuvent-ils fermer l'écart ? », pas à « que valent-ils ? ».
+
+**BILAN DU TEST w_E — CINQ explications éliminées, une trouvée.**
+
+| explication candidate | testée par | verdict |
+|---|---|---|
+| profilage de q = c/(H₀r_d) | dé-profilage + r_d CAMB | éliminée (1,02σ) |
+| profil contre marginalisation | MCMC, leurs priors exacts | éliminée (0,80σ) |
+| leur coupure z < 3 | implémentée | éliminée (0,28σ) |
+| précision du CMB comprimé | R, l_A, ω_b corrélés (l_A à 0,03 %) | éliminée (0,54σ) |
+| chronomètres cosmiques manquants | prévision, budget publié | éliminée (0,53σ) |
+| **dégénérescence de paramétrisation** | **algèbre + vérification numérique** | **RETENUE** |
+
+w_eff(0) = w_E − b(1+w_E) ⟹ b = (w_E − c)/(1 + w_E) a une solution pour tout w_E ≠ −1.
+Profil plat par construction à z = 0 ; vérifié : w_eff(0) = **−0,945 ± 0,002** sur tout le profil.
+
+**#42 — Courrier rédigé** : email_creation_particules.md, à Schiavone/Montani/Di Valentino et
+co-auteurs. Trois points — l'identité, la cinquième famille à solution fermée, et **la question**
+(qu'est-ce qui brise la dégénérescence chez vous : la forme à haut z via α, le volume de prior
+dans la marginalisation, ou quelque chose que je ne reproduis pas ?). Notes internes jointes,
+listant ce qui est vérifié et ce qu'il ne faut **pas** prétendre. À relire avant envoi.
+
+**Deux courriers en attente désormais** : Popławski (e-plis de vorticité) et l'équipe création
+de particules (dégénérescence w_E). Indépendants, à ne pas fusionner.
+
+
+---
+
+## 20/08, fin de nuit — PASSE D'AUDIT SUR LA SESSION : cinq erreurs, toutes corrigées
+
+**#43 — Comparaison de modèles refaite dans le MEILLEUR pipeline (v3, distance-priors corrélés).**
+*(Note du 23/08 : ce tableau compte k SANS h et ω_b, contrairement à l'atlas #106 qui les inclut. Les ΔAIC sont identiques entre les deux — décalage constant de +2 — mais les k ne sont pas comparables d'une table à l'autre.)*
+Le tableau AIC de #34 venait du pipeline v1 (q profilé, CMB bricolé) : périmé. Version v3 :
+
+| modèle | k | χ² | AIC | ΔAIC |
+|---|---|---|---|---|
+| **NOTRE (w_E = 0, Γ ∝ 1/t)** | 2 | 1419,309 | **1423,309** | — |
+| PC3 (Γ = 3γH₀) | 3 | 1417,963 | 1423,963 | +0,65 |
+| PC1 (Γ = 3bH₀E^α) | 4 | 1416,701 | 1424,701 | +1,39 |
+| Γ ∝ 1/t, w_E libre | 3 | 1418,863 | 1424,863 | +1,55 |
+| ΛCDM | 1 | 1425,086 | 1427,086 | +3,78 |
+
+Premier par AIC, devant ΛCDM et devant les trois lois de taux publiées. Δχ² vs ΛCDM = **−5,78**
+pour un paramètre — plus faible que le −12,6 du corpus, ce qui est attendu : les distance-priors
+sont moins contraignants que Planck-lite complet.
+
+**Contrôle croisé de β, et il passe** : v3 donne **β = 2,595**, contre le profil du corpus
+**2,56 (+0,08/−0,02)** obtenu avec Planck complet. Deux vraisemblances indépendantes, écart 0,035,
+dans la bande. C'est le meilleur contrôle de cohérence de la session.
+
+**#44 — Pourquoi la dégénérescence n'est pas payée : chiffré.** Ω_de(z) = 0,41 (z=0,5) → 0,21
+(z=1) → **0,055 (z=2)** → 0,019 (z=3). Une variation de 50 % de w_de à z = 2 ne déplace H que de
+**1,4 %**, et à z = 3 de 0,5 %. Les modèles du profil, qui diffèrent de −1,28 à −1,94 en w_eff(2),
+sont donc quasi indiscernables. La dégénérescence exacte à z = 0 et l'insensibilité à haut z se
+combinent : le profil est plat pour deux raisons indépendantes, l'une algébrique, l'autre physique.
+
+**#45 — ERRATUM papier B : l'accord avec le couplage cosmologique était annoncé à 0,1σ.**
+Recalcul : k_eff = −3w vaut 2,54 aujourd'hui et 3,57 à z = 2,5. Moyenné sur la fenêtre de Farrah
+(0,7 < z < 2,5) : **3,43** (plate en z) ou **3,36** (pondérée par Ω_de). Contre k = 3,09 ± 0,76,
+cela fait **0,44σ ou 0,35σ** ; la valeur à z = 0 seule donne 0,72σ. **Le 0,1σ n'est retrouvé sous
+aucune des trois conventions naturelles et est retiré.** L'accord tient (tout est sous 1σ), le
+chiffre était surévalué d'un facteur 3 à 7. Même mode de défaillance que celui déjà consigné :
+la ligne de synthèse dépasse le calcul qu'elle résume.
+
+**#46 — ERRATUM papier B : la revendication d'unicité était fausse.** « The one cross-level
+prediction no other dark-energy framework makes » : les trous noirs couplés cosmologiquement font
+une prédiction inter-objets de même nature, et **Croker et al., JCAP 10, 094 (2024)**, arXiv:2405.12282,
+soutiennent que ce cadre reproduit l'évolution de l'énergie noire de DESI. C'est donc un **rival
+direct sur nos propres données**, absent de l'étude des rivaux. Deuxième rival manquant après
+Lombriser. Revendication retirée, lacune déclarée.
+
+**#47 — Le mot « contested » ne suffisait pas.** Le papier ne citait que Mistele. Ajoutées :
+contraintes indépendantes défavorables à k ≃ 3 pour les objets stellaires — **Gaia** (Andrae &
+El-Badry, A&A 673, L10), **NGC 3201** (Rodriguez, ApJL 947, L12), **AGN JWST à haut z** (Lei et al.,
+SCPMA 67, 229811), **histoire d'accrétion des SMBH** (Lacy et al., ApJL 961, L33), **chronométrage
+de pulsars** (Calzà et al., Sci. Rep. 14, 31296).
+
+**#48 — Deux erreurs de désignation dans le papier A.** (a) J'avais appelé PC2 « la famille à taux
+constant » : faux, PC2 est Γ ∝ H (w_eff constant) ; la famille à taux constant est PC3, Γ = 3γH₀.
+(b) « weak positive Bayesian evidence » : chez eux l'évidence est faible pour deux lois de taux et
+**non concluante** pour les deux autres sur l'échelle de Jeffreys. Les deux corrigées.
+
+**Réserve déclarée sur mes propres profils PC1** : mes bornes d'optimisation (b ∈ [0,8), α ∈ (−3,9))
+ne sont pas exactement leurs priors (β_PC ∈ (−2,2), α ∈ (0,10)). Un point du profil, w_E = −1,20,
+sort avec α = −1,08, hors de leur prior ; il est de toute façon au-dessus du minimum, donc sans
+effet sur Δχ²(w_E = 0). Déclaré plutôt que corrigé.
+
+A : 24 pages. B : 12 pages. Zéro erreur LaTeX, zéro référence indéfinie.
+
+
+---
+
+## 20/08, très tard — #25 RÉSOLU PAR DÉRIVATION, ET IL EMPORTE TROIS RÉSULTATS DU PAPIER B
+
+**#49 — La relation d'hérédité est l'exposant d'effondrement auto-similaire. Dérivée.**
+Sources primaires lues : **Fillmore & Goldreich 1984** (ApJ 281, 1) définissent la perturbation
+initiale par **δM_i/M_i = (M_i/M₀)^(−ε)**, où M_i est la masse *non perturbée* dans r_i ; en EdS
+cela donne M ∝ a^(1/ε), donc
+
+  **β = 2/(3ε)**
+
+**Ancrage** : ε = 1 → β = 2/3, c'est-à-dire M ∝ t^(2/3) — exactement le résultat de
+**Bertschinger 1985** (ApJS 58, 39). La formule est vérifiée sur un cas publié.
+
+**#50 — La question de l'appariement k ↔ M ne se pose pas. Elle était fabriquée.**
+ε est une pente logarithmique **en masse**. Aucun nombre d'onde n'intervient dans la dérivation.
+Le « 1/k ou π/k ou 2π/k ? » était créé par l'étape « évaluer dlnP/dlnk à un k assigné à une
+masse », que la dérivation n'exige jamais. **Seule convention requise :
+n_eff(M) = −6 dlnσ/dlnM − 3.** #25 est clos.
+
+**#51 — Mais la vraie ambiguïté est ailleurs et vaut un facteur 2 sur β lui-même.**
+- si δM/M est la fluctuation **rms** : σ(M) ∝ M^(−(n+3)/6) → ε = (n+3)/6 → **β = 4/(n+3)**
+- si c'est le **profil moyen autour d'un pic**, qui suit la fonction de corrélation
+  ξ̄ ∝ σ² ∝ M^(−(n+3)/3) (BBKS 1986) → ε = (n+3)/3 → **β = 2/(n+3)**
+
+Les deux sont des objets standards ; pour les pics rares qui portent les graines massives, la
+seconde est au moins aussi défendable. **Non close.** Conséquence : notre β = 2,42 mesuré donne
+n_eff = −1,347 (rms) ou **−2,174 (pic)**.
+
+**#52 — TROIS RÉSULTATS DE TÊTE DU PAPIER B RETIRÉS.** Pipeline validé : mon N(>10¹⁴) = **2,00×10⁸**
+reproduit exactement le chiffre publié, donc même fonction de masse et même volume.
+
+| affirmation publiée | valeur dérivée | verdict |
+|---|---|---|
+| M_cut (bord GSL) = 2,5×10¹⁴ M☉ | **3,0×10¹² M☉** | facteur 83 |
+| graines à β=5/2 : 1,4×10¹⁶ M☉ | **1,3×10¹⁵ M☉** | facteur 11 |
+| N(z=0) des graines 5/2 = **0,007** | **1,0×10⁶** | **fermeture temporelle MORTE** |
+| « la thermodynamique élimine 99,6 % » | **elle n'élimine rien aux échelles d'amas** | retiré |
+| R ~ 10^7,6, « douze ordres sous Smolin » | **10^10,3**, trois ordres sous | contraste affaibli |
+| n_s = 1 ⟺ β = 1 « exactement » | β = 1/2 sous la lecture pic | conventionnel |
+
+**Ce qui survit** : la relation elle-même (comme exposant d'infall secondaire, ce qui lui donne
+une généalogie solide qu'elle n'avait pas), l'existence d'un point fixe de la carte de
+reproduction, et le fait que la GSL borde β par le haut. **Ce qui meurt** : la fermeture
+temporelle, la sélection thermodynamique aux échelles d'amas, et l'élégance de la limite
+Harrison-Zeldovich.
+
+**Ce qui n'est PAS touché : le papier A.** β = 2,42 y est *mesuré* sur les données, pas inféré
+d'un spectre. Toute la partie empirique du corpus est indépendante de cette révision. C'est la
+seule bonne nouvelle du lot, et elle est structurelle : la couche interprétative peut s'effondrer
+sans entraîner la couche observationnelle.
+
+**Script** : derivation_beta.py (six sections, ancrage Bertschinger inclus).
+
+
+---
+
+## 21/08 — #4 CREUSÉ : LA PRÉDICTION fσ8, CALCULÉE, ET CE QU'ELLE VAUT VRAIMENT
+
+**#53 — La croissance, refaite proprement, et un bug attrapé au passage.** Le modèle étant
+identifié comme un modèle de création de particules, la matière n'est **pas** créée (Γ_m = 0) :
+sa croissance ne répond qu'au fond. Avec la composante injectée démontrée lisse, le calcul est
+donc exact, pas approché. Contrôle obligatoire ajouté : f_ΛCDM(0) = **0,5236** contre Ω_m^0,55 =
+0,5263, écart 0,5 %. *Premier passage : f(0) = 0,32* — j'avais écrit (3 + dlnH/dlna) au lieu de
+(2 + dlnH/dlna) dans l'équation de croissance. Attrapé par le contrôle, pas par la relecture.
+
+**#54 — Le signal n'est pas une amplitude, c'est une INCLINAISON.** Contre ΛCDM à univers
+primordial **identique** (mêmes ω_b, ω_m, h, n_s, A_s) :
+
+| z | 0,15 | 0,30 | 0,50 | 0,80 | 1,00 | 1,50 |
+|---|---|---|---|---|---|---|
+| Δfσ8 | −1,79 % | **−2,02 %** | −1,47 % | −0,31 % | **+0,28 %** | **+0,98 %** |
+
+**Changement de signe vers z ≃ 0,9**, soit un différentiel de 3,0 % entre z = 0,3 et z = 1,5.
+Le pivot **retarde** sur le croisement de w (z = 0,46) parce que la croissance intègre l'histoire.
+Le corpus annonçait « supprimé de 1,3-1,9 % sur 0,15 < z < 0,5 » : magnitude à peu près juste,
+**mais le changement de signe n'avait pas été vu.** C'est pourtant lui qui porte l'information.
+
+**#55 — Effet net sur σ8 : −0,14 %. Le mécanisme est neutre en amplitude.**
+Conséquence utile : le S8 = 0,826 du papier A (contre 0,810 ΛCDM, soit +2,0 %) n'est **pas** dû à
+la croissance modifiée — il est **entièrement paramétrique**, conséquence des décalages d'Ω_m et
+A_s exigés par l'ajustement Planck. Cela transforme le « trait partagé du quadrant w₀ > −1, pas
+une pathologie propre » de simple plaidoirie en énoncé chiffré. Écrit dans A.
+
+**#56 — MAIS la prévision de détectabilité est décevante, et je la déclare telle.**
+Après marginalisation d'une amplitude libre (qui absorbe σ8 **et** le biais des galaxies —
+le seul test honnête), **35 % du signal est absorbé, 65 % survit** : c'est bien une forme.
+Mais en significance absolue, sur 14 points RSD entre z = 0,1 et 1,5 :
+
+| erreur par point | 10 % | 7 % | 5 % | 3 % | 2 % |
+|---|---|---|---|---|---|
+| significance | 0,41σ | 0,58σ | **0,82σ** | 1,36σ | 2,04σ |
+
+Les mesures RSD actuelles sont à 5-10 % par point. **Le canal fσ8 vaut donc moins de 1σ
+aujourd'hui.** Le corpus l'appelait « le canal de falsification le plus propre » : propre en
+principe, inaccessible en pratique. **L'implication est retirée du papier A.** Il reste la forme
+de w(z) et DR3.
+
+**#57 — M_acc/M_tot = Ω_de est une IDENTITÉ, pas un accord.** Vérifié algébriquement et
+numériquement (écart 0,00e+00 à tout z) : w_tot = w_de Ω_de d'un côté, jonction Misner-Sharp
+w_tot = −Ṁ/(3HM) avec Ṁ_acc = (β/t)M_acc de l'autre, d'où M_acc/M_tot = Ω_de **identiquement**.
+Le « 2,12/3,09 = 0,686 contre 0,689, accord à 0,4 %, deux nombres obtenus à une semaine d'écart »
+est donc un **contrôle de cohérence interne** dont le 0,4 % mesure la précision du calcul, pas
+celle du monde. La dérivation du *signe* par Misner-Sharp reste un vrai résultat ; l'accord
+numérique n'en est pas un second.
+
+**#58 — ET J'AI SUR-CORRIGÉ HIER.** Ma « correction » de l'accord avec Farrah (0,1σ → 0,35-0,72σ)
+recalculait **k_eff = −3w**. Or Farrah mesure un **rapport de croissance de masse sur une fenêtre
+de redshift** : la bonne quantité est k_equiv = Δln M_acc/Δln a — que **le papier A calculait déjà
+correctement**. Recalcul indépendant à β = 2,49 : **2,95 / 3,05 / 3,17** pour z < 0,7 / 1,0 / 1,5,
+contre les 2,97 / 3,07 / 3,17 publiés dans A (accord 0,6 %), soit **0,05 à 0,18σ** de k = 3,09 ±
+0,76. Le 0,1σ d'origine était donc *substantiellement juste et formellement mal attribué* ; ma
+correction remplaçait un bon chiffre mal justifié par un mauvais chiffre. Les deux papiers sont
+maintenant alignés sur k_equiv. *Les caveats CCBH et le retrait de l'unicité, eux, tiennent.*
+
+**#59 — Deux doublons bibliographiques que j'avais introduits** (FG84, Bertschinger85 existaient
+déjà dans le papier B, section « profil du parent ») : retirés. Corollaire embarrassant : **la
+dérivation Fillmore-Goldreich était DÉJÀ dans le papier B**, dans une autre section, sous la forme
+β = 2s/3. Le papier tenait donc la dérivation d'un côté et la convention non déclarée de l'autre,
+sans les rapprocher. C'est la vraie leçon de #49-52 : le manquement n'était pas l'absence de
+dérivation, c'était **l'absence de connexion entre deux sections du même papier**.
+
+**CE QUI RESSORT DE LA SESSION, sur « où le modèle pourrait être meilleur »** :
+1. Le canal discriminant n'est pas l'amplitude de fσ8 mais son **inclinaison, avec pivot à
+   z ≃ 0,9**. C'est ce qu'il faut demander à DR3 et aux relevés RSD à grande base en redshift —
+   pas une mesure plus précise à un z, mais un levier long.
+2. La couche empirique (papier A) est **robuste aux effondrements de la couche interprétative**
+   (papier B). Trois rétractations dans B, zéro conséquence dans A. Architecture à préserver.
+3. Le vrai gain possible serait de **fermer l'ambiguïté facteur 2 sur ε** (#51) : elle seule
+   transformerait β de paramètre ajusté en paramètre prédit.
+
+
+---
+
+## 21/08, suite — #51 TRANCHÉ. La relation d'hérédité était un facteur 2 trop grande.
+
+**#60 — La littérature donne la réponse, et elle est contre nous.** Hoffman & Shaham 1985
+appliquent l'infall secondaire aux **maxima du champ lissé** et approximent le profil initial d'un
+pic par la **fonction de corrélation**, δ(r) ~ ξ(r) — approche confirmée comme standard par
+Ogiya & Hahn 2018 et les revues de Del Popolo. Cela donne ε = (n+3)/3, donc **β = 2/(n+3)**, et non
+ε = (n+3)/6 → β = 4/(n+3). Contrôle de cohérence : le profil de HS, ρ ∝ r^(−3(3+n)/(4+n)), se
+retrouve **exactement** en injectant ε = (n+3)/3 dans la branche γ = 9ε/(1+3ε) de Fillmore-Goldreich.
+La lecture rms mesure l'amplitude typique d'un lieu quelconque ; ce qu'il faut est le profil de la
+perturbation qui s'effondre. **Nous avions le mauvais objet.**
+
+**#61 — Et les données le confirment, par une conséquence que ni l'une ni l'autre lecture
+n'anticipait : β doit COURIR.** Un spectre CDM réel n'est pas une loi de puissance —
+dn_eff/dlnM = 0,066 (10¹² M☉) à 0,158 (10¹⁵) — donc ε court, donc β court. Avec
+β(t) = β₀ + β₁ ln(t/t₀) :
+
+| lecture | β₁ prédit | Δχ² sur nos données |
+|---|---|---|
+| rms, β = 4/(n+3) *(l'ancienne)* | −0,92 à −1,60 | **≥ 7,5** |
+| pic, β = 2/(n+3) *(la nouvelle)* | −0,23 à −0,40 | **1,5 à 2,5** |
+| ajustement libre | **β₁ = +0,06 ± 0,31** | −0,05 |
+
+Contrôle : à β₁ = 0 le pipeline redonne χ² = 1419,310 et β₀ = 2,595, identique au v3. **Deux
+lignes indépendantes — littérature et running — convergent sur β = 2/(n_eff+3).** Remplacé dans le
+papier B, avec mention explicite que la relation d'origine était deux fois trop grande.
+
+**#62 — Deux réserves déclarées sur le remplacement, tirées de la même littérature.**
+(a) « la forme radiale des pics est **plus raide** que la fonction de corrélation » : donc
+ε ≥ (n+3)/3, donc **β = 2/(n+3) est une borne supérieure**, pas une égalité.
+(b) Del Popolo souligne que la conclusion de HS pour **n < −1 est une hypothèse**, pas un résultat
+du modèle — et notre régime est justement n < −1.
+
+**#63 — Conséquences en cascade, écrites dans le papier B.**
+- notre β = 2,42 → n_eff = **−2,17** → échelle de nourrissage **7×10¹¹ M☉ : un halo de galaxie**,
+  pas un amas. Toute la démographie du papier B changeait déjà d'échelle ; elle change encore.
+- borne GSL β < 4,35 → n_eff > **−2,54** → sous 10⁸ M☉ : **la seconde loi n'élimine plus rien.**
+- limite super-horizon → β = 2/(n_s+3) = **0,504** : une graine de masse-univers donne un enfant
+  **non accélérant**. Le résultat (ii) est retiré comme identité.
+
+**#64 — LE GAIN, et il est réel.** Le modèle acquiert un **second paramètre prédit** : le running
+β₁. Actuellement mesuré à σ(β₁) ≃ 0,3, donc non contraignant ; mais **une détermination à σ ≃ 0,1
+séparerait β constant de la prédiction pic à ~3σ**. Écrit dans le papier A comme cible DR3.
+Sur les preuves actuelles, **c'est un test plus net que le canal de croissance** (#56, 0,8σ) :
+le running est un test de la *théorie interne* du modèle, mesurable avec les mêmes données de
+fond qui servent déjà, sans dépendre des RSD.
+
+**Bilan sur « comment il pourrait être mieux » — réponse consolidée** :
+1. La relation d'hérédité corrigée fait perdre au papier B ses résultats de démographie, mais lui
+   fait **gagner un discriminant observationnel** (le running) qu'il n'avait pas. C'est un
+   meilleur échange qu'il n'y paraît : des affirmations invérifiables contre un nombre mesurable.
+2. Priorité de test révisée : **β₁ (running) > forme de w(z) > fσ8 > ISW**.
+3. La couche empirique tient toujours : trois vagues de rétractation dans B, zéro dans A.
+
+**Script** : beta_courant.py (trois sections, prédiction du running et ajustement).
+
+
+---
+
+## 21/08, soir — L'HORLOGE : #61 AFFAIBLI, ET H4 ENFIN CHIFFRÉ
+
+**#65 — Le running de β mesure DEUX choses, pas une. Dégénérescence exacte.**
+Si l'horloge du parent et le temps intérieur sont liés par g(t) = dln t_p/dln t, alors ce qu'on
+mesure est β_obs(t) = β_parent × g(t). Un g **constant** rescale β et reste inobservable — c'est
+l'invariance déjà établie dans H4. Mais une horloge **courbe**, g = 1 + κ ln(t/t₀), ajoute β₀κ à
+β₁, **indiscernablement du running spectral** :
+
+  **β₁ = β_spectre + β₀ κ**
+
+La dégénérescence est *exacte*, car l'horloge n'entre dans les observables que par M_acc(t) : tout
+le reste (H, a, w) est mesuré en temps intérieur.
+
+**#66 — Conséquence 1, contre moi : l'exclusion de la lecture rms d'hier était conditionnelle.**
+J'ai écrit hier que les données excluent β = 4/(n+3) à Δχ² ≥ 7,5. **Ce test supposait
+implicitement une horloge en loi de puissance.** Avec κ libre :
+
+| lecture | β_spectre prédit | κ requis | en σ de la mesure |
+|---|---|---|---|
+| pic, 2/(n+3) | −0,23 à −0,40 | +0,11 à +0,18 | 0,9-1,5σ |
+| rms, 4/(n+3) | −0,92 à −1,60 | +0,37 à +0,63 | 3,2-5,4σ |
+
+La lecture rms n'est donc pas exclue : elle exige seulement une courbure d'horloge de 0,4 à 0,6,
+que rien n'interdit a priori. **L'argument qui tient pour la lecture pic reste celui de la
+littérature (HS85, profil de pic ~ ξ), pas celui des données.** Corrigé dans le papier A.
+
+**#67 — Conséquence 2, en notre faveur : H4 est chiffrée pour la première fois.**
+Prise comme borne sur l'horloge seule, β₁ = +0,06 ± 0,31 avec β₀ = 2,62 donne
+**κ = 0,023 ± 0,118**, soit **|κ| < 0,24 à 2σ**. Le papier A ne disait jusqu'ici de H4 que
+« invariante sous rescaling constant, seul un γ(t) variable survit ». Le γ variable est
+maintenant **borné à 24 % de courbure logarithmique**. C'est la première contrainte quantitative
+sur cette hypothèse.
+
+**#68 — L'« effet miroir » : non testable, et il ne sauve rien.** Le sens de rotation de l'enfant
+relatif au parent est une question d'**orientation**, donc de convention — sauf à comparer une
+physique violant la parité entre les deux univers, ce à quoi nous n'avons aucun accès. Et surtout
+il ne touche pas le problème réel : la contrainte du corpus sur la vorticité héritée porte sur la
+**magnitude** (N ≳ 22-36 e-plis requis, budget torsionnel = 0,35), pas sur le signe. Inverser le
+sens n'efface pas l'amplitude. À classer comme non falsifiable, pas comme piste.
+
+**Ce que cet échange a produit** : une idée formulée en une phrase et sans formalisme a exposé une
+**hypothèse non déclarée dans un test que j'avais écrit la veille**. Le motif mérite d'être noté —
+les deux dernières trouvailles utiles du corpus (le voile → contrainte anisotrope supposée absente ;
+l'horloge → dégénérescence du running) sont venues d'analogies mécaniques, pas de la littérature ni
+du calcul. Elles ont toutes deux désigné une **hypothèse simplificatrice tue**, ce que ni la
+relecture ni les ancres numériques n'attrapent.
+
+
+---
+
+## 21/08, nuit — LE CRITÈRE DE CONVEXITÉ ENTROPIQUE : APPLIQUÉ, ET REDIMENSIONNÉ
+
+**#69 — Ma revendication de nouveauté était fausse, et je l'ai vérifiée avant de l'écrire.**
+Le critère « S′ > 0 **et** S″ < 0 » est celui de **Pavón & Radicella** : pour qu'un système tende
+vers l'équilibre, son entropie doit croître *et* son évolution être convexe. Il est utilisé comme
+critère de sélection depuis 2010 au moins, avec S_total = S_horizon + S_fluide sur l'**horizon
+apparent** — la surface où les lois de la thermodynamique sont satisfaites, ce qui confirme au
+passage mon choix de surface. Il a même déjà servi à *paramétrer* l'énergie noire
+(arXiv:2202.03300). Et un papier de **la semaine dernière** (arXiv:2608.10495) fait exactement le
+programme que j'annonçais comme non exploré : la GSL comme critère de sélection pour l'énergie
+noire dynamique, avec des bornes sur S_A ∝ A^k. **Rien de ce que j'ai proposé n'était neuf sauf
+l'application au modèle.**
+
+Note de forme utile : la forme publiée du critère est **plus faible** que celle que j'appliquais —
+la convexité est exigée **quand z → −1**, pas à tout instant. Mon « d²S/dt² a déjà rebasculé
+positif aujourd'hui » n'était donc pas le bon test.
+
+**#70 — Appliqué correctement, le modèle échoue quand même, et par deux routes indépendantes.**
+Pour un univers dominé par w constant : a ∝ t^n avec n = 2/(3(1+w)), donc H = n/t, donc S ∝ t²
+et **S″ = 2/n² > 0 pour tout w > −1**. Seul w → −1 donne S → constante et S″ → 0⁻.
+
+| régime | n | S″ | verdict |
+|---|---|---|---|
+| ΛCDM | — | → 0⁻ | **passe** |
+| accrétion, attracteur w* = −0,548 | 1,473 | +0,92 | échoue |
+| accrétion, après le festin (w → 0) | 0,667 | +4,50 | échoue |
+
+Le modèle échoue **pendant** le festin et **après** : le résultat ne dépend donc pas du sort du
+festin, ce qui le rend robuste.
+
+**#71 — MAIS le critère n'est pas une accusation spécifique, et il faut le dire.**
+Le même calcul donne S″ = +0,045 pour une quintessence à w = −0,9. **Le critère disqualifie TOUT
+modèle dont l'asymptote n'est pas exactement w = −1** — quintessence, CPL avec w₀ > −1, et
+l'essentiel du programme d'énergie noire dynamique motivé par DESI. Ce n'est donc pas un verdict
+sur notre modèle : c'est **la version thermodynamique de « Λ est spéciale »**. À citer comme tel,
+jamais comme une réfutation ciblée.
+
+**Et une réserve qui limite tout le reste** : le critère s'évalue en z → −1, là où aucune
+paramétrisation n'est fiable et où aucune donnée n'existe. C'est un **principe de sélection
+métaphysique, pas une contrainte empirique.** Je ne l'écris donc pas dans les papiers ; il est
+consigné ici comme item vérifié et refermé.
+
+**Ce qui survit et mérite d'être gardé** : le modèle a une propriété que ni Λ ni la quintessence
+n'ont — **le festin s'arrête**, à t_end = 16-36 Ga, après quoi w → 0 et l'univers redécélère.
+L'accélération est donc **transitoire**. Aucune donnée ne peut le tester, mais c'est le seul
+énoncé du corpus sur lequel un argument thermodynamique a prise, et c'est là que ce genre de
+critère devrait être appliqué — pas au présent.
+
+**Script** : convexite_entropie.py.
+
+
+---
+
+## 22/08 — L'HÉRÉDITÉ EST UNE ÉQUATION DIFFÉRENTIELLE FERMÉE
+
+**#72 — Ce qui n'avait pas été vu : deux énoncés portent sur le même objet.**
+(1) β = dln M_acc/dln t — la définition. (2) β = K/(n_eff(M)+3) — l'hérédité. Les égaler donne
+
+  **dln M/dln t = K/(n_eff(M) + 3)**
+
+une **EDO fermée**. Une fois M fixé à un instant, toute la trajectoire β(t) est déterminée.
+L'hérédité n'est donc pas une paramétrisation : **c'est une prédiction sans paramètre libre.**
+Trajectoire (lecture pic, β(t₀) = 2,418) : β passe de 3,55 à t/t₀ = 0,135 à 2,42 aujourd'hui et
+2,29 à 1,35 t₀, avec M de 1,4×10⁹ à 1,0×10¹² M☉/h.
+
+**#73 — Le running devient un NOMBRE, et mes fourchettes d'hier étaient fausses.**
+β₁ = β₀ × dβ/dlnM, évalué **à la masse-graine propre à chaque lecture** :
+
+| lecture | M₀ | β₁ prédit | ce que j'annonçais |
+|---|---|---|---|
+| pic, K = 2 | 2,4×10¹¹ M☉ | **−0,478** | −0,23 à −0,40 |
+| rms, K = 4 | 8,2×10¹⁴ M☉ | **−0,676** | −0,92 à −1,60 |
+
+Contrôlé deux fois (dérivée analytique et pente de la trajectoire, écart 4×10⁻³). **Mon erreur
+d'hier** : j'évaluais dn_eff/dlnM à des masses arbitraires (10¹², 10¹³, 10¹⁴) au lieu de la
+masse-graine de chaque lecture. Corrigé dans le papier A.
+
+**#74 — Conséquence : le running ne discrimine PAS les deux lectures.** Elles ne diffèrent que de
+**0,198** en β₁, contre σ(β₁) = 0,31 : séparation à **0,64σ, c'est-à-dire nulle**. Il faudrait
+σ(β₁) = 0,066 pour les séparer à 3σ. **Mon « les données excluent la lecture rms à Δχ² ≥ 7,5 » du
+20/08 est donc doublement faux** — d'abord parce qu'il supposait une horloge droite (#66), ensuite
+parce que le β₁ de la lecture rms n'est pas −0,9 à −1,6 mais −0,68, qui ne coûte que ~2,5.
+Ce que le running teste, c'est **si β court**, pas quelle relation d'hérédité est la bonne.
+
+**#75 — L'horloge, resserrée.** Avec β₁ prédit sans paramètre libre :
+κ = (β₁_obs − β₁_pred)/β₀ donne **κ = +0,21 ± 0,12 (pic)** et **+0,28 ± 0,12 (rms)**, soit 1,6σ et
+2,3σ de zéro. Donc : **prendre l'hérédité au sérieux exige une horloge courbe à 1,6-2,3σ**, ou
+laisse l'hérédité en tension avec les données au même niveau. Et κ > 0 signifie que l'horloge du
+parent s'accélère par rapport à la nôtre.
+
+**#76 — Le parent exigé, recalculé.** La graine est notre univers, 1,56×10²⁴ M☉. Pour que le
+spectre du parent ait la bonne pente à cette masse, il faut un étirement en longueur de :
+- lecture rms (K=4) : ×943 → **ω_m parent ~ 1,5×10⁻⁴** (le corpus publie ~4×10⁻⁴, même ordre ✓)
+- lecture pic (K=2) : ×1,28×10⁴ → **ω_m parent ~ 1,1×10⁻⁵**
+
+**La nouvelle relation éloigne le parent d'un facteur 30 de plus.** La hiérarchie est encore moins
+auto-similaire qu'annoncé.
+
+**#77 — L'EDO donne une durée de vie à la phase viable, et c'est un résultat neuf.**
+En intégrant jusqu'aux bords de la bande 1 < β < 4,35 (lecture pic) :
+- entrée dans la bande (β = 4,35) : **t/t₀ = 0,084, soit 1,16 Ga**
+- sortie (β = 1) : t/t₀ = 965, soit 1,3×10⁴ Ga
+
+Donc le modèle **prédit** que la phase d'accélération viable a commencé à ~1,2 Ga et durera
+~10⁴ Ga — une durée finie, calculée, distincte du t_end = 16-36 Ga de la fin du festin. Deux
+horloges de fin différentes dans le même modèle : à réconcilier, c'est un manquement neuf.
+
+**Bilan de ce creusement** : l'hérédité gagne en statut (prédiction fermée au lieu de relation
+ajustée), le running perd en pouvoir (il ne sépare pas les lectures), l'horloge gagne en précision
+(±0,12 avec une prédiction centrale au lieu d'une hypothèse nulle), et deux de mes chiffres du
+20/08 sont retirés.
+
+**Script** : heredite_edo.py.
+
+
+---
+
+## 22/08, audit — L'EDO CONFRONTÉE AUX SIMULATIONS. LE RÉSULTAT LE PLUS DUR DE LA SEMAINE.
+
+**#78 — Trois contrôles de forme, tous passés ou corrigés.**
+- *Invariance* : j'avais intégré l'EDO avec NOTRE spectre alors que le parent exige ω_m ~ 10⁻⁵.
+  Vérifié : à n_eff fixé, dn_eff/dlnM vaut 0,0608 (ω_m = 0,143) et 0,0593 (ω_m = 0,0715) —
+  **stable à 2,5 %**. Le spectre du parent n'étant que le nôtre étiré en masse, β₁ ne dépend pas
+  de son ω_m. L'EDO est légitime.
+- *Cohérence* : j'avais cité β(t₀) = 2,418 puis 2,62 dans le même document. Sensibilité mesurée :
+  β₁ va de −0,423 à −0,478 et M₀ de 7,4×10¹¹ à 2,4×10¹¹ M☉. **À citer β₁ = −0,45 ± 0,03.** Corrigé.
+- *Extrapolation* : **RETIRÉ.** Ma « sortie de bande à 1,3×10⁴ Ga » intégrait l'EDO bien au-delà de
+  sa validité. Le festin s'arrête à t_end = 16-36 Ga, où β vaut encore 2,35 ou 1,96 — puis tombe à
+  0 d'un coup. β n'atteint jamais 1. **Il n'y a pas « deux horloges de fin à réconcilier » : il n'y
+  en a qu'une.** Mon « manquement neuf du jour » était une erreur d'extrapolation.
+
+**#79 — LE CONTRÔLE DUR : l'hérédité contre la croissance des halos mesurée en simulation.**
+Correa, Wyithe, Schaye & Duffy (MNRAS 450, 1521, 2015) donnent une formule analytique **calibrée
+sur simulations** : M(z) = M₀(1+z)^{αf}e^{−fz}, avec α = 1,686√(2/π)·dD/dz|₀ + 1 et
+f(M₀) = 1/√(S(M₀/q) − S(M₀)). Je l'ai implémentée et comparée à l'EDO, sur l'exposant **moyenné
+sur fenêtre** (le bon analogue du β ajusté, pas la valeur instantanée) :
+
+| M₀ [M☉] | β_sim (z<1) | β exigé par l'hérédité |
+|---|---|---|
+| 2,4×10¹¹ | 0,607 | **2,622** |
+| 10¹² | 0,674 | 2,366 |
+| 10¹⁴ | 1,055 | 1,608 |
+| 10¹⁵ | 1,441 | 1,285 |
+| 10¹⁶ | 2,153 | 1,031 |
+
+Les deux courbes se croisent en **M = 6,3×10¹⁴ M☉ où β = 1,345** — et nulle part ailleurs. Or β
+mesuré vaut 2,42-2,62. **La relation d'hérédité analytique et la croissance des halos calibrée sur
+simulation sont mutuellement incompatibles, sauf en un point qui n'est pas le nôtre.**
+
+**#80 — Et un retournement : la voie simulation replace la graine où le papier B l'avait mise.**
+Pour obtenir β = 2,418 par la MAH calibrée il faut M = **2,0×10¹⁵ (fenêtre z<3), 5,6×10¹⁵ (z<2),
+1,8×10¹⁶ M☉ (z<1)**. Le papier B annonçait à l'origine **1,4×10¹⁶ M☉** — accord à 30 % avec la
+fenêtre z<1. **Le chiffre d'origine était donc à la bonne échelle, pour une mauvaise raison** (il
+venait de l'appariement R = π/k). La correction #52, qui l'avait fait tomber à 10¹²-10¹⁵ M☉ via la
+relation analytique, s'éloigne au contraire des simulations. À ne pas trancher ici : les deux
+routes sont désormais explicitement en conflit, et c'est ça qu'il faut publier.
+
+**#81 — Le running, par les trois voies, et le verdict.**
+
+| voie | M graine [M☉] | β₁ prédit | tension avec la mesure |
+|---|---|---|---|
+| hérédité analytique K=2 (HS85) | 2,4-7,4×10¹¹ | −0,45 | 1,6σ |
+| hérédité analytique K=4 (rms) | 8×10¹⁴ | −0,68 | 2,4σ |
+| MAH calibrée simulation (Correa) | 7,5×10¹⁶ | **−1,95** | **6,5σ** |
+| **mesuré** | — | **+0,06 ± 0,31** | — |
+
+**Les trois prédictions sont négatives, les données préfèrent zéro.** Le running ne départage donc
+pas les voies : **il met la pression sur les trois**, et le plus fortement sur celle qui est la
+mieux calibrée. C'est le résultat le plus dur obtenu cette semaine, et il est écrit dans le papier A.
+
+**Ce que ça veut dire, sans arrangement** : soit β ne court pas et alors aucune des trois
+descriptions de l'hérédité ne tient, soit une courbure d'horloge compense — mais il faudrait alors
+κ = +0,17 (analytique) à **+0,77 (simulation)**, ce dernier étant au-delà de toute borne raisonnable.
+La couche d'hérédité du papier B est en difficulté sérieuse, indépendamment de la convention.
+**La couche empirique du papier A reste, une fois de plus, intacte.**
+
+**Scripts** : audit_edo.py (quatre contrôles), heredite_edo.py (EDO).
+
+
+---
+
+## 22/08 — HÉRÉDITÉ CREUSÉE : UNE CIRCULARITÉ, UN ENCADREMENT, ET UNE DÉGÉNÉRESCENCE STRUCTURELLE
+
+**#72 — La correction d'hier contient une circularité, et elle est symétrique.**
+La lecture pic (β = 2/(n+3)) n'est valide que si le profil moyen d'un pic domine le champ général,
+c'est-à-dire **ν ≫ 1**. Or l'échelle qu'elle désigne pour notre β = 2,42 est
+M = 7,4×10¹¹ M☉, où σ = 2,32 et **ν = 0,73** : des fluctuations typiques, pas des pics rares.
+Et symétriquement, la lecture rms (valide à ν ~ 1) désigne M = 1,8×10¹⁵ M☉ où **ν = 3,34** : des
+pics rares. **Chaque lecture désigne une échelle où c'est l'AUTRE qui s'applique.** Les deux se
+réfutent elles-mêmes, en sens opposés.
+
+**#73 — Donc : encadrement, pas égalité.** ε ∈ [(n+3)/6 ; (n+3)/3] donne rigoureusement
+β ∈ [2/(n+3) ; 4/(n+3)], soit n_eff ∈ [−2,17 ; −1,35] et
+
+  **7×10¹¹ M☉ ≲ M_graine ≲ 1,8×10¹⁵ M☉  —  trois ordres et demi.**
+
+Point fixe tenté : imposer ν = 1, seuil où le profil de pic commence à dominer, sélectionne
+M* = 6,2×10¹² M☉ et n_eff = −2,03, où les deux lectures donnent β = 2,05 et β = 4,11 — elles
+**encadrent** le β mesuré (2,42-2,60) sans qu'aucune ne le reproduise. Honnête et non concluant.
+
+**Ce que la correction achète quand même, sans ambiguïté** : l'échelle passe de 1,4×10¹⁶ M☉ —
+plus massif que toute structure existante — à un intervalle dont la moitié basse est peuplée de
+halos de galaxies ordinaires. Repère : un halo de Voie lactée (10¹² M☉) donnerait β = 2,37 en
+lecture pic, à comparer aux 2,42-2,60 mesurés.
+
+**#74 — La dégénérescence running/horloge est STRUCTURELLE. Aucune précision ne la brisera.**
+Ce que mesurent les données est le **produit** β_obs(t) = β_parent(t)·g(t) : une fonction fixe,
+prédite par le spectre, fois une fonction libre, l'horloge. En développant en ln t, **chaque
+coefficient de Taylor de l'horloge se projette sur l'ordre correspondant du running observé**.
+Aucune dérivée supérieure ne les sépare. Pour mémoire, l'hérédité prédit β₁ ≃ −0,43 à l'échelle
+de la graine et une courbure β₂ ≃ +0,12 — quatre fois sous l'incertitude actuelle sur β₁ seul, et
+de toute façon reproductible par une horloge à terme quadratique.
+
+**→ LE CALCUL À FAIRE, et c'est maintenant le plus rentable du corpus** : *calculer* g(t) au lieu
+de le paramétrer, en poussant la jonction Misner-Sharp jusqu'à une relation explicite entre le
+temps avancé extérieur (Vaidya) et le temps propre intérieur. Cela transformerait β₁ d'une
+combinaison dégénérée en **test propre de l'hérédité**, et |κ| < 0,24 d'une borne en **prédiction**.
+C'est écrit dans le papier A comme tel.
+
+A : 26 pages. B : 13 pages.
+
+
+---
+
+## 22/08, suite — LA LIGNE MANQUANTE : FAITE. ELLE NE FERME PAS, MAIS ELLE RÉTRÉCIT.
+
+**#75 — La relation d'horloge, dérivée.** Raccordement FLRW plat / Vaidya entrant à travers une
+hypersurface temporelle. Première condition de jonction : (1−2M/R)v̇² − 2Ṙv̇ = 1. En FLRW,
+Misner-Sharp donne 2M/R = H²R² et Ṙ = HR, donc **le discriminant se réduit identiquement** :
+Ṙ² + 1 − 2M/R = 1 (vérifié à 10⁻¹²). D'où
+
+  **dv/dt = 1/(1 − x), avec x ≡ H R_b**
+
+Contrôles : x → 0 donne dv/dt = 1 (temps avancé = temps propre au centre) ; x → 1 (horizon
+apparent, R = 2M) est singulier. La fonction libre g(t) devient une **fonction d'un seul nombre**,
+x₀ = H₀R_b(t₀), et κ est peu sensible à l'origine de v (un facteur 30 sur l'époque de départ
+déplace κ de 12 %).
+
+| x₀ | 0,02 | 0,05 | 0,10 | 0,20 | 0,35 | 0,50 |
+|---|---|---|---|---|---|---|
+| κ | 0,009 | 0,023 | 0,052 | 0,131 | 0,305 | 0,535 |
+
+**Donc |κ| < 0,24 borne le rayon de raccordement : x₀ = H₀R_b ≲ 0,30.** C'est la **première
+contrainte d'aucune sorte sur l'endroit où l'intérieur se termine.**
+
+**#76 — Mais je dois corriger mon engagement d'hier, et sur deux points.**
+J'avais écrit que ce calcul « transformerait β₁ en test propre de l'hérédité et |κ| < 0,24 en
+prédiction ». Faux, pour deux raisons.
+
+*(a)* x = H a χ_b croît sans borne vers le passé (Ha ∝ a^(−1/2) en domination de matière) : **aucune
+coquille comobile ne reste sous l'horizon à tout instant.** La relation ne vaut qu'après l'entrée
+dans l'horizon, et la limite de la cosmologie-trou-noir — l'intérieur remplit le parent, x → 1 —
+est précisément la limite singulière.
+
+*(b)* Je n'ai utilisé que la **première** condition de jonction. La seconde, continuité de la
+courbure extrinsèque, **surdétermine** un intérieur FLRW raccordé à un Vaidya pur M(v) : ce cas
+n'admet génériquement **aucune solution**. Le raccordement lisse exige la classe généralisée
+M(v,r) avec ∂M/∂r|_Σ = 0 ; à défaut, la jonction **induit une coquille mince portant une
+contrainte de surface tangentielle** (arXiv:2604.08806 §V ; Gen. Rel. Grav. 58, 2026).
+
+**C'est exactement le « continuité du flux nul (Vaidya entrant) » déjà listé comme non vérifié
+dans le papier B** — désormais identifié comme une **obstruction réelle**, pas un reste à faire.
+
+**Statut honnête : la fonction libre g(t) est réduite à un nombre libre x₀, borné par les données
+mais non prédit, et la réduction est conditionnelle à un raccordement qui exige génériquement une
+couche de surface. La dégénérescence est rétrécie, pas fermée.**
+
+**#77 — Et l'intuition du « voile » est validée par ce calcul.** L'idée lancée sans formalisme —
+que le modèle suppose l'absence de toile, alors que la masse entre par une surface — tombe
+exactement sur l'objet que la seconde condition de jonction impose : **une coquille mince à
+contrainte tangentielle**. Deuxième fois qu'une analogie mécanique désigne juste. Le contenu
+physique commun : ce qui entre par un bord n'entre pas sans laisser de contrainte sur ce bord.
+
+A : 26 pages, 0 erreur, 0 référence indéfinie.
+
+
+---
+
+## 22/08, soir — LE DUEL FRONTAL CONTRE LES TROUS NOIRS COUPLÉS : MATCH NUL
+
+**#78 — Rival implémenté d'après ses équations, pas reconstruit.** Croker et al., JCAP 10 (2024)
+094, section 2, lue intégralement : ρ_b déplétée en suivant le taux de formation stellaire,
+dρ_DE/da = Ξψ/(Ha⁴) avec w := −1, ρ_DE(a ≤ a_i) := 0, et **H₀ DÉRIVÉ** de la fermeture au lieu
+d'être ajusté. C'est leur argument central : « même χ² que ΛCDM, deux paramètres de moins que
+w₀wₐ ».
+
+**Validation de mon implémentation** : elle **dérive H₀ = 69,86** contre leur **69,94 ± 0,81**
+publié — accord à **0,1 %** — et reproduit leur affirmation d'un χ² comparable à ΛCDM sous le taux
+fiduciel Madau-Dickinson (Δχ² = +0,19). L'implémentation tient.
+
+**#79 — RÉSULTAT : match nul, et je l'écris tel quel.**
+
+| modèle | k | χ² | AIC | ΔAIC |
+|---|---|---|---|---|
+| accrétion, Γ ∝ 1/t | 4 | 1419,31 | **1427,31** | — |
+| **CCBH (ψ informé JWST)** | **3** | 1421,48 | **1427,48** | **+0,17** |
+| ΛCDM | 3 | 1425,09 | 1431,09 | +3,78 |
+| CCBH (ψ Madau-Dickinson) | 3 | 1425,28 | 1431,28 | +3,97 |
+
+Avec l'histoire de formation stellaire qu'ils adoptent comme **principale**, CCBH est à
+**ΔAIC = 0,17** — indiscernable — et y parvient avec **un paramètre de moins**, puisque H₀ y
+découle de la fermeture. Il atteint aussi un H₀ plus élevé (69,86 contre notre 68,85), donc il
+réduit davantage la tension SH0ES.
+
+**L'affirmation « le modèle bat les alternatives publiées », vraie contre les quatre lois de taux
+de création de particules, ne s'étend PAS à celle-ci.** Écrit dans le papier A.
+
+**#80 — Trois réserves, déclarées et non absorbées.**
+- Mon taux à haut z est un **doublement grossier** de Madau-Dickinson au-delà de z = 4, pas la
+  compilation Trinca informée par JWST. Le Ξ = 2,86 ajusté contre leur 1,403 reflète cette
+  approximation plus le jeu de données différent (facteur 2,04).
+- L'**époque de première lumière z_i**, que je fixe à 20, déplace le H₀ dérivé entre **67,97 et
+  70,91** pour z_i ∈ [10 ; 30]. C'est un paramètre caché du rival, pas un paramètre ajusté.
+  *(Le premier test de sensibilité était cassé — ZI figé à la définition de la fonction — corrigé.)*
+- **Le verdict dépend de quelle histoire de formation stellaire est adoptée**, c'est-à-dire d'un
+  intrant astrophysique et non d'un degré de liberté. C'est là que la comparaison devra se trancher.
+
+**CE QUE ÇA CHANGE POUR LA STRATÉGIE.** Le duel était annoncé comme « le moins cher et publiable
+seul ». Il l'est — mais son résultat est un nul, pas une victoire. Deux conséquences :
+1. Le papier gagne quand même : il contient désormais **la seule comparaison directe publiée**
+   entre ces deux cadres sur données identiques, avec le rival implémenté et validé à 0,1 %.
+   C'est un contenu réel, indépendamment de qui gagne.
+2. Le vrai départage ne se fera **pas sur le fond**. Les deux modèles y sont dégénérés. Il se fera
+   sur ce qui les distingue structurellement — et CCBH prédit une **déplétion baryonique de 30-40 %**
+   observable, là où notre modèle ne touche pas aux baryons. **C'est le test à monter ensuite**,
+   et il est indépendant de tout ce qui a occupé cette semaine.
+
+A : 27 pages.
+
+
+---
+
+## 22/08, nuit — LES BARYONS : UNE THÉORIE, UNE CONTRAINTE, ET LE DISCRIMINANT
+
+**#81 — La question a une réponse chiffrée, parce que le fluide injecté est de la MASSE.**
+L'identité avec la création de particules donne w_E = 0 : le fluide injecté est **intrinsèquement
+sans pression**. Ce n'est pas un champ, c'est de la masse — donc la question « de quelle espèce ? »
+se pose, et elle n'est pas rhétorique.
+
+Si une fraction f_b de la masse injectée est baryonique :
+  Δω_b/ω_b = Ω_de h²f_b/ω_b = **14,6 f_b**
+Le recensement baryonique tardif contraint donc **f_b < 0,5 % (1σ), f_b < 1,0 % (2σ).**
+
+**#82 — Ce que la théorie EXIGE, et il faut l'écrire comme une dette.** Si le parent ressemble à
+nous, Ω_b/Ω_m = 0,16 : **16 % de ce qu'il avale est baryonique**. Pour respecter f_b < 0,5 %, il
+faut que **≥ 97 % de ce contenu baryonique perde son identité d'espèce au bord**. Le rebond
+torsionnel à densité de Planck fournit un mécanisme — l'identité d'espèce est détruite puis
+rétablie par le réchauffage de l'enfant — mais c'est une **exigence que le modèle contracte**,
+pas une hypothèse qu'il a le droit de faire. Écrit comme telle dans A.
+
+**#83 — LE DISCRIMINANT, et il est mesurable aujourd'hui.** Les deux cadres sont dégénérés sur le
+fond mais **opposés dans le secteur baryonique** : CCBH *fabrique* l'énergie noire à partir des
+baryons (s ≈ 0,6-0,7) ; le modèle d'accrétion la reçoit du dehors et ne touche pas aux baryons
+(s = 1 à mieux que 1 %).
+
+Les FRB localisées mesurent l'abondance tardive **directement** — la mesure de dispersion compte
+tout électron libre sur la ligne de visée, aggloméré ou non, ce qui est essentiel puisque notre
+composante injectée ne s'agglomère pas. Ω_b = 0,0490 (+0,0036/−0,0033), soit 7 %, et le budget des
+baryons manquants a depuis été partitionné et clos.
+
+| modèle | s | Ω_b(0) | écart |
+|---|---|---|---|
+| **accrétion** | 1,000 | 0,0477 | **0,4σ** |
+| CCBH (mon ajustement) | 0,615 | 0,0282 | 5,9σ |
+| CCBH (publié) | 0,700 | 0,0320 | 4,8σ |
+
+**#84 — Ce que je ne prétends PAS.** Ce n'est pas une réfutation de CCBH. La contrainte FRB porte
+sur le **produit Ω_b h f_d** avec f_d la fraction en gaz ionisé diffus (mesurée ~0,8-0,9), et les
+analyses FRB publiées supposent un E(z) de type ΛCDM. **Refaire l'inférence FRB dans le fond CCBH
+est le travail qui reste**, et c'est le travail décisif : la comparaison de fond ne sépare pas ces
+modèles, le secteur baryonique le peut.
+
+**BILAN DE LA JOURNÉE — et il est meilleur qu'il n'en avait l'air à midi.**
+Le duel de fond est un nul (ΔAIC = 0,17, et le rival a un paramètre de moins). Mais en cherchant
+*pourquoi* il était nul, on a trouvé l'endroit où les deux cadres divergent le plus fortement de
+tout ce qu'on a examiné cette semaine — un facteur 1,6 sur une quantité mesurée à 7 %. Et cette
+divergence n'est pas ajustable : elle découle de la direction du flux. CCBH prend aux baryons, nous
+recevons du dehors. **C'est structurel, donc non négociable par un paramètre.**
+
+A : 28 pages.
+
+
+---
+
+## 23/08 — INFÉRENCE FRB REFAITE DANS LE FOND CCBH : MON RÉSULTAT D'HIER EST RETIRÉ
+
+**#85 — La comparaison d'hier était faite au mauvais endroit.** J'avais compare s·Ω_b au Ω_b mesuré
+par les FRB. Mais **la mesure de dispersion est une INTÉGRALE** le long de la ligne de visée : elle
+pèse le passé, où CCBH possède **encore** ses baryons. Calcul refait proprement :
+DM(z) ∝ ∫ρ̃_b(z')(1+z')dz'/E(z'), avec ρ̃_b comobile décroissante dans le temps.
+
+| z | 0,0 | 0,5 | 1,0 | 2,0 | 3,0 |
+|---|---|---|---|---|---|
+| Ω_b(CCBH)/Ω_b(ΛCDM) | 0,588 | 0,647 | 0,722 | 0,854 | 0,912 |
+
+**#86 — La compensation est réelle mais MODESTE : 5,9σ → 5,4σ.** Ce n'est pas elle qui décide.
+
+**#87 — CE QUI DÉCIDE, c'est s, et mon s était faux.** Contrôle d'équité : à **leur s publié de
+0,70** (au lieu de mon 0,615), Ω_b^eff passe de 0,030 à **0,043**, soit **1,7σ** au lieu de 5,4σ —
+et le déficit devient absorbable par f_d = 0,967, ce qui est possible.
+
+**→ Le « 4,8-5,9σ » que j'ai écrit hier dans le papier A est RETIRÉ.** Corrigé dans le texte.
+
+**#88 — La cause de mon erreur, et elle est instructive.** s est fixé par l'histoire de formation
+stellaire **à haut z**, parce que l'énergie noire produite tôt coûte peu de baryons — eux-mêmes
+l'écrivent : *l'énergie noire produite par unité de densité baryonique varie comme (1+z)³*. Mon
+doublement grossier de Madau-Dickinson au-delà de z = 4 sous-produit l'énergie noire précoce, ce
+qui force plus de consommation tardive, ce qui gonfle le déficit. **Je ne peux pas reproduire leur
+triplet (Ξ, s, H₀) simultanément sans leur compilation informée par JWST** : forcer s = 0,70 chez
+moi donne H₀ = 63,71, hors de leur cosmologie.
+
+**#89 — DEUX CHOSES SURVIVENT, et elles gardent le test vivant.**
+1. **La borne f_d a des dents.** La relation de Macquart contraint le **produit** Ω_b·f_d. Une
+   survie s ≲ 0,65 exigerait **f_d > 1**, ce qui est impossible. Le test devient donc décisif dès
+   que s est épinglé sous ce seuil — et on n'en est pas loin.
+2. **Le modèle d'accrétion est indiscernable de ΛCDM en DM** : rapport 0,984 à 0,990 sur
+   0,1 < z < 1. Il prédit la valeur standard **sans aucune liberté**. C'est un vrai atout : là où
+   CCBH doit ajuster, nous n'avons rien à ajuster.
+
+**CE QU'IL FAUT POUR TRANCHER** : la compilation Trinca et al. (2022, MNRAS 511, 616 ; 2024, MNRAS
+529, 3563) du taux de formation stellaire à haut z, ou leurs chaînes. Sans elle, le test n'est pas
+concluant, et je l'écris ainsi plutôt que de garder un chiffre flatteur.
+
+A : 28 pages, tableau à 5σ remplacé par le calcul honnête.
+
+
+---
+
+## 23/08, suite — LE TEST FRB, FAIT CORRECTEMENT. CCBH GAGNE SUR LE FOND, PERD SUR LES BARYONS.
+
+**#90 — J'avais mal lu leur prescription, et c'était la clé.** Ils écrivent : « pour z ≤ 4 nous
+adoptons le SFRD standard de Madau & Dickinson, **en imposant la continuité par un rescaling de la
+normalisation** pour raccorder à z = 4 ; le facteur requis est ~2 ». J'avais rehaussé **seulement**
+z > 4 en laissant z < 4 intact. Or c'est la normalisation **à bas z** qui fixe s.
+
+**#91 — Calibration, et elle valide.** Au lieu de transcrire leur courbe (que je n'ai pas), je
+résous pour (A, B) — normalisation globale et rehaussement au-delà de z = 4 — en imposant **leur
+s = 0,70 et leur H₀ = 69,94 à leur Ξ = 1,403**. Solution : **A = 1,55**, à comparer au facteur
+« ~2 » qu'ils annoncent. **Le critère de validation passe.**
+
+**Puis, le vrai contrôle** : je réajuste ce modèle **librement sur MES données** (Pantheon+ +
+DESI DR2 + distance-priors + SH0ES, alors qu'eux n'ont que DESI Y1 BAO + BBN) :
+
+| | mon réajustement | leur publication | écart |
+|---|---|---|---|
+| Ξ | **1,382** | 1,403 | 1,5 % |
+| s | **0,7016** | 0,70 | 0,2 % |
+| H₀ | **69,61** | 69,94 | 0,5 % |
+
+Trois quantités, trois accords sous 2 %, sur des données entièrement différentes. **L'implémentation
+est validée.** *(Le χ² = 1950 vu en route était un artefact : j'avais figé ω_c à leur valeur alors
+que mes données préfèrent 0,1189. Pas une tension réelle — vérifié, et non exploité.)*
+
+**#92 — RÉSULTAT 1, contre nous : CCBH gagne sur le fond.**
+χ² = **1420,31**, k = 3 → **AIC = 1426,31** contre notre **1427,31**. Un point d'AIC en sa faveur,
+**avec un paramètre de moins**. C'est mieux pour eux que mon estimation d'hier (ΔAIC = +0,17).
+
+**#93 — RÉSULTAT 2, en notre faveur, et c'est le seul non dégénéré de la semaine.**
+Au même meilleur ajustement, un analyste ΛCDM lisant la relation de Macquart inférerait
+**Ω_b^eff = 0,0350** contre **0,0490 ± 0,0035** mesuré : **déficit à 4,0σ**.
+
+Et il **n'est pas absorbable** : la relation contraint le produit Ω_b·f_d, donc combler l'écart
+exigerait **f_d = 1,19** — et encore **1,07** sous la fraction diffuse la plus conservatrice.
+Stable à 3,8-4,4σ selon la plage de redshift.
+
+**Notre modèle, lui, diffère de ΛCDM en DM de 1 à 2 % sur 0,1 < z < 1** : il prédit la valeur
+standard **sans aucune liberté**.
+
+**#94 — Caveats déclarés, non enterrés.** (a) Mon taux est une calibration à deux paramètres sur
+leur état publié, pas leur compilation JWST. (b) Le Ω_b cité vient de 22 sursauts localisés avec
+priors de simulation ; des échantillons plus grands existent (124 FRB ; Connor et al.). (c) Un
+traitement pleinement auto-cohérent réajusterait la vraisemblance FRB **dans** le fond CCBH plutôt
+que de demander ce qu'un analyste ΛCDM inférerait.
+
+**LE POINT STRUCTUREL, et il justifie toute la journée** : les deux cadres sont **dégénérés sur
+l'histoire d'expansion et opposés dans le secteur baryonique**, et seul le second est décidable.
+Le fond ne les séparera jamais — ni DR3, ni DR5. Les FRB, oui.
+
+A : 28 pages. Scripts : duel_ccbh.py, frb_ccbh.py, calibration_ccbh.py.
+
+
+---
+
+## 23/08, audit — LE TEST FRB ANCRÉ DANS L'ANALYSE PUBLIÉE, ET DEUX CORRECTIONS
+
+**#95 — J'utilisais la mauvaise mesure et une f_d inventée.** Lecture de Connor et al.
+(Nature Astronomy 2025, arXiv:2409.16952) :
+- la mesure est **Ω_b h₇₀ = 0,049 ± 0,003** (et non 0,0490 ± 0,0035 que j'employais) ;
+- la partition diffuse est **f_IGM = 0,80 (+0,08/−0,09)** et **f_X = 0,11 (+0,10/−0,07)** ;
+- **priors uniformes avec la contrainte dure f_IGM + f_X ≤ 1** ;
+- leur intégrale de dispersion s'écrit explicitement avec un **E(z) ΛCDM** — mon cadre
+  « ce qu'inférerait un analyste ΛCDM » est donc exactement le bon, ce qui n'était pas garanti.
+
+**Recalcul avec leurs valeurs** : DM_CCBH/DM_ΛCDM = **0,729** à fraction diffuse identique, d'où
+un Ω_b h₇₀ inféré de **0,0343** contre 0,049 ± 0,003 : **4,9σ** (et non 4,0σ). Le modèle
+d'accrétion donne **0,0470**, soit **0,7σ**.
+
+**Et le point dur est maintenant ancré dans LEUR analyse, plus dans mon hypothèse** : reproduire
+la DM observée dans un fond CCBH exigerait **f_IGM + f_X = 1,25**, et encore **1,03** au bord bas
+de leur postérieure. **Leur propre prior l'interdit.** Il faudrait plus de baryons diffus qu'il
+n'en existe.
+
+**#96 — Le verdict AIC n'est PAS robuste, et je l'écris.** CCBH gagne d'un point d'AIC **seulement
+si** la normalisation du taux stellaire est traitée comme un intrant astrophysique. Si on la
+compte comme paramètre ajusté : AIC = 1428,31, et **l'ordre s'inverse**. Avec le rehaussement à
+haut z en plus : 1430,31. J'ai retenu la lecture **la plus favorable au rival** et signalé
+l'instabilité — qui est elle-même un énoncé sur le peu que le fond sépare.
+
+**#97 — Contrôle indépendant de l'intégration, et il passe.** Calcul à la main de la consommation
+baryonique : ρ_* formé = 1,342×10⁹ M☉/Mpc³ soit ω = 0,00484 ; consommé = Ξ×ρ_* = 0,00668 ;
+survie prédite **s = 0,702**. L'EDO donne **0,702**. Accord exact — l'intégration du système (2.7)
+est vérifiée par une voie totalement séparée.
+
+**Ce qui reste ouvert, et c'est le vrai travail** : refaire la vraisemblance FRB **dans** le fond
+CCBH — recalculer f_IGM, f_X et la distribution des hôtes simultanément — au lieu de demander ce
+qu'inférerait un analyste ΛCDM. C'est ce que le papier déclare.
+
+A : 28 pages, 0 erreur, 0 référence indéfinie.
+
+
+---
+
+## 23/08, nuit — VRAISEMBLANCE FRB COMPLÈTE : LE TEST TOMBE DE 4,9σ À 2,1σ
+
+**#98 — Ce que les tests précédents ne faisaient pas.** Je comparais des DM **moyennes**. Or la
+contribution de l'**hôte** est un paramètre libre : un déficit cosmique peut être partiellement
+caché en remontant μ_host. Il fallait refitter {f_IGM, f_X, μ_host, σ_host} **simultanément dans
+chaque fond**, comme le fait l'analyse publiée. Fait.
+
+**Machinerie validée avant usage** : sur échantillon synthétique calibré, l'ajustement ΛCDM
+retrouve f_IGM = **0,87** contre 0,80 en entrée, f_X = 0,09, hôte médian 109 contre 120. Critère
+pré-enregistré passé.
+
+**#99 — RÉSULTAT, et il coupe mon chiffre d'hier par plus de deux.**
+Douze réalisations de 69 sursauts :
+
+| fond | Δχ² vs ΛCDM | réalisations pires que ΛCDM |
+|---|---|---|
+| **accrétion** | **0,02 ± 0,05** | — |
+| CCBH | **4,4 médian** (4,1 ± 2,9) | 83 % |
+
+**Le test vaut ~2,1σ, pas 4,9σ.** Les nuisances absorbent l'essentiel du déficit, surtout via
+l'hôte, dont la médiane doit monter de ~110 à **130-195 pc/cm³**. **Aucune réalisation n'atteint
+3σ.** Le 4,9σ d'hier supposait les nuisances figées : c'était le mauvais test, et je le retire du
+papier.
+
+**#100 — CE QUI SURVIT, et c'est qualitatif mais net.** Dans **10 réalisations sur 12**, l'ajustement
+CCBH **sature f_IGM + f_X = 1,000** : il est plaqué contre le plafond des baryons diffus
+disponibles. Une analyse publiée tournée dans ce fond rendrait donc une fraction diffuse **collée à
+l'unité** — c'est un énoncé falsifiable sur la *sortie de l'analyse*, pas sur une moyenne. Et c'est
+plus robuste qu'un Δχ², parce que ça ne dépend pas de la taille d'échantillon.
+
+**#101 — LE TEST DEVIENT DÉCISIF AVEC L'ÉCHANTILLON.** Δχ² croît linéairement avec N :
+
+| significance | N requis |
+|---|---|
+| 3σ | **142** sursauts localisés |
+| 4σ | 253 |
+| 5σ | 395 |
+
+Repères : Macquart 2020 = 5 ; Yang 2022 = 22 ; Connor 2025 = 69. **Le nombre a été multiplié par 14
+en quatre ans**, et CHIME/Outriggers et DSA-110 en produisent au rythme requis. **Le 3σ tombe dans
+la fenêtre de DR3.**
+
+**#102 — Deux réserves qui bornent la prévision, et l'une va dans notre sens.**
+- Mes f_IGM et f_X sont **dégénérés** (je ne contrains que leur somme) là où l'analyse publiée les
+  sépare par la statistique d'intersection de halos. **Retirer cette liberté renforcerait le test**,
+  pas l'inverse. Ma prévision est donc conservatrice.
+- Mon σ_host est mal restitué en validation (0,18 contre 0,55 en entrée) : mon modèle de dispersion
+  n'est pas le leur.
+
+**Et le modèle d'accrétion sort intact** : Δχ² = 0,02 ± 0,05, indiscernable de ΛCDM sur douze
+réalisations. Il ne gagne rien — mais il n'a rien à ajuster, ce qui est le point.
+
+A : 29 pages. Script : frb_likelihood.py.
+
+
+---
+
+## 23/08 — LE PAYSAGE DES RIVAUX, MIS À JOUR. L'ÉTUDE DES RIVAUX EST PÉRIMÉE.
+
+**#103 — Trois rivaux sérieux, dont deux de cette année, absents de l'étude.**
+
+**(i) Énergie noire en interaction, construite EXACTEMENT dégénérée avec CPL au niveau du fond**
+(arXiv:2508.17955, PRD 2026). Elle ajuste aussi bien que CPL, **évite le croisement par
+construction** — le « croisement de w = −1 » y devient un changement de signe du couplage vers
+z ≈ 0,8 — et surtout **son transfert d'énergie noire vers la matière noire ABAISSE S₈**.
+**C'est un désavantage direct pour nous** : sur la seule tension où nos deux cadres diffèrent en
+signe, le rival va vers les données de lentillage et nous nous en éloignons (S₈ = 0,826 contre
+0,810 ΛCDM, +2,0 % — chiffré au #55 comme entièrement paramétrique, mais le signe reste).
+
+**(ii) Anton-Schmidt** (PRD, il y a quatre jours) : évidence bayésienne **modérée-à-forte sur ΛCDM
+et forte-à-décisive sur CPL**, avec un croisement de type Quintom-B, le même que le nôtre. C'est la
+revendication bayésienne la plus forte que j'aie vue dans ce champ.
+
+**(iii) Théorie des champs du secteur sombre en interaction** (arXiv:2605.20060, mai 2026) :
+matière noire fermionique couplée par un terme de Yukawa à un champ tachyonique de Born-Infeld,
+produisant un **double croisement** récent alors que la dynamique scalaire sous-jacente reste
+non-phantom. **Structurellement la même manœuvre que la nôtre** : une équation d'état effective qui
+croise, une microphysique qui ne croise pas.
+
+**#104 — Un point qui joue POUR nous, et il faut le dire.** L'objection récurrente aux croisements
+motivés par DESI est un **théorème de non-existence** : ils ne peuvent pas naître d'un champ
+scalaire canonique unique ni d'un fluide parfait. **Notre fluide n'est ni l'un ni l'autre** — il est
+à source externe, équivalemment un fluide de création de particules avec Γ = Ṁ/M. Le théorème ne
+nous atteint pas, et le croisement cesse d'être un défaut à excuser. Peu de modèles peuvent en dire
+autant.
+
+**#105 — Deux menaces sur la base même du signal.**
+- Le même champ rapporte que **ΛCDM reste statistiquement compétitif** sur toutes les combinaisons
+  de données, **aucun modèle ne montrant de préférence robuste** (EPJC 86, 2026).
+- Et une ligne indépendante soutient que **l'évidence DR1/DR2 pour l'énergie noire dynamique est
+  biaisée par les supernovae à bas z** (Huang, Cai & Wang, arXiv:2502.04212) — c'est **exactement
+  le levier de calibration bas-z que notre propre test nul avait isolé** (le −1,15 avec prior
+  implicite). Convergence indépendante sur le même point faible.
+
+**POSITION HONNÊTE À TENIR** : nous sommes **un membre d'une famille croissante de constructions
+qui ajustent un signal dont la réalité n'est pas établie**. Le bon étalon n'est plus le duel par
+paires mais une **comparaison bayésienne multi-modèles systématique** — Ong, Yallup & Handley,
+arXiv:2603.05472, « The Bayesian view of DESI DR2 ». C'est là qu'il faut se placer.
+
+**Conséquence pratique** : l'étude des rivaux du corpus (6 modèles, 4 non convergés) est **périmée
+en composition**, pas seulement en convergence. À reconstruire autour de (a) l'IDE dégénérée-CPL,
+(b) Anton-Schmidt, (c) CCBH, (d) les quatre lois de création de particules, (e) Lombriser. Cinq
+familles, toutes avec un mécanisme, toutes post-DR2.
+
+A : 30 pages.
+
+
+---
+
+## 23/08, fin — L'ATLAS DES RIVAUX EST FAIT. SEPT FAMILLES, UN PIPELINE, DONNÉES IDENTIQUES.
+
+**#106 — La table.** Pantheon+ + DESI DR2 + distance-priors + SH0ES, k compté de la même façon
+pour tous (paramètres réellement variés sur CES données) :
+
+| modèle | k | χ² | AIC | ΔAIC |
+|---|---|---|---|---|
+| **CCBH** (Croker et al.) | 3 | 1420,31 | **1426,31** | — |
+| **accrétion, Γ ∝ 1/t** (nous) | 4 | 1419,31 | 1427,31 | +1,00 |
+| PC1 (création, w_E libre) | 6 | 1416,70 | 1428,70 | +2,39 |
+| CPL ≡ IDE dégénérée-CPL | 5 | 1418,93 | 1428,93 | +2,62 |
+| Anton-Schmidt | 5 | 1419,52 | 1429,52 | +3,21 |
+| ΛCDM | 3 | 1425,09 | 1431,09 | +4,78 |
+| séquestration dans les structures effondrées | 2 | 1427,61 | 1431,61 | +5,30 |
+
+**#107 — Le résultat principal est négatif et c'est le plus utile de la semaine.**
+**Les quatre premières familles tiennent dans ΔAIC = 2,6.** Sur le fond, elles sont
+**indiscernables**. Nous reproduisons donc, dans notre propre pipeline, la conclusion tirée
+indépendamment par la littérature récente : aucun modèle ne montre de préférence robuste.
+
+**#108 — Deux lectures secondaires.**
+- **Toutes les familles dynamiques battent ΛCDM**, de 1,6 à 4,8 en AIC. Le signal est là ;
+  son interprétation ne l'est pas.
+- **Lombriser mérite une note à part** : il **prédit** Ω_de = 0,697 au lieu de l'ajuster, et payer
+  cette prédiction ne coûte que **Δχ² = 2,5** contre un Ω_m libre. Il finit donc à égalité d'AIC
+  avec ΛCDM **avec un paramètre de moins**. C'est le seul modèle du tableau dont un paramètre
+  d'énergie noire soit prédit — et il tient.
+
+**#109 — Deux réserves déclarées, dont une contre moi.**
+- Mon Anton-Schmidt utilise l'équation d'état publiée P = A(ρ/ρ_*)^(−n)ln(ρ/ρ_*) appliquée **au
+  seul secteur sombre**, pas leur traitement unifié à fluide unique. **Il ne reproduit pas leur
+  préférence annoncée sur CPL** (je trouve l'inverse : +3,21 contre +2,62). L'écart est le mien,
+  pas le leur.
+- **L'AIC n'est pas l'évidence bayésienne.** Un échantillonnage imbriqué pondérerait le volume de
+  prior, ce qui pénalise les familles à haute dimension plus que 2k — un effet qui **aiderait les
+  deux entrées les moins dimensionnées, CCBH et nous**.
+
+**CE QUE LA TABLE TRANCHE** : **l'histoire d'expansion ne séparera pas ces constructions**, quoi
+que DR3 y ajoute. Chacune porte son discriminant ailleurs — le secteur baryonique pour CCBH, S₈
+pour la famille en interaction, le running de β pour nous. **C'est là que la comparaison doit se
+déplacer**, et c'est désormais écrit dans le papier.
+
+A : 31 pages. Script : atlas_rivaux.py.
+
+
+---
+
+## 23/08, audit de l'atlas — DEUX CONTRÔLES PASSENT, DEUX AFFIRMATIONS DU CORPUS TOMBENT
+
+**#110 — Contrôles passés.**
+- **CPL est convergé** : balayage 5×5 sur (w₀, wₐ) retrouve le même minimum (1418,927 ; w₀ = −0,921 ;
+  wₐ = −0,441). Δχ² = −6,16 pour 2 paramètres, soit ~2,5σ contre les **~2,8σ publiés** par DESI DR2
+  + Pantheon+ + CMB. Écart attribuable aux distance-priors (au lieu du CMB complet) et au prior
+  SH0ES que leur analyse n'a pas. Cohérent.
+- **Anton-Schmidt croise bien la barrière phantom**, à z = 0,20, de w = −1,19 (z=3) à −0,923
+  aujourd'hui : **évolution Quintom-B, exactement comme publié**. Mon implémentation reproduit leur
+  comportement qualitatif malgré la variante « secteur sombre seul ».
+
+**#111 — LE CROISEMENT À z = 0,463 N'EST PAS UNE PRÉDICTION. RETIRÉ DU PAPIER.**
+La condition de croisement est Ht = β/3, et Ht varie lentement près du présent : **une variation de
+7 % de β déplace le croisement d'un facteur 2.**
+
+| β | origine | w₀ | z_croisement |
+|---|---|---|---|
+| 2,42 | SN+BAO | −0,849 | **0,458** |
+| 2,49 | post-vérification | −0,874 | 0,345 |
+| 2,56 | profil Planck complet | −0,898 | 0,253 |
+| 2,595 | distance-priors v3 | −0,910 | **0,214** |
+
+Le corpus annonçait 0,463 **partout**, y compris dans le papier A (trois occurrences), alors que
+c'est la valeur pour le **plus petit** β de la plage. **Retiré comme prédiction chiffrée** ; il
+reste « croisement à bas redshift ».
+
+**#112 — Et ce n'est PAS un discriminant entre familles non plus.** Chaque famille réajustée sur
+les mêmes données croise à :
+
+| famille | w(0) | z croisement |
+|---|---|---|
+| accrétion | −0,910 | **0,21** |
+| CPL ≡ IDE dégénérée | −0,921 | **0,22** |
+| Anton-Schmidt | −0,923 | **0,20** |
+| PC1 (création) | −0,948 | **0,31** |
+| CCBH, ΛCDM, Lombriser | −1,000 | aucun |
+
+**Les quatre familles qui croisent le font au même endroit à 0,1 près**, avec des w₀ entre −0,91 et
+−0,95. **Une meilleure reconstruction de w(z) ne les séparera pas** — ce qui renforce la conclusion
+de l'atlas et referme définitivement l'idée que DR3 tranchera par la forme.
+
+**Conséquence sur la hiérarchie des tests** : la « forme de w(z) », que je plaçais en deuxième
+position derrière le running de β, **descend au niveau de fσ8**. Priorité révisée :
+**β₁ (running) > secteur baryonique (FRB) > S₈ > forme de w(z) ≈ fσ8 > ISW.**
+
+A : 31 pages.
+
+
+---
+
+## 23/08, suite — S₈ : LA TENSION A BOUGÉ, ET LE DÉSAVANTAGE QUE J'AI ÉCRIT HIER S'AFFAIBLIT
+
+**#113 — État actuel des mesures, lues et non supposées.**
+
+| source | S₈ |
+|---|---|
+| Planck 2018 (CMB) | 0,830 ± 0,013 |
+| **KiDS-Legacy (2025)** | **0,815 (+0,016/−0,021)** |
+| ACT DR6 | 0,790 (+0,024/−0,027) |
+| DES Y3 | 0,782 (+0,021/−0,020) |
+
+**KiDS-Legacy est remonté vers Planck.** Et l'analyse DESI-DR1 3×2pt trouve des décalages contre
+Planck de 1,3σ (DES-Y3), 2,1σ (KiDS-1000), 1,4σ (HSC-Y3) et **refuse de parler de tension**,
+concluant à une cohérence à 1,5-2σ. Le statut de la tension S₈ est explicitement décrit comme
+« incertain et toujours débattu » dans la littérature de 2026.
+
+**#114 — Conséquence sur notre S₈ = 0,826.**
+
+| mesure | notre écart | écart ΛCDM |
+|---|---|---|
+| KiDS-Legacy | **0,6σ** | 0,3σ |
+| ACT DR6 | 1,4σ | 0,8σ |
+| DES Y3 | 2,1σ | 1,4σ |
+
+**Et sur l'avantage du rival IDE.** S'il descend à S₈ ≈ 0,79, il est à 0,0σ d'ACT et 0,4σ de DES —
+mais à **1,4σ de KiDS-Legacy, où nous sommes à 0,6σ**. **Son avantage dépend entièrement du relevé
+retenu.** Il gagne contre DES et ACT, il **perd** contre KiDS-Legacy.
+
+**Position corrigée dans le papier A** : « ni avantage revendiqué, ni désavantage concédé ». Le
+signe de notre décalage S₈ n'est un handicap que sous la sélection de relevés qui maximise la
+tension, et cette sélection est actuellement contestée. J'avais écrit hier « un désavantage
+direct » — c'était vrai de la tension telle qu'on la citait il y a trois ans, pas de son état
+d'aujourd'hui.
+
+**Conséquence sur la hiérarchie des tests** : S₈ **descend** aussi. Priorité révisée, et elle
+s'est beaucoup simplifiée en deux jours :
+**1. β₁ (running) — 2. secteur baryonique (FRB, 142 sursauts pour 3σ) — 3. tout le reste, à
+égalité et hors de portée.**
+
+
+---
+
+## 24/08 — LE POUVOIR DISCRIMINANT NE VIENT PAS DU NOMBRE. PAPIER C CORRIGÉ.
+
+**#103 — Une hypothèse tacite dans ma prévision « 142 sursauts ».** Elle supposait que tous les
+sursauts se valent. Faux, et pour une raison **structurelle** : à un redshift unique,
+DM_cos(z) et DM_host/(1+z) sont **parfaitement dégénérés** — seule leur somme est observable, et
+μ_host absorbe exactement toute variation du terme cosmique. **Le pouvoir vient du levier en
+redshift, pas du comptage.**
+
+**#104 — Mesuré, à N = 69 constant :**
+
+| échantillon | z médian | Δχ² | par sursaut | N pour 3σ |
+|---|---|---|---|---|
+| bas z seul (0,05-0,4) | 0,21 | 2,6 | 0,038 | 239 |
+| distribution actuelle | 0,27 | 4,1 | 0,059 | 153 |
+| étendue | 0,50 | 4,6 | 0,067 | 134 |
+| **bimodale** (moitié z<0,2, moitié z>0,9) | 0,91 | **7,6** | **0,110** | **82** |
+| **haut z seul (0,9-1,5)** | 1,18 | **−0,1** | **~0** | **∞** |
+
+**Facteur 2,9 entre le meilleur et le pire choix.** Et le résultat contre-intuitif : un échantillon
+**entièrement à haut z n'a AUCUN pouvoir**, alors même que ses sursauts portent le plus grand
+déficit absolu — sans ancrage à bas z, l'hôte se recale et absorbe tout.
+
+**Énoncé opératoire** : *les sursauts proches calibrent l'hôte, les lointains mesurent la
+cosmologie, et aucune des deux populations ne sert sans l'autre.*
+
+**#105 — Linéarité en N vérifiée séparément** (elle, elle tient) : Δχ²/N = 0,059 / 0,046 / 0,060 à
+N = 35 / 69 / 140 — constant à la dispersion de réalisation près, qui reste importante avec
+seulement quatre à six réalisations. Déclaré comme tel dans le papier.
+
+**Ce que ça change pour le papier C.** La prévision passe d'un nombre unique à une **stratégie
+observationnelle** : 3σ avec **82 localisations bien choisies** au lieu de 239 mal choisies. C'est
+une recommandation actionnable pour CHIME/Outriggers et DSA-110, et le choix du redshift est
+affaire de sélection, pas d'attente. Le papier gagne son argument le plus utile au champ.
+
+Papier C : 6 pages. Script : frb_strategie.py.
+
+
+---
+
+## 24/08, audit — PAPIER C : CINQ CORRECTIONS, DONT UNE EN SA FAVEUR
+
+**#106 — Un « 142 » survivant dans la conclusion.** Mon remplacement précédent n'avait pas matché
+à cause d'un saut de ligne : l'item 5 des conclusions annonçait encore le vieux chiffre alors que
+le résumé et le corps portaient la version corrigée. **Incohérence interne, corrigée.** Rappel de
+la règle du 19/08 : *les tests de garde-fou doivent être insensibles aux sauts de ligne* — je l'ai
+enfreinte une fois de plus.
+
+**#107 — La dégénérescence hôte/cosmologie n'est PAS ma découverte.** Elle est décrite dans la
+littérature comme la limitation systématique dominante de la cosmologie FRB : « les analyses
+cosmologiques actuelles restent fondamentalement limitées par la dégénérescence inhérente entre
+les différentes composantes de DM, et la mauvaise connaissance de DM_host introduit une grande
+incertitude ». Crédité dans le papier (Wang & Wei 2023 ; compilation de 117 sursauts). **Ce que
+j'ajoute est sa conséquence pour le design de relevé, pas le fait lui-même.** Troisième fois cette
+semaine qu'une revendication de nouveauté tombe ; cette fois elle est tombée avant publication.
+
+**#108 — Ma distribution d'hôte était fausse, et l'erreur me DÉSAVANTAGEAIT.** La mesure sur 117
+sursauts localisés donne μ_host = 5,03 ± 0,02 et **σ_host = 0,96 ± 0,03**, médiane
+**153 ± 3 pc/cm³** — contre mes 0,55 et 120 fiduciels. J'ai craint que plus de dispersion donne
+plus de liberté d'absorber. **Faux** :
+
+| σ_host | médiane | Δχ² | N pour 3σ |
+|---|---|---|---|
+| 0,55 (mien) | 120 | 5,05 | 123 |
+| 0,75 | 153 | 6,03 | 103 |
+| **0,96 (mesuré)** | **153** | **6,58** | **94** |
+| 0,96 | 180 | 6,18 | 100 |
+
+Un hôte plus large rend chaque sursaut **individuellement** moins informatif mais **plus difficile
+à décaler de façon cohérente** — et c'est le décalage cohérent qui cacherait un déficit cosmique.
+**Adopter la distribution mesurée renforce le test.**
+
+**#109 — Bruit de réalisation quantifié et déclaré : 25-30 %.** L'ordre entre stratégies de
+redshift est significatif à ~3σ ; **le facteur 2,9 précis ne l'est pas**. Écrit dans le papier.
+
+**#110 — Une liberté que je n'ai PAS accordée au rival, et je le déclare.** La même compilation
+trouve une **corrélation positive DM_host–z**, alors que je tiens μ_host constant. La laisser
+évoluer ajouterait un pouvoir d'absorption non testé. Déclaré comme tel plutôt que passé sous
+silence — c'est exactement le type d'omission que le registre me reproche depuis quatre jours.
+
+Papier C : 6 pages, 0 erreur, 0 citation indéfinie, toutes les valeurs tracées à un calcul.
+
+
+---
+
+## 24/08, dernière passe — LE VOILE, FERMÉ PAR UN NOMBRE : ε ≲ 2×10⁻⁴
+
+**#111 — Le canal que le corpus n'avait jamais calculé.** La borne ε ≲ 0,35 était **statique**
+(quadrupôle de potentiel transmis, comparé « aux anomalies à ~20 % » — normalisation d'ailleurs
+douteuse, notée telle quelle). Or l'injection est **continue** : un flux anisotrope source du
+cisaillement de Bianchi I pendant toute l'ère d'énergie noire, et le quadrupôle CMB intègre ce
+cisaillement depuis la dernière diffusion. C'est le cadre de Koivisto & Mota 2008, borne publiée
+|δ| ≲ 10⁻⁴ pour w constant — et le cisaillement sourcé **après** le découplage échappe à la
+dilution en 1/volume qui donne les bornes usuelles à 10⁻⁹.
+
+**#112 — Méthode par calibration, encore elle, et le contrôle pré-enregistré passe.**
+Pour ne dépendre d'aucun de mes facteurs O(1) : résoudre σ̇ + 3Hσ = C·8πGρ_de(t)δ pour les DEUX
+histoires avec le MÊME C, et ne comparer que le rapport des réponses K = ∫σdt/δ.
+Contrôle : K_std = 0,286 et Σ₀/δ = 0,554 pour w constant — O(0,1-1) comme exigé. Résultat :
+
+  **K_notre/K_Λ = 0,977** — notre énergie noire, plus faible dans le passé, répond
+  quasi identiquement. La borne publiée s'applique inchangée : **|δ| ≲ 1,0×10⁻⁴**, donc
+
+  **ε ≲ 2×10⁻⁴  —  resserrement d'un facteur ~2×10³ sur l'asymétrie d'accrétion du parent.**
+
+**#113 — Les deux corollaires, en sens opposés.**
+1. **L'observable meurt.** Le voile borné à δ ≲ 10⁻⁴ donne un écart Φ−Ψ ≲ 10⁻⁴ :
+   inaccessible à E_G (5-10 %). Le canal « voile détecté » est fermé — proprement, par un calcul,
+   pas par lassitude.
+2. **La contrainte naît, et elle est inévitable.** arXiv:2601.22351 (PRD 2026) montre que
+   l'anisotropie constante est exclue par le quadrupôle ISW et ne survit que par des profils
+   temporels **ajustés** annulant l'intégrale du cisaillement. Notre profil est **fixé** par
+   ρ_de = ρ₀(t/t₀)^β/a³ : aucune liberté d'annulation. Le modèle ne peut pas se cacher — force,
+   pas faiblesse.
+
+**Caveats déclarés** : transmission flux→skewness prise à O(1), non calculée ; la calibration
+transfère la borne publiée à w constant, pas une ré-analyse complète ; et ma valeur absolue
+Σ₀/δ = 0,55 diffère du 0,1 publié d'un facteur 5 — sans effet sur le rapport, seule quantité
+utilisée, mais raison de ne citer AUCUN Σ₀ absolu de mon cru.
+
+**Ce que cette direction aura finalement donné** : pas l'observable espéré, mais **la contrainte
+la plus forte de tout le corpus sur un objet extérieur à notre univers** — trois ordres de
+grandeur de mieux — et l'argument de rigidité qui l'accompagne. La semaine se termine sur un
+canal qui ajoute bien une mesure : elle mesure ε, et ε est petit.
+
+Papier B : 14 pages. Script : voile_cisaillement.py. **Corpus clos.**
+
+
+---
+
+## 24/08, post-clôture — MEMBRANE ↔ VOILE : RÉPONSE QUALITATIVE « NON », CHIFFRE NON EXPLOITÉ
+
+**#114 — Le calcul, et ses deux contrôles pré-enregistrés.** Courbures extrinsèques de la coquille
+Vaidya/FLRW par calcul symbolique complet (sympy, Christoffels exacts).
+- **Contrôle 2 PASSÉ, et joliment** : dans la limite Oppenheimer-Snyder (Ḣ = −3H²/2, flux nul),
+  K^τ_τ = 3x²(Hr−x)/(2r(x−1)²) = **0 exactement** sur la coquille (x = Hr). La contrainte de
+  surface requise s'annule quand le flux s'annule — le secteur τ de la machinerie est validé,
+  et P_s ∝ flux est établi.
+- **Contrôle 1 ÉCHOUÉ** : [K^θ_θ] ne sort pas nul (−x³+x²−1 ≠ 0 après simplification). Soit une
+  convention de signe chez moi, soit la surdétermination générique du raccordement Vaidya pur
+  déjà citée (arXiv:2604.08806 §V) qui se manifeste ici. **Indécidable ce soir — donc, par le
+  critère écrit avant le calcul : aucun chiffre n'est exploité.**
+
+**#115 — Ce qui survit au niveau qualitatif, conservativement.** Même en ne se fiant qu'au
+secteur validé : la contrainte requise par Israel est une **tension** (signe négatif) qui
+**diverge** par rapport à la pression de membrane κ/8π quand x → 1 (rapports −13,5 à x = 0,9,
+−198 à x = 0,99). **Le paradigme de la membrane ne paie PAS la facture du voile** : mauvais
+signe, mauvaise échelle. La dette de la coquille reste une dette du modèle. Réponse à la
+question de l'item 5 : non — qualitativement ferme, quantitativement non publié.
+
+Règle appliquée une dernière fois : ne jamais convertir l'ambigu en victoire. Fin réelle du
+registre : 115 entrées.
+
+---
+
+## 24/08, dernier calcul — LE DUEL DES DEUX IMAGINATIONS, PREMIÈRE MANCHE
+
+**#116.** Test d'universalité de w : β ajusté par hémisphère du dipôle CMB, Pantheon+ (positions
+présentes dans la copie locale), covariance pleine par sous-échantillon, M marginalisé, critère
+pré-enregistré à 2σ.
+  β(hémisphère dipôle, 553 SNe) = 2,60 ± 0,17 ; β(anti, 1027 SNe) = 2,38 ± 0,14.
+  **Δβ = +0,22 ± 0,23 → 1,0σ. UNIVERSEL. Point pour le goulet.**
+L'horloge n'est pas tuée : test SN-seul (faible), hémisphère ≠ environnement (le vrai
+discriminant est le tri par vides/murs de la ligne de visée, non faisable sans catalogue de
+vides), et l'empreinte au ciel de Pantheon+ est très inhomogène (553 vs 1027) — systématique
+non traitée. Le signe (+ vers l'apex) n'est PAS interprété : 1σ. Protocole complet du vrai
+test : THEORIE_HORLOGE.md.
+
+Fin réelle du registre : 116 entrées. Dernier verdict rendu par un critère écrit avant le
+calcul, comme le premier.
+
+## 24/08 — #117 E6 EXÉCUTÉE : CARTE DE REPRODUCTION **CONTRACTANTE** (v0)
+M*(ν=1) fixée par le spectre seul ⇒ f constante ⇒ |f'| = 0 sous les DEUX lectures :
+convergence en une génération vers β* (2,05 pic ; 4,11 rms), qui encadrent le β mesuré sans
+le reproduire (cohérent #73). Hiérarchie stable, profondeur infinie permise. Limite déclarée :
+v0 suppose spectre standard par génération et M_graine indépendante de β_parent. La seule
+ligne vivante du papier B a maintenant son verdict — et il ne le ressuscite pas : il le clôt.
+
+## 24/08 — #118 E7 EXÉCUTÉE ET CLOSE : une seule quantité voyage
+β_equiv exporté, x refusé hors cosmologie, trois systèmes refusés au scoring avec motifs
+(villes = autre variable ; open-source et campagne = non opérationnalisés). Recouvrement
+univers/épidémies établi comme fait de structure (même EDO, plages voisines). Diagramme
+à deux panneaux produit. L'anti-pseudoscience est dans les refus, pas dans les prudences.
+
+## 24/08 — #119 E5 PARTIELLE : k-tracker passe au réel, postérieur retenu par la spec
+3/5 sources vérifiées sur texte primaire avec valeurs : NGC 3201 (P≤10⁻⁴ pour k=3), Gaia
+(P(viable|k=3)=6,9 %), Lacy (0<k≲2, caveat PTA déclaré rendant k=3 viable — le camp adverse
+a son droit de réajustement, règle appliquée). Lei refusé (indirect), Calzà non extrait.
+**Postérieur v1 NON ÉMIS : 3/5 < 4/5 requis par la spec gelée.** L'outil avait le droit
+technique de combiner ; la spec l'interdit ; la spec gagne. Reste : lire Lei et Calzà.
+
+## 24/08 — #120 E5 CLOSE : postérieur k v1 émis, et une découverte de session
+Lei 2024 vérifié en primaire (k=−0,03±1,334, ~2σ) → 4/5 atteint, spec satisfaite. DÉCOUVERTE :
+Lei et al. 2025 (2506.19589), absent du registre initial — k=3 rejeté à ~11σ sur échantillon
+JWST élargi. Postérieur v1 = conjonction des échappatoires (pas de produit de vraisemblances
+hétérogènes — le refus de la fausse précision EST le postérieur). Le rival du papier C tient
+sur le fond et saigne partout ailleurs ; la réplication du 11σ devient le prochain juge de
+l'affaire k3-vs-0. E5 close. Suivante : E1 (vides) — territoire Claude Code.
+
+## 24/08 — #121 AUDIT DU 11σ ET THÉORIE DE LA SATURATION
+Contrôle d'équité sur Lei 2025 : σ_k = 0,264 reproduit (0,27 publié) — arithmétique juste.
+Attaque par ordonnée libre : σ_k ×7,1 → 1,5σ, MAIS ramener k=3 exigerait 2,40 dex (×249).
+**L'attaque échoue, le 11σ tient.** Consigné comme contrôle d'équité PERDU (rare, et à ce
+titre plus informatif qu'un gagné).
+THÉORIE : ρ_de(t) de l'accrétion (t^β) et de CCBH (∫ψ dt) coïncident à **4,6 % RMS sur
+0<z<3**. Le fond ne teste pas un mécanisme mais l'appartenance à la classe saturante. Explique
+l'énigme (11σ chez les objets, victoire sur le fond) sans contradiction, et durcit le papier C :
+le fond ne départage pas PAR NATURE. Prédiction falsifiable écrite (famille jouet à 3 formes).
+
+
+## 24/08 — #122 THÉORIE DE LA SATURATION : RÉFUTÉE PAR SON PROPRE TEST, EN UNE HEURE
+Critère pré-enregistré : réfutée si une forme saturante arbitraire s'écarte de +4 AIC.
+Résultat : F1 +5,14 ; F2 +5,11 ; F3 +4,46. **Les trois dépassent. Théorie retirée.**
+Hypothèse de rechange (l'avantage vient de la dilution ρ=g(t)/a³, d'où le croisement fantôme) :
+testée dans la foulée, ΔAIC = +798 / +28 / +1160. **Réfutée aussi, plus violemment.**
+CE QUI RESTE, et c'est mieux : accrétion et CCBH battent SIX formes arbitraires de 4,5 à 1160
+unités. Leur coïncidence à 4,6 % RMS n'est donc pas une dégénérescence banale mais une
+convergence étroite de deux ontologies incompatibles. **Fait à expliquer, plus fort qu'avant.**
+Question ouverte nette : quelle propriété partagent t^β/a³ et ∫ψdt que le hasard fonctionnel rate ?
+Deux théories nées et mortes dans la même nuit, par critère écrit avant exécution. Le système marche.
+
+
+## 24/08 — #123 AUDIT : DEUX DE MES CHIFFRES RETIRÉS, ET LA QUESTION ÉTAIT MAL POSÉE
+(a) +798 et +1160 = **artefacts de limite précoce** (g(0)≠0 → ρ_de ∝ a⁻³ ; g~aᵖ → divergence).
+Retirés. Seul +28 (F2) était un vrai chiffre.
+(b) Test « croisement fantôme » : bosse log-normale à maximum libre → **+29,6**. L'hypothèse
+du croisement comme propriété partagée est **réfutée** (troisième théorie tuée cette nuit).
+(c) **RÉPONSE À LA QUESTION** : mesure de la résolution de f(z) par déformation multiplicative
+bornée → **σ = 1,8 %**. Les données ne sélectionnent pas une propriété, elles **mesurent une
+courbe**. Le compte se referme : 4,6 % d'écart accrétion/CCBH ≈ 6 en χ² ≈ le ΔAIC=1 du papier C
+après correction du paramètre ; ~4 % pour les jouets ≈ les 5 unités observées. Aucune structure
+cachée. Le papier C gagne une justification chiffrée à la place d'une observation.
+
+## 24/08 — #124 LES TROIS CHANTIERS : UN RÉSOLU, UN TRANCHÉ, UN FERMÉ PAR LA LITTÉRATURE
+(1) **dv/dt = 1/(1−x−s)** — la paroi à tension referme l'horloge en forme fermée, vérifiée à
+10⁻¹⁰ ; conservation de paroi identique ; κ(x₀,s₀) calculé, |κ|<0,24 devient une courbe :
+κ(σ) existe. Reste une condition isolée (flux). (2) La fourche CCDM se tranche par la
+covariance : injection sans impulsion comobile → source dans l'énergie seule → lecture A
+DÉRIVÉE. CLASS spécifié, à tourner. (3) ε(ν) : le pont pic→profil existe (DLK 2010,
+Lithwick-Dalal 2011, Delos+ 2019 pour spectre arbitraire) ; manque une transposition bornée.
+La complétude est devenue une liste de calculs avec coûts et juges — plus une liste de trous.
+
+## 24/08 — #125 CHANTIER 1 ÉCRIT DANS LE PAPIER A
+La fermeture en forme fermée dv/dt = 1/(1−x−s) entre dans la section horloge : conservation de
+paroi identique, 2M_out/R = H²R²+s(2−s), horizon déplacé en x=1−s, |κ|<0,24 devenu une courbe
+(x₀,s₀), condition de flux déclarée comme sélection du profil parent. κ cesse d'être libre :
+c'est κ(x₀,σ). La cible DR3 β₁ devient une contrainte JOINTE (rayon, tension). Recompilé, 0 erreur.
+
+## 24/08 — #126 CHANTIER 3 EXÉCUTÉ (cœur) : ν NE SAUVE PAS LA LECTURE PIC
+Décomposition exacte du profil conditionnel gaussien en ses deux formes (ψ~ξ : ε=0,325→β=2,05 ;
+courbure : ε=0,99→β=0,67), conclusion tenue par le seul signe BBKS (x̄>γν, tout ν fini) SANS
+formule d'ajustement : **β_pic(ν) ≤ 2,05 pour tout ν — la liberté en hauteur de pic éloigne du
+β mesuré (2,42-2,60), monotone.** La lecture pic sans horloge est donc fermée par le calcul, pas
+par choix. Le chantier 3 se referme SUR le chantier 1 : κ>0 requis sous cette lecture, et κ est
+devenu κ(x₀,σ) cette nuit. Refus consigné (critère 2) : pas de carte ν→β chiffrée sans γ d'un
+vrai P(k) — reste borné, ingrédients nommés. Les trois chantiers tiennent en une phrase :
+**l'horloge est calculable, la covariance dérive la lecture A, et ν n'offre aucune évasion.**
+
+## 24/08 — #127 AUDIT DES TROIS CHANTIERS : QUATRE CONTRÔLES, UNE CORRECTION, UNE NUANCE
+(1) dv/dt=1/(1−x−s) **reconfirmée par voie indépendante** (racine du polynôme de normalisation
+Vaidya, 9 couples, 10⁻¹³). (2) **Cohérence interne forte** : la colonne s=0 de la grille redonne
+κ(0,30 ; 0)=0,2408 — la borne historique |κ|<0,24→x₀≲0,30 retombe à 0,3 % près : la machinerie
+nouvelle contient l'ancienne. (3) CORRECTION papier A : le paragraphe paroi citait la jonction
+sans sources — Israel 1966, Berezin-Kuzmin-Tkachev 1987, Blau-Guendelman-Guth 1987 ajoutés,
+recompilé 0 erreur. (4) NUANCE eps_nu (au registre, PAS dans le script gelé — discipline) : le
+terme de courbure porte (R*/r)², supprimé à r(M*)≫R* ; le plafond β≤2,05 reste exact (signe),
+mais la table β(w)→0,67 décrit la forme générique, pas l'excursion atteignable à M*. (5) Sens du
+biais vs littérature : pics bas → profils plus raides → concentrations plus fortes = le sens
+établi (DLK10, Diemer-Kravtsov). Notre monotonie est du bon côté.
+
+## 24/08 — #128 BANC D'ESSAI COMPLET DES 100+ ARTEFACTS, UNE PANNE, UNE RÉPARATION
+Testés : 8 PDF (pdfinfo), 5 PNG, 42 scripts (py_compile), tous les JSON, tous les gelés
+(registre verify). **Une seule panne : ciel_pantheon.html** — three.js chargé depuis un CDN,
+bloqué hors ligne / en visionneuse → écran noir. **Réécrit en canvas 2D pur, zéro dépendance
+réseau**, mêmes 1580 SNe réelles, même verdict affiché, rotation + inertie conservées. Leçon
+gravée : *un artefact de démonstration ne doit dépendre d'aucun réseau* — la règle vaut pour
+le Greffe entier (S6 : vérifier de même le futur ciel des modèles).
+
+## 24/08 — #129 LES DOUTES, CONSIGNÉS À LA DEMANDE D'ED, PAR POIDS DÉCROISSANT
+1. **Auto-audit** : une seule implémentation, auditée par son auteur. Trois ancres externes
+   (CAMB↔Planck 4e décimale ; CCBH↔leurs chiffres publiés sur données disjointes ; ΛCDM
+   standard) bornent le doute sans l'éteindre. Résolution : réimplémentation indépendante.
+2. **La condition de flux** (chantier 1) : pourrait forcer un mouvement non-comobile et
+   rétrograder dv/dt=1/(1−x−s) en ordre dominant. Premier maillon à refaire.
+3. **Vitesse de la nuit** : confiance décroissante — 1,8 % > identité paroi (2 dérivations +
+   ancre 0,2408) > plafond β≤2,05 (signe) >> applicabilité BBKS↔FG84 (transposition, pas
+   théorème).
+4. **Distribution inchangée** : branche 1 (Λ survit) reste la plus probable ; la complétude
+   de l'ontologie n'a pas déplacé mes probabilités, et ne le devait pas.
+5. **Biais directionnel de l'assistant** : 4/4 vers la thèse défendue, permanent, sous
+   prothèse (le registre — qui a tenu 3 fois cette nuit).
+Ce qui n'est pas douté : la méthode. Les doutes ont leurs juges, comme le reste.
+
+## 24/08 — #130 LE DOUTE #2 AVAIT RAISON : LA FERMETURE DE L'HORLOGE RÉTROGRADÉE
+Condition de flux calculée (flux_paroi.py, gelé 7de006ae) : côté intérieur, fluide parfait
+comobile → [T u n] = 0 EXACTEMENT ; côté extérieur, Ṁv̇/4πR². Rapport au budget de la paroi :
+**ε_c = 2,3-4,5** sur tout le domaine utile — pas un petit paramètre. σ constant n'est PAS
+auto-cohérent. Les deux fermetures extrêmes encadrent κ : branche σ-const (grille #124) contre
+absorption totale, **écart −0,6 à −1,2, jusqu'au changement de signe**. Corrections faites :
+papier A (le paragraphe #125 rétrogradé en « énoncé de branche », l'identité cinématique et
+son ancre 0,2408 conservées car elles survivent), TROIS_CHANTIERS (chantier 1 rouvert).
+Élément manquant nommé : la couche limite d'impulsion de la masse injectée. Ce qui survit :
+dv/dt = 1/(1−x−s) comme cinématique exacte ; 2M_out/R = H²R²+s(2−s) ; la colonne s=0.
+Ce qui tombe : « la clé de voûte tient » (#124) — elle tenait sur une branche non déclarée.
+**La règle des doutes a fonctionné : consignés hier avec leurs juges, le premier jugé aujourd'hui,
+contre moi.**
+
+## 24/08 — #130 LE DOUTE #2 AVAIT RAISON : LA FERMETURE DE L'HORLOGE RÉTROGRADÉE
+Condition de flux calculée (flux_paroi.py, gelé 7de006ae) : côté intérieur, fluide parfait
+comobile → [T u n] = 0 EXACTEMENT ; côté extérieur, Ṁv̇/4πR². Rapport au budget de la paroi :
+**ε_c = 2,3-4,5** sur tout le domaine utile — pas un petit paramètre. σ constant n'est PAS
+auto-cohérent. Les deux fermetures extrêmes encadrent κ : branche σ-const (grille #124) contre
+absorption totale, **écart −0,6 à −1,2, jusqu'au changement de signe**. Corrections faites :
+papier A (paragraphe #125 rétrogradé en « énoncé de branche » ; l'identité cinématique et son
+ancre 0,2408 conservées car elles survivent), TROIS_CHANTIERS (chantier 1 rouvert). Élément
+manquant nommé : la couche limite d'impulsion de la masse injectée. Survit : dv/dt = 1/(1−x−s)
+comme cinématique exacte ; 2M_out/R = H²R²+s(2−s) ; la colonne s=0. Tombe : « la clé de voûte
+tient » (#124) — elle tenait sur une branche non déclarée. **La règle des doutes a fonctionné :
+consignés hier avec leurs juges, le premier jugé aujourd'hui, contre moi.**
+
+## 24/08 — #131 LA COUCHE LIMITE : MÉCANISME CORRIGÉ, DOMAINE CALCULÉ, CHANTIER 1 REFERMÉ SUR CONDITION
+Mon intuition d'hier tenait par la comptabilité, pas par le mécanisme : identité **P_ram/|p_de|
+= x·v₀** vérifiée à 10⁻⁶ (mon « = x » était le point v₀=1) — MAIS le frein invoqué (pression de
+création) était **faux de signe** : une tension n'oppose aucune poussée. Attrapé en dérivant,
+avant publication. Le vrai frein : **la friction de Hubble**, v = v₀a_e/a, aucune force requise.
+Verdict des trois critères gelés (couche_limite.py, 16340edd) : (1) identité PASSE ; (2) domaine
+couche-mince NON VIDE : d/R ≈ 0,25 uniformément à v₀ = x/3, toutes époques d'entrée ; (3)
+rétro-réaction 0,1-0,8 % sur le domaine (v₀=0,3 exclu à 22 %). **La branche σ-const de #130
+gagne un domaine de validité nommé : v₀ ≲ x/3.** κ(x₀,σ) redevient prédictif SOUS cette
+condition écrite ; v₀ est le résidu, borné par l'homogénéité même. Papier A et TROIS_CHANTIERS
+mis à jour. Le chantier 1 se referme pour la seconde fois — cette fois avec sa frontière.
+
+## 24/08 — #132 L'AUDIT DE #131 : DÉPLACÉ, PAS RÉSOLU — PUIS LA RACINE, ET LE DOMAINE FINAL
+(a) **Mon critère gelé me condamne** : sous extérieur nul, la paroi encaisse (1−v₀)Φ →
+ε_paroi = 0,71-5,95 → ÉCHEC. « Refermé sur domaine » (#131) était un sur-énoncé : la couche
+réglait la comobilisation intérieure, pas le choc nul→v₀ à la paroi. (b) **Racine trouvée,
+paroi innocentée** : la crise entière venait de l'IDÉALISATION NULLE (Vaidya). Un extérieur
+POUSSIÈRE à courant continu (u_ext = v₀) donne [T u n] = 0 identiquement — vérifié. (c) **v₀
+cesse d'être libre** : chute sur M_out ⇒ v₀ = √(x²+s(2−s)) — et la tension fixe un PLANCHER de
+vitesse : s₀ = 0,10 est exclu PARTOUT (E_cin/ρ = 9,6-14 %). (d) **Domaine survivant calculé** :
+s₀_max ≈ 0,046/0,044/0,040/0,034/0,014 pour x₀ = 0,05/0,10/0,15/0,20/0,30 — une bande BASSE
+TENSION. (e) **κ contaminé Vaidya** : toute la machinerie d'horloge (y compris l'ancre 0,2408)
+reposait sur la coordonnée nulle v ; à re-dériver dans le temps propre du courant de poussière.
+Sur le domaine survivant, le facteur de boost ≤ 1,05 → attente (pas résultat) : κ petit.
+**Chantier 1, bilan après 5 cycles en 24 h : identité cinématique et M_out survivent ; extérieur
+nul déprécié ; fermeture = flot de poussière continu à basse tension ; horloge à refonder.
+→ transmis en E8 (file Claude Code) : l'auto-audit a atteint sa limite de récursion utile.**
+
+## 24/08 — #133 E8 EXÉCUTÉE : L'HORLOGE REFONDÉE — ET ELLE DEVIENT UNE PRÉDICTION
+Dérivation en une ligne (coquilles géodésiques ⇒ leur temps propre EST le temps cosmique du
+parent) : **dτ_p/dt = γ(v₀) = 1/√((1−s)²−x²)**. Contrôles gelés passés : limite v₀→0 exacte à
+10⁻¹², même lieu singulier x=1−s que Vaidya, approche en racine. Résultats : (a) colonne s=0 :
+κ_poussière = 0,0052/0,0464 contre 0,0516/0,2408 en Vaidya — **facteur 5-10** ; (b) sur toute
+la bande basse tension de #132 : **κ = 0,027-0,049 < 0,12** ⇒ par le critère (2), l'horloge
+cesse d'être un instrument : **PRÉDICTION — DR3 doit trouver β₁ compatible avec κ ≈ 0** ;
+|κ| ≳ 0,05 mesuré mettrait le bord en tension. (c) L'ancienne borne x₀ ≲ 0,30 était un énoncé
+de branche nulle : en temps-poussière, **x₀ ≲ 0,648** (TRIAGE #59). Papier A clos sur le
+secteur : structure, jonction, flux, horloge — chaque renversement dans la piste d'audit.
+Six cycles, cinq renversements, et la sortie est une FORMULE plus une PRÉDICTION falsifiable.
+C'est la définition d'un secteur terminé.
+
+## 24/08 — #134 AUDIT DE E8 : MA FORMULE ÉTAIT FAUSSE ; LA BORNE HISTORIQUE EST RÉHABILITÉE
+Contraction GR complète (−u_paroi·u_poussière, gelée v2, contrôle 10⁻¹²) : la vraie horloge est
+**dτ_p/dt = [(1−s)+x·v_ff]/[(1−s)²−x²]** — mon γ(v_ff) de #133 avait perdu le terme croisé du
+mouvement de la paroi (confusion statique/paroi). Pôle d'ordre 1, pas racine. Conséquences :
+(a) κ corrigé ×4-5 : colonne s=0 → 0,023/0,212, à 7 % des valeurs Vaidya — **deux extérieurs,
+même borne : x₀ ≲ 0,30-0,32. Le nombre historique du corpus mesurait la physique ; #59 retiré**
+(le triage retire sa propre entrée, une première). (b) La bande se scinde : x₀ ≲ 0,15 → κ
+invisible (prédiction de running spectral pur) ; x₀ = 0,2-0,3 → κ = 0,13-0,22 **dans la portée
+de β₁**. (c) **β₁(DR3) devient une sonde du rayon du bord** — nul ⇒ x₀ ≲ 0,15 ; détection ⇒
+localisation. v1 gelée conservée en historique, supersédée par sa propre clause (3). Papier A :
+6e et dernière chirurgie du secteur, la formule exacte et la robustesse écrites. Le secteur se
+ferme une seconde fois — et cette fois l'audit qui a tué la première version est DANS le papier.
+
+## 24/08 — #135 E1 BLOQUÉE ICI, POINTEURS VÉRIFIÉS TRANSMIS
+Les catalogues de vides vivent hors des domaines réseau du conteneur (Zenodo, CDS). Vérifié et
+transmis à Claude Code : anti-halos Stopyra et al. — 150 vides R>10 h⁻¹Mpc, <135 h⁻¹Mpc,
+**Zenodo record 10160612, combined_catalogue.csv (+ npz), format documenté champ par champ** ;
+SDSS DR7 Douglass (VoidFinder 1163 / VIDE 531 / REVOLVER 518) au CDS J/ApJS/265/7 ; Malandrino
+2026 (100 vides bayésiens, Manticore) via A&A. La manche 2 du duel a ses munitions localisées.
+
+## 24/08 — #136 CHANTIER 2 EXÉCUTÉ : LA FOURCHE TRANCHÉE PAR DÉRIVATION — ET UN NOMBRE DU CORPUS CORRIGÉ CONTRE LE MODÈLE
+Composant = poussière + source ; δQ = 0 dérivé (théorème des couches), création au repos
+comobile ⇒ amortissements dans δ' et θ'. Contrôle ΛCDM : 0,52 % — passé. Dérivés :
+δ_de/δ_m = 0,055 ; **fσ8-proxy : +3,7 %** là où le corpus portait ~1-2 % supposés. Direction :
+croissance ACCRUE → plutôt défavorable côté S8 — rapporté sans amortisseur, conformément à la
+règle (mes erreurs vont vers ma thèse ; celle-ci va contre, donc elle est probablement vraie).
+Papier A volontairement NON amendé avant E9 (CLASS complet, k-dépendance) : on ne réécrit pas
+un papier sur un proxy sous-horizon. Les trois chantiers de complétude : 1 CLOS (formule +
+sonde), 2 THÉORIE CLOSE (chiffres dérivés, E9 externe), 3 CŒUR EXÉCUTÉ (ν sans évasion).
+
+## 24/08 — #137 BANC D'ESSAI INTÉGRAL : 111 ARTEFACTS, ZÉRO PANNE
+Testés : 8 PDF (A=32 p., C=7 p.), 5 PNG, 48 scripts (compilation), tous les JSON + registre.lock,
+**20 fichiers gelés — tous vérifiés**, 2 HTML à zéro dépendance externe. Cohérence croisée :
+MANQUEMENTS séquentiel jusqu'à #136 sans trou ; TRIAGE cohérent (9 justes + 53 réfutées = 62,
+= dernière entrée) ; les 9 garde-fous de contenu des papiers A/C et de TROIS_CHANTIERS passent
+(formule d'horloge, rétractation SR, sonde de rayon, robustesse, 1,8 %, six familles, statuts
+des chantiers). Nettoyage : _dom.txt retiré ; __pycache__ sous verrou I/O bénin du conteneur.
+Le dépôt est intègre de bout en bout — prêt pour git init.
+
+## 24/08 — #138 QUATRE PIÈCES VISUELLES LIVRÉES, DEUX PANNES DE FABRICATION CONSIGNÉES
+(1) **fig_corridor** insérée au papier C (7 p., figure centrale : bande ±1,8 %/±5,4 %, CCBH à
+4,6 % dedans, six familles annotées dehors). (2) **fig_cadran** insérée au papier A (33 p. :
+κ(x₀) poussière, bande physique, zones PRÉDICTION/INSTRUMENT, sensibilité β₁). (3)
+**saga_du_bord.html** : les six cycles en carte SVG autonome, code couleur du registre. (4)
+**mur_retractations.html** : généré depuis TRIAGE réel — vignettes parsées, tampons, filtres,
+zéro donnée en dur. Pannes attrapées et leçons : \le inconnu de matplotlib (→ \leq) ; ancres
+LaTeX devinées au lieu d'être lues (→ règle : grep avant str_replace, appliquée). Compilations :
+C 0 erreur, A 0 erreur. Les papiers ont leurs figures ; le Greffe a ses salles.
+
+## 24/08 — #139 « TROP BEAU POUR ÊTRE VRAI » : LE 1,8 % ÉTAIT FAUX, ET LE MÉCANISME AVEC
+Ed a demandé l'audit intégral en soupçonnant la beauté des chiffres. Verdict : (a) **le 1,8 %
+était une malpractice statistique** — parabole moyennée sur des courbures incompatibles autour
+d'un point HORS minimum (le Δχ²=−6,3 à +2 % aurait dû m'arrêter ; il est dans la sortie de
+#123, ignoré). Refait au vrai minimum : **σ(tilt) = 0,67 %**. (b) La vraie explication du match
+nul est DIRECTIONNELLE : le morphing exact accrétion→CCBH coûte **Δχ² = +1,06** bout à bout —
+une direction quasi-plate (structure PCA classique des reconstructions w(z)), reproduisant
+indépendamment le ΔAIC=1 du duel. (c) Creux médian **−7,5 (2,7σ)**, cohérent avec la
+concentration LRG du jackknife : consigné, non exploité. Corrigés : papier C (résumé, paragraphe
+— qui porte désormais sa propre rétractation —, figure v2, légende), vidéo (scène climax),
+THEORIE_SATURATION, BALAYAGE. Les pénalités des six familles témoins survivent (ajustements
+directs, non contaminés). Leçon gravée : **un Δχ² négatif dans une famille de déformation est
+un cri, pas un détail.**
+
+## 24/08 — #140 SECONDE PASSE DU PROCESSUS : FIGURE RÉPARÉE, HÉRITAGE RATISSÉ
+La figure v2 avait planté (chemin), laissant l'ancienne image sous la nouvelle légende —
+attrapé à la seconde passe, régénérée, papier C recompilé (0 erreur), légende et image enfin
+d'accord. Ratissage des fichiers hérités : SYNTHESE_FINALE corrigée ; vidéo vérifiée (9 scènes,
+zéro résidu « 1,8 ») ; mur régénéré depuis le TRIAGE à jour (70 vignettes, #63 incluse) ;
+l'unique « 1.8 % » restant du papier C est sa propre rétractation, comme il se doit. Les
+occurrences « 1,8 » des fenêtres de viabilité et du carnet sont des nombres sans rapport,
+vérifiées telles. Le processus complet a tourné deux fois, comme demandé.

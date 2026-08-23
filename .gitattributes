@@ -1,0 +1,4 @@
+# Aucune normalisation des fins de ligne, jamais.
+# scelle.py scelle les OCTETS bruts (read_bytes) : un CRLF<->LF silencieux
+# changerait le hash publié. Les fichiers sont en LF et doivent le rester.
+* -text

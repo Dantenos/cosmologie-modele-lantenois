@@ -31,7 +31,7 @@ def critere(path):
     return hashlib.sha256(doc.encode()).hexdigest(), doc
 
 def charge():
-    return json.loads(LOCK.read_text()) if LOCK.exists() else {}
+    return json.loads(LOCK.read_text(encoding="utf-8")) if LOCK.exists() else {}
 
 def freeze(files, amend=False):
     lock = charge()
@@ -49,7 +49,7 @@ def freeze(files, amend=False):
         lock[f] = {"sha256": h, "gele_le": datetime.datetime.now().isoformat(timespec='seconds'),
                    "extrait": doc.strip().splitlines()[0][:80]}
         print(f"[registre] gelé : {f}  ({h[:12]})")
-    LOCK.write_text(json.dumps(lock, indent=1, ensure_ascii=False))
+    LOCK.write_text(json.dumps(lock, indent=1, ensure_ascii=False), encoding="utf-8")
 
 def verify(files=None):
     lock = charge()

@@ -71,6 +71,7 @@ Tout ce qui est tombé, numéroté, daté, avec le mécanisme de la chute :
 
 Cinq outils nés des cicatrices de la campagne, dans [`outils/`](outils/). Zéro dépendance,
 Python ≥ 3.9. Ils survivront au verdict, quel qu'il soit.
+*Sous Windows : `$env:PYTHONUTF8 = 1` avant de les lancer (les registres sont en UTF-8).*
 
 | Outil | Ce qu'il empêche | Usage |
 |---|---|---|

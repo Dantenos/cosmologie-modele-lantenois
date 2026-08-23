@@ -22,9 +22,9 @@ compris les erreurs.
 
 | | Papier | Statut | Source |
 |---|---|---|---|
-| **A** | *Externally sourced dark energy: a one-parameter fluid tested against Planck, DESI DR2 and three supernova compilations* (31 p.) — la loi, β, le croisement fantôme à bas redshift (z_× = 0,21-0,46 selon β, #111), les cibles DR3 | → arXiv | [`papiers/papierA_fluide_source_externe.pdf`](papiers/papierA_fluide_source_externe.pdf) · [tex](papiers/papierA_fluide_source_externe.tex) |
+| **A** | *Externally sourced dark energy: a one-parameter fluid tested against Planck, DESI DR2 and three supernova compilations* (33 p.) — la loi, β, le croisement fantôme à bas redshift (z_× = 0,21-0,46 selon β, #111), les cibles DR3 | → arXiv | [`papiers/papierA_fluide_source_externe.pdf`](papiers/papierA_fluide_source_externe.pdf) · [tex](papiers/papierA_fluide_source_externe.tex) |
 | **B** | *The nested-hierarchy reading of externally sourced dark energy* (14 p.) — annexe : accrétion parente, feuille de contraintes (ε ≲ 2×10⁻⁴ ; x₀ ≲ 0,30 ; conversion ≥ 97 %) | annexe | [`papiers/papierB_hierarchie.pdf`](papiers/papierB_hierarchie.pdf) · [tex](papiers/papierB_hierarchie.tex) |
-| **C** | *Two sourced dark-energy models on identical data* (6 p.) — duel accrétion / trous noirs couplés (CCBH), canal FRB : 82-120 sursauts localisés pour 3σ | → soumission prioritaire | [`papiers/papierC_comparaison.pdf`](papiers/papierC_comparaison.pdf) · [tex](papiers/papierC_comparaison.tex) |
+| **C** | *Two sourced dark-energy models on identical data* (7 p.) — duel accrétion / trous noirs couplés (CCBH), canal FRB : 82-120 sursauts localisés pour 3σ | → soumission prioritaire | [`papiers/papierC_comparaison.pdf`](papiers/papierC_comparaison.pdf) · [tex](papiers/papierC_comparaison.tex) |
 
 Études satellites : [taxonomie de viabilité](papiers/taxonomie_cosmo_v1.pdf) ·
 [fenêtre de viabilité commune](papiers/fenetre_viabilite_v2.pdf).

@@ -59,7 +59,7 @@ nu et n'affiche jamais le hash du pipeline. Le fichier est scellé par ses octet
 | `\bibitem{Croker2024}` en doublon | — | A l.964 et l.976 | ✔ |
 | Sensibilité à z_i (nouveau, ce jour) | — | C l.208 | ✔ |
 
-**Les PDF ne sont pas recompilés** (pas de LaTeX ici ; Docker + texlive possible).
+**PDF recompilés** (MiKTeX installé ce jour ; A : 33 p., C : 7 p., 0 erreur, 0 warning — le doublon de `bibitem` est parti).
 
 ## 4. Façade et registres — corrigés
 

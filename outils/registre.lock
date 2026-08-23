@@ -163,5 +163,10 @@
   "sha256": "2901c0b2e7f925854544a0cc73a401e37753a7565799ea430f3be22b7eaedfdd",
   "gele_le": "2026-08-23T22:28:23",
   "extrait": "rejouer v1 — « registre run » : les ancres numériques rejouées et confrontées (2"
+ },
+ "outils/genere_ciel.py": {
+  "sha256": "9bf4dc5e7b9d2be0bf35ab93fb9a32cad162bac9e11184ea0a186b1dc3a11f53",
+  "gele_le": "2026-08-23T22:31:19",
+  "extrait": "genere_ciel v1 — generateur de visuels/ciel_pantheon_v2.html (23/08/2026)."
  }
 }

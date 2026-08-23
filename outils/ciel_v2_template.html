@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Le Ciel de Pantheon+ v2 — trois juges sur une sphere</title>
+<style>html,body{margin:0;height:100%;background:#0d0c0a;overflow:hidden;font-family:Georgia,serif;color:#efe9dc}
+canvas{display:block}
+#hud{position:fixed;top:24px;left:28px;max-width:360px;pointer-events:none}
+#hud h1{font-size:19px;margin:0 0 6px;letter-spacing:.06em;font-weight:normal}
+#hud p{font-size:12.5px;line-height:1.55;margin:4px 0;color:#cfc8b8}
+.v{color:#e0d6c2}.rouge{color:#c96a4a}.bleu{color:#7fa3b8}.vert{color:#8faf7f}.or{color:#d9b96a}
+#verdict{position:fixed;top:24px;right:28px;text-align:right;font-size:12.5px;color:#cfc8b8;pointer-events:none;max-width:300px}
+#verdict b{display:block;font-size:15px;letter-spacing:.18em;color:#efe9dc;margin-top:6px}
+.mono{font-family:ui-monospace,monospace;font-size:11px;color:#8f8878}
+#pied{position:fixed;bottom:16px;left:28px;font-size:10.5px;color:#6f6a5e;font-family:ui-monospace,monospace}
+#modes{position:fixed;bottom:14px;right:24px;display:flex;gap:8px}
+#modes button{background:#14120f;border:1px solid #3a352c;color:#cfc8b8;font-family:Georgia,serif;font-size:12px;
+padding:6px 13px;cursor:pointer;letter-spacing:.05em}
+#modes button.on{border-color:#c96a4a;color:#efe9dc}</style>
+</head><body><canvas id="c"></canvas>
+<div id="hud"><h1>LE CIEL DE PANTHEON+ <span class="mono">v2</span></h1><div id="txt"></div></div>
+<div id="verdict"></div>
+<div id="modes">
+<button id="bh">hemispheres</button><button id="bv">vides</button><button id="bf">FRB</button><button id="bt" class="on">tout</button>
+</div>
+<div id="pied">1580 SNe (Pantheon+ public) &middot; 150 anti-halos (Stopyra 2023) &middot; 69 FRB localises (Connor 2025) &middot; verdicts rejoues le 23/08/2026 (#141, #142, #148) &middot; 100 % autonome &middot; glisser pour tourner</div>
+<script>
+const P=__P__;
+const V=__V__;
+const F=__F__;
+const AX=[-0.9709,-0.1219,0.2064];
+const HUD={
+h:['<p><span class="v">1580 supernovae</span>, positions reelles. Manche 1 du duel goulet/horloge.</p>'+
+   '<p><span class="rouge">&#9679;</span> hemisphere du dipole CMB &mdash; &beta; = <span class="v">2,66 &plusmn; 0,18</span> (553 SNe)<br>'+
+   '<span class="bleu">&#9679;</span> anti-hemisphere &mdash; &beta; = <span class="v">2,43 &plusmn; 0,15</span> (1027 SNe)</p>'+
+   '<p>Le fil traverse la sphere le long de l&#8217;axe du dipole.</p>',
+   '&Delta;&beta; = +0,24 &plusmn; 0,23 &rarr; 1,0&sigma;<b>UNIVERSEL</b><span class="mono">critere pre-enregistre : 2&sigma; &middot; manche 1 &middot; rejeu #141</span>'],
+v:['<p><span class="v">150 anti-halos</span> du super-volume local (cercles), et la manche 2 :</p>'+
+   '<p><span class="vert">&#9679;</span> SNe avec un vide sur la ligne de visee &mdash; &beta; = <span class="v">2,556 &plusmn; 0,183</span> (623)<br>'+
+   '<span class="bleu">&#9679;</span> ligne de visee sans vide &mdash; &beta; = <span class="v">2,460 &plusmn; 0,150</span> (957)</p>'+
+   '<p>Douglass DR7 (hors carte, empreinte SDSS) : trois algorithmes, tous nuls.</p>',
+   '&Delta;&beta; = +0,10 &plusmn; 0,24 &rarr; 0,4&sigma;<b>UNIVERSEL</b><span class="mono">deux juges (Stopyra, Douglass) &middot; 200 rotations : p = 0,70 &middot; #141-142</span>'],
+f:['<p><span class="or">&#10022;</span> <span class="v">69 sursauts radio localises</span> (taille &prop; DM extragalactique).</p>'+
+   '<p>Le canal decidable du duel accretion / trous noirs couples : la survie baryonique.</p>'+
+   '<p>Validation sur la table reelle : f<sub>d</sub> = 0,905 (publie 0,91), hote 123 pc/cm&sup3;.</p>',
+   '&Delta;&chi;&sup2;(CCBH) = +4,7 &rarr; ~2,2&sigma;<br>accretion (s = 1) &equiv; &Lambda;CDM<b>LE BORD SATURE</b><span class="mono">f_IGM + f_X pousse a 1 : deficit non absorbable &middot; #148</span>'],
+t:['<p>Trois juges sur une sphere : les <span class="rouge">hemispheres</span>, les <span class="vert">vides</span>, les <span class="or">sursauts</span>.</p>'+
+   '<p>Deux manches au goulet (w universel), un canal FRB a 2,2&sigma; en faveur de s = 1.</p>'+
+   '<p>Chaque verdict est sorti d&#8217;un critere gele avant le calcul.</p>',
+   'w(z) = &minus;&beta;/(3Ht)<b>&beta; = 2,42&ndash;2,60</b><span class="mono">DR3 jugera &middot; sceau 68d06bcc&hellip;</span>']};
+let mode='t';
+const cv=document.getElementById('c'),g=cv.getContext('2d');
+let W,H,S;function rs(){W=cv.width=innerWidth*devicePixelRatio;H=cv.height=innerHeight*devicePixelRatio;
+cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';S=Math.min(W,H)*0.36}
+rs();addEventListener('resize',rs);
+function setmode(m){mode=m;document.getElementById('txt').innerHTML=HUD[m][0];
+document.getElementById('verdict').innerHTML=HUD[m][1];
+for(const[id,mm]of[['bh','h'],['bv','v'],['bf','f'],['bt','t']])
+document.getElementById(id).className=(mm===m)?'on':''}
+for(const[id,mm]of[['bh','h'],['bv','v'],['bf','f'],['bt','t']])
+document.getElementById(id).addEventListener('click',()=>setmode(mm));
+setmode('t');
+let ry=0.6,rx=-0.25,vy=0.0016,vx=0,drag=false,px=0,py=0;
+addEventListener('pointerdown',e=>{if(e.target.tagName==='BUTTON')return;drag=true;px=e.clientX;py=e.clientY});
+addEventListener('pointerup',()=>drag=false);
+addEventListener('pointermove',e=>{if(!drag)return;vy=(e.clientX-px)*0.004;vx=(e.clientY-py)*0.004;px=e.clientX;py=e.clientY});
+function rot(x,y,z){const cy=Math.cos(ry),sy=Math.sin(ry),cx=Math.cos(rx),sx=Math.sin(rx);
+const X=x*cy+z*sy,Z=-x*sy+z*cy,Y=y*cx-Z*sx,Z2=y*sx+Z*cx;return[X,Y,Z2]}
+function fr(){requestAnimationFrame(fr);ry+=vy;rx+=vx;if(!drag){vy*=.985;vx*=.985;vy+=(0.0016-vy)*.01}
+g.fillStyle='#0d0c0a';g.fillRect(0,0,W,H);
+const cxp=W/2,cyp=H/2;
+g.beginPath();g.arc(cxp,cyp,S,0,7);g.fillStyle='#14120f';g.fill();
+if(mode==='h'||mode==='t'){const[a1x,a1y]=rot(AX[0]*1.25,AX[1]*1.25,AX[2]*1.25);
+g.strokeStyle='rgba(139,37,0,0.75)';g.lineWidth=1.4*devicePixelRatio;
+g.beginPath();g.moveTo(cxp-a1x*S,cyp+a1y*S);g.lineTo(cxp+a1x*S,cyp-a1y*S);g.stroke()}
+if(mode==='v'||mode==='t'){for(let i=0;i<V.length;i+=4){const[x,y,z]=rot(V[i],V[i+1],V[i+2]);
+if(z<0)continue;const d=(z+1)/2,r=Math.sin(V[i+3])*S*(0.8+0.2*d);
+g.strokeStyle=`rgba(143,175,127,${0.10+0.25*d})`;g.lineWidth=1*devicePixelRatio;
+g.beginPath();g.arc(cxp+x*S,cyp-y*S,r,0,7);g.stroke()}}
+for(let i=0;i<P.length;i+=4){const[x,y,z]=rot(P[i],P[i+1],P[i+2]);
+const d=(z+1)/2,al=0.18+0.78*d,r=(0.9+1.1*d)*devicePixelRatio,fl=P[i+3];
+let col;
+if(mode==='h')col=(fl>=2)?`rgba(201,106,74,${al})`:`rgba(127,163,184,${al})`;
+else if(mode==='v')col=(fl%2===1)?`rgba(143,175,127,${al})`:`rgba(127,163,184,${al*0.8})`;
+else if(mode==='f')col=`rgba(160,150,130,${al*0.30})`;
+else col=(fl>=2)?`rgba(201,106,74,${al*0.85})`:`rgba(127,163,184,${al*0.85})`;
+g.fillStyle=col;g.beginPath();g.arc(cxp+x*S,cyp-y*S,r,0,7);g.fill()}
+if(mode==='f'||mode==='t'){for(let i=0;i<F.length;i+=4){const[x,y,z]=rot(F[i],F[i+1],F[i+2]);
+const d=(z+1)/2,al=0.35+0.6*d,r=(1.6+3.2*F[i+3])*devicePixelRatio;
+g.fillStyle=`rgba(217,185,106,${al})`;
+g.beginPath();g.moveTo(cxp+x*S,cyp-y*S-r);g.lineTo(cxp+x*S+r*0.6,cyp-y*S);
+g.lineTo(cxp+x*S,cyp-y*S+r);g.lineTo(cxp+x*S-r*0.6,cyp-y*S);g.closePath();g.fill()}}
+}
+fr();
+</script></body></html>

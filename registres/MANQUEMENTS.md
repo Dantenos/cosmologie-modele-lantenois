@@ -1929,3 +1929,13 @@ Ligne de base rejouée : β = 2,447 (1580 SNe + 13 BAO). Le corpus se reproduit 
 Ce que cela réduit : |Δβ| < 0,47 (2σ), un catalogue, vides locaux. Ce que cela ne ferme pas :
 la manche sur ≥ 2 catalogues (spec mère). Le signe + n'est pas interprété. Rapport :
 ETUDE_E1_v0.md. Verse dans l'affaire W-universel (toujours ouverte).
+
+## 23/08 (Claude Code) — #142 E1 MANCHE 2 SUR DOUGLASS DR7 : **UNIVERSEL SUR DEUX JUGES**
+Critères gelés avant exécution (`etude_E1_manche2.py`, registre ec458a2cf766). Trois catalogues
+Douglass 2023 (CDS J/ApJS/265/7 ; VoidFinder union de sphères, VIDE, REVOLVER), 455 SNe dans
+l'empreinte SDSS NGC, ~228 par moitié. Δβ = +0,52 ± 0,38 / −0,40 ± 0,35 / −0,04 ± 0,36 ; tous
+NUL (permutations p = 0,11 / 0,15 / 0,92). Avec Stopyra (#141) : **deux juges, aucun signal.**
+Dit sans l'adoucir : VoidFinder et VIDE diffèrent de 0,92 pour un seuil gelé à 1,04 — la notion
+de « vide » n'est pas univoque à cette précision, et le signe de Stopyra n'est pas reproduit.
+Réduit : |Δβ| < 0,77 (SDSS) et < 0,47 (local). Ne ferme pas : < 0,36. Duel : 2-0 goulet, sans
+que l'horloge soit tuée. Rapport : ETUDE_E1_manche2.md.

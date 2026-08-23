@@ -23,4 +23,4 @@
 
 ## File d'attente
 [ ] MCMC Cobaya sur β (manquement #2)  [ ] Atlas v0 (15 modèles, pipeline v3)
-[x] voids×Pantheon+ v0 : UNIVERSEL 0,4σ (#141 ; 2e catalogue à faire)  [ ] κ(σ) BGG  [ ] κ₋Δv ≳ 25
+[x] voids×Pantheon+ : UNIVERSEL sur 2 juges (#141-142)  [ ] κ(σ) BGG  [ ] κ₋Δv ≳ 25

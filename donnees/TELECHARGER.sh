@@ -14,3 +14,11 @@ sha256sum -c SHA256SUMS
 # noms attendus par vraisemblance_reelle.py
 cp pantheon_plus/Pantheon+SH0ES.dat pantheon_plus/pantheon.dat
 cp "pantheon_plus/Pantheon+SH0ES_STAT+SYS.cov" pantheon_plus/pantheon_cov.cov
+# Douglass, Veyrat & BenZvi 2023 (CDS J/ApJS/265/7)
+B="https://cdsarc.cds.unistra.fr/ftp/J/ApJS/265/7"
+mkdir -p vides_douglass2023
+curl -sfL -o vides_douglass2023/ReadMe "$B/ReadMe"
+curl -sfL -o vides_douglass2023/table1.dat "$B/table1.dat"
+curl -sfL "$B/table2.dat.gz" | gunzip > vides_douglass2023/table2.dat
+curl -sfL "$B/table3.dat.gz" | gunzip > vides_douglass2023/table3.dat
+sha256sum -c SHA256SUMS

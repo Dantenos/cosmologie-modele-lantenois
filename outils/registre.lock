@@ -133,5 +133,10 @@
   "sha256": "22476d7b732c71927db6a6c2ab54e5510393ff72e49280aec29cc723f3018f96",
   "gele_le": "2026-08-23T21:40:17",
   "extrait": "GRAND LIVRE DE PENROSE (papier B, section 3) — f_coll(>M_cut) et R selon la mass"
+ },
+ "scripts/croisement_fantome.py": {
+  "sha256": "8cb6e7d24f9bd04bfa24d95a58c2975be35a133c070b15fec4fc2d50e40e68ed",
+  "gele_le": "2026-08-23T21:45:01",
+  "extrait": "LE CROISEMENT FANTOME z_x(beta) — arbitrage entre quatre valeurs du papier A."
  }
 }

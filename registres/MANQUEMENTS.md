@@ -1985,3 +1985,23 @@ Recalculé dans la machinerie de `gradient_v2.py` (`penrose_fcoll.py`, gelé 224
 Ce que cela réduit : l'argument « coût géométrique, jamais exp(S) » n'est plus un résultat mais une
 implication conditionnelle au choix de route, que #80 laissait ouvert. Ce qu'il ne ferme pas :
 la route elle-même. PDF recompilé (14 p., 0 erreur). `perime` : 0 occurrence sur les 27 façades.
+
+## 23/08 (Claude Code) — #145 LE CROISEMENT FANTÔME, CALCULÉ : LE TABLEAU AVAIT RAISON, P10 AVAIT TORT
+Quatre valeurs de z_× coexistaient dans le papier A. Calcul direct (β = 3H(z_×)t(z_×) dans le fond
+auto-cohérent, `croisement_fantome.py` gelé 8cb6e7d24f9b, Ω_m = 0,314) :
+  β = 2,42 → 0,444 ; 2,49 → 0,344 ; **2,50 → 0,331** ; 2,56 → 0,262 ; 2,595 → 0,226 ; 2,60 → 0,221.
+  - Tableau de rétractation (#111) : **REPRODUIT** à < 0,03 partout.
+  - l.100 « 0,68 à β = 2,42 » et « 0,36 à β = 2,59 » : **INFIRMÉS** (0,44 et 0,23) ; dz_×/dβ ≈ −1,25,
+    pas −2. La fenêtre DESI 0,4–0,5 correspond à β ≈ 2,38–2,45, pas 2,5–2,55.
+  - **P10, « the sharpest single statement » : z_× = 0,50 à β = 5/2 est INFIRMÉ — 0,33**, sous la
+    fenêtre DESI, pas dedans. L'auto-validation de P10 par la fenêtre tombe. Le chiffre est corrigé
+    dans A ; la formulation de P10 est à reprendre par l'auteur.
+  - Sensibilité à Ω_m : jusqu'à 0,08 en z_× entre 0,30 et 0,33 — le tableau doit porter son Ω_m
+    (ajouté). Ce que cela réduit : z_× comme β-mètre secondaire exige Ω_m fixé par ailleurs.
+
+## 23/08 (Claude Code) — #146 LE −12,6 PLANCK COMPLET, REPRODUIT PAR UN TIERS
+`planck_theta.py` (planck-lite-py cloné par TELECHARGER.sh, CAMB 2.0.3, ~40 min sur cette machine) :
+  ΛCDM χ² = **1998,63** (ancre du docstring 1998,6326) ; accrétion χ² = **1986,03** (ancre 1986,0297),
+  **β = 2,589**, H₀ = 67,63 → **Δχ² = −12,60**. Le résultat de tête du papier A se reproduit hors du
+  conteneur d'origine, à la décimale. Et β = 2,59 est exactement ce que l'erratum #2 affirmait :
+  le −12,6 appartient à β ≈ 2,56–2,59. États : donnees/pantheon_plus/state_{lcdm,acc}.json (ignorés).

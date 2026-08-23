@@ -41,7 +41,7 @@ def freeze(files, amend=False):
             if not amend:
                 sys.exit(f"[registre] {f}: critère DÉJÀ GELÉ et modifié depuis. "
                          f"Refus. (--amend pour amender publiquement)")
-            with RETR.open("a", encoding="utf-8") as r:
+            with RETR.open("a", encoding="utf-8", newline="\n") as r:
                 r.write(f"\n## {datetime.date.today()} — AMENDEMENT {f}\n"
                         f"ancien hash {lock[f]['sha256'][:12]} -> {h[:12]}. "
                         f"Justification à écrire ici, sinon l'amendement est nul.\n")
@@ -49,7 +49,7 @@ def freeze(files, amend=False):
         lock[f] = {"sha256": h, "gele_le": datetime.datetime.now().isoformat(timespec='seconds'),
                    "extrait": doc.strip().splitlines()[0][:80]}
         print(f"[registre] gelé : {f}  ({h[:12]})")
-    LOCK.write_text(json.dumps(lock, indent=1, ensure_ascii=False), encoding="utf-8")
+    LOCK.write_text(json.dumps(lock, indent=1, ensure_ascii=False), encoding="utf-8", newline="\n")
 
 def verify(files=None):
     lock = charge()

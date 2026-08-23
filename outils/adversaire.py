@@ -54,7 +54,7 @@ def audit(mpath):
     lignes += ["", "Règle appliquée : aucune opinion — chaque verdict provient d'une valeur exécutée.",
                "Rétractations éventuelles : RETRACTATIONS.md (via registre)."]
     out = ROOT / "registres" / f"RAPPORT_{m['papier']}.md"
-    out.write_text("\n".join(lignes), encoding="utf-8")
+    out.write_text("\n".join(lignes), encoding="utf-8", newline="\n")
     print(f"[adversaire] rapport écrit : {out}")
 
 if __name__ == "__main__":

@@ -1967,3 +1967,21 @@ E1 robustesse (critères gelés) : Δβ insensible à Ω_m (< 0,02 σ) ; VoidFin
 différentes (Jaccard 0,33) — signes opposés expliqués, pas une incohérence. Reste à l'auteur :
 AUDIT_2308.md §5 (P10 et ses quatre croisements, numérotation non injective de ce registre, cinq
 comptes de rétractations, sceau absent des .tex).
+
+## 23/08 (Claude Code) — #144 PAPIER B, GRAND LIVRE DE PENROSE : #52 ENFIN PROPAGÉ À LA SECTION 3 — ET LA ROUTE SIMULATION N'A PAS D'ARBRE
+Le papier B portait #52 aux sections 2 et 4 (résultat (i) retiré, R ~ 10^10,3, tri thermodynamique
+retiré) mais **pas à la section 3** : le grand livre de Penrose chiffrait encore le coût par niveau
+avec la coupure retirée (2,5×10¹⁴ M☉ : f_coll = 0,039, O(25), 25^N, R ~ 10^7,6, « 4 % par
+génération »), six lignes avant la révision qui le contredit. Attrapé par `outils/perime.py`
+(le linter de la règle 7, écrit ce jour — #143).
+Recalculé dans la machinerie de `gradient_v2.py` (`penrose_fcoll.py`, gelé 22476d7b732c ; validation :
+à 2,5×10¹⁴ elle redonne 0,043 / 23,5 / 10^7,9, donc même pipeline) :
+  - **route analytique (#52, M_cut = 3,0×10¹²) : f_coll = 0,37, O(3) par niveau, 3^N, R = 10^10,3** —
+    exactement le R de #52. Reporté dans B tel quel, ancien texte rétracté sur place.
+  - **route simulation (#80, 10¹⁵-10¹⁶) : f_coll = 10⁻³ → 0, coût 10³ → 10¹⁰, R = 10^5,3 → 10^−3,2.**
+    À 1,8×10¹⁶ il y a **moins d'un enfant viable par univers** : l'arbre ne pousse pas, il n'y a pas
+    de grand livre. B ne chiffrait pas cette route ; elle est désormais un caveat déclaré, et la
+    borne « la structure tient si R > 1 » est écrite.
+Ce que cela réduit : l'argument « coût géométrique, jamais exp(S) » n'est plus un résultat mais une
+implication conditionnelle au choix de route, que #80 laissait ouvert. Ce qu'il ne ferme pas :
+la route elle-même. PDF recompilé (14 p., 0 erreur). `perime` : 0 occurrence sur les 27 façades.

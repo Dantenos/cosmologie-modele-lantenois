@@ -193,6 +193,7 @@ nu et n'affiche jamais le hash du pipeline. Le fichier est scellé par ses octet
 - `outils/ligne_de_base.py` (gelé) — reproduction en CI : 1580 SNe, β ∈ [2,42 ; 2,60], Δχ² < 0.
 - `outils/perime.py` + `outils/valeurs_canoniques.json` (gelé) — **le linter de valeurs périmées de la
   règle 7**, enfin écrit. Quinze occurrences trouvées au premier passage (dont une que j'avais moi-même
-  écrite) ; treize corrigées ou marquées `[historique]` ; **une reste, volontairement rouge : papier B
-  l.148 (R ~ 10^7,6 et M_cut, retirés par #52)**. Job CI bloquant, comme la spec l'exige.
+  écrite) ; treize corrigées ou marquées `[historique]` ; la dernière — papier B l.148, grand livre de
+  Penrose chiffré avec la coupure retirée par #52 — corrigée ensuite sur instruction de l'auteur
+  (#144, `penrose_fcoll.py` gelé). **0 occurrence** au dernier passage. Job CI bloquant.
 - `RETRACTATIONS.md` — le canal `--amend`, vide.

@@ -49,6 +49,5 @@ jobs:
       - uses: actions/checkout@v4
       # Le linter de la règle 7 (ATLAS_falsification_spec.md) : un document de façade qui cite
       # une valeur dépréciée sans contexte de rétractation fait rougir le build. Bloquant, comme
-      # la spec l'exige. Au 23/08 : rouge sur papiers/papierB_hierarchie.tex l.148 (R ~ 10^7,6,
-      # corrigé en 10^10,3 par MANQUEMENTS #52) — à trancher par l'auteur, pas à masquer.
+      # la spec l'exige. Vert au 23/08 (0 occurrence sur 27 documents).
       - run: python3 outils/perime.py

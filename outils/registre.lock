@@ -128,5 +128,10 @@
   "sha256": "37add057ef88922cd95397431d0b4ece387353a0b878eac4743c340a41fa0eec",
   "gele_le": "2026-08-23T20:49:43",
   "extrait": "perime v0 — le linter de valeurs périmées, écrit le 23/08/2026 d'après la spec d"
+ },
+ "scripts/penrose_fcoll.py": {
+  "sha256": "22476d7b732c71927db6a6c2ab54e5510393ff72e49280aec29cc723f3018f96",
+  "gele_le": "2026-08-23T21:40:17",
+  "extrait": "GRAND LIVRE DE PENROSE (papier B, section 3) — f_coll(>M_cut) et R selon la mass"
  }
 }

@@ -53,6 +53,7 @@ def chi2(par,forme):
 if __name__=='__main__':
     print(f"  {'forme':>26s} {'chi2':>9s} {'AIC(k=4)':>9s} {'dAIC vs accretion':>18s}")
     ref=1427.31
+    ecarts=[]
     for forme,lab,p0 in [('tanh','F1 tanh (phenomeno)',[3.]),('schechter','F2 Schechter integree',[1.5]),
                          ('logistique','F3 logistique (biologie)',[2.])]:
         best=None
@@ -62,3 +63,8 @@ if __name__=='__main__':
             if best is None or r.fun<best.fun: best=r
         aic=best.fun+8
         print(f'  {lab:>26s} {best.fun:>9.2f} {aic:>9.2f} {aic-ref:>+18.2f}',flush=True)
+        ecarts.append(aic-ref)
+    v = ("CONFIRMEE (les trois a < 2 AIC : le fond ne discrimine pas la forme)" if all(abs(e) < 2 for e in ecarts)
+         else "REFUTEE (au moins une forme a > 4 AIC : le fond DISCRIMINE)" if any(abs(e) > 4 for e in ecarts)
+         else "INDECISE (entre 2 et 4 AIC)")
+    print(f"\n  VERDICT (critere gele) : THEORIE DE LA SATURATION {v}")

@@ -175,7 +175,10 @@ nu et n'affiche jamais le hash du pipeline. Le fichier est scellé par ses octet
    (+86 %), M_cut −30 %, élimination 100,00 % vs 99,6 % — et réémet le contrôle π³ qu'`audit_v2` déclare
    tautologique. Trois résultats de tête du papier B (#52) sont suspendus à cet appariement.
 6. **Deux χ² pour le même modèle le même jour** : accrétion w_E = 0 → 1419,309 (`duel_ccbh`, `atlas`)
-   et 1420,922 (`test_wE_v3`), paramètres quasi identiques : convergence du minimiseur à vérifier.
+   et 1420,922 (`test_wE_v3`). **Résolu** : `test_wE_v3` applique par défaut `ZCUT = 3` (la
+   modification est gelée au-delà de z = 3, « leur protocole » pour les familles PC) ; `duel` et
+   `atlas` le désactivent (`T.ZCUT = None`). Deux protocoles, pas un défaut de convergence ; même β.
+   À dire dans le papier C quand il cite 1419,31 : c'est la version sans gel à z > 3.
 7. **β aval** : `croissance`, `voile`, `identite_PC`, `audit_131`, `couche_limite`, `horloge_*` tournent
    à β = 2,42 ; le v3 consigne 2,595 (−6,8 %). `croissance.py` donne fσ8 **−0,35 %** là où
    `perturbations_derivees` donne **+3,71 %** (signe opposé ; #136 tranche pour +3,7, `croissance` jamais

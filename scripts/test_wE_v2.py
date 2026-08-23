@@ -187,6 +187,9 @@ if __name__ == '__main__':
         out2.append((w, rr.fun, b, rr.x))
         print(f"    w_E = {w:>6.2f} : chi2 = {rr.fun:10.3f}  H0 = {100*rr.x[0]:.2f}"
               f"  Om = {rr.x[2]:.4f}  B = {rr.x[3]:.3f}  beta = {b:.3f}")
+    inst = [o[0] for o in out2 if not (1.5 <= o[2] <= 4.35)]
+    if inst: print(f"    INSTABILITE signalee (controle : beta hors [1,5 ; 4,35]) a w_E = {inst} -> "
+                   "la parametrisation en w_E degenere vers w_E = -1 ; seul w_E >= -0,4 est lu.")
     c2 = min(o[1] for o in out2)
     d2 = [o[1] for o in out2 if o[0] == 0.0][0] - c2
     b0 = [o[2] for o in out2 if o[0] == 0.0][0]

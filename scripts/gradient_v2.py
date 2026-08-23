@@ -103,6 +103,7 @@ if __name__ == '__main__':
     print("  GRADIENTS : dlnF/dln(theta), differences centrees a +/-2 %")
     print("=" * 80)
     eps = 0.02
+    grads_P1 = []
     for proto, kw_lo, kw_hi, label in [
         ('P1 sigma8 fixe', dict(Om=REF['Om']*(1-eps)), dict(Om=REF['Om']*(1+eps)), 'Omega_m'),
         ('P1 sigma8 fixe', dict(s8=REF['s8']*(1-eps)), dict(s8=REF['s8']*(1+eps)), 'sigma_8'),
@@ -112,6 +113,11 @@ if __name__ == '__main__':
         g = (np.log(Fhi) - np.log(Flo)) / (2 * eps)
         gM = (np.log(Mhi) - np.log(Mlo)) / (2 * eps)
         print(f"  [{proto}] dlnF/dln {label:8s} = {g:+8.2f}    (dln M_cut/dln {label:8s} = {gM:+7.2f})")
+        grads_P1.append((label, g))
+    trop = [f"{l} ({g:+.2f})" for l, g in grads_P1 if abs(g) > 1.0]
+    print("  VERDICT (critere gele : |dlnF/dln theta| <~ 1 pour les trois) : "
+          + ("le cadre survit" if not trop else "ECHEC pour " + ", ".join(trop)
+             + " -> la selection-comme-maximisation est FAUSSE pour notre version. Ecrit tel quel."))
 
     print()
     for kw_lo, kw_hi, label in [

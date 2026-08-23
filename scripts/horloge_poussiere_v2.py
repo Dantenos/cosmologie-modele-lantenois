@@ -50,6 +50,11 @@ v1={(0.10,0.0):0.0052,(0.30,0.0):0.0464,(0.05,0.048):0.0268,(0.10,0.046):0.0301,
 vd={(0.10,0.0):0.0516,(0.30,0.0):0.2408}
 for k_ in [(0.10,0.0),(0.30,0.0),(0.05,0.048),(0.10,0.046),(0.20,0.030),(0.30,0.004)]:
     print(f"   {k_[0]:>5.2f} {k_[1]:>6.3f} {kappa(*k_):>9.4f} {v1[k_]:>10.4f} {vd.get(k_,float('nan')):>8}")
+bande=[(0.05,0.048),(0.10,0.046),(0.20,0.030),(0.30,0.004)]
+kb=[kappa(*k_) for k_ in bande]
+print(f"   VERDICT sur le critere herite de v1 (kappa < 0,12 partout sur la bande -> PREDICTION) : "
+      + ("TENU" if max(kb) < 0.12 else f"NON TENU (max {max(kb):.3f} a x0={bande[int(np.argmax(kb))][0]}) : la bande se scinde, "
+         "l'horloge n'est une prediction que pour x0 <~ 0,2"))
 lo,hi=0.05,0.95
 for _ in range(40):
     mid=(lo+hi)/2

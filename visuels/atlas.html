@@ -1,86 +1,123 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>L'Atlas — 19 modèles, un pipeline, un classement</title>
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Le Ciel des Modèles — l'Atlas</title>
 <style>
-html,body{margin:0;background:#0d0c0a;font-family:Georgia,serif;color:#efe9dc}
-#page{max-width:980px;margin:0 auto;padding:34px 26px 60px}
-h1{font-size:21px;letter-spacing:.07em;font-weight:normal;margin:0 0 4px}
-.sous{font-size:12.5px;color:#cfc8b8;line-height:1.55;margin:0 0 6px}
-.mono{font-family:ui-monospace,monospace;font-size:10.5px;color:#8f8878}
-.zone-legende{display:flex;gap:18px;margin:16px 0 8px;font-size:11.5px;color:#a89f8d}
-.zone-legende span::before{content:"";display:inline-block;width:9px;height:9px;margin-right:6px;border-radius:1px;vertical-align:-1px}
-.zl1::before{background:#2a2620}.zl2::before{background:#211d17}.zl3::before{background:#1a1712}
-#tableau{margin-top:10px}
-.ligne{display:grid;grid-template-columns:26px 258px 1fr 118px;gap:10px;align-items:center;
-padding:7px 8px;border-bottom:1px solid #1c1915;cursor:pointer}
-.ligne:hover{background:#14120f}
-.rang{font-family:ui-monospace,monospace;font-size:11px;color:#6f6a5e;text-align:right}
-.nom{font-size:13.5px;color:#e0d6c2}
-.nom .k{font-family:ui-monospace,monospace;font-size:10px;color:#8f8878;margin-left:6px}
-.badge{display:inline-block;font-size:9.5px;font-family:ui-monospace,monospace;letter-spacing:.05em;
-padding:1px 6px;border:1px solid #3a352c;border-radius:2px;margin-left:8px;vertical-align:1px}
-.b-notre{border-color:#c96a4a;color:#c96a4a}
-.b-audit{border-color:#d9b96a;color:#d9b96a}
-.b-mort{border-color:#4a4438;color:#6f6a5e}
-.piste{position:relative;height:22px;background:linear-gradient(to right,#2a2620 0,#2a2620 var(--z2),#211d17 var(--z2),#211d17 var(--z7),#1a1712 var(--z7),#1a1712 var(--z10),#14120f var(--z10))}
-.barre{position:absolute;top:4px;left:0;height:14px;background:#7fa3b8;border-radius:0 3px 3px 0}
-.barre.notre{background:#c96a4a}.barre.tete{background:#d9b96a}.barre.morte{background:#3d382e}
-.dval{position:absolute;top:3px;font-family:ui-monospace,monospace;font-size:10.5px;color:#cfc8b8;white-space:nowrap}
-.chiffres{font-family:ui-monospace,monospace;font-size:10.5px;color:#8f8878;text-align:right;white-space:nowrap}
-.fiche{display:none;grid-column:1/-1;padding:8px 10px 12px 44px;font-size:12px;line-height:1.6;color:#cfc8b8;border-left:2px solid #3a352c;margin:2px 0 8px}
-.fiche b{color:#e0d6c2;font-weight:normal}
-.fiche .mort-txt{color:#c96a4a}
-.ouvert .fiche{display:block}
-#cimetiere{margin-top:34px;padding-top:10px;border-top:1px solid #2a2620}
-#cimetiere h2{font-size:13px;letter-spacing:.14em;color:#a89f8d;font-weight:normal}
-#pied{margin-top:36px;font-size:10.5px;color:#6f6a5e;font-family:ui-monospace,monospace;line-height:1.7}
-a{color:#a89f8d}
-</style></head><body><div id="page">
-<h1>L'ATLAS <span class="mono">v1</span></h1>
-<p class="sous">Dix-neuf modèles d'énergie noire, un seul pipeline : Pantheon+ (1580 SNe), DESI DR2 BAO (13 points),
-distance-priors Planck, prior SH0ES — N = 1597. Classement par AIC, écrit tel quel :
-<b style="color:#e0d6c2">aucun modèle n'est retiré parce qu'il nous dépasse.</b>
-Chaque modèle porte sa condition de mort, déclarée avant le calcul. Cliquer une ligne pour la lire.</p>
-<div class="zone-legende"><span class="zl1">ΔAIC &lt; 2 — indiscernable</span><span class="zl2">2–7 — préférence faible</span><span class="zl3">7–10 — nette</span><span>› 10 — forte (mort dans la zone sombre)</span></div>
-<div id="tableau"></div>
-<div id="cimetiere"><h2>LE CIMETIÈRE — morts par leur propre critère</h2><div id="tombes"></div></div>
-<div id="pied">généré depuis registres/atlas_leaderboard.json (scripts/atlas_v1.py, gelé 580a983e775f) le 2026-08-23 ·
-validation : les 7 ancres d'atlas_rivaux reproduites à ±0,5 en χ² avant l'entrée des 12 nouveaux ·
-les deux iΛCDM entrent au tableau, pas au palmarès : batterie adversariale (LOO, split-z, trilogie SN) en attente (v2, #150) ·
-zéro dépendance réseau</div>
-</div>
+html,body{margin:0;height:100%;background:#0d0c0a;overflow:hidden;font-family:Georgia,serif;color:#efe9dc}
+canvas{display:block;cursor:default}
+#hud{position:fixed;top:24px;left:28px;max-width:360px;pointer-events:none}
+#hud h1{font-size:19px;margin:0 0 6px;letter-spacing:.06em;font-weight:normal}
+#hud p{font-size:12.5px;line-height:1.55;margin:4px 0;color:#cfc8b8}
+.v{color:#e0d6c2}.rouge{color:#c96a4a}.or{color:#d9b96a}.bleu{color:#7fa3b8}
+#verdict{position:fixed;top:24px;right:28px;text-align:right;font-size:12.5px;color:#cfc8b8;pointer-events:none;max-width:300px}
+#verdict b{display:block;font-size:15px;letter-spacing:.18em;color:#efe9dc;margin-top:6px}
+.mono{font-family:ui-monospace,monospace;font-size:11px;color:#8f8878}
+#fiche{position:fixed;left:28px;bottom:52px;max-width:430px;background:rgba(20,18,15,.94);border:1px solid #3a352c;
+padding:12px 15px;font-size:12px;line-height:1.6;color:#cfc8b8;display:none}
+#fiche h3{margin:0 0 4px;font-size:14px;font-weight:normal;color:#e0d6c2;letter-spacing:.04em}
+#fiche .mort{color:#c96a4a}
+#fiche .fermer{position:absolute;top:6px;right:10px;color:#6f6a5e;cursor:pointer;font-size:13px}
+#pied{position:fixed;bottom:16px;left:28px;right:28px;font-size:10.5px;color:#6f6a5e;font-family:ui-monospace,monospace}
+</style></head><body><canvas id="c"></canvas>
+<div id="hud"><h1>LE CIEL DES MODÈLES <span class="mono">l'atlas, v1</span></h1>
+<p>Dix-neuf modèles d&#8217;énergie noire, un seul pipeline (1580 SNe &middot; 13 BAO &middot; Planck &middot; SH0ES).</p>
+<p>Chaque astre est posé à sa place : la <span class="v">parcimonie</span> en travers (k),
+la <span class="v">performance</span> en tombée (&Delta;AIC). Sous la fracture&nbsp;: les morts,
+par leur propre critère.</p>
+<p><span class="rouge">&#9679;</span> notre accrétion &middot; <span class="or">&#9679;</span> les i&Lambda;CDM de tête, audits v2 en attente &middot; <span class="bleu">&#9679;</span> le peloton</p>
+<p class="mono">survoler : nommer &middot; cliquer : la fiche et la condition de mort</p></div>
+<div id="verdict">t&ecirc;te : i&Lambda;CDM (&epsilon; &sim; +0,02) &mdash; au tableau, pas au palmar&egrave;s<br>
+notre mod&egrave;le : &Delta;AIC +4,06, zone faible<b>AUCUNE CONDITION DE MORT DÉCLENCHÉE</b>
+<span class="mono">r&egrave;gle gel&eacute;e : aucun mod&egrave;le retir&eacute; parce qu&#8217;il nous d&eacute;passe &middot; #150</span></div>
+<div id="fiche"><span class="fermer">&times;</span><div id="fiche-corps"></div></div>
+<div id="pied">généré depuis registres/atlas_leaderboard.json (atlas_v1.py gelé 580a983e775f) le 2026-08-23 &middot; validation : 7 ancres à ±0,5 &middot; zéro dépendance réseau</div>
 <script>
 const D={"date": "2026-08-23", "donnees": "Pantheon+ 1580 + DESI DR2 BAO 13 + distance-priors Planck + SH0ES (pipeline v3, ZCUT off)", "N": 1597, "metriques": "chi2 min, AIC=chi2+2k, BIC=chi2+k ln N", "modeles": [{"nom": "iLCDM Q=eps H rho_de", "k": 4, "chi2": 1415.245, "aic": 1423.245, "bic": 1444.748, "params": "eps=+0.0213", "mort": "mort si eps incompatible avec 0 sans gain d'AIC", "note": "", "daic": 0.0}, {"nom": "iLCDM Q=eps H rho_dm", "k": 4, "chi2": 1415.818, "aic": 1423.818, "bic": 1445.322, "params": "eps=+0.0071", "mort": "mort si eps incompatible avec 0 sans gain d'AIC", "note": "", "daic": 0.573}, {"nom": "CCBH (Croker et al.)", "k": 3, "chi2": 1420.309, "aic": 1426.309, "bic": 1442.436, "params": "H0=69.61 (derive) Xi=1.382", "mort": "mort si s != 0,70 (FRB : deja 2,2 sigma contre, #148) ou k != 3 (JWST 2025 : 11 sigma contre)", "note": "", "daic": 3.064}, {"nom": "ACCRETION (Gamma∝1/t)", "k": 4, "chi2": 1419.309, "aic": 1427.309, "bic": 1448.813, "params": "H0=68.85 beta=2.595", "mort": "mort si beta(DR3) exclut [2,42;2,60] a 3 sigma, ou dAIC > +6 vs LCDM (scelle)", "note": "", "daic": 4.064}, {"nom": "ACCRETION 5/2 (0 param.)", "k": 3, "chi2": 1421.527, "aic": 1427.527, "bic": 1443.655, "params": "beta=2.5 (fixe)", "mort": "mort si beta = 5/2 exclu a 3 sigma par le profil (le point distingue est le modele)", "note": "", "daic": 4.282}, {"nom": "w log(a) (Efstathiou)", "k": 5, "chi2": 1418.079, "aic": 1428.079, "bic": 1454.958, "params": "w0=-0.930 wl=0.323", "mort": "mort si la reconstruction sort de la famille log", "note": "", "daic": 4.834}, {"nom": "PC1 (creation, w_E libre)", "k": 6, "chi2": 1416.701, "aic": 1428.701, "bic": 1460.956, "params": "H0=68.95 b=0.851", "mort": "mort si w_E = 0 exige (PC3 deja a 2,7 sigma) ou si k = 6 jamais paye par les donnees", "note": "", "daic": 5.456}, {"nom": "CPL = IDE degeneree", "k": 5, "chi2": 1418.927, "aic": 1428.927, "bic": 1455.806, "params": "H0=68.95 w0=-0.921 wa=-0.441", "mort": "mort si la reconstruction sort de la famille lineaire en (1-a)", "note": "", "daic": 5.682}, {"nom": "Anton-Schmidt", "k": 5, "chi2": 1419.515, "aic": 1429.515, "bic": 1456.394, "params": "H0=68.96 n=0.346 L0=1.612", "mort": "forme publiee (secteur sombre seul, declare) ; mort si (n, L0) fuient au bord", "note": "", "daic": 6.27}, {"nom": "LCDM", "k": 3, "chi2": 1425.086, "aic": 1431.086, "bic": 1447.213, "params": "H0=68.66 Om=0.2976", "mort": "reference ; mort si une alternative atteint dAIC > 10 et survit aux audits", "note": "", "daic": 7.841}, {"nom": "Lombriser (Om_de predit)", "k": 2, "chi2": 1427.607, "aic": 1431.607, "bic": 1442.358, "params": "H0=68.24 Om=0.3030 (impose)", "mort": "mort si Omega_de mesure exclut 0,697 (la prediction est le modele)", "note": "", "daic": 8.362}, {"nom": "wCDM", "k": 4, "chi2": 1423.843, "aic": 1431.843, "bic": 1453.346, "params": "w=-1.024", "mort": "mort si un croisement de w = -1 est etabli (w constant ne croise pas)", "note": "", "daic": 8.598}, {"nom": "Quintessence thawing (Linder)", "k": 4, "chi2": 1425.107, "aic": 1433.107, "bic": 1454.61, "params": "w0=-0.999", "mort": "mort si w0 < -1 exige : la famille interdit le fantome, donc le croisement la tue", "note": "", "daic": 9.862}, {"nom": "JPS / unimodulaire (accum.)", "k": 4, "chi2": 1426.117, "aic": 1434.117, "bic": 1455.62, "params": "eps=-0.0000", "mort": "comptabilite effective declaree ; mort si eps = 0 prefere (le papier A l'a deja rejetee a dchi2 = +4,9)", "note": "", "daic": 10.872}, {"nom": "Chaplygin generalise (GCG)", "k": 5, "chi2": 1433.176, "aic": 1443.176, "bic": 1470.055, "params": "As=0.999 alpha=0.193", "mort": "secteur sombre seul (declare) ; mort si alpha -> 0 sans gain (degenere a LCDM)", "note": "", "daic": 19.931}, {"nom": "PEDE (emergente, 0 param.)", "k": 3, "chi2": 1460.906, "aic": 1466.906, "bic": 1483.033, "params": "aucun (forme rigide)", "mort": "zero echappatoire : mort si dAIC > 10 vs le meilleur (forme figee par construction)", "note": "", "daic": 43.661}, {"nom": "Holographique (horizon futur)", "k": 4, "chi2": 1476.522, "aic": 1484.522, "bic": 1506.026, "params": "c=0.672", "mort": "mort si c >= 1 exige sans acceleration suffisante, ou dAIC > 10 (approx. radiation declaree)", "note": "", "daic": 61.277}, {"nom": "Bondi sature (M'∝M²)", "k": 4, "chi2": 4023.068, "aic": 4031.068, "bic": 4052.571, "params": "x_s=t0/t_s=0.925", "mort": "mort si x_s -> 1 (saturation avant aujourd'hui) ou si la forme perd sur ACC libre a k egal", "note": "", "daic": 2607.823}, {"nom": "Rh = ct", "k": 2, "chi2": 7621960.093, "aic": 7621964.093, "bic": 7621974.845, "params": "H0=85.00 (Om fixe 0,30, r_d seul — incoherence declaree)", "mort": "mort par theta* et BAO : E = 1+z n'a ni ere de matiere ni acceleration — ecrit tel quel", "note": "", "daic": 7620540.848}]};
-const MAX=12, SEUIL_MORT=10;
-const vivants=D.modeles.filter(m=>m.daic<=SEUIL_MORT), morts=D.modeles.filter(m=>m.daic>SEUIL_MORT);
-const pct=v=>Math.min(v/MAX*100,100);
-const t=document.getElementById('tableau');
-document.querySelectorAll('.piste').forEach(()=>{});
-vivants.forEach((m,i)=>{
- const notre=m.nom.startsWith('ACCRETION'), tete=m.nom.startsWith('iLCDM');
- const row=document.createElement('div');row.className='ligne';
- row.style.setProperty('--z2',pct(2)+'%');row.style.setProperty('--z7',pct(7)+'%');row.style.setProperty('--z10',pct(10)+'%');
- const badge=notre?'<span class="badge b-notre">NOTRE MODÈLE</span>':(tete?'<span class="badge b-audit">AUDITS v2 EN ATTENTE</span>':'');
- const w=Math.max(pct(m.daic),0.8);
- row.innerHTML=`<div class="rang">${i+1}</div>
- <div class="nom">${m.nom}<span class="k">k=${m.k}</span>${badge}</div>
- <div class="piste" style="--z2:${pct(2)}%;--z7:${pct(7)}%;--z10:${pct(10)}%">
-   <div class="barre ${notre?'notre':(tete?'tete':'')}" style="width:${w}%"></div>
-   <div class="dval" style="left:calc(${w}% + 7px)">+${m.daic.toFixed(2)}</div></div>
- <div class="chiffres">χ² ${m.chi2.toFixed(1)}<br>AIC ${m.aic.toFixed(1)}</div>
- <div class="fiche"><b>paramètres :</b> ${m.params} · <b>BIC :</b> ${m.bic.toFixed(1)}<br>
- <b>condition de mort :</b> <span class="mort-txt">${m.mort}</span>${m.note?'<br><b>note :</b> '+m.note:''}</div>`;
- row.addEventListener('click',()=>row.classList.toggle('ouvert'));
- t.appendChild(row);
-});
-const g=document.getElementById('tombes');
-morts.forEach(m=>{
- const row=document.createElement('div');row.className='ligne';
- const dv=m.daic>1e5?(m.daic/1e6).toFixed(1)+' M':(m.daic>1e3?Math.round(m.daic).toLocaleString('fr'):'+'+m.daic.toFixed(1));
- row.innerHTML=`<div class="rang">†</div>
- <div class="nom" style="color:#8f8878">${m.nom}<span class="k">k=${m.k}</span><span class="badge b-mort">ΔAIC ${dv}</span></div>
- <div class="piste"><div class="barre morte" style="width:100%"></div></div>
- <div class="chiffres">χ² ${m.chi2>1e5?m.chi2.toExponential(2):m.chi2.toFixed(1)}</div>
- <div class="fiche"><b>paramètres :</b> ${m.params}<br><b>cause du décès :</b> <span class="mort-txt">${m.mort}</span></div>`;
- row.addEventListener('click',()=>row.classList.toggle('ouvert'));
- g.appendChild(row);
-});
+const cv=document.getElementById('c'),g=cv.getContext('2d');
+let W,H,DPR;function rs(){DPR=devicePixelRatio;W=cv.width=innerWidth*DPR;H=cv.height=innerHeight*DPR;
+cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';place()}
+const vivants=D.modeles.filter(m=>m.daic<=10),morts=D.modeles.filter(m=>m.daic>10);
+morts.sort((a,b)=>a.daic-b.daic);
+let AST=[];
+function couleur(m){if(m.nom.startsWith('ACCRETION'))return['#c96a4a',[201,106,74]];
+if(m.nom.startsWith('iLCDM'))return['#d9b96a',[217,185,106]];return['#7fa3b8',[127,163,184]]}
+function place(){AST=[];
+ const x0=W*0.16,x1=W*0.90,yTop=H*0.215,yFrac=H*0.685,yFond=H*0.905;
+ const kx=k=>x0+(k-2)/(6-2)*(x1-x0);
+ const dy=d=>yTop+(Math.min(d,10)/10)*(yFrac-yTop-H*0.02);
+ const seen={};
+ vivants.forEach((m,i)=>{
+  const key=m.k+'|'+Math.round(m.daic*2);seen[key]=(seen[key]||0)+1;
+  const jx=(seen[key]-1)*W*0.055*(i%2?1:-1)+((i*37)%7-3)*W*0.004;
+  const[hex,rgb]=couleur(m);
+  AST.push({m,x:kx(m.k)+jx,y:dy(m.daic),r:(m.nom.startsWith('ACCRETION')?8.5:m.nom.startsWith('iLCDM')?8:6.5)*DPR,
+   hex,rgb,ph:i*1.7,mort:false})});
+ morts.forEach((m,i)=>{
+  const[hex,rgb]=['#5a5348',[90,83,72]];
+  AST.push({m,x:x0+(i+0.5)/morts.length*(x1-x0),y:yFrac+H*0.055+((i%2)?H*0.055:0)+H*0.02,
+   r:5.5*DPR,hex,rgb,ph:i*2.3,mort:true})});
+ AST.yFrac=yFrac;AST.x0=x0;AST.x1=x1;AST.yTop=yTop;AST.kx=kx;AST.dy=dy}
+rs();addEventListener('resize',rs);
+let hov=null,sel=null,mx=-1,my=-1;
+cv.addEventListener('pointermove',e=>{mx=e.clientX*DPR;my=e.clientY*DPR});
+cv.addEventListener('click',()=>{if(hov){sel=hov;montre(sel.m)}else{sel=null;document.getElementById('fiche').style.display='none'}});
+document.querySelector('.fermer').addEventListener('click',()=>{sel=null;document.getElementById('fiche').style.display='none'});
+function montre(m){const f=document.getElementById('fiche');
+ const dv=m.daic>1e5?(m.daic/1e6).toFixed(1)+' M':m.daic>1e3?Math.round(m.daic).toLocaleString('fr'):'+'+m.daic.toFixed(2);
+ document.getElementById('fiche-corps').innerHTML=
+ `<h3>${m.nom} <span class="mono">k=${m.k}</span></h3>
+ <span class="mono">&chi;² ${m.chi2>1e5?m.chi2.toExponential(2):m.chi2.toFixed(2)} &middot; AIC ${m.aic>1e5?m.aic.toExponential(2):m.aic.toFixed(2)} &middot; &Delta;AIC ${dv} &middot; BIC ${m.bic>1e5?m.bic.toExponential(2):m.bic.toFixed(1)}</span><br>
+ <b style="color:#e0d6c2;font-weight:normal">paramètres :</b> ${m.params}<br>
+ <b style="color:#e0d6c2;font-weight:normal">condition de mort :</b> <span class="mort">${m.mort}</span>`;
+ f.style.display='block'}
+// poussiere de fond (decor, pas des donnees)
+const DUST=[];for(let i=0;i<240;i++)DUST.push([Math.random(),Math.random(),Math.random()*0.5+0.15,Math.random()*6.28]);
+let t0=performance.now();
+function fr(){requestAnimationFrame(fr);const t=(performance.now()-t0)/1000;
+g.fillStyle='#0d0c0a';g.fillRect(0,0,W,H);
+for(const[dx,dy_,a,p]of DUST){const tw=0.5+0.5*Math.sin(t*0.7+p);
+ g.fillStyle=`rgba(160,150,130,${0.05+0.10*a*tw})`;g.beginPath();g.arc(dx*W,dy_*H,0.8*DPR,0,7);g.fill()}
+// zones
+const zx0=AST.x0,zx1=AST.x1;
+const bandes=[[0,2,'0,05','indiscernable'],[2,7,'0.035','préférence faible'],[7,10,'0.022','nette']];
+for(const[a,b,al,lab]of bandes){const ya=AST.dy(a),yb=AST.dy(b);
+ g.fillStyle=`rgba(201,180,140,${al*0.5})`;g.fillRect(zx0-W*0.045,ya,zx1-zx0+W*0.09,yb-ya);
+ g.fillStyle='rgba(168,159,141,0.55)';g.font=`${10.5*DPR}px ui-monospace,monospace`;g.textAlign='left';
+ g.fillText(`ΔAIC ${a}–${b} · ${lab}`,zx0-W*0.045+6*DPR,ya+13*DPR)}
+// axe k
+g.font=`${10.5*DPR}px ui-monospace,monospace`;g.textAlign='center';
+for(let k=2;k<=6;k++){g.fillStyle='rgba(111,106,94,0.5)';g.fillText('k = '+k,AST.kx(k),AST.yTop-10*DPR);
+ g.strokeStyle='rgba(111,106,94,0.10)';g.lineWidth=1*DPR;
+ g.beginPath();g.moveTo(AST.kx(k),AST.yTop);g.lineTo(AST.kx(k),AST.yFrac-4*DPR);g.stroke()}
+// la fracture
+g.strokeStyle='rgba(201,106,74,0.4)';g.setLineDash([7*DPR,5*DPR]);g.lineWidth=1.2*DPR;
+g.beginPath();g.moveTo(zx0-W*0.045,AST.yFrac);g.lineTo(zx1+W*0.045,AST.yFrac);g.stroke();g.setLineDash([]);
+g.fillStyle='rgba(169,120,100,0.75)';g.font=`${10.5*DPR}px ui-monospace,monospace`;g.textAlign='left';
+g.fillText('† la fracture — au-delà de ΔAIC 10, morts par leur propre critère',zx0-W*0.045,AST.yFrac+15*DPR);
+// astres
+hov=null;
+for(const a of AST){
+ const bob=Math.sin(t*0.6+a.ph)*2.2*DPR;
+ const x=a.x,y=a.y+bob;
+ const tw=a.mort?0.25+0.15*Math.max(0,Math.sin(t*0.9+a.ph)):0.75+0.25*Math.sin(t*1.1+a.ph);
+ const R=a.r*(1+0.06*Math.sin(t*1.3+a.ph));
+ const gr=g.createRadialGradient(x,y,0,x,y,R*4.2);
+ gr.addColorStop(0,`rgba(${a.rgb},${0.85*tw})`);gr.addColorStop(0.28,`rgba(${a.rgb},${0.30*tw})`);gr.addColorStop(1,'rgba(0,0,0,0)');
+ g.fillStyle=gr;g.beginPath();g.arc(x,y,R*4.2,0,7);g.fill();
+ g.fillStyle=a.hex;g.globalAlpha=a.mort?0.55:1;g.beginPath();g.arc(x,y,R,0,7);g.fill();g.globalAlpha=1;
+ if(a.m.nom.startsWith('iLCDM')){g.strokeStyle=`rgba(217,185,106,${0.35+0.2*Math.sin(t*2+a.ph)})`;
+  g.setLineDash([3*DPR,4*DPR]);g.lineWidth=1*DPR;g.beginPath();g.arc(x,y,R*2.1,0,7);g.stroke();g.setLineDash([])}
+ const d2=(mx-x)**2+(my-y)**2;if(d2<(R*3.2)**2)hov=a;
+ const court=a.m.nom.replace(' (Gamma∝1/t)','').replace(' (Croker et al.)','').replace(' (creation, w_E libre)','')
+  .replace(' (emergente, 0 param.)','').replace(' (horizon futur)','').replace(' (Efstathiou)','')
+  .replace(' (Linder)','').replace(' (accum.)','').replace(" (M'∝M²)",'').replace(' (0 param.)',' 5/2').replace('ACCRETION 5/2 5/2','ACCRETION 5/2');
+ g.font=`${(a.mort?9.5:10.5)*DPR}px Georgia`;g.textAlign='center';
+ g.fillStyle=a.mort?'rgba(143,136,120,0.55)':'rgba(224,214,194,0.85)';
+ g.fillText(court,x,y+R+13*DPR);
+ g.font=`${9*DPR}px ui-monospace,monospace`;g.fillStyle=a.mort?'rgba(111,106,94,0.6)':'rgba(143,136,120,0.85)';
+ const dv=a.m.daic>1e5?(a.m.daic/1e6).toFixed(1)+'M':a.m.daic>1e3?Math.round(a.m.daic):'+'+a.m.daic.toFixed(1);
+ g.fillText(dv,x,y+R+24*DPR)}
+if(hov){cv.style.cursor='pointer';
+ g.strokeStyle='rgba(239,233,220,0.8)';g.lineWidth=1.2*DPR;
+ g.beginPath();g.arc(hov.x,hov.y+Math.sin(t*0.6+hov.ph)*2.2*DPR,hov.r*1.9,0,7);g.stroke()}
+else cv.style.cursor='default';
+}
+fr();
 </script></body></html>

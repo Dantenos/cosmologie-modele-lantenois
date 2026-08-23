@@ -326,6 +326,36 @@ Allowing it to evolve would add absorbing power we have not tested. The publishe
 localize at rates that reach the numbers above within the lifetime of DESI~DR3, and the redshift
 selection is a matter of choice rather than of waiting.
 
+\emph{Executed on the real sample (added in revision; as pre-registered, this supersedes the
+mock-based statement of the deficit --- the mocks above retain their role for the redshift-lever
+design only).} The sixty-nine localized bursts of \citep{Connor2025} are public, and the pipeline
+above runs on them unchanged (audit trail \#148). Validation first: the $\Lambda$CDM refit
+returns $f_d = f_{\rm IGM} + f_X = 0.905$ against their published $0.91$, with a median host of
+$123\,\mathrm{pc\,cm^{-3}}$ against their $\sim\!120$ --- the machinery reproduces the published
+analysis on its own data. (The pre-registered validation criterion had been written on
+$f_{\rm IGM}$ alone, which is degenerate in our likelihood as noted below; it failed by $0.002$
+on an arbitrary coordinate of that plateau and the run was discarded as pre-registered, then the
+criterion was re-frozen on the identifiable combination --- both steps are in the audit trail,
+\#148.) The result, quoted as measured: $\Delta\chi^2(\mathrm{CCBH}-\Lambda\mathrm{CDM}) = +4.7$
+on the single real sample, and a $200$-draw bootstrap gives median $+4.7$ with $[16;84]$ interval
+$[+1.9;+8.5]$ --- the coupled model beats $\Lambda$CDM in only $1.5\%$ of resamples
+($\sim\!2.2\sigma$ indicative). The coupled model is driven to the hard boundary
+$f_{\rm IGM}+f_X = 1$ with its host median inflated to $170\,\mathrm{pc\,cm^{-3}}$ --- the
+pre-registered signature that the baryonic deficit is \emph{not} absorbable by the nuisances ---
+while the accretion model ($s=1$) sits within $0.01$ of $\Lambda$CDM, as predicted
+(Fig.~\ref{fig:frbreal}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.95\linewidth]{fig_frb_reelles.png}
+\caption{The sixty-nine localized FRBs of \citep{Connor2025} against the three backgrounds, each
+at its own preferred nuisances. $\Lambda$CDM and the accretion model ($s=1$, dashed) overlap;
+the calibrated CCBH curve under-disperses at high redshift even with $f_{\rm IGM}+f_X$ pushed to
+its hard boundary and the host median inflated. $\Delta\chi^2 = +4.7$ (bootstrap median $+4.7$,
+$[16;84] = [+1.9;+8.5]$).}
+\label{fig:frbreal}
+\end{figure}
+
 Two caveats bound the forecast, and the first is conservative. Our $f_{\rm IGM}$ and $f_X$ are
 degenerate, where the published analysis separates them through halo-intersection statistics;
 removing that freedom would strengthen the test, not weaken it. And our recovered

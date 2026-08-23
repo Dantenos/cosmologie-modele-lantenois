@@ -132,7 +132,7 @@
   },
   {
    "nom": "pagination des papiers",
-   "valeur_courante": "A 33 p., B 14 p., C 7 p.",
+   "valeur_courante": "A 33 p., B 14 p., C 8 p.",
    "source": "MANQUEMENTS #138, PDF recompilés 23/08",
    "date": "2026-08-23",
    "valeurs_depreciees": [
@@ -140,7 +140,9 @@
     "\\bA ?= ?3[0-2] p\\.",
     "Papier C \\(6 p\\.\\)",
     "compilations\\* \\(3[0-2] p\\.\\)",
-    "identical data\\* \\(6 p\\.\\)"
+    "identical data\\* \\(6 p\\.\\)",
+    "Papier C \\(7 p\\.\\)",
+    "identical data\\* \\(7 p\\.\\)"
    ]
   }
  ]

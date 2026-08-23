@@ -15,7 +15,7 @@
 
 ## État du corpus (24/08/2026)
 - Papier A (33 p.) : loi w=−β/(3Ht), β=2,42-2,60 ; cibles DR3 : β, β₁, |κ|<0,24. → arXiv.
-- Papier C (7 p.) : duel CCBH + FRB (82-120 sursauts pour 3σ ; table réelle : 2,2σ, #148). → soumission prioritaire.
+- Papier C (8 p.) : duel CCBH + FRB (82-120 sursauts pour 3σ ; table réelle : 2,2σ, #148). → soumission prioritaire.
 - Papier B (14 p.) : annexe. Feuille de contraintes (ε≲2e−4 ; x₀≲0,30 ; conversion ≥97 %).
 - THEORIE_GOULET / THEORIE_HORLOGE : discriminant = universalité environnementale de w
   (1re manche hémisphères : Δβ=+0,22±0,23, universel).

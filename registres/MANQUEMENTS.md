@@ -2029,3 +2029,14 @@ dit) : **VALIDATION PASSE** (f_d = 0,905 vs 0,91 publié ; hôte 123 vs ~120) ; 
 = +4,71 (~2,2σ) sur données réelles**, cohérent avec les mocks (#99 : 2,1σ) ; accrétion −0,01
 (s = 1 indiscernable, prédit) ; **CCBH sature f_d = 1** — le déficit n'est pas absorbable.
 Rapports : ETUDE_E3_v1.md. Substitution aux mocks du papier C : à l'auteur. E3 close en v1.
+
+## 23/08 (Claude Code) — #149 E3 BOOTSTRAPPÉE ET SUBSTITUÉE AU PAPIER C ; LA CARTE v2 ; L'OUTILLAGE v0.2
+Bootstrap de la table réelle (200 tirages, gelé e06c8cefc357) : Δχ²(CCBH−ΛCDM) médian +4,67,
+[16;84] = [+1,9 ; +8,5], CCBH gagnant dans 1,5 % des tirages — le déficit est robuste au
+rééchantillonnage. Le paragraphe « Executed on the real sample » et la figure (fig_frb_reelles.png,
+générateur gelé qui REFUSE d'écrire si les fits divergent de #148) sont dans le papier C (8 p.),
+avec la mention explicite exigée par la spec mère : les mocks ne gardent que le rôle de design du
+levier. Outillage : `rejouer.py` (« registre run » v0.2 : 14 scripts, 16 ancres, 34 s, en CI),
+`etat.py` (ETAT.md généré depuis les sources), `genere_ciel.py` (ciel_pantheon_v2.html : 
+hémisphères + vides + FRB, comptes vérifiés 1580/553/623/150/69 sous peine de refus).
+En cours : MCMC Planck marginalisé sur β (#2), chaîne resumable, verdict à 300 pas.

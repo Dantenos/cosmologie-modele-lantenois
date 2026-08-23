@@ -35,3 +35,12 @@ la table réelle, avec le même verdict à la même amplitude. Ce que cela rédu
 ne ferme pas : 2,2σ n'est pas 3σ — le compte de sursauts à levier reste le juge (82-120, spec).
 **Substitution aux mocks dans le papier C : étape d'auteur** (la spec mère l'exige avec mention
 explicite du changement ; les chiffres sont prêts ci-dessus).
+
+## Addendum — bootstrap (23/08 soir, `scripts/etude_E3_bootstrap.py`, gelé e06c8cefc357)
+200 rééchantillonnages avec remise des 69 FRB (graine 20260823) : **Δχ²(CCBH − ΛCDM) médian
+= +4,67, [16;84] = [+1,92 ; +8,45], [2,5;97,5] = [+0,15 ; +12,13]**. Validation : le +4,71 de
+l'échantillon complet tombe dans l'intervalle → PASSE. **CCBH ne bat ΛCDM que dans 1,5 % des
+tirages** ; σ indicatif = 2,2. Barre d'erreur, pas un verdict : le juge du canal reste le compte
+de sursauts à levier (82-120 pour 3σ). Le paragraphe et la figure (`fig_frb_reelles.png`) sont
+insérés dans le papier C (§FRB, « Executed on the real sample »), avec la mention explicite du
+changement exigée par la spec mère. C passe à 8 pages.

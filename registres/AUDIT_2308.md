@@ -87,8 +87,11 @@ nu et n'affiche jamais le hash du pipeline. Le fichier est scellé par ses octet
   β = 5/2 ; le tableau de rétractation du même papier (l.632-635) interpole ≈ 0,33 à cette
   valeur ; 0,36 survit en l.577/925 et 0,68 en l.100. Quatre valeurs du croisement dans un
   papier qui l'a retiré. **P9 n'existe pas** (P1…P8, P10).
-- A l.894 vs l.903 : ρ = −0,43 et ρ = −0,55 pour la même covariance Lyα (l'avantage va de +0,1
-  à +7,8 selon ρ).
+- A l.894 vs l.903 : ρ = −0,43 et ρ = −0,55. Éclairci à la relecture : −0,431 est la corrélation
+  DM-DH publiée du point Lyα DR2 (elle est dans la table BAO de vraisemblance_reelle.py) ; −0,55
+  est l'approximation adoptée pour le point joint AP+BAO du protocole de mise à jour, « pending
+  the published joint correlation ». Deux quantités, mais le papier gagnerait à le dire en une
+  phrase, l'avantage variant de +0,1 à +7,8 selon ρ.
 - A l.205 « The boundary sector is closed » — dans le paragraphe qui documente trois
   renversements, et avant deux de plus (TRIAGE #58/60/61). Règle 3.
 - A l.128 « The running is therefore a discriminant between two theoretical readings » vs l.133

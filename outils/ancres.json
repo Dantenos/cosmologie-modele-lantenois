@@ -1,0 +1,36 @@
+{
+ "_doc": "Ancres numériques rejouables : pour chaque script, des regex (1 groupe de capture, nombre) appliquées à sa sortie, et les bornes [min ; max]. Lu par outils/rejouer.py. Les valeurs viennent du balayage du 23/08/2026 (AUDIT_2308.md §6) avec une tolérance déclarée. Les docstrings gelés ne sont pas touchés : les ancres vivent ici, versionnées.",
+ "cwd": "donnees/pantheon_plus",
+ "scripts": {
+  "scripts/derivation_beta.py": {"ancres": [
+    {"nom": "beta(eps=1) Bertschinger", "regex": "epsilon = 1\\.0000 -> beta = ([0-9.]+)", "min": 0.666, "max": 0.667}]},
+  "scripts/heredite_edo.py": {"ancres": [
+    {"nom": "beta_1 predit", "regex": "beta_1 PR\\S+DIT = beta0 x dbeta/dlnM = (-[0-9.]+)", "min": -0.43, "max": -0.41}]},
+  "scripts/horloge_poussiere_v2.py": {"ancres": [
+    {"nom": "x0_max(|kappa|=0,24)", "regex": "x0_max\\(\\|kappa\\|=0,24, s=0\\) = ([0-9.]+)", "min": 0.315, "max": 0.325}]},
+  "scripts/horloge_vaidya.py": {"ancres": [
+    {"nom": "identite GR", "regex": "chi_b = 0\\.1: a=0\\.5 -> Rdot\\^2\\+1-2M/R = ([0-9.]+)", "min": 0.999999, "max": 1.000001}]},
+  "scripts/couche_limite.py": {"ancres": [
+    {"nom": "identite P_ram", "regex": "x0=0\\.1 v0= 1\\.0 : ratio = ([0-9.]+)", "min": 0.0999, "max": 0.1001}]},
+  "scripts/audit_131.py": {"ancres": [
+    {"nom": "eps_paroi(0,1)", "regex": "x0=0\\.1 s0=0\\.1 v0=x/3 : eps_paroi = ([0-9.]+)", "min": 0.68, "max": 0.74}]},
+  "scripts/gradient_v2.py": {"ancres": [
+    {"nom": "M_cut (1e12)", "regex": "M_cut\\(n_eff=-2\\.08\\) = ([0-9.]+)e\\+12", "min": 2.0, "max": 2.1},
+    {"nom": "F (1e-3)", "regex": "F = n\\(>M_cut\\) = ([0-9.]+)e-03", "min": 3.2, "max": 3.4}]},
+  "scripts/convention.py": {"ancres": [
+    {"nom": "M_cut pi/R_L (1e14)", "regex": "k = pi/R_L\\s+([0-9.]+)e\\+14", "min": 1.7, "max": 1.8}]},
+  "scripts/attaque_croker_fond.py": {"ancres": [
+    {"nom": "H0 Croker", "regex": "ADVERSAIRE: H0_derive ([0-9.]+)", "min": 69.44, "max": 70.44},
+    {"nom": "survie s", "regex": "ADVERSAIRE: survie_s ([0-9.]+)", "min": 0.68, "max": 0.72}]},
+  "scripts/identite_PC.py": {"ancres": [
+    {"nom": "Gamma/3H aujourd'hui", "regex": "aujourd'hui = ([0-9.]+)", "min": 0.845, "max": 0.852}]},
+  "scripts/convexite_entropie.py": {"ancres": [
+    {"nom": "S'' attracteur", "regex": "S'' = \\+([0-9.]+)\\s+CONVEXE", "min": 0.91, "max": 0.93}]},
+  "scripts/carte_reproduction.py": {"ancres": [
+    {"nom": "beta* lecture pic", "regex": "lecture pic : point fixe beta\\* = ([0-9.]+)", "min": 2.04, "max": 2.06}]},
+  "scripts/penrose_fcoll.py": {"ancres": [
+    {"nom": "f_coll validation", "regex": "f_coll=([0-9.]+) \\(publie", "min": 0.035, "max": 0.05}]},
+  "scripts/eps_nu.py": {"ancres": [
+    {"nom": "eps_pic", "regex": "psi-> M\\^-([0-9.]+)", "min": 0.32, "max": 0.33}]}
+ }
+}

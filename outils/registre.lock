@@ -148,5 +148,20 @@
   "sha256": "b4db633032379b63b776e0e03e35947fe5277d570a3ccbe2e373c6e050b1d8e1",
   "gele_le": "2026-08-23T22:08:53",
   "extrait": "E3 v1 — FRB SUR DONNEES REELLES, critere de validation CORRIGE ET DECLARE."
+ },
+ "scripts/mcmc_planck_beta.py": {
+  "sha256": "ef3ffe8764b3a59e28b79fc52998ffbe17f9c81c57350910f20656ee060befc0",
+  "gele_le": "2026-08-23T22:26:50",
+  "extrait": "MCMC PLANCK COMPLET SUR beta — le manquement #2, ferme : marginalisation, pas pr"
+ },
+ "scripts/etude_E3_bootstrap.py": {
+  "sha256": "e06c8cefc35722f1a01a1f225f8f08531ef7e8e5ea99f53c1bca0c65a93f574b",
+  "gele_le": "2026-08-23T22:26:50",
+  "extrait": "E3 BOOTSTRAP — le 2,2 sigma reel etait un tirage unique ; en voici la distributi"
+ },
+ "outils/rejouer.py": {
+  "sha256": "2901c0b2e7f925854544a0cc73a401e37753a7565799ea430f3be22b7eaedfdd",
+  "gele_le": "2026-08-23T22:28:23",
+  "extrait": "rejouer v1 — « registre run » : les ancres numériques rejouées et confrontées (2"
  }
 }

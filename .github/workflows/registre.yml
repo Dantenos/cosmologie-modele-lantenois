@@ -51,3 +51,8 @@ jobs:
       # une valeur dépréciée sans contexte de rétractation fait rougir le build. Bloquant, comme
       # la spec l'exige. Vert au 23/08 (0 occurrence sur 27 documents).
       - run: python3 outils/perime.py
+      # Les ancres numériques rejouées (registre run, feuille de route v0.2) : 14 scripts,
+      # ~35 s. Un résultat qui cesse de se reproduire = build rouge, pas seulement un
+      # critère modifié.
+      - name: ancres numériques
+        run: python3 outils/rejouer.py

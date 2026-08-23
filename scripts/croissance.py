@@ -21,9 +21,12 @@ calcule. S'il est négatif, il va dans le sens de la tension S8 observée — ce
 non remarqué. S'il est positif, il l'aggrave. On écrit ce qui sort.
 """
 import numpy as np
+print("[SUPERSEDE] #136 : les perturbations DERIVEES (perturbations_derivees.py) donnent fsigma8"
+      " +3,7 % (signe oppose a ce script, qui suppose delta_de = 0). Conserve comme etape ;"
+      " le signe n'est plus exploite. Arbitrage : E9 (CLASS complet).")
 from scipy.integrate import solve_ivp
 
-OM, OB, H0, BETA = 0.3113, 0.0493, 68.85, 2.418     # meilleur ajustement v3 du modèle
+OM, OB, H0, BETA = 0.3113, 0.0493, 68.85, 2.418     # ajustement leger BAO+SN (le v3 Planck complet donne beta = 2,595)
 ZEQ = 3387.0
 
 def fond(Om, beta=None, n=400000):

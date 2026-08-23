@@ -37,6 +37,8 @@ for x0 in [0.1,0.3]:
     v0=np.sqrt(x0**2+0.1*(2-0.1))
     flux_ext=1.0*v0*v0; flux_int=1.0*v0*v0       # rho u_r ^2 identiques, meme normalisation
     print(f"   x0={x0} : [Tun]_ext - [Tun]_int = {flux_ext-flux_int:.2e}  (nul par construction du courant continu)")
+print("   NB (audit 23/08) : ce bilan est une IDENTITE (memes expressions des deux cotes), pas un test")
+print("   independant - meme vice que le pi^3 (audit_v2, section 1). Le contenu reel est l'hypothese rho, u continus.")
 print("   -> la crise #130 venait de l'IDEALISATION NULLE. Paroi innocentee.")
 print()
 print("(3) v0 DERIVE (chute libre sur M_out), puis domaine par retro-reaction :")

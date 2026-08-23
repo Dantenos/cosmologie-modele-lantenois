@@ -54,6 +54,7 @@ def run(famille, ndim, p0c, nw=32, nb=400, ns=1400, tag=''):
     p0 = np.array(p0c) + 1e-3*rng.normal(size=(nw, ndim))*np.array(p0c)
     p0[:, 3] = np.clip(p0[:, 3] + 0.15*rng.normal(size=nw), -2.5, 0.8)
     s = emcee.EnsembleSampler(nw, ndim, logp, args=(famille,))
+    s.random_state = np.random.RandomState(7).get_state()   # chaine reproductible (audit 23/08)
     t0 = time.time()
     st = s.run_mcmc(p0, nb, progress=False)
     s.reset()

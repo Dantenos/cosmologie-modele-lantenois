@@ -103,6 +103,12 @@ $ python3 outils/registre.py verify
 
 ---
 
+## Pour les chercheurs futurs
+
+- [`registres/POUR_2027.md`](registres/POUR_2027.md) — **la lettre à qui ouvrira le sceau** : quoi vérifier d'abord, comment juger chaque affaire, l'avertissement β écrit avant DR3.
+- [`REPRODUIRE.md`](REPRODUIRE.md) — chaque chiffre de tête, sa commande, sa valeur attendue, son temps.
+- Licence : code MIT, textes et visuels CC-BY 4.0 ([`LICENSE`](LICENSE)) ; citation : [`CITATION.cff`](CITATION.cff) (DOI Zenodo au premier tag).
+
 ## Structure
 
 ```

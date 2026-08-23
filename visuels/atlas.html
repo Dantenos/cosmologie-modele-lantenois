@@ -39,20 +39,25 @@ let AST=[];
 function couleur(m){if(m.nom.startsWith('ACCRETION'))return['#c96a4a',[201,106,74]];
 if(m.nom.startsWith('iLCDM'))return['#d9b96a',[217,185,106]];return['#7fa3b8',[127,163,184]]}
 function place(){AST=[];
- const x0=W*0.16,x1=W*0.90,yTop=H*0.215,yFrac=H*0.685,yFond=H*0.905;
+ const x0=W*0.17,x1=W*0.86,yTop=H*0.27,yFrac=H*0.685,yFond=H*0.905;
  const kx=k=>x0+(k-2)/(6-2)*(x1-x0);
  const dy=d=>yTop+(Math.min(d,10)/10)*(yFrac-yTop-H*0.02);
- const seen={};
- vivants.forEach((m,i)=>{
-  const key=m.k+'|'+Math.round(m.daic*2);seen[key]=(seen[key]||0)+1;
-  const jx=(seen[key]-1)*W*0.055*(i%2?1:-1)+((i*37)%7-3)*W*0.004;
-  const[hex,rgb]=couleur(m);
-  AST.push({m,x:kx(m.k)+jx,y:dy(m.daic),r:(m.nom.startsWith('ACCRETION')?8.5:m.nom.startsWith('iLCDM')?8:6.5)*DPR,
-   hex,rgb,ph:i*1.7,mort:false})});
+ const parK={};
+ vivants.forEach(m=>{(parK[m.k]=parK[m.k]||[]).push(m)});
+ Object.values(parK).forEach(grp=>{
+  grp.sort((a,b)=>a.daic-b.daic);
+  grp.forEach((m,gi)=>{
+   const proche=gi>0&&(dy(m.daic)-dy(grp[gi-1].daic))<H*0.075;
+   const jx=proche?(gi%2?1:-1)*W*0.075:(gi%2?1:-1)*W*0.012*gi;
+   const side=(proche&&gi%2)?-1:1;
+   const[hex,rgb]=couleur(m);
+   AST.push({m,x:Math.min(Math.max(kx(m.k)+jx,W*0.12),W*0.93),y:dy(m.daic),side,
+    r:(m.nom.startsWith('ACCRETION (')?8.5:m.nom.startsWith('iLCDM')?8:6.5)*DPR,
+    hex,rgb,ph:(m.aic*7)%6.28,mort:false})})});
  morts.forEach((m,i)=>{
   const[hex,rgb]=['#5a5348',[90,83,72]];
   AST.push({m,x:x0+(i+0.5)/morts.length*(x1-x0),y:yFrac+H*0.055+((i%2)?H*0.055:0)+H*0.02,
-   r:5.5*DPR,hex,rgb,ph:i*2.3,mort:true})});
+   r:5.5*DPR,hex,rgb,ph:i*2.3,side:1,mort:true})});
  AST.yFrac=yFrac;AST.x0=x0;AST.x1=x1;AST.yTop=yTop;AST.kx=kx;AST.dy=dy}
 rs();addEventListener('resize',rs);
 let hov=null,sel=null,mx=-1,my=-1;
@@ -79,13 +84,13 @@ const zx0=AST.x0,zx1=AST.x1;
 const bandes=[[0,2,'0,05','indiscernable'],[2,7,'0.035','préférence faible'],[7,10,'0.022','nette']];
 for(const[a,b,al,lab]of bandes){const ya=AST.dy(a),yb=AST.dy(b);
  g.fillStyle=`rgba(201,180,140,${al*0.5})`;g.fillRect(zx0-W*0.045,ya,zx1-zx0+W*0.09,yb-ya);
- g.fillStyle='rgba(168,159,141,0.55)';g.font=`${10.5*DPR}px ui-monospace,monospace`;g.textAlign='left';
- g.fillText(`ΔAIC ${a}–${b} · ${lab}`,zx0-W*0.045+6*DPR,ya+13*DPR)}
+ g.fillStyle='rgba(168,159,141,0.55)';g.font=`${10.5*DPR}px ui-monospace,monospace`;g.textAlign='right';
+ g.fillText(`ΔAIC ${a}–${b} · ${lab}`,zx1+W*0.045-8*DPR,ya+13*DPR)}
 // axe k
 g.font=`${10.5*DPR}px ui-monospace,monospace`;g.textAlign='center';
-for(let k=2;k<=6;k++){g.fillStyle='rgba(111,106,94,0.5)';g.fillText('k = '+k,AST.kx(k),AST.yTop-10*DPR);
+for(let k=2;k<=6;k++){g.fillStyle='rgba(111,106,94,0.55)';g.fillText('k = '+k,AST.kx(k),AST.yFrac-9*DPR);
  g.strokeStyle='rgba(111,106,94,0.10)';g.lineWidth=1*DPR;
- g.beginPath();g.moveTo(AST.kx(k),AST.yTop);g.lineTo(AST.kx(k),AST.yFrac-4*DPR);g.stroke()}
+ g.beginPath();g.moveTo(AST.kx(k),AST.yTop-8*DPR);g.lineTo(AST.kx(k),AST.yFrac-22*DPR);g.stroke()}
 // la fracture
 g.strokeStyle='rgba(201,106,74,0.4)';g.setLineDash([7*DPR,5*DPR]);g.lineWidth=1.2*DPR;
 g.beginPath();g.moveTo(zx0-W*0.045,AST.yFrac);g.lineTo(zx1+W*0.045,AST.yFrac);g.stroke();g.setLineDash([]);
@@ -110,10 +115,13 @@ for(const a of AST){
   .replace(' (Linder)','').replace(' (accum.)','').replace(" (M'∝M²)",'').replace(' (0 param.)',' 5/2').replace('ACCRETION 5/2 5/2','ACCRETION 5/2');
  g.font=`${(a.mort?9.5:10.5)*DPR}px Georgia`;g.textAlign='center';
  g.fillStyle=a.mort?'rgba(143,136,120,0.55)':'rgba(224,214,194,0.85)';
- g.fillText(court,x,y+R+13*DPR);
- g.font=`${9*DPR}px ui-monospace,monospace`;g.fillStyle=a.mort?'rgba(111,106,94,0.6)':'rgba(143,136,120,0.85)';
  const dv=a.m.daic>1e5?(a.m.daic/1e6).toFixed(1)+'M':a.m.daic>1e3?Math.round(a.m.daic):'+'+a.m.daic.toFixed(1);
- g.fillText(dv,x,y+R+24*DPR)}
+ if(a.side<0){g.fillText(court,x,y-R-16*DPR);
+  g.font=`${9*DPR}px ui-monospace,monospace`;g.fillStyle=a.mort?'rgba(111,106,94,0.6)':'rgba(143,136,120,0.85)';
+  g.fillText(dv,x,y-R-5*DPR)}
+ else{g.fillText(court,x,y+R+13*DPR);
+  g.font=`${9*DPR}px ui-monospace,monospace`;g.fillStyle=a.mort?'rgba(111,106,94,0.6)':'rgba(143,136,120,0.85)';
+  g.fillText(dv,x,y+R+24*DPR)}}
 if(hov){cv.style.cursor='pointer';
  g.strokeStyle='rgba(239,233,220,0.8)';g.lineWidth=1.2*DPR;
  g.beginPath();g.arc(hov.x,hov.y+Math.sin(t*0.6+hov.ph)*2.2*DPR,hov.r*1.9,0,7);g.stroke()}

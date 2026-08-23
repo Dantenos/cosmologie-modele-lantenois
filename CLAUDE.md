@@ -1,4 +1,4 @@
-# CLAUDE.md — projet cosmologie (constitution héritée de la campagne d'août 2026, 116 entrées)
+# CLAUDE.md — projet cosmologie (constitution héritée de la campagne d'août 2026, 142 entrées au 23/08)
 
 ## Règles absolues (violées = session invalide)
 1. Tout script commence par ses CRITÈRES PRÉ-ENREGISTRÉS en en-tête, écrits avant exécution.
@@ -19,8 +19,10 @@
 - Papier B (14 p.) : annexe. Feuille de contraintes (ε≲2e−4 ; x₀≲0,30 ; conversion ≥97 %).
 - THEORIE_GOULET / THEORIE_HORLOGE : discriminant = universalité environnementale de w
   (1re manche hémisphères : Δβ=+0,22±0,23, universel).
-- Scripts : ancres numériques en tête ; les rejouer en CI.
+- Scripts : ancres numériques en tête ; les rejouer en CI (ligne de base gardée : outils/ligne_de_base.py).
+- Lancer les scripts depuis donnees/pantheon_plus/ (vraisemblance_reelle.py lit pantheon.dat dans le CWD) ; sous Windows PYTHONUTF8=1.
+- Ne jamais toucher un docstring gelé (outils/registre.lock) ni les octets de outils/scelle.py ; corps seulement, et RETRACTATIONS.md via freeze --amend.
 
 ## File d'attente
-[ ] MCMC Cobaya sur β (manquement #2)  [ ] Atlas v0 (15 modèles, pipeline v3)
+[ ] MCMC Cobaya sur β (manquement #2)  [ ] Atlas v0 (15 modèles, pipeline v3)  [ ] planck_lite_py à fournir (−12,6 irreproductible)  [ ] AUDIT_2308.md §5 (P10, numérotation, sceau dans A)
 [x] voids×Pantheon+ : UNIVERSEL sur 2 juges (#141-142)  [ ] κ(σ) BGG  [ ] κ₋Δv ≳ 25

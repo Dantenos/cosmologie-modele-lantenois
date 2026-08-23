@@ -19,18 +19,20 @@ Manifeste (JSON) : {"papier": id, "affirmations": [{"nom", "publie", "tolerance"
 Usage : adversaire.py audit manifeste.json
 """
 import sys, json, subprocess, pathlib, datetime
+HERE = pathlib.Path(__file__).resolve().parent; ROOT = HERE.parent
 
 def audit(mpath):
     m = json.loads(pathlib.Path(mpath).read_text(encoding="utf-8"))
     # réciprocité : tout doit être gelé avant exécution
-    r = subprocess.run([sys.executable, "registre.py", "verify", "adversaire.py", *m["attaques"]],
-                       capture_output=True, text=True)
+    r = subprocess.run([sys.executable, str(HERE / "registre.py"), "verify", "outils/adversaire.py", *m["attaques"]],
+                       capture_output=True, text=True, cwd=ROOT, encoding="utf-8")
     if r.returncode != 0:
         sys.exit("[adversaire] REFUS : outil ou attaques non gelés par registre.\n" + r.stdout)
     mesures = {}
     for att in m["attaques"]:
         print(f"[adversaire] exécution : {att}")
-        p = subprocess.run([sys.executable, att], capture_output=True, text=True, timeout=3000)
+        p = subprocess.run([sys.executable, str(ROOT / att)], capture_output=True, text=True, timeout=3000,
+                           cwd=ROOT / "donnees" / "pantheon_plus", encoding="utf-8")
         for ligne in p.stdout.splitlines():
             if ligne.startswith("ADVERSAIRE:"):
                 _, nom, val = ligne.split(None, 2)
@@ -51,7 +53,7 @@ def audit(mpath):
         lignes.append(f"| {a['nom']} | {a['publie']} {a.get('unite','')} | {ex} | ±{a['tolerance']} | {verdict} |")
     lignes += ["", "Règle appliquée : aucune opinion — chaque verdict provient d'une valeur exécutée.",
                "Rétractations éventuelles : RETRACTATIONS.md (via registre)."]
-    out = pathlib.Path(f"RAPPORT_{m['papier']}.md")
+    out = ROOT / "registres" / f"RAPPORT_{m['papier']}.md"
     out.write_text("\n".join(lignes), encoding="utf-8")
     print(f"[adversaire] rapport écrit : {out}")
 

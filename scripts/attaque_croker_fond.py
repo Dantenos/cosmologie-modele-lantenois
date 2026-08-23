@@ -1,9 +1,9 @@
 """Attaque exécutable — Croker et al. 2024, classe « fond cosmologique ».
 CRITÈRE PRÉ-ENREGISTRÉ : reproduire (H0 dérivé, survie s) à leur Xi=1,403 avec le taux
 calibré (A=1,551, B=3,119) et leurs omega publiés. Aucune valeur imprimée = attaque nulle."""
-import sys, os, numpy as np
-os.chdir("/home/claude/desi_fit")
-sys.path.insert(0,'/home/claude/selection'); sys.path.insert(0,'/home/claude/desi_fit')
+import sys, os, pathlib, numpy as np
+_R = pathlib.Path(__file__).resolve().parent.parent   # racine du depot
+sys.path.insert(0, str(_R / 'scripts')); os.chdir(_R / 'donnees' / 'pantheon_plus')
 import duel_ccbh as D
 np.seterr(all='ignore')
 P0=lambda z:0.015*(1+z)**2.7/(1+((1+z)/2.9)**5.6)

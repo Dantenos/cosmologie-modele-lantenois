@@ -9,8 +9,8 @@ CRITÈRES PRÉ-ENREGISTRÉS DE V1 (gelés par registre.py) :
 Usage : audience.py inscrire aff.json | role | verdict <id>
 """
 import sys, json, hashlib, pathlib, datetime
-R = pathlib.Path("audience.json")
-def _l(): return json.loads(R.read_text()) if R.exists() else {"affaires":{}, "acteurs":{}}
+R = pathlib.Path(__file__).resolve().parent / "audience.json"
+def _l(): return json.loads(R.read_text(encoding="utf-8")) if R.exists() else {"affaires":{}, "acteurs":{}}
 def inscrire(p):
     d=_l(); a=json.loads(pathlib.Path(p).read_text(encoding="utf-8"))
     a["inscrite_le"]=datetime.date.today().isoformat()
@@ -18,7 +18,7 @@ def inscrire(p):
     d["affaires"][a["id"]]=a
     for act in a["acteurs"]:
         c2=d["acteurs"].setdefault(act,{"validees":0,"refutees":0,"en_attente":0}); c2["en_attente"]+=1
-    R.write_text(json.dumps(d,indent=1,ensure_ascii=False))
+    R.write_text(json.dumps(d,indent=1,ensure_ascii=False), encoding="utf-8")
     print(f"[audience] inscrite : {a['id']}  ({a['hash']})  juge attendu : {a['juge']}")
 def role():
     d=_l()

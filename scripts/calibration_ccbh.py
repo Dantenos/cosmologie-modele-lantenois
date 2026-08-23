@@ -84,7 +84,48 @@ print(f"\n  VALIDATION : Xi calibre = {Xi_c:.3f} contre leur {1.403:.3f} publie"
 ok = abs(Xi_c/1.403 - 1) < 0.30
 print(f"  {'PASSE' if ok else 'ECHEC'} (seuil 30 %)")
 if not ok:
-    print("\n  -> la forme de mon taux reste fausse. Aucun chiffre FRB exploite.")
+    print("\n  -> la forme de mon taux reste fausse. Aucun chiffre FRB exploite (critere gele).")
+    # --- Procedure de #91 (ajoutee 23/08, audit) : elle n'est PAS le critere gele ci-dessus. ---
+    # On impose leur Xi = 1,403 et on resout (A, B) : normalisation globale et rehaussement z > 4.
+    # Xi n'est plus derive, donc ceci ne VALIDE rien sur Xi ; c'est la calibration utilisee par
+    # atlas_rivaux.py / attaque_croker_fond.py (A = 1,551, B = 3,119, jusqu'ici en dur). Le vrai
+    # controle est le reajustement LIBRE du modele calibre (atlas_rivaux : Xi = 1,382, 1,5 %).
+    print("\n" + "="*78)
+    print("  PROCEDURE #91 (hors critere gele) : Xi IMPOSE = 1,403, omega_c = 0,1237 (les leurs), resoudre (A, B)")
+    print("="*78)
+    def set_psi_AB(A, B):
+        D.psi_MD14 = lambda z: A*PSI0(z)*np.where(np.asarray(z) > 4.0, B, 1.0)
+    def eqs_AB(p):
+        A, B = p
+        if A <= 0 or B <= 0.5 or B > 60: return [1e3, 1e3]
+        set_psi_AB(A, B); o = profil_raw(1.403, wc=0.1237)   # leur omega_c publie (attaque_croker_fond)
+        if o is None: return [1e3, 1e3]
+        return [o[4] - 0.70, 100*o[2] - 69.94]
+    def profil_raw(Xi, wc=WC, wbp=WBP):
+        wb = np.full_like(D.AG, wbp); wde = np.zeros_like(D.AG)
+        j0 = np.searchsorted(D.AG, 1/21.0)
+        for i in range(j0, len(D.AG)):
+            wm = wc + wb[i-1] + D.W_NU_M
+            wt = wm/D.AG[i-1]**3 + D.W_R/D.AG[i-1]**4 + wde[i-1]
+            if wt <= 0 or wb[i-1] <= 0: return None
+            Hy = 100*np.sqrt(wt)*D.KMS_PER_YR
+            src = Xi*D.psi_MD14(1/D.AG[i-1]-1)/(Hy*D.AG[i-1]**4)/D.RHO100
+            da = D.AG[i]-D.AG[i-1]
+            wde[i] = wde[i-1] + src*da; wb[i] = wb[i-1] - src*D.AG[i-1]**3*da
+        if wb[-1] <= 0: return None
+        wt = (wc + wb + D.W_NU_M)/D.AG**3 + D.W_R/D.AG**4 + wde
+        return None, None, np.sqrt(wt[-1]), None, wb[-1]/wbp
+    solAB = None
+    for g in ([1.5, 3.0], [2.0, 2.0], [1.0, 6.0]):
+        r, info, ier, msg = fsolve(eqs_AB, g, full_output=True)
+        if ier == 1:
+            set_psi_AB(*r); o = profil_raw(1.403, wc=0.1237)
+            if o and abs(o[4]-0.70) < 1e-3 and abs(100*o[2]-69.94) < 0.05: solAB = r; break
+    if solAB is None: print("  systeme (A, B) non resolu")
+    else:
+        print(f"  A = {solAB[0]:.3f}   B = {solAB[1]:.3f}   (atlas_rivaux / attaque_croker_fond : 1,551 / 3,119)")
+        print("  Xi impose -> ceci n'est pas une validation de Xi. Le controle qui compte : reajustement")
+        print("  libre du modele calibre sur nos donnees (atlas_rivaux.py) : Xi = 1,382 contre 1,403.")
     sys.exit()
 
 print("\n" + "="*78)

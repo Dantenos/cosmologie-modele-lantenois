@@ -2005,3 +2005,16 @@ auto-cohérent, `croisement_fantome.py` gelé 8cb6e7d24f9b, Ω_m = 0,314) :
   **β = 2,589**, H₀ = 67,63 → **Δχ² = −12,60**. Le résultat de tête du papier A se reproduit hors du
   conteneur d'origine, à la décimale. Et β = 2,59 est exactement ce que l'erratum #2 affirmait :
   le −12,6 appartient à β ≈ 2,56–2,59. États : donnees/pantheon_plus/state_{lcdm,acc}.json (ignorés).
+
+## 23/08 (Claude Code) — #147 CALIBRATION CCBH : LE CRITÈRE GELÉ A ÉCHOUÉ, #91 L'A REMPLACÉ SANS LE DIRE — ET A, B N'ÉTAIENT DÉRIVÉS NULLE PART
+`calibration_ccbh.py` (critère gelé : Ξ **dérivé** en résolvant (Ξ, B) sur s = 0,70 et H₀ = 69,94,
+doit tomber à moins de 30 % de 1,403) imprime aujourd'hui **ÉCHEC : Ξ = 2,149, écart 53 %**. #91
+dit « le critère de validation passe » : en réalité #91 a **imposé Ξ = 1,403** et résolu (A, B) —
+une autre procédure, où le critère est satisfait par construction (règle 9 : l'ambigu converti en
+victoire). Le papier C, lui, le dit correctement (« a check that does not enter the system »).
+Ce qui sauve la calibration est le **réajustement libre** d'`atlas_rivaux.py` (Ξ libre → 1,382,
+1,5 % de 1,403) : un vrai test, mais pas celui qui était gelé.
+Et **A = 1,551, B = 3,119 n'étaient dérivés par aucun script** (en dur dans atlas_rivaux et
+attaque_croker_fond). Dérivés maintenant par `calibration_ccbh.py` : à ω_c = 0,1237 (le leur),
+**A = 1,551, B = 3,119** exactement ; à ω_c = 0,1194 (le nôtre), 1,532 / 3,168. Le script imprime
+les deux procédures sous leurs vrais noms. Rien ne change au verdict du duel.

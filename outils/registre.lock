@@ -108,5 +108,10 @@
   "sha256": "ec458a2cf766e52712bc25c81e60546b616549dbdffb0195d9b4737a95a1ce26",
   "gele_le": "2026-08-23T19:56:57",
   "extrait": "E1 MANCHE 2 — DOUGLASS DR7 x PANTHEON+ : le deuxieme catalogue de vides. CRITERE"
+ },
+ "outils/ligne_de_base.py": {
+  "sha256": "550e064a49c8270011a69c5eaa76b56e3f1324b00b93898feb699dae96aed76f",
+  "gele_le": "2026-08-23T20:25:56",
+  "extrait": "ligne_de_base v1 — la reproduction du corpus, en CI. CRITERES PRE-ENREGISTRES (g"
  }
 }

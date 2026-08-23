@@ -22,8 +22,9 @@ CRITERE PRE-ENREGISTRE :
       confirmee, pipeline adequat, et on peut lire le resultat pour notre loi.
       Sinon -> mon pipeline reste non comparable au leur ; ne rien exploiter.
 """
-import numpy as np, sys, time, emcee, json
-sys.path.insert(0, '/home/claude/desi_fit'); sys.path.insert(0, '/home/claude/selection')
+import numpy as np, sys, time, emcee, json, pathlib
+HERE = pathlib.Path(__file__).resolve().parent; sys.path.insert(0, str(HERE))
+OUT = HERE / 'sorties'; OUT.mkdir(exist_ok=True)
 import test_wE_v2 as T
 
 BORNES = dict(h=(0.4, 0.9), ob=(0.020, 0.025), Om=(0.1, 0.5), wE=(-3.0, 1.0),
@@ -69,7 +70,7 @@ if __name__ == '__main__':
         ch = run('PC1', 6, [0.692, 0.02236, 0.299, -0.7, 0.8, 2.0])
     else:
         ch = run('invt', 5, [0.692, 0.02236, 0.300, -0.5, 2.4])
-    np.save(f'/home/claude/selection/chain_{quoi}.npy', ch)
+    np.save(OUT / f'chain_{quoi}.npy', ch)
     w = ch[:, 3]
     q = np.percentile(w, [16, 50, 84])
     print(f"\n  w_E marginalise : {q[1]:+.3f} (+{q[2]-q[1]:.3f}/-{q[1]-q[0]:.3f})")
@@ -80,4 +81,4 @@ if __name__ == '__main__':
         b = ch[:, 4]; qb = np.percentile(b, [16, 50, 84])
         print(f"  beta marginalise : {qb[1]:.3f} (+{qb[2]-qb[1]:.3f}/-{qb[1]-qb[0]:.3f})")
     json.dump(dict(med=q[1], hi=q[2]-q[1], lo=q[1]-q[0], sig=sig_haut),
-              open(f'/home/claude/selection/marg_{quoi}.json', 'w'))
+              open(OUT / f'marg_{quoi}.json', 'w'))

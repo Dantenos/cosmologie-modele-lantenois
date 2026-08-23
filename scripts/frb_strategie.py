@@ -21,10 +21,10 @@ CRITERE PRE-ENREGISTRE :
     etre corrige.
   - on verifie separement la linearite en N a distribution fixe (N = 69 contre N = 140).
 """
-import numpy as np, sys
+import numpy as np, sys, pathlib
 from scipy.optimize import minimize
-sys.path.insert(0, '/home/claude/desi_fit'); sys.path.insert(0, '/home/claude/selection')
-exec(open('/home/claude/selection/frb_likelihood.py').read().split('if __name__')[0])
+HERE = pathlib.Path(__file__).resolve().parent; sys.path.insert(0, str(HERE))
+exec((HERE / 'frb_likelihood.py').read_text(encoding='utf-8').split('if __name__')[0])
 np.seterr(all='ignore')
 
 TRUE = dict(fIGM=0.80, fX=0.11, mu=np.log(120.0), sig=0.55)

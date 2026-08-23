@@ -98,5 +98,10 @@
   "sha256": "d3a4111831c3036d1eef3fbf30eda4fe5e031befccefddf1127577a72ed8b58c",
   "gele_le": "2026-08-23T10:40:06",
   "extrait": "CHANTIER 2 EXECUTE — les perturbations DERIVEES, plus supposees."
+ },
+ "scripts/etude_E1_vides.py": {
+  "sha256": "8f3c54a31b585a42e9af32c5a0da85ad715edfaf9fd1451de5ec1d9102388be7",
+  "gele_le": "2026-08-23T19:45:57",
+  "extrait": "E1 v0 — VIDES x PANTHEON+ : duel goulet/horloge, manche 2. CRITERES PRE-ENREGIST"
  }
 }

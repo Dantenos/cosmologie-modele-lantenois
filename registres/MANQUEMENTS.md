@@ -1916,3 +1916,16 @@ zéro résidu « 1,8 ») ; mur régénéré depuis le TRIAGE à jour (70 vignett
 l'unique « 1.8 % » restant du papier C est sa propre rétractation, comme il se doit. Les
 occurrences « 1,8 » des fenêtres de viabilité et du carnet sont des nombres sans rapport,
 vérifiées telles. Le processus complet a tourné deux fois, comme demandé.
+
+## 23/08 (Claude Code, machine Windows) — #141 E1 v0 EXÉCUTÉE : **UNIVERSEL**, MANCHE 2 AU GOULET
+Critères gelés avant exécution (`etude_E1_vides.py`, registre 8f3c54a31b58). Catalogue
+d'anti-halos Stopyra 2023 (Zenodo 10160612, 150 vides, d < 135 h⁻¹ Mpc) × Pantheon+ public.
+Partage f > 0 / f = 0 (médiane nulle, cas prévu) : 623 / 957 SNe.
+  β_vides = 2,556 ± 0,183 ; β_murs = 2,460 ± 0,150 ; **Δβ = +0,096 ± 0,236 → 0,4σ.**
+  Contrôle d'équité (200 rotations du catalogue) : σ_rot = 0,229 ≈ σ_Δ, p = 0,695 —
+  la systématique d'empreinte au ciel laissée ouverte en #116 est traitée : nulle à cette échelle.
+Machinerie validée d'abord : #116 rejoué sur données fraîches = 553/1027, Δβ = +0,24 ± 0,23.
+Ligne de base rejouée : β = 2,447 (1580 SNe + 13 BAO). Le corpus se reproduit hors conteneur.
+Ce que cela réduit : |Δβ| < 0,47 (2σ), un catalogue, vides locaux. Ce que cela ne ferme pas :
+la manche sur ≥ 2 catalogues (spec mère). Le signe + n'est pas interprété. Rapport :
+ETUDE_E1_v0.md. Verse dans l'affaire W-universel (toujours ouverte).

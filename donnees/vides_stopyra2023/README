@@ -1,0 +1,161 @@
+This data set consists of a combined catalogue of anti-halo voids for the local 
+super-volume, as derived in the associated paper. Please cite that paper if you
+make use of this catalogue.
+
+We supply the catalogue in two versions: as csv files, and as npz numpy arrays
+for easy import into python.
+
+For questions about the catalogue, please contact Stephen Stopyra, at 
+stephen.stopyra@fysik.su.se (or at svstopyra@googlemail.com)
+
+
+DESCRIPTION OF CSV FILES:
+
+There are three main csv files for the combined catalogue:
+
+combined_catalogue.csv:
+
+    This file lists the anti-halos in each MCMC sample 
+    corresponding to the 150 voids within 135 Mpc/h of the Milky way, 
+    after applying filtering on reproducibility score. The first row
+    lists which MCMC sample an anti-halo belongs to. Each entry is the numerical
+    index of the anti-halo in the relevant MCMC anti-halo catalogue (NB - 
+    the indices start from 1 as the first entry in the catalogue: 
+    subtract 1 to obtain a numpy or c-style index). Entries of -1 indicate
+    that no anti-halo satisfying the conditions to be a counterpart in that
+    MCMC sample was found.
+
+combined_catalogue_properties.csv:
+
+    This file lists the properties of the 150 voids in the combined catalogue, 
+    corresponding to table A1 of the associated paper. We also include some 
+    additional properties not listed in table A1, including the mean central 
+    (within R/4 of the void centre) and average (mass/volume) density contrasts 
+    of the voids and the uncertainties as standard error of these means. The 
+    first row identifies each property.
+
+    Columns:
+
+    1   ID of halo in the combined catalogue.
+    2   Radius in Mpc/h
+    3   Radius error, in Mpc/h
+    4   Mass in 10^14 Msol/h
+    5   Mass error in 10^14 Msol/h
+    6   Right ascension, in degrees
+    7   Declination, in degrees
+    8   Redshift
+    9   Distance, in Mpc/h
+    10  Signal to noise ratio (average of \delta^2/\sigma_{\delta}^2)
+    11  Reproducibility Score
+    12  Central density contrast (within R/4 of void centre)
+    13  Central density contrast error
+    14  Average density contrast (mass/volume for void)
+    15  Average density contrast error.
+
+combined_catalogue_unfiltered.csv:
+
+    This file lists the unfiltered output of the void combination algorithm,
+    before applying cuts on distance from the Milky Way (to 135 Mpc/h),
+    mass, radius, and reproducibility score. 
+    The vast majority of the voids here are of too-low
+    reproducibility score to be distinguished from noise, but we include them 
+    for completeness.
+
+mcmc_catalogue_csv.tar.gz and random_catalogues_csv.tar.gz:
+
+    The anti-halo catalogues for each MCMC sample are provided in the 
+    mcmc_catalogue_csv.tar.gz. The indices in combined_catalogue.csv and 
+    combined_catalogue_unfiltered.csv refer to the entries in these catalogues 
+    for each sample respectively. The rows list the properties of each void in
+    the catalogue, with the first row identifying the properties in each 
+    column. Note - due to resolution limits, a minority of voids do not have a 
+    well-defined central density (recorded as nan); usually this is because 
+    they have been partially flattened into a Zel'dovich pancake by an ongoing 
+    collapse. The catalogues have been truncated to include all voids above 
+    5 Mpc/h and within 300 Mpc/h of the Milky Way whose signal-to-noise 
+    (\delta^2/\sigma_{\delta}^2) is above 10.
+
+    Positions of the anti-halos are given in Cartesian Equatorial co-ordindates 
+    as the columns X, Y, Z, with units of Mpc/h. These can be straightforwardly 
+    converted to Right Ascension, Declination, and Distance in the standard
+    manner.
+
+    We also provide analogous catalogues from a set of 20 random simulations 
+    with identical setup to the posterior resimulations. These are given in the 
+    random_catalogues_csv.tar.gz file.
+
+Columns for anti-halo catalogues:
+
+    1   ID of halo within this MCMC sample
+    2   Radius in Mpc/h
+    3   Mass in Msol/h
+    4   X position in Equatorial cartesian co-ordinates, units of Mpc/h
+    5   Y position in Equatorial cartesian co-ordinates, units of Mpc/h
+    6   Z position in Equatorial cartesian co-ordinates, units of Mpc/h
+    7   Distance in Mpc/h
+    8   Central density contrast (within R/4 of void centre)
+    9   Average density contrast (mass/volume)
+    10  Signal-to-noise ratio (average of \delta^2/\sigma_{\delta}^2)
+
+
+DESCRIPTION OF NPZ FILES:
+
+The npz files contain the same data as the csv files, but with more structure
+for convenient importation into python. The floating point precision of the 
+data here is also higher.
+
+There are two main files:
+
+combined_catalogue.npz:
+
+    This file contains the combined catalogue as in combined_catalogue.csv, as
+    an array, and additionally contains the properties of the catalogue. The
+    fields are are follows:
+
+    file['catalogue'] - The combined catalogue. Same format as 
+        combined_catalogue.csv
+    file['radii'] - Mean void radii of the voids in the catalogue.
+    file['radii_error'] - Standard error of the mean radii.
+    file['mass'] - Mean void mass of the voids in the catalogue
+    file['mass_error'] - Standard error of the mean mass.
+    file['ra'] - Right Ascension of the void's mean centre.
+    file['dec'] - Declination of the void's mean centre
+    file['dist'] - Distance to the void's mean centre, in Mpc/h
+    file['snr'] - Signal to noise ratio of the void, obtained by averaging
+        \delta^2/\sigma_{\delta}^2 over the void's voxels.
+    file['rep_score'] - Reproducibility score of the void, giving an indication 
+        of how well-constrained the void is.
+    file['delta_central'] - Mean of the central density contrast (defined as 
+        the cumulative density contrast within R/4, where R is the void
+        radius) over all mcmc samples.
+    file['delta_central_error'] - Standard error of the mean central density.
+    file['delta_average'] - Mean of the average density contrast (defined as
+        mass/volume for a void) over all mcmc samples.
+    file['delta_average_error'] - Standard error of the average density contrast
+
+combined_catalogue_unfiltered.npz:
+
+    This file contains only a single field (['catalogue']) which contains the
+    unfiltered catalogue as a numpy array, 
+    as in combined_catalogue.csv.
+
+mcmc_catalogues_npz.tar.gz and random_catalogues_npz.tar.gz:
+
+    The tar archives mcmc_catalogues_npz.tar.gz and random_catalogues_npz.tar.gz 
+    contain the numpy array versions of the counterparts in the csv folder. 
+    Fields are as follows in each file:
+
+    file['radii'] - Radius of the anti-halo
+    file['mass'] - Mass of the anti-halo
+    file['centre'] - Centre of the anti-halo, [x,y,z], in Cartesian Equatorial
+        co-ordinates.
+    file['dist'] - Distance to the anti-halo from the Milky Way, in Mpc/h.
+    file['delta_central'] - Central density contrast of the anti-halo.
+    file['delta_average'] - Average density contrast of the anti-halo.
+    file['snr'] - Signal to noise ratio of the anti-halo.
+    file['ids'] - Index of the anti-halo in the catalogue, starting from 1.
+
+
+
+
+

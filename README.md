@@ -11,7 +11,7 @@ auditée contre Pantheon+, DESI DR2 et Planck, avec un registre adversarial tenu
 critères gelés avant chaque calcul, et des juges convoqués à date fixe. Le tout est ici, y
 compris les erreurs.
 
-[![registre](https://img.shields.io/badge/registre-20%20crit%C3%A8res%20gel%C3%A9s-blue)](outils/README_registre.md)
+[![registre](https://img.shields.io/badge/registre-21%20crit%C3%A8res%20gel%C3%A9s-blue)](outils/README_registre.md)
 <!-- une fois le dépôt en ligne : ![CI](https://github.com/ORG/REPO/actions/workflows/registre.yml/badge.svg) -->
 
 ---
@@ -84,7 +84,7 @@ Python ≥ 3.9. Ils survivront au verdict, quel qu'il soit.
 **Registre** est le socle : le critère vit dans le docstring du script, `freeze` le fige par
 SHA-256 dans [`registre.lock`](outils/registre.lock), `verify` échoue (exit 1, bloquant en CI)
 s'il a bougé. L'amendement est possible — mais public, dans `RETRACTATIONS.md`.
-20 scripts du corpus sont gelés, Registre compris : il se protège lui-même.
+21 scripts du corpus sont gelés, Registre compris : il se protège lui-même.
 
 ```console
 $ python3 outils/registre.py verify
@@ -102,9 +102,10 @@ $ python3 outils/registre.py verify
 CLAUDE.md        constitution du projet : les neuf règles, appliquées à chaque session
 papiers/         tex, pdf, et les figures qu'ils incluent
 outils/          registre, adversaire, audience, ktracker, scelle + registre.lock + .json
-scripts/         les 43 scripts de calcul (critères pré-enregistrés en docstring)
+scripts/         les 44 scripts de calcul (critères pré-enregistrés en docstring)
 registres/       MANQUEMENTS, TRIAGE, TROIS_CHANTIERS, CONCLUSION, théories, carnet
 visuels/         html interactifs, planches
+donnees/         données publiques (Pantheon+, vides Stopyra 2023) + SHA256SUMS + TELECHARGER.sh
 .github/         CI : registre verify + sceau épinglé
 ```
 
@@ -121,7 +122,9 @@ Payées au prix de cinquante-quatre rétractations ([`CLAUDE.md`](CLAUDE.md)) :
 ## Et ensuite
 
 Les six études 2026 sont spécifiées et gelées dans [`scripts/etudes_2026.py`](scripts/etudes_2026.py).
-Ordre : **E1 (les vides, manche 2 du duel Goulet/Horloge)** → E4 → E3 → E2. E5, E6, E7 closes.
+**E1 v0 exécutée (23/08)** : [`registres/ETUDE_E1_v0.md`](registres/ETUDE_E1_v0.md) — Δβ = +0,10 ± 0,24, **UNIVERSEL** à cette précision, manche 2 au goulet ; reste la manche sur un 2ᵉ catalogue. Puis E4 → E3 → E2. E5, E6, E7 closes.
+
+Données publiques : `sh donnees/TELECHARGER.sh` (empreintes vérifiées). Ligne de base rejouée : β = 2,447.
 
 ---
 

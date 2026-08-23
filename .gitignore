@@ -22,3 +22,9 @@ scripts/state_*.json
 Thumbs.db
 .vscode/
 .idea/
+
+# Données : la covariance Pantheon+ (33 Mo) et les copies renommées se régénèrent
+# par donnees/TELECHARGER.sh ; les empreintes sont dans donnees/SHA256SUMS.
+donnees/pantheon_plus/Pantheon+SH0ES_STAT+SYS.cov
+donnees/pantheon_plus/pantheon.dat
+donnees/pantheon_plus/pantheon_cov.cov

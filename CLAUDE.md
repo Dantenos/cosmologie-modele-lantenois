@@ -25,5 +25,5 @@
 - Ne jamais toucher un docstring gelé (outils/registre.lock) ni les octets de outils/scelle.py ; corps seulement, et RETRACTATIONS.md via freeze --amend.
 
 ## File d'attente
-[ ] MCMC Cobaya sur β (manquement #2)  [ ] Atlas v0 (15 modèles, pipeline v3)  [x] planck_lite_py fourni, −12,6 reproduit (#146)  [ ] AUDIT_2308.md §5 (P10, numérotation, sceau dans A)
+[x] MCMC Planck sur β : 2,603 +0,046/−0,053 (#151 ; Cobaya complet reste)  [x] Atlas v1 : 19 modèles (#150, ATLAS.md)  [x] planck_lite_py fourni, −12,6 reproduit (#146)  [ ] AUDIT_2308.md §5 (P10, numérotation, sceau dans A)
 [x] voids×Pantheon+ : UNIVERSEL sur 2 juges (#141-142)  [ ] κ(σ) BGG  [ ] κ₋Δv ≳ 25

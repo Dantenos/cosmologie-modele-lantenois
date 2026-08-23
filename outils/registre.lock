@@ -178,5 +178,10 @@
   "sha256": "c2156644a743515ba93aef2d7effd5b2b3507e7c2efcc05cecf7469295eefbcd",
   "gele_le": "2026-08-23T22:35:29",
   "extrait": "etat v1 — l'état du dépôt, GÉNÉRÉ depuis les sources (23/08/2026). Jamais écrit "
+ },
+ "scripts/atlas_v1.py": {
+  "sha256": "580a983e775f009693455ce76cb89a49c35e1a0595201c701a222fddeb500fdd",
+  "gele_le": "2026-08-23T23:50:33",
+  "extrait": "ATLAS v1 — 19 modeles d'energie noire, un pipeline, un classement. CRITERES"
  }
 }

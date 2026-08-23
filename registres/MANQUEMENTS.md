@@ -2040,3 +2040,31 @@ levier. Outillage : `rejouer.py` (« registre run » v0.2 : 14 scripts, 16 ancre
 `etat.py` (ETAT.md généré depuis les sources), `genere_ciel.py` (ciel_pantheon_v2.html : 
 hémisphères + vides + FRB, comptes vérifiés 1580/553/623/150/69 sous peine de refus).
 En cours : MCMC Planck marginalisé sur β (#2), chaîne resumable, verdict à 300 pas.
+
+## 24/08 (Claude Code) — #150 L'ATLAS v1 EST PUBLIÉ : 19 MODÈLES, ET NOUS NE SOMMES PAS PREMIERS
+`atlas_v1.py` (gelé 580a983e775f) réalise la spec ATLAS_falsification_spec (liste v0 complète + les
+4 du tableau) : mêmes données (N = 1597), k comptés pareil, χ²/AIC/BIC figés, condition de mort par
+modèle, leaderboard GÉNÉRÉ (atlas_leaderboard.json + ATLAS.md). Validation : les 7 ancres
+d'atlas_rivaux reproduites à ±0,5 avant d'admettre les 12 nouveaux. 97 s.
+**Tête du classement : les deux iΛCDM d'interaction (ε ≈ +0,007/+0,021, χ² = 1415,2-1415,8,
+ΔAIC = −3,1 sur CCBH, −4,1 sur notre accrétion)** — un paramètre de plus que ΛCDM, χ² −9,8.
+Règle gelée appliquée : aucun modèle n'est retiré parce qu'il nous dépasse. RÉSERVES DÉCLARÉES :
+implémentation simplifiée (échange sur toute la matière), et la batterie adversariale (LOO,
+split-z, trilogie SN) n'a PAS encore tourné sur eux — la spec dit « un modèle sans audit n'entre
+pas » : ils entrent au tableau, pas au palmarès, tant que v2 n'a pas audité. Morts constatées par
+leurs propres critères : JPS (ε → 0 préféré), GCG (As → 1, dégénéré), PEDE (+43,7), holographique
+(+61,3), Bondi saturé (+2608), Rh=ct (θ*/BAO, +7,6M). Le peloton visible : tout le monde à moins
+de 6 AIC de la tête sauf les six morts — le fond ne tranche pas, comme #139 l'avait établi.
+
+## 24/08 (Claude Code) — #151 LE MCMC PLANCK COMPLET (MANQUEMENT #2, FERMÉ) : β MARGINALISÉ = 2,603 +0,046/−0,053 — AU BORD EXTÉRIEUR DE LA BANDE SCELLÉE
+`mcmc_planck_beta.py` (gelé ef3ffe8764b3), 400 pas × 8 marcheurs, validation passée (χ² min =
+1986,03 = le profil ; 200 pas après rodage ; autocorrélation ~14 pas → ~110 échantillons effectifs,
+chaîne courte DÉCLARÉE). **β marginalisé (plik_lite TTTEEE + low-ℓ + BAO + SN, ωc et ln As
+marginalisés) = 2,603 +0,046/−0,053** ; ωc h² = 0,1194 ± 0,0006 ; ln 10¹⁰As = 3,042 ± 0,002.
+La médiane est HORS la bande publiée [2,42 ; 2,60] — de 0,003 — écrit tel quel (critère gelé).
+Conséquences, avant DR3 et non après : (1) l'erratum #2 est confirmé et durci — la marginalisation
+pousse β vers le HAUT, pas vers 2,49 ; (2) la tension interne du corpus est maintenant marginalisé
+contre marginalisé : 2,42 ± 0,07 (fond léger) vs 2,60 ± 0,05 (Planck complet) → **2,1σ** ;
+(3) le sceau borne à 2,60 : si DR3 atterrit à 2,60-2,65, le verdict scellé sera INDÉCISE, pas
+VALIDÉE — on l'écrit aujourd'hui pour ne pas avoir l'air surpris demain. Le MCMC est emcee sur la
+vraisemblance de planck_theta (ωb, ns, τ fixés) : le Cobaya complet reste la version définitive.

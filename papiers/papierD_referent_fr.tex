@@ -1,0 +1,398 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\usepackage{natbib}
+
+\title{\bf L'exposant de dilution de la matière n'est pas\\
+identifiable à partir de priors CMB comprimés :\\
+une ambiguïté de référent, pas une limite de précision}
+\author{Édouard Lantenois\thanks{\texttt{github.com/Dantenos}}}
+\date{Août 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+Considérons la famille à un paramètre où la matière noire dilue en
+$\rho_{\rm dm}\propto a^{-3+\epsilon}$ avec une véritable constante cosmologique.
+L'identité de Bianchi impose que ce fond soit celui d'un fluide d'équation d'état constante
+$w=-\epsilon/3$ : la famille n'est donc pas une alternative au $\Lambda w$DM mais sa
+réécriture. Or les priors de distance CMB comprimés $(\mathcal{R}, \ell_A, \omega_b)$, ainsi
+que les formules d'ajustement usuelles pour $r_d$, $r_\ast$ et $z_\ast$, réclament tous
+\emph{une seule} valeur de $\omega_m$. Quand $\epsilon\neq0$ il y en a deux --- l'étiquette
+d'aujourd'hui et la valeur à la recombinaison --- et rien dans les données ne désigne
+laquelle. Nous montrons, sur des données identiques (Pantheon+, BAO DESI DR2, priors de
+distance Planck 2018, SH0ES), que ce seul choix de comptabilité déplace l'exposant recouvré
+de $\epsilon=+0{,}0070$ à $\epsilon=-0{,}0120$, soit une étendue de $0{,}019$, quand chaque
+configuration annonce $\sigma\simeq0{,}002$. Nous montrons ensuite que ce n'est
+\emph{pas} un effet de perte d'information : les priors comprimés contraignent $\omega_c$ à
+$\sigma=0{,}0010$, valeur identique à celle que rend la vraisemblance Planck complète
+TT,TE,EE$+$bas-$\ell$ à paramètres fixés identiques --- un rapport de $1{,}00$, borné à
+$]0{,}5\,;1{,}25[$ par la quantification de grille. L'ambiguïté est donc de \emph{référent},
+non de \emph{précision}, et l'étendue vaut dix-neuf fois la précision disponible. De façon
+cohérente, les déterminations publiées de cet exposant obtenues avec un code de Boltzmann
+modifié et une vraisemblance CMB complète se groupent à $\epsilon = -0{,}00064\pm0{,}00045$
+et s'étendent sur $0{,}005$, quand celles par priors comprimés s'étendent sur $0{,}016$. Nous
+rapportons un piège supplémentaire : appliquer $\epsilon$ à la matière \emph{totale} plutôt
+qu'à la seule matière noire crée une incohérence interne valant $7{,}5$ à $15{,}1\sigma$ sur
+$\ell_A$, la même vraisemblance traitant alors les baryons comme standard dans $R_b$ et dans
+le prior sur $\omega_b$. Nous ne revendiquons aucune détection. Nous établissons qu'un
+$\epsilon$ publié à partir de priors comprimés porte une systématique non citée de l'ordre de
+$10^{-2}$ tant que le choix de $\omega_m$ n'est pas énoncé.
+\end{abstract}
+
+\section{La famille, et pourquoi elle n'a qu'un fond}
+\label{sec:famille}
+
+Écrivons le secteur sombre comme une composante de matière dont la densité obéit à
+\begin{equation}
+\rho_{\rm dm}(a) = \rho_{{\rm dm},0}\,a^{-3+\epsilon},
+\qquad
+\rho_\Lambda = \text{const},
+\qquad
+\rho_b \propto a^{-3},\quad \rho_r\propto a^{-4}.
+\label{eq:famille}
+\end{equation}
+Il est tentant de lire \eqref{eq:famille} comme de la \emph{matière sans pression non
+conservée}, le déficit étant absorbé par rien en particulier. Cette lecture n'est pas
+disponible. Avec $\Lambda$ véritablement constante, $\nabla_\mu T^{\mu\nu}=0$ appliqué au
+tenseur total \emph{impose} que le secteur de matière porte une pression
+\begin{equation}
+p_{\rm dm} = -\tfrac{\epsilon}{3}\,\rho_{\rm dm},
+\qquad\text{c'est-à-dire}\qquad
+w_{\rm dm} = -\epsilon/3 .
+\label{eq:bianchi}
+\end{equation}
+« Matière sans pression non conservée avec $\Lambda$ constante » et « matière conservée
+d'équation d'état constante $w=-\epsilon/3$ avec $\Lambda$ constante » sont le même modèle
+écrit deux fois. Au niveau du fond il y a un modèle, pas deux.
+
+Ce n'est pas neuf. \citet{lima1996} donnent, pour la création adiabatique de matière de
+paramètre $\beta$, l'indice adiabatique effectif $\gamma_\ast=\gamma(1-\beta)$ et la loi
+$\rho=\rho_0(a_0/a)^{3\gamma(1-\beta)}$, avec une pression de création $p_c=-\beta\gamma\rho$.
+Pour la poussière ($\gamma=1$) c'est exactement
+\eqref{eq:famille}--\eqref{eq:bianchi} avec $\epsilon=3\beta$. Deux mises en garde, que nous
+énonçons parce qu'elles se perdent facilement : l'identité $\gamma_\ast=\gamma(1-\beta)$ ne
+vaut que pour $\beta$ \emph{constant}, et la correspondance $\epsilon=3\beta$ est
+\emph{dépendante de l'espèce} --- pour le rayonnement ($\gamma=4/3$) le même $\beta$ donne
+$\rho_r\propto a^{-4(1-\beta)}$. On ne peut pas la transporter à travers l'ère de rayonnement.
+
+Notons aussi que le symbole $\epsilon$ est employé dans une littérature voisine mais
+différente --- celle du \emph{vide décroissant}, par exemple \citet{alcaniz2005} --- où
+$\Lambda$ n'est pas constante. La famille \eqref{eq:famille} est celle à $\Lambda$ constante,
+et son fond coïncide avec le modèle $\Lambda w$DM contraint par \citet{kumar2025}.
+
+\section{Où l'ambiguïté entre}
+\label{sec:ou}
+
+Les analyses comprimées de cette famille emploient trois ingrédients, et chacun d'eux prend
+$\omega_m$ en entrée :
+\begin{enumerate}
+\item le paramètre de décalage $\mathcal{R}=\sqrt{\Omega_m H_0^2}\,D_A(z_\ast)/c$, dont le
+      préfacteur $\sqrt{\Omega_m}$ est dérivé en supposant $\rho_m\propto a^{-3}$ ;
+\item les formules d'ajustement des horizons sonores $r_d$, $r_\ast$ \citep{eh1998},
+      calibrées sur des grilles $\Lambda$CDM ;
+\item la formule d'ajustement de $z_\ast$ \citep{hs1996}.
+\end{enumerate}
+En $\Lambda$CDM l'entrée est sans ambiguïté. Dans \eqref{eq:famille} elle ne l'est pas :
+l'étiquette $\Omega_m$ et la densité qui gouverne réellement la physique d'avant
+recombinaison diffèrent de
+\begin{equation}
+\frac{\Omega_m^{\rm rec}}{\Omega_m^{\rm étiq}} = a_\ast^{\,\epsilon},
+\qquad a_\ast\simeq 1/1091,
+\qquad \ln a_\ast \simeq -6{,}995 .
+\label{eq:ratio}
+\end{equation}
+Pour $|\epsilon|=0{,}005$ l'écart vaut $3{,}6\%$. L'analyste doit choisir, et la littérature
+ne dit pas lequel. \citet{elgaroy2007} avertissaient que $\mathcal{R}$ « n'est pas
+directement mesurable à partir du fond diffus, et que sa valeur est habituellement dérivée
+des données en supposant une cosmologie plate avec matière noire et constante
+cosmologique » ; nous chiffrons ce que coûte cet avertissement dans cette famille.
+
+\section{La mesure : quatre choix de comptabilité, un seul jeu de données}
+\label{sec:mesure}
+
+Nous employons Pantheon+ (1580 SNe, $z>0{,}01$, calibrateurs exclus), les 13 mesures BAO de
+DESI DR2, les priors de distance Planck 2018 et le prior SH0ES sur $H_0$. Quatre
+configurations ne diffèrent que par la comptabilité :
+
+\begin{itemize}
+\item[(a)] \textbf{étiquette} : les formules d'ajustement et $\mathcal{R}$ reçoivent le
+  $\Omega_m$ d'aujourd'hui ;
+\item[(b)] \textbf{cohérente} : elles reçoivent $\Omega_m a_\ast^{\epsilon}$, la densité à la
+  recombinaison ;
+\item[(c)] \textbf{directe, sans $\mathcal{R}$} : $r_s$ est obtenu en intégrant
+  $\int c_s\,\mathrm{d}a/(a^2H)$ dans le fond propre du modèle, et $\mathcal{R}$ est retiré,
+  laissant $(\ell_A,\omega_b)$ avec la covariance marginale $2\times2$ ;
+\item[(d)] \textbf{directe, $\mathcal{R}$ cohérent} : comme (c) mais en conservant
+  $\mathcal{R}$ alimenté par la densité de recombinaison.
+\end{itemize}
+
+L'intégrateur direct est validé contre la table CAMB qu'il remplace : avec
+$N_{\rm eff}=3{,}046$ et le retrait de la contribution des neutrinos massifs du budget de
+matière, le rapport $r_s^{\rm direct}/r_s^{\rm CAMB}$ varie de $1{,}3\times10^{-6}$ sur toute
+la grille $(\omega_b,\omega_m)$, soit $0{,}01\sigma$ sur $\ell_A$. Le décalage de traînée
+qu'il infère, récupéré en inversant l'intégrateur contre le $r_{\rm drag}$ de CAMB, tombe dans
+$[1057{,}8\,;1062{,}1]$ contre $1059{,}9$ chez Planck --- un contrôle que nous n'avions pas
+imposé.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lrrr}
+\toprule
+configuration & $\epsilon$ & $\sigma$ (opposable) & $\Delta\chi^2$ contre $\Lambda$CDM \\
+\midrule
+(a) étiquette                 & $+0{,}0070$ & $2{,}33$ & $+9{,}36$ \\
+(b) cohérente                 & $-0{,}0040$ & $2{,}00$ & $+9{,}36$ \\
+(c) directe, sans $\mathcal{R}$ & $-0{,}0120$ & $3{,}14$ & $+9{,}87$ \\
+(d) directe, $\mathcal{R}$ cohérent & $-0{,}0040$ & $2{,}00$ & $+9{,}90$ \\
+\midrule
+\textbf{étendue} & \textbf{0{,}0190} & & \\
+\bottomrule
+\end{tabular}
+\caption{Mêmes données, même modèle, quatre choix de comptabilité. Le $\sigma$ cité est le
+plus petit de la demi-largeur du profil et de la valeur de Wilks $\sqrt{\Delta\chi^2}$ ;
+lorsque les deux divergent, le profil n'est pas parabolique et le $\sigma$ local n'est pas
+opposable.}
+\label{tab:quatre}
+\end{table}
+
+La table~\ref{tab:quatre} est la mesure centrale. L'étendue vaut $0{,}019$ ; chaque
+configuration annonce $\sigma\simeq0{,}002$. Deux remarques d'honnêteté. D'abord, la
+configuration (c) rapporte une significativité locale de $6{,}0\sigma$ que nous \emph{ne}
+citons \emph{pas} : son profil est aplati ($\Delta\chi^2(2\sigma_{\rm local})/4 = 0{,}39$ au
+lieu de $1$) et la valeur par rapport de vraisemblance vaut $3{,}14$. Ensuite, la
+décomposition de son gain montre que $126\%$ de celui-ci vient du seul terme SH0ES, les
+supernovae empirant de $1{,}72$ et les BAO de $0{,}96$ : cette configuration achète $H_0$,
+elle ne mesure pas la dilution. Nous la rapportons parce qu'elle appartient à l'étendue, non
+parce que nous y croyons.
+
+\section{Ce n'est pas une perte d'information}
+\label{sec:pouvoir}
+
+L'explication naturelle --- les priors comprimés ne portent que de la géométrie, la
+vraisemblance complète porte aussi la \emph{hauteur} des pics acoustiques qui épingle
+$\omega_m$ --- est fausse, et nous l'avons testée plutôt qu'affirmée.
+
+La prémisse est juste : évaluer le $\chi^2$ comprimé à $\ln(10^{10}A_s)=3{,}000$ et
+$3{,}100$ rend $2{,}575399113$ les deux fois, à la précision machine. Il ne porte
+littéralement aucune information d'amplitude.
+
+La conclusion ne suit pas. En profilant $\omega_c$ avec CAMB et la vraisemblance Planck
+TT,TE,EE$+$bas-$\ell$ à $\theta_\ast$, $\omega_b$, $n_s$, $\tau$ fixés, et en profilant
+$\ln(10^{10}A_s)$ en chaque point, on obtient $\sigma(\omega_c)=0{,}0010$. Le même profil à
+travers les priors comprimés donne $\sigma(\omega_c)=0{,}0010$. Le rapport vaut $1{,}00$ ;
+en propageant la quantification de grille il est borné dans $]0{,}5\,;1{,}25[$, très loin de
+toute signature de perte d'information. En contrôle de cohérence, notre $\sigma$ est $1{,}20$
+fois plus petit que la valeur marginalisée $\omega_c=0{,}1200\pm0{,}0012$ de
+\citet{planck2018}, ce qu'on attend en figeant quatre paramètres ; et le $\chi^2$ complet à
+son optimum $\Lambda$CDM reproduit notre ancre gelée à $0{,}005$ près.
+
+Les deux déterminations de $\omega_m$ sont donc également fines --- $0{,}7\%$ --- et
+l'étendue entre choix de comptabilité vaut $0{,}019$, soit \emph{dix-neuf fois} la précision
+disponible.
+
+\begin{equation}
+\boxed{\;\text{L'ambiguïté est de référent, non de précision.}\;}
+\end{equation}
+
+$\mathcal{R}$ et les formules d'ajustement réclament un $\omega_m$ ; la famille en fournit
+deux ; les données n'en départagent aucun. Quatre analystes disposant des mêmes données et de
+contraintes identiques à $0{,}7\%$ obtiennent des réponses étalées sur $0{,}019$ --- non par
+bruit, mais par choix.
+
+\section{Le piège baryonique}
+\label{sec:baryons}
+
+Un second mode de défaillance mérite d'être isolé, parce qu'on y tombe facilement et qu'il est
+grand. Si $\epsilon$ est appliqué à la matière \emph{totale} --- c'est-à-dire si $\Omega_m$
+dans \eqref{eq:famille} se lit baryons plus matière noire --- alors les baryons diluent aussi
+anormalement. Mais la même vraisemblance, typiquement, (i) compare $\omega_b$ à un prior
+mesuré sous $\rho_b\propto a^{-3}$ et (ii) intègre l'horizon sonore avec
+$R_b=(3\omega_b/4\omega_\gamma)\,a$, forme qui suppose la même chose. La cohérence exigerait
+$R_b\propto a^{1+\epsilon}$. Mesurons l'écart :
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrr}
+\toprule
+ & $|\epsilon|=0{,}003$ & $|\epsilon|=0{,}006$ \\
+\midrule
+$r_s$ sous $R_b\propto a$ contre $a^{1+\epsilon}$ & $7{,}5\sigma$ sur $\ell_A$ & $15{,}1\sigma$ \\
+$\omega_b$(recombinaison) contre le prior Planck & $4{,}8\sigma$ & $8{,}1\sigma$ \\
+\bottomrule
+\end{tabular}
+\caption{Coût d'appliquer $\epsilon$ à la matière totale tout en traitant les baryons comme
+standard ailleurs dans la même vraisemblance.}
+\label{tab:baryons}
+\end{table}
+
+Les deux dépassent tout ce que l'analyse cherche à mesurer. Le remède est de restreindre
+$\epsilon$ au secteur sombre, comme le font \citet{kumar2025} et \citet{yaoliu2025}. Nous
+notons, contre notre propre confort, que l'argument souvent invoqué « la nucléosynthèse
+primordiale l'interdit » est plus faible qu'il n'y paraît : exiger que les déterminations BBN
+et CMB de $\omega_b$ s'accordent à $\sim2{,}5\%$ sur les $\simeq12{,}5$ e-plis séparant les
+deux époques ne borne que $|\epsilon_b|\lesssim2\times10^{-3}$, et nous n'avons trouvé aucune
+contrainte publiée sur l'exposant de dilution des baryons lui-même. Le défaut ci-dessus est
+une incohérence \emph{interne}, pas la violation d'une borne extérieure.
+
+\section{Confrontation aux déterminations publiées}
+\label{sec:litterature}
+
+Nous avons rassemblé toute détermination de cet exposant vérifiable à la source primaire, en
+convertissant chacune vers la convention de \eqref{eq:famille} par une règle déclarée, et en
+les séparant par méthode.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{llrr}
+\toprule
+détermination & méthode & $\epsilon$ & $\sigma$ \\
+\midrule
+\multicolumn{4}{l}{\emph{vraisemblance complète, code de Boltzmann modifié}}\\
+\citet{tsiapi2019}, $\Lambda(H)$CDM2, Planck seul & CAMB, Planck 2015 & $+0{,}00148$ & $0{,}00252$\\
+\citet{tsiapi2019}, $\Lambda(H)$CDM2, joint       & CAMB, Planck 2015 & $-0{,}00020$ & $0{,}00181$\\
+\citet{tsiapi2019}, $\Lambda(H)$CDM1, joint$^\dagger$ & CAMB, Planck 2015 & $+0{,}00302$ & $0{,}00151$\\
+\citet{kumar2025}, PL18$+$DESI DR2                & CAMB, Planck 2018 & $-0{,}00194$ & $0{,}00096$\\
+\citet{li2025}, Planck$+$DESI DR2$+$DESY5         & CAMB, NPIPE       & $-0{,}00126$ & $0{,}00075$\\
+\citet{li2024}, CMB$+$DESI DR1$+$DESY5$^\ddagger$ & CosmoMC           & $-0{,}00025$ & $0{,}00092$\\
+\midrule
+\multicolumn{2}{l}{\textbf{moyenne pondérée}} & $\mathbf{-0{,}00064}$ & $\mathbf{0{,}00045}$\\
+\multicolumn{2}{l}{étendue} & \multicolumn{2}{l}{$0{,}0050$}\\
+\midrule
+\multicolumn{4}{l}{\emph{priors de distance comprimés}}\\
+\citet{yang2025}, cinq jeux de données            & priors, DESI DR1 & $-0{,}00612$ & $0{,}00243$\\
+ce travail, configuration (a)                     & priors           & $+0{,}0060$ & $0{,}0030$\\
+ce travail, configuration (b)                     & priors           & $-0{,}0030$ & $0{,}0010$\\
+ce travail, configuration (c)                     & priors           & $-0{,}0100$ & $0{,}0020$\\
+ce travail, $r_s$ direct, $\mathcal{R}$ étiquette & priors           & $+0{,}0020$ & $0{,}0020$\\
+\midrule
+\multicolumn{2}{l}{étendue} & \multicolumn{2}{l}{$\mathbf{0{,}0160}$}\\
+\bottomrule
+\end{tabular}
+\caption{$^\dagger$ Conversion approchée : le $Q$ de ce modèle est aussi alimenté par les
+baryons et le rayonnement. Nous l'incluons parce qu'il \emph{élargit} la famille en
+vraisemblance complète et rend donc notre propre démonstration plus difficile.
+$^\ddagger$ Prédécesseur emboîté de \citet{li2025}, même groupe ; inclus et signalé.
+Conversions : $\epsilon=3\nu f$ ou $\epsilon=-3w_{\rm dm}f$ avec
+$f=\rho_{\rm dm}/\rho_m=0{,}8389$.}
+\label{tab:litterature}
+\end{table}
+
+La famille en vraisemblance complète est cohérente en interne
+($\chi^2/\mathrm{ddl}=1{,}87$ pour cinq degrés de liberté) et s'étend sur $0{,}0050$ ; celle
+par priors comprimés s'étend sur $0{,}0160$, un facteur $3{,}23$. En excluant la conversion
+approchée signalée --- le choix confortable, que nous ne prenons pas --- le facteur vaudrait
+$4{,}67$ et $\chi^2/\mathrm{ddl}=0{,}72$.
+
+Trois réserves accordées entièrement. Les six modèles en vraisemblance complète ne sont pas
+identiques à \eqref{eq:famille} : \citet{tsiapi2019} font courir $\rho_\Lambda$ et portent un
+préfacteur $\Omega_{\rm dm}/(1-\nu)$ dans $E^2$, de sorte qu'à $\epsilon$ égal leur $H(z)$
+n'est pas le nôtre ; \citet{kumar2025} et \citet{yaoliu2025} attachent des prescriptions de
+perturbations différentes ($c_s^2=0$ contre $c_s^2=w$) au même fond, et leurs intervalles ne
+sont pas transférables à une loi de fond seul. Leurs données diffèrent des nôtres et entre
+elles. Et deux des six sont du même groupe sur des données emboîtées. La
+table~\ref{tab:litterature} mesure donc une \emph{dispersion}, et c'est tout ce que nous en
+tirons.
+
+Nous consignons aussi, parce que c'est l'élément le plus instructif de la colonne comprimée :
+le résultat phare de \citet{yang2025}, $\epsilon=-0{,}0073^{+0{,}0029}_{-0{,}0033}$ à
+$2{,}4\sigma$, exige cinq jeux de données ; sur DESI$+$CMB$+$CC seuls le même article rapporte
+$\epsilon=+0{,}0023^{+0{,}0055}_{-0{,}0067}$ et conclut à l'absence de déviation
+significative. Un renversement de signe à l'intérieur d'une seule publication, sur des données
+emboîtées.
+
+\section{Ce que nous ne revendiquons pas}
+\label{sec:limites}
+
+Nous ne mesurons pas $\epsilon$. Aucune de nos quatre configurations n'est une vraisemblance
+complète, et celle qui retire $\mathcal{R}$ est pilotée par le prior sur $H_0$. Nous ne
+réfutons ni \citet{yang2025} ni personne : notre pipeline, nos données et notre traitement des
+nuisances diffèrent. Nous ne prétendons pas que le domaine ait abandonné $\mathcal{R}$ ---
+DESI DR2 conditionne sa ligne de base sur $(\theta_\ast,\omega_b,\omega_{bc})$ mais teste
+explicitement la compression $(\mathcal{R},\ell_A,\omega_b)$ et la déclare équivalente pour
+les modèles tardifs qu'ils considèrent \citep{desidr2}. Retirer $\mathcal{R}$ se justifie ici
+étroitement, parce que $\sqrt{\Omega_m}$ n'a pas de définition quand la matière ne dilue pas
+en $a^{-3}$.
+
+Nous divulguons également une systématique qui nous est propre. Les priors de distance que
+nous employons sont ceux de \citet{zhaiwang2019}, dont le $\ell_A=301{,}80845$ correspond à
+$100\theta=1{,}040923$, c'est-à-dire la convention $\theta_{\rm MC}$. Notre $\chi^2$ prédit
+$\ell_A$ à partir des $z_\ast$ et $r_\ast$ exacts de CAMB, donc en convention $\theta_\ast$,
+rendant $\ell_A=301{,}75963$ et $100\theta=1{,}041091$ à l'optimum $\Lambda$CDM. Les deux
+conventions diffèrent de $-0{,}54\sigma$ sur $\ell_A$ à chaque évaluation. Ce décalage est
+commun aux quatre configurations et n'engendre donc pas l'étendue de la
+table~\ref{tab:quatre}, mais il est présent et nous l'énonçons plutôt que de laisser un
+lecteur le découvrir.
+
+\section{Recommandations}
+\label{sec:reco}
+
+\begin{enumerate}
+\item Une contrainte publiée sur un exposant de dilution de la matière obtenue par priors CMB
+      comprimés devrait énoncer \emph{quel} $\omega_m$ alimente $\mathcal{R}$, $r_d$,
+      $r_\ast$ et $z_\ast$, et citer la systématique obtenue en faisant l'autre choix. Dans
+      cette famille elle est de l'ordre de $10^{-2}$ --- un ordre de grandeur au-dessus de
+      l'erreur statistique habituellement citée.
+\item $\epsilon$ devrait n'être appliqué qu'au secteur sombre, et l'intégrande de l'horizon
+      sonore devrait employer la même loi baryonique que le fond (\S\ref{sec:baryons}).
+\item Là où la voie comprimée est conservée, $r_s$ devrait être intégré dans le fond propre du
+      modèle plutôt que tiré d'une formule d'ajustement calibrée sur $\Lambda$CDM. C'est la
+      pratique courante dans la littérature de l'énergie sombre précoce et cela ne coûte
+      rien ; nous validons une implémentation à $1{,}3\times10^{-6}$ contre CAMB au
+      \S\ref{sec:mesure}.
+\item Enfin, nous consignons une lacune. Un balayage systématique de la littérature de la
+      création de matière n'a rendu \emph{aucune} analyse d'un tel modèle contre les spectres
+      de puissance CMB complets : toutes emploient des supernovae, des BAO, $H(z)$, des
+      données de croissance, ou un CMB comprimé. L'exemple le plus récent que nous ayons
+      trouvé décrit encore son entrée CMB comme « une vraisemblance CMB comprimée (dite aussi
+      géométrique ou de fond), où le CMB est traité comme une mesure BAO à $z\approx1100$ »
+      \citep{schiavone2026}. Au vu du \S\ref{sec:pouvoir}, le coût de ce choix n'est pas une
+      perte de précision --- c'est l'introduction d'un référent que les données ne peuvent pas
+      fixer.
+\end{enumerate}
+
+\section*{Données et reproductibilité}
+Chaque nombre de cet article est produit par un script dont les critères de succès ont été
+gelés par empreinte avant exécution, puis revérifiés après coup par un outil indépendant
+lui-même testé par mutation (cinq fautes injectées, cinq détectées). Là où un critère gelé
+s'est révélé mal posé, le critère a été laissé intact et le défaut consigné, plutôt que le
+critère réécrit.
+
+\begin{thebibliography}{99}
+\bibitem[Alcaniz \& Lima(2005)]{alcaniz2005} Alcaniz, J.~S., \& Lima, J.~A.~S. 2005,
+  Phys.\ Rev.\ D, 72, 063516, \texttt{astro-ph/0507372}
+\bibitem[DESI Collaboration(2025)]{desidr2} DESI Collaboration 2025, Phys.\ Rev.\ D, 112,
+  083515, \texttt{arXiv:2503.14738}
+\bibitem[Eisenstein \& Hu(1998)]{eh1998} Eisenstein, D.~J., \& Hu, W. 1998, ApJ, 496, 605
+\bibitem[Elgar\o y \& Multam\"aki(2007)]{elgaroy2007} Elgar\o y, \O., \& Multam\"aki, T.
+  2007, A\&A, 471, 65, \texttt{astro-ph/0702343}
+\bibitem[Hu \& Sugiyama(1996)]{hs1996} Hu, W., \& Sugiyama, N. 1996, ApJ, 471, 542
+\bibitem[Kumar et al.(2025)]{kumar2025} Kumar, U., Ajith, A., \& Verma, A. 2025,
+  \texttt{arXiv:2504.14419}
+\bibitem[Li et al.(2024)]{li2024} Li, T.-N., Wu, P.-J., Du, G.-H., et al. 2024, ApJ, 976, 1,
+  \texttt{arXiv:2407.14934}
+\bibitem[Li et al.(2025)]{li2025} Li, T.-N., et al. 2025, \texttt{arXiv:2510.11363}
+\bibitem[Lima et al.(1996)]{lima1996} Lima, J.~A.~S., Germano, A.~S.~M., \& Abramo, L.~R.~W.
+  1996, Phys.\ Rev.\ D, 53, 4287, \texttt{gr-qc/9511006}
+\bibitem[Planck Collaboration(2020)]{planck2018} Planck Collaboration 2020, A\&A, 641, A6,
+  \texttt{arXiv:1807.06209}
+\bibitem[Schiavone et al.(2026)]{schiavone2026} Schiavone, T., De Angelis, M., Escamilla,
+  L.~A., Montani, G., \& Di Valentino, E. 2026, \texttt{arXiv:2601.14222}
+\bibitem[Tsiapi \& Basilakos(2019)]{tsiapi2019} Tsiapi, P., \& Basilakos, S. 2019, MNRAS,
+  485, 2505, \texttt{arXiv:1810.12902}
+\bibitem[Yang et al.(2025)]{yang2025} Yang, W., Dai, W.-B., \& Wang, D. 2025,
+  \texttt{arXiv:2505.09879}
+\bibitem[Yao \& Liu(2025)]{yaoliu2025} Yao, Y., \& Liu, X. 2025, \texttt{arXiv:2507.00478}
+\bibitem[Zhai \& Wang(2019)]{zhaiwang2019} Zhai, Z., \& Wang, Y. 2019, JCAP, 07, 005,
+  \texttt{arXiv:1811.07425}
+\end{thebibliography}
+
+\end{document}

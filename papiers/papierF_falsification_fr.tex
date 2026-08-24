@@ -1,0 +1,249 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\title{\bf La falsification comme code :\\
+des critères de succès gelés par empreinte,\\
+et neuf façons dont un critère pré-enregistré échoue quand même}
+\author{Édouard Lantenois\thanks{\texttt{github.com/Dantenos}}}
+\date{Août 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+Le pré-enregistrement est d'ordinaire un document. Nous rapportons un protocole en service
+où il est une \emph{empreinte} : le bloc des critères de succès vit dans le docstring du
+script d'analyse lui-même, il est gelé par SHA-256 avant exécution, et un vérificateur fait
+échouer la chaîne d'intégration s'il a bougé depuis. Les amendements restent possibles, mais
+publics. Sur un corpus de cosmologie --- 88 critères gelés, 198 entrées numérotées au
+registre, 78 attaques arbitrées --- le protocole s'est comporté tout autrement que prévu. Il
+n'a pas principalement attrapé des \emph{résultats faux} ; il a attrapé des \emph{critères
+mal posés}. Nous en donnons une taxonomie en neuf modes, chacun avec l'exemple réel qui l'a
+révélé : un critère portant sur un paramètre non identifiable ; une borne inadaptée au
+découpage des données ; une comparaison à une référence non optimisée ; le mauvais
+comparant ; un minimum de bord sur une branche fermée ; deux exigences mutuellement
+incompatibles gelées ensemble ; un docstring affirmant 60\,000 points de grille quand son
+propre code en employait 240\,001 ; une validation passant à $10^{-4}$ en valeur relative
+tout en mesurant une grandeur qui n'existe pas ; et un verdict tranché par la quatorzième
+décimale d'une comparaison flottante. Nous rapportons ensuite les contre-mesures qui ont
+tenu : tester les garde-fous eux-mêmes par mutation, détecter les marqueurs non substitués
+génériquement plutôt que par une liste écrite à la main, employer des expressions
+régulières plutôt que l'égalité de chaînes, brancher la réfutation avant la confirmation, et
+déclarer d'avance le sens de chaque substitution. Le coût du protocole est que les études
+s'arrêtent d'elles-mêmes ; sur ce corpus, cinq l'ont fait. Son bénéfice est que 69
+affirmations ont été rétractées ou rétrogradées, dont plusieurs résultats phares du corpus,
+et la plupart par la machinerie de l'analyste plutôt que par un référé. Nous ne revendiquons
+aucune généralité au-delà de $N=1$, et nous rapportons ce que le protocole \emph{n'attrape
+pas}.
+\end{abstract}
+
+\section{Le protocole}
+
+L'unité est un script. Son docstring s'ouvre sur un bloc intitulé \textsc{critères
+pré-enregistrés}, qui contient : les validations à passer avant toute publication, les
+critères eux-mêmes --- exigés \emph{exhaustifs} et \emph{exclusifs}, de sorte que chaque issue
+possible corresponde à exactement un verdict écrit --- et une déclaration de ce que l'étude
+\emph{ne} revendiquera \emph{pas}.
+
+Trois commandes opèrent dessus :
+\begin{itemize}
+\item \texttt{freeze} extrait le docstring par AST, le hache, et inscrit
+      \texttt{chemin $\to$ sha256} dans un fichier de verrou ;
+\item \texttt{verify} recalcule et sort en code non nul si une empreinte a bougé ---
+      bloquant en intégration continue ;
+\item \texttt{freeze -{}-amend} autorise un critère à changer, mais écrit l'ancienne et la
+      nouvelle empreinte, avec une justification obligatoire, dans un fichier public de
+      rétractations.
+\end{itemize}
+
+Deux conséquences suivent immédiatement, et il faut les énoncer car elles sont tout l'objet.
+D'abord, modifier les critères \emph{après} avoir vu le résultat n'est pas interdit : c'est
+\emph{consigné}. Sur le corpus rapporté ici, le canal d'amendement a servi zéro fois : les 88
+critères gelés portent tous l'empreinte de leur premier gel. Ensuite, le corps d'un script
+peut être corrigé librement ; seuls les critères sont immuables. Cette séparation est ce qui
+rend le protocole utilisable, et c'est aussi d'elle qu'est venue la première surprise.
+
+\section{La surprise : il attrape des critères, pas des résultats}
+
+Nous attendions du protocole qu'il attrape des résultats s'écartant de leur condition de
+succès. Il l'a fait rarement. Ce qu'il a attrapé, encore et encore, ce sont des critères
+\emph{formellement satisfaisables sans rien établir}. Neuf modes distincts se sont produits,
+et aucun ne se réduit à de la négligence : chacun a été écrit par un analyste cherchant la
+rigueur, et chacun a passé une relecture au moment de son gel.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{clp{8.1cm}}
+\toprule
+\# & mode de défaillance & ce qui s'est passé \\
+\midrule
+1 & paramètre non identifiable &
+  Un critère a été gelé sur une grandeur que les données ne pouvaient pas contraindre. Toute
+  issue le satisfaisait, donc il n'excluait rien. \\
+2 & borne inadaptée au découpage &
+  Une borne de qualité d'ajustement de la forme $\chi^2/(N+17)$ a été gelée pour un jeu à 22
+  intervalles. Le décalage venait d'une autre configuration de données et rendait la borne
+  vide à ce $N$. \\
+3 & référence non optimisée &
+  Une validation comparait le modèle en un point \emph{fixé} à une référence prise à son
+  \emph{optimum}. L'écart mesuré était l'optimisation, pas la physique. \\
+4 & mauvais comparant &
+  Une validation a été jouée contre un comparant qui réintroduisait un terme de rayonnement
+  que le modèle avait retiré. Elle a échoué pour une raison étrangère à l'hypothèse. \\
+5 & minimum de bord &
+  Un critère rendait une contrainte très serrée. Le réexamen a montré que le minimum était
+  sur le bord du domaine accessible : une branche du paramètre était fermée par
+  l'implémentation, donc la contrainte était unilatérale tout en étant rapportée bilatérale. \\
+6 & exigences incompatibles &
+  Deux contraintes ont été gelées dans le même bloc --- une grille de 41 points et une
+  tolérance de $\pm0{,}3$ --- qui ne pouvaient pas être satisfaites ensemble. L'étude ne
+  pouvait pas réussir, par construction. \\
+7 & divergence docstring/code &
+  Un docstring affirmait « une grille dense (60\,000 points, log) » ; le code, après
+  corrections successives du corps, en employait 240\,001. \textbf{Le critère aurait été
+  satisfait par autre chose que ce qu'il énonçait.} \\
+8 & un contrôle qui ne mesure rien &
+  Une validation exigeait qu'un facteur de conversion soit constant à mieux que $2\%$. Elle a
+  passé à $0{,}010\%$. La grandeur qu'elle convertissait n'existait pas : le paramètre source
+  avait été mal lu, et il n'y avait aucun bras de levier à convertir. \emph{Une validation qui
+  passe parfaitement en mesurant un fantôme est plus dangereuse qu'une qui échoue.} \\
+9 & un verdict tranché par un arrondi &
+  Deux seuils étaient comparés par \texttt{>=} sur une arithmétique de grille flottante. Les
+  valeurs vraies étaient exactement $2$ et exactement $1$ ; les valeurs calculées
+  $1{,}9999999999999791$ et $0{,}9999999999999836$. Les deux comparaisons ont échoué, et les
+  deux échecs tombaient dans le sens qui arrangeait l'analyste. \\
+\bottomrule
+\end{tabular}
+\caption{Neuf façons dont un critère pré-enregistré a été formellement satisfait, ou
+formellement tranché, sans établir ce pour quoi il avait été écrit. Chaque ligne s'est
+produite dans un même corpus, en deux jours d'usage intensif.}
+\label{tab:vices}
+\end{table}
+
+Deux modes supplémentaires sont apparus pendant la rédaction de cet article et appartiennent
+à la taxonomie, bien que nous ne les ayons pas numérotés :
+
+\begin{itemize}
+\item \textbf{une définition gelée divergeant de la définition opérante.} Un outil de
+  vérification a été gelé avec une définition de région du ciel différant de $10^\circ$ en
+  ascension droite de celle que le corpus employait partout ailleurs. Il comptait 412 objets
+  là où le corpus en comptait 416. L'outil avait raison sur le défaut qu'il venait de
+  trouver, et tort sur la définition avec laquelle il l'avait trouvé.
+\item \textbf{une validation bloquée par sa propre résolution.} Un test exigeait qu'une
+  incertitude rétrécisse d'un facteur $k$ ; la grille de balayage ne pouvait pas résoudre une
+  incertitude plus petite qu'un pas, donc à $k=4$ le facteur mesuré valait $2{,}0$ au lieu de
+  $2{,}8$--$5{,}6$. La validation a correctement refusé de conclure sur une mesure que son
+  propre maillage ne pouvait pas rendre. Notons qu'une signature \emph{indépendante} dans la
+  même exécution --- les gains en $\chi^2$ suivant $k^2$ à trois décimales --- établissait
+  bien que la manipulation était opérante. Nous ne l'avons pas substituée : le faire est le
+  mode 7 déguisé.
+\end{itemize}
+
+\section{Ce qui marche vraiment}
+
+Les contre-mesures ci-dessous sont rapportées parce qu'elles ont tenu ; plusieurs solutions
+d'apparence plausible n'ont pas tenu.
+
+\paragraph{Tester les garde-fous par mutation.} Un outil de vérification qui rend « 55/55,
+aucun échec bloquant » n'établit rien tant qu'on n'a pas montré qu'il \emph{peut} échouer.
+Nous avons injecté cinq fautes dans les fichiers qu'il lit --- un gain gonflé de $5\%$, une
+moyenne pondérée de $2\%$, une valeur centrale déplacée, une incertitude multipliée par
+quatre, une fraction poussée hors bornes --- en exigeant que les cinq soient attrapées. Les
+cinq l'ont été. Le $55/55$ n'a acquis un sens qu'à ce moment-là. \emph{Nous recommandons cette
+pratique comme obligatoire, non facultative.} C'est la contre-mesure directe du mode 8.
+
+\paragraph{Détecter génériquement, jamais par liste écrite à la main.} Un contrôle de
+substitution de gabarit énumérait cinq noms de marqueurs à la main. Un sixième a été ajouté au
+gabarit plus tard ; le contrôle est passé ; la page publiée a échoué dès la première ligne,
+tous marqueurs non substitués. Le contrôle qui l'a remplacé est une expression régulière
+unique sur \texttt{\_\_[A-Z\_]+\_\_} et ne peut pas manquer un marqueur dont il n'a jamais
+entendu parler. Règle générale : \emph{un contrôle doit pouvoir détecter le cas auquel son
+auteur n'a pas pensé.}
+
+\paragraph{Des expressions régulières, jamais l'égalité de chaînes, sur du texte.} Un
+garde-fou écrit comme un test d'égalité contre une ligne de prose s'est brisé en silence quand
+le fichier a gagné un saut de ligne. Tous les contrôles textuels du corpus sont désormais des
+regex insensibles aux sauts de ligne. C'est la règle 7 de la constitution du corpus, et elle a
+été écrite après la défaillance, pas avant.
+
+\paragraph{Brancher la réfutation avant la confirmation.} Lorsqu'une étude est conçue pour
+confirmer une lecture de l'analyste lui-même, le code évalue la branche qui la
+\emph{réfuterait} \emph{avant} celle qui la confirmerait, et le seuil de confirmation est plus
+strict que le seuil de réfutation (chez nous un facteur 3 contre un facteur 1). Deux fois cet
+ordre a compté : une de nos études a rendu \textsc{explication réfutée} sur un mécanisme que
+nous avions affirmé dans deux entrées successives sans jamais l'avoir testé.
+
+\paragraph{Déclarer le sens de chaque substitution.} Là où une valeur doit être supposée, le
+protocole exige qu'elle soit choisie \emph{contre} la thèse défendue, et exige que le choix le
+dise. Un facteur de conversion de $0{,}8389$ a été retenu contre un $0{,}8429$ tout aussi
+défendable exactement sur ce motif ; énoncer la raison est ce qui distingue un choix
+conservateur d'un choix chanceux.
+
+\paragraph{Laisser l'étude s'arrêter, et publier l'arrêt.} Cinq études de ce corpus se sont
+arrêtées sur leurs propres validations sans rien publier. Chaque arrêt était instructif : l'un
+a révélé qu'une ancre était comparée au mauvais optimum, un autre qu'une grille ne pouvait pas
+résoudre ce qu'on lui demandait de mesurer. \emph{Un protocole dont les études ne s'arrêtent
+jamais n'est pas appliqué.}
+
+\section{Coût et bénéfice}
+
+Le coût est réel. Des études s'arrêtent. Des critères raisonnables au moment de leur
+rédaction se révèlent mal posés et ne peuvent pas être réparés sur place --- la règle du
+corpus est qu'un critère gelé est un \emph{constat}, non une affirmation à réécrire, de sorte
+qu'un outil dépassé est remplacé plutôt qu'amendé, et que les deux restent au registre. Cela
+produit un encombrement visible, et nous tenons cet encombrement pour une qualité : le compte
+d'amendements est resté à zéro non parce que les critères étaient toujours justes, mais parce
+qu'avoir tort était survivable sans les modifier.
+
+Le bénéfice se mesure sur un axe que nous pouvons rapporter honnêtement : 69 affirmations ont
+été réfutées, rétrogradées ou corrigées, et la majorité l'ont été par la machinerie de
+l'analyste. Plusieurs étaient des résultats phares :
+\begin{itemize}
+\item un modèle en tête d'une table comparative de 25 entrées devait $8{,}62$ de ses $9{,}84$
+  unités d'avance à un artefact d'étalonnage --- après que trois audits « adversariaux »
+  l'avaient validé sans jamais sortir du pipeline vicié ;
+\item une fraction de ciel s'est révélée fausse d'un facteur $\pi/2$, recopiée à travers six
+  générations d'artefacts, avec pour effet que le corpus \emph{surestimait sa propre anomalie}
+  de $57\%$ ;
+\item un mécanisme que l'analyste avait affirmé dans deux entrées successives a été réfuté par
+  le premier test qui lui ait jamais été appliqué.
+\end{itemize}
+Nous notons sans ironie que le troisième est le protocole fonctionnant exactement comme prévu,
+et l'analyste ne fonctionnant pas comme prévu.
+
+\section{Ce que le protocole n'attrape pas}
+
+Il est mécanique. Il ne lit pas les équations, ne juge pas la physique, et ne peut pas dire
+si un modèle est intéressant. Dans ce corpus, l'audit le plus conséquent n'a été déclenché par
+aucun outil mais par un lecteur humain disant que les résultats semblaient \emph{trop beaux
+pour être vrais} ; cet audit a trouvé un minimum de bord (mode 5) que tous les contrôles
+automatiques avaient laissé passer. Plus tard, une vérification de littérature a tué net un
+article projeté en établissant que ses quatre résultats revendiqués étaient publiés, le plus
+ancien en 2015 et le plus récent quatre jours plus tôt. Ni l'un ni l'autre n'est atteignable
+par un hachage.
+
+Il y a aussi un risque propre que le protocole crée. Puisque les critères sont immuables, il
+existe une pression à les écrire assez lâches pour être sûrs. Nous l'avons contrée en exigeant
+qu'ils soient \emph{exhaustifs et exclusifs} --- chaque issue nommée d'avance, y compris
+celles qui réfutent l'analyste --- mais nous ne prétendons pas que la pression soit éliminée,
+seulement qu'elle est visible.
+
+\section{Reproductibilité}
+
+Le protocole tient en 120 lignes de Python et ne dépend que de la bibliothèque standard. Ses
+propres critères de succès sont gelés par lui-même (commit 0) : il réussit si
+\texttt{freeze} puis \texttt{verify} passent sur au moins deux scripts réels et si la
+falsification d'un critère est détectée par une sortie non nulle ; il échoue et n'est pas
+publié si un faux positif apparaît sur un fichier non modifié. Les deux conditions ont tenu
+sur 88 critères gelés.
+
+\end{document}

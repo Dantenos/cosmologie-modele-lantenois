@@ -1,3 +1,10 @@
+> ⚠ **RÉTRACTATION (#166, 24/08/2026)** — les deux lignes **iΛCDM** de ce tableau sont INVALIDES.
+> Leur χ² a été étalonné (r_d, z_*, r_*, R) avec l'étiquette Ω_m au lieu de la densité de matière
+> d'avant recombinaison Ω_m′ : 8,62 des 9,84 unités d'avance sont fabriquées. Valeur cohérente
+> pour 'de' : **1423,874, gain +1,21** — derrière l'accrétion et CPL. Ce fichier est régénéré
+> par `atlas_v1.py`, GELÉ avec les ancres fausses : **ne pas le rejouer** pour ces deux lignes
+> tant que l'atlas v2 n'existe pas. Voir MANQUEMENTS #164-#166.
+
 # ATLAS — 19 modèles, un pipeline, un classement (généré par `scripts/atlas_v1.py`, ne pas éditer)
 
 *2026-08-23 — données : Pantheon+ 1580 + DESI DR2 BAO 13 + distance-priors Planck + SH0ES (pipeline v3, ZCUT off) ; N = 1597. Classement par AIC, écrit tel quel ;*

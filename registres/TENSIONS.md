@@ -1,6 +1,6 @@
 # LE REGISTRE DES TENSIONS — généré par `outils/greffier.py`, ne pas éditer à la main
 
-*2026-08-24 — 9 tensions : 7 ouvertes, 0 en jugement, 2 résolues. Règle du greffe : une tension ne se*
+*2026-08-24 — 9 tensions : 8 ouvertes, 0 en jugement, 1 résolues. Règle du greffe : une tension ne se*
 *résout que par l'arbitre nommé avant la résolution — on ne réécrit pas l'histoire d'une anomalie.*
 
 ## T1-beta-interne — OUVERTE <small>(ouverte le 2026-08-23)</small>
@@ -73,18 +73,16 @@ Lectures rivales :
 
 **Résolution** (2026-08-24, #155) : FLUCTUATIONS (bruit à petit N) — par le critère gelé de l'arbitre ; RÉSERVE : la branche ne conditionne pas sur la puissance (σ_Δ ≈ 0,7-1,0 ici) ; clause de réouverture : tout test des mêmes algorithmes à σ_Δ ≤ 0,4. Indice de soutien : Jaccard(VIDE,REVOLVER) = 0,97 sur DESIVAST contre 0,41 sur Douglass — par l'arbitre nommé.
 
-## T7-epsilon-ilcdm — RÉSOLUE <small>(ouverte le 2026-08-24)</small>
+## T7-epsilon-ilcdm — OUVERTE <small>(ouverte le 2026-08-24)</small>
 
-**les deux iΛCDM d'interaction prennent la tête de l'atlas (ε ≈ +0,007/+0,021, χ² = −9,8 vs ΛCDM pour un paramètre) — premier volet de l'arbitre exécuté (#154) : le gain SURVIT aux variantes cohérentes (CDM seul, échange tardif z<3 : +9,85 / +9,64) ; l'hypothèse artefact primordial est réfutée ; restent LOO, split-z, trilogie SN ; volet 2 (#156) : ROBUSTE-LOO (gain +7,8 à +11,3 sur 7 retraits) et split-z COHÉRENT (ε identique à 0,0σ) — il ne reste que la trilogie SN**  
-magnitude : **ΔAIC = −3 à −4 sur CCBH/accrétion — au tableau, pas au palmarès** · refs : #150, ATLAS.md, #154, #156, #158
+**RÉSOLUTION RÉTRACTÉE (#166) — l'avance de l'iΛCDM sur l'atlas (ε ≈ +0,021, −9,8) est à 8,62/9,84 un ARTEFACT D'ÉTALONNAGE : même fond que wCDM (identité à 4,4e−16), mais r_d, z_*, r_* et R calculés avec l'étiquette Ω_m au lieu de la densité d'avant recombinaison Ω_m′. Le modèle cohérent gagne +1,21, derrière l'accrétion (+5,78) et CPL (+6,16). Les trois volets de l'arbitre (#154, #156, #158) ont tourné dans le pipeline vicié et ne valent plus. Question rouverte : reste-t-il UNE préférence pour un échange sombre à étalonnage cohérent ? À ce jour : +1,21, soit rien.**  
+magnitude : **ΔAIC = −3 à −4 sur CCBH/accrétion — au tableau, pas au palmarès** · refs : #150, ATLAS.md, #154, #156, #158, #166
 
 Lectures rivales :
 - artefact de l'implémentation v1 (échange appliqué à toute la matière + fond tardif incohérent avec les distance-priors primordiaux — déclaré au gel)
 - vraie préférence pour l'échange sombre (des indices similaires existent dans la littérature DESI)
 
-**Arbitre (gravé d'avance)** : batterie adversariale v2 de l'atlas : couplage CDM seul, cohérence primordiale, LOO traceurs, split-z, trilogie SN, σ(ε) — avant tout droit au palmarès
-
-**Résolution** (2026-08-24, #158) : lecture « artefact d'implémentation » RÉFUTÉE — le gain (Δχ² ≈ 9,5-9,9, ε ≈ +0,021) survit aux variantes cohérentes, au LOO des 7 traceurs, au split-z (0,0σ) et à la trilogie SN (DES valide ; Union3 même signal, porte de validation échouée sur proxy déclaré). Préférence réelle-au-pipeline à ~2-3σ — pas une découverte ; suite : rangée sombre du Livre v2, Cobaya complet — par l'arbitre nommé.
+**Arbitre (gravé d'avance)** : un atlas v2 dont l'étalonnage (r_d, z_*, r_*, R) est tiré de la densité de matière d'AVANT recombinaison pour chaque modèle, et non de son étiquette Ω_m ; plus une étude propre sur 'ilcdm_dm', dont la matière dérive de −4,76 % à a = 1e−3 (diagnostic #166, verdict non rendu)
 
 ## T8-patch-desivast — OUVERTE <small>(ouverte le 2026-08-24)</small>
 
@@ -100,8 +98,8 @@ Lectures rivales :
 
 ## T9-source-externe-vs-interne — OUVERTE <small>(ouverte le 2026-08-24)</small>
 
-**les deux vainqueurs du corpus (accrétion β, échange ε) paramétrisent la MÊME fonction s(a) = d ln ρ_de/d ln a (#161, identité algébrique vérifiée à 1e-4) ; ils ne diffèrent que par la SOURCE — hors budget (matière intacte) ou interne (la matière encaisse). À paramètres égaux l'interne mène de Δχ² = +2,83 (~1,7σ), et n'a besoin d'aucun croisement ; l'externe exige une pente qui court (2,4σ par rapport de vraisemblance contre wCDM) et croise en z₀ = 0,240 [0,090 ; 0,340] — versé par critère gelé (#163) : sur Planck complet la même forme libre exige le running à 3,72σ (une pente CONSTANTE n'achète rien, +0,04) mais place le croisement en z₀ = 0,388 [0,377 ; 0,387], disjoint et de la bande rigide [0,218 ; 0,262] et de la mesure légère [0,090 ; 0,340] : le croisement est dominé par le systématique de forme, pas par les données**  
-magnitude : **Δχ² = 2,83 entre lectures, ~1,7σ — indécidable aujourd'hui ; mais le discriminant prédit est net : 1,70 % d'écart de matière entre la recombinaison et le bas redshift (interne) contre 0,00 % (externe)** · refs : #161, confluence.py, #150, #154, #163
+**les deux vainqueurs du corpus (accrétion β, échange ε) paramétrisent la MÊME fonction s(a) = d ln ρ_de/d ln a (#161, identité algébrique vérifiée à 1e-4) ; ils ne diffèrent que par la SOURCE — hors budget (matière intacte) ou interne (la matière encaisse). À paramètres égaux l'interne mène de Δχ² = +2,83 (~1,7σ), et n'a besoin d'aucun croisement ; l'externe exige une pente qui court (2,4σ par rapport de vraisemblance contre wCDM) et croise en z₀ = 0,240 [0,090 ; 0,340] — versé par critère gelé (#163) : sur Planck complet la même forme libre exige le running à 3,72σ (une pente CONSTANTE n'achète rien, +0,04) mais place le croisement en z₀ = 0,388 [0,377 ; 0,387], disjoint et de la bande rigide [0,218 ; 0,262] et de la mesure légère [0,090 ; 0,340] : le croisement est dominé par le systématique de forme, pas par les données — ATTENTION (#166) : le volet « la lecture interne mène de +2,83 » est RÉTRACTÉ, cet avantage était l'artefact d'étalonnage. L'identité algébrique entre les deux lectures tient (c'est de l'algèbre) ; le classement entre elles, non. À étalonnage cohérent, l'échange sombre ne mène plus rien.**  
+magnitude : **Δχ² = 2,83 entre lectures, ~1,7σ — indécidable aujourd'hui ; mais le discriminant prédit est net : 1,70 % d'écart de matière entre la recombinaison et le bas redshift (interne) contre 0,00 % (externe)** · refs : #161, confluence.py, #150, #154, #163, #166
 
 Lectures rivales :
 - SOURCE EXTERNE (la thèse du corpus) : ρ_de est alimentée hors budget, la matière dilue exactement en a⁻³. Prix à payer : la pente s(a) doit courir et croiser zéro (2,4σ) ; ajustement moins bon de 2,83.

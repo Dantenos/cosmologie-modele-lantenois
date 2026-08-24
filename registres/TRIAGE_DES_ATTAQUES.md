@@ -362,5 +362,7 @@ première fois, une entrée du triage retirant une entrée du triage.**
 
 | 63 | mon « les données mesurent f(z) à 1,8 % ; 4,6 % coûte ~6 » (#123, papier C, vidéo) | **FAUX deux fois** : σ réel = 0,67 % (parabole hors minimum moyennée = malpractice) ; et le mécanisme du nul est DIRECTIONNEL — Δχ²(inter-modèles)=+1,06, une direction quasi-plate, pas une résolution insuffisante. Attrapé par le soupçon d'Ed (« trop beau »), pas par mes contrôles. |
 
-**Bilan : 9 attaques justes, 54 affirmations réfutées, rétrogradées ou corrigées — la #63 au
+| 64 | mon « l'iΛCDM mène l'atlas, ε ≈ +0,021, −9,8 pour un paramètre » (#150, #154, #156, #158, résolution de T7, verdict 2c du #161) | **ARTEFACT D'ÉTALONNAGE, rétracté (#166)** : au niveau du fond ce modèle EST wCDM(Ω_m′, w′) — identité vérifiée à 4,4e−16 — mais χ² étalonnait r_d, z_*, r_* et R = √Ω_m·D_c avec l'étiquette Ω_m au lieu de la densité d'avant recombinaison Ω_m′, inférieure de 1,7 %. Le modèle cohérent gagne **+1,21**, pas +9,84 : 8,62 unités fabriquées. Attrapé par une relecture d'algèbre, après que trois audits « adversariaux » (#154, #156, #158) l'ont validé sans jamais sortir du pipeline vicié. |
+
+**Bilan : 10 attaques justes, 55 affirmations réfutées, rétrogradées ou corrigées — la #63 au
 crédit du binôme : le soupçon humain a vu ce que quatre relectures machine ont raté.**

@@ -263,5 +263,25 @@
   "sha256": "ddf986c153eb0c5a6bde16111a9861547b7d18ab29ac881e1fd7550980b1396a",
   "gele_le": "2026-08-24T10:14:38",
   "extrait": "fig_pente — LA FONCTION QUE TOUT LE CORPUS MESURE : s(a) = d ln rho_de / d ln a."
+ },
+ "scripts/degenerescence_ilcdm.py": {
+  "sha256": "d74f3e93caddb6d09ffdd478d4bcc2d344aa0c686945b7f6cae93cc509b3aac1",
+  "gele_le": "2026-08-24T10:40:26",
+  "extrait": "LE CHAMPION DE L'ATLAS EST-IL wCDM DEGUISE ? CRITERES PRE-ENREGISTRES (geles AVA"
+ },
+ "scripts/degenerescence_ilcdm_v2.py": {
+  "sha256": "00deaf7745d85c8bd9aff158027b56649f24aade322274555d00824a452db852",
+  "gele_le": "2026-08-24T10:43:24",
+  "extrait": "L'AVANCE DU CHAMPION DE L'ATLAS EST-ELLE UN ARTEFACT DE COMPTABILITE DU RAYONNEM"
+ },
+ "scripts/degenerescence_ilcdm_v3.py": {
+  "sha256": "e8b21204edacc0bc98285a0cbf5350d0a438e9d325d1d93f5363b19f8ac25b80",
+  "gele_le": "2026-08-24T10:48:29",
+  "extrait": "D'OU VIENT VRAIMENT L'AVANCE DU CHAMPION DE L'ATLAS ? L'ETALONNAGE, PAS LE FOND."
+ },
+ "scripts/degenerescence_ilcdm_v4.py": {
+  "sha256": "1d5c847865d158a845dc757b73ece11187f9ddbbd6ef823e0463714c21626f0c",
+  "gele_le": "2026-08-24T10:49:56",
+  "extrait": "L'AVANCE DU CHAMPION DE L'ATLAS VIENT-ELLE DE L'ETALONNAGE ? — VALIDATION CORRIG"
  }
 }

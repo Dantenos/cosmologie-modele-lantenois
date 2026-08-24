@@ -81,11 +81,11 @@
   },
   {
    "nom": "nombre d'entrées du registre",
-   "valeur_courante": "168 (24/08/2026)",
+   "valeur_courante": "170 (24/08/2026)",
    "source": "MANQUEMENTS #142",
    "date": "2026-08-23",
    "valeurs_depreciees": [
-    "\\\\b(?!168\\\\b)1\\\\d\\\\d entrées(?! à la naissance)"
+    "\\\\b(?!170\\\\b)1\\\\d\\\\d entrées(?! à la naissance)"
    ]
   },
   {
@@ -102,11 +102,11 @@
   },
   {
    "nom": "critères gelés",
-   "valeur_courante": "53 (24/08/2026)",
+   "valeur_courante": "57 (24/08/2026)",
    "source": "outils/registre.lock",
    "date": "2026-08-23",
    "valeurs_depreciees": [
-    "\\b(?!53\\b)\\d+ (critères|fichiers|scripts) (gelés|du corpus sont gelés)"
+    "\\b(?!57\\b)\\d+ (critères|fichiers|scripts) (gelés|du corpus sont gelés)"
    ]
   },
   {
@@ -141,6 +141,15 @@
     "identical data\\* \\(6 p\\.\\)",
     "Papier C \\(7 p\\.\\)",
     "identical data\\* \\(7 p\\.\\)"
+   ]
+  },
+  {
+   "nom": "gain iLCDM 'de' sur l'atlas (RÉTRACTÉ)",
+   "valeur_courante": "+1,21 (étalonnage cohérent, #166) — le +9,84 publié était un artefact",
+   "source": "MANQUEMENTS #166, degenerescence_ilcdm_v4.py",
+   "date": "2026-08-24",
+   "valeurs_depreciees": [
+    "(?<![\\d.\\-])1415[.,]2\\d*(?!\\d)"
    ]
   }
  ]

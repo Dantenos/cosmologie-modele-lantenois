@@ -110,27 +110,22 @@
   {
    "id": "T7-epsilon-ilcdm",
    "ouverte_le": "2026-08-24",
-   "statut": "resolue",
-   "enonce": "les deux iΛCDM d'interaction prennent la tête de l'atlas (ε ≈ +0,007/+0,021, χ² = −9,8 vs ΛCDM pour un paramètre) — premier volet de l'arbitre exécuté (#154) : le gain SURVIT aux variantes cohérentes (CDM seul, échange tardif z<3 : +9,85 / +9,64) ; l'hypothèse artefact primordial est réfutée ; restent LOO, split-z, trilogie SN ; volet 2 (#156) : ROBUSTE-LOO (gain +7,8 à +11,3 sur 7 retraits) et split-z COHÉRENT (ε identique à 0,0σ) — il ne reste que la trilogie SN",
+   "statut": "ouverte",
+   "enonce": "RÉSOLUTION RÉTRACTÉE (#166) — l'avance de l'iΛCDM sur l'atlas (ε ≈ +0,021, −9,8) est à 8,62/9,84 un ARTEFACT D'ÉTALONNAGE : même fond que wCDM (identité à 4,4e−16), mais r_d, z_*, r_* et R calculés avec l'étiquette Ω_m au lieu de la densité d'avant recombinaison Ω_m′. Le modèle cohérent gagne +1,21, derrière l'accrétion (+5,78) et CPL (+6,16). Les trois volets de l'arbitre (#154, #156, #158) ont tourné dans le pipeline vicié et ne valent plus. Question rouverte : reste-t-il UNE préférence pour un échange sombre à étalonnage cohérent ? À ce jour : +1,21, soit rien.",
    "magnitude": "ΔAIC = −3 à −4 sur CCBH/accrétion — au tableau, pas au palmarès",
    "refs": [
     "#150",
     "ATLAS.md",
     "#154",
     "#156",
-    "#158"
+    "#158",
+    "#166"
    ],
    "lectures": [
     "artefact de l'implémentation v1 (échange appliqué à toute la matière + fond tardif incohérent avec les distance-priors primordiaux — déclaré au gel)",
     "vraie préférence pour l'échange sombre (des indices similaires existent dans la littérature DESI)"
    ],
-   "arbitre": "batterie adversariale v2 de l'atlas : couplage CDM seul, cohérence primordiale, LOO traceurs, split-z, trilogie SN, σ(ε) — avant tout droit au palmarès",
-   "resolution": {
-    "arbitre": "batterie adversariale v2 de l'atlas",
-    "date": "2026-08-24",
-    "registre": "#158",
-    "verdict": "lecture « artefact d'implémentation » RÉFUTÉE — le gain (Δχ² ≈ 9,5-9,9, ε ≈ +0,021) survit aux variantes cohérentes, au LOO des 7 traceurs, au split-z (0,0σ) et à la trilogie SN (DES valide ; Union3 même signal, porte de validation échouée sur proxy déclaré). Préférence réelle-au-pipeline à ~2-3σ — pas une découverte ; suite : rangée sombre du Livre v2, Cobaya complet"
-   }
+   "arbitre": "un atlas v2 dont l'étalonnage (r_d, z_*, r_*, R) est tiré de la densité de matière d'AVANT recombinaison pour chaque modèle, et non de son étiquette Ω_m ; plus une étude propre sur 'ilcdm_dm', dont la matière dérive de −4,76 % à a = 1e−3 (diagnostic #166, verdict non rendu)"
   },
   {
    "id": "T8-patch-desivast",
@@ -154,14 +149,15 @@
    "id": "T9-source-externe-vs-interne",
    "ouverte_le": "2026-08-24",
    "statut": "ouverte",
-   "enonce": "les deux vainqueurs du corpus (accrétion β, échange ε) paramétrisent la MÊME fonction s(a) = d ln ρ_de/d ln a (#161, identité algébrique vérifiée à 1e-4) ; ils ne diffèrent que par la SOURCE — hors budget (matière intacte) ou interne (la matière encaisse). À paramètres égaux l'interne mène de Δχ² = +2,83 (~1,7σ), et n'a besoin d'aucun croisement ; l'externe exige une pente qui court (2,4σ par rapport de vraisemblance contre wCDM) et croise en z₀ = 0,240 [0,090 ; 0,340] — versé par critère gelé (#163) : sur Planck complet la même forme libre exige le running à 3,72σ (une pente CONSTANTE n'achète rien, +0,04) mais place le croisement en z₀ = 0,388 [0,377 ; 0,387], disjoint et de la bande rigide [0,218 ; 0,262] et de la mesure légère [0,090 ; 0,340] : le croisement est dominé par le systématique de forme, pas par les données",
+   "enonce": "les deux vainqueurs du corpus (accrétion β, échange ε) paramétrisent la MÊME fonction s(a) = d ln ρ_de/d ln a (#161, identité algébrique vérifiée à 1e-4) ; ils ne diffèrent que par la SOURCE — hors budget (matière intacte) ou interne (la matière encaisse). À paramètres égaux l'interne mène de Δχ² = +2,83 (~1,7σ), et n'a besoin d'aucun croisement ; l'externe exige une pente qui court (2,4σ par rapport de vraisemblance contre wCDM) et croise en z₀ = 0,240 [0,090 ; 0,340] — versé par critère gelé (#163) : sur Planck complet la même forme libre exige le running à 3,72σ (une pente CONSTANTE n'achète rien, +0,04) mais place le croisement en z₀ = 0,388 [0,377 ; 0,387], disjoint et de la bande rigide [0,218 ; 0,262] et de la mesure légère [0,090 ; 0,340] : le croisement est dominé par le systématique de forme, pas par les données — ATTENTION (#166) : le volet « la lecture interne mène de +2,83 » est RÉTRACTÉ, cet avantage était l'artefact d'étalonnage. L'identité algébrique entre les deux lectures tient (c'est de l'algèbre) ; le classement entre elles, non. À étalonnage cohérent, l'échange sombre ne mène plus rien.",
    "magnitude": "Δχ² = 2,83 entre lectures, ~1,7σ — indécidable aujourd'hui ; mais le discriminant prédit est net : 1,70 % d'écart de matière entre la recombinaison et le bas redshift (interne) contre 0,00 % (externe)",
    "refs": [
     "#161",
     "confluence.py",
     "#150",
     "#154",
-    "#163"
+    "#163",
+    "#166"
    ],
    "arbitre": "la dilution de la matière : tout jeu contraignant ω_m à mieux que ~1 % SIMULTANÉMENT à la recombinaison (Planck/ACT/SPT) et à bas redshift (DR3 BAO + amas + croissance). Si l'écart mesuré est compatible avec 0 à moins de 1 %, la lecture interne à ε ≈ 0,023 est exclue et l'externe survit ; s'il vaut 1,5-2 %, c'est l'inverse. Aucun des deux modèles n'a le droit de réajuster ε ou β après coup pour absorber l'écart (règle 5 : ils gardent h, ω_b, Ω_m, rien de plus)",
    "lectures": [

@@ -2307,3 +2307,61 @@ reste préférée par l'AIC sur Planck complet** : accrétion 1992,03 (k = 3) co
 de plus. Même conclusion que sur la vraisemblance légère (#161), par un chemin indépendant :
 **les données ne réclament pas plus de liberté de forme que β n'en donne.** La rigidité paie ;
 c'est la position du croisement qu'elle ne prédit pas correctement.
+
+## 24/08 (Claude Code) — #165 QUATRIÈME VICE DE CRITÈRE DE LA JOURNÉE : LA v3 DE LA DÉGÉNÉRESCENCE ÉCHOUE SA VALIDATION
+`degenerescence_ilcdm_v3.py` (gelé e8b21204edac). Sa validation comparait `ilcdm_de` à
+`CUSTOM['wcdm']`, qui **recalcule Or à partir de Om′** — je réintroduisais dans la
+comparaison l'écart de rayonnement que j'avais moi-même diagnostiqué une heure plus tôt.
+|dE/E| de 8,4e−3 à 3,3e−2 → ÉCHEC → rien publié. Quatrième vice de conception en un jour
+(#148, #158, #162, #165), tous rattrapés par le protocole avant écriture. Corrigé en v4
+(gelé 1d5c847865d1) : comparant = `ilcdm_coh` (rayonnement cohérent, gelé en v2), fonds
+alors identiques à 4,4e−16.
+
+## 24/08 (Claude Code) — #166 ⚠ RÉTRACTATION MAJEURE : L'AVANCE DU CHAMPION DE L'ATLAS EST UN ARTEFACT D'ÉTALONNAGE (8,62 DES 9,84 UNITÉS)
+`degenerescence_ilcdm_v4.py` (gelé 1d5c847865d1). Validation : **fonds identiques à
+4,4×10⁻¹⁶ en quatre points déclarés.** Contrôle interne à ε = 0 : écart exactement 0,0000.
+
+**LE FAIT.** Au niveau du fond, `ilcdm_de`(Ω_m, ε) **est** `wcdm`(Ω_m′, w′) avec
+Ω_m′ = Ω_m − εΩ_de/(3−ε) et w′ = ε/3 − 1 : ce n'est pas une interaction, c'est une
+reparamétrisation. Mais `test_wE_v3.chi2` étalonne `r_d = r_drag(ω_b, Ω_m h²)`,
+`z_*`, `r_*` et surtout **R = √Ω_m · D_c(z_*)** à partir de **l'étiquette Ω_m**, alors que
+la densité de matière de ce modèle **avant recombinaison vaut Ω_m′**, inférieure de 1,7 %.
+Le modèle a donc **une densité de matière pour son expansion et une autre pour son
+étalonnage**. R est contraint à ~0,2 % : 1,7 % sur Ω_m, c'est plusieurs σ offerts.
+
+**LE CHIFFRE.** Minimum honnête de wCDM (profil complet en w, 21 valeurs, h/ω_b/Ω_m
+réoptimisés — donc pas de minimum local à invoquer) : **1423,874**, gain **+1,21** sur ΛCDM.
+Étalonnage-étiquette : 1415,25, gain +9,84. **Part imputable à l'artefact : 8,62 sur 9,84.**
+Signature : l'écart n'est pas un biais monotone mais change de signe avec ε (−94,9 à
+ε = −0,05 ; +10,7 à ε = +0,0213) — le fit choisit le ε où l'incohérence l'avantage. C'est la
+signature d'une liberté parasite exploitée, pas d'un effet physique.
+
+**CE QUI EST RÉTRACTÉ, SANS ATTÉNUATION.**
+- **#150** — le classement de l'atlas : les deux entrées iΛCDM sont invalides. L'iΛCDM 'de'
+  corrigé vaut +1,21, **derrière l'accrétion (+5,78) et CPL (+6,16)**.
+- **#154, #156, #158** — les trois volets de l'arbitre de T7 ont tous tourné dans le même
+  pipeline : ils testaient la robustesse d'un gain qui n'existe pas. Leur conclusion tombe.
+- **La RÉSOLUTION de T7** (#158, « préférence réelle à ~2-3σ ») : **RÉTRACTÉE**. T7 rouverte.
+- **Le verdict 2c de #161** (« la lecture interne bat l'externe de +2,83 ») : **RÉTRACTÉ** —
+  l'avantage de la lecture interne était le même artefact.
+- Mon pari déclaré au #154 (« le gain est un artefact primordial ») était **faux sur la cause
+  et juste sur la conclusion** : artefact, oui — d'étalonnage, pas de physique primordiale.
+
+**CE QUI N'EST PAS TOUCHÉ (vérifié, pas supposé).** La famille `invt` de l'accrétion garde
+`E² = Ω_m/a³ + Ω_r/a⁴ + Ω_de g(a)` : sa matière dilue exactement en a⁻³, donc l'étiquette
+EST la densité réelle et l'étalonnage est correct. **Aucun résultat du modèle d'Édouard n'est
+affecté** : ni le −12,6 Planck (CAMB, pas de priors comprimés), ni le jackknife #160, ni la
+chaîne #159, ni #163, ni l'identité algébrique du #161, ni E1/E3, ni le Grand Livre.
+`fond_jps` garde aussi a⁻³ : non touchée.
+
+**CE QUI RESTE DÛ.** (a) `ilcdm_dm` a la même maladie en pire — sa matière vaut Ω_m·a^ε, soit
+**−4,76 %** à a = 10⁻³ au meilleur ε ; diagnostic posé, verdict non rendu, étude propre à
+geler. (b) Un **atlas v2** est dû : `atlas_v1.py` est gelé et ses ancres contiennent les
+valeurs fausses ; il ne doit pas être rejoué tel quel pour les deux lignes iΛCDM.
+
+**LA LEÇON, ET ELLE DÉPASSE CE CORPUS.** Les priors comprimés du CMB (R, l_A) et les formules
+d'ajustement de r_d supposent une matière en a⁻³. Appliqués tels quels à un modèle
+d'interaction où ce n'est plus vrai, en utilisant le Ω_m d'aujourd'hui plutôt que la densité
+d'avant recombinaison, ils **fabriquent un Δχ² de l'ordre de 10 — de quoi inventer une
+détection à 3σ**. Une large littérature sur l'énergie noire en interaction utilise exactement
+ce raccourci. C'est la note méthodologique la plus publiable sortie de ce corpus.

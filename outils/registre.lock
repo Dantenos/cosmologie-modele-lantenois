@@ -433,5 +433,10 @@
   "sha256": "228ab60b6b991911aa73abaa29348f1d2099a6797d2bc565c7eeb2a35dbc93e7",
   "gele_le": "2026-08-24T21:35:42",
   "extrait": "REFERENT OU PRECISION, v2 — LE PLANCHER DE GRILLE LEVE."
+ },
+ "scripts/empreinte_hemispheres.py": {
+  "sha256": "d9a9d43fc04d7aa5283ce080954e5a122ad9e3ea047159b1d2fc3eb58a648056",
+  "gele_le": "2026-08-24T21:51:44",
+  "extrait": "LE #116 PORTAIT-IL DE LA SIGNIFICATIVITE FABRIQUEE PAR L'EMPREINTE AU CIEL ?"
  }
 }

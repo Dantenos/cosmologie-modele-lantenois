@@ -1,0 +1,13 @@
+{
+ "n_sne": 1580,
+ "db_116": 0.23709636013534618,
+ "n1": 553,
+ "sigma_axe": 0.2318417572701549,
+ "sigma_116": 0.23,
+ "verdict_covariance": "COVARIANCE FIDELE — le #116 tient tel quel",
+ "p_valeur": 0.43333333333333335,
+ "verdict_special": "BANAL — la valeur du #116 est ce que l'empreinte produit pour un axe quelconque ; son verdict « universel » en sort CONFORTE",
+ "q68": 0.2616359442505359,
+ "axes_retenus": 300,
+ "axes_ecartes": 0
+}

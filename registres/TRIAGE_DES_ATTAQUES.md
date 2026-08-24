@@ -396,3 +396,8 @@ crédit du binôme : le soupçon humain a vu ce que quatre relectures machine on
 | 76 | mon test du référent (#197, v1) | **ARRÊTÉ PAR SA PROPRE VALIDATION B** : au pas de grille 0,001, σ ne peut pas descendre sous 0,001, donc à k = 4 le facteur mesuré vaut 2,00 au lieu des 2,8-5,6 exigés. Rien publié. L'exécution montrait pourtant les quatre ε **identiques** aux trois échelles et les gains suivant k² à la troisième décimale — mais substituer cette preuve à celle qui était demandée serait le piège du #176. v2 gelée avec un balayage fin au pas 0,0001. |
 
 **Bilan : 10 attaques justes, 67 affirmations réfutées, rétrogradées ou corrigées.**
+
+| 77 | mon projet de papier E sur la sélection angulaire de Pantheon+ | **TUÉ AVANT D'EXISTER (#198)** : les quatre items sont publiés, le plus ancien depuis 2015 (Bengaly, Bernui & Alcaniz), le plus récent quatre jours avant (Alcaniz et al., arXiv:2608.20135). Le |b|<5 n'est pas une découverte à 11,7σ mais une coupure documentée déjà codée en dur dans les mocks publiés. L'écrire coûterait de la crédibilité. |
+| 78 | le #116 (Δβ = +0,22 ± 0,23, hémisphères) portait-il de la significativité fabriquée par l'empreinte ? | **NON, ET C'EST MESURÉ (#198)** : 300 axes aléatoires, SNe jamais déplacées, donnent σ_axe = 0,2318 contre le σ_Δ = 0,2300 annoncé — rapport 1,01, covariance FIDÈLE — et p = 0,433, donc BANAL. Le verdict « universel » en sort conforté. **Mais l'empreinte peut fabriquer 1,14 σ_Δ ici, plus que les 0,7σ de Bengaly : toute affirmation hémisphérique future sous ~1,1σ est sans valeur sans nul préservant l'empreinte.** |
+
+**Bilan : 10 attaques justes, 69 affirmations réfutées, rétrogradées ou corrigées.**

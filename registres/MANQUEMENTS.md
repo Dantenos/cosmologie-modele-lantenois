@@ -3820,3 +3820,66 @@ le rapport E(4)/E(1)** dans un sens ou dans l'autre : c'est ce qui rend licite d
 après avoir vu le blocage. La v2 ajoute en outre une **seconde** exigence d'opérativité (le
 gain médian doit croître comme k² à ±25 %), précisément parce que c'est elle qui, dans la v1,
 voyait ce que la première était aveugle à voir.
+
+## 24/08 (Claude Code) — #198 LE PAPIER E EST MORT, ET SA MORT A FERMÉ UNE FAILLE DU CORPUS
+Vérification de **nouveauté** commandée avant d'écrire un papier E sur la fonction de
+sélection angulaire de Pantheon+. Verdict : **il ne faut pas l'écrire.** Item par item :
+
+| item proposé | statut |
+|---|---|
+| 0 SNe à \|b\|<5°, 11,7σ | **mort** — c'est une coupure documentée (Scolnic, E(B−V)<0,20) déjà **codée en dur** dans les recettes de mocks publiées (Bengaly, Andrade & Alcaniz, arXiv:1810.04966, prescriptions MC-iso1/2). En rapporter le σ est une erreur de catégorie. |
+| Stripe 82, 26,3 %, ×36 | **redite** — Colin, Mohayaee, Rameez & Sarkar (arXiv:1808.04597) : *« confined to a narrow disk at low declination »* ; Zhao, Zhou & Chang (MNRAS 486, 5679) rattachent le dipôle à SDSS. |
+| 367/648 cellules vides, 52,9σ | **ancien, et statistique plus faible** — Bengaly, Bernui & Alcaniz 2015 publiaient déjà p < 10⁻⁴ ; Zhao et al. le partage 922 contre 126. |
+| décomposition local/grande échelle | **le meilleur item, et encore une redite** — quatre groupes y arrivent, et Alcaniz et al. (arXiv:2608.20135) ont publié la décomposition masque/fonction de sélection **quatre jours** avant. |
+| le facteur π/2 | **ne pas imprimer** — Archimède. |
+
+**Écrire ce papier coûterait de la crédibilité.** Tout référé du domaine a lu Bengaly 2015 et
+Colin 2019. Le papier E est abandonné, et c'est la vérification qui l'a tué avant qu'il existe.
+
+**MAIS LA MÊME VÉRIFICATION A RAPPORTÉ UN FAIT QUI NOUS VISE.** Bengaly, Andrade & Alcaniz
+mesurent que **l'empreinte seule** déplace une statistique hémisphérique de H₀ de 3,4σ à
+2,7σ, tout le reste égal : une couverture non uniforme **fabrique ~0,7σ de significativité
+apparente**. Et Colin et al. vont plus loin — ils *abandonnent un paramètre libre* à
+l'empreinte : *« Due to the anisotropic sky coverage of the dataset, it would be hard to find
+n̂ from the data, so we choose it to be along the CMB dipole direction. »*
+
+**AUDIT DE NOS PROPRES ENSEMBLES NULS.** La question posée au corpus était : nos nuls
+réutilisent-ils les positions **observées** des SNe ?
+- `etude_E1_vides.py` (#141-142) : fait tourner le **catalogue de vides**, SNe immobiles.
+  Nul **préservant l'empreinte** — celui que la littérature recommande. ✅
+- `etude_E1_manche2/3` : **permutent les étiquettes parmi les SNe observées**. C'est le
+  « shuffle test » de Bengaly 2015. ✅
+- **#116**, la première manche des hémisphères (Δβ = +0,22 ± 0,23) : aucun des deux. Et le
+  corpus le savait — le docstring **gelé** d'`etude_E1_vides` écrit noir sur blanc
+  « systématique d'empreinte au ciel **non traitée en #116** ». Seul point exposé.
+
+**ON L'A FERMÉ.** `empreinte_hemispheres.py` (gelé **d9a9d43fc04d**) : 300 axes de partage
+tirés uniformément, **les 1580 SNe ne bougeant jamais de leur position observée**.
+- **Validation A** : l'axe du dipôle CMB rend **553 / 1027** SNe exactement, Δβ = **+0,237**
+  contre les +0,220 du #116. C'est bien le #116 qu'on teste.
+- **Validation B** : moyenne vectorielle des 300 axes = 0,0584 pour un seuil de 0,1732.
+- **Critère 1** : σ_axe = **0,2318** contre le σ_Δ = **0,2300** annoncé au #116 — **rapport
+  1,01**.
+- **Critère 2 : COVARIANCE FIDÈLE.** Le #116 tient tel quel.
+- **Critère 3 : p = 0,433 → BANAL.** La valeur du #116 est exactement ce que l'empreinte
+  produit pour un axe quelconque. **Son verdict « universel » en sort CONFORTÉ, pas menacé** —
+  ce qui était prévisible mais qu'il fallait mesurer : une significativité fabriquée pousse
+  CONTRE un verdict d'universalité, jamais pour.
+
+**LE NOMBRE À GARDER, ET C'EST UN AVERTISSEMENT POUR LA SUITE.** Le quantile à 68 % de
+\|Δβ\| sur axes aléatoires vaut **0,2616, soit 1,14 σ_Δ**.
+> **Dans NOTRE pipeline, l'empreinte seule peut fabriquer ~1,1σ apparents — plus que les
+> ~0,7σ que Bengaly et al. mesurent chez eux. Toute affirmation hémisphérique future
+> au-dessous de ~1,1σ est donc compatible avec l'empreinte seule, et ne vaut rien sans un
+> nul préservant les positions observées.**
+
+Deux références à porter au papier A quoi qu'il arrive : **arXiv:1810.04966** (Bengaly,
+Andrade & Alcaniz) et **arXiv:2605.18470** (Quintana-Estellés & Ruiz-Lapuente, *« one can not
+determine with robustness the direction of an anisotropy of H₀ using the present SNe Ia large
+data samples »*).
+
+**CE QUI RESTE OUVERT, ET C'EST LA VRAIE LACUNE DU DOMAINE.** Aucune analyse SN Ia ne
+reconstruit une fonction de sélection angulaire **par relevé** ni n'en propage l'incertitude
+— alors que les mêmes auteurs le font intégralement pour le dipôle des quasars
+(arXiv:2009.14826, arXiv:2206.05624). Cette asymétrie méthodologique est une ligne d'attaque
+légitime, et son livrable serait **un déplacement de paramètre**, pas un compte de déficit.

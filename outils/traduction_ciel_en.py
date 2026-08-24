@@ -3,6 +3,60 @@
 l'application, pour qu'aucun fragment ne soit avale par une entree plus courte."""
 
 MAP = {
+ # --- v8 : forme exacte avec balises intercalees (#196, quatrieme passe)
+ ' voisines</b> pour <b>':
+   ' neighbours</b> against <b>',
+ # --- v8 : litteraux JS exacts (#196, troisieme passe)
+ "'tout le ciel'":
+   "'whole sky'",
+ "'pôles (P)'":
+   "'poles (P)'",
+ "'axe galactique (G)'":
+   "'galactic axis (G)'",
+ "'par la tranche (E)'":
+   "'edge-on (E)'",
+ "'vue externe'":
+   "'external view'",
+ "'isoler |b| < 10°'":
+   "'isolate |b| < 10°'",
+ # --- v8 : etiquettes d'interface (#196, seconde passe)
+ 'MAIS le rapport Stripe 82 / reste ne vaut que ×':
+   'BUT the Stripe 82 / rest ratio is only ×',
+ '>échantillon</div>':
+   '>sample</div>',
+ '>comparaison</div>':
+   '>comparison</div>',
+ '>analyse</div>':
+   '>analysis</div>',
+ '>structure</div>':
+   '>structure</div>',
+ 'Filtres &amp; mesures':
+   'Filters &amp; measures',
+ # --- v8 : entrees ajoutees pour la paire EN/FR complete (#196)
+ '<b>Contraste de sélection.</b> La taille des points suit leur densité locale — le nombre de voisines à moins de ':
+   '<b>Selection contrast.</b> Point size follows local density — the number of neighbours within ',
+ ' : l’avantage de Stripe 82 est de GRANDE ÉCHELLE, pas local. Tout l’échantillon est fait de taches serrées ; Stripe 82 est la plus étendue, pas la plus dense. J’avais parié le contraire, la vérification l’a réfuté.':
+   " : Stripe 82's advantage is LARGE-SCALE, not local. The whole sample is made of tight patches; Stripe 82 is simply the widest, not the densest. I had bet the opposite, and the check refuted it.",
+ '<b>Visite 3/4 — le nul.</b> En filigrane, 1580 directions tirées uniformément, graine fixe.':
+   '<b>Tour 3/4 — the null.</b> Behind it, 1580 directions drawn uniformly, fixed seed.',
+ '<b>Ciel isotrope.</b> En filigrane, 1580 directions tirées uniformément sur la sphère, graine fixe ':
+   '<b>Isotropic sky.</b> Behind it, 1580 directions drawn uniformly on the sphere, fixed seed ',
+ ', uniformité vérifiée avant affichage. C':
+   ', uniformity checked before display. Th',
+ 'est ce que serait ce ciel sans poussière galactique et sans stratégie de relevé.':
+   'is is what this sky would look like without galactic dust and without survey strategy.',
+ ' attendues si le ciel était isotrope, soit <b>×':
+   ' expected if the sky were isotropic, i.e. <b>×',
+ ' attendues si le ciel était isotrope.':
+   ' expected if the sky were isotropic.',
+ '°. Médiane : <b>':
+   '°. Median: <b>',
+ 'Outils &amp; caméra':
+   'Tools &amp; camera',
+ ' Mpc. La caméra s’aligne dessus et le traverse.':
+   ' Mpc. The camera aligns with it and flies through.',
+ '>zones du ciel<':
+   '>sky regions<',
  # --- message de panne auto-diagnostique (ajoute apres les captures d ecran ;
  #     jamais entre dans la table, ce qui a fait refuser le generateur bilingue)
  "PANNE DE RENDU.": "RENDER FAILURE.",

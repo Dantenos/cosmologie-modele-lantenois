@@ -2133,3 +2133,16 @@ garde 79 % du gain, retirer LRG1 le RENFORCE (+11,33) : ROBUSTE-LOO, aucun trace
 Si DES-SN5YR et Union3 confirment, ce pipeline aura mis au jour une préférence d'échange
 sombre ε ≈ +0,02 à Δχ² ≈ 10 sur données publiques — née d'un atlas construit pour falsifier
 notre propre modèle. Le greffier tient T7 ; le Livre lui doit sa rangée sombre (v2).
+
+## 24/08 (Claude Code) — #157 T8 DISSÉQUÉE : LE CREUX EST DANS LES SNe SDSS DE LA BANDE 82, EN MAGNITUDE, PAS EN COSMOLOGIE
+Diagnostic en espace-magnitude du patch DESIVAST (T8, β = 1,84 ± 0,31) : le résidu μ moyen du
+patch vaut −18,7 ± 9,7 mmag (vs +3,1 dehors), et il est STRUCTURÉ en z — normal sous z = 0,08,
+**−46 ± 15 mmag à z = 0,15-0,5 (3σ)**, −142 ± 52 au-delà (12 SNe). Composition : cette tranche
+est à 82 % du relevé SDSS (ID1) — et AU SEIN DU MÊME RELEVÉ, dans/hors empreinte : **−49 ± 17
+contre +3,1 mmag**. Le candidat n'est plus « β dépend de la direction » mais « structure angulaire
+de calibration dans la bande 82 » (connue pour ses gradients en RA). Arbitre DES tenté : 40 SNe
+d'overlap à z̄ = 0,04 — INSUFFISANT, constaté et consigné. **Arbitre re-spécifié au greffe** :
+(i) cartes de calibration über-cal/DR de la bande 82 sur la zone des vides SGC ; (ii) la
+recalibration croisée Dovekie (SDSS-DES) ; (iii) à défaut, LSST. T8 reste OUVERTE, lectures
+affinées — la lecture « horloge par la petite porte » perd du terrain au profit de la calibration.
+Diagnostic par poids diagonaux (déclaré : caractérisation, pas un fit pleine covariance).

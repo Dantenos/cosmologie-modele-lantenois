@@ -86,13 +86,13 @@ Lectures rivales :
 
 ## T8-patch-desivast — OUVERTE <small>(ouverte le 2026-08-24)</small>
 
-**β ajusté sur les 227 SNe Pantheon+ de l'empreinte DESIVAST (deux calottes BGS, z médian 0,12) = 1,84 ± 0,31, contre 2,45 ± 0,22 pour des tirages aléatoires de même taille — le patch est bas, pas l'échantillonnage**  
-magnitude : **1,9σ sous 2,42 (candidat, sous le seuil de 2σ — ouvert au greffe, pas affirmé)** · refs : #155, ETUDE_E1_manche3.md
+**β ajusté sur les 227 SNe Pantheon+ de l'empreinte DESIVAST (deux calottes BGS, z médian 0,12) = 1,84 ± 0,31, contre 2,45 ± 0,22 pour des tirages aléatoires de même taille — le patch est bas, pas l'échantillonnage — disséqué #157 : le creux vit à z = 0,15-0,5 (−46 ± 15 mmag), porté à 82 % par les SNe SDSS, et DANS le même relevé le différentiel dans/hors zone est −52 mmag**  
+magnitude : **1,9σ sous 2,42 (candidat, sous le seuil de 2σ — ouvert au greffe, pas affirmé)** · refs : #155, ETUDE_E1_manche3.md, #157
 
 Lectures rivales :
 - systématique de calibration localisée (patchs photométriques bas-z de Pantheon+)
 - fluctuation (1,9σ, un patch parmi d'autres — effet de sélection du regard)
 - vraie dépendance directionnelle/environnementale de w — la lecture horloge par la petite porte
 
-**Arbitre (gravé d'avance)** : refaire β sur la MÊME empreinte avec une photométrie indépendante : DES-SN5YR (RA/DEC publics) puis Union3 — données en cours de récupération ; si le patch reste bas à >2σ sur deux photométries, ouvrir une étude gelée dédiée
+**Arbitre (gravé d'avance)** : re-spécifié #157 (l'overlap DES est insuffisant : 40 SNe à z̄ 0,04, constaté) : structure de calibration de la bande 82 (über-cal/DR16) sur la zone des vides SGC ; recalibration croisée Dovekie SDSS-DES ; à défaut LSST
 

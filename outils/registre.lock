@@ -228,5 +228,15 @@
   "sha256": "b5471002fb6c163c838859684e11854d9a23cfd7c775a7948bab4f10a4b1e68c",
   "gele_le": "2026-08-24T03:52:39",
   "extrait": "AUDIT iLCDM, VOLET 2 — LOO traceurs BAO et partage en redshift. CRITERES PRE-ENR"
+ },
+ "scripts/jackknife_planck.py": {
+  "sha256": "1bbfd10506a354a94efabd72b20ddadb93eff04cb183d7217d55ef8593296462",
+  "gele_le": "2026-08-24T03:56:20",
+  "extrait": "jackknife_planck.py — Le test qui reste : le Delta chi2 = -12.6 (Planck+BAO+SN c"
+ },
+ "outils/fig_omega.py": {
+  "sha256": "286233ee99aa430a5e0c93cfe827d1869e2a090e3811211a2bd5c7a175d0279a",
+  "gele_le": "2026-08-24T03:57:15",
+  "extrait": "fig_omega v1 — l'histoire du budget Omega sous la loi w = -beta/(3Ht). CRITERES"
  }
 }

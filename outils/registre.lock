@@ -388,5 +388,10 @@
   "sha256": "714d6f430930c4fb8a5dcf153a56a697144db9193458bbf41a6ec64204f27cdb",
   "gele_le": "2026-08-24T17:30:36",
   "extrait": "CONTROLE D'EQUITE (regle 2) — NOTRE eps CONTRE LA SEULE MESURE EN VRAISEMBLANCE "
+ },
+ "scripts/confrontation_epsilon.py": {
+  "sha256": "7eee4fed04eacff26e21c0c68fdf8051b36bf4560c4d50d9cc6b6c5ba7fbd20d",
+  "gele_le": "2026-08-24T19:23:58",
+  "extrait": "LE #190 EST-IL VRAI ? — TEST DE MA PROPRE AFFIRMATION PAR LES DONNEES DES AUTRES"
  }
 }

@@ -1,0 +1,94 @@
+{
+ "f": 0.8388748194049452,
+ "K_GEO_mesure": 0.8318722534936367,
+ "K_GEO_variation": 9.626864722049968e-05,
+ "complete": [
+  {
+   "nom": "Tsiapi 2019 L(H)CDM2 Planck seul",
+   "eps": 0.0014848084303467532,
+   "esp": 0.0025166244582148357,
+   "esm": 0.0025166244582148357,
+   "src": "arXiv:1810.12902 tab.1"
+  },
+  {
+   "nom": "Tsiapi 2019 L(H)CDM2 joint",
+   "eps": -0.00020132995665718688,
+   "esp": 0.0018119696099146818,
+   "esm": 0.001962967077407572,
+   "src": "arXiv:1810.12902 tab.2"
+  },
+  {
+   "nom": "Tsiapi 2019 L(H)CDM1 joint [conv. approchee]",
+   "eps": 0.003019949349857803,
+   "esp": 0.0015099746749289015,
+   "esm": 0.0012583122291074179,
+   "src": "arXiv:1810.12902 tab.2"
+  },
+  {
+   "nom": "Kumar 2025 PL18+DESI DR2 (w_dm const.)",
+   "eps": -0.0019378008328254236,
+   "esp": 0.0009563172941216376,
+   "esm": 0.0009563172941216376,
+   "src": "arXiv:2504.14419 tab.1"
+  },
+  {
+   "nom": "Li 2025 Planck+DESI DR2+DESY5 (Q=bH rho_c)",
+   "eps": -0.0012583122291074179,
+   "esp": 0.0007549873374644507,
+   "esm": 0.0007549873374644507,
+   "src": "arXiv:2510.11363"
+  },
+  {
+   "nom": "Li 2024 CMB+DESI DR1+DESY5 [emboite]",
+   "eps": -0.00025166244582148356,
+   "esp": 0.0009227623013454399,
+   "esm": 0.0009227623013454399,
+   "src": "arXiv:2407.14934"
+  }
+ ],
+ "comprimee": [
+  {
+   "nom": "Yang 2025 (priors Planck + DESI DR1)",
+   "eps": -0.0061237861816561,
+   "esp": 0.002432736976274341,
+   "esm": 0.0027682869040363193,
+   "src": "arXiv:2505.09879"
+  },
+  {
+   "nom": "nous #188 etalonnage-etiquette",
+   "eps": 0.006,
+   "esp": 0.003,
+   "esm": 0.002,
+   "src": "MANQUEMENTS #188"
+  },
+  {
+   "nom": "nous #188 etalonnage-coherent",
+   "eps": -0.003,
+   "esp": 0.001,
+   "esm": 0.002,
+   "src": "MANQUEMENTS #188"
+  },
+  {
+   "nom": "nous #190 r_s direct + R etiquette",
+   "eps": 0.002,
+   "esp": 0.002,
+   "esm": 0.003,
+   "src": "MANQUEMENTS #190"
+  },
+  {
+   "nom": "nous #190 arbitre (R retire)",
+   "eps": -0.01,
+   "esp": 0.002,
+   "esm": 0.002,
+   "src": "MANQUEMENTS #190"
+  }
+ ],
+ "moyenne": -0.0006386036372202986,
+ "sigma_moyenne": 0.0004527608960395013,
+ "chi2_coherence": 9.327320005400296,
+ "ddl": 5,
+ "etendue_complete": 0.0049577501826832265,
+ "etendue_comprimee": 0.016,
+ "verdict": "CONFIRMEE PAR L'EXTERIEUR — les mesures en vraisemblance complete se groupent, celles par priors comprimes se dispersent d'un facteur 3.2",
+ "tension": []
+}

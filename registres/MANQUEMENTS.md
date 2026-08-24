@@ -3371,3 +3371,106 @@ opposable non plus, et je ne la promeus pas au rang de résultat.
 
 C'est un énoncé **méthodologique**, vérifiable, et il ne dépend d'aucune thèse du corpus. Il
 survit même si tout le reste tombe. Versé au greffe ; T10 reste ouverte avec cet énoncé.
+
+## 24/08 (Claude Code) — #191 J'AI FAIT JUGER MON PROPRE ACQUIS PAR LES DONNÉES DES AUTRES
+`confrontation_epsilon.py` (gelé **7eee4fed04ea**). Critères gelés **avant exécution ET avant
+d'avoir les valeurs publiées** — la vérification bibliographique tournait encore quand j'ai
+gelé. Je ne pouvais donc pas accorder les critères aux chiffres, et c'est vérifiable par
+l'horodatage du lock.
+
+**L'AFFIRMATION MISE EN JEU, la mienne.** Le #190 ne revendiquait qu'une chose : « dans la
+famille ρ_m ∝ a^(ε−3), ε n'est pas identifiable par des priors comprimés ». Preuve **interne**
+— quatre choix de comptabilité déplacent ε de +0,0060 à −0,0100 sur des données identiques —
+donc suspecte : elle ne testait que mon propre pipeline.
+
+**LA TROUVAILLE BIBLIOGRAPHIQUE, ET ELLE EST GROSSE.** L'arbitre que j'avais gravé pour T10 au
+#190 — « refaire ce modèle avec un Boltzmann modifié sur Planck 2018 + DESI DR2, combinaison
+que personne n'a publiée » — **existe déjà, et deux fois.**
+- **Kumar, Ajith & Verma (arXiv:2504.14419)** : CAMB modifié + Cobaya, Planck 2018 TT/TE/EE +
+  lentillage, DESI DR2 ; w_dm **constant**, c_s² fixée à 0 — le cas propre, fond seul.
+  w_dm = +0,00077 ± 0,00038, soit **ε = −0,00194 ± 0,00096**.
+- **Li et al. (arXiv:2510.11363)** : IDECAMB + Cobaya, NPIPE CamSpec + lentillage PR4, DESI
+  DR2 + DESY5 ; Q = βHρ_c donc ρ_c ∝ a^(−3−β) et **ε = −β exactement**.
+  β = 0,0015 ± 0,0009, soit **ε = −0,00126 ± 0,00075**.
+Mon « personne ne l'a publiée » du #190 était **faux**, et je le retire ici.
+
+**LE VERDICT GELÉ : CONFIRMÉE PAR L'EXTÉRIEUR.** Six mesures en vraisemblance complète
+(Tsiapi ×3, Kumar, Li ×2), converties chacune par une règle déclarée :
+| | étendue de ε | dispersion |
+|---|---|---|
+| famille **vraisemblance complète** (6 mesures) | 0,00496 | groupe cohérent, χ²/ddl = **1,865** |
+| famille **priors comprimés** (5 mesures) | **0,01600** | — |
+| rapport | **3,23** | seuil gelé : ≥ 3 |
+
+**Et la marge est mince, il faut le dire : 3,23 contre un seuil de 3, et χ²/ddl = 1,865 contre
+un seuil de 2.** Elle est mince **parce que la règle 6 m'y a obligé** : j'ai inclus le
+Λ(H)CDM1 de Tsiapi, dont la conversion n'est qu'approchée, précisément parce qu'il ÉLARGIT la
+famille complète et rend ma confirmation plus difficile. Sans lui — le choix confortable, que
+j'écarte — le rapport serait **4,67** et χ²/ddl **0,719**. Les deux nombres sont au registre ;
+c'est le premier qui vaut.
+
+**LE NOMBRE QUE LE CORPUS NE POUVAIT PAS PRODUIRE LUI-MÊME.**
+> **ε = −0,00064 ± 0,00045** (moyenne pondérée des six), zéro à **1,41σ**.
+Traduit : la matière d'aujourd'hui serait **−0,45 %** par rapport à ce qu'implique la
+recombinaison. À comparer au discriminant scellé de T9 (**1,70 %**) et à notre #188 cohérent
+(**−2,1 %**). **Aucune détection**, et un ordre de grandeur en dessous de ce que le #188
+annonçait des deux côtés.
+
+**CE QUE LE CRITÈRE 5 A MONTRÉ, QUE JE N'AVAIS PAS PRÉVU — observation, PAS verdict.**
+On demande à NOS données ce qu'elles pensent de chaque valeur publiée :
+| mesure (ère DESI) | notre config **étiquette** | notre config **cohérente** |
+|---|---|---|
+| Kumar 2025 PL18+DESI DR2 | Δχ² = +16,13 (**4,0σ**) | +1,60 (1,3σ) |
+| Li 2025 Planck+DESI DR2+DESY5 | +13,55 (**3,7σ**) | +3,58 (1,9σ) |
+| Li 2024 CMB+DESI DR1+DESY5 | +10,14 (**3,2σ**) | +7,90 (2,8σ) |
+
+**Notre étalonnage-étiquette REJETTE le consensus en vraisemblance complète à 3,2–4,0σ ;
+notre étalonnage cohérent l'ACCEPTE à 1,3–2,8σ.** C'est la LECTURE 1 de T10 désignée depuis
+l'extérieur. **Je ne l'applique pas**, et pour trois raisons écrites avant de regarder :
+(a) le critère qui a produit ces nombres posait une autre question — le seuil gelé exigeait
+Δχ² > 9 dans LES DEUX colonnes, et aucune ligne ne le remplit ; (b) nos deux configurations se
+contredisent par construction, donc leur désaccord avec un tiers ne départage rien ; (c) les
+trois valeurs de Tsiapi, de l'ère Planck 2015, penchent dans l'autre sens. **Règle 9 : l'ambigu
+ne devient pas une victoire, même quand il penche dans mon sens.**
+
+**LE 8e VICE DE CRITÈRE, ET C'EST LE PLUS INSTRUCTIF DE LA SESSION.**
+J'avais gelé une **validation B** : « K_GEO doit être constant à mieux que 2 % ». Elle a passé
+avec **0,010 %** — un sans-faute. **Et elle mesurait une chose qui n'existe pas.** Ma
+conversion (c) devait transformer le partage Ω_m^early / Ω_m^geo de Keil, Tutusaus &
+Blanchard (arXiv:2607.28326) en exposant. Vérification faite à la source : leur Ω_m^early et
+leur Ω_m^geo sont **deux paramètres normalisés à aujourd'hui**, alimentant deux parties
+distinctes de leur pipeline — **pas deux densités à deux époques**. Leur rapport n'a aucun
+bras de levier, et leur article ne publie **aucun z_dec**. De plus leur analyse **n'est pas la
+vraisemblance complète** : coupures d'échelle 35 < ℓ < 396, pas de lentillage, low-ℓ en EE
+seul. **Ma conversion reposait sur un contresens, et ma validation vérifiait sa constance au
+lieu de son existence.** Même famille que le #176 : *un contrôle qu'on peut satisfaire par
+autre chose que ce qu'on voulait vérifier.*
+Rien n'est contaminé — aucune entrée « geo » n'a jamais été admise, l'exclusion a précédé
+l'exécution finale. Mais **une validation qui passe à 0,010 % en mesurant du vide est plus
+dangereuse qu'une qui échoue**, et c'est pour ça qu'elle est numérotée.
+Ce qui SURVIT de la sonde : dans notre famille, le Ω_m que lit un ajusteur ΛCDM sur les
+distances tardives **n'est pas** l'étiquette — il dérive d'un facteur constant 0,8319 sur
+[−0,010 ; +0,010]. Fait mesuré, réutilisable, simplement sans rapport avec Keil et al.
+
+**UNE SECONDE ERREUR ÉVITÉE DE JUSTESSE.** J'allais attribuer à Yadav et al.
+(arXiv:2307.05155) la valeur w_dm = 0,000390 (+0,000754/−0,000753). **Elle n'y est pas** :
+elle appartient à Xu 2013 (arXiv:1312.3701). Ce que Yadav publie réellement, ce sont des
+**bornes unilatérales sous prior w_dm ≥ 0** — leur analyse **ne peut pas** contraindre ε > 0 —
+marginalisées sur une vitesse du son libre. Écartée pour ces raisons, avant entrée.
+
+**EXCLUSIONS, toutes motivées et toutes écrites** (règle d'admission post-hoc, donc rendue
+visible) : Keil (pas la vraisemblance complète + contresens ci-dessus) ; Yadav (unilatérale,
+prior positif, c_s libre) ; Ilić–Kopp–Skordis–Thomas (w **binné** en 8 tranches, pas un
+exposant constant — leur conclusion citée : *« no evidence for nonzero EoS in any of the eight
+redshift bins »*) ; arXiv:2506.09819 (fond PEDE, pas Λ) ; Kaeonikhom 2023 et Wang 2018
+(connues de **seconde main** seulement). **L'exclusion de Wang est anti-règle 6** — sa barre
+minuscule (±0,00028) dominerait la moyenne et l'écarter m'arrange ; je le dis plutôt que
+d'importer un chiffre non vérifié.
+
+**CE QUE J'ACCORDE (règle 5).** Les six modèles ne sont pas le nôtre : vide dynamique chez
+Tsiapi et Li, matière noire à w constant chez Kumar. Leurs données diffèrent des nôtres et
+entre elles (Planck 2015 vs 2018, DESI DR1 vs DR2, JLA vs Pantheon+). Deux des six sont du
+même groupe sur des données emboîtées, ce qui corrèle leur χ² de cohérence. **Cette étude ne
+mesure donc PAS ε — elle mesure une DISPERSION**, et c'est tout ce qu'elle a le droit de
+conclure. Le #190 en ressort confirmé **comme énoncé sur les priors comprimés**, pas comme
+mesure.

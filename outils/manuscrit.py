@@ -207,7 +207,16 @@ def main():
     print("  E. cles homonymes divergentes entre papiers")
     ne = 0
     for k, d in items_txt.items():
-        if len(d) > 1 and len(set(v[:70] for v in d.values())) > 1:
+        # Une EDITION TRADUITE (papierX_fr.tex) n'est pas un autre papier : ses entrees
+        # bibliographiques disent la meme chose dans une autre langue (« Sandia National
+        # Laboratories report » contre « rapport Sandia »). Les comparer produisait deux
+        # faux positifs. On regroupe donc chaque edition avec son original avant de
+        # comparer : le controle continue de detecter une vraie divergence ENTRE PAPIERS,
+        # et cesse d'en inventer une entre deux langues du meme papier.
+        souches = {}
+        for f, v in d.items():
+            souches.setdefault(re.sub(r"_(fr|en)\.tex$", ".tex", f), []).append(v)
+        if len(souches) > 1 and len(set(v[0][:70] for v in souches.values())) > 1:
             ne += 1
             print(f"     {k}")
             for f, v in d.items():

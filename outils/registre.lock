@@ -298,5 +298,30 @@
   "sha256": "a38014b821a8d0e5d53b57e8029565bc0baf9ea43df2fa571b24d450376d266f",
   "gele_le": "2026-08-24T11:21:37",
   "extrait": "BANC D'ESSAI DES LOIS D'ENERGIE NOIRE A UN PARAMETRE."
+ },
+ "outils/genere_ciel_v3.py": {
+  "sha256": "71474adaf64d0ed12f110ccbdc74311503762fcd7d5deeb95051944a1c99ebd3",
+  "gele_le": "2026-08-24T11:47:54",
+  "extrait": "genere_ciel_v3 — LE CONE D'OBSERVATION ET LE DEZOOM COSMIQUE (24/08/2026)."
+ },
+ "outils/genere_ciel_v3b.py": {
+  "sha256": "c09ef78c1d66dcdeb9e417631cd1ee714f2df487240629ddbec132f031b3161c",
+  "gele_le": "2026-08-24T11:49:19",
+  "extrait": "genere_ciel_v3b — LE CONE D'OBSERVATION ET LE DEZOOM COSMIQUE, CONTROLE CORRIGE."
+ },
+ "scripts/audit_domaines.py": {
+  "sha256": "3ae3db8982de24c69ec567a67b165ac67de062d0270c43cfc7fbf92108ec9994",
+  "gele_le": "2026-08-24T12:03:19",
+  "extrait": "AUDIT DES DOMAINES : QUELS « MINIMA » DE L'ATLAS SONT DES BORDS ?"
+ },
+ "scripts/audit_domaines_v2.py": {
+  "sha256": "7f6a2bff053dd794dacd5f23d8b1a2af808a7a86fcf5c40cce94e762674542a3",
+  "gele_le": "2026-08-24T12:08:17",
+  "extrait": "AUDIT DES DOMAINES v2 : QUELS « MINIMA » DE L'ATLAS SONT DES BORDS ?"
+ },
+ "outils/genere_ciel_v4.py": {
+  "sha256": "a0fcd941ca9aa969c464047f5ad44afb6cc44f3986065cd26069790759132ba3",
+  "gele_le": "2026-08-24T12:21:10",
+  "extrait": "genere_ciel_v4 — LE CIEL PANTHEON DEVENU OUTIL DIDACTIQUE (24/08/2026)."
  }
 }

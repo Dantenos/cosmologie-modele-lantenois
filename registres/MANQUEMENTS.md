@@ -2607,3 +2607,108 @@ MCEvidence ne se cite pas à côté d'un Δln B PolyChord, et les volumes de pri
 **or avec un seul paramètre, le facteur d'Occam EST le résultat.** Tout banc d'essai devra
 donc être INTERNE : même pipeline, mêmes données, même estimateur, priors déclarés, et
 sensibilité au prior rapportée. Leurs chiffres serviront de repère, jamais de comparant direct.
+
+## 24/08 (Claude Code) — #173 ⚠ AUDIT DÉCLENCHÉ PAR ÉDOUARD (« trop beau pour être vrai ») : LE #167 EST UN MINIMUM DE BORD, ET MON RAPPROCHEMENT DU #171 EST FAUX
+Édouard a signalé que les résultats de la nuit semblaient trop propres. Le #167 annonçait
+« ε préféré = +0,00000, gain **exactement** 0,000 ». Une valeur exacte à cinq décimales devait
+être vérifiée au lieu d'être crue. **Profil complet en ε, (h, ω_b, Ω_m) réoptimisés :**
+
+| ε | étiquette (atlas) | cohérent a_* | cohérent a_eq |
+|---|---|---|---|
+| −0,020 à −0,002 | **10⁹** | **10⁹** | **10⁹** |
+| 0,000 | 1425,086 | 1425,086 | 1425,086 |
+| +0,002 | 1420,589 | 1440,548 | 1445,185 |
+| +0,005 | 1416,612 | 1477,437 | 1495,991 |
+| +0,00706 | **1415,818** | 1512,196 | 1545,072 |
+| +0,020 | 1447,546 | 2235,831 | 2869,627 |
+
+**FAIT 1 — LA BRANCHE ε < 0 EST INACCESSIBLE, ET CE N'EST PAS MOI QUI L'AI CASSÉE.**
+`fond_ilcdm_dm` (atlas, gelé) impose la conservation totale : ρ_de = Ω_de − εΩ_m(a^(ε−3)−1)/(ε−3).
+Pour ε < 0 ce terme diverge vers +∞ quand a → 0, donc **ρ_de → −∞** et le fond est rejeté.
+C'est une propriété déclarée du modèle, pas un bug — mais elle vaut **aussi pour le fit
+d'origine de l'atlas (#150)** : celui-ci n'a jamais exploré que la moitié ε > 0.
+**RECTIFICATION DU #167 :** le « minimum » à ε = 0 est un **minimum DE BORD**. La phrase
+« son ε préféré tombe à zéro » doit se lire : *dans la seule moitié accessible du paramètre,
+le meilleur point est la frontière ε = 0, c'est-à-dire ΛCDM exactement.*
+
+**FAIT 2 — LA CONCLUSION DU #167 SURVIT, ET ELLE EST MÊME PLUS FORTE QUE CE QUE J'AVAIS ÉCRIT.**
+La montée du côté accessible est **très raide** : Δχ² = +15,5 dès ε = +0,002 pour
+l'étalonnage cohérent, contre −4,5 pour l'étalonnage-étiquette au même point. Traduit en
+contrainte : le cohérent donne **|ε| ≲ 0,0005 (unilatéral)**, l'étiquette une *détection*
+fallacieuse à +0,0071. Le correctif ne fait donc pas « tomber le gain à zéro » — il
+**resserre la contrainte d'un facteur ~4 et détruit la détection**. C'est le bon énoncé.
+
+**FAIT 3 — MON RAPPROCHEMENT DU #171 EST FAUX ET JE LE RETIRE.** J'avais écrit que
+Yang, Dai & Wang (arXiv:2505.09879), qui contraignent ρ_dm ∝ (1+z)^(3−ε) et annoncent
+**ε = −0,0073** à 2,4σ, portaient sur « notre famille exacte, mot pour mot ». **Non :**
+leur ε est **négatif**, donc dans la branche que notre implémentation interdit. La raison est
+transparente — ils posent très probablement Λ constante SANS imposer la conservation totale du
+secteur sombre, ce qui supprime la divergence de ρ_de ; notre `fond_ilcdm_dm` l'impose. **Ce
+sont deux modèles voisins, pas le même.** La comparaison de magnitude « même ordre, signe
+opposé » du #171 est donc **retirée** : elle comparait deux choses différentes. Ce qui reste
+vrai et vérifié : dans NOTRE famille conservative, l'étalonnage-étiquette fabrique une
+détection à ε = +0,0071 qui disparaît sous l'étalonnage cohérent.
+
+**FAIT 4 — CE QUI N'EST PAS TOUCHÉ, vérifié et non supposé.** Le profil du #166 volet 2
+montre que `ilcdm_de` accepte **les deux signes** de ε (χ² finis de −0,05 à +0,08) : la
+rétractation du #166 — 8,62 des 9,84 unités imputables à l'étalonnage, minimum honnête de
+wCDM à 1423,874 — repose sur un profil bilatéral et **tient sans réserve**.
+
+**LEÇON DE PROTOCOLE.** Un optimiseur qui rend une valeur exacte à cinq décimales rend une
+frontière, pas un minimum. Aucun de mes contrôles gelés ne testait la bilatéralité du
+domaine ; le soupçon humain l'a fait. Deuxième fois que ça arrive (voir #63 au TRIAGE).
+**À ajouter aux garde-fous : tout verdict sur un paramètre doit déclarer si son domaine est
+accessible des deux côtés du point rapporté.**
+
+## 24/08 (Claude Code) — #174 SIXIÈME VICE DE CRITÈRE DU JOUR : DEUX EXIGENCES GELÉES MUTUELLEMENT INCOMPATIBLES
+`audit_domaines.py` (gelé 3ae3db8982de) a refusé de publier sur sa propre validation. Le vice
+est structurel et il est le mien : j'avais gelé **à la fois** un balayage de 41 points sur
+β ∈ [0,5 ; 5] (pas = 0,1125) **et** l'exigence que ce balayage retrouve le χ² publié à ±0,3.
+Une grille de ce pas ne peut pas tomber sur le minimum : elle a rendu 1419,754 contre l'ancre
+1419,309. Aucun corps de script ne pouvait satisfaire les deux à la fois.
+**Sixième critère mal posé en une journée** (#148, #158, #162, #165, #173-adjacent, celui-ci),
+tous arrêtés par le protocole avant publication. Je consigne le taux lui-même : *je conçois
+les critères trop vite*, et c'est le protocole — pas ma vigilance — qui rattrape.
+Corrigé en `audit_domaines_v2.py` (gelé 7f6a2bff053d) par une séparation des rôles qui aurait
+dû être là dès le départ : **le balayage cartographie l'ACCESSIBILITÉ, le fit libre trouve le
+MINIMUM.** Aucun minimum n'est plus lu sur une grille.
+
+## 24/08 (Claude Code) — #175 AUDIT DES DOMAINES : TROIS FAMILLES DE L'ATLAS ONT UN MINIMUM DE BORD — LA NÔTRE N'EN FAIT PAS PARTIE
+`audit_domaines_v2.py` (gelé 7f6a2bff053d). Validation : le fit libre reproduit les quatre
+ancres #150 **à la troisième décimale** (1419,309 / 1423,843 / 1415,245 / 1415,818).
+Généralisation du contrôle né du #173, déclenché par le soupçon d'Édouard.
+
+| famille | domaine accessible | arg min | χ² | verdict |
+|---|---|---|---|---|
+| **accrétion (la nôtre)** | **100 %** | **2,5944** | 1419,309 | **minimum intérieur** |
+| wCDM | 100 % | −1,0238 | 1423,843 | minimum intérieur |
+| iΛCDM Q∼ρ_de | 100 % | +0,0213 | 1415,245 | minimum intérieur |
+| iΛCDM Q∼ρ_dm | 51,2 % | +0,0071 | 1415,818 | **BORD + DOMAINE MUTILÉ** (rejet à 1,3 pas) |
+| JPS (création) | 51,2 % | −0,0000 | 1425,086 | **BORD + DOMAINE MUTILÉ** (rejet à 1,0 pas) |
+| thawing | 100 % | −1,0000 | 1425,086 | **BORD** (borne déclarée, à 0,0 pas) |
+| holographique | 100 % | +0,6715 | 1476,522 | minimum intérieur |
+
+**CE QUI EST NOUVEAU (deux familles de plus que le #173).**
+- **JPS (création de matière)** a la même maladie que `ilcdm_dm` : la moitié du domaine est
+  rejetée (ρ_de diverge), et son minimum tombe à un pas du mur, exactement sur ΛCDM
+  (1425,086). Son entrée d'atlas ne se lit pas comme un minimum.
+- **thawing** est accessible partout mais son minimum tombe **exactement sur la borne
+  déclarée** w₀ = −1,0000 — où la famille dégénère en ΛCDM par construction
+  (g = exp((1+w₀)(1−a³)) → 1). Ce n'est pas un défaut d'implémentation : c'est un résultat
+  légitime (les données ne veulent pas de thawing) **mal étiqueté** — son χ² doit être
+  rapporté comme « ΛCDM, atteint à la borne du prior », jamais comme un ajustement propre.
+
+**CE QUI EST CONFIRMÉ.** `ilcdm_de` — celle qui porte la rétractation du #166 — est
+**accessible à 100 % avec un minimum intérieur**. Le profil bilatéral sur lequel repose le
+#166 est donc valide, et la rétractation tient sans cette réserve.
+
+**CE QUI NOUS CONCERNE, et il faut le dire sans le gonfler.** L'accrétion est **accessible à
+100 % avec un minimum intérieur à β = 2,5944**. Elle ne souffre d'aucun artefact de bord.
+C'est une bonne nouvelle **négative** : elle ne prouve rien sur la physique, elle retire
+seulement une objection qu'on aurait pu nous faire — et que nous venons de faire à trois
+autres. Rien de plus.
+
+**CONSÉQUENCE POUR L'ATLAS.** Sur les sept familles à un paramètre testées, **trois ont une
+entrée #150 qui ne se lit pas comme un minimum**, dont deux qui valent exactement ΛCDM. Le
+palmarès contient donc moins de résultats distincts qu'il n'affiche de lignes. À porter dans
+l'atlas v2, avec le reste (rétractations #166/#167).

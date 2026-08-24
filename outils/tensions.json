@@ -120,7 +120,8 @@
     "#156",
     "#158",
     "#166",
-    "#167"
+    "#167",
+    "#173"
    ],
    "lectures": [
     "artefact de l'implémentation v1 (échange appliqué à toute la matière + fond tardif incohérent avec les distance-priors primordiaux — déclaré au gel)",
@@ -131,7 +132,7 @@
     "arbitre": "un atlas v2 dont l'étalonnage (r_d, z_*, r_*, R) est tiré de",
     "date": "2026-08-24",
     "registre": "#167",
-    "verdict": "PAR LA NÉGATIVE : à étalonnage cohérent (densité de matière d'AVANT recombinaison, et non l'étiquette Ω_m), l'iΛCDM 'de' gagne +1,21 et l'iΛCDM 'dm' gagne exactement 0,000 (son ε préféré tombe à zéro). Contre +9,84 et +9,27 publiés. Il ne reste aucune préférence pour un échange sombre : la tension portait sur un artefact d'étalonnage, pas sur une physique. L'accrétion (+5,78, un paramètre) redevient première à l'AIC — par rétractation du rival, ce qui ne lui ajoute aucun mérite propre."
+    "verdict": "PAR LA NÉGATIVE : à étalonnage cohérent (densité de matière d'AVANT recombinaison, et non l'étiquette Ω_m), l'iΛCDM 'de' gagne +1,21 sur un profil BILATÉRAL (les deux signes de ε accessibles) ; l'iΛCDM 'dm' voit sa contrainte se resserrer à |ε| ≲ 0,0005 et sa détection à +0,0071 disparaître. RÉSERVE PORTÉE (#173) : pour 'dm' la branche ε < 0 est inaccessible par construction (ρ_de → −∞ si l'on impose la conservation totale), donc son verdict est UNILATÉRAL — il vaut dans la moitié accessible, ce qui est aussi la seule moitié qu'avait explorée le fit d'origine de l'atlas. Il ne reste aucune préférence pour un échange sombre. L'accrétion (+5,78, un paramètre) redevient première à l'AIC — par rétractation du rival, ce qui ne lui ajoute aucun mérite propre."
    }
   },
   {

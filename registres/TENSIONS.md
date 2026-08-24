@@ -76,7 +76,7 @@ Lectures rivales :
 ## T7-epsilon-ilcdm — RÉSOLUE <small>(ouverte le 2026-08-24)</small>
 
 **RÉSOLUTION RÉTRACTÉE (#166) — l'avance de l'iΛCDM sur l'atlas (ε ≈ +0,021, −9,8) est à 8,62/9,84 un ARTEFACT D'ÉTALONNAGE : même fond que wCDM (identité à 4,4e−16), mais r_d, z_*, r_* et R calculés avec l'étiquette Ω_m au lieu de la densité d'avant recombinaison Ω_m′. Le modèle cohérent gagne +1,21, derrière l'accrétion (+5,78) et CPL (+6,16). Les trois volets de l'arbitre (#154, #156, #158) ont tourné dans le pipeline vicié et ne valent plus. Question rouverte : reste-t-il UNE préférence pour un échange sombre à étalonnage cohérent ? À ce jour : +1,21, soit rien.**  
-magnitude : **ΔAIC = −3 à −4 sur CCBH/accrétion — au tableau, pas au palmarès** · refs : #150, ATLAS.md, #154, #156, #158, #166, #167
+magnitude : **ΔAIC = −3 à −4 sur CCBH/accrétion — au tableau, pas au palmarès** · refs : #150, ATLAS.md, #154, #156, #158, #166, #167, #173
 
 Lectures rivales :
 - artefact de l'implémentation v1 (échange appliqué à toute la matière + fond tardif incohérent avec les distance-priors primordiaux — déclaré au gel)
@@ -84,7 +84,7 @@ Lectures rivales :
 
 **Arbitre (gravé d'avance)** : un atlas v2 dont l'étalonnage (r_d, z_*, r_*, R) est tiré de la densité de matière d'AVANT recombinaison pour chaque modèle, et non de son étiquette Ω_m ; plus une étude propre sur 'ilcdm_dm', dont la matière dérive de −4,76 % à a = 1e−3 (diagnostic #166, verdict non rendu)
 
-**Résolution** (2026-08-24, #167) : PAR LA NÉGATIVE : à étalonnage cohérent (densité de matière d'AVANT recombinaison, et non l'étiquette Ω_m), l'iΛCDM 'de' gagne +1,21 et l'iΛCDM 'dm' gagne exactement 0,000 (son ε préféré tombe à zéro). Contre +9,84 et +9,27 publiés. Il ne reste aucune préférence pour un échange sombre : la tension portait sur un artefact d'étalonnage, pas sur une physique. L'accrétion (+5,78, un paramètre) redevient première à l'AIC — par rétractation du rival, ce qui ne lui ajoute aucun mérite propre. — par l'arbitre nommé.
+**Résolution** (2026-08-24, #167) : PAR LA NÉGATIVE : à étalonnage cohérent (densité de matière d'AVANT recombinaison, et non l'étiquette Ω_m), l'iΛCDM 'de' gagne +1,21 sur un profil BILATÉRAL (les deux signes de ε accessibles) ; l'iΛCDM 'dm' voit sa contrainte se resserrer à |ε| ≲ 0,0005 et sa détection à +0,0071 disparaître. RÉSERVE PORTÉE (#173) : pour 'dm' la branche ε < 0 est inaccessible par construction (ρ_de → −∞ si l'on impose la conservation totale), donc son verdict est UNILATÉRAL — il vaut dans la moitié accessible, ce qui est aussi la seule moitié qu'avait explorée le fit d'origine de l'atlas. Il ne reste aucune préférence pour un échange sombre. L'accrétion (+5,78, un paramètre) redevient première à l'AIC — par rétractation du rival, ce qui ne lui ajoute aucun mérite propre. — par l'arbitre nommé.
 
 ## T8-patch-desivast — OUVERTE <small>(ouverte le 2026-08-24)</small>
 

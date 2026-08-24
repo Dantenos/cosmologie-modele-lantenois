@@ -1,0 +1,229 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Le Cône d'Observation — atelier</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#07070a;color:#efe9dc;font:13.5px/1.5 Georgia,'Times New Roman',serif;overflow:hidden}
+canvas{position:fixed;inset:0;width:100vw;height:100vh;display:block;cursor:crosshair}
+canvas.drag{cursor:grabbing}
+#hud{position:fixed;left:20px;top:18px;max-width:372px;z-index:5;pointer-events:none}
+h1{font-size:16px;font-weight:normal;margin-bottom:2px}
+#sub{font-size:11px;color:#8f8878;margin-bottom:11px}
+#txt{background:rgba(12,12,16,.84);border-left:2px solid #c96a4a;padding:10px 12px;font-size:12px}
+#txt b{color:#d9b96a;font-weight:normal}
+.mono{display:block;margin-top:6px;font:10px/1.45 ui-monospace,Menlo,Consolas,monospace;color:#8f8878}
+#panneau{position:fixed;right:18px;top:18px;z-index:6;width:214px;text-align:right}
+.grp{margin-bottom:9px}
+.tt{font-size:10px;color:#6f6a5e;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+button{background:rgba(18,18,22,.92);color:#cfc8b8;border:1px solid #3a352c;padding:5px 9px;
+ font:11.5px Georgia,serif;cursor:pointer;transition:.15s;margin:0 0 4px 4px}
+button:hover{border-color:#8f8878;color:#efe9dc}
+button.on{background:#c96a4a;border-color:#c96a4a;color:#15100c}
+button.alt.on{background:#7fa3b8;border-color:#7fa3b8}
+#cpt{font:10.5px/1.6 ui-monospace,Menlo,Consolas,monospace;color:#8f8878;margin-top:7px}
+#cpt b{color:#d9b96a;font-weight:normal}
+#bas{position:fixed;left:20px;bottom:18px;z-index:6;display:flex;gap:5px;flex-wrap:wrap;max-width:52vw}
+#zbox{position:fixed;left:50%;transform:translateX(-50%);bottom:64px;z-index:6;width:min(430px,66vw);text-align:center}
+#zr{width:100%;accent-color:#c96a4a;cursor:pointer}
+#zlab{font:10.5px ui-monospace,Menlo,Consolas,monospace;color:#8f8878;margin-top:2px}
+#zlab b{color:#d9b96a;font-weight:normal}
+#ech{position:fixed;right:18px;bottom:18px;z-index:6;text-align:right;font:10.5px ui-monospace,Menlo,Consolas,monospace;color:#8f8878}
+#echv{color:#d9b96a;font-size:12.5px}
+#info{position:fixed;z-index:8;background:rgba(10,10,14,.95);border:1px solid #3a352c;
+ padding:7px 10px;font:10.5px/1.5 ui-monospace,Menlo,Consolas,monospace;color:#cfc8b8;
+ pointer-events:none;display:none;max-width:260px}
+#info b{color:#d9b96a;font-weight:normal}
+#note{position:fixed;left:50%;transform:translateX(-50%);bottom:18px;z-index:5;
+ font-size:10px;color:#5f5a50;text-align:center;pointer-events:none}
+</style></head><body>
+<canvas id="c"></canvas>
+<div id="hud"><h1>Le Cône d'Observation <span style="font-size:11px;color:#6f6a5e">· atelier</span></h1>
+<div id="sub">Les outils n'ajoutent aucune affirmation. Ils laissent voir celles qui sont déjà là.</div>
+<div id="txt"></div></div>
+<div id="panneau">
+ <div class="grp"><div class="tt">filtres</div><div id="f1"></div></div>
+ <div class="grp"><div class="tt">outils</div><div id="f2"></div></div>
+ <div id="cpt"></div></div>
+<div id="zbox"><input id="zr" type="range" min="0" max="1000" value="1000"><div id="zlab"></div></div>
+<div id="bas"></div>
+<div id="ech">rayon de vue<div id="echv"></div></div>
+<div id="info"></div>
+<div id="note">glisser pour tourner · molette pour zoomer · survoler un point pour sa ligne de visée</div>
+<script>
+const SN=__SN__,VD=__VD__,FR=__FR__,ISO=__ISO__,M=__MES__;
+const MPC=3.0857e22,AU=1.496e11,KPC=3.0857e19,RE=6.371e6;
+const NGP=M.ngp,GCV=M.gc;
+function dot(a,b){return a[0]*b[0]+a[1]*b[1]+a[2]*b[2]}
+function nrm(v){const n=Math.hypot(v[0],v[1],v[2])||1;return[v[0]/n,v[1]/n,v[2]/n]}
+function crs(a,b){return[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]]}
+const GU=nrm(crs(NGP,[0,0,1])),GV=nrm(crs(NGP,GU));
+const GP=nrm([GCV[0]-dot(GCV,NGP)*NGP[0],GCV[1]-dot(GCV,NGP)*NGP[1],GCV[2]-dot(GCV,NGP)*NGP[2]]);
+const GQ=nrm(crs(NGP,GP));
+const PLAN=[[.387],[.723],[1],[1.524],[5.203],[9.537],[19.19],[30.07]];
+const RCOS=M.dmax*1.12*MPC;
+const cv=document.getElementById('c'),g=cv.getContext('2d'),EL=id=>document.getElementById(id);
+let W,H,S,rx=-.32,ry=.5,vx=0,vy=.0012,drag=false,px=0,py=0;
+let Rview=RCOS,Rcible=RCOS,obs=false,zmax=M.zmax,mx=-1e9,my=-1e9,hit=null;
+let fS82=0,fZOA=0,fISO=0,laser=-1,tour=-1,tourT=0,intro=1;
+const ETAPES=[["1 · Terre",2.2*RE],["2 · Système solaire",45*AU],["3 · Voie lactée",26*KPC],["4 · Sphère",RCOS]];
+const T4="<b>"+M.n_sn+" supernovae</b>, "+M.n_void+" vides, "+M.n_frb+" sursauts radio. Le cône rouge est la zone d'évitement galactique : <b>"+M.n5+" SNe</b> à |b| &lt; 5° là où l'isotropie en veut "+Math.round(M.att5)+". Le pinceau doré est <b>SDSS Stripe 82</b> : "+M.n82+" SNe, "+M.pc82+" % de l'échantillon sur "+M.aire82+" % du ciel.<span class='mono'>évitement : "+M.n10+" à |b|&lt;10° pour "+Math.round(M.att10)+" attendues ("+M.sig10+"σ) · Stripe 82 : ×"+M.fac82+"<br>z médian "+M.zmed82+" dans la bande contre "+M.zmed+" ailleurs<br>géométrie fiducielle déclarée : ΛCDM plat Ω_m="+M.om+", H₀="+M.h0+" — PAS le modèle étudié</span>";
+const TXT=[
+ "<b>r = 0.</b> L'observateur. Tout ce qui suit est vu d'ici, et c'est la seule raison pour laquelle le ciel a cette forme.<span class='mono'>rayon terrestre 6 371 km</span>",
+ "Huit orbites en <b>rayon logarithmique</b>. Aucune supernova de l'échantillon n'est ici : la plus proche est un million de fois plus loin.<span class='mono'>rayon affiché 45 UA</span>",
+ "Le disque galactique, le Soleil à <b>8,2 kpc</b> du centre. C'est ce disque qui va trouer le ciel : sa poussière éteint ce qui est derrière.<span class='mono'>disque 15 kpc · plan orienté par le pôle nord galactique</span>",T4];
+const TOUR=[
+ [3,"<b>Visite 1/4 — le masque.</b> Le cône rouge marque |b| = 5° et 10°. Compte les points dedans : il n'y en a pas. Ce n'est pas l'Univers qui est vide là, c'est la poussière de notre galaxie qui ferme le rideau.<span class='mono'>0 SNe à |b|&lt;5° pour "+Math.round(M.att5)+" attendues</span>",{s82:0,zoa:0,iso:0}],
+ [3,"<b>Visite 2/4 — le pinceau.</b> Le faisceau doré balaye SDSS Stripe 82. Un quart de l'échantillon vit dans cette bande de 2,5° de large — et c'est précisément la région que la tension T8 du corpus accuse de porter un différentiel d'étalonnage.<span class='mono'>"+M.n82+" SNe sur "+M.aire82+" % du ciel = ×"+M.fac82+"</span>",{s82:1,zoa:0,iso:0}],
+ [3,"<b>Visite 3/4 — le nul.</b> En filigrane, 1580 directions tirées <b>uniformément</b> avec une graine fixe. C'est à quoi ressemblerait ce ciel s'il n'y avait ni poussière ni stratégie de relevé. Compare.<span class='mono'>graine "+M.graine+" · uniformité vérifiée à "+M.iso_sig+"σ</span>",{s82:0,zoa:0,iso:1}],
+ [3,"<b>Visite 4/4 — la profondeur.</b> Le curseur de redshift remonte le temps. Les objets proches sont partout ; les lointains sont dans les pinceaux. Un relevé profond coûte cher : on ne le fait pas sur tout le ciel.<span class='mono'>"+M.n_bas+" SNe à z ≤ 0,1 · z max = "+M.zmax+"</span>",{s82:0,zoa:0,iso:0}]];
+function rs(){W=cv.width=innerWidth*devicePixelRatio;H=cv.height=innerHeight*devicePixelRatio;S=Math.min(W,H)*0.40}
+addEventListener('resize',rs);rs();
+cv.onpointerdown=e=>{drag=true;px=e.clientX;py=e.clientY;cv.classList.add('drag')};
+addEventListener('pointerup',()=>{drag=false;cv.classList.remove('drag')});
+addEventListener('pointermove',e=>{mx=e.clientX*devicePixelRatio;my=e.clientY*devicePixelRatio;
+ if(!drag)return;vy=(e.clientX-px)*.0022;vx=(e.clientY-py)*.0022;ry+=vy;rx+=vx;px=e.clientX;py=e.clientY});
+cv.onwheel=e=>{e.preventDefault();if(!obs)Rcible*=Math.exp(e.deltaY*.0011)};
+function rot(x,y,z){const cy=Math.cos(ry),sy=Math.sin(ry),cx=Math.cos(rx),sx=Math.sin(rx);
+ const X=x*cy+z*sy,Z=-x*sy+z*cy,Y=y*cx-Z*sx,Z2=y*sx+Z*cx;return[X,Y,Z2]}
+const CAM=2.45,FOC=1.75;
+function proj(x,y,z){const[X,Y,Z]=rot(x/Rview,y/Rview,z/Rview);
+ if(obs){if(Z<0.02)return null;const s=1.15/Z;const r=Math.hypot(X,Y)*s;
+  if(r>2.4)return null;return[W/2+X*s*S,H/2-Y*s*S,Math.min(1.6,0.5+0.35/Z),Z]}
+ const d=CAM-Z;if(d<0.06)return null;const s=FOC/d;return[W/2+X*s*S,H/2-Y*s*S,s,Z]}
+function fade(a,b){const l=Math.log10(Rview);
+ return Math.max(0,Math.min(1,(l-a)/0.55))*Math.max(0,Math.min(1,(b-l)/0.55))}
+function bandeGal(rr,dg,col,al){const tb=Math.tan(dg*Math.PI/180);
+ for(const sg of[1,-1]){g.beginPath();let ok=true;
+  for(let i=0;i<=72;i++){const t=i/72*2*Math.PI,c=Math.cos(t),s=Math.sin(t);
+   const u=[GU[0]*c+GV[0]*s,GU[1]*c+GV[1]*s,GU[2]*c+GV[2]*s];
+   const v=nrm([u[0]+sg*tb*NGP[0],u[1]+sg*tb*NGP[1],u[2]+sg*tb*NGP[2]]);
+   const p=proj(v[0]*rr,v[1]*rr,v[2]*rr);if(!p){ok=false;break}
+   i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1])}
+  if(ok){g.closePath();g.globalAlpha=al;g.strokeStyle=col;g.lineWidth=devicePixelRatio;g.stroke()}}}
+function pinceau(rr,al){g.strokeStyle='#d9b96a';g.fillStyle='#d9b96a';g.lineWidth=devicePixelRatio;
+ for(const[a0,a1]of[[300,360],[0,60]]){const hi=[],lo=[];
+  for(let i=0;i<=24;i++){const A=(a0+(a1-a0)*i/24)*Math.PI/180;
+   for(const[d,arr]of[[1.25,hi],[-1.25,lo]]){const D=d*Math.PI/180;
+    arr.push([Math.cos(D)*Math.cos(A)*rr,Math.cos(D)*Math.sin(A)*rr,Math.sin(D)*rr])}}
+  const all=hi.concat(lo.reverse());g.beginPath();let ok=true;
+  for(let k=0;k<all.length;k++){const p=proj(all[k][0],all[k][1],all[k][2]);
+   if(!p){ok=false;break}k?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1])}
+  if(ok){g.closePath();g.globalAlpha=al*.14;g.fill();g.globalAlpha=al*.6;g.stroke()}}}
+function visible(i){const f=SN[i+3],s=f&1,bb=Math.abs(SN[i+5]);
+ if(SN[i+4]>zmax)return false;
+ if(fS82===1&&!s)return false; if(fS82===2&&s)return false;
+ if(fZOA===1&&bb>=10)return false; if(fZOA===2&&bb<10)return false;
+ return true}
+function mollweide(u){const b=Math.asin(Math.max(-1,Math.min(1,dot(u,NGP))));
+ const p=[u[0]-Math.sin(b)*NGP[0],u[1]-Math.sin(b)*NGP[1],u[2]-Math.sin(b)*NGP[2]];
+ let l=Math.atan2(dot(p,GQ),dot(p,GP));
+ let th=b;for(let k=0;k<6;k++){const d=(2*th+Math.sin(2*th)-Math.PI*Math.sin(b))/(2+2*Math.cos(2*th));
+  th-=d;if(!isFinite(th))break}
+ return[-2*Math.SQRT2/Math.PI*l*Math.cos(th),Math.SQRT2*Math.sin(th)]}
+function carte(){const bw=190*devicePixelRatio,bh=bw/2,x0=W-bw-20*devicePixelRatio,y0=H-bh-64*devicePixelRatio;
+ g.globalAlpha=.9;g.fillStyle='rgba(10,10,14,.82)';g.fillRect(x0-6,y0-6,bw+12,bh+12);
+ g.globalAlpha=.35;g.strokeStyle='#3a352c';g.lineWidth=devicePixelRatio;
+ g.beginPath();g.ellipse(x0+bw/2,y0+bh/2,bw/2,bh/2,0,0,7);g.stroke();
+ g.globalAlpha=.5;g.strokeStyle='#c96a4a';g.beginPath();
+ g.moveTo(x0,y0+bh/2);g.lineTo(x0+bw,y0+bh/2);g.stroke();
+ for(let i=0;i<SN.length;i+=6){if(!visible(i))continue;
+  const u=nrm([SN[i],SN[i+1],SN[i+2]]),m=mollweide(u);
+  g.globalAlpha=(SN[i+3]&1)?.95:.45;g.fillStyle=(SN[i+3]&1)?'#d9b96a':'#cfc8b8';
+  g.fillRect(x0+bw/2+m[0]*bw/2/1.0,y0+bh/2-m[1]*bh/2/1.0,1.4*devicePixelRatio,1.4*devicePixelRatio)}
+ g.globalAlpha=.55;g.fillStyle='#8f8878';g.font=(9*devicePixelRatio)+'px ui-monospace,monospace';
+ g.fillText('projection Mollweide · coordonnées galactiques',x0,y0+bh+13*devicePixelRatio)}
+function fr(){requestAnimationFrame(fr);
+ if(intro>0){intro-=0.011;Rcible=RCOS*(1+38*Math.max(0,intro)**3)}
+ if(tour>=0){tourT+=1/60;if(tourT>7.5){tour=(tour+1)%TOUR.length;lanceTour(tour)}}
+ if(!drag){vy*=.985;vx*=.985;vy+=(0.0011-vy)*.012;ry+=vy;rx+=vx}
+ Rview+=(Rcible-Rview)*0.055;
+ g.setTransform(1,0,0,1,0,0);g.fillStyle='#07070a';g.fillRect(0,0,W,H);
+ const fT=fade(6.0,8.6);
+ if(fT>0.01&&!obs){const p=proj(0,0,0);if(p){const r=RE/Rview*p[2]*S;
+  const gr=g.createRadialGradient(p[0]-r*.3,p[1]-r*.3,r*.1,p[0],p[1],r*1.02);
+  gr.addColorStop(0,'#4a7fa8');gr.addColorStop(.7,'#22475f');gr.addColorStop(1,'#0d1d28');
+  g.globalAlpha=fT;g.beginPath();g.arc(p[0],p[1],Math.max(r,1.5),0,7);g.fillStyle=gr;g.fill()}}
+ const fS=fade(10.5,14.2);
+ if(fS>0.01){const lm=Math.log10(30.07*1.5);
+  PLAN.forEach((a,k)=>{const rr=(Math.log10(a[0])+1)/(lm+1)*40*AU;
+   g.globalAlpha=fS*.5;g.strokeStyle='#7fa3b8';g.lineWidth=devicePixelRatio;g.beginPath();
+   let ok=true;for(let i=0;i<=64;i++){const t=i/64*2*Math.PI;
+    const p=proj(rr*Math.cos(t),rr*Math.sin(t)*.94,rr*Math.sin(t)*.34);
+    if(!p){ok=false;break}i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1])}
+   if(ok){g.closePath();g.stroke()}})}
+ const fG=fade(19.0,22.4);
+ if(fG>0.01)for(let k=1;k<=6;k++){g.beginPath();let ok=true;
+  for(let i=0;i<=80;i++){const t=i/80*2*Math.PI,c=Math.cos(t),s=Math.sin(t),rr=15*KPC*k/6;
+   const p=proj(rr*(GU[0]*c+GV[0]*s),rr*(GU[1]*c+GV[1]*s),rr*(GU[2]*c+GV[2]*s));
+   if(!p){ok=false;break}i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1])}
+  if(ok){g.closePath();g.globalAlpha=fG*.2;g.strokeStyle='#d9b96a';g.lineWidth=devicePixelRatio;g.stroke()}}
+ const fC=obs?1:fade(22.6,27.5);let nSN=0,nFR=0,nVD=0;
+ if(fC>0.01){
+  if(fZOA!==2){bandeGal(RCOS*.98,10,'#c96a4a',fC*.40);bandeGal(RCOS*.98,5,'#c96a4a',fC*.22)}
+  if(fS82!==2){g.globalAlpha=1;pinceau(RCOS*.98,fC)}
+  if(fISO)for(let i=0;i<ISO.length;i+=3){const p=proj(ISO[i]*MPC,ISO[i+1]*MPC,ISO[i+2]*MPC);
+   if(!p)continue;g.globalAlpha=fC*.24;g.fillStyle='#5f7f6a';
+   g.beginPath();g.arc(p[0],p[1],.9*devicePixelRatio,0,7);g.fill()}
+  for(let i=0;i<VD.length;i+=4){const p=proj(VD[i]*MPC,VD[i+1]*MPC,VD[i+2]*MPC);if(!p)continue;
+   const r=VD[i+3]*MPC/Rview*p[2]*S;if(r<0.4)continue;nVD++;
+   g.globalAlpha=fC*.28;g.strokeStyle='#5f7f6a';g.lineWidth=devicePixelRatio;
+   g.beginPath();g.arc(p[0],p[1],r,0,7);g.stroke()}
+  for(let i=0;i<FR.length;i+=6){if(FR[i+4]>zmax)continue;
+   const p=proj(FR[i]*MPC,FR[i+1]*MPC,FR[i+2]*MPC);if(!p)continue;nFR++;
+   g.globalAlpha=fC*(.35+.5*FR[i+3]);g.fillStyle='#a98fc0';
+   g.beginPath();g.arc(p[0],p[1],(1.5+2.4*FR[i+3])*devicePixelRatio,0,7);g.fill()}
+  let best=1e18;hit=null;
+  for(let i=0;i<SN.length;i+=6){if(!visible(i))continue;
+   const p=proj(SN[i]*MPC,SN[i+1]*MPC,SN[i+2]*MPC);if(!p)continue;nSN++;
+   const s=SN[i+3]&1,vd=SN[i+3]&2;
+   let al=fC*(s?.95:.55),col=s?'#d9b96a':(vd?'#7fa3b8':'#cfc8b8');
+   if(laser>=0&&s){const A=(Math.atan2(SN[i+1],SN[i])*180/Math.PI+360)%360;
+    const a2=A>180?A-360:A;const ph=(a2+60)/120;
+    if(Math.abs(ph-laser)<0.045){al=1;col='#fff3d8'}}
+   g.globalAlpha=al;g.fillStyle=col;
+   g.beginPath();g.arc(p[0],p[1],(s?1.5:1.1)*devicePixelRatio,0,7);g.fill();
+   const d2=(p[0]-mx)**2+(p[1]-my)**2;
+   if(d2<best&&d2<(13*devicePixelRatio)**2){best=d2;hit={i:i,p:p}}}
+  if(hit){const o=proj(0,0,0);
+   if(o){g.globalAlpha=.75;g.strokeStyle='#efe9dc';g.lineWidth=devicePixelRatio;
+    g.beginPath();g.moveTo(o[0],o[1]);g.lineTo(hit.p[0],hit.p[1]);g.stroke()}
+   g.globalAlpha=1;g.strokeStyle='#efe9dc';g.lineWidth=1.6*devicePixelRatio;
+   g.beginPath();g.arc(hit.p[0],hit.p[1],5.5*devicePixelRatio,0,7);g.stroke()}
+  const pg=proj(GCV[0]*RCOS*.9,GCV[1]*RCOS*.9,GCV[2]*RCOS*.9);
+  if(pg){g.globalAlpha=fC*.8;g.fillStyle='#c96a4a';
+   g.beginPath();g.arc(pg[0],pg[1],3*devicePixelRatio,0,7);g.fill();
+   g.font=(10*devicePixelRatio)+'px Georgia,serif';g.fillText('centre galactique',pg[0]+8*devicePixelRatio,pg[1]+4*devicePixelRatio)}}
+ if(laser>=0){laser+=0.011;if(laser>1)laser=0}
+ if(!obs&&fC>0.01)carte();
+ const u=Rview>1e23?[Rview/MPC,'Mpc']:Rview>1e19?[Rview/KPC,'kpc']:Rview>1e10?[Rview/AU,'UA']:[Rview/1e3,'km'];
+ EL('echv').textContent=obs?'vue interne':u[0].toPrecision(3)+' '+u[1];
+ EL('cpt').innerHTML='visible à l\'écran<br><b>'+nSN+'</b> / '+M.n_sn+' SNe &nbsp; <b>'+nFR+'</b> / '+M.n_frb+' FRB<br><b>'+nVD+'</b> / '+M.n_void+' vides';
+ const inf=EL('info');
+ if(hit){const i=hit.i,s=SN[i+3]&1,vd=SN[i+3]&2;
+  inf.style.display='block';inf.style.left=Math.min(innerWidth-280,hit.p[0]/devicePixelRatio+14)+'px';
+  inf.style.top=(hit.p[1]/devicePixelRatio+12)+'px';
+  inf.innerHTML='supernova<br>z = <b>'+SN[i+4].toFixed(3)+'</b> · D_C ≈ <b>'+Math.round(Math.hypot(SN[i],SN[i+1],SN[i+2]))+'</b> Mpc<br>latitude galactique b = <b>'+SN[i+5].toFixed(1)+'°</b><br>'+(s?'<b>dans SDSS Stripe 82</b><br>':'')+(vd?'vide sur la ligne de visée':'pas de vide sur la visée');
+ }else inf.style.display='none';
+}
+function maj(){[['s0',fS82===1],['s1',fS82===2],['z0',fZOA===1],['z1',fZOA===2],['iso',!!fISO],
+ ['obs',obs],['las',laser>=0],['tou',tour>=0]].forEach(([id,on])=>{const b=EL(id);if(b)b.classList.toggle('on',on)})}
+function lanceTour(k){tour=k;tourT=0;const[et,txt,st]=TOUR[k];
+ Rcible=ETAPES[et][1];fS82=st.s82;fZOA=st.zoa;fISO=st.iso;laser=(k===1?0:-1);
+ EL('txt').innerHTML=txt;maj()}
+const B=(par,id,lab,fn,cls)=>{const b=document.createElement('button');b.id=id;b.textContent=lab;
+ b.className=cls||'';b.onclick=fn;EL(par).appendChild(b);return b};
+ETAPES.forEach((e,k)=>B('bas','e'+k,e[0],()=>{tour=-1;Rcible=e[1];obs=false;EL('txt').innerHTML=TXT[k];maj()}));
+B('bas','tou','▶ visite guidée',()=>{if(tour>=0){tour=-1;laser=-1;maj()}else lanceTour(0)});
+B('f1','s0','Stripe 82 seule',()=>{fS82=fS82===1?0:1;maj()});
+B('f1','s1','sans Stripe 82',()=>{fS82=fS82===2?0:2;maj()});
+B('f1','z0','|b| < 10° seul',()=>{fZOA=fZOA===1?0:1;maj()},'alt');
+B('f1','z1','masquer |b| < 10°',()=>{fZOA=fZOA===2?0:2;maj()},'alt');
+B('f2','iso','ciel isotrope',()=>{fISO=fISO?0:1;maj()},'alt');
+B('f2','obs','vue observateur',()=>{obs=!obs;if(obs)Rcible=Rview=RCOS;maj()});
+B('f2','las','balayage Stripe 82',()=>{laser=laser>=0?-1:0;maj()});
+EL('zr').oninput=e=>{const t=e.target.value/1000;
+ zmax=M.zmin*Math.pow(M.zmax/M.zmin,t);
+ EL('zlab').innerHTML='profondeur : z ≤ <b>'+zmax.toFixed(3)+'</b> &nbsp;·&nbsp; curseur logarithmique en redshift'};
+EL('zr').oninput({target:EL('zr')});
+EL('txt').innerHTML=TXT[3];maj();fr();
+</script></body></html>

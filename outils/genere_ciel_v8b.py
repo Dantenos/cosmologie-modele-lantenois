@@ -40,7 +40,7 @@ geometrie fiducielle, parite du compte de voisinage, couverture en redshift.
 
 Usage : python3 outils/genere_ciel_v8b.py -> visuels/ciel_pantheon_v8.html
 """
-import sys, csv, json, pathlib
+import sys, csv, json, re, pathlib
 import numpy as np
 from scipy.spatial import cKDTree
 
@@ -98,6 +98,47 @@ def main():
     if not (z.min() < 0.02 and z.max() > 2.0):
         sys.exit(f"[ciel8b] REFUS verif 5 : z dans [{z.min():.3f} ; {z.max():.3f}]")
 
+    # --- cones d'ombre et graphe de proximite : le gabarit les attend (herites v7)
+    NRA, NDEC = 36, 18
+    def _cell(u):
+        dc_ = np.arcsin(np.clip(u[:, 2], -1, 1))
+        ra_ = np.arctan2(u[:, 1], u[:, 0]) % (2 * np.pi)
+        i_ = (ra_ / (2 * np.pi) * NRA).astype(int) % NRA
+        j_ = ((np.sin(dc_) + 1) / 2 * NDEC).astype(int).clip(0, NDEC - 1)
+        o = np.zeros((NRA, NDEC), bool)
+        o[i_, j_] = True
+        return o
+    occ = _cell(n)
+    f_obs = 1.0 - occ.sum() / (NRA * NDEC)
+    _r = np.random.default_rng(GRAINE)
+    _fs = []
+    for _ in range(60):
+        _u = _r.normal(size=(len(z), 3))
+        _u /= np.linalg.norm(_u, axis=1)[:, None]
+        _fs.append(1.0 - _cell(_u).sum() / (NRA * NDEC))
+    f_iso, s_iso = float(np.mean(_fs)), float(np.std(_fs))
+    sig_omb = (f_obs - f_iso) / max(s_iso, 1e-9)
+    if not sig_omb > 10.0:
+        sys.exit(f"[ciel8b] REFUS (garde v7) : cones d'ombre a {sig_omb:.1f} sigma seulement")
+    vides = []
+    for i_ in range(NRA):
+        for j_ in range(NDEC):
+            if not occ[i_, j_]:
+                ra_c = (i_ + 0.5) / NRA * 2 * np.pi
+                sd = (j_ + 0.5) / NDEC * 2 - 1
+                de_c = np.arcsin(sd)
+                vides.append([np.cos(de_c) * np.cos(ra_c), np.cos(de_c) * np.sin(ra_c), sd])
+    OMB = np.array(vides).ravel()
+    P = n * dc[:, None]
+    _dd, _ii = cKDTree(P).query(P, k=2)
+    _sep = _dd[:, 1]
+    _med = float(np.median(_sep))
+    _g = _sep < 40.0
+    aretes = np.stack([np.arange(len(z))[_g], _ii[_g, 1]], 1)
+    if len(aretes) > len(z):
+        sys.exit(f"[ciel8b] REFUS : {len(aretes)} aretes pour {len(z)} SNe")
+    AR = aretes.ravel()
+
     dn = dens / max(dens.max(), 1)
     dm = np.array([float(r["dm_exgal"]) for r in rows])
     fra = np.radians([float(r["ra"]) for r in rows])
@@ -147,6 +188,12 @@ def main():
                rap_int=round(float(rap_int), 2), dmaxloc=int(dens.max()),
                kv=kv, rv=round(float(R[kv]), 1),
                dv=round(float(np.linalg.norm(centres[kv])), 1),
+               ncell=NRA * NDEC,
+               aire_cell=round(float(4 * 180**2 / np.pi / (NRA * NDEC)), 1),
+               n_omb=len(vides), f_omb=round(100.0 * f_obs, 1),
+               f_iso=round(100.0 * f_iso, 1), s_iso=round(100.0 * s_iso, 1),
+               sig_omb=round(float(sig_omb), 1),
+               n_ar=len(aretes), sep_med=round(_med, 1),
                ngp=list(map(float, ngp)), gc=list(map(float, sgr)),
                pecl=list(map(float, C5.uvec(*C5.POLE_ECL))),
                Q=[list(map(float, r)) for r in Q])
@@ -154,7 +201,14 @@ def main():
     tpl = (ROOT / "outils" / "ciel_v8_template.html").read_text(encoding="utf-8")
     out = (tpl.replace("__SN__", C3.flat(SN, 3)).replace("__VD__", C3.flat(VD, 1))
               .replace("__FR__", C3.flat(FR, 2)).replace("__ISO__", C3.flat(ISO, 1))
+              .replace("__OMB__", C3.flat(OMB, 4))
+              .replace("__AR__", "[" + ",".join(str(int(v)) for v in AR) + "]")
               .replace("__MES__", json.dumps(MES)))
+    # controle GENERIQUE : aucun marqueur __XXX__ ne doit survivre (ma liste ecrite a la
+    # main en avait oublie deux, et le JS mourait des la premiere ligne)
+    restes = sorted(set(re.findall(r"__[A-Z_]+__", out)))
+    if restes:
+        sys.exit(f"[ciel8b] REFUS : marqueurs non remplaces {restes}")
     dest = ROOT / "visuels" / "ciel_pantheon_v8.html"
     dest.write_text(out, encoding="utf-8", newline="\n")
     print(f"[ciel8b] ecrit : {dest.name} ({dest.stat().st_size // 1024} ko)")

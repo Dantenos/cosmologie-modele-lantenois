@@ -2853,3 +2853,36 @@ hypothèse que j'aurais autrement illustrée sans la tester (#154 l'artefact pri
 minimum de bord, celui-ci). Le protocole ne sert pas seulement à empêcher les fausses
 victoires : il empêche aussi les fausses ILLUSTRATIONS, qui sont plus insidieuses parce
 qu'elles ne se présentent pas comme des résultats.
+
+## 24/08 (Claude Code) — #181 LA v8 ÉTAIT MORTE À L'ÉCRAN, ET MON PROPRE CONTRÔLE L'A LAISSÉE PASSER
+Édouard a envoyé une capture : panneaux affichés, **aucun bouton, aucun canevas, aucun
+compteur**. Diagnostic : le gabarit v8, hérité de la v7, déclare
+`const SN=…,OMB=__OMB__,AR=__AR__,M=…` — or `genere_ciel_v8b.py` **n'émettait ni `__OMB__`
+ni `__AR__`**. Le JavaScript levait une `ReferenceError` **sur sa première ligne** ; tout le
+reste — création des boutons, boucle de rendu, compteurs — n'a jamais tourné. Seul le HTML
+statique (panneaux, titres de sections, curseurs) s'affichait, ce qui donne l'illusion d'une
+page à moitié chargée plutôt que d'un plantage.
+
+**LE VRAI MANQUEMENT N'EST PAS LE MARQUEUR OUBLIÉ, C'EST MON CONTRÔLE.** J'avais écrit,
+après génération : « marqueurs non remplacés : aucun » — mais je cherchais une **liste
+écrite à la main**, `['__SN__','__MES__','__VD__','__FR__','__ISO__']`, qui ne contenait pas
+les deux marqueurs en cause. **Un contrôle qui énumère ce qu'il attend ne peut pas détecter
+ce qu'il n'a pas prévu.** C'est la même faute de forme que la règle 7 du corpus interdit
+pour les garde-fous textuels (regex, jamais d'égalité stricte), transposée aux marqueurs.
+
+**CORRECTIONS APPORTÉES (corps seulement, critères gelés inchangés) :**
+1. `genere_ciel_v8b.py` calcule et émet désormais les cônes d'ombre et le graphe de
+   proximité, **en réappliquant le garde à 10σ de la v7** — un contrôle plus strict que ce
+   que son propre docstring déclare, ce qui est toujours permis.
+2. Le générateur termine par un **contrôle générique** : `re.findall(r"__[A-Z_]+__", out)`
+   sur la sortie, et REFUS s'il reste quoi que ce soit. Plus aucune liste écrite à la main.
+
+**LEÇON À PORTER AUX AUTRES GÉNÉRATEURS.** Les cinq générateurs de ciel (v3b, v4, v5, v6,
+v7) remplacent des marqueurs sans ce contrôle générique. Ils fonctionnent aujourd'hui, mais
+par chance : rien ne les empêcherait de subir la même panne à la prochaine évolution de
+gabarit. À armer, comme `perime.py` et `registre.py` le sont déjà pour leurs domaines.
+
+**Ce que ça dit du reste de la journée.** Neuf refus de critères aujourd'hui ont attrapé mes
+erreurs avant publication. Celui-ci est passé parce qu'aucun critère gelé ne portait dessus —
+c'est **Édouard qui l'a vu, en ouvrant le fichier**. Un contrôle automatique ne remplace pas
+l'usage : il ne teste que ce qu'on a pensé à lui faire tester.

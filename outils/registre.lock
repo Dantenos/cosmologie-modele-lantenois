@@ -188,5 +188,10 @@
   "sha256": "cccc8bc622a198afa157dd9178cfcca5683de5b1d58f6528bfaf1fbb00b8031c",
   "gele_le": "2026-08-24T01:28:07",
   "extrait": "genere_atlas v1 — le visuel de l'atlas, GÉNÉRÉ depuis atlas_leaderboard.json (24"
+ },
+ "outils/genere_audience.py": {
+  "sha256": "1b806979d76b4b1581f4cce424be09fedfc8373e06ea6d27ea4ad508af400b07",
+  "gele_le": "2026-08-24T02:00:00",
+  "extrait": "genere_audience v1 — le visuel du Rôle (prédictions futures et leur suivi), 24/0"
  }
 }

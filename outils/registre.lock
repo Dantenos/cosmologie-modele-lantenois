@@ -353,5 +353,15 @@
   "sha256": "9466cd5914ec644362214acd4ea4fc0f481461179e99b320c3e36668c1e086c3",
   "gele_le": "2026-08-24T13:20:07",
   "extrait": "ATLAS v2 — LE PALMARES CORRIGE, CONSOLIDE ET ANNOTE."
+ },
+ "outils/genere_ciel_v8.py": {
+  "sha256": "c72617f91c683cc772127cf269bb92e26d5a801b23f771e62730a9b0cc278f6a",
+  "gele_le": "2026-08-24T13:26:15",
+  "extrait": "genere_ciel_v8 — INTERFACE REORGANISEE, INSPECTEUR, LECTURE DU TEMPS, CONTRASTE."
+ },
+ "outils/genere_ciel_v8b.py": {
+  "sha256": "8ea9b94676afffe7be4a24a9a69541cf1af2e2bea4c2fe4dd3ecb843aa49a128",
+  "gele_le": "2026-08-24T13:28:16",
+  "extrait": "genere_ciel_v8b — INTERFACE REORGANISEE + CONTRASTE, CRITERE CORRIGE."
  }
 }

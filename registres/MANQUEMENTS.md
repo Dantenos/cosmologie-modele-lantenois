@@ -2820,3 +2820,36 @@ le corpus — et le seul terrain où l'on peut affronter CCBH à armes égales. 
 minimum. Et le fichier se termine par ce qu'il ne dit pas : rien sur les perturbations, rien
 sur la physique, et rien sur la robustesse aux systématiques de calibration SN — dont le #170
 montre qu'elles déplacent nos gains de 10 à 17 % à elles seules.
+
+## 24/08 (Claude Code) — #180 LE CONTRASTE DE STRIPE 82 EST DE GRANDE ÉCHELLE, PAS LOCAL — HYPOTHÈSE RÉFUTÉE PAR MON PROPRE CRITÈRE
+`genere_ciel_v8.py` (gelé c72617f91c68) a REFUSÉ d'écrire. Sa vérification 3 exigeait que la
+densité locale médiane dans Stripe 82 dépasse de plus de **3×** celle du reste de
+l'échantillon, faute de quoi le curseur de « contraste de sélection » aurait montré un effet
+inexistant. **Mesure : 1,32× seulement.** Hypothèse réfutée.
+
+**Ce que le refus a mis au jour, et qui vaut mieux que l'hypothèse :**
+| rayon | Stripe 82 | ailleurs | rapport interne | contre l'isotrope |
+|---|---|---|---|---|
+| 1° | 4,0 voisines | 4,0 | **1,00 — identique** | ×33 et ×33 |
+| 3° | 20,5 | 15,5 | 1,32 | ×18,9 et ×14,3 |
+| 6° | 51 | 25 | 2,04 | ×11,8 et ×5,8 |
+
+**L'avantage ×57 de Stripe 82 est un effet de GRANDE ÉCHELLE (densité par unité de ciel), pas
+un effet local.** À 1° de rayon, une supernova de Stripe 82 a exactement autant de voisines
+qu'une supernova d'ailleurs. La raison est simple et elle change la lecture du #178 :
+**tout l'échantillon est fait de taches serrées** — chaque champ de relevé est un amas de
+pointés. Pantheon+ n'est pas un ciel avec une bande dense ; c'est une **collection de taches
+denses séparées par du vide**, dont Stripe 82 est simplement la plus étendue.
+
+**Conséquence pour la façade** (`genere_ciel_v8b.py`, gelé 8ea9b94676af) : le critère corrigé
+mesure le fait réel — la densité locale médiane de l'échantillon entier contre l'attente
+isotrope, **×18,5** (20,0 voisines pour 1,08 attendues dans une calotte de 3°). Le curseur
+montre donc « les taches contre le vide », pas « Stripe 82 contre le reste ». **Et le rapport
+1,32 qui dément mon intuition de départ est affiché à l'écran**, dans le panneau de mesures et
+dans le texte du curseur, avec la mention que j'avais parié le contraire.
+
+**Note de méthode.** C'est la troisième fois aujourd'hui qu'un critère gelé réfute une
+hypothèse que j'aurais autrement illustrée sans la tester (#154 l'artefact primordial, #173 le
+minimum de bord, celui-ci). Le protocole ne sert pas seulement à empêcher les fausses
+victoires : il empêche aussi les fausses ILLUSTRATIONS, qui sont plus insidieuses parce
+qu'elles ne se présentent pas comme des résultats.

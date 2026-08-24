@@ -37,7 +37,9 @@ décimale d'une comparaison flottante. Nous rapportons ensuite les contre-mesure
 tenu : tester les garde-fous eux-mêmes par mutation, détecter les marqueurs non substitués
 génériquement plutôt que par une liste écrite à la main, employer des expressions
 régulières plutôt que l'égalité de chaînes, brancher la réfutation avant la confirmation, et
-déclarer d'avance le sens de chaque substitution. Le coût du protocole est que les études
+déclarer d'avance le sens de chaque substitution --- et, après avoir été pris en défaut, une
+règle d'arrêt déclarée, car le gel par empreinte protège chaque étude et non la série des
+tentatives. Le coût du protocole est que les études
 s'arrêtent d'elles-mêmes ; sur ce corpus, cinq l'ont fait. Son bénéfice est que 69
 affirmations ont été rétractées ou rétrogradées, dont plusieurs résultats phares du corpus,
 et la plupart par la machinerie de l'analyste plutôt que par un référé. Nous ne revendiquons
@@ -129,8 +131,9 @@ produite dans un même corpus, en deux jours d'usage intensif.}
 \label{tab:vices}
 \end{table}
 
-Deux modes supplémentaires sont apparus pendant la rédaction de cet article et appartiennent
-à la taxonomie, bien que nous ne les ayons pas numérotés :
+Trois modes supplémentaires sont apparus pendant la rédaction de cet article et appartiennent
+à la taxonomie, bien que nous ne les ayons pas numérotés. Le troisième est le plus grave, car
+c'est une défaillance du protocole lui-même et non d'un critère particulier :
 
 \begin{itemize}
 \item \textbf{une définition gelée divergeant de la définition opérante.} Un outil de
@@ -145,7 +148,30 @@ Deux modes supplémentaires sont apparus pendant la rédaction de cet article et
   propre maillage ne pouvait pas rendre. Notons qu'une signature \emph{indépendante} dans la
   même exécution --- les gains en $\chi^2$ suivant $k^2$ à trois décimales --- établissait
   bien que la manipulation était opérante. Nous ne l'avons pas substituée : le faire est le
-  mode 7 déguisé.
+  substituee : le faire est le mode 7 deguise.
+\item 	extbf{le mode de defaillance propre au protocole : iterer les conceptions jusqu'a ce
+  qu'une passe.} La question ci-dessus a ete tentee trois fois. La premiere conception a
+  bloque sur un plancher de grille ; la deuxieme, a maillage dix fois plus fin, a bloque
+  parce que le plancher avait ete \emph{deplace} et non leve ; la troisieme a remplace
+  l'estimateur par marche de grille par un ajustement parabolique auto-valide --- qui a
+  fonctionne, sans aucun plancher, son incertitude suivant $	imes2{,}00$ puis $	imes4{,}00$
+  exactement --- et a bloque parce que sa propre validation exigeait la reproduction exacte
+  des valeurs \emph{de grille} que le nouvel estimateur abandonnait deliberement. Ce dernier
+  blocage est le mode 6, ecrit par nous apres l'avoir catalogue.
+
+  Une quatrieme conception tolerant un pas de grille serait passee ; toutes les autres
+  validations passaient deja. Nous ne l'avons pas ecrite, et c'est tout le propos.
+  	extbf{Le gel par empreinte protege chaque etude prise isolement et ne protege pas contre
+  la SERIE.} Ce qui est gele, c'est chaque tentative, pas la decision de recommencer. Iterer
+  les conceptions jusqu'a ce qu'une passe est du p-hacking d'un cran au-dessus, et le
+  pre-enregistrement tel qu'il se pratique n'a aucune defense contre cela. Le seul garde-fou
+  disponible est une regle d'arret declaree. Nous en avons adopte une --- \emph{au troisieme
+  blocage sur une meme question, on cesse et on consigne le statut non etabli} --- en notant
+  qu'elle est arbitraire, que toute sa valeur tient a sa publicite, et que nous ne l'avons
+  adoptee qu'apres en avoir eu besoin. Le cout est reel : une signature visible et coherente,
+  une etendue restee strictement invariante sous une incertitude quatre fois moindre, demeure
+  inopposable. Nous preferons ce cout-la a l'autre, qui aurait ete un verdict obtenu par
+  selection de conception.
 \end{itemize}
 
 \section{Ce qui marche vraiment}

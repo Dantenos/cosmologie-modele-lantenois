@@ -35,7 +35,9 @@ a verdict decided by the fourteenth decimal of a floating-point comparison. We t
 the countermeasures that survived contact: mutation-testing the guardrails themselves,
 generic rather than hand-written detection of unsubstituted markers, regular expressions
 instead of string equality, testing the refuting branch before the confirming one, and
-declaring the direction of every substitution in advance. The protocol's cost is that
+declaring the direction of every substitution in advance --- and, after being caught
+needing it, a declared stopping rule, because hash-freezing protects each study and not the
+series of attempts. The protocol's cost is that
 studies stop themselves; over the corpus, five did. Its benefit is that 69 claims were
 retracted or downgraded, several of them the corpus's own headline results, and most of them
 by the analyst's own machinery rather than by a referee. We claim no generality beyond
@@ -123,8 +125,9 @@ two days of intensive use.}
 \label{tab:vices}
 \end{table}
 
-Two further modes appeared during the writing of this paper and belong in the taxonomy
-although we have not numbered them:
+Three further modes appeared during the writing of this paper and belong in the taxonomy
+although we have not numbered them. The third is the gravest, because it is a failure of the
+protocol itself rather than of any one criterion:
 
 \begin{itemize}
 \item \textbf{a frozen definition diverging from the operative one.} A verification tool was
@@ -139,6 +142,26 @@ although we have not numbered them:
   Notably, an \emph{independent} signature in the same run --- the $\chi^2$ gains scaling as
   $k^2$ to three decimals --- did establish that the manipulation was operative. We did not
   substitute it: doing so is failure mode 7 in a different costume.
+\item 	extbf{the protocol's own failure mode: iterating designs until one passes.} The
+  question above was attempted three times. The first design blocked on a grid floor; the
+  second, with a ten-fold finer grid, blocked because the floor had been \emph{displaced}
+  rather than lifted; the third replaced the grid-walk estimator with a self-validating
+  parabolic fit --- which worked, with no floor at all, its uncertainty scaling as
+  $	imes2.00$ then $	imes4.00$ exactly --- and blocked because its own validation demanded
+  exact reproduction of the \emph{grid} values the new estimator had deliberately abandoned.
+  That last block is failure mode 6, authored by us after we had catalogued it.
+
+  A fourth design tolerating one grid step would have passed; every other validation already
+  did. We did not write it, and that is the point. 	extbf{Hash-freezing protects each study
+  in isolation and does not protect against the series.} What is frozen is every attempt, not
+  the decision to attempt again. Iterating designs until one passes is p-hacking one level up,
+  and pre-registration as usually practised has no defence against it. The only available
+  guard is a declared stopping rule. We adopted one --- \emph{at the third block on the same
+  question, stop and record the status as not established} --- and we note that it is
+  arbitrary, that its whole value lies in being public, and that we adopted it only after
+  needing it. The cost is real: a visible and coherent signature, an interval that stayed
+  strictly invariant under a four-fold reduction in uncertainty, remains unusable. We prefer
+  that cost to the alternative, which would have been a verdict obtained by design selection.
 \end{itemize}
 
 \section{What actually works}

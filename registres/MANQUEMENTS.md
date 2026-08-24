@@ -3927,3 +3927,56 @@ proposé la lecture « référent ». Deux études conçues pour la tester se so
 propres validations. **Je n'ai donc toujours pas le droit de m'en servir**, et le corpus doit
 la porter comme ce qu'elle est : une lecture suggérée par des nombres frappants, jamais
 certifiée. C'est exactement le statut que le #193 lui avait assigné, et il n'a pas bougé.
+
+## 24/08 (Claude Code) — #200 TROISIÈME BLOCAGE, ET LA DÉCISION D'ARRÊTER
+`test_referent_v3.py` (gelé). Troisième conception d'un test de la lecture « référent » du
+#193. Elle s'est arrêtée sur sa **validation A**, et la cause est **moi** : j'ai gelé dans le
+même bloc « reproduire EXACTEMENT les valeurs de grille du #192 » et un estimateur qui
+**abandonne délibérément la grille**. Le balayage grossier à 0,002 situe le minimum de la
+configuration étiquette à +0,00800 là où celui à 0,001 le situait à +0,00700 — un pas, pas
+un désaccord. **C'est le mode 6 de ma propre taxonomie — deux exigences mutuellement
+incompatibles gelées ensemble — et je l'ai écrit après l'avoir catalogué.**
+
+**CE QUE L'EXÉCUTION A ÉTABLI, ET QUI N'EST PAS LE VERDICT.**
+
+**1. L'estimateur parabolique fonctionne, et il se valide lui-même.** Sur trois des quatre
+configurations et aux trois échelles, le χ² **réellement évalué** aux points ±σ prédits par
+la parabole rend Δχ² entre 0,93 et 1,07 — la prédiction tient. Et il n'a **aucun plancher** :
+σ passe de 0,001312 à 0,000656 puis 0,000328, soit **×2,00 et ×4,00 exactement**. Le problème
+structurel nommé au #199 est bel et bien résolu.
+
+**2. Il condamne exactement la configuration que le #190 avait condamnée, sans le savoir.**
+`direct_sansR` échoue la validation D aux trois échelles, et la façon dont elle échoue est
+parlante : Δχ²(−σ) vaut **−0,511** à k = 1 et **−1,867** à k = 4. **Négatif** — le point situé
+à un σ sous le « minimum » a un χ² PLUS BAS que le minimum. Le sommet de la parabole n'est pas
+le minimum du profil. C'est très exactement le profil aplati que le contrôle de forme du #190
+avait mesuré à P = 0,39, retrouvé par une méthode entièrement différente, écrite sans y
+penser. **Deux estimateurs indépendants désignent la même configuration comme non
+opposable.**
+
+**3. L'étendue ne bouge pas.** E(1) = E(2) = E(4) = **0,02000**, identiques, pendant que σ est
+divisé par 4,00 et les gains multipliés par 16,00. E/S irait de 15,2 à 61,0.
+
+**JE N'EN TIRE AUCUN VERDICT, ET VOICI POURQUOI J'ARRÊTE.**
+Il serait facile d'écrire une v4 dont la validation A tolère un pas de grille. Elle passerait
+— toutes les autres validations passent déjà. **Et ce serait malhonnête.**
+> **Itérer des conceptions d'étude jusqu'à ce que l'une passe est du p-hacking au niveau du
+> protocole.** C'est exactement ce que le pré-enregistrement existe pour empêcher, et le fait
+> que chaque version soit gelée avant exécution ne l'excuse pas : ce qui est gelé, c'est
+> chaque tentative, pas la SÉRIE de tentatives.
+Trois conceptions, trois blocages, et à chaque fois le blocage venait de mon propre design.
+**Un analyste honnête s'arrête là.** La lecture du #193 reste **NON ÉTABLIE**, exactement au
+statut qu'elle avait quand elle a été formulée, et le corpus la porte comme telle.
+
+**ONZIÈME MODE POUR LA TAXONOMIE DU PAPIER F, et c'est le mode du protocole lui-même :**
+*« la tentation d'itérer les conceptions jusqu'à ce qu'une passe »*. Le pré-enregistrement par
+empreinte protège chaque étude prise isolément et **ne protège pas contre la série**. Le seul
+garde-fou disponible est une règle d'arrêt déclarée — et nous n'en avions pas. Nous en
+proposons une, pour ce corpus et à partir d'aujourd'hui : **au troisième blocage sur une même
+question, on cesse et on consigne le statut non établi.** Elle est arbitraire, elle est
+publique, et c'est ce qui la rend utile.
+
+**CE QUE ÇA COÛTE, DIT SANS L'ADOUCIR.** Une signature visible et cohérente — étendue
+strictement invariante sous quatre fois moins d'incertitude — reste inopposable. Nous
+préférons ce coût-là au précédent, qui aurait été de publier un verdict obtenu par
+sélection de conception.

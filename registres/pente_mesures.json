@@ -1,0 +1,23 @@
+{
+ "eps_atlas": 0.0227,
+ "leger": {
+  "eps0": 0.2086,
+  "eps1": 0.97,
+  "z0": 0.24,
+  "ic": [
+   0.09,
+   0.34
+  ],
+  "source": "#161 confluence.py"
+ },
+ "planck": {
+  "eps0": 0.4137,
+  "eps1": 1.2625,
+  "z0": 0.3878,
+  "ic": [
+   0.377,
+   0.387
+  ],
+  "source": "#163 confluence_planck_v2.py"
+ }
+}

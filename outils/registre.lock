@@ -258,5 +258,10 @@
   "sha256": "ce4d9b65ec246e849221bf4dce463115a3f3c4baef1b84d8abdd0b589c699007",
   "gele_le": "2026-08-24T10:10:56",
   "extrait": "LA CONFLUENCE SUR PLANCK COMPLET, v2 — VALIDATION CORRIGEE."
+ },
+ "outils/fig_pente.py": {
+  "sha256": "ddf986c153eb0c5a6bde16111a9861547b7d18ab29ac881e1fd7550980b1396a",
+  "gele_le": "2026-08-24T10:14:38",
+  "extrait": "fig_pente — LA FONCTION QUE TOUT LE CORPUS MESURE : s(a) = d ln rho_de / d ln a."
  }
 }

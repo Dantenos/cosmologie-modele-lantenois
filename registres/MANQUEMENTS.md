@@ -2262,3 +2262,48 @@ z₀, les critères scientifiques (1 à 4) sont repris SANS AUCUN changement, et
 modèle est importé tel quel depuis la v1, non modifié. **Validation v2 : 1998,633 contre
 1998,633 — la branche PPF à w = −1 redonne ΛCDM à la troisième décimale.** Le branchement
 était correct depuis le début ; seul le critère était mal posé.
+
+## 24/08 (Claude Code) — #163 PLANCK EXIGE QUE LA PENTE COURE (3,72σ) — MAIS LE CROISEMENT N'EST PAS UN OBSERVABLE ROBUSTE
+`confluence_planck_v2.py` (gelé ce4d9b65ec24). Validation exacte : 1998,633 contre 1998,633.
+1092 évaluations CAMB. Les quatre verdicts gelés, dans l'ordre où ils sont tombés.
+
+**VERDICT 1 — POSITIF, ET FORT. Planck complet DEMANDE LE RUNNING : Δχ² = 13,85 à 1 ddl,
+soit 3,72σ** (rapport de vraisemblance, jamais la courbure — règle de la bosse). Le nul
+n'est pas ΛCDM mais la pente CONSTANTE, qui *est* wCDM : elle vaut 1998,594 contre 1998,633
+pour ΛCDM — **une pente constante n'achète RIEN sur Planck (+0,04)**. Ce n'est donc pas
+« le CMB préfère une énergie noire dynamique » au sens vague : c'est **le CMB refuse une
+pente constante et exige qu'elle coure**. Résultat indépendant de la vraisemblance légère.
+
+**VERDICT 2 — la localisation.** z₀ ∈ [0,377 ; 0,387] à 1σ (grille déclarée), minimum 4D à
+z₀ = 0,3878, avec ε₀ = 0,414 et ε₁ = 1,263. Robustesse à souligner : **sur TOUT le profil,
+Δχ² de 0 à 13,85, z₀ ne bouge que de 0,354 à 0,387.** La localisation est solide dans cette
+famille — c'est ce qui rend les deux verdicts suivants sérieux.
+
+**VERDICT 3 — NÉGATIF : TENSION RIGIDE.** La bande prédite AVANT le test par la famille à un
+paramètre, z× ∈ [0,218 ; 0,262] (β = 2,56–2,603 sur Planck), est DISJOINTE de [0,377 ; 0,387]
+— et le reste même à 3σ. **Ma prédiction pré-enregistrée est fausse.**
+
+**VERDICT 4 — NÉGATIF : DIVERGENCE ENTRE JEUX.** La même forme libre mesurait z₀ = 0,240
+[0,090 ; 0,340] sur la vraisemblance légère (#161) : disjoint de [0,377 ; 0,387]. Versé à T9
+par critère gelé. (3 et 4 concordent — la règle 9 ne se déclenche pas, le résultat tient.)
+
+**CE QUE ÇA DÉCOUVRE, ET C'EST LA VRAIE TROUVAILLE — z× N'EST PAS UN OBSERVABLE ROBUSTE.**
+Rassemblons les quatre mesures du même croisement :
+| | forme RIGIDE (β) | forme LIBRE (ε₀, ε₁) |
+|---|---|---|
+| vraisemblance légère | z× = 0,44 (β = 2,42) | z₀ = 0,24 |
+| Planck complet | z× = 0,23 (β = 2,589) | z₀ = 0,39 |
+Deux formes qui s'ajustent à **Δχ² = 1,28 l'une de l'autre** placent le croisement à **0,15
+de distance en redshift** ; la même forme sur deux jeux le place à 0,14-0,20 de distance. Et
+les deux tableaux se croisent en diagonale — aucune tendance cohérente. **Le redshift de
+croisement est dominé par le systématique de FORME, pas par les données.** Conséquence
+directe et défavorable au corpus : la promotion de z× en « β-mètre secondaire précis »
+(papier A, passe de vérification) doit porter cette réserve — corrigé dans le papier ce
+jour. La littérature DESI qui cite un z× a le même problème ; ce n'est pas propre à nous.
+
+**CE QUI SURVIT, ET QUI EST FAVORABLE.** À nombre de paramètres compté, **la forme rigide
+reste préférée par l'AIC sur Planck complet** : accrétion 1992,03 (k = 3) contre pente libre
+1992,75 (k = 4) — libérer entièrement la forme ne rapporte que +1,28 en χ² pour un paramètre
+de plus. Même conclusion que sur la vraisemblance légère (#161), par un chemin indépendant :
+**les données ne réclament pas plus de liberté de forme que β n'en donne.** La rigidité paie ;
+c'est la position du croisement qu'elle ne prédit pas correctement.

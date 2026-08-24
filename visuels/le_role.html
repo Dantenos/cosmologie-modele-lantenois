@@ -1,185 +1,183 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Le Rôle — les prédictions, leurs juges, leurs dates</title>
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Le Ciel des Prédictions — le Rôle</title>
 <style>
-html,body{margin:0;background:#0d0c0a;font-family:Georgia,serif;color:#efe9dc}
-#fond{position:fixed;inset:0;z-index:0}
-#page{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:34px 26px 70px}
-h1{font-size:21px;letter-spacing:.07em;font-weight:normal;margin:0 0 4px}
-.sous{font-size:12.5px;color:#cfc8b8;line-height:1.55;margin:0 0 22px;max-width:760px}
-.mono{font-family:ui-monospace,monospace;font-size:10.5px;color:#8f8878}
+html,body{margin:0;height:100%;background:#0d0c0a;overflow:hidden;font-family:Georgia,serif;color:#efe9dc}
+canvas{display:block;cursor:default}
+#hud{position:fixed;top:24px;left:28px;max-width:350px;pointer-events:none}
+#hud h1{font-size:19px;margin:0 0 6px;letter-spacing:.06em;font-weight:normal}
+#hud p{font-size:12.5px;line-height:1.55;margin:4px 0;color:#cfc8b8}
 .v{color:#e0d6c2}.rouge{color:#c96a4a}.or{color:#d9b96a}.bleu{color:#7fa3b8}.vert{color:#8faf7f}
-/* ---- ligne de temps ---- */
-#temps{position:relative;height:74px;margin:8px 0 30px;border-bottom:1px solid #2a2620}
-#temps .axe{position:absolute;left:0;right:0;bottom:22px;height:1px;background:#3a352c}
-.jalon{position:absolute;bottom:0;transform:translateX(-50%);text-align:center;width:150px}
-.jalon .pt{width:9px;height:9px;border-radius:50%;margin:0 auto 6px;background:#7fa3b8;box-shadow:0 0 12px 2px rgba(127,163,184,.45);animation:pulse 3s infinite}
-.jalon.now .pt{background:#c96a4a;box-shadow:0 0 14px 3px rgba(201,106,74,.55)}
-.jalon.inf .pt{background:#6f6a5e;box-shadow:none;animation:none}
-.jalon .lab{font-size:11px;color:#cfc8b8;line-height:1.35}
-.jalon .an{font-family:ui-monospace,monospace;font-size:10px;color:#8f8878}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.35)}}
-/* ---- cartes ---- */
-#grille{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-@media(max-width:900px){#grille{grid-template-columns:1fr}}
-.carte{background:rgba(20,18,15,.92);border:1px solid #2a2620;padding:16px 18px 14px;position:relative}
-.carte h2{font-size:14.5px;font-weight:normal;letter-spacing:.10em;margin:0 0 2px;color:#e0d6c2}
-.carte .aff{font-size:12px;color:#cfc8b8;line-height:1.5;margin:4px 0 10px}
-.carte .juge{font-size:11px;color:#a89f8d;margin-bottom:12px}
-.carte .juge b{color:#d9b96a;font-weight:normal}
-.etat{border-top:1px solid #241f19;padding-top:10px;margin-top:4px}
-.etat h3{font-size:10.5px;letter-spacing:.16em;color:#8f8878;font-weight:normal;margin:0 0 8px;font-family:ui-monospace,monospace}
-.legende{font-size:10.5px;color:#8f8878;margin-top:7px;line-height:1.5}
-.verdicts{font-size:10.5px;color:#a89f8d;line-height:1.6;margin-top:10px;border-top:1px solid #241f19;padding-top:8px}
-.verdicts b{font-weight:normal;letter-spacing:.08em}
+.mono{font-family:ui-monospace,monospace;font-size:11px;color:#8f8878}
+#casiers{position:fixed;top:24px;right:28px;text-align:right;font-size:11.5px;color:#a89f8d;pointer-events:none;line-height:1.7}
+#casiers b{display:block;font-size:12.5px;letter-spacing:.16em;color:#cfc8b8;font-weight:normal}
+#fiche{position:fixed;left:28px;bottom:52px;width:min(560px,calc(100vw - 76px));background:rgba(18,16,13,.96);
+border:1px solid #3a352c;padding:14px 17px;font-size:12px;line-height:1.55;color:#cfc8b8;display:none;z-index:3}
+#fiche h3{margin:0 0 2px;font-size:15px;font-weight:normal;color:#e0d6c2;letter-spacing:.06em}
+#fiche .juge{font-size:11px;color:#a89f8d;margin-bottom:9px}
+#fiche .juge b{color:#d9b96a;font-weight:normal}
+#fiche .fermer{position:absolute;top:6px;right:11px;color:#6f6a5e;cursor:pointer;font-size:14px}
+.verdicts{font-size:10.5px;color:#a89f8d;line-height:1.6;margin-top:9px;border-top:1px solid #241f19;padding-top:7px}
 .vV{color:#8faf7f}.vR{color:#c96a4a}.vI{color:#d9b96a}
-/* jauge beta */
-.bande{position:relative;height:64px;margin:2px 0 0}
-.bande .regle{position:absolute;left:0;right:0;top:38px;height:1px;background:#3a352c}
-.bande .zone{position:absolute;top:26px;height:25px;background:rgba(217,185,106,.13);border-left:1px solid rgba(217,185,106,.5);border-right:1px solid rgba(217,185,106,.5)}
-.bande .zlab{position:absolute;top:53px;font-family:ui-monospace,monospace;font-size:9.5px;color:#d9b96a}
+.legende{font-size:10.5px;color:#8f8878;margin-top:6px;line-height:1.5}
+.bande{position:relative;height:62px;margin:4px 0 0}
+.bande .regle{position:absolute;left:0;right:0;top:37px;height:1px;background:#3a352c}
+.bande .zone{position:absolute;top:26px;height:23px;background:rgba(217,185,106,.13);border-left:1px solid rgba(217,185,106,.5);border-right:1px solid rgba(217,185,106,.5)}
+.bande .zlab{position:absolute;top:51px;font-family:ui-monospace,monospace;font-size:9.5px;color:#d9b96a}
 .bande .tick{position:absolute;top:40px;font-family:ui-monospace,monospace;font-size:9px;color:#6f6a5e;transform:translateX(-50%)}
 .mesure{position:absolute;transform:translateX(-50%)}
-.mesure .barre{position:absolute;top:36px;height:5px;transform:translateY(-50%);border-radius:2px;opacity:.55}
-.mesure .pt{position:absolute;top:36px;width:8px;height:8px;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 10px 2px}
-.mesure .nom{position:absolute;top:0;transform:translateX(-50%);font-size:9.5px;font-family:ui-monospace,monospace;white-space:nowrap}
-.mesure:nth-child(odd) .nom{top:12px}
-/* jauge FRB */
-.jfrb{position:relative;height:56px;margin-top:4px}
-.jfrb .rail{position:absolute;left:0;right:0;top:24px;height:9px;background:#1a1712;border:1px solid #2a2620}
-.jfrb .fill{position:absolute;left:0;top:24px;height:9px;background:linear-gradient(90deg,#7fa3b8,#d9b96a);border:1px solid transparent;animation:grow 2.2s ease-out}
+.mesure .barre{position:absolute;top:37px;height:5px;transform:translateY(-50%);border-radius:2px;opacity:.55}
+.mesure .pt{position:absolute;top:37px;width:8px;height:8px;border-radius:50%;transform:translate(-50%,-50%)}
+.mesure .nom{position:absolute;transform:translateX(-50%);font-size:9.5px;font-family:ui-monospace,monospace;white-space:nowrap}
+.jfrb{position:relative;height:52px;margin-top:6px}
+.jfrb .rail{position:absolute;left:0;right:0;top:22px;height:9px;background:#1a1712;border:1px solid #2a2620}
+.jfrb .fill{position:absolute;left:0;top:22px;height:9px;background:linear-gradient(90deg,#7fa3b8,#d9b96a);animation:grow 1.8s ease-out}
 @keyframes grow{from{width:0}}
-.jfrb .tick{position:absolute;top:36px;font-family:ui-monospace,monospace;font-size:9.5px;color:#8f8878;transform:translateX(-50%)}
-.jfrb .tick::before{content:"";position:absolute;left:50%;top:-13px;width:1px;height:11px;background:#4a4438}
-.jfrb .hist{position:absolute;top:6px;font-family:ui-monospace,monospace;font-size:9.5px;color:#6f6a5e;transform:translateX(-50%)}
-/* chips */
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
-.chip{font-size:10px;font-family:ui-monospace,monospace;padding:3px 8px;border:1px solid #3a352c;border-radius:2px;color:#cfc8b8}
-.chip.contre{border-color:#c96a4a;color:#c96a4a}
-.chip.pour{border-color:#8faf7f;color:#8faf7f}
-.chip.neutre{border-color:#4a4438;color:#8f8878}
-.manche{display:inline-block;margin-right:14px;font-size:11px;color:#cfc8b8}
-.manche .m{display:inline-block;width:10px;height:10px;border-radius:50%;background:#8faf7f;box-shadow:0 0 8px 1px rgba(143,175,127,.5);margin-right:6px;vertical-align:-1px}
-#sceau{margin:26px 0 0;padding:13px 18px;border:1px solid #3a352c;background:rgba(20,18,15,.92);font-size:11.5px;color:#cfc8b8;line-height:1.6}
-#sceau .h{font-family:ui-monospace,monospace;color:#d9b96a;font-size:11px;word-break:break-all}
-#pied{margin-top:22px;font-size:10.5px;color:#6f6a5e;font-family:ui-monospace,monospace;line-height:1.7}
-</style></head><body>
-<canvas id="fond"></canvas>
-<div id="page">
-<h1>LE RÔLE <span class="mono">les prédictions, leurs juges, leurs dates</span></h1>
-<p class="sous">Quatre affaires inscrites au rôle d&#8217;Audience, chacune avec son affirmation gelée, son juge
-nommé, son échéance et son hash d&#8217;inscription. Rien ici n&#8217;attend un avis&nbsp;: tout attend une <span class="v">mesure</span>.
-Les jauges montrent où en est chaque prédiction aujourd&#8217;hui — verdicts rejoués, jamais estimés.</p>
-
-<div id="temps">
- <div class="axe"></div>
- <div class="jalon now" style="left:8%"><div class="pt"></div><div class="lab">aujourd&#8217;hui</div><div class="an">24/08/2026</div></div>
- <div class="jalon" style="left:38%"><div class="pt"></div><div class="lab">DESI DR3 &mdash; le sceau s&#8217;ouvre</div><div class="an">2027</div></div>
- <div class="jalon" style="left:62%"><div class="pt"></div><div class="lab">~120 FRB localisés</div><div class="an">2027&ndash;2028</div></div>
- <div class="jalon inf" style="left:88%"><div class="pt"></div><div class="lab">vides profonds &middot; GWOSC O4+</div><div class="an">ouvert / continu</div></div>
-</div>
-
-<div id="grille">
-
-<div class="carte"><h2>DR3-&beta; &mdash; LA BANDE SCELLÉE</h2>
-<div class="aff">w(z) = &minus;&beta;/(3Ht), &beta; &isin; [2,42&nbsp;; 2,60], &beta;&#8321; = +0,06 &plusmn; 0,31, |&kappa;| &lt; 0,24</div>
-<div class="juge">juge : <b>DESI DR3</b> &middot; échéance 2027 &middot; inscription <span class="mono">dc8ab8e53b9f</span></div>
-<div class="etat"><h3>OÙ EN EST &beta; — les trois mesures du corpus sur la bande</h3>
-<div class="bande" id="bande-beta"></div>
-<div class="legende">La bande dorée est scellée depuis le 22/08/2026. Avertissement écrit <i>avant</i> les données
-(#151)&nbsp;: le Planck marginalisé est au bord extérieur — un atterrissage à 2,60&ndash;2,65 donnera INDÉCISE.
-Second juge gratuit&nbsp;: la fenêtre du croisement DESI (z<sub>&times;</sub> 0,4&ndash;0,5) correspond à &beta; 2,38&ndash;2,45.</div>
-<div class="verdicts"><b class="vV">VALIDÉE</b> si &beta; &isin; bande à 1&sigma; et |&kappa;| &lt; 0,24 &middot;
-<b class="vR">RÉFUTÉE</b> si exclusion &gt; 3&sigma;, ou &Delta;AIC &gt; +6 vs &Lambda;CDM, ou &beta;&#8321; exclu &gt; 3&sigma; &middot;
-<b class="vI">INDÉCISE</b> sinon — et INDÉCISE n&#8217;est pas VALIDÉE.</div></div></div>
-
-<div class="carte"><h2>FRB-s &mdash; LE CANAL DÉCIDABLE</h2>
-<div class="aff">survie baryonique s = 1 (accrétion) contre s = 0,70 (CCBH) &mdash; 3&sigma; à 82&ndash;120 sursauts à levier</div>
-<div class="juge">juge : <b>catalogue FRB localisées N &ge; 120</b> &middot; échéance 2027&ndash;2028 &middot; inscription <span class="mono">d103d6ebbcf0</span></div>
-<div class="etat"><h3>LE COMPTEUR — SURSAUTS LOCALISÉS À REDSHIFT SPECTROSCOPIQUE</h3>
-<div class="jfrb">
- <div class="hist" style="left:4.2%">5 &middot; 2020</div><div class="hist" style="left:18.3%">22 &middot; 2022</div><div class="hist" style="left:57.5%">69 &middot; 2025</div>
- <div class="rail"></div><div class="fill" style="width:57.5%"></div>
- <div class="tick" style="left:57.5%">N = 69</div><div class="tick" style="left:68.3%">82 &middot; 3&sigma; si levier</div><div class="tick" style="left:100%">120</div>
-</div>
-<div class="legende">Sur les 69 réels (Connor 2025)&nbsp;: <span class="v">&Delta;&chi;&sup2;(CCBH) = +4,7 (~2,2&sigma;)</span>,
-bootstrap [16;84] = [+1,9&nbsp;; +8,5], CCBH gagnant dans 1,5&nbsp;% des tirages, <span class="rouge">bord f<sub>d</sub> = 1 saturé</span> —
-le déficit n&#8217;est pas absorbable. L&#8217;accrétion (s = 1) est indiscernable de &Lambda;CDM, comme prédit (#148-149).</div>
-<div class="verdicts"><b class="vV">s = 1 tient</b> si le refit à N &ge; 120 garde CCBH exclu &middot;
-<b class="vR">s = 1 tombe</b> si les données exigent s &asymp; 0,70 &middot; sans levier bas-z + haut-z : <b class="vI">239 sursauts requis</b>.</div></div></div>
-
-<div class="carte"><h2>W-UNIVERSEL &mdash; GOULET CONTRE HORLOGE</h2>
-<div class="aff">w(z) universel par environnement (goulet) contre dépendance vides/murs (horloge)</div>
-<div class="juge">juge : <b>Pantheon+ &times; catalogues de vides</b> &middot; échéance ouverte &middot; inscription <span class="mono">b652a956509b</span></div>
-<div class="etat"><h3>LES MANCHES — DEUX JOUÉES, UNE À VENIR</h3>
-<div style="margin:6px 0 2px">
-<span class="manche"><span class="m"></span>1. hémisphères &mdash; &Delta;&beta; = +0,24 &plusmn; 0,23 &rarr; universel</span>
-<span class="manche"><span class="m"></span>2. vides, deux juges &mdash; &Delta;&beta; = +0,10 &plusmn; 0,24 &rarr; universel</span>
-<span class="manche"><span class="m" style="background:#4a4438;box-shadow:none"></span>3. vides profonds &mdash; à jouer</span>
-</div>
-<div class="legende"><span class="vert">2&ndash;0 pour le goulet</span>, l&#8217;horloge vivante&nbsp;: réduit à |&Delta;&beta;| &lt; 0,47 (local)
-et &lt; 0,77 (SDSS)&nbsp;; les trois algorithmes de vides trient des SNe différentes (Jaccard 0,33) — le
-&laquo;&nbsp;vide&nbsp;&raquo; n&#8217;est pas univoque à cette précision (#141-142). La machinerie accepte tout catalogue (RA, Dec, d, R).</div>
-<div class="verdicts"><b class="vR">l&#8217;horloge meurt</b> si l&#8217;universalité tient au niveau requis par sa statistique de vides &middot;
-<b class="vR">le goulet meurt</b> si un signal environnemental &gt; 2&sigma; se reproduit sur &ge; 2 catalogues.</div></div></div>
-
-<div class="carte"><h2>k3-vs-0 &mdash; LE COUPLAGE DES TROUS NOIRS</h2>
-<div class="aff">couplage cosmologique k = 3 (CCBH) contre k = 0 (accrétion, &Lambda;CDM) &mdash; postérieur vivant</div>
-<div class="juge">juge : <b>GWOSC O4 + Gaia + compilations AGN</b> &middot; échéance continue &middot; inscription <span class="mono">fbf93c9a69b6</span></div>
-<div class="etat"><h3>LES CINQ BORNES — RELUES AUX SOURCES PRIMAIRES</h3>
-<div class="chips">
-<span class="chip contre">NGC 3201 &mdash; contre k=3</span>
-<span class="chip contre">Gaia BH1/BH2 &mdash; contre</span>
-<span class="chip contre">JWST 2025 &mdash; k=3 rejeté ~11&sigma;</span>
-<span class="chip neutre">JWST AGN 2024 &mdash; refusée (règle E5)</span>
-<span class="chip neutre">Lacy SMBH &mdash; 0 &lt; k &lesssim; 2*</span>
-<span class="chip pour">fond DESI &mdash; k:=3 compatible (pas une borne)</span>
-</div>
-<div class="legende">*caveat déclaré&nbsp;: la densité PTA rend k = 3 viable sur ce canal. Le canal le plus direct
-(JWST 2025) rejette k = 3 à ~11&sigma;&nbsp;; le fond, lui, ne tranchera jamais (direction quasi-plate, #139) —
-c&#8217;est un théorème du corpus, pas une excuse.</div>
-<div class="verdicts"><b>règle E5</b> : le postérieur combiné n&#8217;est émis que sur des bornes vérifiées aux sources
-primaires (5/7 au 24/08) &middot; toute valeur reprise d&#8217;un résumé secondaire = refusée.</div></div></div>
-
-</div>
-
-<div id="sceau"><b style="letter-spacing:.12em;color:#e0d6c2">LE SCEAU</b> &mdash; l&#8217;arbitre de DR3-&beta; est écrit, gelé
-et scellé <i>avant</i> l&#8217;arrivée du juge. Quiconque compare ce hash au fichier en 2027 vérifie que l&#8217;analyse n&#8217;a pas bougé&nbsp;:
-<div class="h">sha256(outils/scelle.py) = 68d06bcccbecf2276919c05dc841c6d878ca2516427e533af38d64344aed45a2</div>
-épinglé dans la CI &middot; toute modification fait rougir le build &middot; mode d&#8217;emploi pour 2027 : <span class="mono">registres/POUR_2027.md</span></div>
-
-<div id="pied">généré depuis outils/audience.json (+ registres #141-151) par outils/genere_audience.py, le 2026-08-24 &middot;
-hash d&#8217;inscriptions vérifiés &middot; N(FRB) recompté depuis la table Connor 2025 &middot; zéro dépendance réseau &middot;
-casiers : Lantenois2026 3 en attente &middot; Claude_campagne0826 2 &middot; Croker2024 2 &middot; Goulet 1 &middot; Horloge 1</div>
-</div>
+.jfrb .tick{position:absolute;top:34px;font-family:ui-monospace,monospace;font-size:9.5px;color:#8f8878;transform:translateX(-50%)}
+.jfrb .tick::before{content:"";position:absolute;left:50%;top:-12px;width:1px;height:10px;background:#4a4438}
+.jfrb .hist{position:absolute;top:5px;font-family:ui-monospace,monospace;font-size:9.5px;color:#6f6a5e;transform:translateX(-50%)}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.chip{font-size:9.5px;font-family:ui-monospace,monospace;padding:2px 7px;border:1px solid #3a352c;border-radius:2px;color:#cfc8b8}
+.chip.contre{border-color:#c96a4a;color:#c96a4a}.chip.pour{border-color:#8faf7f;color:#8faf7f}.chip.neutre{border-color:#4a4438;color:#8f8878}
+.manche{display:block;font-size:11px;color:#cfc8b8;margin:3px 0}
+.manche .m{display:inline-block;width:9px;height:9px;border-radius:50%;background:#8faf7f;box-shadow:0 0 7px 1px rgba(143,175,127,.5);margin-right:7px;vertical-align:-1px}
+#pied{position:fixed;bottom:16px;left:28px;right:28px;font-size:10.5px;color:#6f6a5e;font-family:ui-monospace,monospace}
+</style></head><body><canvas id="c"></canvas>
+<div id="hud"><h1>LE CIEL DES PRÉDICTIONS <span class="mono">le rôle</span></h1>
+<p>Vous êtes au centre, aujourd&#8217;hui. Chaque affaire est en orbite&nbsp;:
+<span class="v">plus l&#8217;anneau est proche, plus le juge est proche</span>.
+L&#8217;arc autour de chaque astre est sa progression vers le verdict.</p>
+<p><span class="or">&#9679;</span> DR3-&beta;, la bande scellée &middot; <span class="bleu">&#9679;</span> FRB-s, le canal décidable<br>
+<span class="vert">&#9679;</span> W-universel, le duel &middot; <span style="color:#a89f8d">&#9679;</span> k3-vs-0, le postérieur vivant</p>
+<p class="mono">cliquer un astre : l&#8217;affirmation gelée, les jauges, les verdicts</p></div>
+<div id="casiers"><b>LES CASIERS</b>Lantenois2026 &mdash; 3 en attente<br>Claude_campagne0826 &mdash; 2<br>
+Croker2024 &mdash; 2 &middot; Goulet &mdash; 1 &middot; Horloge &mdash; 1<br>
+<span class="mono">validées 0 &middot; réfutées 0 &middot; le tribunal attend</span></div>
+<div id="fiche"><span class="fermer">&times;</span><div id="fiche-corps"></div></div>
+<div id="pied">généré depuis outils/audience.json (+ registres #139, #141-151) le 2026-08-24 &middot; hash d&#8217;inscriptions vérifiés &middot;
+sceau intact : sha256(scelle.py) = 68d06bcc&hellip; &middot; N(FRB) recompté &middot; mode d&#8217;emploi 2027 : registres/POUR_2027.md &middot; zéro dépendance réseau</div>
 <script>
-// jauge beta : echelle 2,20 -> 2,80
-(function(){
- const el=document.getElementById('bande-beta');
- const lo=2.20,hi=2.80,pc=v=>((v-lo)/(hi-lo)*100).toFixed(2)+'%';
+const cv=document.getElementById('c'),g=cv.getContext('2d');
+let W,H,DPR,CX,CY,RU;function rs(){DPR=devicePixelRatio;W=cv.width=innerWidth*DPR;H=cv.height=innerHeight*DPR;
+cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';CX=W*0.54;CY=H*0.54;RU=Math.min(W,H)*0.105}
+rs();addEventListener('resize',rs);
+const AFF=[
+{id:'DR3',nom:'DR3-β — la bande scellée',ring:1.55,ang:-0.85,vit:0.024,col:'#d9b96a',rgb:'217,185,106',r:11,
+ anneau:'2027 · DESI DR3',prog:0.30,progLab:'le sceau attend',
+ lunes:['#7fa3b8','#8faf7f','#c96a4a']},
+{id:'FRB',nom:'FRB-s — le canal décidable',ring:2.45,ang:0.55,vit:0.019,col:'#7fa3b8',rgb:'127,163,184',r:10,
+ anneau:'2027–2028 · ~120 FRB',prog:69/120,progLab:'69 / 120 sursauts',lunes:[]},
+{id:'W',nom:'W-universel — goulet contre horloge',ring:3.35,ang:2.35,vit:0.014,col:'#8faf7f',rgb:'143,175,127',r:9.5,
+ anneau:'échéance ouverte · vides profonds',prog:2/3,progLab:'manches 2 / 3',lunes:['#8faf7f','#8faf7f','#4a4438']},
+{id:'K',nom:'k3-vs-0 — le postérieur vivant',ring:4.1,ang:3.85,vit:0.010,col:'#a89f8d',rgb:'168,159,141',r:9,
+ anneau:'continu · GWOSC O4 + Gaia + AGN',prog:5/7,progLab:'bornes 5 / 7',lunes:['#c96a4a','#c96a4a','#c96a4a','#6f6a5e','#6f6a5e','#8faf7f']}];
+const FICHES={
+DR3:`<h3>DR3-&beta; — LA BANDE SCELLÉE</h3>
+<div class="juge">w(z) = &minus;&beta;/(3Ht), &beta; &isin; [2,42&nbsp;; 2,60], &beta;&#8321; = +0,06 &plusmn; 0,31, |&kappa;| &lt; 0,24 &middot;
+juge : <b>DESI DR3</b> &middot; 2027 &middot; inscription <span class="mono">dc8ab8e53b9f</span></div>
+<div class="bande" id="bande-beta"></div>
+<div class="legende">Les trois &beta; du corpus sur la bande. Avertissement écrit <i>avant</i> les données (#151)&nbsp;:
+le Planck marginalisé est au bord — 2,60&ndash;2,65 donnera INDÉCISE. Second juge&nbsp;: z<sub>&times;</sub> 0,4&ndash;0,5 &hArr; &beta; 2,38&ndash;2,45.</div>
+<div class="verdicts"><b class="vV">VALIDÉE</b> si &beta; dans la bande à 1&sigma; et |&kappa;| &lt; 0,24 &middot;
+<b class="vR">RÉFUTÉE</b> si exclusion &gt; 3&sigma;, ou &Delta;AIC &gt; +6 vs &Lambda;CDM, ou &beta;&#8321; exclu &middot;
+<b class="vI">INDÉCISE</b> sinon — et INDÉCISE n&#8217;est pas VALIDÉE. Arbitre scellé : 68d06bcc&hellip;</div>`,
+FRB:`<h3>FRB-s — LE CANAL DÉCIDABLE</h3>
+<div class="juge">survie baryonique s = 1 (accrétion) contre 0,70 (CCBH) &middot; juge : <b>catalogue localisé N &ge; 120</b> &middot;
+2027&ndash;2028 &middot; inscription <span class="mono">d103d6ebbcf0</span></div>
+<div class="jfrb"><div class="hist" style="left:4.2%">5·2020</div><div class="hist" style="left:18.3%">22·2022</div>
+<div class="hist" style="left:57.5%">69·2025</div><div class="rail"></div><div class="fill" style="width:57.5%"></div>
+<div class="tick" style="left:57.5%">N=69</div><div class="tick" style="left:68.3%">82 · 3&sigma; si levier</div><div class="tick" style="left:100%">120</div></div>
+<div class="legende">Sur les 69 réels&nbsp;: <span class="v">&Delta;&chi;&sup2;(CCBH) = +4,7 (~2,2&sigma;)</span>, bootstrap [+1,9&nbsp;; +8,5],
+<span class="rouge">bord f<sub>d</sub> = 1 saturé</span> — le déficit n&#8217;est pas absorbable&nbsp;; s = 1 indiscernable de &Lambda;CDM, comme prédit (#148-149).</div>
+<div class="verdicts"><b class="vV">s = 1 tient</b> si le refit à N &ge; 120 garde CCBH exclu &middot; <b class="vR">tombe</b> si s &asymp; 0,70 exigé &middot;
+sans levier : <b class="vI">239 requis</b>.</div>`,
+W:`<h3>W-UNIVERSEL — GOULET CONTRE HORLOGE</h3>
+<div class="juge">w universel par environnement contre dépendance vides/murs &middot; juge : <b>Pantheon+ &times; catalogues de vides</b> &middot;
+ouverte &middot; inscription <span class="mono">b652a956509b</span></div>
+<span class="manche"><span class="m"></span>manche 1 — hémisphères : &Delta;&beta; = +0,24 &plusmn; 0,23 &rarr; universel</span>
+<span class="manche"><span class="m"></span>manche 2 — vides, deux juges : &Delta;&beta; = +0,10 &plusmn; 0,24 &rarr; universel</span>
+<span class="manche"><span class="m" style="background:#4a4438;box-shadow:none"></span>manche 3 — vides profonds : à jouer</span>
+<div class="legende"><span class="vert">2&ndash;0 goulet</span>, l&#8217;horloge vivante&nbsp;: réduit à |&Delta;&beta;| &lt; 0,47 (local), &lt; 0,77 (SDSS)&nbsp;;
+les trois algorithmes trient des SNe différentes (Jaccard 0,33) — le &laquo;&nbsp;vide&nbsp;&raquo; n&#8217;est pas univoque (#141-142).</div>
+<div class="verdicts"><b class="vR">l&#8217;horloge meurt</b> si l&#8217;universalité tient au niveau requis par sa statistique de vides &middot;
+<b class="vR">le goulet meurt</b> si un signal &gt; 2&sigma; se reproduit sur &ge; 2 catalogues.</div>`,
+K:`<h3>k3-vs-0 — LE COUPLAGE DES TROUS NOIRS</h3>
+<div class="juge">k = 3 (CCBH) contre k = 0 &middot; juge : <b>GWOSC O4 + Gaia + AGN</b> &middot; continue &middot; inscription <span class="mono">fbf93c9a69b6</span></div>
+<div class="chips"><span class="chip contre">NGC 3201 — contre</span><span class="chip contre">Gaia BH1/BH2 — contre</span>
+<span class="chip contre">JWST 2025 — rejeté ~11&sigma;</span><span class="chip neutre">JWST AGN 2024 — refusée (E5)</span>
+<span class="chip neutre">Lacy SMBH — 0&lt;k&lesssim;2*</span><span class="chip pour">fond DESI — compatible (pas une borne)</span></div>
+<div class="legende">*la densité PTA rend k = 3 viable sur ce canal. Le plus direct (JWST 2025) rejette à ~11&sigma;&nbsp;;
+le fond, lui, ne tranchera jamais (direction quasi-plate, #139) — théorème du corpus.</div>
+<div class="verdicts"><b>règle E5</b> : postérieur émis sur bornes vérifiées aux sources primaires seulement (5/7) &middot;
+valeur de résumé secondaire = refusée.</div>`};
+function bande(){const el=document.getElementById('bande-beta');if(!el)return;
+ const lo=2.20,hi=2.80,pc=v=>((v-lo)/(hi-lo)*100)+'%';
  el.innerHTML=`<div class="regle"></div>
- <div class="zone" style="left:${pc(2.42)};width:${((2.60-2.42)/(hi-lo)*100).toFixed(2)}%"></div>
- <div class="zlab" style="left:${pc(2.42)}">2,42</div><div class="zlab" style="left:${pc(2.60)};transform:translateX(-100%)">2,60 &mdash; la bande scellée</div>
- ${[2.2,2.3,2.4,2.5,2.6,2.7,2.8].map(t=>`<div class="tick" style="left:${pc(t)}">${t.toFixed(1).replace('.',',')}</div>`).join('')}
- ${[[2.419,0.073,0.073,'#7fa3b8','2,42 ± 0,07 · fond léger marginalisé'],
-    [2.56,0.02,0.08,'#8faf7f','2,56 · profil Planck'],
-    [2.603,0.053,0.046,'#c96a4a','2,60 ± 0,05 · Planck marginalisé (#151)']]
-  .map(([v,lo_,hi_,c,n],i)=>`<div class="mesure" style="left:${pc(v)}">
-   <div class="barre" style="left:${(-((lo_)/(hi-lo))*100* el.offsetWidth/100).toFixed(1)}px;width:${(((lo_+hi_)/(hi-lo))*el.offsetWidth/100*100/ el.offsetWidth*el.offsetWidth).toFixed(1)}px;background:${c}"></div>
-   <div class="pt" style="background:${c};box-shadow:0 0 10px 2px ${c}66"></div>
-   <div class="nom" style="color:${c};top:${i===1?0:12}px">${n}</div></div>`).join('')}`;
- // barres d'erreur en unites d'echelle (recalcule apres insertion)
- const w=el.offsetWidth;
- el.querySelectorAll('.mesure').forEach((m,i)=>{
-  const d=[[0.073,0.073],[0.02,0.08],[0.053,0.046]][i];
-  const b=m.querySelector('.barre');
-  b.style.left=(-d[0]/(hi-lo)*w)+'px';b.style.width=((d[0]+d[1])/(hi-lo)*w)+'px'})})();
-// poussiere de fond
-const cv=document.getElementById('fond'),g=cv.getContext('2d');let W,H;
-function rs(){W=cv.width=innerWidth*devicePixelRatio;H=cv.height=innerHeight*devicePixelRatio;
-cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px'}rs();addEventListener('resize',rs);
-const DUST=[];for(let i=0;i<170;i++)DUST.push([Math.random(),Math.random(),Math.random()*0.5+0.15,Math.random()*6.28]);
+ <div class="zone" style="left:${pc(2.42)};width:${(2.60-2.42)/(hi-lo)*100}%"></div>
+ <div class="zlab" style="left:${pc(2.42)}">2,42</div><div class="zlab" style="left:${pc(2.60)};transform:translateX(-100%)">2,60 — scellée</div>
+ ${[2.2,2.3,2.4,2.5,2.6,2.7,2.8].map(t=>`<div class="tick" style="left:${pc(t)}">${t.toFixed(1).replace('.',',')}</div>`).join('')}`;
+ const w=el.offsetWidth,M=[[2.419,.073,.073,'#7fa3b8','2,42±0,07 léger',12],[2.56,.02,.08,'#8faf7f','2,56 profil',0],[2.603,.053,.046,'#c96a4a','2,60±0,05 Planck (#151)',12]];
+ for(const[v,l,h,c,n,ty]of M){const d=document.createElement('div');d.className='mesure';d.style.left=pc(v);
+  d.innerHTML=`<div class="barre" style="left:${-l/(hi-lo)*w}px;width:${(l+h)/(hi-lo)*w}px;background:${c}"></div>
+  <div class="pt" style="background:${c};box-shadow:0 0 9px 2px ${c}66"></div><div class="nom" style="color:${c};top:${ty}px">${n}</div>`;
+  el.appendChild(d)}}
+let sel=null,hov=null,mx=-1,my=-1;
+cv.addEventListener('pointermove',e=>{mx=e.clientX*DPR;my=e.clientY*DPR});
+cv.addEventListener('click',()=>{const f=document.getElementById('fiche');
+ if(hov){sel=hov;document.getElementById('fiche-corps').innerHTML=FICHES[sel.id];f.style.display='block';bande()}
+ else{sel=null;f.style.display='none'}});
+document.querySelector('.fermer').addEventListener('click',()=>{sel=null;document.getElementById('fiche').style.display='none'});
+const DUST=[];for(let i=0;i<230;i++)DUST.push([Math.random(),Math.random(),Math.random()*0.5+0.15,Math.random()*6.28]);
 let t0=performance.now();
-(function fr(){requestAnimationFrame(fr);const t=(performance.now()-t0)/1000;
+function fr(){requestAnimationFrame(fr);const t=(performance.now()-t0)/1000;
 g.fillStyle='#0d0c0a';g.fillRect(0,0,W,H);
 for(const[dx,dy,a,p]of DUST){const tw=0.5+0.5*Math.sin(t*0.6+p);
-g.fillStyle=`rgba(160,150,130,${0.04+0.09*a*tw})`;g.beginPath();g.arc(dx*W,dy*H,0.8*devicePixelRatio,0,7);g.fill()}})();
+ g.fillStyle=`rgba(160,150,130,${0.04+0.09*a*tw})`;g.beginPath();g.arc(dx*W,dy*H,0.8*DPR,0,7);g.fill()}
+// anneaux (rayon = distance en temps)
+for(const a of AFF){const R=a.ring*RU,ouvert=a.id==='W'||a.id==='K';
+ g.strokeStyle=`rgba(111,106,94,${ouvert?0.16:0.24})`;g.lineWidth=1*DPR;
+ if(ouvert)g.setLineDash([4*DPR,7*DPR]);
+ g.beginPath();g.arc(CX,CY,R,0,7);g.stroke();g.setLineDash([]);
+ g.font=`${10*DPR}px ui-monospace,monospace`;g.textAlign='center';g.fillStyle='rgba(143,136,120,0.6)';
+ g.fillText(a.anneau,CX,CY-R-7*DPR)}
+// le centre : aujourd'hui
+const gs=g.createRadialGradient(CX,CY,0,CX,CY,RU*0.75);
+gs.addColorStop(0,'rgba(201,106,74,0.55)');gs.addColorStop(0.25,'rgba(201,106,74,0.16)');gs.addColorStop(1,'rgba(0,0,0,0)');
+g.fillStyle=gs;g.beginPath();g.arc(CX,CY,RU*0.75,0,7);g.fill();
+g.fillStyle='#c96a4a';g.beginPath();g.arc(CX,CY,5.5*DPR*(1+0.07*Math.sin(t*1.6)),0,7);g.fill();
+g.font=`${11.5*DPR}px Georgia`;g.textAlign='center';g.fillStyle='rgba(239,233,220,0.9)';
+g.fillText("AUJOURD'HUI",CX,CY+20*DPR);
+g.font=`${9.5*DPR}px ui-monospace,monospace`;g.fillStyle='rgba(143,136,120,0.85)';g.fillText('24/08/2026 · sceau 68d06bcc…',CX,CY+33*DPR);
+// les astres
+hov=null;
+for(const a of AFF){const R=a.ring*RU,ang=a.ang+t*a.vit;
+ const x=CX+R*Math.cos(ang),y=CY+R*Math.sin(ang);
+ // queue de comete (vers l'arriere de la marche)
+ for(let q=1;q<=7;q++){const aa=ang-q*0.035,al=0.16*(1-q/8);
+  g.fillStyle=`rgba(${a.rgb},${al})`;g.beginPath();
+  g.arc(CX+R*Math.cos(aa),CY+R*Math.sin(aa),(a.r-q)*DPR*0.5,0,7);g.fill()}
+ // arc de progression vers le verdict
+ g.strokeStyle=`rgba(${a.rgb},0.85)`;g.lineWidth=2.2*DPR;g.lineCap='round';
+ g.beginPath();g.arc(x,y,a.r*DPR+7*DPR,-Math.PI/2,-Math.PI/2+a.prog*6.283);g.stroke();
+ g.strokeStyle=`rgba(${a.rgb},0.18)`;g.beginPath();g.arc(x,y,a.r*DPR+7*DPR,0,7);g.stroke();
+ // halo + corps
+ const tw=0.8+0.2*Math.sin(t*1.2+a.ring);
+ const gr=g.createRadialGradient(x,y,0,x,y,a.r*DPR*4);
+ gr.addColorStop(0,`rgba(${a.rgb},${0.8*tw})`);gr.addColorStop(0.3,`rgba(${a.rgb},${0.25*tw})`);gr.addColorStop(1,'rgba(0,0,0,0)');
+ g.fillStyle=gr;g.beginPath();g.arc(x,y,a.r*DPR*4,0,7);g.fill();
+ g.fillStyle=a.col;g.beginPath();g.arc(x,y,a.r*DPR,0,7);g.fill();
+ // lunes (mesures / manches / bornes)
+ a.lunes.forEach((c,i)=>{const la=t*0.5+i*6.283/Math.max(a.lunes.length,3)+a.ring;
+  const lx=x+(a.r*DPR+16*DPR)*Math.cos(la),ly=y+(a.r*DPR+16*DPR)*Math.sin(la);
+  g.fillStyle=c;g.beginPath();g.arc(lx,ly,2.6*DPR,0,7);g.fill()});
+ // nom + progression
+ g.font=`${11*DPR}px Georgia`;g.textAlign='center';g.fillStyle='rgba(224,214,194,0.92)';
+ g.fillText(a.nom.split(' — ')[0],x,y+a.r*DPR+24*DPR);
+ g.font=`${9*DPR}px ui-monospace,monospace`;g.fillStyle=`rgba(${a.rgb},0.9)`;
+ g.fillText(a.progLab,x,y+a.r*DPR+36*DPR);
+ const d2=(mx-x)**2+(my-y)**2;if(d2<(a.r*DPR*3)**2)hov=a}
+if(hov){cv.style.cursor='pointer';
+ const R=hov.ring*RU,ang=hov.ang+t*hov.vit,x=CX+R*Math.cos(ang),y=CY+R*Math.sin(ang);
+ g.strokeStyle='rgba(239,233,220,0.8)';g.lineWidth=1.2*DPR;
+ g.beginPath();g.arc(x,y,hov.r*DPR+12*DPR,0,7);g.stroke()}
+else cv.style.cursor='default'}
+fr();
 </script></body></html>

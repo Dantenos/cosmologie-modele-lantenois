@@ -1,6 +1,6 @@
 # LE REGISTRE DES TENSIONS — généré par `outils/greffier.py`, ne pas éditer à la main
 
-*2026-08-24 — 8 tensions : 6 ouvertes, 0 en jugement, 2 résolues. Règle du greffe : une tension ne se*
+*2026-08-24 — 9 tensions : 7 ouvertes, 0 en jugement, 2 résolues. Règle du greffe : une tension ne se*
 *résout que par l'arbitre nommé avant la résolution — on ne réécrit pas l'histoire d'une anomalie.*
 
 ## T1-beta-interne — OUVERTE <small>(ouverte le 2026-08-23)</small>
@@ -97,4 +97,16 @@ Lectures rivales :
 - vraie dépendance directionnelle/environnementale de w — la lecture horloge par la petite porte
 
 **Arbitre (gravé d'avance)** : re-spécifié #157 (l'overlap DES est insuffisant : 40 SNe à z̄ 0,04, constaté) : structure de calibration de la bande 82 (über-cal/DR16) sur la zone des vides SGC ; recalibration croisée Dovekie SDSS-DES ; à défaut LSST
+
+## T9-source-externe-vs-interne — OUVERTE <small>(ouverte le 2026-08-24)</small>
+
+**les deux vainqueurs du corpus (accrétion β, échange ε) paramétrisent la MÊME fonction s(a) = d ln ρ_de/d ln a (#161, identité algébrique vérifiée à 1e-4) ; ils ne diffèrent que par la SOURCE — hors budget (matière intacte) ou interne (la matière encaisse). À paramètres égaux l'interne mène de Δχ² = +2,83 (~1,7σ), et n'a besoin d'aucun croisement ; l'externe exige une pente qui court (2,4σ par rapport de vraisemblance contre wCDM) et croise en z₀ = 0,240 [0,090 ; 0,340]**  
+magnitude : **Δχ² = 2,83 entre lectures, ~1,7σ — indécidable aujourd'hui ; mais le discriminant prédit est net : 1,70 % d'écart de matière entre la recombinaison et le bas redshift (interne) contre 0,00 % (externe)** · refs : #161, confluence.py, #150, #154
+
+Lectures rivales :
+- SOURCE EXTERNE (la thèse du corpus) : ρ_de est alimentée hors budget, la matière dilue exactement en a⁻³. Prix à payer : la pente s(a) doit courir et croiser zéro (2,4σ) ; ajustement moins bon de 2,83.
+- ÉCHANGE INTERNE (le vainqueur de l'atlas) : le secteur sombre se transvase, ε ≈ 0,023 constant, aucun croisement requis, meilleur ajustement — mais la matière n'est plus conservée : −1,70 % à la recombinaison.
+- NI L'UN NI L'AUTRE : les 2,83 unités séparant les deux lectures sont du bruit de systématiques SN/BAO à bas z (canal déjà identifié au #148 et à T8), et s(a) n'est pas mesurée du tout.
+
+**Arbitre (gravé d'avance)** : la dilution de la matière : tout jeu contraignant ω_m à mieux que ~1 % SIMULTANÉMENT à la recombinaison (Planck/ACT/SPT) et à bas redshift (DR3 BAO + amas + croissance). Si l'écart mesuré est compatible avec 0 à moins de 1 %, la lecture interne à ε ≈ 0,023 est exclue et l'externe survit ; s'il vaut 1,5-2 %, c'est l'inverse. Aucun des deux modèles n'a le droit de réajuster ε ou β après coup pour absorber l'écart (règle 5 : ils gardent h, ω_b, Ω_m, rien de plus)
 

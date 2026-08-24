@@ -243,5 +243,10 @@
   "sha256": "609e8b4a7a17570f9ba3b1c3a77869cd002e0486c0a456b45d09828c85b728fa",
   "gele_le": "2026-08-24T04:02:44",
   "extrait": "AUDIT iLCDM, VOLET 3 — LA TRILOGIE SN. CRITERES PRE-ENREGISTRES (geles AVANT exe"
+ },
+ "scripts/confluence.py": {
+  "sha256": "3e708bd480401199a537e022046ba5a547627175c76e39555b2aa72254d50675",
+  "gele_le": "2026-08-24T09:28:56",
+  "extrait": "LA CONFLUENCE — les deux vainqueurs du corpus mesurent-ils la MEME fonction ?"
  }
 }

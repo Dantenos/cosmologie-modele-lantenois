@@ -2184,3 +2184,59 @@ le plus défavorable (LRG2 D_M, z = 0,706) laisse −9,29 (~3σ naïf) ; le retr
 léger du papier A (β ∈ [2,40 ; 2,44]) a désormais son homologue Planck complet : même
 conclusion, aucun porteur unique. La préférence CMB (−5,1 en haut-ℓ) reste le socle que
 les retraits BAO ne peuvent pas toucher.
+
+## 24/08 (Claude Code) — #161 LA CONFLUENCE : LES DEUX VAINQUEURS DU CORPUS MESURENT LA MÊME FONCTION — ET LA LECTURE INTERNE MÈNE
+`confluence.py` (gelé 3e708bd48040). Validations A/B exactes à 1e-4, ancres #150 reproduites.
+
+**L'IDENTITÉ (algèbre, pas ajustement).** Le solveur gelé intègre
+d ln ρ_de/d ln a ≡ s(a) = −3(1+w) ; l'iΛCDM 'de' pose s = −ε constant, et sa correction de
+matière C = Ω_m + εΩ_de(a^(3−ε)−1)/(3−ε) est *exactement* u(a) = Ω_m − ∫₁^a s ρ_de a³ dlna
+(vérifié analytiquement puis numériquement). **Accrétion et échange sombre ne sont pas deux
+familles rivales : ce sont deux paramétrisations de la MÊME fonction s(a)**, avec une seule
+différence physique — l'accrétion est sourcée hors budget (matière intacte), l'échange est
+interne (la matière encaisse).
+
+**DÉFAVORABLE, ÉCRIT EN PREMIER (critère 2c).** À nombre de paramètres ÉGAL (2), la lecture
+INTERNE bat la lecture EXTERNE de Δχ² = +2,83 (1415,25 vs 1418,08). Et dans la lecture
+interne la pente ne court pas du tout : ε₁ = +0,004 ± 0,040 (0,1σ) — un échange constant
+suffit, aucun croisement n'est requis. La lecture externe, celle du corpus, est la moins bien
+ajustée des deux. ~1,7σ : pas décisif, pas favorable.
+
+**VOLET 1 — CONFLUENTES.** Fit conjoint (β, ε) : +7,32 seulement (β = 2,561, ε = +0,0094),
+sous max(5,78 ; 9,84) + 2. Ajouter un échange à l'accrétion n'achète rien (+1,54 pour un
+paramètre). Déclaré : la famille conjointe contient l'accrétion (ε=0) mais NE contient PAS
+l'échange pur — la comparaison au +9,84 n'est donc pas emboîtée, et le +7,32 < +9,84 dit que
+les deux mécanismes se gênent au lieu de s'ajouter. Un seul signal, vu deux fois.
+
+**VOLET 2 — LA PENTE COURT (lecture externe), ET LE PROFIL LOCAL MENT.** ε₀ = +0,209,
+ε₁ = +0,970 ± 0,240 → **le profil local annonce 4,0σ. C'EST FAUX.** Le vrai nul de « la pente
+court-elle » est ε₁ = 0, qui *est exactement wCDM* (1423,843, atlas #150) : rapport de
+vraisemblance Δχ² = −5,76 pour un paramètre → **2,40σ**. Profil non parabolique (exposant
+≈ 1,25) — c'est le piège déjà consigné à l'épisode de la bosse (2,9σ par courbure contre
+1,1σ par rapport de vraisemblance), retombé dedans et rattrapé. **Le nombre publiable est
+2,4σ, pas 4,0σ.**
+
+**LE CROISEMENT EST MESURÉ, PAS SEULEMENT PRÉDIT.** ε₁ > 0 signifie s > 0 dans le passé
+(fantôme) et s < 0 aujourd'hui (quintessence) : les données *localisent* le changement de
+signe à **z₀ = 0,240, intervalle 1σ [0,090 ; 0,340]**. Le croisement gelé z× = 0,402 (#145,
+à β = 2,42) tombe à ~1,6σ → **INTERMÉDIAIRE** par critère gelé. OBSERVATION POST-HOC,
+DÉCLARÉE COMME TELLE ET SANS POIDS PROBANT : la même vraisemblance préfère β = 2,594, dont
+le z× vaut ≈ 0,23 — soit z₀ à 0,01 près. Les deux nombres sortent des mêmes données et de la
+même famille : c'est une cohérence interne, PAS une confirmation. Le test avec contenu
+serait le même sur Planck complet, où l'information de forme est indépendante.
+
+**CE QUE LA RIGIDITÉ VAUT (favorable, mais mesuré).** De wCDM à la pente libre : −5,76 pour
+un paramètre. De wCDM à l'accrétion : −4,53, pour un paramètre AUSSI, mais dont la forme est
+entièrement fixée. **L'accrétion capture 79 % du signal de running avec une forme rigide**,
+et sa prédiction dans le plan (ε₀, ε₁) = (+0,287 ; +0,729) à β = 2,42 — ZÉRO paramètre libre
+— tombe à 2,2σ de l'ajustement libre : PRÉDICTION INTERMÉDIAIRE (ni confirmée ni réfutée).
+En AIC la rigidité paie : accrétion 1427,31 devant la pente libre 1428,08 et CPL 1428,93.
+Dans la lecture interne, la même forme est écrasée (8,3σ) — attendu : elle détruirait la
+matière ; comparaison peu informative, rapportée par honnêteté du protocole.
+
+**LA PRÉDICTION NEUVE (dérivée, à sceller — T9).** Les deux lectures ajustent presque
+aussi bien mais divergent sur UN observable : la dilution de la matière. L'interne exige
+C(a→0) − C(1) = −εΩ_de/(3−ε) = **−1,70 % de matière à la recombinaison** par rapport à ce
+qu'implique le bas redshift ; l'externe exige **0,00 %, par construction**. C'est un
+discriminant net, à portée de DR3 + CMB, et il ne dépend d'aucun des deux modèles : il
+sépare *où va l'énergie*. Ouvert au greffe comme T9.

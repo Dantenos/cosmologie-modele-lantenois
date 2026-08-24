@@ -2712,3 +2712,67 @@ autres. Rien de plus.
 entrée #150 qui ne se lit pas comme un minimum**, dont deux qui valent exactement ΛCDM. Le
 palmarès contient donc moins de résultats distincts qu'il n'affiche de lignes. À porter dans
 l'atlas v2, avec le reste (rétractations #166/#167).
+
+## 24/08 (Claude Code) — #176 SEPTIÈME VICE, ET LE PLUS GRAVE : DIVERGENCE ENTRE UN DOCSTRING GELÉ ET SON CODE
+`banc_un_parametre.py` (gelé a38014b821a8) annonçait dans son docstring « une grille dense
+(60 000 points, log) » pendant que son corps, après mes corrections successives de
+quadrature, en utilisait **240 001**. Les six vices précédents rendaient un critère
+INSATISFIABLE — donc un REFUS visible, bruyant, impossible à ignorer. Celui-ci l'aurait rendu
+**satisfait par autre chose que ce qui est écrit** : un lecteur des critères gelés aurait cru
+lire ce qui avait été calculé, et se serait trompé. C'est précisément ce que le gel existe
+pour empêcher. Le calcul a été **interrompu avant tout résultat scientifique** ; seules les
+deux erreurs de quadrature avaient été vues. De surcroît les deux énoncés gelés étaient de
+toute façon incompatibles : à 60 000 points, même Simpson plafonne vers 10⁻⁷ sur l'intégrande
+de SR, donc la tolérance de 10⁻⁸ était hors d'atteinte à la grille déclarée.
+**Corrigé en v2 (gelé 688ee2ea7138), avec la cohérence vérifiée AVANT le gel** : grille
+60 001 déclarée, Simpson, tolérance 10⁻⁶ justifiée (l'erreur induite en χ² est mille fois
+sous les différences comparées), mémoïsation exacte à paramètre fixe.
+**Bilan de la journée : sept critères mal posés, tous arrêtés avant publication. Le taux est
+le fait à retenir — je conçois trop vite, et c'est le protocole qui rattrape, pas moi.**
+
+## 24/08 (Claude Code) — #177 BANC D'ESSAI À UN PARAMÈTRE : NOTRE LOI EST TROISIÈME SUR DIX — DEUX FORMES DE KESSLER LA BATTENT
+`banc_un_parametre_v2.py` (gelé 688ee2ea7138). Validations : quadrature contre les deux
+formes fermées publiées à **1,0×10⁻¹² (K2)** et **5,8×10⁻¹⁰ (SR)** ; wCDM reproduit à
+**0,0000** ; ancres #150 exactes. Domaines contrôlés (leçon #175).
+
+| rang | modèle | k | χ² | AIC | param |
+|---|---|---|---|---|---|
+| 1 | **K4** (Kessler, arXiv:2504.00776 Éq. 8) | 4 | **1415,398** | **1423,398** | w₀ = −0,9916 |
+| 2 | K3 (Éq. 7) | 4 | 1418,426 | 1426,426 | −0,9081 |
+| **3** | **ACCRÉTION (β)** | **4** | **1419,309** | **1427,309** | **2,5944** |
+| 4 | SR w₀/√a (Borghetto, arXiv:2606.17951 Éq. 4.1) | 4 | 1419,361 | 1427,361 | −0,8844 |
+| 5 | CPL | 5 | 1418,927 | 1428,927 | — |
+| 7 | ΛCDM | 3 | 1425,086 | 1431,086 | — |
+
+**ÉCRIT EN PREMIER PARCE QUE DÉFAVORABLE : deux formes ad hoc de Kessler battent notre loi
+rigide à nombre de paramètres égal, K4 de 3,9 en χ².** Contrôle numérique fait avant de le
+dire : K4 est justement le modèle en sin(1/(1−a)) que la quadrature risquait de mal résoudre.
+Comparaison à une quadrature ADAPTATIVE (scipy quad) : écart 9,5×10⁻⁵ en ln g à la grille de
+production, soit ≪ 0,01 en χ². **Sa victoire est réelle, pas un artefact.**
+
+**CE QUI RESTE VRAI EN NOTRE FAVEUR, sans le gonfler :** nous battons **CPL** à l'AIC, et
+nous sommes à **0,05 de χ²** du w₀/√a que Borghetto et al. ont trouvé par régression
+symbolique exhaustive — un ex æquo. La différence avec K4 : K4 est une courbe ajustée sans
+dérivation physique, notre loi en a une. C'est un argument, pas un sauvetage.
+
+**ÉVIDENCE DE PROFIL (secondaire, déclarée telle) :** K4 +1,79 ; K3 +0,26 ; **accrétion
+−0,60** ; wCDM −2,58 ; SR −8,74 ; K2 −12,07 (relatif à ΛCDM). Même ordre qu'en AIC.
+**CONTRÔLE CROISÉ RÉUSSI ET NON PRÉVU : notre −0,60 reproduit le −0,8 annoncé par le papier A
+(intégration directe), sur un pipeline et un estimateur différents.**
+L'effondrement de SR (−8,74) illustre l'avertissement gelé : avec un paramètre, le facteur
+d'Occam EST le résultat — son prior U[−3;1] est large et partiellement rejeté (76 % seulement
+accessible), il en paie le volume. Aucun de ces nombres n'est comparable aux Δln B publiés
+(MCEvidence contre PolyChord, priors et cadres différents).
+
+## 24/08 (Claude Code) — #178 LES CÔNES D'OMBRE : 56,6 % DU CIEL N'A AUCUNE SUPERNOVA, CONTRE 8,8 % SI ISOTROPE
+`genere_ciel_v7.py` (gelé 9c98718d675e). Grille de 648 cellules d'**aire égale** (RA uniforme,
+sin(Dec) uniforme ; somme des aires = 4π vérifiée à 10⁻⁹), soit 63,7 deg² par cellule.
+**367 cellules sur 648 ne contiennent AUCUNE supernova : 56,6 % du ciel.** Un tirage isotrope
+de même taille (60 tirages, graine 20260824) n'en laisse vides que **8,8 % ± 0,9 %**.
+**Écart : 52,9σ.** Le générateur refuse de dessiner les cônes si l'écart n'atteint pas 10σ.
+Aux résolutions plus fines l'écart demeure : 70,0 % contre 25,5 % (1152 cellules), 83,2 %
+contre 54,4 % (2592 cellules).
+**Ce que cela dit, et qui complète #163/#168 :** l'échantillon n'est pas seulement anisotrope
+en densité, il est **absent de plus de la moitié du ciel**. Toute inférence cosmologique tirée
+de Pantheon+ porte donc sur un demi-ciel troué et percé de pinceaux, jamais sur « le ciel ».
+Consigné comme fait de sélection, pas comme critique : c'est la condition normale d'un relevé.

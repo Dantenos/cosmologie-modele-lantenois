@@ -323,5 +323,25 @@
   "sha256": "a0fcd941ca9aa969c464047f5ad44afb6cc44f3986065cd26069790759132ba3",
   "gele_le": "2026-08-24T12:21:10",
   "extrait": "genere_ciel_v4 — LE CIEL PANTHEON DEVENU OUTIL DIDACTIQUE (24/08/2026)."
+ },
+ "scripts/banc_un_parametre_v2.py": {
+  "sha256": "688ee2ea7138eb16dcce379e1c6c210ac2fef73d4e2c9a9a8eca291ff6ce9181",
+  "gele_le": "2026-08-24T12:35:13",
+  "extrait": "BANC D'ESSAI DES LOIS D'ENERGIE NOIRE A UN PARAMETRE — v2, criteres coherents."
+ },
+ "outils/genere_ciel_v5.py": {
+  "sha256": "f76d1447b2b5df9a09caa853bed4e74ae9993e370cbff0b4100ea85f0388951f",
+  "gele_le": "2026-08-24T12:48:35",
+  "extrait": "genere_ciel_v5 — LES TROIS ECHELLES SUBLIMEES + LE PHARE DU CENTRE GALACTIQUE (2"
+ },
+ "outils/genere_ciel_v6.py": {
+  "sha256": "57d480da8fdde4396d6f0df32353f6212c5aa371aa249763cdf26d9a117cb1b4",
+  "gele_le": "2026-08-24T12:57:51",
+  "extrait": "genere_ciel_v6 — LE VERTIGE DES ECHELLES : BULLE LOCALE, KUIPER, REPERES, SCAN R"
+ },
+ "outils/genere_ciel_v7.py": {
+  "sha256": "9c98718d675e76008db4e7f7b8004e1e8b23a795d4056137f13053553eba71ae",
+  "gele_le": "2026-08-24T13:05:39",
+  "extrait": "genere_ciel_v7 — LES CONES D'OMBRE, LA COUPE, LA REGLE ET LE DEPLIAGE (24/08/202"
  }
 }

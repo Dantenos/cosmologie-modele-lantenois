@@ -198,5 +198,10 @@
   "sha256": "200263d74265f91088b4fa0377a51184674f37b2f65088932f36e57ec424655f",
   "gele_le": "2026-08-24T02:32:38",
   "extrait": "LA DECOUVERTE TENTEE — beta_1 SUR LE PLANCK COMPLET : la tension interne est-ell"
+ },
+ "outils/ledger.py": {
+  "sha256": "8a5e6a688c4558d0e7615bb5df3e08f610558a3734f67c88cb44405ebed1d091",
+  "gele_le": "2026-08-24T02:41:08",
+  "extrait": "GRAND LIVRE v1 — la comptabilite baryonique, par espece et par epoque. CRITERES"
  }
 }

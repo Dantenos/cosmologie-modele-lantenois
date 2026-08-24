@@ -13,7 +13,11 @@
    "params": "eps=+0.0213",
    "mort": "mort si eps incompatible avec 0 sans gain d'AIC",
    "note": "",
-   "daic": 0.0
+   "daic": 0.0,
+   "ledger": {
+    "dchi2": 0.0,
+    "detail": "s(z) = 1 : bilan baryonique neutre ; echange sombre en v2"
+   }
   },
   {
    "nom": "iLCDM Q=eps H rho_dm",
@@ -24,7 +28,11 @@
    "params": "eps=+0.0071",
    "mort": "mort si eps incompatible avec 0 sans gain d'AIC",
    "note": "",
-   "daic": 0.573
+   "daic": 0.573,
+   "ledger": {
+    "dchi2": 0.0,
+    "detail": "s(z) = 1 : bilan baryonique neutre ; echange sombre en v2"
+   }
   },
   {
    "nom": "CCBH (Croker et al.)",
@@ -35,7 +43,11 @@
    "params": "H0=69.61 (derive) Xi=1.382",
    "mort": "mort si s != 0,70 (FRB : deja 2,2 sigma contre, #148) ou k != 3 (JWST 2025 : 11 sigma contre)",
    "note": "",
-   "daic": 3.064
+   "daic": 3.064,
+   "ledger": {
+    "dchi2": 14.19,
+    "detail": "FRB +4.7 ; amas +9.5 (pente +0.7) ; hypothese (i)"
+   }
   },
   {
    "nom": "ACCRETION (Gamma∝1/t)",
@@ -46,7 +58,11 @@
    "params": "H0=68.85 beta=2.595",
    "mort": "mort si beta(DR3) exclut [2,42;2,60] a 3 sigma, ou dAIC > +6 vs LCDM (scelle)",
    "note": "",
-   "daic": 4.064
+   "daic": 4.064,
+   "ledger": {
+    "dchi2": 0.0,
+    "detail": "s(z) = 1 : bilan baryonique neutre"
+   }
   },
   {
    "nom": "ACCRETION 5/2 (0 param.)",
@@ -57,7 +73,11 @@
    "params": "beta=2.5 (fixe)",
    "mort": "mort si beta = 5/2 exclu a 3 sigma par le profil (le point distingue est le modele)",
    "note": "",
-   "daic": 4.282
+   "daic": 4.282,
+   "ledger": {
+    "dchi2": 0.0,
+    "detail": "s(z) = 1 : bilan baryonique neutre"
+   }
   },
   {
    "nom": "w log(a) (Efstathiou)",
@@ -68,7 +88,11 @@
    "params": "w0=-0.930 wl=0.323",
    "mort": "mort si la reconstruction sort de la famille log",
    "note": "",
-   "daic": 4.834
+   "daic": 4.834,
+   "ledger": {
+    "dchi2": 0.0,
+    "detail": "s(z) = 1 : bilan baryonique neutre"
+   }
   },
   {
    "nom": "PC1 (creation, w_E libre)",
@@ -79,7 +103,11 @@
    "params": "H0=68.95 b=0.851",
    "mort": "mort si w_E = 0 exige (PC3 deja a 2,7 sigma) ou si k = 6 jamais paye par les donnees",
    "note": "",
-   "daic": 5.456
+   "daic": 5.456,
+   "ledger": {
+    "dchi2": 0.0,
+    "detail": "s(z) = 1 : bilan baryonique neutre"
+   }
   },
   {
    "nom": "CPL = IDE degeneree",
@@ -90,7 +118,11 @@
    "params": "H0=68.95 w0=-0.921 wa=-0.441",
    "mort": "mort si la reconstruction sort de la famille lineaire en (1-a)",
    "note": "",
-   "daic": 5.682
+   "daic": 5.682,
+   "ledger": {
+    "dchi2": 0.0,
+    "detail": "s(z) = 1 : bilan baryonique neutre"
+   }
   },
   {
    "nom": "Anton-Schmidt",
@@ -101,7 +133,11 @@
    "params": "H0=68.96 n=0.346 L0=1.612",
    "mort": "forme publiee (secteur sombre seul, declare) ; mort si (n, L0) fuient au bord",
    "note": "",
-   "daic": 6.27
+   "daic": 6.27,
+   "ledger": {
+    "dchi2": 0.0,
+    "detail": "s(z) = 1 : bilan baryonique neutre"
+   }
   },
   {
    "nom": "LCDM",
@@ -112,7 +148,11 @@
    "params": "H0=68.66 Om=0.2976",
    "mort": "reference ; mort si une alternative atteint dAIC > 10 et survit aux audits",
    "note": "",
-   "daic": 7.841
+   "daic": 7.841,
+   "ledger": {
+    "dchi2": 0.0,
+    "detail": "s(z) = 1 : bilan baryonique neutre"
+   }
   },
   {
    "nom": "Lombriser (Om_de predit)",
@@ -123,7 +163,11 @@
    "params": "H0=68.24 Om=0.3030 (impose)",
    "mort": "mort si Omega_de mesure exclut 0,697 (la prediction est le modele)",
    "note": "",
-   "daic": 8.362
+   "daic": 8.362,
+   "ledger": {
+    "dchi2": 0.0,
+    "detail": "s(z) = 1 : bilan baryonique neutre"
+   }
   },
   {
    "nom": "wCDM",
@@ -134,7 +178,11 @@
    "params": "w=-1.024",
    "mort": "mort si un croisement de w = -1 est etabli (w constant ne croise pas)",
    "note": "",
-   "daic": 8.598
+   "daic": 8.598,
+   "ledger": {
+    "dchi2": 0.0,
+    "detail": "s(z) = 1 : bilan baryonique neutre"
+   }
   },
   {
    "nom": "Quintessence thawing (Linder)",
@@ -145,7 +193,11 @@
    "params": "w0=-0.999",
    "mort": "mort si w0 < -1 exige : la famille interdit le fantome, donc le croisement la tue",
    "note": "",
-   "daic": 9.862
+   "daic": 9.862,
+   "ledger": {
+    "dchi2": 0.0,
+    "detail": "s(z) = 1 : bilan baryonique neutre"
+   }
   },
   {
    "nom": "JPS / unimodulaire (accum.)",
@@ -156,7 +208,11 @@
    "params": "eps=-0.0000",
    "mort": "comptabilite effective declaree ; mort si eps = 0 prefere (le papier A l'a deja rejetee a dchi2 = +4,9)",
    "note": "",
-   "daic": 10.872
+   "daic": 10.872,
+   "ledger": {
+    "dchi2": 0.0,
+    "detail": "s(z) = 1 : bilan baryonique neutre"
+   }
   },
   {
    "nom": "Chaplygin generalise (GCG)",
@@ -167,7 +223,11 @@
    "params": "As=0.999 alpha=0.193",
    "mort": "secteur sombre seul (declare) ; mort si alpha -> 0 sans gain (degenere a LCDM)",
    "note": "",
-   "daic": 19.931
+   "daic": 19.931,
+   "ledger": {
+    "dchi2": 0.0,
+    "detail": "s(z) = 1 : bilan baryonique neutre"
+   }
   },
   {
    "nom": "PEDE (emergente, 0 param.)",
@@ -178,7 +238,11 @@
    "params": "aucun (forme rigide)",
    "mort": "zero echappatoire : mort si dAIC > 10 vs le meilleur (forme figee par construction)",
    "note": "",
-   "daic": 43.661
+   "daic": 43.661,
+   "ledger": {
+    "dchi2": 0.0,
+    "detail": "s(z) = 1 : bilan baryonique neutre"
+   }
   },
   {
    "nom": "Holographique (horizon futur)",
@@ -189,7 +253,11 @@
    "params": "c=0.672",
    "mort": "mort si c >= 1 exige sans acceleration suffisante, ou dAIC > 10 (approx. radiation declaree)",
    "note": "",
-   "daic": 61.277
+   "daic": 61.277,
+   "ledger": {
+    "dchi2": 0.0,
+    "detail": "s(z) = 1 : bilan baryonique neutre"
+   }
   },
   {
    "nom": "Bondi sature (M'∝M²)",
@@ -200,7 +268,11 @@
    "params": "x_s=t0/t_s=0.925",
    "mort": "mort si x_s -> 1 (saturation avant aujourd'hui) ou si la forme perd sur ACC libre a k egal",
    "note": "",
-   "daic": 2607.823
+   "daic": 2607.823,
+   "ledger": {
+    "dchi2": 0.0,
+    "detail": "s(z) = 1 : bilan baryonique neutre"
+   }
   },
   {
    "nom": "Rh = ct",
@@ -211,7 +283,11 @@
    "params": "H0=85.00 (Om fixe 0,30, r_d seul — incoherence declaree)",
    "mort": "mort par theta* et BAO : E = 1+z n'a ni ere de matiere ni acceleration — ecrit tel quel",
    "note": "",
-   "daic": 7620540.848
+   "daic": 7620540.848,
+   "ledger": {
+    "dchi2": 0.0,
+    "detail": "s(z) = 1 : bilan baryonique neutre"
+   }
   }
  ]
 }

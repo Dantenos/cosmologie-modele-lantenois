@@ -1,0 +1,28 @@
+{
+ "date": "2026-08-24",
+ "hypothese": "(i) consommation uniforme en environnement — si halo blinde (ii), R2 nulle et non falsifiante, seul R1 porte",
+ "R1_frb": {
+  "valide": true,
+  "dchi2_ccbh": 4.71,
+  "n": 69
+ },
+ "R2_amas": {
+  "valide": true,
+  "n": 40,
+  "dchi2": 9.48,
+  "dchi2_pente": 0.7,
+  "nuisances_ccbh": {
+   "K": 1.134,
+   "K1": -0.016,
+   "Y0": 0.932,
+   "Y1": -0.018,
+   "ObOm": 0.1573
+  }
+ },
+ "R3_wb": {
+  "cooke2018_sigma": 2.9,
+  "schoeneberg2024_sigma": 0.3,
+  "discriminant": false
+ },
+ "total_ccbh": 14.19
+}

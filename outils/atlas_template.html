@@ -70,7 +70,8 @@ function montre(m){const f=document.getElementById('fiche');
  `<h3>${m.nom} <span class="mono">k=${m.k}</span></h3>
  <span class="mono">&chi;² ${m.chi2>1e5?m.chi2.toExponential(2):m.chi2.toFixed(2)} &middot; AIC ${m.aic>1e5?m.aic.toExponential(2):m.aic.toFixed(2)} &middot; &Delta;AIC ${dv} &middot; BIC ${m.bic>1e5?m.bic.toExponential(2):m.bic.toFixed(1)}</span><br>
  <b style="color:#e0d6c2;font-weight:normal">paramètres :</b> ${m.params}<br>
- <b style="color:#e0d6c2;font-weight:normal">condition de mort :</b> <span class="mort">${m.mort}</span>`;
+ <b style="color:#e0d6c2;font-weight:normal">condition de mort :</b> <span class="mort">${m.mort}</span>${
+ m.ledger?`<br><b style="color:#e0d6c2;font-weight:normal">grand livre (bilan baryonique) :</b> <span style="color:${m.ledger.dchi2>2?'#c96a4a':'#8faf7f'}">${m.ledger.dchi2>0?'Δχ² +'+m.ledger.dchi2:'neutre'}</span> — ${m.ledger.detail}`:''}`;
  f.style.display='block'}
 // poussiere de fond (decor, pas des donnees)
 const DUST=[];for(let i=0;i<240;i++)DUST.push([Math.random(),Math.random(),Math.random()*0.5+0.15,Math.random()*6.28]);

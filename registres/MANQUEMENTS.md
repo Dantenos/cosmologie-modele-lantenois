@@ -2068,3 +2068,18 @@ contre marginalisé : 2,42 ± 0,07 (fond léger) vs 2,60 ± 0,05 (Planck complet
 (3) le sceau borne à 2,60 : si DR3 atterrit à 2,60-2,65, le verdict scellé sera INDÉCISE, pas
 VALIDÉE — on l'écrit aujourd'hui pour ne pas avoir l'air surpris demain. Le MCMC est emcee sur la
 vraisemblance de planck_theta (ωb, ns, τ fixés) : le Cobaya complet reste la version définitive.
+
+## 24/08 (Claude Code + deux agents) — #152 LE GRAND LIVRE v1 : LE RIVAL DOIT 14 POINTS DE BARYONS
+`outils/ledger.py` (gelé 8a5e6a688c45) réalise la généralisation du canal comptable (#139 : le fond
+ne sépare pas les modèles sourcés ; leur identité vit dans les budgets). Trois rangées : FRB (E3 v1),
+amas (les 40 f_gas relaxés de Mantz 2014, Table 2 extraite du source arXiv par agent — priors du
+papier : K₀ = 0,90 ± 0,09, Υ₀ ∈ (0,763;0,932), Υ₁/K₁ ± 0,05, dispersion 7,4 %, d(z) recalculé par
+modèle), cohérence ω_b (Cooke 2018 : 2,9σ ; Schöneberg 2024 : 0,3σ — les deux rapportées).
+**Validation à l'étalon** : à s = 1, χ²/40 = 0,96 et Ω_b/Ω_m retrouvé = 0,1564 (le CMB exact).
+**Écriture CCBH** (s(z) intégré de sa propre EDO : 1,00 → 0,81 → 0,70) : amas Δχ² = **+9,48**
+(K poussé à 1,134, Υ₀ au bord de boîte, et il manque encore 9,5), pente seule +0,70 ; FRB +4,71 ;
+**total = +14,19**, contre 1 point d'AIC d'avance sur le fond. Hypothèse (i) uniforme DÉCLARÉE :
+si le gaz des halos est blindé (ii, plausible si la consommation suit la formation stellaire),
+R2 est nulle et seul le FRB porte (+4,7). Correction d'agent avant gel : le 0,96 ± 0,09 de mon
+brouillon était Applegate 2016, pas le prior de Mantz — attrapé aux sources. Colonne « ledger »
+fusionnée dans l'atlas (fiches du Ciel des Modèles). Rangée matière sombre (iΛCDM) : v2.

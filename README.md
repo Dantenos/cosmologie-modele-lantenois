@@ -11,7 +11,7 @@ auditée contre Pantheon+, DESI DR2 et Planck, avec un registre adversarial tenu
 critères gelés avant chaque calcul, et des juges convoqués à date fixe. Le tout est ici, y
 compris les erreurs.
 
-[![registre](https://img.shields.io/badge/registre-39%20crit%C3%A8res%20gel%C3%A9s-blue)](outils/README_registre.md)
+[![registre](https://img.shields.io/badge/registre-40%20crit%C3%A8res%20gel%C3%A9s-blue)](outils/README_registre.md)
 <!-- une fois le dépôt en ligne : ![CI](https://github.com/ORG/REPO/actions/workflows/registre.yml/badge.svg) -->
 
 ---
@@ -68,13 +68,14 @@ Tout ce qui est tombé, numéroté, daté, avec le mécanisme de la chute :
 [`CONCLUSION.md`](registres/CONCLUSION.md) ·
 [`ATLAS.md`](registres/ATLAS.md) (**19 modèles, un pipeline, un classement — généré**, #150) ·
 [`ETAT.md`](registres/ETAT.md) (généré, jamais écrit à la main) ·
+[`LEDGER.md`](registres/LEDGER.md) (**le Grand Livre** : le bilan baryonique, #152) ·
 [`AUDIT_2308.md`](registres/AUDIT_2308.md) (audit du dépôt du 23/08 : 38 scripts rejoués, un contrôle publié inopérant, six corrections propagées, ce qui reste à faire).
 
 ---
 
 ## II. L'écosystème d'outils
 
-Neuf outils nés des cicatrices de la campagne, dans [`outils/`](outils/) — cinq d'août, deux du 23/08. Zéro dépendance,
+Dix outils nés des cicatrices de la campagne, dans [`outils/`](outils/) — cinq d'août, deux du 23/08. Zéro dépendance,
 Python ≥ 3.9. Ils survivront au verdict, quel qu'il soit.
 *Sous Windows : `$env:PYTHONUTF8 = 1` avant de les lancer (les registres sont en UTF-8).*
 
@@ -89,18 +90,19 @@ Python ≥ 3.9. Ils survivront au verdict, quel qu'il soit.
 | **Périmé** | les chiffres morts qui survivent dans les documents (mode de défaillance n°1) — linter contre `valeurs_canoniques.json`, bloquant en CI | `python3 outils/perime.py [--tout]` |
 | **Rejouer** | les résultats qui cessent de se reproduire sans qu'on le voie — 14 scripts rejoués contre `ancres.json`, bloquant en CI | `python3 outils/rejouer.py` |
 | **État** | les comptes recopiés à la main qui divergent — ETAT.md généré depuis lock, index, triage, audience | `python3 outils/etat.py` |
+| **Grand Livre** | les modèles qui consomment sans payer — le bilan baryonique par rangée (FRB, amas, ω_b), colonne de l'atlas | `python3 outils/ledger.py` |
 
 **Registre** est le socle : le critère vit dans le docstring du script, `freeze` le fige par
 SHA-256 dans [`registre.lock`](outils/registre.lock), `verify` échoue (exit 1, bloquant en CI)
 s'il a bougé. L'amendement est possible — mais public, dans `RETRACTATIONS.md`.
-39 fichiers du corpus sont gelés, Registre compris : il se protège lui-même.
+40 fichiers du corpus sont gelés, Registre compris : il se protège lui-même.
 
 ```console
 $ python3 outils/registre.py verify
 [registre] OK    scripts/voile_cisaillement.py
 [registre] OK    outils/registre.py
 [registre] OK    outils/scelle.py
-…                                          # 39 fichiers, exit 0
+…                                          # 40 fichiers, exit 0
 ```
 
 ---

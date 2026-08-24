@@ -2,7 +2,7 @@
 
 > **Manifeste historique du 19/08/2026** — conservé tel quel (chiffres d'époque). L'état
 > courant du dépôt est décrit par `README.md` (racine) et `registres/AUDIT_2308.md`.
-**É. Lantenois & Claude — dernière mise à jour : 19 août 2026. 36 fichiers.**
+**É. Lantenois — dernière mise à jour : 19 août 2026. 36 fichiers.**
 
 ## Par où commencer
 1. `SYNTHESE_ET_OUVERTURES.md` — résumés des 5 études, conclusion en 3 niveaux, 6 versions alternatives.

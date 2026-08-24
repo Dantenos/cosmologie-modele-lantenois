@@ -32,7 +32,7 @@ FACADE = ["README.md", "CLAUDE.md", "RETRACTATIONS.md", "REPRODUIRE.md", "regist
 HISTORIQUE = ["registres/MANQUEMENTS.md", "registres/TRIAGE_DES_ATTAQUES.md", "registres/carnet.md",
               "registres/etude_complete_v2.md", "registres/etude_complete.txt", "registres/revue_litterature_annexeA.md",
               "registres/etude_univers_trou_noir.md", "registres/PLAN_ETUDE_RIVAUX.md", "registres/ATLAS_falsification_spec.md",
-              "registres/PIPELINE_CLAUDE_CODE.md", "registres/INTERJONCTIONS.md", "registres/ETUDE_FENETRE_VIABILITE_v0.md",
+              "registres/PIPELINE_OUTILLAGE.md", "registres/INTERJONCTIONS.md", "registres/ETUDE_FENETRE_VIABILITE_v0.md",
               "registres/ETUDE_TAXONOMIE_COSMO_v0.md", "registres/AUDIT_2308.md",
               "papiers/parent_bh_dark_energy.tex", "papiers/fenetre_viabilite.tex", "papiers/fenetre_viabilite_v1.tex",
               "papiers/fenetre_viabilite_v2.tex", "papiers/taxonomie_cosmo_v1.tex"]

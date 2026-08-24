@@ -1,7 +1,7 @@
 # Revue de littérature — Cosmologie du trou noir et énergie noire
 ## Annexe A à « L'énergie noire comme signature d'accrétion d'un trou noir parent » (v1.1)
 
-**É. Lantenois, avec l'assistance de Claude (Anthropic) — 14 août 2026**
+**É. Lantenois, avec assistance IA — 14 août 2026**
 
 ---
 

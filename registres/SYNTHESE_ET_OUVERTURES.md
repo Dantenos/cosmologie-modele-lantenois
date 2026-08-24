@@ -1,5 +1,5 @@
 # Synthèse du corpus, conclusions, et versions alternatives
-**É. Lantenois & Claude — 19 août 2026. Accompagne `planche_corpus.png` et `planche_diagramme_unifie.png`.**
+**É. Lantenois — 19 août 2026. Accompagne `planche_corpus.png` et `planche_diagramme_unifie.png`.**
 
 ---
 

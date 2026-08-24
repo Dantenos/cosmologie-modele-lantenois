@@ -1,5 +1,5 @@
 # La fenêtre de viabilité des systèmes auto-consommateurs — Étude v0
-**É. Lantenois, avec l'assistance de Claude (Anthropic) — 18 août 2026**
+**É. Lantenois, avec assistance IA — 18 août 2026**
 *Méthodologie héritée du projet énergie-noire : règles figées avant les calculs, conditions de mort déclarées, sources étiquetées [SOURCE]/[ordre]/[NON VÉRIFIÉ], erratas publics.*
 
 ## 1. Question

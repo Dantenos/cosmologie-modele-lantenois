@@ -1,5 +1,5 @@
 # Les trois stratégies — taxonomie de viabilité des cosmologies. Étude v0.0
-**É. Lantenois & Claude — 19 août 2026. Statut : étude-plaisir, discipline complète.**
+**É. Lantenois — 19 août 2026. Statut : étude-plaisir, discipline complète.**
 *Fille de l'étude fenêtre (x = τ_c/τ_s, x = −w) et petite-fille des papiers A/B. Née de
 l'intuition du 19/08 : les trois stratégies de survie des systèmes auto-consommateurs —
 RÉSIDER, TRANSITER, DILUER — semblent classer les grandes familles de cosmologies, et les

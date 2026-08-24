@@ -1681,7 +1681,7 @@ Lei et al. 2025 (2506.19589), absent du registre initial — k=3 rejeté à ~11�
 JWST élargi. Postérieur v1 = conjonction des échappatoires (pas de produit de vraisemblances
 hétérogènes — le refus de la fausse précision EST le postérieur). Le rival du papier C tient
 sur le fond et saigne partout ailleurs ; la réplication du 11σ devient le prochain juge de
-l'affaire k3-vs-0. E5 close. Suivante : E1 (vides) — territoire Claude Code.
+l'affaire k3-vs-0. E5 close. Suivante : E1 (vides) — territoire de la file.
 
 ## 24/08 — #121 AUDIT DU 11σ ET THÉORIE DE LA SATURATION
 Contrôle d'équité sur Lei 2025 : σ_k = 0,264 reproduit (0,27 publié) — arithmétique juste.
@@ -1830,7 +1830,7 @@ reposait sur la coordonnée nulle v ; à re-dériver dans le temps propre du cou
 Sur le domaine survivant, le facteur de boost ≤ 1,05 → attente (pas résultat) : κ petit.
 **Chantier 1, bilan après 5 cycles en 24 h : identité cinématique et M_out survivent ; extérieur
 nul déprécié ; fermeture = flot de poussière continu à basse tension ; horloge à refonder.
-→ transmis en E8 (file Claude Code) : l'auto-audit a atteint sa limite de récursion utile.**
+→ transmis en E8 (file d'attente) : l'auto-audit a atteint sa limite de récursion utile.**
 
 ## 24/08 — #133 E8 EXÉCUTÉE : L'HORLOGE REFONDÉE — ET ELLE DEVIENT UNE PRÉDICTION
 Dérivation en une ligne (coquilles géodésiques ⇒ leur temps propre EST le temps cosmique du
@@ -1860,7 +1860,7 @@ ferme une seconde fois — et cette fois l'audit qui a tué la première version
 
 ## 24/08 — #135 E1 BLOQUÉE ICI, POINTEURS VÉRIFIÉS TRANSMIS
 Les catalogues de vides vivent hors des domaines réseau du conteneur (Zenodo, CDS). Vérifié et
-transmis à Claude Code : anti-halos Stopyra et al. — 150 vides R>10 h⁻¹Mpc, <135 h⁻¹Mpc,
+transmis à la file : anti-halos Stopyra et al. — 150 vides R>10 h⁻¹Mpc, <135 h⁻¹Mpc,
 **Zenodo record 10160612, combined_catalogue.csv (+ npz), format documenté champ par champ** ;
 SDSS DR7 Douglass (VoidFinder 1163 / VIDE 531 / REVOLVER 518) au CDS J/ApJS/265/7 ; Malandrino
 2026 (100 vides bayésiens, Manticore) via A&A. La manche 2 du duel a ses munitions localisées.
@@ -1917,7 +1917,7 @@ l'unique « 1.8 % » restant du papier C est sa propre rétractation, comme il s
 occurrences « 1,8 » des fenêtres de viabilité et du carnet sont des nombres sans rapport,
 vérifiées telles. Le processus complet a tourné deux fois, comme demandé.
 
-## 23/08 (Claude Code, machine Windows) — #141 E1 v0 EXÉCUTÉE : **UNIVERSEL**, MANCHE 2 AU GOULET
+## 23/08 (machine Windows) — #141 E1 v0 EXÉCUTÉE : **UNIVERSEL**, MANCHE 2 AU GOULET
 Critères gelés avant exécution (`etude_E1_vides.py`, registre 8f3c54a31b58). Catalogue
 d'anti-halos Stopyra 2023 (Zenodo 10160612, 150 vides, d < 135 h⁻¹ Mpc) × Pantheon+ public.
 Partage f > 0 / f = 0 (médiane nulle, cas prévu) : 623 / 957 SNe.
@@ -1930,7 +1930,7 @@ Ce que cela réduit : |Δβ| < 0,47 (2σ), un catalogue, vides locaux. Ce que ce
 la manche sur ≥ 2 catalogues (spec mère). Le signe + n'est pas interprété. Rapport :
 ETUDE_E1_v0.md. Verse dans l'affaire W-universel (toujours ouverte).
 
-## 23/08 (Claude Code) — #142 E1 MANCHE 2 SUR DOUGLASS DR7 : **UNIVERSEL SUR DEUX JUGES**
+## 23/08 — #142 E1 MANCHE 2 SUR DOUGLASS DR7 : **UNIVERSEL SUR DEUX JUGES**
 Critères gelés avant exécution (`etude_E1_manche2.py`, registre ec458a2cf766). Trois catalogues
 Douglass 2023 (CDS J/ApJS/265/7 ; VoidFinder union de sphères, VIDE, REVOLVER), 455 SNe dans
 l'empreinte SDSS NGC, ~228 par moitié. Δβ = +0,52 ± 0,38 / −0,40 ± 0,35 / −0,04 ± 0,36 ; tous
@@ -1940,7 +1940,7 @@ de « vide » n'est pas univoque à cette précision, et le signe de Stopyra n'e
 Réduit : |Δβ| < 0,77 (SDSS) et < 0,47 (local). Ne ferme pas : < 0,36. Duel : 2-0 goulet, sans
 que l'horloge soit tuée. Rapport : ETUDE_E1_manche2.md.
 
-## 23/08 (Claude Code) — #143 AUDIT DU DÉPÔT : UN CONTRÔLE PUBLIÉ QUI NE MESURAIT RIEN, ET SIX CORRECTIONS « FAITES » À MOITIÉ
+## 23/08 — #143 AUDIT DU DÉPÔT : UN CONTRÔLE PUBLIÉ QUI NE MESURAIT RIEN, ET SIX CORRECTIONS « FAITES » À MOITIÉ
 Rapport complet : AUDIT_2308.md. Les trois points qui comptent :
 1. **`duel_ccbh.py` : le test de sensibilité à z_i était inopérant** (`ai=1/(1+ZI)` évalué à la
    définition ; trois χ² identiques). #80 le disait « corrigé » — le fichier livré ne l'était pas.
@@ -1968,7 +1968,7 @@ différentes (Jaccard 0,33) — signes opposés expliqués, pas une incohérence
 AUDIT_2308.md §5 (P10 et ses quatre croisements, numérotation non injective de ce registre, cinq
 comptes de rétractations, sceau absent des .tex).
 
-## 23/08 (Claude Code) — #144 PAPIER B, GRAND LIVRE DE PENROSE : #52 ENFIN PROPAGÉ À LA SECTION 3 — ET LA ROUTE SIMULATION N'A PAS D'ARBRE
+## 23/08 — #144 PAPIER B, GRAND LIVRE DE PENROSE : #52 ENFIN PROPAGÉ À LA SECTION 3 — ET LA ROUTE SIMULATION N'A PAS D'ARBRE
 Le papier B portait #52 aux sections 2 et 4 (résultat (i) retiré, R ~ 10^10,3, tri thermodynamique
 retiré) mais **pas à la section 3** : le grand livre de Penrose chiffrait encore le coût par niveau
 avec la coupure retirée (2,5×10¹⁴ M☉ : f_coll = 0,039, O(25), 25^N, R ~ 10^7,6, « 4 % par
@@ -1986,7 +1986,7 @@ Ce que cela réduit : l'argument « coût géométrique, jamais exp(S) » n'est 
 implication conditionnelle au choix de route, que #80 laissait ouvert. Ce qu'il ne ferme pas :
 la route elle-même. PDF recompilé (14 p., 0 erreur). `perime` : 0 occurrence sur les 27 façades.
 
-## 23/08 (Claude Code) — #145 LE CROISEMENT FANTÔME, CALCULÉ : LE TABLEAU AVAIT RAISON, P10 AVAIT TORT
+## 23/08 — #145 LE CROISEMENT FANTÔME, CALCULÉ : LE TABLEAU AVAIT RAISON, P10 AVAIT TORT
 Quatre valeurs de z_× coexistaient dans le papier A. Calcul direct (β = 3H(z_×)t(z_×) dans le fond
 auto-cohérent, `croisement_fantome.py` gelé 8cb6e7d24f9b, Ω_m = 0,314) :
   β = 2,42 → 0,444 ; 2,49 → 0,344 ; **2,50 → 0,331** ; 2,56 → 0,262 ; 2,595 → 0,226 ; 2,60 → 0,221.
@@ -1999,14 +1999,14 @@ auto-cohérent, `croisement_fantome.py` gelé 8cb6e7d24f9b, Ω_m = 0,314) :
   - Sensibilité à Ω_m : jusqu'à 0,08 en z_× entre 0,30 et 0,33 — le tableau doit porter son Ω_m
     (ajouté). Ce que cela réduit : z_× comme β-mètre secondaire exige Ω_m fixé par ailleurs.
 
-## 23/08 (Claude Code) — #146 LE −12,6 PLANCK COMPLET, REPRODUIT PAR UN TIERS
+## 23/08 — #146 LE −12,6 PLANCK COMPLET, REPRODUIT PAR UN TIERS
 `planck_theta.py` (planck-lite-py cloné par TELECHARGER.sh, CAMB 2.0.3, ~40 min sur cette machine) :
   ΛCDM χ² = **1998,63** (ancre du docstring 1998,6326) ; accrétion χ² = **1986,03** (ancre 1986,0297),
   **β = 2,589**, H₀ = 67,63 → **Δχ² = −12,60**. Le résultat de tête du papier A se reproduit hors du
   conteneur d'origine, à la décimale. Et β = 2,59 est exactement ce que l'erratum #2 affirmait :
   le −12,6 appartient à β ≈ 2,56–2,59. États : donnees/pantheon_plus/state_{lcdm,acc}.json (ignorés).
 
-## 23/08 (Claude Code) — #147 CALIBRATION CCBH : LE CRITÈRE GELÉ A ÉCHOUÉ, #91 L'A REMPLACÉ SANS LE DIRE — ET A, B N'ÉTAIENT DÉRIVÉS NULLE PART
+## 23/08 — #147 CALIBRATION CCBH : LE CRITÈRE GELÉ A ÉCHOUÉ, #91 L'A REMPLACÉ SANS LE DIRE — ET A, B N'ÉTAIENT DÉRIVÉS NULLE PART
 `calibration_ccbh.py` (critère gelé : Ξ **dérivé** en résolvant (Ξ, B) sur s = 0,70 et H₀ = 69,94,
 doit tomber à moins de 30 % de 1,403) imprime aujourd'hui **ÉCHEC : Ξ = 2,149, écart 53 %**. #91
 dit « le critère de validation passe » : en réalité #91 a **imposé Ξ = 1,403** et résolu (A, B) —
@@ -2019,7 +2019,7 @@ attaque_croker_fond). Dérivés maintenant par `calibration_ccbh.py` : à ω_c =
 **A = 1,551, B = 3,119** exactement ; à ω_c = 0,1194 (le nôtre), 1,532 / 3,168. Le script imprime
 les deux procédures sous leurs vrais noms. Rien ne change au verdict du duel.
 
-## 23/08 (Claude Code) — #148 E3 EXÉCUTÉE SUR LA TABLE RÉELLE : 2,2σ, LE BORD SATURÉ — ET UN CRITÈRE GELÉ SUR UNE VARIABLE NON IDENTIFIABLE
+## 23/08 — #148 E3 EXÉCUTÉE SUR LA TABLE RÉELLE : 2,2σ, LE BORD SATURÉ — ET UN CRITÈRE GELÉ SUR UNE VARIABLE NON IDENTIFIABLE
 v0 (gelée 77e8bff5d7b5) applique le critère de la spec (f_IGM = 0,80 ± 0,10) aux 69 FRB de
 Connor 2025 : ÉCHEC à 0,002 → NON EXPLOITÉ, conservé. Cause structurelle : dans la vraisemblance
 gelée f_IGM et f_X n'entrent que par leur somme (prouvé : logL identique à 10 décimales à somme
@@ -2030,7 +2030,7 @@ dit) : **VALIDATION PASSE** (f_d = 0,905 vs 0,91 publié ; hôte 123 vs ~120) ; 
 (s = 1 indiscernable, prédit) ; **CCBH sature f_d = 1** — le déficit n'est pas absorbable.
 Rapports : ETUDE_E3_v1.md. Substitution aux mocks du papier C : à l'auteur. E3 close en v1.
 
-## 23/08 (Claude Code) — #149 E3 BOOTSTRAPPÉE ET SUBSTITUÉE AU PAPIER C ; LA CARTE v2 ; L'OUTILLAGE v0.2
+## 23/08 — #149 E3 BOOTSTRAPPÉE ET SUBSTITUÉE AU PAPIER C ; LA CARTE v2 ; L'OUTILLAGE v0.2
 Bootstrap de la table réelle (200 tirages, gelé e06c8cefc357) : Δχ²(CCBH−ΛCDM) médian +4,67,
 [16;84] = [+1,9 ; +8,5], CCBH gagnant dans 1,5 % des tirages — le déficit est robuste au
 rééchantillonnage. Le paragraphe « Executed on the real sample » et la figure (fig_frb_reelles.png,
@@ -2041,7 +2041,7 @@ levier. Outillage : `rejouer.py` (« registre run » v0.2 : 14 scripts, 16 ancre
 hémisphères + vides + FRB, comptes vérifiés 1580/553/623/150/69 sous peine de refus).
 En cours : MCMC Planck marginalisé sur β (#2), chaîne resumable, verdict à 300 pas.
 
-## 24/08 (Claude Code) — #150 L'ATLAS v1 EST PUBLIÉ : 19 MODÈLES, ET NOUS NE SOMMES PAS PREMIERS
+## 24/08 — #150 L'ATLAS v1 EST PUBLIÉ : 19 MODÈLES, ET NOUS NE SOMMES PAS PREMIERS
 `atlas_v1.py` (gelé 580a983e775f) réalise la spec ATLAS_falsification_spec (liste v0 complète + les
 4 du tableau) : mêmes données (N = 1597), k comptés pareil, χ²/AIC/BIC figés, condition de mort par
 modèle, leaderboard GÉNÉRÉ (atlas_leaderboard.json + ATLAS.md). Validation : les 7 ancres
@@ -2056,7 +2056,7 @@ leurs propres critères : JPS (ε → 0 préféré), GCG (As → 1, dégénéré
 (+61,3), Bondi saturé (+2608), Rh=ct (θ*/BAO, +7,6M). Le peloton visible : tout le monde à moins
 de 6 AIC de la tête sauf les six morts — le fond ne tranche pas, comme #139 l'avait établi.
 
-## 24/08 (Claude Code) — #151 LE MCMC PLANCK COMPLET (MANQUEMENT #2, FERMÉ) : β MARGINALISÉ = 2,603 +0,046/−0,053 — AU BORD EXTÉRIEUR DE LA BANDE SCELLÉE
+## 24/08 — #151 LE MCMC PLANCK COMPLET (MANQUEMENT #2, FERMÉ) : β MARGINALISÉ = 2,603 +0,046/−0,053 — AU BORD EXTÉRIEUR DE LA BANDE SCELLÉE
 `mcmc_planck_beta.py` (gelé ef3ffe8764b3), 400 pas × 8 marcheurs, validation passée (χ² min =
 1986,03 = le profil ; 200 pas après rodage ; autocorrélation ~14 pas → ~110 échantillons effectifs,
 chaîne courte DÉCLARÉE). **β marginalisé (plik_lite TTTEEE + low-ℓ + BAO + SN, ωc et ln As
@@ -2069,7 +2069,7 @@ contre marginalisé : 2,42 ± 0,07 (fond léger) vs 2,60 ± 0,05 (Planck complet
 VALIDÉE — on l'écrit aujourd'hui pour ne pas avoir l'air surpris demain. Le MCMC est emcee sur la
 vraisemblance de planck_theta (ωb, ns, τ fixés) : le Cobaya complet reste la version définitive.
 
-## 24/08 (Claude Code + deux agents) — #152 LE GRAND LIVRE v1 : LE RIVAL DOIT 14 POINTS DE BARYONS
+## 24/08 (deux agents) — #152 LE GRAND LIVRE v1 : LE RIVAL DOIT 14 POINTS DE BARYONS
 `outils/ledger.py` (gelé 8a5e6a688c45) réalise la généralisation du canal comptable (#139 : le fond
 ne sépare pas les modèles sourcés ; leur identité vit dans les budgets). Trois rangées : FRB (E3 v1),
 amas (les 40 f_gas relaxés de Mantz 2014, Table 2 extraite du source arXiv par agent — priors du
@@ -2084,7 +2084,7 @@ R2 est nulle et seul le FRB porte (+4,7). Correction d'agent avant gel : le 0,96
 brouillon était Applegate 2016, pas le prior de Mantz — attrapé aux sources. Colonne « ledger »
 fusionnée dans l'atlas (fiches du Ciel des Modèles). Rangée matière sombre (iΛCDM) : v2.
 
-## 24/08 (Claude Code) — #153 LE GREFFIER ET LE CONFRONTEUR : LE PRÉSENT ANORMAL A SON REGISTRE
+## 24/08 — #153 LE GREFFIER ET LE CONFRONTEUR : LE PRÉSENT ANORMAL A SON REGISTRE
 Deux organes manquaient. **Le greffier** (`greffier.py`, gelé 0b6b5b809e9b) : MANQUEMENTS tient le
 passé, l'Audience le futur promis — personne ne tenait les TENSIONS, matière première des
 découvertes (la chaîne β₁ est née de T1 traitée ainsi). Sept greffées (`TENSIONS.md`, généré) :
@@ -2097,7 +2097,7 @@ et confrontées (atlas/duel 0,00 % ; A et B dérivés/en-dur 0,00 % ; f_coll 10,
 s(0) deux EDO 0,21 %) — 0 divergence, 141 s, en CI. La classe d'erreur la plus dangereuse du
 corpus a maintenant son garde-fou permanent.
 
-## 24/08 (Claude Code) — #154 AUDIT iΛCDM, PREMIER VOLET : LE GAIN SURVIT — MON HYPOTHÈSE ARTEFACT EST RÉFUTÉE
+## 24/08 — #154 AUDIT iΛCDM, PREMIER VOLET : LE GAIN SURVIT — MON HYPOTHÈSE ARTEFACT EST RÉFUTÉE
 `audit_ilcdm.py` (gelé fa73e66ea698). Validation : les deux χ² de l'atlas reproduits à l'identique.
 Puis les variantes COHÉRENTES : couplage CDM seul (baryons conservés) et échange gelé à z > 3
 (compatible avec les priors primordiaux). Résultat, écrit tel quel : **le gain tient partout** —
@@ -2110,7 +2110,7 @@ résolution ou tout palmarès : LOO traceurs, split-z, trilogie SN (le solde de 
 Ironie consignée : le modèle du corpus est lui-même de la classe sourcée — si l'échange est réel,
 c'est la classe entière qui gagne, et le canal comptable qui départage (le Livre : rangée sombre v2).
 
-## 24/08 (Claude Code) — #155 MANCHE 3 (DESIVAST) : DUEL NON EXPLOITÉ, T6 RÉSOLUE « FLUCTUATIONS » — AVEC UN VICE DE CRITÈRE CONSIGNÉ
+## 24/08 — #155 MANCHE 3 (DESIVAST) : DUEL NON EXPLOITÉ, T6 RÉSOLUE « FLUCTUATIONS » — AVEC UN VICE DE CRITÈRE CONSIGNÉ
 `etude_E1_manche3.py` (gelé 096c986f8ec1) sur DESIVAST DR1 BGS (ramené du portail DESI par agent,
 3765/1478/1992 vides, z < 0,24 — la spec mère est enfin servie de son propre catalogue). Duel :
 NON EXPLOITÉ (66 SNe côté vides < plancher 80) — 2-0 inchangé. T6 : la branche FLUCTUATIONS du
@@ -2122,7 +2122,7 @@ Jaccard(VIDE, REVOLVER) = 0,97 et VF-V2 = 0,59 (contre 0,41 et 0,33 sur Douglass
 algorithmes modernes trient presque pareil ; la non-univocité de Douglass ressemble à un artefact
 d'époque. Première résolution du greffe : par son arbitre, avec ses réserves — comme prévu.
 
-## 24/08 (Claude Code) — #156 AUDIT iΛCDM VOLET 2 : ROBUSTE-LOO, ε IDENTIQUE AUX DEUX ÉCHELLES — LE SIGNAL TIENT ENCORE
+## 24/08 — #156 AUDIT iΛCDM VOLET 2 : ROBUSTE-LOO, ε IDENTIQUE AUX DEUX ÉCHELLES — LE SIGNAL TIENT ENCORE
 `audit_ilcdm_v2.py` (gelé b5471002fb6c ; LOO par dépondération σ×10³ pour ne pas toucher aux
 formes du pipeline scellé — implémentation notée au corps). Validation : gain plein +9,84,
 ε = +0,0215 (=#154). **LOO 7 traceurs : gain ∈ [+7,76 ; +11,33]** — le pire retrait (LRG2)
@@ -2134,7 +2134,7 @@ Si DES-SN5YR et Union3 confirment, ce pipeline aura mis au jour une préférence
 sombre ε ≈ +0,02 à Δχ² ≈ 10 sur données publiques — née d'un atlas construit pour falsifier
 notre propre modèle. Le greffier tient T7 ; le Livre lui doit sa rangée sombre (v2).
 
-## 24/08 (Claude Code) — #157 T8 DISSÉQUÉE : LE CREUX EST DANS LES SNe SDSS DE LA BANDE 82, EN MAGNITUDE, PAS EN COSMOLOGIE
+## 24/08 — #157 T8 DISSÉQUÉE : LE CREUX EST DANS LES SNe SDSS DE LA BANDE 82, EN MAGNITUDE, PAS EN COSMOLOGIE
 Diagnostic en espace-magnitude du patch DESIVAST (T8, β = 1,84 ± 0,31) : le résidu μ moyen du
 patch vaut −18,7 ± 9,7 mmag (vs +3,1 dehors), et il est STRUCTURÉ en z — normal sous z = 0,08,
 **−46 ± 15 mmag à z = 0,15-0,5 (3σ)**, −142 ± 52 au-delà (12 SNe). Composition : cette tranche
@@ -2147,7 +2147,7 @@ recalibration croisée Dovekie (SDSS-DES) ; (iii) à défaut, LSST. T8 reste OUV
 affinées — la lecture « horloge par la petite porte » perd du terrain au profit de la calibration.
 Diagnostic par poids diagonaux (déclaré : caractérisation, pas un fit pleine covariance).
 
-## 24/08 (Claude Code) — #158 TRILOGIE SN (VOLET 3) : DES REPRODUIT LE SIGNAL D'ÉCHANGE — T7 RÉSOLUE « L'ARTEFACT EST RÉFUTÉ »
+## 24/08 — #158 TRILOGIE SN (VOLET 3) : DES REPRODUIT LE SIGNAL D'ÉCHANGE — T7 RÉSOLUE « L'ARTEFACT EST RÉFUTÉ »
 `audit_ilcdm_v3.py` (gelé 609e8b4a7a17). **DES-SN5YR (calibration indépendante, χ²/N = 0,91,
 VALIDE) : gain = +9,49, ε = +0,0212** — la copie quasi conforme de Pantheon+ (+9,84 ; +0,0215).
 Union3 : gain +9,89, ε = +0,0215 — même signal, mais sa porte de validation échoue sur le proxy
@@ -2161,7 +2161,7 @@ découverte. La suite n'appartient plus au greffe : rangée matière sombre du G
 Cobaya complet, et la note de littérature qu'elle mérite. Ironie maintenue : c'est l'atlas
 construit pour falsifier notre modèle qui l'a trouvée.
 
-## 24/08 (Claude Code) — #159 LA CHAÎNE (β₀, β₁) A RENDU : NON CONCLUANT — LE PIÈGE A FONCTIONNÉ, ET LA TENSION SE DISSOUT DANS LA DÉGÉNÉRESCENCE
+## 24/08 — #159 LA CHAÎNE (β₀, β₁) A RENDU : NON CONCLUANT — LE PIÈGE A FONCTIONNÉ, ET LA TENSION SE DISSOUT DANS LA DÉGÉNÉRESCENCE
 `mcmc_planck_beta1.py` (gelé 200263d74265), 600 pas, validation passée (χ² min = 1985,41 ;
 300 pas post-rodage ; autocorrélation 18 pas → chaîne courte, déclarée).
 **β₁ = −0,250 +0,253/−0,264 (1,0σ de 0)** — le signe de l'hérédité, dans son corridor
@@ -2174,7 +2174,7 @@ données la réclament (Δχ² = −0,6). T1 retourne OUVERTE au greffe, arbitre
 déjà dans le sceau (RÉFUTÉE si β₁ exclut +0,06 ± 0,31 à 3σ ; l'hérédité prédit −0,42 : DR3
 départagera les trois lectures d'un coup). Le jackknife complet a pris le relais en file.
 
-## 24/08 (Claude Code) — #160 JACKKNIFE PLANCK COMPLET (RÉ-OPTIMISATION TOTALE) : SIGNAL ROBUSTE — LE −12,6 N'APPARTIENT À AUCUN POINT BAO
+## 24/08 — #160 JACKKNIFE PLANCK COMPLET (RÉ-OPTIMISATION TOTALE) : SIGNAL ROBUSTE — LE −12,6 N'APPARTIENT À AUCUN POINT BAO
 `jackknife_planck.py` (gelé), 10 tours de relance chaude × 13 retraits (convergé : tours 9,
 10 et final identiques). Référence complète : Δχ² = −12,60, β = 2,59. **Les 13 retraits BAO,
 chacun avec ré-optimisation complète de (β, ω_c, ln10¹⁰As) des DEUX modèles : Δχ² ∈ [−14,69 ;
@@ -2185,7 +2185,7 @@ léger du papier A (β ∈ [2,40 ; 2,44]) a désormais son homologue Planck comp
 conclusion, aucun porteur unique. La préférence CMB (−5,1 en haut-ℓ) reste le socle que
 les retraits BAO ne peuvent pas toucher.
 
-## 24/08 (Claude Code) — #161 LA CONFLUENCE : LES DEUX VAINQUEURS DU CORPUS MESURENT LA MÊME FONCTION — ET LA LECTURE INTERNE MÈNE
+## 24/08 — #161 LA CONFLUENCE : LES DEUX VAINQUEURS DU CORPUS MESURENT LA MÊME FONCTION — ET LA LECTURE INTERNE MÈNE
 `confluence.py` (gelé 3e708bd48040). Validations A/B exactes à 1e-4, ancres #150 reproduites.
 
 **L'IDENTITÉ (algèbre, pas ajustement).** Le solveur gelé intègre
@@ -2241,7 +2241,7 @@ qu'implique le bas redshift ; l'externe exige **0,00 %, par construction**. C'es
 discriminant net, à portée de DR3 + CMB, et il ne dépend d'aucun des deux modèles : il
 sépare *où va l'énergie*. Ouvert au greffe comme T9.
 
-## 24/08 (Claude Code) — #162 VICE DE CONCEPTION D'UN CRITÈRE : LA v1 DE LA CONFLUENCE-PLANCK ÉCHOUE SA PROPRE VALIDATION, RIEN N'EST PUBLIÉ
+## 24/08 — #162 VICE DE CONCEPTION D'UN CRITÈRE : LA v1 DE LA CONFLUENCE-PLANCK ÉCHOUE SA PROPRE VALIDATION, RIEN N'EST PUBLIÉ
 `confluence_planck.py` (gelé 74bf63bdcc2a) devait mesurer la pente s(a) sur Planck complet.
 Sa validation exigeait que χ²(pente, ε₀ = ε₁ = 0) reproduise le ΛCDM de Planck, 1998,63,
 à ±0,5. **Résultat : 2009,02 → ÉCHEC → aucune ligne publiée**, conformément au critère gelé.
@@ -2263,7 +2263,7 @@ modèle est importé tel quel depuis la v1, non modifié. **Validation v2 : 1998
 1998,633 — la branche PPF à w = −1 redonne ΛCDM à la troisième décimale.** Le branchement
 était correct depuis le début ; seul le critère était mal posé.
 
-## 24/08 (Claude Code) — #163 PLANCK EXIGE QUE LA PENTE COURE (3,72σ) — MAIS LE CROISEMENT N'EST PAS UN OBSERVABLE ROBUSTE
+## 24/08 — #163 PLANCK EXIGE QUE LA PENTE COURE (3,72σ) — MAIS LE CROISEMENT N'EST PAS UN OBSERVABLE ROBUSTE
 `confluence_planck_v2.py` (gelé ce4d9b65ec24). Validation exacte : 1998,633 contre 1998,633.
 1092 évaluations CAMB. Les quatre verdicts gelés, dans l'ordre où ils sont tombés.
 
@@ -2308,7 +2308,7 @@ de plus. Même conclusion que sur la vraisemblance légère (#161), par un chemi
 **les données ne réclament pas plus de liberté de forme que β n'en donne.** La rigidité paie ;
 c'est la position du croisement qu'elle ne prédit pas correctement.
 
-## 24/08 (Claude Code) — #165 QUATRIÈME VICE DE CRITÈRE DE LA JOURNÉE : LA v3 DE LA DÉGÉNÉRESCENCE ÉCHOUE SA VALIDATION
+## 24/08 — #165 QUATRIÈME VICE DE CRITÈRE DE LA JOURNÉE : LA v3 DE LA DÉGÉNÉRESCENCE ÉCHOUE SA VALIDATION
 `degenerescence_ilcdm_v3.py` (gelé e8b21204edac). Sa validation comparait `ilcdm_de` à
 `CUSTOM['wcdm']`, qui **recalcule Or à partir de Om′** — je réintroduisais dans la
 comparaison l'écart de rayonnement que j'avais moi-même diagnostiqué une heure plus tôt.
@@ -2317,7 +2317,7 @@ comparaison l'écart de rayonnement que j'avais moi-même diagnostiqué une heur
 (gelé 1d5c847865d1) : comparant = `ilcdm_coh` (rayonnement cohérent, gelé en v2), fonds
 alors identiques à 4,4e−16.
 
-## 24/08 (Claude Code) — #166 ⚠ RÉTRACTATION MAJEURE : L'AVANCE DU CHAMPION DE L'ATLAS EST UN ARTEFACT D'ÉTALONNAGE (8,62 DES 9,84 UNITÉS)
+## 24/08 — #166 ⚠ RÉTRACTATION MAJEURE : L'AVANCE DU CHAMPION DE L'ATLAS EST UN ARTEFACT D'ÉTALONNAGE (8,62 DES 9,84 UNITÉS)
 `degenerescence_ilcdm_v4.py` (gelé 1d5c847865d1). Validation : **fonds identiques à
 4,4×10⁻¹⁶ en quatre points déclarés.** Contrôle interne à ε = 0 : écart exactement 0,0000.
 
@@ -2366,7 +2366,7 @@ d'avant recombinaison, ils **fabriquent un Δχ² de l'ordre de 10 — de quoi i
 détection à 3σ**. Une large littérature sur l'énergie noire en interaction utilise exactement
 ce raccourci. C'est la note méthodologique la plus publiable sortie de ce corpus.
 
-## 24/08 (Claude Code) — #167 LA SECONDE LIGNE iΛCDM S'EFFONDRE EXACTEMENT SUR ΛCDM — T7 RÉSOLUE, PAR LA NÉGATIVE
+## 24/08 — #167 LA SECONDE LIGNE iΛCDM S'EFFONDRE EXACTEMENT SUR ΛCDM — T7 RÉSOLUE, PAR LA NÉGATIVE
 `etalonnage_dm.py` (gelé 780a9f9b8e8e). Validation : ancre #150 reproduite (1415,818).
 Contrôle interne à ε = 0 : les trois versions coïncident à 0,0000.
 
@@ -2405,7 +2405,7 @@ sur `ilcdm_dm` : les deux sont faits (#166, #167). Verdict : **il ne reste AUCUN
 pour un échange sombre** — +1,21 et +0,00, contre +9,84 et +9,27 annoncés. La tension qui a
 occupé quatre entrées du registre et trois audits « adversariaux » portait sur un artefact.
 
-## 24/08 (Claude Code) — #168 CORRECTION DE MA PROPRE FORMULATION DU #163, APRÈS VÉRIFICATION DE LA LITTÉRATURE 2025-2026
+## 24/08 — #168 CORRECTION DE MA PROPRE FORMULATION DU #163, APRÈS VÉRIFICATION DE LA LITTÉRATURE 2025-2026
 J'avais écrit au #163 : « le croisement est dominé par le systématique de FORME, **pas par
 les données** ». **C'est faux, et le vice est le mien : mes quatre mesures confondaient deux
 systématiques distincts.** Décomposition correcte de mes propres nombres :
@@ -2446,7 +2446,7 @@ la SÉPARATION, pas la découverte. À dire ainsi, sans gonfler.
 méthode différentes, retrouve les mêmes amplitudes de systématiques que trois équipes
 indépendantes. C'est un contrôle de sanité du pipeline, pas un résultat.
 
-## 24/08 (Claude Code) — #169 MON « IDENTITÉ » DU #161/#164 EST UNE REDÉCOUVERTE : ELLE EST PUBLIÉE DEPUIS 2020
+## 24/08 — #169 MON « IDENTITÉ » DU #161/#164 EST UNE REDÉCOUVERTE : ELLE EST PUBLIÉE DEPUIS 2020
 Vérification de littérature du 24/08. J'ai présenté l'identité *iΛCDM(Ω_m, ε) ≡ wCDM(Ω_m′, w′)*
 comme une trouvaille. **Elle ne l'est pas.**
 - **von Marttens, Lombriser, Kunz, Marra, Casarini & Alcaniz, arXiv:1911.02618** (Phys. Dark
@@ -2484,7 +2484,7 @@ nécessaire et le chiffre (8,62 sur 9,84) reste à nous ; le principe, non.**
   « jumeaux phénoménologiques » de CPL et de prédiction P1 « à sens unique ».
 **Règle 9 appliquée à moi-même : une redécouverte n'est pas une découverte. Consigné.**
 
-## 24/08 (Claude Code) — #170 L'ÉPREUVE DE LRG2 : NOTRE SIGNAL N'EST PAS PORTÉ PAR CE BIN — MAIS NOUS Y PERDONS PLUS QUE CPL
+## 24/08 — #170 L'ÉPREUVE DE LRG2 : NOTRE SIGNAL N'EST PAS PORTÉ PAR CE BIN — MAIS NOUS Y PERDONS PLUS QUE CPL
 `epreuve_lrg2.py` (gelé 56fde1ef4ef1). Validation : les quatre ancres #150 reproduites.
 Contexte : Kim, Mota & Tamosiunas (**arXiv:2607.28918**) montrent par e-process « anytime-valid »
 que l'évidence DESI DR2 pour l'énergie noire évolutive tient à un seul bin — retirer LRG2 fait
@@ -2509,7 +2509,7 @@ contre −12,60, soit ~3σ résiduels.
 contredit RIEN : leur analyse porte sur DESI+CMB avec un e-process, la nôtre sur la
 vraisemblance légère avec des Δχ². Deux protocoles différents ; on rapporte, on n'argumente pas.
 
-## 24/08 (Claude Code) — #171 VERDICT DE LITTÉRATURE SUR LE #166 : LE PRINCIPE EST CONNU, LA QUANTIFICATION NE L'EST PAS — ET IL Y A UNE CIBLE
+## 24/08 — #171 VERDICT DE LITTÉRATURE SUR LE #166 : LE PRINCIPE EST CONNU, LA QUANTIFICATION NE L'EST PAS — ET IL Y A UNE CIBLE
 Recherche du 24/08 (2023-2026). Réponse nuancée, à respecter dans les deux sens.
 
 **CE QUI EST DÉJÀ PUBLIÉ, ET QU'IL FAUDRA CITER SANS DISCUTER :**
@@ -2561,7 +2561,7 @@ contraignent un secteur sombre en interaction avec des priors comprimés (2505.0
 **Décision : l'étude à mener n'est plus « avons-nous découvert un vice » — c'est
 « quantifions-le par classe, en citant ceux qui l'ont pressenti ».**
 
-## 24/08 (Claude Code) — #172 LA LOI w = −β/(3Ht) N'EST PAS PUBLIÉE — MAIS ELLE A UNE COUSINE QU'IL FAUT CITER, ET UN CONCURRENT PLUS PARCIMONIEUX
+## 24/08 — #172 LA LOI w = −β/(3Ht) N'EST PAS PUBLIÉE — MAIS ELLE A UNE COUSINE QU'IL FAUT CITER, ET UN CONCURRENT PLUS PARCIMONIEUX
 Recherche du 24/08. Trois résultats, dont un qui manque au papier A.
 
 **1. LA LOI ELLE-MÊME : rien de trouvé.** Aucune publication ne pose w ∝ 1/(Ht), ni
@@ -2608,7 +2608,7 @@ MCEvidence ne se cite pas à côté d'un Δln B PolyChord, et les volumes de pri
 donc être INTERNE : même pipeline, mêmes données, même estimateur, priors déclarés, et
 sensibilité au prior rapportée. Leurs chiffres serviront de repère, jamais de comparant direct.
 
-## 24/08 (Claude Code) — #173 ⚠ AUDIT DÉCLENCHÉ PAR ÉDOUARD (« trop beau pour être vrai ») : LE #167 EST UN MINIMUM DE BORD, ET MON RAPPROCHEMENT DU #171 EST FAUX
+## 24/08 — #173 ⚠ AUDIT DÉCLENCHÉ PAR ÉDOUARD (« trop beau pour être vrai ») : LE #167 EST UN MINIMUM DE BORD, ET MON RAPPROCHEMENT DU #171 EST FAUX
 Édouard a signalé que les résultats de la nuit semblaient trop propres. Le #167 annonçait
 « ε préféré = +0,00000, gain **exactement** 0,000 ». Une valeur exacte à cinq décimales devait
 être vérifiée au lieu d'être crue. **Profil complet en ε, (h, ω_b, Ω_m) réoptimisés :**
@@ -2660,7 +2660,7 @@ domaine ; le soupçon humain l'a fait. Deuxième fois que ça arrive (voir #63 a
 **À ajouter aux garde-fous : tout verdict sur un paramètre doit déclarer si son domaine est
 accessible des deux côtés du point rapporté.**
 
-## 24/08 (Claude Code) — #174 SIXIÈME VICE DE CRITÈRE DU JOUR : DEUX EXIGENCES GELÉES MUTUELLEMENT INCOMPATIBLES
+## 24/08 — #174 SIXIÈME VICE DE CRITÈRE DU JOUR : DEUX EXIGENCES GELÉES MUTUELLEMENT INCOMPATIBLES
 `audit_domaines.py` (gelé 3ae3db8982de) a refusé de publier sur sa propre validation. Le vice
 est structurel et il est le mien : j'avais gelé **à la fois** un balayage de 41 points sur
 β ∈ [0,5 ; 5] (pas = 0,1125) **et** l'exigence que ce balayage retrouve le χ² publié à ±0,3.
@@ -2673,7 +2673,7 @@ Corrigé en `audit_domaines_v2.py` (gelé 7f6a2bff053d) par une séparation des 
 dû être là dès le départ : **le balayage cartographie l'ACCESSIBILITÉ, le fit libre trouve le
 MINIMUM.** Aucun minimum n'est plus lu sur une grille.
 
-## 24/08 (Claude Code) — #175 AUDIT DES DOMAINES : TROIS FAMILLES DE L'ATLAS ONT UN MINIMUM DE BORD — LA NÔTRE N'EN FAIT PAS PARTIE
+## 24/08 — #175 AUDIT DES DOMAINES : TROIS FAMILLES DE L'ATLAS ONT UN MINIMUM DE BORD — LA NÔTRE N'EN FAIT PAS PARTIE
 `audit_domaines_v2.py` (gelé 7f6a2bff053d). Validation : le fit libre reproduit les quatre
 ancres #150 **à la troisième décimale** (1419,309 / 1423,843 / 1415,245 / 1415,818).
 Généralisation du contrôle né du #173, déclenché par le soupçon d'Édouard.
@@ -2713,7 +2713,7 @@ entrée #150 qui ne se lit pas comme un minimum**, dont deux qui valent exacteme
 palmarès contient donc moins de résultats distincts qu'il n'affiche de lignes. À porter dans
 l'atlas v2, avec le reste (rétractations #166/#167).
 
-## 24/08 (Claude Code) — #176 SEPTIÈME VICE, ET LE PLUS GRAVE : DIVERGENCE ENTRE UN DOCSTRING GELÉ ET SON CODE
+## 24/08 — #176 SEPTIÈME VICE, ET LE PLUS GRAVE : DIVERGENCE ENTRE UN DOCSTRING GELÉ ET SON CODE
 `banc_un_parametre.py` (gelé a38014b821a8) annonçait dans son docstring « une grille dense
 (60 000 points, log) » pendant que son corps, après mes corrections successives de
 quadrature, en utilisait **240 001**. Les six vices précédents rendaient un critère
@@ -2730,7 +2730,7 @@ sous les différences comparées), mémoïsation exacte à paramètre fixe.
 **Bilan de la journée : sept critères mal posés, tous arrêtés avant publication. Le taux est
 le fait à retenir — je conçois trop vite, et c'est le protocole qui rattrape, pas moi.**
 
-## 24/08 (Claude Code) — #177 BANC D'ESSAI À UN PARAMÈTRE : NOTRE LOI EST TROISIÈME SUR DIX — DEUX FORMES DE KESSLER LA BATTENT
+## 24/08 — #177 BANC D'ESSAI À UN PARAMÈTRE : NOTRE LOI EST TROISIÈME SUR DIX — DEUX FORMES DE KESSLER LA BATTENT
 `banc_un_parametre_v2.py` (gelé 688ee2ea7138). Validations : quadrature contre les deux
 formes fermées publiées à **1,0×10⁻¹² (K2)** et **5,8×10⁻¹⁰ (SR)** ; wCDM reproduit à
 **0,0000** ; ancres #150 exactes. Domaines contrôlés (leçon #175).
@@ -2764,7 +2764,7 @@ d'Occam EST le résultat — son prior U[−3;1] est large et partiellement reje
 accessible), il en paie le volume. Aucun de ces nombres n'est comparable aux Δln B publiés
 (MCEvidence contre PolyChord, priors et cadres différents).
 
-## 24/08 (Claude Code) — #178 LES CÔNES D'OMBRE : 56,6 % DU CIEL N'A AUCUNE SUPERNOVA, CONTRE 8,8 % SI ISOTROPE
+## 24/08 — #178 LES CÔNES D'OMBRE : 56,6 % DU CIEL N'A AUCUNE SUPERNOVA, CONTRE 8,8 % SI ISOTROPE
 `genere_ciel_v7.py` (gelé 9c98718d675e). Grille de 648 cellules d'**aire égale** (RA uniforme,
 sin(Dec) uniforme ; somme des aires = 4π vérifiée à 10⁻⁹), soit 63,7 deg² par cellule.
 **367 cellules sur 648 ne contiennent AUCUNE supernova : 56,6 % du ciel.** Un tirage isotrope
@@ -2777,7 +2777,7 @@ en densité, il est **absent de plus de la moitié du ciel**. Toute inférence c
 de Pantheon+ porte donc sur un demi-ciel troué et percé de pinceaux, jamais sur « le ciel ».
 Consigné comme fait de sélection, pas comme critique : c'est la condition normale d'un relevé.
 
-## 24/08 (Claude Code) — #179 ATLAS v2 : LE PALMARÈS CORRIGÉ NOUS MET 4ᵉ SUR 25 — ET CCBH NOUS DEVANCE PAR PARCIMONIE
+## 24/08 — #179 ATLAS v2 : LE PALMARÈS CORRIGÉ NOUS MET 4ᵉ SUR 25 — ET CCBH NOUS DEVANCE PAR PARCIMONIE
 `atlas_v2.py` (gelé 9466cd5914ec). Ce n'est pas un re-calcul : `atlas_v1.py` est gelé avec ses
 ancres, le rejouer redonnerait les valeurs fautives. C'est une **consolidation** : elle prend
 les valeurs déjà validées par des scripts gelés, corrige là où une rétractation l'exige,
@@ -2821,7 +2821,7 @@ minimum. Et le fichier se termine par ce qu'il ne dit pas : rien sur les perturb
 sur la physique, et rien sur la robustesse aux systématiques de calibration SN — dont le #170
 montre qu'elles déplacent nos gains de 10 à 17 % à elles seules.
 
-## 24/08 (Claude Code) — #180 LE CONTRASTE DE STRIPE 82 EST DE GRANDE ÉCHELLE, PAS LOCAL — HYPOTHÈSE RÉFUTÉE PAR MON PROPRE CRITÈRE
+## 24/08 — #180 LE CONTRASTE DE STRIPE 82 EST DE GRANDE ÉCHELLE, PAS LOCAL — HYPOTHÈSE RÉFUTÉE PAR MON PROPRE CRITÈRE
 `genere_ciel_v8.py` (gelé c72617f91c68) a REFUSÉ d'écrire. Sa vérification 3 exigeait que la
 densité locale médiane dans Stripe 82 dépasse de plus de **3×** celle du reste de
 l'échantillon, faute de quoi le curseur de « contraste de sélection » aurait montré un effet
@@ -2854,7 +2854,7 @@ minimum de bord, celui-ci). Le protocole ne sert pas seulement à empêcher les 
 victoires : il empêche aussi les fausses ILLUSTRATIONS, qui sont plus insidieuses parce
 qu'elles ne se présentent pas comme des résultats.
 
-## 24/08 (Claude Code) — #181 LA v8 ÉTAIT MORTE À L'ÉCRAN, ET MON PROPRE CONTRÔLE L'A LAISSÉE PASSER
+## 24/08 — #181 LA v8 ÉTAIT MORTE À L'ÉCRAN, ET MON PROPRE CONTRÔLE L'A LAISSÉE PASSER
 Édouard a envoyé une capture : panneaux affichés, **aucun bouton, aucun canevas, aucun
 compteur**. Diagnostic : le gabarit v8, hérité de la v7, déclare
 `const SN=…,OMB=__OMB__,AR=__AR__,M=…` — or `genere_ciel_v8b.py` **n'émettait ni `__OMB__`
@@ -2887,7 +2887,7 @@ erreurs avant publication. Celui-ci est passé parce qu'aucun critère gelé ne 
 c'est **Édouard qui l'a vu, en ouvrant le fichier**. Un contrôle automatique ne remplace pas
 l'usage : il ne teste que ce qu'on a pensé à lui faire tester.
 
-## 24/08 (Claude Code) — #182 UN TROU DANS LE MOTEUR DE RENDU, PRÉSENT DEPUIS LA v5 : LA MOLETTE POUVAIT DÉPOSER L'UTILISATEUR DANS UNE ÉCHELLE OÙ RIEN N'EXISTE
+## 24/08 — #182 UN TROU DANS LE MOTEUR DE RENDU, PRÉSENT DEPUIS LA v5 : LA MOLETTE POUVAIT DÉPOSER L'UTILISATEUR DANS UNE ÉCHELLE OÙ RIEN N'EXISTE
 Deuxième capture d'Édouard : interface fonctionnelle, **canevas d'un violet uniforme, 0 objet
 visible sur 1580, rayon de vue 1,23 Mpc**. Trois défauts distincts, tous dans le moteur, tous
 présents depuis la v5 et jamais vus parce qu'aucun critère ne portait sur le RENDU.
@@ -2921,7 +2921,7 @@ projetés ne soit jamais nul sur deux pas consécutifs**. C'est exactement le te
 attrapé ce trou. À geler. Les cinq gabarits (v4 à v8) sont corrigés et régénérés, mais par
 inspection, pas par contrôle.
 
-## 24/08 (Claude Code) — #183 AUDIT DES PAPIERS : 44 DÉFAUTS, DONT SEPT SURVIVANCES ORIENTÉES — CORRIGÉS
+## 24/08 — #183 AUDIT DES PAPIERS : 44 DÉFAUTS, DONT SEPT SURVIVANCES ORIENTÉES — CORRIGÉS
 Audit systématique des trois manuscrits (équations, citations, cohérence numérique,
 surenchère logique), déclenché par Édouard. **44 défauts.** Le nombre importe moins que le
 diagnostic : *le mode de défaillance dominant n'est pas la fabrication, c'est du **texte
@@ -2993,7 +2993,7 @@ révélé systématiquement plus honnête que les papiers. Ce n'est pas un hasar
 est écrit sous critère gelé, les papiers ne le sont pas. **Il manque au corpus un garde-fou
 de manuscrit.**
 
-## 24/08 (Claude Code) — #184 LE GARDE-FOU DE MANUSCRIT, ET SES DEUX PREMIERS FAUX POSITIFS
+## 24/08 — #184 LE GARDE-FOU DE MANUSCRIT, ET SES DEUX PREMIERS FAUX POSITIFS
 `outils/manuscrit.py` (gelé 94b74a08a854). Le #183 avait établi le manque : `perime.py` et
 `registre.py verify` sont passés **sans attraper un seul des 44 défauts**, parce qu'ils
 surveillent les critères gelés et les valeurs canoniques, pas la cohérence interne des
@@ -3035,7 +3035,7 @@ pas :** il ne relit pas les équations, ne juge pas la physique, et n'aurait att
 des sept survivances orientées du #183. Celles-là demandent une lecture. Il empêche la
 récidive d'une classe de défauts, pas la classe de défauts qui compte le plus.
 
-## 24/08 (Claude Code) — #185 LES 44 DÉFAUTS SONT CLOS, ET LE GARDE-FOU EST À 5 SUR 126
+## 24/08 — #185 LES 44 DÉFAUTS SONT CLOS, ET LE GARDE-FOU EST À 5 SUR 126
 Fin du traitement de l'audit du #183. Les quatre derniers défauts, tous trouvés ou confirmés
 par `manuscrit.py` (gelé 94b74a08a854) :
 
@@ -3071,7 +3071,7 @@ aucun ; c'est une lecture systématique qui les a trouvés, déclenchée par une
 d'Édouard. Le garde-fou empêchera désormais la récidive de la moitié mécanique. **L'autre
 moitié demandera toujours quelqu'un pour lire.**
 
-## 24/08 (Claude Code) — #186 ⚠ LA SECONDE PASSE A TROUVÉ CE QUE LA PREMIÈRE AVAIT CASSÉ — DONT UNE SURVIVANCE FAVORABLE QUE J'AVAIS MOI-MÊME RECRÉÉE
+## 24/08 — #186 ⚠ LA SECONDE PASSE A TROUVÉ CE QUE LA PREMIÈRE AVAIT CASSÉ — DONT UNE SURVIVANCE FAVORABLE QUE J'AVAIS MOI-MÊME RECRÉÉE
 Édouard avait demandé, dès sa consigne initiale, de **refaire le processus entier une seconde
 fois**. Fait. Cette passe ne cherchait pas les défauts d'origine mais **ce que les cinquante
 éditions de la première passe avaient endommagé**. Vingt-trois signalements. Le premier est
@@ -3138,7 +3138,7 @@ M_cut hérité de la relation superseded, R ~ 10^7,8 dérivé d'une base retiré
 de phrase, et une demi-douzaine de divergences inter-papiers signalées pour mémoire. Ce sont
 des travaux de fond, pas des corrections de valeurs, et je ne les maquille pas en « faits ».
 
-## 24/08 (Claude Code) — #187 LA RELATION D'HÉRÉDITÉ AVAIT ÉTÉ REMPLACÉE, ET CINQ PASSAGES CONTINUAIENT D'UTILISER L'ANCIENNE — DONT UNE ÉLÉGANCE QUI DISPARAÎT
+## 24/08 — #187 LA RELATION D'HÉRÉDITÉ AVAIT ÉTÉ REMPLACÉE, ET CINQ PASSAGES CONTINUAIENT D'UTILISER L'ANCIENNE — DONT UNE ÉLÉGANCE QUI DISPARAÎT
 Dernier bloc de la seconde passe. Le papier B remplace explicitement β = 4/(n_eff+3) par
 **β = 2/(n_eff+3)** — *« notre relation d'origine était deux fois trop grande »* — puis
 continue de s'en servir dans cinq passages. Toutes les images sont recalculées sous la
@@ -3177,7 +3177,7 @@ il faut recalculer chaque image, une par une, en sachant laquelle. Aucun outil d
 ne le fait, et le garde-fou de manuscrit ne le fera pas non plus. **C'est la troisième fois
 aujourd'hui qu'un défaut n'est trouvable que par la lecture.**
 
-## 24/08 (Claude Code) — #188 LA DILUTION DE LA MATIÈRE : LE CHOIX D'ÉTALONNAGE **RENVERSE LE SIGNE** D'UNE DÉTECTION À 3σ
+## 24/08 — #188 LA DILUTION DE LA MATIÈRE : LE CHOIX D'ÉTALONNAGE **RENVERSE LE SIGNE** D'UNE DÉTECTION À 3σ
 `dilution_matiere.py` (gelé 19efe1c14514). Étude conçue pour lever la limite du #173 — la
 branche ε < 0 était inaccessible dans notre implémentation, or **c'est le signe qu'annonce la
 littérature** (Yang, Dai & Wang, arXiv:2505.09879 : ε = −0,0073 à ~2,4σ). Modèle de la classe
@@ -3220,7 +3220,7 @@ sur NOTRE pipeline — que le seul choix d'étalonnage suffit à produire une d�
 de ces mesures est à refaire ; s'il n'y vaut pas, il faut dire pourquoi. **C'est la question
 que cette étude ouvre, et elle est plus grande que le corpus.** Ouverte au greffe comme T10.
 
-## 24/08 (Claude Code) — #189 LE #188 A PRÊTÉ À LA LITTÉRATURE UN MODÈLE QU'ELLE N'EMPLOIE PAS
+## 24/08 — #189 LE #188 A PRÊTÉ À LA LITTÉRATURE UN MODÈLE QU'ELLE N'EMPLOIE PAS
 **Rétractation partielle du #188, attrapée par la vérification littérature — pas par mes
 contrôles.** Le docstring gelé de `dilution_matiere.py` (19efe1c14514) déclare tester
 « le modèle de la classe publiée : ρ_m = Ω_m a^(ε−3) **avec Λ constante, SANS imposer la
@@ -3265,7 +3265,7 @@ littérature ; deux fois la vérification l'a démoli. **La leçon à retenir n'
 les chiffres du rival » — je l'avais fait — c'est vérifier son ÉQUATION DE CONTINUITÉ avant
 de dire qu'on teste son modèle.** Versé au triage (65).
 
-## 24/08 (Claude Code) — #190 L'ARBITRE N'A PAS ARBITRÉ. IL A TROUVÉ MIEUX : POURQUOI IL NE POUVAIT PAS.
+## 24/08 — #190 L'ARBITRE N'A PAS ARBITRÉ. IL A TROUVÉ MIEUX : POURQUOI IL NE POUVAIT PAS.
 `dilution_arbitre.py` (gelé 83b148f19fe1), `dilution_arbitre_forme.py` (8595abf2a9f7),
 `equite_dilution.py` (714d6f430930). Trois scripts, tous gelés avant exécution.
 
@@ -3372,7 +3372,7 @@ opposable non plus, et je ne la promeus pas au rang de résultat.
 C'est un énoncé **méthodologique**, vérifiable, et il ne dépend d'aucune thèse du corpus. Il
 survit même si tout le reste tombe. Versé au greffe ; T10 reste ouverte avec cet énoncé.
 
-## 24/08 (Claude Code) — #191 J'AI FAIT JUGER MON PROPRE ACQUIS PAR LES DONNÉES DES AUTRES
+## 24/08 — #191 J'AI FAIT JUGER MON PROPRE ACQUIS PAR LES DONNÉES DES AUTRES
 `confrontation_epsilon.py` (gelé **7eee4fed04ea**). Critères gelés **avant exécution ET avant
 d'avoir les valeurs publiées** — la vérification bibliographique tournait encore quand j'ai
 gelé. Je ne pouvais donc pas accorder les critères aux chiffres, et c'est vérifiable par
@@ -3475,7 +3475,7 @@ mesure donc PAS ε — elle mesure une DISPERSION**, et c'est tout ce qu'elle a 
 conclure. Le #190 en ressort confirmé **comme énoncé sur les priors comprimés**, pas comme
 mesure.
 
-## 24/08 (Claude Code) — #192 NOTRE FAMILLE N'A JAMAIS ÉTÉ CELLE QUE TROIS ENTRÉES LUI ONT PRÊTÉE
+## 24/08 — #192 NOTRE FAMILLE N'A JAMAIS ÉTÉ CELLE QUE TROIS ENTRÉES LUI ONT PRÊTÉE
 `dilution_baryons.py` (gelé **863df81e97bd**). Étude née d'une relecture de notre propre
 définition de famille, et d'une vérification littérature commandée pour savoir si le travail
 n'était pas déjà fait. Il l'était — et deux fois plutôt qu'une.
@@ -3589,7 +3589,7 @@ complète. De plus la borne baryonique que j'aurais aimé invoquer (« BBN l'int
 publiée sur l'exposant baryonique n'existe**. Notre défaut reste un défaut d'**incohérence
 interne** — mesuré à 7,5–15,1σ — pas une violation d'une borne extérieure.
 
-## 24/08 (Claude Code) — #193 MON EXPLICATION ÉTAIT FAUSSE, ET LE VRAI FAIT EST PLUS FORT
+## 24/08 — #193 MON EXPLICATION ÉTAIT FAUSSE, ET LE VRAI FAIT EST PLUS FORT
 `pouvoir_omega_m.py` (gelé **ff1ef6899fa1**). Première étude de la campagne à employer la
 **vraisemblance CMB complète** (CAMB + plik_lite TTTEEE + low-ℓ, la machinerie du #146).
 
@@ -3659,7 +3659,7 @@ acquise pendant deux entrées que je me suis trompé.
 - **Reste aussi** : l'énoncé opérationnel du #190, « ε n'est pas identifiable par des priors
   comprimés ». Il est confirmé — mais pour une raison que j'avais mal nommée.
 
-## 24/08 (Claude Code) — #194 UN FACTEUR π/2 DANS L'AIRE DU CIEL, DEPUIS LE PREMIER ARTEFACT
+## 24/08 — #194 UN FACTEUR π/2 DANS L'AIRE DU CIEL, DEPUIS LE PREMIER ARTEFACT
 `verif_ciel.py` (gelé e3708ce14cd8), corrigé par `verif_ciel_v2.py` (e3708… → nouveau gel).
 Défaut trouvé en **recalculant** au lieu de recopier, sur demande d'Ed de tout revérifier.
 
@@ -3709,7 +3709,7 @@ au lieu de 416. Non amendé ; `verif_ciel_v2.py` le remplace en service avec la 
 corpus. **Le constat du π/2 ne dépend pas de ce défaut** — il a été revérifié séparément avec
 la sélection du corpus, qui rend bien 416 SNe et le même facteur π/2.
 
-## 24/08 (Claude Code) — #195 SIX CORRECTIONS, DONT UN BIAIS DE CONVENTION DANS CHAQUE ÉVALUATION
+## 24/08 — #195 SIX CORRECTIONS, DONT UN BIAIS DE CONVENTION DANS CHAQUE ÉVALUATION
 Vérification **adversariale** de toutes les citations et de tous les nombres employés depuis le
 #188, menée en exigeant une citation verbatim de la source primaire pour chaque affirmation.
 Score : 20 confirmées mot pour mot, **6 corrigées**, 1 invérifiable à la source.
@@ -3786,7 +3786,7 @@ fausse.** Consigné ici pour qu'aucun relecteur futur ne « répare » ce qui fo
 Également : `ZSTAR = 1089,91` dans `test_wE_v3.py` est du **code mort** — jamais référencé, le
 χ² appelant `z_star(ob, om)`. Laissé en place pendant la campagne, signalé pour retrait.
 
-## 24/08 (Claude Code) — #197 LE TEST DU RÉFÉRENT S'EST ARRÊTÉ SUR SA PROPRE VALIDATION
+## 24/08 — #197 LE TEST DU RÉFÉRENT S'EST ARRÊTÉ SUR SA PROPRE VALIDATION
 `test_referent.py` (gelé). Étude conçue pour tester la lecture laissée par le #193 —
 « l'ambiguïté est de référent, pas de précision » — par sa **prédiction falsifiable** :
 si elle est vraie, améliorer les données ne réduit pas l'étendue.
@@ -3821,7 +3821,7 @@ après avoir vu le blocage. La v2 ajoute en outre une **seconde** exigence d'op�
 gain médian doit croître comme k² à ±25 %), précisément parce que c'est elle qui, dans la v1,
 voyait ce que la première était aveugle à voir.
 
-## 24/08 (Claude Code) — #198 LE PAPIER E EST MORT, ET SA MORT A FERMÉ UNE FAILLE DU CORPUS
+## 24/08 — #198 LE PAPIER E EST MORT, ET SA MORT A FERMÉ UNE FAILLE DU CORPUS
 Vérification de **nouveauté** commandée avant d'écrire un papier E sur la fonction de
 sélection angulaire de Pantheon+. Verdict : **il ne faut pas l'écrire.** Item par item :
 
@@ -3884,7 +3884,7 @@ reconstruit une fonction de sélection angulaire **par relevé** ni n'en propage
 (arXiv:2009.14826, arXiv:2206.05624). Cette asymétrie méthodologique est une ligne d'attaque
 légitime, et son livrable serait **un déplacement de paramètre**, pas un compte de déficit.
 
-## 24/08 (Claude Code) — #199 LE TEST DU RÉFÉRENT S'EST BLOQUÉ UNE SECONDE FOIS, ET C'EST STRUCTUREL
+## 24/08 — #199 LE TEST DU RÉFÉRENT S'EST BLOQUÉ UNE SECONDE FOIS, ET C'EST STRUCTUREL
 `test_referent_v2.py` (gelé). Seconde tentative de tester la prédiction falsifiable laissée
 par le #193 : si l'ambiguïté est de référent, améliorer les données ne la réduit pas.
 
@@ -3928,7 +3928,7 @@ propres validations. **Je n'ai donc toujours pas le droit de m'en servir**, et l
 la porter comme ce qu'elle est : une lecture suggérée par des nombres frappants, jamais
 certifiée. C'est exactement le statut que le #193 lui avait assigné, et il n'a pas bougé.
 
-## 24/08 (Claude Code) — #200 TROISIÈME BLOCAGE, ET LA DÉCISION D'ARRÊTER
+## 24/08 — #200 TROISIÈME BLOCAGE, ET LA DÉCISION D'ARRÊTER
 `test_referent_v3.py` (gelé). Troisième conception d'un test de la lecture « référent » du
 #193. Elle s'est arrêtée sur sa **validation A**, et la cause est **moi** : j'ai gelé dans le
 même bloc « reproduire EXACTEMENT les valeurs de grille du #192 » et un estimateur qui
@@ -3981,7 +3981,7 @@ strictement invariante sous quatre fois moins d'incertitude — reste inopposabl
 préférons ce coût-là au précédent, qui aurait été de publier un verdict obtenu par
 sélection de conception.
 
-## 24/08 (Claude Code) — #201 LE PAPIER F DÉMOLI PAR VÉRIFICATION, ET RÉÉCRIT EN CONSÉQUENCE
+## 24/08 — #201 LE PAPIER F DÉMOLI PAR VÉRIFICATION, ET RÉÉCRIT EN CONSÉQUENCE
 Vérification adversariale de nouveauté sur les trois revendications du papier F, commandée
 juste après l'avoir écrit. **Verdict : le protocole est un ré-emballage, la taxonomie est une
 CARTOGRAPHIE et non une découverte, et la troisième revendication existe intégralement.**

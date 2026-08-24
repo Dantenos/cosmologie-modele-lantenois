@@ -32,3 +32,6 @@ scripts/sorties/
 donnees/pantheon_plus/planck-lite-py/
 donnees/pantheon_plus/state_*.json
 donnees/pantheon_plus/jk_state_*.json
+
+# Fichier de configuration d'outillage local (non publié)
+CLAUDE.md

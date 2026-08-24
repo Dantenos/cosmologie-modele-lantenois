@@ -5,7 +5,7 @@
    "affirmation": "w=-beta/(3Ht) avec beta dans [2,42;2,60], beta1=+0,06+/-0,31, |kappa|<0,24",
    "acteurs": [
     "Lantenois2026",
-    "Claude_campagne0826"
+    "campagne0826"
    ],
    "juge": "DESI DR3",
    "echeance": "2027",
@@ -32,7 +32,7 @@
    "acteurs": [
     "Goulet",
     "Horloge",
-    "Claude_campagne0826"
+    "campagne0826"
    ],
    "juge": "Pantheon+ x catalogue de vides",
    "echeance": "ouverte",
@@ -60,7 +60,7 @@
    "refutees": 0,
    "en_attente": 3
   },
-  "Claude_campagne0826": {
+  "campagne0826": {
    "validees": 0,
    "refutees": 0,
    "en_attente": 2

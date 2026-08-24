@@ -1,5 +1,5 @@
 # SYNTHÈSE FINALE — corpus cosmologie, 16-24 août 2026
-*Édouard Lantenois × Claude. Document de clôture, destiné à servir de page d'accueil au dépôt.*
+*Édouard Lantenois. Document de clôture, destiné à servir de page d'accueil au dépôt.*
 
 ---
 

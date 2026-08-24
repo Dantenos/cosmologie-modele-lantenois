@@ -1,4 +1,4 @@
-# AUDIT DU DÉPÔT — 23/08/2026 (Claude Code, machine Windows, carte blanche)
+# AUDIT DU DÉPÔT — 23/08/2026 (machine Windows, carte blanche)
 
 *Trois lectures indépendantes (registres, papiers, code) + rejeu de 38 scripts sur données
 publiques + deux études à critères gelés. Tout ce qui a été corrigé est dans l'historique git

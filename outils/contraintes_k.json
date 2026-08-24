@@ -6,21 +6,21 @@
    "source": "Rodriguez, ApJL 947 L12 (2023), arXiv:2302.12386",
    "statut": "verifie",
    "borne": "k=3 exige les deux BH quasi face-on, P<=1e-4, ou une masse de formation < 2,2 Msun ; facteur de croissance requis (1+z)^3~55 depuis z=2,8",
-   "relecteur": "Claude+Ed session 24/08/2026, texte primaire (conclusions)"
+   "relecteur": "session 24/08/2026, texte primaire (conclusions)"
   },
   {
    "id": "gaia_dormants",
    "source": "Andrae & El-Badry, A&A 673 L10 (2023), arXiv:2305.01307",
    "statut": "verifie",
    "borne": "k=3 => masse de formation < TOV 2,2 Msun a 77% (BH2) et 70% (BH1) ; P(les deux viables)=6,9%",
-   "relecteur": "Claude+Ed 24/08/2026, section Discussion primaire"
+   "relecteur": "session 24/08/2026, section Discussion primaire"
   },
   {
    "id": "smbh_lacy",
    "source": "Lacy et al., ApJL (2024), arXiv:2312.12344",
    "statut": "verifie",
    "borne": "0 < k <~ 2 sous densite SMBH standard (M-Mbulge) ; CAVEAT DECLARE : densite favorisee par les PTA (7,4e6 Msun/Mpc3) rend k=3 viable",
-   "relecteur": "Claude+Ed 24/08/2026, abstract primaire"
+   "relecteur": "session 24/08/2026, abstract primaire"
   },
   {
    "id": "jwst_agn",

@@ -1,6 +1,6 @@
 # L'énergie noire comme signature d'accrétion d'un trou noir parent : un modèle falsifiable
 
-**Étude exploratoire — É. Lantenois, avec l'assistance de Claude (Anthropic)**
+**Étude exploratoire — É. Lantenois, avec assistance IA**
 **Version 1.0 — 14 août 2026**
 
 ---

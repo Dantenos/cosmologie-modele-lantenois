@@ -2,7 +2,7 @@ L'énergie noire comme signature d'accrétion d'un trou noir parent
 Étude complète — version 2.0
 
 Édouard Lantenois — chercheur indépendant, Lille (FR) · github.com/Dantenos
-Avec l'assistance de Claude (Anthropic) pour les calculs, la revue de littérature et la rédaction.
+Avec une assistance IA pour les calculs, la revue de littérature et la rédaction.
 15 août 2026 — Document de travail, non relu par les pairs.
 
 Documents compagnons : note arXiv en anglais (parent_bh_dark_energy.pdf, v1.8, 9 p.), annexe de revue de littérature (revue_litterature_annexeA.md, trois passes), poster A0, et quatre scripts reproduisant l'intégralité des calculs (fit_accretion_de.py, vraisemblance_reelle.py, cmb_evidence.py, planck_theta.py) plus une configuration Cobaya (cobaya_accretion.yaml) pour les chaînes MCMC définitives.

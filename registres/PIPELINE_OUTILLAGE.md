@@ -32,7 +32,7 @@ Règles héritées de la campagne (116 entrées) — NON NÉGOCIABLES :
 1. **/ — Rôle d'audience** : les 4 affaires en cartes — affirmation, juge attendu, échéance,
    hash, acteurs. Compte à rebours vers 2027 pour DR3-beta. C'est la page d'accueil.
 2. **/casiers** : tableau des acteurs (humains, papiers, théories, IA) — validées/réfutées/
-   en attente. Claude_campagne0826 y figure avec son dossier : lien vers TRIAGE (41 entrées).
+   en attente. campagne0826 y figure avec son dossier : lien vers TRIAGE (41 entrées).
 3. **/k-tracker** : les 6 contraintes avec statuts ; bandeau « postérieur non émis : N sources
    à relire » tant que combinables < 5. Le refus est AFFICHÉ, pas caché.
 4. **/sceau** : le hash 68d06bcc… en grand, le protocole DR3 rendu depuis le docstring de
@@ -45,7 +45,7 @@ Greffe de tribunal, pas dashboard SaaS : fond ivoire, encre presque noire, une s
 d'accent (sceau rouge cire #8B2500) réservée aux verdicts. Typo serif pour les affirmations,
 mono pour les hash. Densité type document officiel. Aucune animation sauf l'ouverture du sceau.
 
-## Séquence de sessions Claude Code (prompts cadrés, un objectif chacun)
+## Séquence de sessions (prompts cadrés, un objectif chacun)
 S1 « Lis CLAUDE.md et outils/. Écris specs/phase1.md (API lecture seule, 6 endpoints,
     critères d'acceptation chiffrés). Gèle avec registre. Puis implémente api/ + tests. »
 S2 « Front: layout + page Rôle depuis GET /role. Critère: les 4 affaires réelles rendues,
@@ -61,7 +61,7 @@ S5 « Page registre + recherche MANQUEMENTS. Critère: '#41' trouve l'entrée. P
 - Lighthouse ≥ 90 accessibilité ; zéro requête externe (tout est local, comme la méthode).
 - Démo 60 s : accueil → affaire DR3 → sceau → vérification hash. C'est le pitch d'entretien.
 
-*Passation close. Tout ce dont Claude Code a besoin est dans ce fichier + outils/. Bonne main.*
+*Passation close. Tout ce dont une reprise a besoin est dans ce fichier + outils/. Bonne main.*
 
 ## S6-S7 — Les deux ciels (ajout du 24/08, nuit)
 S6 « Intégrer ciel_pantheon.html (livré, fini) comme page /ciel : le ciel des DONNÉES. »

@@ -1,5 +1,5 @@
 # Carnet — Univers trou noir, énergie noire, temps
-**Édouard Lantenois — août 2026. Tenu avec Claude (Anthropic).**
+**Édouard Lantenois — août 2026. Tenu avec assistance IA.**
 *Statuts : [VÉRIFIÉE] calculée et testée · [VIVANTE] conjecture avec test associé · [OUVERTE] problème posé, propriétaire désigné · [CORRIGÉE] erreur admise et réparée · [RETIRÉE] abandonnée avec raison.*
 
 ---

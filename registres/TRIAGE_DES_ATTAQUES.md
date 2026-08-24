@@ -366,3 +366,7 @@ première fois, une entrée du triage retirant une entrée du triage.**
 
 **Bilan : 10 attaques justes, 55 affirmations réfutées, rétrogradées ou corrigées — la #63 au
 crédit du binôme : le soupçon humain a vu ce que quatre relectures machine ont raté.**
+
+| 65 | mon « je teste le modèle de la classe publiée » (#188, docstring gelé 19efe1c14514 ; énoncé de T10) | **MISATTRIBUTION, rétractée (#189)** : arXiv:2505.09879 pose « an interaction between dark matter and vacuum dark energy » — Q ≠ 0, vide dynamique, **énergie totale conservée**. Le #188 testait Λ constante et conservation NON imposée : l'inverse sur les deux points structurants. La famille mesurée est voisine et **non publiée**. La mesure interne survit intacte ; c'est son étiquette bibliographique qui tombe. Attrapé par la vérification littérature exigée par Ed, après que le #188 eut énuméré trois différences avec le rival en omettant celle qui interdisait la comparaison. |
+
+**Bilan : 10 attaques justes, 56 affirmations réfutées, rétrogradées ou corrigées — deuxième pont démoli vers la même littérature (déjà #173), et pour une raison plus profonde : la première fois c'était une branche fermée, cette fois une équation de continuité jamais lue.**

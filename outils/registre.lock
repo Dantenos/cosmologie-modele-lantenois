@@ -373,5 +373,20 @@
   "sha256": "19efe1c1451424fa75c86b8640c3d1854ba01c93b2e8c3402428ee034ea86aac",
   "gele_le": "2026-08-24T15:53:23",
   "extrait": "LA MATIERE DILUE-T-ELLE EN a^-3 ? — MESURE BILATERALE, ET LE TEST D'UNE CLASSE P"
+ },
+ "scripts/dilution_arbitre.py": {
+  "sha256": "83b148f19fe17b85b2880dcdd8877204b6697d59b9996ae23da56af587efed08",
+  "gele_le": "2026-08-24T17:17:52",
+  "extrait": "L'ARBITRE DE T10 — SUPPRIMER LE CHOIX D'ETALONNAGE, PAS L'ARBITRER."
+ },
+ "scripts/dilution_arbitre_forme.py": {
+  "sha256": "8595abf2a9f7be9c88d060975b5ca70e4f916562daca41420be634e046cb662c",
+  "gele_le": "2026-08-24T17:25:48",
+  "extrait": "CONTROLE POST-HOC DE L'ARBITRE — LA SIGNIFICATIVITE ANNONCEE EST-ELLE REELLE ?"
+ },
+ "scripts/equite_dilution.py": {
+  "sha256": "714d6f430930c4fb8a5dcf153a56a697144db9193458bbf41a6ec64204f27cdb",
+  "gele_le": "2026-08-24T17:30:36",
+  "extrait": "CONTROLE D'EQUITE (regle 2) — NOTRE eps CONTRE LA SEULE MESURE EN VRAISEMBLANCE "
  }
 }

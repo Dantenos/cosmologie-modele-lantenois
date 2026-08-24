@@ -3219,3 +3219,155 @@ sur NOTRE pipeline — que le seul choix d'étalonnage suffit à produire une d�
 à en renverser le signe. Si ce comportement vaut aussi dans le leur, alors la classe entière
 de ces mesures est à refaire ; s'il n'y vaut pas, il faut dire pourquoi. **C'est la question
 que cette étude ouvre, et elle est plus grande que le corpus.** Ouverte au greffe comme T10.
+
+## 24/08 (Claude Code) — #189 LE #188 A PRÊTÉ À LA LITTÉRATURE UN MODÈLE QU'ELLE N'EMPLOIE PAS
+**Rétractation partielle du #188, attrapée par la vérification littérature — pas par mes
+contrôles.** Le docstring gelé de `dilution_matiere.py` (19efe1c14514) déclare tester
+« le modèle de la classe publiée : ρ_m = Ω_m a^(ε−3) **avec Λ constante, SANS imposer la
+conservation totale** ». Vérification faite sur la source elle-même (résumé d'arXiv:2505.09879,
+Yang, Dai & Wang) : le modèle y repose sur **« an interaction between dark matter and vacuum
+dark energy »**. Il y a donc un terme d'échange Q, **le vide absorbe exactement ce que la
+matière noire perd, l'énergie totale EST conservée, et Λ n'est PAS constante.**
+
+**C'est l'inverse de ce que le #188 leur attribue sur les deux points qui comptent.**
+
+| | ce que le #188 a testé | ce que la littérature emploie |
+|---|---|---|
+| Λ | **constante** | **évolue** (vide dynamique) |
+| conservation totale | **non imposée** | **imposée** (Q transfère MN → vide) |
+
+**CE QUI TOMBE.**
+1. La qualification « modèle de la classe publiée » dans le docstring gelé du #188 : fausse.
+   La famille testée est **une famille voisine, non publiée**, et le #188 est le seul à
+   l'avoir mesurée.
+2. Le libellé du verdict 1 du #188, « DÉTECTION REPRODUITE (négative, **comme la classe
+   publiée**) » : la comparaison de signes qu'il opère traverse **deux modèles différents**.
+   Elle n'était pas licite, et le fait qu'elle n'ait pas été déclenchée (le verdict rendu fut
+   « signe opposé ») ne la rend pas licite rétroactivement.
+3. L'énoncé de **T10**, « dans la famille ρ_m ∝ a^(ε−3) à Λ constante — **celle de la
+   littérature sur la dilution non standard** » : la subordonnée est fausse. Corrigée au
+   greffe (`outils/tensions.json`), avec la mention de sa correction.
+4. La réserve du #188, « elle ne réfute pas arXiv:2505.09879 : données, pipeline et nuisances
+   diffèrent », était **vraie mais incomplète, et incomplète du côté favorable** : le
+   **modèle** diffère aussi, et c'est l'écart le plus grave des quatre. J'ai énuméré trois
+   différences et omis celle qui rendait la comparaison impossible.
+
+**CE QUI SURVIT, ET INTACT.** Le fait interne du #188 — dans NOTRE pipeline, sur CETTE
+famille, le seul choix de l'Ω_m qui alimente les priors comprimés fait passer ε de +0,0060 à
+−0,0030, les deux à 3,0σ — n'a jamais dépendu de qui d'autre emploie cette famille. Il est
+reproduit à l'identique par le #190 (critères 1 et 2 : +0,00600/3,0σ/+9,37 et
+−0,00300/3,0σ/+9,23). **La mesure tient ; c'est son étiquette bibliographique qui tombe.**
+
+**CE QUE CELA COÛTE À LA THÈSE.** Rien de favorable : la rétractation **retire** au corpus un
+rapprochement qu'il s'était accordé, pour la deuxième fois sur le même objet (déjà #173, qui
+avait retiré le rapprochement du #171). Deux fois, j'ai construit un pont vers cette
+littérature ; deux fois la vérification l'a démoli. **La leçon à retenir n'est pas « vérifier
+les chiffres du rival » — je l'avais fait — c'est vérifier son ÉQUATION DE CONTINUITÉ avant
+de dire qu'on teste son modèle.** Versé au triage (65).
+
+## 24/08 (Claude Code) — #190 L'ARBITRE N'A PAS ARBITRÉ. IL A TROUVÉ MIEUX : POURQUOI IL NE POUVAIT PAS.
+`dilution_arbitre.py` (gelé 83b148f19fe1), `dilution_arbitre_forme.py` (8595abf2a9f7),
+`equite_dilution.py` (714d6f430930). Trois scripts, tous gelés avant exécution.
+
+**L'IDÉE.** L'arbitre gravé de T10 était « la vraisemblance CMB complète, qui ne laisse aucun
+choix d'étalonnage ». CAMB ne propage pas une matière non-a⁻³ : cet arbitre-là n'était pas
+implémentable. Alors au lieu d'**arbitrer** entre deux valeurs d'Ω_m, j'ai **supprimé
+l'entrée**. r_d, r_*, z_* sont une table CAMB indexée par (ω_b, ω_m) : le « choix
+d'étalonnage » est littéralement le ω_m qu'on lui donne. Or r_s est une intégrale qui ne
+demande pas de ω_m — elle demande H(a), que le modèle fournit.
+
+**LA VALIDATION QUI AUTORISE TOUT LE RESTE.** Avec N_eff = 3,046 et le retrait de ω_ν massif
+(0,00064) de la matière, mon intégrateur reproduit la table CAMB à **1,3×10⁻⁶ en dérivée**
+(2,1×10⁻⁶ de variation du rapport sur toute la grille ω_b × ω_m, soit 0,01σ sur l_A). Le χ²
+reconstruit redonne l'ancre gelée ΛCDM : **1425,0858 contre 1425,086**. Et le z_drag inféré
+par inversion tombe dans **[1057,8 ; 1062,1]** quand Planck donne 1059,9 — contrôle
+indépendant que personne n'avait demandé. Le #188 est reproduit **à zéro près** : +0,00600 et
+−0,00300, 3,0σ chacun, gains +9,37 et +9,23.
+
+**LA DÉCOMPOSITION — c'est le contenu scientifique, et il est net.**
+| r_s | R | ε | σ local | gain |
+|---|---|---|---|---|
+| table CAMB | étiquette | +0,0060 | 3,0 | +9,37 |
+| **intégration directe** | étiquette | **+0,0020** | **1,0** | **+0,56** |
+| table CAMB | recombinaison | −0,0030 | 3,0 | +9,23 |
+| intégration directe | recombinaison | −0,0030 | 3,0 | +9,75 |
+| intégration directe | **retiré** | −0,0100 | (5,0 → 3,13) | +9,81 |
+
+**L'intégration directe tue la détection positive — +9,37 tombe à +0,56 — et laisse la
+négative intacte.** L'asymétrie est un argument pour la lecture cohérente du #166. Mais
+l'écart résiduel entre les deux lectures de R vaut encore **2,50σ**, et le critère 4 gelé le
+dit : le renversement de signe ne vivait pas dans r_s, **il vit dans R**, dont le √Ω_m n'a
+aucune définition quand la matière ne dilue pas en a⁻³.
+
+**EN SUPPRIMANT UN CHOIX D'ÉTALONNAGE, J'EN AI DÉCOUVERT TROIS AUTRES.**
+| choix résiduel | déplacement de ε |
+|---|---|
+| ω_m dans R | 2,50σ |
+| ω_m alimentant z_* | 2,00σ |
+| **convention de rayonnement dans r_s** | **4,00σ** |
+Le dernier est **plus grand que l'effet mesuré**.
+
+**PUIS LE CONTRÔLE DE FORME A DÉMOLI MON PROPRE TITRE.** Le code annonçait 5,0σ ; son gain
+valait +9,81, soit √9,81 = 3,13σ par Wilks. Les deux ne concordent pas — pour une parabole de
+demi-largeur 0,0020, un minimum à 0,0100 de zéro devrait coder 25 unités, pas 9,81. Contrôle
+écrit et gelé **avant** de le lancer, et **il ne pouvait qu'affaiblir** ce qu'il examinait :
+- **P = 0,39 → PROFIL APLATI, σ local NON OPPOSABLE.** Les 5σ n'ont jamais existé.
+  (Les configurations 1 et 2, elles, sont saines : P = 1,04 et 1,03.)
+- Décomposition du gain : **126 % viennent du seul terme H₀ (SH0ES)**. Les supernovae
+  **empirent de 1,72**, les BAO **de 0,96**, et le CMB ne contribue que **+0,11**.
+
+**Donc ε = −0,0100 ne mesure pas la dilution de la matière : il achète H₀.** En retirant R
+j'ai retiré la prise du CMB sur Ω_m, et l'ajustement a dépensé le paramètre libre pour
+satisfaire SH0ES — en dégradant les deux jeux qui portent l'information géométrique.
+Le critère 3 gelé le nomme : **PORTÉ PAR UN SEUL JEU — fragilité, pas force.**
+
+**CONTRÔLE D'ÉQUITÉ (règle 2), ET LA DÉCOUVERTE BIBLIOGRAPHIQUE DE LA SESSION.**
+**L'arbitre que T10 réclamait existe déjà dans la littérature.** Tsiapi & Basilakos,
+MNRAS 485 (2019) 2505 (arXiv:1810.12902), **modifient CAMB et confrontent aux spectres de
+puissance Planck 2015 TT,TE,EE+lowP** — pas aux priors comprimés. Leur Λ(H)CDM2 pose
+Q = 3νHρ_dm, d'où ρ_dm = ρ_dm,0 a^(−3(1−ν)) : le cousin **conservé** de notre famille.
+Leurs valeurs publiées, recopiées sans retouche : ν×10³ = **+0,59 (+1,0/−1,0)** (Planck seul)
+et **−0,08 (+0,72/−0,78)** (joint). Conversion honnête — leur ν porte sur la matière **noire
+seule**, donc ε = 3ν(1 − ω_b/ω_m) = 3ν × 0,8389 : **ε = −0,00020 (+0,00181/−0,00196)**.
+**Compatible avec zéro.** Leur conclusion cite : *« We find that Λ(H)CDM2 and Λ(H)CDM3 do not
+show deviations from the ΛCDM case. »*
+Notre −0,0100 en est à **3,63σ → DÉSACCORD**. Mais le critère 3 gelé impose la mention :
+**DÉSACCORD CONTENU DANS NOTRE PROPRE SYSTÉMATIQUE**, puisque notre seul contrôle 7b déplace
+ε de 4,0σ, davantage que l'écart mesuré. **Le désaccord ne nous appartient pas comme
+résultat.**
+Règle 5, ce que je leur accorde et qu'ils ont le droit de m'opposer : (i) leur ν force aussi
+le vide à évoluer et entre dans E² avec un facteur 1/(1−ν) — deux modèles distincts, la
+conversion ne porte que sur l'exposant ; (ii) leurs données sont Planck 2015 + JLA +
+BOSS/WiggleZ + Riess 2018, sans recouvrement complet avec les nôtres ; (iii) **le mot
+« perturbation » n'apparaît pas dans leur article** — ils documentent une modification de
+CAMB au niveau du fond, donc leur « vraisemblance complète » couvre les données employées,
+pas un traitement vérifié des perturbations. Les trois accordés.
+
+**VERDICT GELÉ : T10 NON RÉSOLUE.** Le critère 5 a nommé la LECTURE 1 (l'étalonnage cohérent
+était le bon) puis a **refusé de l'appliquer**, l'ambiguïté résiduelle du critère 4 valant
+2,50σ ≥ 2. Règle 9, exécutée par le code lui-même et non par moi après coup.
+Et la totalité des contrôles désigne désormais la **LECTURE 3** plus que la 1 : il n'y a rien
+de mesurable ici sans vraisemblance complète. C'est mot pour mot ce que dit la littérature la
+plus récente sur la compression du CMB — CMBComp (arXiv:2606.18455) : *« Extensions that
+introduce new early-time physics, modify recombination, alter the primordial perturbation
+sector, significantly change the growth or lensing observables beyond the calibration domain,
+or otherwise lie outside the validated parameter space should instead be analyzed using the
+full CMB likelihood. »* Notre famille est dans cette classe d'exclusion.
+
+**CE QUE JE M'INTERDIS D'AFFIRMER.** (a) Que « le domaine a abandonné R » : faux. DESI DR2
+emploie bien (θ_*, ω_b, ω_bc) sans R en ligne de base, **mais teste explicitement la
+compression (R, l_A, ω_b) et la déclare équivalente** pour les modèles d'énergie sombre
+tardive qu'ils examinent. Retirer R ici se justifie étroitement : √Ω_m n'a pas de définition
+dans cette famille, et pas parce que la mode aurait tourné. (b) Que la configuration 4b
+(−0,0030 à 3,0σ, gain +9,75) serait la survivante : **elle n'a pas subi le contrôle de forme**,
+dont les critères gelés ne nommaient que les configurations 1, 2 et 3. Elle n'est donc pas
+opposable non plus, et je ne la promeus pas au rang de résultat.
+
+**CE QUI RESTE DEBOUT, ET ÇA VAUT PLUS QUE LA MESURE RATÉE.**
+> **Dans la famille ρ_m ∝ a^(ε−3), ε n'est pas identifiable par des priors comprimés.**
+> Quatre choix de comptabilité indépendants — le ω_m donné à r_s, celui de R, celui de z_*,
+> et la convention de rayonnement — déplacent ε de 1 à 4σ, **dans les deux sens**. Toute
+> valeur publiée de cette classe porte une systématique non citée de cet ordre.
+
+C'est un énoncé **méthodologique**, vérifiable, et il ne dépend d'aucune thèse du corpus. Il
+survit même si tout le reste tombe. Versé au greffe ; T10 reste ouverte avec cet énoncé.

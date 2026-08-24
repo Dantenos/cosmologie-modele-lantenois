@@ -2886,3 +2886,37 @@ gabarit. À armer, comme `perime.py` et `registre.py` le sont déjà pour leurs 
 erreurs avant publication. Celui-ci est passé parce qu'aucun critère gelé ne portait dessus —
 c'est **Édouard qui l'a vu, en ouvrant le fichier**. Un contrôle automatique ne remplace pas
 l'usage : il ne teste que ce qu'on a pensé à lui faire tester.
+
+## 24/08 (Claude Code) — #182 UN TROU DANS LE MOTEUR DE RENDU, PRÉSENT DEPUIS LA v5 : LA MOLETTE POUVAIT DÉPOSER L'UTILISATEUR DANS UNE ÉCHELLE OÙ RIEN N'EXISTE
+Deuxième capture d'Édouard : interface fonctionnelle, **canevas d'un violet uniforme, 0 objet
+visible sur 1580, rayon de vue 1,23 Mpc**. Trois défauts distincts, tous dans le moteur, tous
+présents depuis la v5 et jamais vus parce qu'aucun critère ne portait sur le RENDU.
+
+**1. TROU ENTRE LES COUCHES D'ÉCHELLE (le défaut principal).** Les couches s'allument par une
+fonction de fondu `fade(a, b)`. La Voie lactée occupe `fade(19,0 ; 22,4)` et s'éteint donc à
+log₁₀(R) = 22,4 ; la sphère cosmologique occupait `fade(22,6 ; 27,5)` et ne s'allumait qu'à
+22,6. **Entre 22,4 et 22,6 — soit un rayon de vue entre 0,8 et 1,3 Mpc — AUCUNE couche ne
+dessine.** Édouard était à 22,58, exactement dedans. Un second trou existait au-delà de 28,05
+(dézoom extrême). Correction : la couche cosmologique va maintenant de 22,0 à 30,0, avec
+recouvrement franc sur la couche galactique.
+
+**2. EFFACEMENT DU FOND NON OPAQUE (le violet).** `g.fillRect(0,0,W,H)` hérite du
+`globalAlpha` laissé par la dernière primitive du cadre précédent. Quand celui-ci est faible,
+le fond n'efface pas, et le contenu s'accumule d'un cadre à l'autre jusqu'à saturation — d'où
+le lavis uniforme. Correction : `globalAlpha = 1` avant l'effacement.
+
+**3. MOLETTE SANS BUTÉE.** Rien n'empêchait de sortir de toute échelle utile, dans les deux
+sens. Correction : bornes [10⁶ ; 10²⁸] m, du rayon terrestre à dix fois la sphère.
+
+**CE QUE CELA APPREND SUR LE PROTOCOLE, ET C'EST LE POINT.** Les générateurs sont couverts par
+des critères gelés qui vérifient les DONNÉES (comptes, angles, géométrie, densités) — et ces
+critères ont refusé neuf fois aujourd'hui, correctement. **Aucun ne porte sur le RENDU.** Le
+corpus sait vérifier qu'un nombre est juste ; il ne sait pas vérifier qu'il est visible.
+Les deux pannes des façades (#181 le marqueur manquant, #182 le trou d'échelle) ont été
+trouvées par **Édouard en ouvrant le fichier**, pas par le protocole.
+
+**DÛ, et je ne le maquille pas :** un critère de rendu est possible et n'existe pas — par
+exemple exiger que, sur un balayage de log₁₀(R) de 6 à 28 par pas de 0,1, **le nombre d'objets
+projetés ne soit jamais nul sur deux pas consécutifs**. C'est exactement le test qui aurait
+attrapé ce trou. À geler. Les cinq gabarits (v4 à v8) sont corrigés et régénérés, mais par
+inspection, pas par contrôle.

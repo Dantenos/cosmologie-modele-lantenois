@@ -100,7 +100,7 @@ addEventListener('pointermove',e=>{mx=e.clientX*devicePixelRatio;my=e.clientY*de
  if(!drag)return;vy=(e.clientX-px)*.0022;vx=(e.clientY-py)*.0022;ry+=vy;rx+=vx;px=e.clientX;py=e.clientY});
 cv.onwheel=e=>{e.preventDefault();
  if(fCLIP&&e.shiftKey){clip=Math.max(-1.2,Math.min(1.2,clip-e.deltaY*.0012));return}
- if(!obs){radar=-1;Rcible*=Math.exp(e.deltaY*.0011)}};
+ if(!obs){radar=-1;Rcible=Math.max(1e6,Math.min(1e28,Rcible*Math.exp(e.deltaY*.0011)))}};
 function rot(x,y,z){if(frameC>1e-4){const v=rodrig([x,y,z],frameC);x=v[0];y=v[1];z=v[2]}
  const cy=Math.cos(ry),sy=Math.sin(ry),cx=Math.cos(rx),sx=Math.sin(rx);
  const X=x*cy+z*sy,Z=-x*sy+z*cy,Y=y*cx-Z*sx,Z2=y*sx+Z*cx;return[X,Y,Z2]}
@@ -195,7 +195,7 @@ function fr(){requestAnimationFrame(fr);
   rScan=Math.pow(10,l0+(l1-l0)*radar);if(!obs)Rcible=rScan*2.6}
  // chemin de camera LOGARITHMIQUE : l'echelle avance en log(r), pas en r
  Rview=Math.exp(Math.log(Rview)+(Math.log(Rcible)-Math.log(Rview))*0.018);
- g.setTransform(1,0,0,1,0,0);g.fillStyle='#07070a';g.fillRect(0,0,W,H);
+ g.setTransform(1,0,0,1,0,0);g.globalAlpha=1;g.fillStyle='#07070a';g.fillRect(0,0,W,H);
  const fT=fade(6.0,8.6);
  if(fT>0.01&&!obs){const p=proj(0,0,0);
   if(p){const r=RE/Rview*p[2]*S;
@@ -258,7 +258,7 @@ function fr(){requestAnimationFrame(fr);
    if(!clean){g.globalAlpha=fG*.85;g.fillStyle='#cfc8b8';g.font=(10.5*devicePixelRatio)+'px Georgia,serif';
     g.fillText('you are here · 8.2 kpc · Local Bubble 50–150 pc',ps[0]+9*devicePixelRatio,ps[1]+4*devicePixelRatio)}}
   anneau(15*KPC,EU,EV,'#7fa3b8',fG*.28,1)}
- const fC=obs?1:fade(22.6,27.5);let nSN=0,nFR=0,nVD=0;
+ const fC=obs?1:fade(22.0,30.0);let nSN=0,nFR=0,nVD=0;
  if(fC>0.01){
   if(fZOA!==2){bandeGal(RCOS*.98,10,'#c96a4a',fC*.40);bandeGal(RCOS*.98,5,'#c96a4a',fC*.22)}
   if(fS82!==2){g.globalAlpha=1;pinceau(RCOS*.98,fC)}

@@ -82,7 +82,7 @@ cv.onpointerdown=e=>{drag=true;px=e.clientX;py=e.clientY;cv.classList.add('drag'
 addEventListener('pointerup',()=>{drag=false;cv.classList.remove('drag')});
 addEventListener('pointermove',e=>{mx=e.clientX*devicePixelRatio;my=e.clientY*devicePixelRatio;
  if(!drag)return;vy=(e.clientX-px)*.0022;vx=(e.clientY-py)*.0022;ry+=vy;rx+=vx;px=e.clientX;py=e.clientY});
-cv.onwheel=e=>{e.preventDefault();if(!obs)Rcible*=Math.exp(e.deltaY*.0011)};
+cv.onwheel=e=>{e.preventDefault();if(!obs)Rcible=Math.max(1e6,Math.min(1e28,Rcible*Math.exp(e.deltaY*.0011)))};
 function rot(x,y,z){const cy=Math.cos(ry),sy=Math.sin(ry),cx=Math.cos(rx),sx=Math.sin(rx);
  const X=x*cy+z*sy,Z=-x*sy+z*cy,Y=y*cx-Z*sx,Z2=y*sx+Z*cx;return[X,Y,Z2]}
 const CAM=2.45,FOC=1.75;
@@ -137,7 +137,7 @@ function fr(){requestAnimationFrame(fr);
  if(tour>=0){tourT+=1/60;if(tourT>7.5){tour=(tour+1)%TOUR.length;lanceTour(tour)}}
  if(!drag){vy*=.985;vx*=.985;vy+=(0.0011-vy)*.012;ry+=vy;rx+=vx}
  Rview+=(Rcible-Rview)*0.055;
- g.setTransform(1,0,0,1,0,0);g.fillStyle='#07070a';g.fillRect(0,0,W,H);
+ g.setTransform(1,0,0,1,0,0);g.globalAlpha=1;g.fillStyle='#07070a';g.fillRect(0,0,W,H);
  const fT=fade(6.0,8.6);
  if(fT>0.01&&!obs){const p=proj(0,0,0);if(p){const r=RE/Rview*p[2]*S;
   const gr=g.createRadialGradient(p[0]-r*.3,p[1]-r*.3,r*.1,p[0],p[1],r*1.02);
@@ -157,7 +157,7 @@ function fr(){requestAnimationFrame(fr);
    const p=proj(rr*(GU[0]*c+GV[0]*s),rr*(GU[1]*c+GV[1]*s),rr*(GU[2]*c+GV[2]*s));
    if(!p){ok=false;break}i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1])}
   if(ok){g.closePath();g.globalAlpha=fG*.2;g.strokeStyle='#d9b96a';g.lineWidth=devicePixelRatio;g.stroke()}}
- const fC=obs?1:fade(22.6,27.5);let nSN=0,nFR=0,nVD=0;
+ const fC=obs?1:fade(22.0,30.0);let nSN=0,nFR=0,nVD=0;
  if(fC>0.01){
   if(fZOA!==2){bandeGal(RCOS*.98,10,'#c96a4a',fC*.40);bandeGal(RCOS*.98,5,'#c96a4a',fC*.22)}
   if(fS82!==2){g.globalAlpha=1;pinceau(RCOS*.98,fC)}

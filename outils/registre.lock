@@ -238,5 +238,10 @@
   "sha256": "286233ee99aa430a5e0c93cfe827d1869e2a090e3811211a2bd5c7a175d0279a",
   "gele_le": "2026-08-24T03:57:15",
   "extrait": "fig_omega v1 — l'histoire du budget Omega sous la loi w = -beta/(3Ht). CRITERES"
+ },
+ "scripts/audit_ilcdm_v3.py": {
+  "sha256": "609e8b4a7a17570f9ba3b1c3a77869cd002e0486c0a456b45d09828c85b728fa",
+  "gele_le": "2026-08-24T04:02:44",
+  "extrait": "AUDIT iLCDM, VOLET 3 — LA TRILOGIE SN. CRITERES PRE-ENREGISTRES (geles AVANT exe"
  }
 }

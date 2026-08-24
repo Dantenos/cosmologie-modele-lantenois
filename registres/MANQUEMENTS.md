@@ -2146,3 +2146,17 @@ d'overlap à z̄ = 0,04 — INSUFFISANT, constaté et consigné. **Arbitre re-sp
 recalibration croisée Dovekie (SDSS-DES) ; (iii) à défaut, LSST. T8 reste OUVERTE, lectures
 affinées — la lecture « horloge par la petite porte » perd du terrain au profit de la calibration.
 Diagnostic par poids diagonaux (déclaré : caractérisation, pas un fit pleine covariance).
+
+## 24/08 (Claude Code) — #158 TRILOGIE SN (VOLET 3) : DES REPRODUIT LE SIGNAL D'ÉCHANGE — T7 RÉSOLUE « L'ARTEFACT EST RÉFUTÉ »
+`audit_ilcdm_v3.py` (gelé 609e8b4a7a17). **DES-SN5YR (calibration indépendante, χ²/N = 0,91,
+VALIDE) : gain = +9,49, ε = +0,0212** — la copie quasi conforme de Pantheon+ (+9,84 ; +0,0215).
+Union3 : gain +9,89, ε = +0,0215 — même signal, mais sa porte de validation échoue sur le proxy
+déclaré (χ²/(N+17) = 1,63 > 1,5 : 22 bins corrélés, dof mal comptés par l'approximation) → à la
+lettre, NON EXPLOITÉ, verdict formel INCOMPLET. L'esprit : trois compilations, trois fois ε ≈ 0,021.
+**L'arbitre gravé de T7 est servi en entier** : variantes cohérentes (#154), ROBUSTE-LOO et
+split-z 0,0σ (#156), trilogie (#158). RÉSOLUTION AU GREFFE : la lecture « artefact
+d'implémentation » est RÉFUTÉE ; la préférence pour un échange sombre ε ≈ +0,021 est réelle dans
+ce pipeline, à ~2-3σ (σ(ε) profil grossier ~0,010 ; √Δχ² = 3,1) — une préférence, pas une
+découverte. La suite n'appartient plus au greffe : rangée matière sombre du Grand Livre (v2),
+Cobaya complet, et la note de littérature qu'elle mérite. Ironie maintenue : c'est l'atlas
+construit pour falsifier notre modèle qui l'a trouvée.

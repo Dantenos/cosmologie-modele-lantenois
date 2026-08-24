@@ -17,6 +17,10 @@ dans le répertoire courant) ; les outils se lancent depuis la racine.
 | E1 vides (UNIVERSEL, 2 juges) | `python scripts/etude_E1_vides.py` puis `scripts/etude_E1_manche2.py` | Δβ = +0,10 ± 0,24 ; 3× NUL | 3 + 5 min |
 | E3 FRB réels (+4,71, ~2,2σ) | `python scripts/etude_E3_frb_reelles_v1.py` | validation PASSE, Δχ² +4,71 | 10 s |
 | bootstrap E3 (médiane +4,67) | dans `donnees/pantheon_plus/` : `python ../../scripts/etude_E3_bootstrap.py 200` | [16;84] = [+1,9 ; +8,5] | ~40 min |
+| audit iΛCDM (3 volets : variantes, LOO/split, trilogie) | idem : `python ../../scripts/audit_ilcdm.py` puis `_v2.py`, `_v3.py` | gains +9,5 à +11,3 partout | 25 s + 2 min + 20 s |
+| le Grand Livre (CCBH doit +14,2) | `python outils/ledger.py` | R1 +4,71 ; R2 +9,48 | 15 s |
+| manches vides 1-2-3 (duel 2-0) | `python scripts/etude_E1_manche3.py` (DESIVAST) | NON EXPLOITÉ (plancher) ; T6 | 3,5 min |
+| histoire Ω et attracteur w* = −0,70 | `python outils/fig_omega.py` | validation E_acc + z× puis PNG | 30 s |
 | l'atlas (19 modèles) | dans `donnees/pantheon_plus/` : `python ../../scripts/atlas_v1.py` | tête iΛCDM, accrétion +4,06 | ~2 min |
 | duel CCBH (Ξ = 1,382 calibré) | idem : `python ../../scripts/atlas_rivaux.py` | tableau des 7 | ~90 s |
 | visuels (ciel, ciel des modèles) | `python outils/genere_ciel.py` ; `python outils/genere_atlas.py` | refus si les comptes divergent | 1 min |

@@ -73,6 +73,7 @@ function rodrig(v,t){const th=ANG*t,c=Math.cos(th),s=Math.sin(th),k=AXE,d=dot(k,
 const PLAN=[[.387],[.723],[1],[1.524],[5.203],[9.537],[19.19],[30.07]];
 const RCOS=M.dmax*1.12*MPC;
 const cv=document.getElementById('c'),g=cv.getContext('2d'),EL=id=>document.getElementById(id);
+let RENDU_KO=false;
 let W,H,S,rx=-.32,ry=.5,vx=0,vy=.0012,drag=false,px=0,py=0;
 let Rview=RCOS,Rcible=RCOS,obs=false,zmax=M.zmax,mx=-1e9,my=-1e9,hit=null;
 let fS82=0,fZOA=0,fISO=0,laser=-1,tour=-1,tourT=0,intro=1,phare=false,cible=null;
@@ -180,6 +181,7 @@ function tempsLum(r){const t=r/CM;
  if(t<3.156e7*1e9)return(t/3.156e7/1e6).toPrecision(3)+' millions d’années';
  return(t/3.156e7/1e9).toPrecision(3)+' milliards d’années'}
 function fr(){requestAnimationFrame(fr);
+ try{
  if(intro>0){intro-=0.0037;Rcible=RCOS*(1+38*Math.max(0,intro)**3)}
  if(tour>=0){tourT+=1/60;if(tourT>22.5){tour=(tour+1)%TOUR.length;lanceTour(tour)}}
  if(radar>=0){radar+=0.0014;if(radar>1){radar=0}}
@@ -259,20 +261,23 @@ function fr(){requestAnimationFrame(fr);
     g.fillText('vous êtes ici · 8,2 kpc · Bulle Locale 50–150 pc',ps[0]+9*devicePixelRatio,ps[1]+4*devicePixelRatio)}}
   anneau(15*KPC,EU,EV,'#7fa3b8',fG*.28,1)}
  const fC=obs?1:fade(22.0,30.0);let nSN=0,nFR=0,nVD=0;
+  // plafond d'empilement : trois calques translucides superposes
+  // produisent un lavis qui masque la sphere ; on divise leur opacite
+  const NCAL=Math.max(1,(fISO?1:0)+(typeof fOMB!=='undefined'&&fOMB?1:0)+(typeof fGRA!=='undefined'&&fGRA?1:0));
  if(fC>0.01){
   if(fZOA!==2){bandeGal(RCOS*.98,10,'#c96a4a',fC*.40);bandeGal(RCOS*.98,5,'#c96a4a',fC*.22)}
   if(fS82!==2){g.globalAlpha=1;pinceau(RCOS*.98,fC)}
   if(fISO)for(let i=0;i<ISO.length;i+=3){const p=proj(ISO[i]*MPC,ISO[i+1]*MPC,ISO[i+2]*MPC);
-   if(!p)continue;g.globalAlpha=fC*.24;g.fillStyle='#5f7f6a';
+   if(!p)continue;g.globalAlpha=fC*.24/NCAL;g.fillStyle='#5f7f6a';
    g.beginPath();g.arc(p[0],p[1],.9*devicePixelRatio,0,7);g.fill()}
   if(fOMB)for(let i=0;i<OMB.length;i+=3){
    const p=proj(OMB[i]*RCOS*.995,OMB[i+1]*RCOS*.995,OMB[i+2]*RCOS*.995);if(!p)continue;
-   g.globalAlpha=fC*.30;g.fillStyle='#4a4038';
+   g.globalAlpha=fC*.30/NCAL;g.fillStyle='#4a4038';
    g.beginPath();g.arc(p[0],p[1],5.5*devicePixelRatio*Math.min(1.6,p[2]),0,7);g.fill()}
   if(fGRA)for(let k=0;k<AR.length;k+=2){const a=AR[k]*6,b2=AR[k+1]*6;
    if(SN[a+4]>zmax||SN[b2+4]>zmax)continue;
    const p=proj(SN[a]*MPC,SN[a+1]*MPC,SN[a+2]*MPC),q=proj(SN[b2]*MPC,SN[b2+1]*MPC,SN[b2+2]*MPC);
-   if(!p||!q)continue;g.globalAlpha=fC*.22;g.strokeStyle='#7fa3b8';g.lineWidth=devicePixelRatio;
+   if(!p||!q)continue;g.globalAlpha=fC*.22/NCAL;g.strokeStyle='#7fa3b8';g.lineWidth=devicePixelRatio;
    g.beginPath();g.moveTo(p[0],p[1]);g.lineTo(q[0],q[1]);g.stroke()}
   for(let i=0;i<VD.length;i+=4){const p=proj(VD[i]*MPC,VD[i+1]*MPC,VD[i+2]*MPC);if(!p)continue;
    const r=VD[i+3]*MPC/Rview*p[2]*S;if(r<0.4)continue;nVD++;
@@ -369,6 +374,10 @@ function fr(){requestAnimationFrame(fr);
   const[l,b]=galcoord(nrm([SN[i],SN[i+1],SN[i+2]]));
   inf.innerHTML='supernova<br>z = <b>'+SN[i+4].toFixed(3)+'</b> · D_C ≈ <b>'+Math.round(Math.hypot(SN[i],SN[i+1],SN[i+2]))+'</b> Mpc<br>l = '+l.toFixed(1)+'° &nbsp; b = <b>'+b.toFixed(1)+'°</b><br>'+(s?'<b>dans SDSS Stripe 82</b><br>':'')+(vd?'vide sur la ligne de visée':'pas de vide sur la visée');
  }else inf.style.display='none';
+ }catch(err){console.error(err);
+  const t=document.getElementById('txt');
+  if(t)t.innerHTML='<b>PANNE DE RENDU.</b> La boucle a levé : <span class="mono" style="color:#c96a4a">'+(err&&err.message?err.message:err)+'</span><span class="mono">Signale ce message : il nomme la cause. Utilise « réinitialiser la vue » pour repartir.</span>';
+  RENDU_KO=true}
 }
 const TOUR=[
  [3,"<b>Visite 1/4 — le masque.</b> Le cône rouge marque |b| = 5° et 10°. Compte les points dedans : il n'y en a pas.<span class='mono'>0 SNe à |b|&lt;5° pour "+Math.round(M.att5)+" attendues</span>",{s82:0,zoa:0,iso:0}],

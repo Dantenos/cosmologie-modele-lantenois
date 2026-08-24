@@ -2920,3 +2920,75 @@ exemple exiger que, sur un balayage de log₁₀(R) de 6 à 28 par pas de 0,1, *
 projetés ne soit jamais nul sur deux pas consécutifs**. C'est exactement le test qui aurait
 attrapé ce trou. À geler. Les cinq gabarits (v4 à v8) sont corrigés et régénérés, mais par
 inspection, pas par contrôle.
+
+## 24/08 (Claude Code) — #183 AUDIT DES PAPIERS : 44 DÉFAUTS, DONT SEPT SURVIVANCES ORIENTÉES — CORRIGÉS
+Audit systématique des trois manuscrits (équations, citations, cohérence numérique,
+surenchère logique), déclenché par Édouard. **44 défauts.** Le nombre importe moins que le
+diagnostic : *le mode de défaillance dominant n'est pas la fabrication, c'est du **texte
+périmé qui survit à une rétractation** — et le sens de la survie n'est pas aléatoire.* Dans
+sept cas (défauts 1, 5, 17, 19, 23, 35, 36), **la version qui survivait était celle qui
+favorisait la thèse.**
+
+**LES SEPT, CORRIGÉES EN PREMIER.**
+1. Le #163 enregistre « ma prédiction pré-enregistrée est fausse » ; le papier n'en disait
+   rien et laissait une réserve générale absorber une défaite précise. Énoncée désormais :
+   bande prédite [0,218 ; 0,262] contre mesure [0,377 ; 0,387], disjointe à 3σ.
+5. « L'implémentation est validée » et « trois quantités indépendantes » alors que deux sont
+   les cibles d'étalonnage et que le critère gelé sur Ξ **échoue à 53 %** (#147). Dit dans le
+   papier A et dans le résumé du papier C.
+17. Comparateur 2,49 ± 0,05 encore utilisé, alors que le papier rétracte cette barre d'erreur
+   et que `perime` la déprécie. Retiré des deux endroits.
+19. Tensions S₈ arrondies **vers le bas** : 0,69σ → « 0,6σ », 1,50σ → « 1,4σ ». Les deux
+   allaient dans notre sens. Rétablies.
+23. « H₀ entre 67,97 et 70,91 : paramètre caché du rival » — le papier C rétracte cette plage
+   (taux non étalonné). Corrigé : 69,57–69,79 une fois Ξ réajusté, soit 0,2 km/s/Mpc. **Ce
+   n'est pas un levier libre — l'inverse de ce que nous affirmions.**
+35. L'horloge de profondeur du papier B annonçait **0,2σ**, ce qui rétro-résout à
+   β = 2,49 ± 0,05, la valeur rétractée. Recalculée sur la marginalisée : **1,9σ**, et c'est
+   le *pire* des trois traitements, pas le meilleur.
+36. « au bord supérieur de la bande » alors que #151 dit **HORS** bande de 0,003.
+
+**LES 37 AUTRES, CORRIGÉES ENSUITE.** Tableau z× contredisant le calcul gelé #145 sur trois
+entrées (0,458/0,253/0,214 → 0,4436/0,2617/0,2211) et w₀ évalué sur un fond ΛCDM au lieu du
+fond auto-cohérent (H₀t₀ = 0,9457 et non 0,9513) ; arithmétique −12,6 + 4,4 = **−8,2** et non
+−7,6 ; huit chiffres d'hérédité recalés sur l'intégrateur gelé (β₁ = −0,42 et −0,56, κ à
+1,6σ et 2,0σ) ; DES-SN5YR 1820 → **1829** (le dépôt en atteste) ; AIC 1401,8 → 1401,9 ;
+fenêtre de coïncidence 6,4–7,0 → **5,92–6,87** et titre de paragraphe au sens inverse du
+corps, corrigé ; fσ₈ 1,3–1,9 % → 1,5–2,0 % ; déficit FRB 0,0343/4,9σ → **0,0357/4,4σ** (la
+suppression que le papier dérive est 0,729, pas 0,700) ; χ² par sursaut 0,046 → 0,059 ;
+conclusion du papier C citant les simulations sans le tir réel ; facteur multipolaire
+0,58 → **0,192** et borne desserrée de ε ≲ 0,35 à ε ≲ 1,0 ; échelle du parent 325× → **1,3×10⁴**
+et ω_m 4×10⁻⁴ → 1,1×10⁻⁵ ; σ₈ 0,803 → 0,811 ; ρ_de = M_acc/a³ → M_acc/V (dimension) ;
+énumération (i)(ii)(iii)**(vi)(iv)(iv)(v)** renumérotée ; limites (3) et (4) périmées,
+retirées ; paragraphe de jackknife contradictoire réécrit avec les deux jackknives ;
+« les données ont choisi, deux fois » **rétrogradé** (3,6 à complexité égale = 1,9σ, et
+l'identité algébrique du #161 rend la discrimination impossible en principe) ; six bandes de
+β présentées comme une, séparées ; doublon `Croker2024`/`Croker2024DESI` fusionné ;
+attribution douteuse de `NoGo2026` et source de presse `Poplawski2025` **signalées dans la
+bibliographie elle-même** plutôt que laissées au rapporteur.
+
+**MISE À JOUR DU LINTER (défaut 2b).** `valeurs_canoniques.json` désignait encore le tableau
+périmé du papier comme **source de vérité** pour z×, daté de la veille du #145 — c'est
+pourquoi `perime.py` ne voyait rien. Recalé sur le calcul gelé. Premier jet de motifs :
+trois nombres NUS, qui ont immédiatement produit un **faux positif** (une fraction de vide
+médiane à 0,214 dans ETUDE_E1_manche2). Ancrés au contexte ; un linter qui crie à tort est un
+linter qu'on apprend à ignorer.
+
+**CE QUI PASSE PROPREMENT, et c'est substantiel.** Toute la chaîne de dérivation centrale est
+vérifiée symboliquement et numériquement : w = −β/(3Ht), ρ_de a³ ∝ t^β, k_eff = −3w, la
+condition de croisement, l'attracteur, l'identité d'emboîtement, la jonction de Misner-Sharp,
+l'échelle d'entropie. Le sceau `68d06bcc…` correspond. Les 1580 SNe se reproduisent exactement
+depuis le fichier brut. Les 13 points BAO et les 22 bins Union3 correspondent. Toutes les
+conversions Δχ² → σ sont correctes sauf une.
+
+**CE QUI RESTE DÛ, non maquillé :** les bibitems incomplets (défaut 29 : une douzaine sans
+auteurs ni identifiant), les sources nommées dans le texte sans `\cite` (défaut 31), la
+collision de clé `DESI2025` entre papiers A et C (défaut 30), et le renvoi croisé manquant
+entre le succès Lyα et la défaite Lyα du même papier (défaut 38). Inventoriés, pas corrigés.
+
+**LA LEÇON, ET ELLE EST STRUCTURELLE.** `perime.py` et `registre.py verify` passent tous les
+deux **sans attraper un seul de ces 44 défauts** : ils surveillent les critères gelés et les
+valeurs canoniques, pas la cohérence interne des manuscrits. Le registre du corpus s'est
+révélé systématiquement plus honnête que les papiers. Ce n'est pas un hasard : le registre
+est écrit sous critère gelé, les papiers ne le sont pas. **Il manque au corpus un garde-fou
+de manuscrit.**

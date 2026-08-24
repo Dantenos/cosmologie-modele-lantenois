@@ -26,9 +26,7 @@ $w(z) = -\beta/(3Ht)$, and dark energy produced by cosmologically coupled black 
 expense of baryons. Both claim to reproduce the DESI expansion history; neither has been fitted
 against the other on the same data. We do so. Implementing the cosmologically coupled model
 directly from its published equations, we reproduce its published state to better than $2\%$ in
-three independent quantities ($\Xi = 1.382$ against $1.403$; survival fraction $0.702$ against
-$0.70$; a \emph{derived} $H_0 = 69.61$ against $69.94$), starting from an entirely different
-dataset. On Pantheon+, DESI~DR2 and the Planck distance priors the two models are statistically
+three quantities ($\Xi = 1.382$ against $1.403$; survival fraction $0.702$ against $0.70$; a \emph{derived} $H_0 = 69.61$ against $69.94$) --- \textbf{of which only the first is independent}: the rate normalisation is solved so that the last two are returned (\S3), and calling all three independent, as an earlier version of this abstract did, overstated the validation. We add that the frozen criterion on the \emph{derived} $\Xi$ currently fails at $53\%$ ($\Xi = 2.149$), which \S4 reports and this abstract previously did not. On Pantheon+, DESI~DR2 and the Planck distance priors the two models are statistically
 indistinguishable --- $\Delta\mathrm{AIC} = 1.0$, with the ordering itself contingent on whether the
 star-formation normalisation is counted as a parameter --- while both improve on $\Lambda$CDM by
 $\Delta\chi^2 \simeq -5$ to $-6$. We show that this degeneracy is not accidental but \emph{directional}: the likelihood is
@@ -54,7 +52,7 @@ something else, so that its equation of state is derived rather than parametrise
 
 The first takes dark energy to be fed by mass injection into the cosmological volume, with the
 injected mass growing as a power of cosmic time, $M_{\rm acc} \propto t^{\beta}$. Writing
-$\rho_{\rm de} = M_{\rm acc}/a^3$ and using the continuity equation gives
+$\rho_{\rm de} = M_{\rm acc}/V$ with $V \propto a^3$ the comoving volume (an earlier version wrote $M_{\rm acc}/a^3$, which is dimensionally wrong) and using the continuity equation gives
 \begin{equation}
 w(z) \;=\; -\,\frac{\beta}{3Ht},
 \label{eq:acc}
@@ -241,8 +239,8 @@ $\mathrm{DM}(z) \propto \Omega_b h \int \tilde\rho_b(z')(1+z')\,\mathrm{d}z'/E(z
 comoving baryon density evolving as the model requires, we find $\mathrm{DM}$ suppressed to
 $0.729$ of the $\Lambda$CDM value at identical diffuse fraction, so an analyst assuming
 $\Lambda$CDM --- which is exactly what \citet{Connor2025} do, their dispersion integral being
-written with a $\Lambda$CDM $E(z)$ --- would infer $\Omega_b h_{70} = 0.0343$, a $4.9\sigma$
-deficit. The accretion model gives $0.0470$, i.e.\ $0.7\sigma$.
+written with a $\Lambda$CDM $E(z)$ --- would infer $\Omega_b h_{70} = 0.0357$, a $4.4\sigma$
+deficit. The accretion model gives $0.0470$, i.e.\ $0.7\sigma$. (\textbf{Corrected in revision}: an earlier version wrote $0.0343$ and $4.9\sigma$, which requires a suppression factor $0.700$; the factor this paper derives and uses elsewhere is $0.729$, giving $0.049 \times 0.729 = 0.0357$ and $(0.049-0.0357)/0.003 = 4.4\sigma$.)
 
 \subsection{The full likelihood, which halves it}
 That comparison holds the nuisance parameters fixed, and they are not. The host contribution is
@@ -310,7 +308,7 @@ rescales to absorb the cosmic one. \emph{Low-redshift bursts calibrate the host;
 bursts measure the cosmology; neither population is useful without the other.}
 
 Two robustness checks. The $N$-scaling holds at fixed distribution:
-$\Delta\chi^2/N = 0.059$, $0.046$ and $0.060$ at $N = 35$, $69$ and $140$. And the forecast is not
+$\Delta\chi^2/N = 0.059$, $0.059$ and $0.060$ at $N = 35$, $69$ and $140$ (\textbf{corrected in revision}: the middle entry read $0.046$ while the forecast table in the same section gives $4.1/69 = 0.059$ for the same configuration; the two must agree and now do). And the forecast is not
 an artefact of our assumed host distribution --- if anything the opposite. Adopting the measured
 one, $\sigma_{\rm host} = 0.96$ with median $153\,\mathrm{pc\,cm^{-3}}$ \citep{Host2025} in place
 of our fiducial $0.55$ and $120$, \emph{raises} $\Delta\chi^2$ from $5.1$ to $6.6$ and lowers the
@@ -376,8 +374,7 @@ in $\Xi$, $s$ and the derived $H_0$, from disjoint data.
 BAO precision will change that.
 \item The baryon sector is: one framework predicts $s \simeq 0.70$, the other $s = 1$ with no
 freedom.
-\item The current fast-radio-burst samples give $2.1\sigma$ once the nuisance parameters are
-honestly refit --- with the coupled model pinned against $f_{\rm IGM}+f_X = 1$ --- and reach $3\sigma$ at $82$--$120$
+\item The current fast-radio-burst samples give $2.1\sigma$ \emph{in mock realisations} once the nuisance parameters are honestly refit --- and, on the \emph{real} $69$-burst sample of \citet{Connor2025}, $\Delta\chi^2 = +4.71$, i.e.\ $2.2\sigma$ (audit trails \#148, \#149). An earlier version of this list quoted only the mock figure, although \S5 already reported the real-sample run --- with the coupled model pinned against $f_{\rm IGM}+f_X = 1$ --- and reach $3\sigma$ at $82$--$120$
 localized bursts if the redshift lever is chosen well, against $239$ if it is not.
 \end{enumerate}
 

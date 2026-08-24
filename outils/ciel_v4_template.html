@@ -62,6 +62,7 @@ const GQ=nrm(crs(NGP,GP));
 const PLAN=[[.387],[.723],[1],[1.524],[5.203],[9.537],[19.19],[30.07]];
 const RCOS=M.dmax*1.12*MPC;
 const cv=document.getElementById('c'),g=cv.getContext('2d'),EL=id=>document.getElementById(id);
+let RENDU_KO=false;
 let W,H,S,rx=-.32,ry=.5,vx=0,vy=.0012,drag=false,px=0,py=0;
 let Rview=RCOS,Rcible=RCOS,obs=false,zmax=M.zmax,mx=-1e9,my=-1e9,hit=null;
 let fS82=0,fZOA=0,fISO=0,laser=-1,tour=-1,tourT=0,intro=1;
@@ -133,6 +134,7 @@ function carte(){const bw=190*devicePixelRatio,bh=bw/2,x0=W-bw-20*devicePixelRat
  g.globalAlpha=.55;g.fillStyle='#8f8878';g.font=(9*devicePixelRatio)+'px ui-monospace,monospace';
  g.fillText('projection Mollweide · coordonnées galactiques',x0,y0+bh+13*devicePixelRatio)}
 function fr(){requestAnimationFrame(fr);
+ try{
  if(intro>0){intro-=0.011;Rcible=RCOS*(1+38*Math.max(0,intro)**3)}
  if(tour>=0){tourT+=1/60;if(tourT>7.5){tour=(tour+1)%TOUR.length;lanceTour(tour)}}
  if(!drag){vy*=.985;vx*=.985;vy+=(0.0011-vy)*.012;ry+=vy;rx+=vx}
@@ -158,11 +160,14 @@ function fr(){requestAnimationFrame(fr);
    if(!p){ok=false;break}i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1])}
   if(ok){g.closePath();g.globalAlpha=fG*.2;g.strokeStyle='#d9b96a';g.lineWidth=devicePixelRatio;g.stroke()}}
  const fC=obs?1:fade(22.0,30.0);let nSN=0,nFR=0,nVD=0;
+  // plafond d'empilement : trois calques translucides superposes
+  // produisent un lavis qui masque la sphere ; on divise leur opacite
+  const NCAL=Math.max(1,(fISO?1:0)+(typeof fOMB!=='undefined'&&fOMB?1:0)+(typeof fGRA!=='undefined'&&fGRA?1:0));
  if(fC>0.01){
   if(fZOA!==2){bandeGal(RCOS*.98,10,'#c96a4a',fC*.40);bandeGal(RCOS*.98,5,'#c96a4a',fC*.22)}
   if(fS82!==2){g.globalAlpha=1;pinceau(RCOS*.98,fC)}
   if(fISO)for(let i=0;i<ISO.length;i+=3){const p=proj(ISO[i]*MPC,ISO[i+1]*MPC,ISO[i+2]*MPC);
-   if(!p)continue;g.globalAlpha=fC*.24;g.fillStyle='#5f7f6a';
+   if(!p)continue;g.globalAlpha=fC*.24/NCAL;g.fillStyle='#5f7f6a';
    g.beginPath();g.arc(p[0],p[1],.9*devicePixelRatio,0,7);g.fill()}
   for(let i=0;i<VD.length;i+=4){const p=proj(VD[i]*MPC,VD[i+1]*MPC,VD[i+2]*MPC);if(!p)continue;
    const r=VD[i+3]*MPC/Rview*p[2]*S;if(r<0.4)continue;nVD++;
@@ -204,6 +209,10 @@ function fr(){requestAnimationFrame(fr);
   inf.style.top=(hit.p[1]/devicePixelRatio+12)+'px';
   inf.innerHTML='supernova<br>z = <b>'+SN[i+4].toFixed(3)+'</b> · D_C ≈ <b>'+Math.round(Math.hypot(SN[i],SN[i+1],SN[i+2]))+'</b> Mpc<br>latitude galactique b = <b>'+SN[i+5].toFixed(1)+'°</b><br>'+(s?'<b>dans SDSS Stripe 82</b><br>':'')+(vd?'vide sur la ligne de visée':'pas de vide sur la visée');
  }else inf.style.display='none';
+ }catch(err){console.error(err);
+  const t=document.getElementById('txt');
+  if(t)t.innerHTML='<b>PANNE DE RENDU.</b> La boucle a levé : <span class="mono" style="color:#c96a4a">'+(err&&err.message?err.message:err)+'</span><span class="mono">Signale ce message : il nomme la cause. Utilise « réinitialiser la vue » pour repartir.</span>';
+  RENDU_KO=true}
 }
 function maj(){[['s0',fS82===1],['s1',fS82===2],['z0',fZOA===1],['z1',fZOA===2],['iso',!!fISO],
  ['obs',obs],['las',laser>=0],['tou',tour>=0]].forEach(([id,on])=>{const b=EL(id);if(b)b.classList.toggle('on',on)})}

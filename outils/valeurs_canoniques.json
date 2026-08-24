@@ -3,13 +3,16 @@
  "quantites": [
   {
    "nom": "croisement fantôme z_x",
-   "valeur_courante": "bas redshift, 0,21 (β=2,595) à 0,46 (β=2,42) — retiré comme prédiction chiffrée",
-   "source": "MANQUEMENTS #111, papier A tableau l.632",
-   "date": "2026-08-22",
+   "valeur_courante": "z_x = 0,4436 (beta = 2,42) a 0,2211 (beta = 2,60), Om = 0,314, par croisement_fantome.py GELE — et NON un observable de precision (#163, #168 : systematique de forme ~0,2 et de jeu ~0,2)",
+   "source": "MANQUEMENTS #145 (calcul gele), #163 et #168 (portee) — PAS le tableau du papier",
+   "date": "2026-08-24",
    "valeurs_depreciees": [
     "(?<![\\d.\\-])0[.,]463(?!\\d)",
     "z\\s*(=|≈|\\\\simeq|\\\\approx)\\s*0[.,]46\\b",
-    "z_?\\\\?times\\s*=\\s*0[.,]50\\b"
+    "z_?\\\\?times\\s*=\\s*0[.,]50\\b",
+    "(?i)(z_?\\\\?(times|\\{\\\\rm cross\\})|z_x|croisement|crossing)[^\\n]{0,40}?0[.,]458(?!\\d)",
+    "(?i)(z_?\\\\?(times|\\{\\\\rm cross\\})|z_x|croisement|crossing)[^\\n]{0,40}?0[.,]253(?!\\d)",
+    "(?i)(z_?\\\\?(times|\\{\\\\rm cross\\})|z_x|croisement|crossing)[^\\n]{0,40}?0[.,]214(?!\\d)"
    ]
   },
   {
@@ -81,11 +84,11 @@
   },
   {
    "nom": "nombre d'entrées du registre",
-   "valeur_courante": "186 (24/08/2026)",
+   "valeur_courante": "187 (24/08/2026)",
    "source": "MANQUEMENTS #142",
    "date": "2026-08-23",
    "valeurs_depreciees": [
-    "\\\\b(?!186\\\\b)1\\\\d\\\\d entrées(?! à la naissance)"
+    "\\\\b(?!187\\\\b)1\\\\d\\\\d entrées(?! à la naissance)"
    ]
   },
   {

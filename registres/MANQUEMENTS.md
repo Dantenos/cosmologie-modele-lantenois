@@ -3785,3 +3785,38 @@ vecteur (l_a, R, ω_b, n_s) alors que les nombres qu'elle imprime sont (R, l_A, 
 fausse.** Consigné ici pour qu'aucun relecteur futur ne « répare » ce qui fonctionne.
 Également : `ZSTAR = 1089,91` dans `test_wE_v3.py` est du **code mort** — jamais référencé, le
 χ² appelant `z_star(ob, om)`. Laissé en place pendant la campagne, signalé pour retrait.
+
+## 24/08 (Claude Code) — #197 LE TEST DU RÉFÉRENT S'EST ARRÊTÉ SUR SA PROPRE VALIDATION
+`test_referent.py` (gelé). Étude conçue pour tester la lecture laissée par le #193 —
+« l'ambiguïté est de référent, pas de précision » — par sa **prédiction falsifiable** :
+si elle est vraie, améliorer les données ne réduit pas l'étendue.
+
+**LE BLOCAGE, ET IL EST LÉGITIME.** La validation B exigeait que le σ médian rétrécisse d'un
+facteur 0,7k à 1,4k quand on divise les incertitudes par k. Mesuré : **facteur 2,00 à k = 4**,
+alors qu'il fallait 2,8 à 5,6. **ÉCHEC. Rien n'est publié.**
+La cause n'est pas physique : le balayage se fait au **pas de 0,001**, donc un σ lu par marche
+de grille ne peut pas descendre sous 0,001. À k = 4 le vrai σ vaut ~0,0005 et la grille le
+plafonne. **Ma validation a correctement refusé de conclure sur une mesure que mon propre
+maillage ne pouvait pas rendre.**
+
+**CE QUE L'EXÉCUTION A MONTRÉ, ET QUE JE NE SUBSTITUE PAS À LA VALIDATION ÉCHOUÉE.**
+| k | ε étiquette | ε cohérent | ε direct sans R | ε direct R coh | étendue | gain médian |
+|---|---|---|---|---|---|---|
+| 1 | +0,00700 | −0,00400 | −0,01200 | −0,00400 | **0,01900** | +9,36 |
+| 2 | +0,00700 | −0,00400 | −0,01200 | −0,00400 | **0,01900** | +37,43 |
+| 4 | +0,00700 | −0,00400 | −0,01200 | −0,00400 | **0,01900** | +149,72 |
+
+Les quatre valeurs sont **littéralement identiques** aux trois échelles, l'étendue ne bouge
+pas d'un chiffre, et les gains suivent **k² à la troisième décimale** (×4,00 puis ×16,00) —
+ce qui prouve que la mise à l'échelle était bel et bien opérante. **Mais la validation B
+demandait autre chose, et on ne substitue pas une preuve à une autre.** C'est exactement le
+piège du #176 : accepter qu'un contrôle soit satisfait par autre chose que ce qu'il énonce.
+
+**CE QUI EST FAIT À LA PLACE.** `test_referent_v2.py` est gelé et lancé : balayage grossier
+pour situer le minimum, puis balayage **fin au pas de 0,0001** sur ±0,004 pour le σ — dix fois
+mieux que le σ le plus serré attendu. Critères, seuils, configurations et données
+**inchangés**. Le raffinement agit identiquement à tous les k, donc **il ne peut pas biaiser
+le rapport E(4)/E(1)** dans un sens ou dans l'autre : c'est ce qui rend licite de le faire
+après avoir vu le blocage. La v2 ajoute en outre une **seconde** exigence d'opérativité (le
+gain médian doit croître comme k² à ±25 %), précisément parce que c'est elle qui, dans la v1,
+voyait ce que la première était aveugle à voir.

@@ -392,3 +392,7 @@ crédit du binôme : le soupçon humain a vu ce que quatre relectures machine on
 | 75 | mon résumé « Yang et al. : priors comprimés + DESI → ε = −0,0073 à 2,4σ » (#188 à #191) | **OMISSION QUI CONVERTIT UN NUL EN DÉTECTION (#195)** : le 2,4σ exige CINQ jeux (DESI+CMB+CC+SNIa+fσ₈). Avec DESI+CMB+CC seuls ils publient **ε = +0,0023 (+0,0055/−0,0067)** et concluent textuellement à l'absence de déviation — **signe opposé**. Et c'est DESI **DR1**, pas DR2. |
 
 **Bilan : 10 attaques justes, 66 affirmations réfutées, rétrogradées ou corrigées — dont un facteur π/2 vieux de six générations d'artefacts, et un biais de convention présent dans chaque évaluation de la vraisemblance depuis sa construction.**
+
+| 76 | mon test du référent (#197, v1) | **ARRÊTÉ PAR SA PROPRE VALIDATION B** : au pas de grille 0,001, σ ne peut pas descendre sous 0,001, donc à k = 4 le facteur mesuré vaut 2,00 au lieu des 2,8-5,6 exigés. Rien publié. L'exécution montrait pourtant les quatre ε **identiques** aux trois échelles et les gains suivant k² à la troisième décimale — mais substituer cette preuve à celle qui était demandée serait le piège du #176. v2 gelée avec un balayage fin au pas 0,0001. |
+
+**Bilan : 10 attaques justes, 67 affirmations réfutées, rétrogradées ou corrigées.**

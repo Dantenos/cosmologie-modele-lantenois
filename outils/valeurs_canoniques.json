@@ -81,13 +81,11 @@
   },
   {
    "nom": "nombre d'entrées du registre",
-   "valeur_courante": "142 (23/08/2026)",
+   "valeur_courante": "161 (24/08/2026)",
    "source": "MANQUEMENTS #142",
    "date": "2026-08-23",
    "valeurs_depreciees": [
-    "\\b116 entrées(?! à la naissance)",
-    "\\b123 entrées",
-    "cent seize entrées"
+    "\\\\b(?!161\\\\b)1\\\\d\\\\d entrées(?! à la naissance)"
    ]
   },
   {
@@ -104,11 +102,11 @@
   },
   {
    "nom": "critères gelés",
-   "valeur_courante": "45 (24/08/2026)",
+   "valeur_courante": "46 (24/08/2026)",
    "source": "outils/registre.lock",
    "date": "2026-08-23",
    "valeurs_depreciees": [
-    "\\b2[0-4] (critères|fichiers|scripts) (gelés|du corpus sont gelés)"
+    "\\b(?!46\\b)\\d+ (critères|fichiers|scripts) (gelés|du corpus sont gelés)"
    ]
   },
   {

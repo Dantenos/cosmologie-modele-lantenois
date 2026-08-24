@@ -7,7 +7,7 @@ dans le répertoire courant) ; les outils se lancent depuis la racine.
 
 | chiffre publié | commande (racine sauf mention) | attendu | durée* |
 |---|---|---|---|
-| intégrité des 38 critères gelés | `python outils/registre.py verify` | 38 OK, exit 0 | 1 s |
+| intégrité des critères gelés | `python outils/registre.py verify` | tous OK, exit 0 (compte courant : `registres/ETAT.md`) | 1 s |
 | sceau DR3 | `sha256sum outils/scelle.py` | `68d06bcc…45a2` | 1 s |
 | β = 2,447, Δχ² = −4,41 (fond léger) | `python outils/ligne_de_base.py` | `REPRODUIT` | 10 s |
 | 16 ancres numériques (14 scripts) | `python outils/rejouer.py` | 0 échec | 35 s |

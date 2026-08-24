@@ -223,5 +223,10 @@
   "sha256": "096c986f8ec1291a12353de0ffa3b834cd637e329132a159f5bc61f7d8a2c4fa",
   "gele_le": "2026-08-24T03:39:50",
   "extrait": "E1 MANCHE 3 — DESIVAST DR1 x PANTHEON+ : le troisieme juge, et l'ARBITRE DE T6."
+ },
+ "scripts/audit_ilcdm_v2.py": {
+  "sha256": "b5471002fb6c163c838859684e11854d9a23cfd7c775a7948bab4f10a4b1e68c",
+  "gele_le": "2026-08-24T03:52:39",
+  "extrait": "AUDIT iLCDM, VOLET 2 — LOO traceurs BAO et partage en redshift. CRITERES PRE-ENR"
  }
 }

@@ -1,6 +1,6 @@
 # LE REGISTRE DES TENSIONS — généré par `outils/greffier.py`, ne pas éditer à la main
 
-*2026-08-24 — 7 tensions : 4 ouvertes, 2 en jugement, 1 résolues. Règle du greffe : une tension ne se*
+*2026-08-24 — 8 tensions : 5 ouvertes, 2 en jugement, 1 résolues. Règle du greffe : une tension ne se*
 *résout que par l'arbitre nommé avant la résolution — on ne réécrit pas l'histoire d'une anomalie.*
 
 ## T1-beta-interne — ⚖ EN JUGEMENT <small>(ouverte le 2026-08-23)</small>
@@ -75,12 +75,24 @@ Lectures rivales :
 
 ## T7-epsilon-ilcdm — ⚖ EN JUGEMENT <small>(ouverte le 2026-08-24)</small>
 
-**les deux iΛCDM d'interaction prennent la tête de l'atlas (ε ≈ +0,007/+0,021, χ² = −9,8 vs ΛCDM pour un paramètre) — premier volet de l'arbitre exécuté (#154) : le gain SURVIT aux variantes cohérentes (CDM seul, échange tardif z<3 : +9,85 / +9,64) ; l'hypothèse artefact primordial est réfutée ; restent LOO, split-z, trilogie SN**  
-magnitude : **ΔAIC = −3 à −4 sur CCBH/accrétion — au tableau, pas au palmarès** · refs : #150, ATLAS.md, #154
+**les deux iΛCDM d'interaction prennent la tête de l'atlas (ε ≈ +0,007/+0,021, χ² = −9,8 vs ΛCDM pour un paramètre) — premier volet de l'arbitre exécuté (#154) : le gain SURVIT aux variantes cohérentes (CDM seul, échange tardif z<3 : +9,85 / +9,64) ; l'hypothèse artefact primordial est réfutée ; restent LOO, split-z, trilogie SN ; volet 2 (#156) : ROBUSTE-LOO (gain +7,8 à +11,3 sur 7 retraits) et split-z COHÉRENT (ε identique à 0,0σ) — il ne reste que la trilogie SN**  
+magnitude : **ΔAIC = −3 à −4 sur CCBH/accrétion — au tableau, pas au palmarès** · refs : #150, ATLAS.md, #154, #156
 
 Lectures rivales :
 - artefact de l'implémentation v1 (échange appliqué à toute la matière + fond tardif incohérent avec les distance-priors primordiaux — déclaré au gel)
 - vraie préférence pour l'échange sombre (des indices similaires existent dans la littérature DESI)
 
 **Arbitre (gravé d'avance)** : batterie adversariale v2 de l'atlas : couplage CDM seul, cohérence primordiale, LOO traceurs, split-z, trilogie SN, σ(ε) — avant tout droit au palmarès
+
+## T8-patch-desivast — OUVERTE <small>(ouverte le 2026-08-24)</small>
+
+**β ajusté sur les 227 SNe Pantheon+ de l'empreinte DESIVAST (deux calottes BGS, z médian 0,12) = 1,84 ± 0,31, contre 2,45 ± 0,22 pour des tirages aléatoires de même taille — le patch est bas, pas l'échantillonnage**  
+magnitude : **1,9σ sous 2,42 (candidat, sous le seuil de 2σ — ouvert au greffe, pas affirmé)** · refs : #155, ETUDE_E1_manche3.md
+
+Lectures rivales :
+- systématique de calibration localisée (patchs photométriques bas-z de Pantheon+)
+- fluctuation (1,9σ, un patch parmi d'autres — effet de sélection du regard)
+- vraie dépendance directionnelle/environnementale de w — la lecture horloge par la petite porte
+
+**Arbitre (gravé d'avance)** : refaire β sur la MÊME empreinte avec une photométrie indépendante : DES-SN5YR (RA/DEC publics) puis Union3 — données en cours de récupération ; si le patch reste bas à >2σ sur deux photométries, ouvrir une étude gelée dédiée
 

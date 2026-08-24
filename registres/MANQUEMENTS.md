@@ -2121,3 +2121,15 @@ AVEC réserve et clause de réouverture (σ_Δ ≤ 0,4). Indice de soutien indé
 Jaccard(VIDE, REVOLVER) = 0,97 et VF-V2 = 0,59 (contre 0,41 et 0,33 sur Douglass) — les
 algorithmes modernes trient presque pareil ; la non-univocité de Douglass ressemble à un artefact
 d'époque. Première résolution du greffe : par son arbitre, avec ses réserves — comme prévu.
+
+## 24/08 (Claude Code) — #156 AUDIT iΛCDM VOLET 2 : ROBUSTE-LOO, ε IDENTIQUE AUX DEUX ÉCHELLES — LE SIGNAL TIENT ENCORE
+`audit_ilcdm_v2.py` (gelé b5471002fb6c ; LOO par dépondération σ×10³ pour ne pas toucher aux
+formes du pipeline scellé — implémentation notée au corps). Validation : gain plein +9,84,
+ε = +0,0215 (=#154). **LOO 7 traceurs : gain ∈ [+7,76 ; +11,33]** — le pire retrait (LRG2)
+garde 79 % du gain, retirer LRG1 le RENFORCE (+11,33) : ROBUSTE-LOO, aucun traceur ne porte.
+**Split-z à 0,6 : ε = +0,0216 vs +0,0218 — 0,0σ** : l'échange préféré est le même aux deux
+échelles, COHÉRENT. Après le volet 1 (les variantes cohérentes gardent tout), la lecture
+« artefact » de T7 n'a plus que la trilogie SN pour se défendre (volet 3, données en chasse).
+Si DES-SN5YR et Union3 confirment, ce pipeline aura mis au jour une préférence d'échange
+sombre ε ≈ +0,02 à Δχ² ≈ 10 sur données publiques — née d'un atlas construit pour falsifier
+notre propre modèle. Le greffier tient T7 ; le Livre lui doit sa rangée sombre (v2).

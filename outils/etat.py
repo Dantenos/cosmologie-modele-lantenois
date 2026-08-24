@@ -12,6 +12,11 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 def main():
     lock = json.loads((ROOT / "outils/registre.lock").read_text(encoding="utf-8"))
+    # regenere l'index du registre AVANT de le lire (sinon compte perime)
+    import sys as _s, subprocess as _sp; _s.path.insert(0, str(ROOT / "outils"))
+    import index_registre as _ir
+    _n_ent = len(_ir.entrees())
+    _sp.run([_s.executable, str(ROOT / "outils/index_registre.py")], capture_output=True)
     idx = (ROOT / "registres/INDEX_MANQUEMENTS.md")
     bilan = [l for l in idx.read_text(encoding="utf-8").splitlines() if l.startswith("**Bilan**")]
     m = re.search(r"(\d+) entrées", bilan[0]) if bilan else None
@@ -52,8 +57,19 @@ def main():
             f2.write_text(txt, encoding="utf-8", newline="\n"); print(f"[etat] façade mise à jour : {rel} -> {n}")
     vc = ROOT / "outils/valeurs_canoniques.json"; cv = json.loads(vc.read_text(encoding="utf-8"))
     for qte in cv["quantites"]:
-        if qte["nom"] == "critères gelés" and not qte["valeur_courante"].startswith(str(n)):
+        if qte["nom"] == "nombre d'entrées du registre":
+            att2 = [rf"\\b(?!{_n_ent}\\b)1\\d\\d entrées(?! à la naissance)"]
+            if not (qte["valeur_courante"].startswith(str(_n_ent)) and qte["valeurs_depreciees"] == att2):
+                qte["valeur_courante"] = f"{_n_ent} ({datetime.date.today():%d/%m/%Y})"
+                qte["valeurs_depreciees"] = att2
+                vc.write_text(json.dumps(cv, indent=1, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
+                print(f"[etat] valeurs_canoniques : entrées du registre = {_n_ent}")
+        if qte["nom"] == "critères gelés":
+            attendu = [rf"\b(?!{n}\b)\d+ (critères|fichiers|scripts) (gelés|du corpus sont gelés)"]
+            if qte["valeur_courante"].startswith(str(n)) and qte["valeurs_depreciees"] == attendu:
+                continue
             qte["valeur_courante"] = f"{n} ({datetime.date.today():%d/%m/%Y})"
+            qte["valeurs_depreciees"] = attendu
             vc.write_text(json.dumps(cv, indent=1, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
             print(f"[etat] valeurs_canoniques : critères gelés = {n}")
     print("\n".join(L[2:9]))

@@ -2160,3 +2160,16 @@ ce pipeline, à ~2-3σ (σ(ε) profil grossier ~0,010 ; √Δχ² = 3,1) — une
 découverte. La suite n'appartient plus au greffe : rangée matière sombre du Grand Livre (v2),
 Cobaya complet, et la note de littérature qu'elle mérite. Ironie maintenue : c'est l'atlas
 construit pour falsifier notre modèle qui l'a trouvée.
+
+## 24/08 (Claude Code) — #159 LA CHAÎNE (β₀, β₁) A RENDU : NON CONCLUANT — LE PIÈGE A FONCTIONNÉ, ET LA TENSION SE DISSOUT DANS LA DÉGÉNÉRESCENCE
+`mcmc_planck_beta1.py` (gelé 200263d74265), 600 pas, validation passée (χ² min = 1985,41 ;
+300 pas post-rodage ; autocorrélation 18 pas → chaîne courte, déclarée).
+**β₁ = −0,250 +0,253/−0,264 (1,0σ de 0)** — le signe de l'hérédité, dans son corridor
+(EDO : −0,42/−0,68), mais mou : le critère gelé (règle 6 : négatif < 2σ = bruit) tranche
+**NON CONCLUANT**, écrit tel quel. β₀ = 2,493 ± 0,11, corr(β₀, β₁) = +0,88.
+**La leçon secondaire vaut le calcul** : running libéré, la tension interne #151 se dissout —
+β₀ (4 param.) = 2,49 ± 0,11 est compatible avec le fond léger (2,42 ± 0,07) à ~0,5σ. La tension
+de 2,1σ n'existe que sous β = constante ; une seule liberté de forme l'absorbe, sans que les
+données la réclament (Δχ² = −0,6). T1 retourne OUVERTE au greffe, arbitre réduit à β₁(DR3) —
+déjà dans le sceau (RÉFUTÉE si β₁ exclut +0,06 ± 0,31 à 3σ ; l'hérédité prédit −0,42 : DR3
+départagera les trois lectures d'un coup). Le jackknife complet a pris le relais en file.

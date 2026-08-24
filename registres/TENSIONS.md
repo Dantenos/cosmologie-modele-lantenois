@@ -1,18 +1,18 @@
 # LE REGISTRE DES TENSIONS — généré par `outils/greffier.py`, ne pas éditer à la main
 
-*2026-08-24 — 8 tensions : 5 ouvertes, 1 en jugement, 2 résolues. Règle du greffe : une tension ne se*
+*2026-08-24 — 8 tensions : 6 ouvertes, 0 en jugement, 2 résolues. Règle du greffe : une tension ne se*
 *résout que par l'arbitre nommé avant la résolution — on ne réécrit pas l'histoire d'une anomalie.*
 
-## T1-beta-interne — ⚖ EN JUGEMENT <small>(ouverte le 2026-08-23)</small>
+## T1-beta-interne — OUVERTE <small>(ouverte le 2026-08-23)</small>
 
-**β marginalisé du fond léger (2,42 ± 0,07) contre β marginalisé du Planck complet (2,603 +0,046/−0,053)**  
-magnitude : **2,1σ** · refs : #151
+**β marginalisé du fond léger (2,42 ± 0,07) contre β marginalisé du Planck complet (2,603 +0,046/−0,053) — chaîne (β₀,β₁) servie (#159) : β₁ = −0,25 ± 0,26, NON CONCLUANT (signe hérédité à 1σ) ; running libéré, la tension se dissout dans la dégénérescence β₀-β₁ (+0,88)**  
+magnitude : **2,1σ** · refs : #151, #159
 
 Lectures rivales :
 - systématique (calibration SNe / nuisances plik figées)
 - running réel dβ/dlnt < 0 — la prédiction de l'EDO d'hérédité (β₁ = −0,42, heredite_edo.py)
 
-**Arbitre (gravé d'avance)** : chaîne (ωc, lnAs, β₀, β₁) sur le Planck complet — scripts/mcmc_planck_beta1.py, gelé 200263d74265, critères NON CONCLUANT / COMPATIBLE HÉRÉDITÉ / CONTRE gelés avant exécution ; à terme β₁(DR3), déjà dans le sceau
+**Arbitre (gravé d'avance)** : β₁(DR3) — déjà dans le verdict scellé ; l'hérédité prédit −0,42, le bruit prédit 0, la chaîne locale ne tranche pas (#159)
 
 ## T2-omega-b — OUVERTE <small>(ouverte le 2026-08-24)</small>
 

@@ -1,0 +1,23 @@
+{
+ "omega_c_opt": 0.11816250000000002,
+ "omega_c_cmb_seul": 0.12010000000000001,
+ "ln10As_opt": 3.0389011389032716,
+ "H0": 67.97225952148438,
+ "chi2_cmb": 593.1511755701459,
+ "chi2_bao": 16.270293631373754,
+ "chi2_sn": 1389.2070239819586,
+ "total": 1998.6284931834784,
+ "ancre": 1998.633,
+ "sigma_complet": 0.0010000000000000286,
+ "sigma_comprime": 0.0010000000000000009,
+ "parabolicite": 1.34465673505386,
+ "rapport": 0.9999999999999722,
+ "verdict3": "PAS DE PERTE",
+ "sigma_eps_complet": 0.0010126481999997515,
+ "sigma_eps_comprime": 0.0010126481999997235,
+ "verdict5": "EXPLICATION REFUTEE — le mecanisme avance depuis le #190 n'est pas etabli, et il faut chercher ailleurs",
+ "R": 1.7446137538350608,
+ "lA": 301.7596255938563,
+ "zstar": 1089.7461560392353,
+ "rstar": 144.91963627403263
+}

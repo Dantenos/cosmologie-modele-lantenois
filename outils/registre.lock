@@ -398,5 +398,10 @@
   "sha256": "863df81e97bd7504daa71e648f4bd60b0069d99b8e74eebf0dc14ce92a0f365f",
   "gele_le": "2026-08-24T19:53:25",
   "extrait": "LA FAMILLE DU #188 FAISAIT DILUER LES BARYONS. ELLE N'AURAIT PAS DU."
+ },
+ "scripts/pouvoir_omega_m.py": {
+  "sha256": "ff1ef6899fa109a79f3a87aedc1d39356baeac5a4f02fb0040c5db43c2845e78",
+  "gele_le": "2026-08-24T20:17:33",
+  "extrait": "COMBIEN D'INFORMATION SUR omega_m LES PRIORS COMPRIMES PERDENT-ILS ?"
  }
 }

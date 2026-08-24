@@ -3588,3 +3588,73 @@ complète. De plus la borne baryonique que j'aurais aimé invoquer (« BBN l'int
 |ε_b| ≲ 2×10⁻³, à peine un facteur 2 sous la borne actuelle sur w_dm, et **aucune contrainte
 publiée sur l'exposant baryonique n'existe**. Notre défaut reste un défaut d'**incohérence
 interne** — mesuré à 7,5–15,1σ — pas une violation d'une borne extérieure.
+
+## 24/08 (Claude Code) — #193 MON EXPLICATION ÉTAIT FAUSSE, ET LE VRAI FAIT EST PLUS FORT
+`pouvoir_omega_m.py` (gelé **ff1ef6899fa1**). Première étude de la campagne à employer la
+**vraisemblance CMB complète** (CAMB + plik_lite TTTEEE + low-ℓ, la machinerie du #146).
+
+**CE QUI ÉTAIT MIS EN JEU — une explication à moi.** Depuis le #190 j'avançais un mécanisme :
+les priors comprimés (R, l_A, ω_b) ne transportent que de la **géométrie**, tandis que la
+vraisemblance complète mesure ω_m directement par la **hauteur des pics** et la queue
+d'amortissement. La perte d'information d'amplitude expliquerait mécaniquement pourquoi
+quatre choix de comptabilité déplacent ε de 0,019 (#192) alors que les mesures publiées en
+vraisemblance complète se groupent à ±0,001 (#191).
+
+**LA PRÉMISSE EST VRAIE, VÉRIFIÉE PAR LE CALCUL ET NON AFFIRMÉE.** Le χ² comprimé, évalué à
+ln10As = 3,000 et 3,100, rend **2,575399113 les deux fois — écart 0,00e+00**. Il ne contient
+littéralement aucune information d'amplitude.
+
+**ET LA CONCLUSION QUE J'EN TIRAIS EST FAUSSE.**
+| | σ(ω_c) |
+|---|---|
+| vraisemblance complète (plik_lite TTTEEE + low-ℓ) | **0,00100** |
+| priors comprimés (R, l_A, ω_b), covariance Planck 3×3 | **0,00100** |
+| rapport | **1,00 → PAS DE PERTE** |
+
+**VERDICT GELÉ : EXPLICATION RÉFUTÉE.** C'était la branche que le critère 3 nommait « celle
+qui me réfute », écrite avant exécution. Elle a tiré.
+
+**ET LA RÉFUTATION NE DÉPEND PAS D'UN RAFFINEMENT DE GRILLE.** Les deux σ sont lus sur des
+grilles de pas 0,0002 (complète) et 0,0005 (comprimée), donc quantifiés. En propageant
+honnêtement cette quantification : σ_complète ∈ ]0,0008 ; 0,0010] et σ_comprimée ∈ ]0,0005 ;
+0,0010], d'où **rapport ∈ ]0,5 ; 1,25[** — très loin du seuil de 3. **Raffiner la grille après
+avoir vu le verdict serait un ajustement, et je ne le fais pas** : la borne suffit.
+
+**VALIDATIONS, toutes passées.** Ancre gelée de `confluence_planck_v2.py` : le χ² total à
+l'optimum ΛCDM rend **1998,628** contre **1998,633** (écart 0,005). Décomposition fidèle : la
+somme CMB 593,151 + BAO 16,270 + SNe 1389,207 égale `planck_theta.chi2_full` au même point à
+**0,00e+00** près — je n'ai pas changé de vraisemblance en chemin. Cohérence externe : notre
+σ(ω_c) = 0,00100 contre les 0,0012 publiés par Planck 2018, rapport 1,20, ce qui est
+exactement ce qu'on attend en figeant quatre paramètres qu'ils marginalisent. Et le profil est
+parabolique (P = 1,34), donc le σ est opposable — contrairement à celui du #190.
+
+**UN DÉFAUT DE CORPS ATTRAPÉ PAR MA PROPRE VALIDATION, avant tout résultat.** La première
+exécution a **échoué la validation A avec un écart de 11,326** : j'avais optimisé ω_c sur le
+χ² du **CMB seul** alors que l'ancre 1998,633 est l'optimum du χ² **total**. Deux points
+distincts (0,12010 contre 0,11816). Le contrôle a fonctionné, c'est mon code qui ne
+fonctionnait pas. Corps corrigé, critères intacts, aucun chiffre issu de la version fautive.
+
+**CE QUE LES NOMBRES DISENT VRAIMENT, ET C'EST PLUS FORT QUE CE QUE JE CHERCHAIS.**
+Les priors comprimés contraignent ω_m **aussi précisément** que la vraisemblance complète :
+σ = 0,001, soit **0,7 %**. Et l'étendue de ε entre choix de comptabilité vaut **0,019**, soit
+**dix-neuf fois** la précision disponible.
+> **L'ambiguïté n'est donc pas statistique du tout. Ce n'est pas un problème de PRÉCISION,
+> c'est un problème de RÉFÉRENT.** R et les formules de r_d, r_*, z_* réclament UN ω_m ;
+> dans cette famille il y en a deux, et rien dans les données ne dit lequel. Quatre analystes
+> avec les mêmes données et la même contrainte à 0,7 % obtiennent des réponses étalées sur
+> 0,019 — non par bruit, mais par choix.
+
+**STATUT DE CETTE LECTURE, écrit pour qu'on ne l'utilise pas comme la précédente.** Elle est
+**suggérée par les nombres, pas établie par un critère pré-enregistré**. Elle remplace une
+explication réfutée et doit être testée avant d'être opposable. Je m'interdis explicitement
+de la traiter comme acquise : c'est précisément en traitant l'explication précédente comme
+acquise pendant deux entrées que je me suis trompé.
+
+**CE QUI TOMBE ET CE QUI RESTE.**
+- **Tombe** : le mécanisme « les priors comprimés perdent l'information » avancé au #190 et
+  répété au #192. Retiré. Triage 71.
+- **Reste, intact** : tous les FAITS mesurés — l'étendue de 0,019 (#192), les trois
+  incohérences internes de 7,5 à 15,1σ (#192), le renversement de signe (#188), la dispersion
+  ×3,23 entre familles (#191). Aucun ne dépendait de l'explication.
+- **Reste aussi** : l'énoncé opérationnel du #190, « ε n'est pas identifiable par des priors
+  comprimés ». Il est confirmé — mais pour une raison que j'avais mal nommée.

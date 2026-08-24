@@ -3137,3 +3137,42 @@ d'hérédité retractée (β = 4/(n+3) encore opératoire en cinq endroits aprè
 M_cut hérité de la relation superseded, R ~ 10^7,8 dérivé d'une base retirée), trois fragments
 de phrase, et une demi-douzaine de divergences inter-papiers signalées pour mémoire. Ce sont
 des travaux de fond, pas des corrections de valeurs, et je ne les maquille pas en « faits ».
+
+## 24/08 (Claude Code) — #187 LA RELATION D'HÉRÉDITÉ AVAIT ÉTÉ REMPLACÉE, ET CINQ PASSAGES CONTINUAIENT D'UTILISER L'ANCIENNE — DONT UNE ÉLÉGANCE QUI DISPARAÎT
+Dernier bloc de la seconde passe. Le papier B remplace explicitement β = 4/(n_eff+3) par
+**β = 2/(n_eff+3)** — *« notre relation d'origine était deux fois trop grande »* — puis
+continue de s'en servir dans cinq passages. Toutes les images sont recalculées sous la
+relation **adoptée**, chacune vérifiée :
+
+| | ancienne image (4/(n+3)) | image adoptée (2/(n+3)) |
+|---|---|---|
+| β = 5/2 | n_eff = −7/5 | **−11/5 = −2,200** |
+| bande 2,3–2,6 | [−1,46 ; −1,26] | **[−2,231 ; −2,130]** |
+| borne GSL β < 4,35 | n_eff > −2,08 | **n_eff > −2,540** |
+| β = 2,42 / 2,56 | −1,347 / −1,438 | **−2,174 / −2,219** |
+
+Ces valeurs vivaient dans une « note de bookkeeping ajoutée en révision » — c'est-à-dire dans
+un ajout censé clarifier, qui a traversé le remplacement sans être touché. Le seuil GSL était
+défini par l'ancienne image, la fermeture générationnelle citait l'ancienne relation, et le
+papier A portait la colonne « inherited n_eff = 4/β − 3 ».
+
+**CE QUE LA CORRECTION DÉTRUIT, ET QUI ÉTAIT BEAU.** Le papier tirait de l'ancienne relation
+une équivalence : un germe de masse universelle voit le spectre primordial nu, donc
+β_child → 4/(n_s+3) = 1,009 ; et l'invariance d'échelle exacte de Harrison-Zel'dovich
+(n_s = 1) donne **β = 1 exactement**, le cas à profondeur gelée. D'où : *« invariance
+d'échelle primordiale ⟺ enfants non-plongeants »*. Sous la relation adoptée, la même limite
+vaut **0,504**, et n_s = 1 donne **β = 0,500** — qui n'est pas le cas gelé et ne porte aucune
+lecture de ce genre. **L'équivalence était un artefact du facteur deux retiré.** Écrit dans
+le papier plutôt que laissé debout : c'est le genre de phrase qu'un lecteur retient, et elle
+était fausse depuis le remplacement.
+
+**ET R, DÉRIVÉ D'UNE BASE RETIRÉE.** *« R se déplace donc vers ~10^7,8 »* — soit 1,5 × 10^7,6,
+alors que 10^7,6 est explicitement retiré deux sections plus loin au profit de 10^10,3.
+Corrigé en **~10^10,5** (10^10,3 × 1,5 = 10^10,48).
+
+**LA FORME DE CE DÉFAUT MÉRITE D'ÊTRE NOMMÉE.** Ce n'est pas une valeur périmée isolée : c'est
+une **relation** remplacée dont les conséquences n'ont pas été propagées. Une valeur périmée
+se cherche par motif — `perime.py` sait le faire. Une relation périmée ne se cherche pas :
+il faut recalculer chaque image, une par une, en sachant laquelle. Aucun outil de ce corpus
+ne le fait, et le garde-fou de manuscrit ne le fera pas non plus. **C'est la troisième fois
+aujourd'hui qu'un défaut n'est trouvable que par la lecture.**

@@ -156,7 +156,7 @@ def main():
                           z_frb, dm]).ravel()
     ISO = (iso * float(np.median(dc))).ravel()
 
-    aire82 = (2 * 1.25 / 180.0) * (120.0 / 360.0)
+    aire82 = np.sin(np.radians(1.25)) * (120.0 / 360.0)
     att10 = len(z) * np.sin(np.radians(10.0))
     cos15 = np.cos(np.radians(15.0))
     sgr = C5.uvec(*C5.SGR_A)

@@ -64,7 +64,7 @@ def main():
     dec = np.degrees(np.arcsin(np.clip(n[:, 2], -1, 1)))
     ra = np.degrees(np.arctan2(n[:, 1], n[:, 0])) % 360
     s82 = (np.abs(dec) < 1.25) & ((ra > 300) | (ra < 60))
-    aire = (2 * 1.25 / 180.0) * (120.0 / 360.0)
+    aire = np.sin(np.radians(1.25)) * (120.0 / 360.0)
     att82 = n_sn * aire
     if not int(s82.sum()) > 10 * att82:
         sys.exit(f"[ciel3b] REFUS verif 3 : {int(s82.sum())} pour {att82:.1f}")

@@ -128,7 +128,17 @@ def main():
             k = m.group(1)
             fin = s.find("\\bibitem", m.end())
             bloc = s[m.end():fin if fin > 0 else s.find("\\end{thebibliography}", m.end())]
-            ok = ("arXiv" in bloc or "doi" in bloc.lower()
+            # identifiants ANCIEN FORMAT arXiv (astro-ph/YYMMNNN, gr-qc/, hep-th/, etc.) :
+            # ils ne portent pas le mot « arXiv » et etaient donc comptes comme absents.
+            # Trois faux positifs sur le papier D l'ont revele (#196). Le critere gele dit
+            # « au moins un identifiant » : un astro-ph/9709112 EN EST UN.
+            ancien = re.search(r"\b(astro-ph|gr-qc|hep-(?:th|ph|ex)|math-ph|nucl-th)/\d{7}\b",
+                               bloc)
+            # une reference de journal complete (revue + volume + page + annee) en est un
+            # autre : ApJ 496, 605 (1998) identifie sans ambiguite.
+            journal = re.search(r"\b(ApJ|A&A|A\\&A|MNRAS|JCAP|Phys\.?\\?\s*Rev|PRD|PRL|"
+                                r"Nature|Science)\b[^\n]{0,40}?\d{1,4}\s*,\s*\d{1,5}", bloc)
+            ok = ("arXiv" in bloc or "doi" in bloc.lower() or bool(ancien) or bool(journal)
                   or (re.search(r"\\textbf\{[^}]*\}", bloc) and re.search(r"\(\d{4}\)", bloc)))
             if not ok:
                 # un ouvrage (editeur + annee, sans volume) est legitimement sans

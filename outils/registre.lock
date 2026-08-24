@@ -403,5 +403,25 @@
   "sha256": "ff1ef6899fa109a79f3a87aedc1d39356baeac5a4f02fb0040c5db43c2845e78",
   "gele_le": "2026-08-24T20:17:33",
   "extrait": "COMBIEN D'INFORMATION SUR omega_m LES PRIORS COMPRIMES PERDENT-ILS ?"
+ },
+ "scripts/test_referent.py": {
+  "sha256": "a8f5bad60ba4b7c056247ef9522419b43e949d282dfc2645ee47a134af93ca11",
+  "gele_le": "2026-08-24T20:51:03",
+  "extrait": "L'AMBIGUITE EST-ELLE DE REFERENT OU DE PRECISION ? — LE TEST QUI TRANCHE."
+ },
+ "outils/verif_campagne.py": {
+  "sha256": "45ec34f707163d686784795f0dde4c85b7f19d29f256775ed691d8d65c49fd61",
+  "gele_le": "2026-08-24T20:53:29",
+  "extrait": "GARDE-FOU DE LA CAMPAGNE DU 24/08 — CHAQUE NOMBRE DERIVE EST-IL CELUI QU'ON A EC"
+ },
+ "outils/verif_ciel.py": {
+  "sha256": "e3708ce14cd8bdb2899f4463918b06660b4c0a2528d124fc54ad916bcbbaf0f0",
+  "gele_le": "2026-08-24T20:56:13",
+  "extrait": "GARDE-FOU DES ARTEFACTS DU CIEL — LES FAITS AFFICHES SONT-ILS CEUX DES DONNEES ?"
+ },
+ "outils/verif_ciel_v2.py": {
+  "sha256": "a4dcba5fffe9f88f1020eb9a850337b35a9cf0cc30dd763d6b32f843ff3203fc",
+  "gele_le": "2026-08-24T21:07:25",
+  "extrait": "GARDE-FOU DES ARTEFACTS DU CIEL, v2 — AVEC LA DEFINITION DU CORPUS, ET APRES LE "
  }
 }

@@ -3,6 +3,12 @@
 l'application, pour qu'aucun fragment ne soit avale par une entree plus courte."""
 
 MAP = {
+ # --- message de panne auto-diagnostique (ajoute apres les captures d ecran ;
+ #     jamais entre dans la table, ce qui a fait refuser le generateur bilingue)
+ "PANNE DE RENDU.": "RENDER FAILURE.",
+ "La boucle a levé : ": "The loop threw: ",
+ "Signale ce message : il nomme la cause. Utilise « réinitialiser la vue » pour repartir.":
+   "Report this message: it names the cause. Use “reset view” to start again.",
  # --- entete et cadre
  "Le Cône d'Observation — le vide d'information": "The Observation Cone — the information void",
  "Le Cône d'Observation": "The Observation Cone",

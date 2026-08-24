@@ -1,0 +1,381 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\usepackage{natbib}
+
+\title{\bf The matter dilution exponent is not identifiable\\
+from compressed CMB priors:\\
+a referent ambiguity, not a precision limit}
+\author{\'Edouard Lantenois\thanks{\texttt{github.com/Dantenos}}}
+\date{August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+Consider the one-parameter family in which dark matter dilutes as
+$\rho_{\rm dm}\propto a^{-3+\epsilon}$ with a genuine cosmological constant. The Bianchi
+identity forces this background to be that of a fluid with constant equation of state
+$w=-\epsilon/3$, so the family is not an alternative to $\Lambda w$DM but a rewriting of it.
+Compressed CMB distance priors $(\mathcal{R}, \ell_A, \omega_b)$, together with the standard
+fitting formulas for $r_d$, $r_\ast$ and $z_\ast$, all require a \emph{single} value of
+$\omega_m$. When $\epsilon\neq0$ there are two --- the present-day label and the value at
+recombination --- and nothing in the data selects one. We show on identical data
+(Pantheon+, DESI DR2 BAO, Planck 2018 distance priors, SH0ES) that this bookkeeping choice
+alone moves the recovered exponent from $\epsilon=+0.0070$ to $\epsilon=-0.0120$, a range of
+$0.019$, while every configuration quotes $\sigma\simeq0.002$. We then show that this is
+\emph{not} an information-loss effect: the compressed priors constrain $\omega_c$ to
+$\sigma=0.0010$, the same value the full Planck TT,TE,EE$+$low-$\ell$ likelihood delivers
+under identical fixed parameters, a ratio of $1.00$ (bounded to $]0.5,1.25[$ by grid
+quantisation). The ambiguity is therefore one of \emph{referent}, not of \emph{precision},
+and the spread is nineteen times the available precision. Consistently, published
+determinations of this exponent obtained with modified Boltzmann codes and full CMB
+likelihoods cluster at $\epsilon = -0.00064\pm0.00045$ and span $0.005$, while
+compressed-prior determinations span $0.016$. We report one further trap: applying
+$\epsilon$ to \emph{total} matter rather than to dark matter alone creates an internal
+inconsistency worth $7.5$--$15.1\sigma$ in $\ell_A$, because the same likelihood then treats
+baryons as standard in $R_b$ and in the $\omega_b$ prior. We claim no detection. We claim
+that a published $\epsilon$ obtained from compressed priors carries an unquoted systematic
+of order $10^{-2}$ unless the choice of $\omega_m$ is stated.
+\end{abstract}
+
+\section{The family, and why it has only one background}
+\label{sec:famille}
+
+Write the dark sector as a matter component whose density obeys
+\begin{equation}
+\rho_{\rm dm}(a) = \rho_{{\rm dm},0}\,a^{-3+\epsilon},
+\qquad
+\rho_\Lambda = \text{const},
+\qquad
+\rho_b \propto a^{-3},\quad \rho_r\propto a^{-4}.
+\label{eq:famille}
+\end{equation}
+It is tempting to read \eqref{eq:famille} as \emph{pressureless matter that is not
+conserved}, the deficit being absorbed by nothing in particular. That reading is not
+available. With $\Lambda$ genuinely constant, $\nabla_\mu T^{\mu\nu}=0$ applied to the total
+stress tensor forces the matter sector to carry a pressure
+\begin{equation}
+p_{\rm dm} = -\tfrac{\epsilon}{3}\,\rho_{\rm dm},
+\qquad\text{i.e.}\qquad
+w_{\rm dm} = -\epsilon/3 .
+\label{eq:bianchi}
+\end{equation}
+``Non-conserved pressureless matter with constant $\Lambda$'' and ``conserved matter with
+constant $w=-\epsilon/3$ and constant $\Lambda$'' are the same model written twice. At
+background level there is one model, not two.
+
+This is not new. \citet{lima1996} give, for adiabatic matter creation with rate parameter
+$\beta$, the effective adiabatic index $\gamma_\ast=\gamma(1-\beta)$ and the scaling
+$\rho=\rho_0(a_0/a)^{3\gamma(1-\beta)}$, with creation pressure $p_c=-\beta\gamma\rho$. For
+dust ($\gamma=1$) this is exactly \eqref{eq:famille}--\eqref{eq:bianchi} with
+$\epsilon=3\beta$. Two cautions, which we state because they are easy to lose: the identity
+$\gamma_\ast=\gamma(1-\beta)$ holds only for \emph{constant} $\beta$, and the map
+$\epsilon=3\beta$ is \emph{species-dependent} --- for radiation ($\gamma=4/3$) the same
+$\beta$ gives $\rho_r\propto a^{-4(1-\beta)}$. The map may not be carried across the
+radiation era.
+
+We also note that the symbol $\epsilon$ is used in a nearby but different literature ---
+that of \emph{decaying vacuum}, e.g.\ \citet{alcaniz2005} --- where $\Lambda$ is not
+constant. The family \eqref{eq:famille} is the constant-$\Lambda$ one, and at background
+level it coincides with the $\Lambda w$DM model constrained by \citet{kumar2025}.
+
+\section{Where the ambiguity enters}
+\label{sec:ou}
+
+Compressed analyses of this family use three ingredients, and every one of them takes
+$\omega_m$ as an input:
+\begin{enumerate}
+\item the shift parameter $\mathcal{R}=\sqrt{\Omega_m H_0^2}\,D_A(z_\ast)/c$, whose
+      $\sqrt{\Omega_m}$ prefactor is derived assuming $\rho_m\propto a^{-3}$;
+\item the fitting formulas for the drag and last-scattering sound horizons $r_d$, $r_\ast$
+      \citep{eh1998}, calibrated on $\Lambda$CDM grids;
+\item the fitting formula for $z_\ast$ \citep{hs1996}.
+\end{enumerate}
+In $\Lambda$CDM the input is unambiguous. In \eqref{eq:famille} it is not: the label
+$\Omega_m$ and the density that actually governs pre-recombination physics differ by
+\begin{equation}
+\frac{\Omega_m^{\rm rec}}{\Omega_m^{\rm label}} = a_\ast^{\,\epsilon},
+\qquad a_\ast\simeq 1/1091,
+\qquad \ln a_\ast \simeq -6.995 .
+\label{eq:ratio}
+\end{equation}
+For $|\epsilon|=0.005$ the two differ by $3.6\%$. An analyst must choose, and the literature
+does not say which. \citet{elgaroy2007} warned that $\mathcal{R}$ ``is not directly
+measurable from the cosmic microwave background, and its value is usually derived from the
+data assuming a spatially flat cosmology with dark matter and a cosmological constant'';
+we quantify what that warning costs in this family.
+
+\section{The measurement: four bookkeeping choices, one dataset}
+\label{sec:mesure}
+
+We use Pantheon+ (1580 SNe, $z>0.01$, calibrators excluded), the 13 DESI DR2 BAO
+measurements, Planck 2018 distance priors, and the SH0ES $H_0$ prior. Four configurations
+differ \emph{only} in bookkeeping:
+
+\begin{itemize}
+\item[(a)] \textbf{label}: the fitting formulas and $\mathcal{R}$ are fed the present-day
+  $\Omega_m$;
+\item[(b)] \textbf{coherent}: they are fed $\Omega_m a_\ast^{\epsilon}$, the density at
+  recombination;
+\item[(c)] \textbf{direct, no $\mathcal{R}$}: $r_s$ is obtained by integrating
+  $\int c_s\,\mathrm{d}a/(a^2H)$ in the model's own background, and $\mathcal{R}$ is dropped,
+  leaving $(\ell_A,\omega_b)$ with the marginal $2\times2$ covariance;
+\item[(d)] \textbf{direct, $\mathcal{R}$ coherent}: as (c) but retaining $\mathcal{R}$ fed
+  the recombination density.
+\end{itemize}
+
+The direct integrator is validated against the CAMB table it replaces: with
+$N_{\rm eff}=3.046$ and the massive-neutrino contribution removed from the matter budget,
+the ratio $r_s^{\rm direct}/r_s^{\rm CAMB}$ varies by $1.3\times10^{-6}$ across the whole
+$(\omega_b,\omega_m)$ grid, i.e.\ $0.01\sigma$ in $\ell_A$. Its inferred drag redshift,
+recovered by inverting the integrator against CAMB's $r_{\rm drag}$, lands in
+$[1057.8,1062.1]$ against Planck's $1059.9$ --- a check we did not impose.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lrrr}
+\toprule
+configuration & $\epsilon$ & $\sigma$ (opposable) & $\Delta\chi^2$ vs $\Lambda$CDM \\
+\midrule
+(a) label                 & $+0.0070$ & $2.33$ & $+9.36$ \\
+(b) coherent              & $-0.0040$ & $2.00$ & $+9.36$ \\
+(c) direct, no $\mathcal{R}$ & $-0.0120$ & $3.14$ & $+9.87$ \\
+(d) direct, $\mathcal{R}$ coherent & $-0.0040$ & $2.00$ & $+9.90$ \\
+\midrule
+\textbf{range} & \textbf{0.0190} & & \\
+\bottomrule
+\end{tabular}
+\caption{Same data, same model, four bookkeeping choices. The quoted $\sigma$ is the smaller
+of the profile half-width and the Wilks value $\sqrt{\Delta\chi^2}$; where the two disagree
+the profile is non-parabolic and the local $\sigma$ is not opposable.}
+\label{tab:quatre}
+\end{table}
+
+Table~\ref{tab:quatre} is the central measurement. The range is $0.019$; each configuration
+quotes $\sigma\simeq0.002$. Two remarks on honesty. First, configuration (c) reports a local
+significance of $6.0\sigma$ that we do \emph{not} quote: its profile is flat
+($\Delta\chi^2(2\sigma_{\rm local})/4 = 0.39$ instead of $1$) and the likelihood-ratio value
+is $3.14$. Second, a decomposition of (c)'s gain shows $126\%$ of it coming from the SH0ES
+term alone, with the supernovae worsening by $1.72$ and the BAO by $0.96$: that configuration
+buys $H_0$, it does not measure dilution. We report it because it belongs to the range, not
+because we believe it.
+
+\section{It is not information loss}
+\label{sec:pouvoir}
+
+The natural explanation --- compressed priors carry only geometry, the full likelihood also
+carries the acoustic peak \emph{heights} that pin $\omega_m$ --- is wrong, and we tested it
+rather than assert it.
+
+The premise is correct: evaluating the compressed $\chi^2$ at $\ln(10^{10}A_s)=3.000$ and
+$3.100$ returns $2.575399113$ both times, to machine precision. It carries no amplitude
+information whatsoever.
+
+The conclusion does not follow. Profiling $\omega_c$ with CAMB and the Planck
+TT,TE,EE$+$low-$\ell$ likelihood at fixed $\theta_\ast$, $\omega_b$, $n_s$, $\tau$, and
+profiling $\ln(10^{10}A_s)$ at each point, gives $\sigma(\omega_c)=0.0010$. The same
+profile through the compressed priors gives $\sigma(\omega_c)=0.0010$. The ratio is
+$1.00$; propagating the grid quantisation bounds it in $]0.5,1.25[$, far from any
+information-loss signature. As a consistency check, our $\sigma$ is $1.20$ times smaller
+than the marginalised Planck 2018 value $\omega_c=0.1200\pm0.0012$ \citep{planck2018}, which
+is what fixing four parameters should do; and the full $\chi^2$ at its $\Lambda$CDM optimum
+reproduces our frozen anchor to $0.005$.
+
+So both determinations of $\omega_m$ are equally sharp --- $0.7\%$ --- and the spread across
+bookkeeping choices is $0.019$, \emph{nineteen times} the available precision.
+
+\begin{equation}
+\boxed{\;\text{The ambiguity is of referent, not of precision.}\;}
+\end{equation}
+
+$\mathcal{R}$ and the fitting formulas demand one $\omega_m$; the family supplies two;
+the data adjudicate neither. Four analysts with identical data and identical $0.7\%$
+constraints obtain answers spanning $0.019$ --- not by noise, but by choice.
+
+\section{The baryon trap}
+\label{sec:baryons}
+
+A second failure mode is worth isolating because it is easy to fall into and it is large.
+If $\epsilon$ is applied to \emph{total} matter --- i.e.\ if $\Omega_m$ in \eqref{eq:famille}
+is read as baryons plus dark matter --- then baryons dilute anomalously too. But the same
+likelihood typically (i) compares $\omega_b$ to a prior measured under $\rho_b\propto a^{-3}$
+and (ii) integrates the sound horizon with $R_b=(3\omega_b/4\omega_\gamma)\,a$, a form that
+assumes the same. Consistency would require $R_b\propto a^{1+\epsilon}$. Measuring the
+difference:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrr}
+\toprule
+ & $|\epsilon|=0.003$ & $|\epsilon|=0.006$ \\
+\midrule
+$r_s$ under $R_b\propto a$ vs $a^{1+\epsilon}$ & $7.5\sigma$ in $\ell_A$ & $15.1\sigma$ \\
+$\omega_b$(recombination) vs the Planck prior & $4.8\sigma$ & $8.1\sigma$ \\
+\bottomrule
+\end{tabular}
+\caption{Cost of applying $\epsilon$ to total matter while treating baryons as standard
+elsewhere in the same likelihood.}
+\label{tab:baryons}
+\end{table}
+
+Both exceed anything the analysis is trying to measure. The remedy is to restrict $\epsilon$
+to the dark sector, as \citet{kumar2025} and \citet{yaoliu2025} do. We note, against our own
+convenience, that the often-invoked argument ``BBN forbids anomalous baryon dilution'' is
+weaker than it sounds: requiring the BBN and CMB determinations of $\omega_b$ to agree to
+$\sim2.5\%$ across the $\simeq12.5$ e-folds between the two epochs bounds only
+$|\epsilon_b|\lesssim2\times10^{-3}$, and we could find no published constraint on the baryon
+dilution exponent itself. The defect above is one of \emph{internal} inconsistency, not a
+violation of an external bound.
+
+\section{Confrontation with the published determinations}
+\label{sec:litterature}
+
+We collected every determination of this exponent we could verify at primary source,
+converting each into the convention of \eqref{eq:famille} by a declared rule, and split them
+by method.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{llrr}
+\toprule
+determination & method & $\epsilon$ & $\sigma$ \\
+\midrule
+\multicolumn{4}{l}{\emph{full likelihood, modified Boltzmann code}}\\
+\citet{tsiapi2019}, $\Lambda(H)$CDM2, Planck alone & CAMB, Planck 2015 & $+0.00148$ & $0.00252$\\
+\citet{tsiapi2019}, $\Lambda(H)$CDM2, joint        & CAMB, Planck 2015 & $-0.00020$ & $0.00181$\\
+\citet{tsiapi2019}, $\Lambda(H)$CDM1, joint$^\dagger$ & CAMB, Planck 2015 & $+0.00302$ & $0.00151$\\
+\citet{kumar2025}, PL18$+$DESI DR2                 & CAMB, Planck 2018 & $-0.00194$ & $0.00096$\\
+\citet{li2025}, Planck$+$DESI DR2$+$DESY5          & CAMB, NPIPE       & $-0.00126$ & $0.00075$\\
+\citet{li2024}, CMB$+$DESI DR1$+$DESY5$^\ddagger$  & CosmoMC           & $-0.00025$ & $0.00092$\\
+\midrule
+\multicolumn{2}{l}{\textbf{weighted mean}} & $\mathbf{-0.00064}$ & $\mathbf{0.00045}$\\
+\multicolumn{2}{l}{range} & \multicolumn{2}{l}{$0.0050$}\\
+\midrule
+\multicolumn{4}{l}{\emph{compressed distance priors}}\\
+\citet{yang2025}, five datasets                    & priors, DESI DR1 & $-0.00612$ & $0.00243$\\
+this work, configuration (a)                       & priors           & $+0.0060$ & $0.0030$\\
+this work, configuration (b)                       & priors           & $-0.0030$ & $0.0010$\\
+this work, configuration (c)                       & priors           & $-0.0100$ & $0.0020$\\
+this work, direct $r_s$, $\mathcal{R}$ label       & priors           & $+0.0020$ & $0.0020$\\
+\midrule
+\multicolumn{2}{l}{range} & \multicolumn{2}{l}{$\mathbf{0.0160}$}\\
+\bottomrule
+\end{tabular}
+\caption{$^\dagger$ Approximate conversion: this model's $Q$ is also sourced by baryons and
+radiation. We include it because it \emph{widens} the full-likelihood family and therefore
+makes our own point harder to make. $^\ddagger$ Nested predecessor of \citet{li2025}, same
+group; included and flagged. Conversions: $\epsilon=3\nu f$ or $\epsilon=-3w_{\rm dm}f$ with
+$f=\rho_{\rm dm}/\rho_m=0.8389$.}
+\label{tab:litterature}
+\end{table}
+
+The full-likelihood family is internally consistent ($\chi^2/\mathrm{dof}=1.87$ for five
+degrees of freedom) and spans $0.0050$; the compressed-prior family spans $0.0160$, a factor
+$3.23$. Excluding the flagged approximate conversion --- the comfortable choice, which we do
+not take --- the factor would be $4.67$ and $\chi^2/\mathrm{dof}=0.72$.
+
+Three caveats we grant in full. The six full-likelihood models are not identical to
+\eqref{eq:famille}: \citet{tsiapi2019} let $\rho_\Lambda$ run and carry a
+$\Omega_{\rm dm}/(1-\nu)$ prefactor in $E^2$, so at equal $\epsilon$ their $H(z)$ is not ours;
+\citet{kumar2025} and \citet{yaoliu2025} attach different perturbation prescriptions
+($c_s^2=0$ versus $c_s^2=w$) to the same background, and their intervals are not transferable
+to a background-only law. Their datasets differ from ours and from each other. And two of the
+six are the same group on nested data. Table~\ref{tab:litterature} therefore measures a
+\emph{dispersion}, and that is all we claim from it.
+
+We also record, because it is the single most instructive item in the compressed column:
+\citet{yang2025}'s headline $\epsilon=-0.0073^{+0.0029}_{-0.0033}$ at $2.4\sigma$ requires
+five datasets; on DESI$+$CMB$+$CC alone the same paper reports
+$\epsilon=+0.0023^{+0.0055}_{-0.0067}$ and concludes there is no significant deviation. A
+sign reversal inside a single publication, on nested data.
+
+\section{What we do not claim}
+\label{sec:limites}
+
+We do not measure $\epsilon$. None of our four configurations is a full likelihood, and the
+one that drops $\mathcal{R}$ is driven by the $H_0$ prior. We do not refute
+\citet{yang2025} or anyone else: our pipeline, data and nuisance treatment differ. We do not
+claim that the field has abandoned $\mathcal{R}$ --- DESI DR2 conditions its baseline on
+$(\theta_\ast,\omega_b,\omega_{bc})$ but explicitly tests the $(\mathcal{R},\ell_A,\omega_b)$
+compression and reports it equivalent for the late-time models they consider
+\citep{desidr2}. Dropping $\mathcal{R}$ is justified here narrowly, because $\sqrt{\Omega_m}$
+has no definition when matter does not dilute as $a^{-3}$.
+
+We also disclose a systematic of our own. The distance priors we use are those of
+\citet{zhaiwang2019}, whose $\ell_A=301.80845$ corresponds to $100\theta=1.040923$, i.e.\ the
+$\theta_{\rm MC}$ convention. Our $\chi^2$ predicts $\ell_A$ from CAMB's exact $z_\ast$ and
+$r_\ast$, i.e.\ in the $\theta_\ast$ convention, yielding $\ell_A=301.75963$ and
+$100\theta=1.041091$ at the $\Lambda$CDM optimum. The two conventions differ by
+$-0.54\sigma$ in $\ell_A$ in every evaluation. This offset is common to all four
+configurations and therefore does not generate the spread of Table~\ref{tab:quatre}, but it
+is present and we state it rather than let a reader discover it.
+
+\section{Recommendations}
+\label{sec:reco}
+
+\begin{enumerate}
+\item A published constraint on a matter dilution exponent obtained from compressed CMB
+      priors should state \emph{which} $\omega_m$ feeds $\mathcal{R}$, $r_d$, $r_\ast$ and
+      $z_\ast$, and should quote the systematic obtained by making the other choice. In this
+      family that systematic is of order $10^{-2}$ --- an order of magnitude above the
+      statistical error usually quoted.
+\item $\epsilon$ should be applied to the dark sector only, and the sound-horizon integrand
+      should use the same baryon law as the background (\S\ref{sec:baryons}).
+\item Where the compressed route is kept, $r_s$ should be integrated in the model's own
+      background rather than taken from a $\Lambda$CDM-calibrated fitting formula. This is
+      standard practice in the early-dark-energy literature and costs nothing; we validate an
+      implementation to $1.3\times10^{-6}$ against CAMB in \S\ref{sec:mesure}.
+\item Finally, we record a gap. A systematic search of the matter-creation literature
+      returned \emph{no} analysis of any such model against full CMB power spectra: every one
+      uses supernovae, BAO, $H(z)$, growth data, or a compressed CMB. The most recent example
+      we found still describes its CMB input as ``a compressed (also referred to as
+      geometrical or background) CMB likelihood, where the CMB is treated as a BAO
+      measurement at $z\approx1100$'' \citep{schiavone2026}. Given \S\ref{sec:pouvoir}, the
+      cost of that choice is not a loss of precision --- it is the introduction of a
+      referent that the data cannot fix.
+\end{enumerate}
+
+\section*{Data and reproducibility}
+Every number in this paper is produced by a script whose success criteria were frozen by
+hash before execution, and re-verified afterwards by an independent tool that was itself
+mutation-tested (five injected faults, five detected). Where a frozen criterion later proved
+ill-posed, the criterion was left untouched and the defect recorded, rather than the
+criterion rewritten.
+
+\begin{thebibliography}{99}
+\bibitem[Alcaniz \& Lima(2005)]{alcaniz2005} Alcaniz, J.~S., \& Lima, J.~A.~S. 2005,
+  Phys.\ Rev.\ D, 72, 063516, \texttt{astro-ph/0507372}
+\bibitem[DESI Collaboration(2025)]{desidr2} DESI Collaboration 2025, Phys.\ Rev.\ D, 112,
+  083515, \texttt{arXiv:2503.14738}
+\bibitem[Eisenstein \& Hu(1998)]{eh1998} Eisenstein, D.~J., \& Hu, W. 1998, ApJ, 496, 605
+\bibitem[Elgar\o y \& Multam\"aki(2007)]{elgaroy2007} Elgar\o y, \O., \& Multam\"aki, T.
+  2007, A\&A, 471, 65, \texttt{astro-ph/0702343}
+\bibitem[Hu \& Sugiyama(1996)]{hs1996} Hu, W., \& Sugiyama, N. 1996, ApJ, 471, 542
+\bibitem[Kumar et al.(2025)]{kumar2025} Kumar, U., Ajith, A., \& Verma, A. 2025,
+  \texttt{arXiv:2504.14419}
+\bibitem[Li et al.(2024)]{li2024} Li, T.-N., Wu, P.-J., Du, G.-H., et al. 2024, ApJ, 976, 1,
+  \texttt{arXiv:2407.14934}
+\bibitem[Li et al.(2025)]{li2025} Li, T.-N., et al. 2025, \texttt{arXiv:2510.11363}
+\bibitem[Lima et al.(1996)]{lima1996} Lima, J.~A.~S., Germano, A.~S.~M., \& Abramo, L.~R.~W.
+  1996, Phys.\ Rev.\ D, 53, 4287, \texttt{gr-qc/9511006}
+\bibitem[Planck Collaboration(2020)]{planck2018} Planck Collaboration 2020, A\&A, 641, A6,
+  \texttt{arXiv:1807.06209}
+\bibitem[Schiavone et al.(2026)]{schiavone2026} Schiavone, T., De Angelis, M., Escamilla,
+  L.~A., Montani, G., \& Di Valentino, E. 2026, \texttt{arXiv:2601.14222}
+\bibitem[Tsiapi \& Basilakos(2019)]{tsiapi2019} Tsiapi, P., \& Basilakos, S. 2019, MNRAS,
+  485, 2505, \texttt{arXiv:1810.12902}
+\bibitem[Yang et al.(2025)]{yang2025} Yang, W., Dai, W.-B., \& Wang, D. 2025,
+  \texttt{arXiv:2505.09879}
+\bibitem[Yao \& Liu(2025)]{yaoliu2025} Yao, Y., \& Liu, X. 2025, \texttt{arXiv:2507.00478}
+\bibitem[Zhai \& Wang(2019)]{zhaiwang2019} Zhai, Z., \& Wang, Y. 2019, JCAP, 07, 005,
+  \texttt{arXiv:1811.07425}
+\end{thebibliography}
+
+\end{document}

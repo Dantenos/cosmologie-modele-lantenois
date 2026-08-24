@@ -3658,3 +3658,130 @@ acquise pendant deux entrées que je me suis trompé.
   ×3,23 entre familles (#191). Aucun ne dépendait de l'explication.
 - **Reste aussi** : l'énoncé opérationnel du #190, « ε n'est pas identifiable par des priors
   comprimés ». Il est confirmé — mais pour une raison que j'avais mal nommée.
+
+## 24/08 (Claude Code) — #194 UN FACTEUR π/2 DANS L'AIRE DU CIEL, DEPUIS LE PREMIER ARTEFACT
+`verif_ciel.py` (gelé e3708ce14cd8), corrigé par `verif_ciel_v2.py` (e3708… → nouveau gel).
+Défaut trouvé en **recalculant** au lieu de recopier, sur demande d'Ed de tout revérifier.
+
+**LE DÉFAUT.** Tous les générateurs du ciel calculent la fraction de ciel de Stripe 82 par
+`(2 × 1,25 / 180) × (120/360)`. Cette formule traite la bande de déclinaison comme un
+**rectangle plat** : elle écrit Δdec/180 là où l'angle solide vaut (sin dec_max − sin dec_min)/2.
+L'écart est **exactement π/2**.
+
+| | affiché depuis v2 | correct |
+|---|---|---|
+| fraction de ciel de Stripe 82 | **0,46 %** | **0,727 %** |
+| facteur de concentration | **×57** | **×36,2** |
+| attente isotrope dans la bande | 7,3 SNe | 11,5 SNe |
+
+**Le comptage, lui, était juste : 416 SNe, vérifié.** C'est l'aire qui était fausse.
+**Le corpus surestimait donc la concentration de 57 %** — et la correction va **contre** sa
+propre rhétorique. C'est exactement ce que visait le soupçon « trop beau pour être vrai ».
+
+**PROPAGATION ET CORRECTION.** 10 occurrences dans 8 générateurs (v3, v3b, v4 ×3, v5, v6, v7,
+v8, v8b), corps corrigés, **aucun docstring gelé touché** (vérifié par comparaison AST avant
+et après). Les huit sorties du ciel portent désormais ×36,2, versions bilingues comprises.
+Deux générateurs **refusent** de se régénérer, et c'est leur garde-fou qui parle : v3 bute sur
+son ATTENDU D_C(z=1) = 3395 (valeur déjà connue comme fausse) et v8 sur un contraste qu'il
+exige > 1,32 alors que 1,32 EST la valeur mesurée que v8b documente. Leurs sorties ont
+néanmoins été mises à jour, v3b et v8b écrivant dans les mêmes fichiers.
+
+**UN DOCSTRING GELÉ PORTE LE NOMBRE FAUX, ET IL N'EST PAS AMENDÉ.** Celui de
+`genere_ciel_v8b.py` contient « l'avantage de Stripe 82 (×57 en densité de ciel) ». Le critère
+qu'il énonce porte sur le rapport local 1,32, **intact** ; le ×57 n'y est qu'une incise.
+Conformément à ce qui a été fait pour le #188 : **un critère gelé est une trace, pas une
+affirmation à réécrire.** Aucun critère n'a été amendé dans ce corpus, et celui-ci non plus.
+
+**LE GÉNÉRATEUR BILINGUE A REFUSÉ, ET IL AVAIT RAISON.** Le message de panne
+auto-diagnostique ajouté après les captures d'écran n'était **jamais entré dans la table de
+traduction**. Trois entrées ajoutées ; la table compte 114 entrées, **toutes déclenchées**, et
+la pureté des deux versions est vérifiée dans les deux sens.
+
+**LE GARDE-FOU A ÉTÉ TESTÉ AVANT D'ÊTRE CRU.** `verif_campagne.py` (gelé 45ec34f70716) rend
+55/55 sur les entrées #190 à #193 — un score qui ne vaut rien s'il ne peut pas échouer. Cinq
+mutations lui ont donc été injectées (gain +5 %, moyenne +2 %, ε déplacé, σ ×4, fraction hors
+bornes) : **5/5 détectées**. Le score a donc une valeur.
+
+**ET UN DÉFAUT DANS MON PROPRE CRITÈRE, ÉCRIT UNE HEURE PLUS TÔT.** Le docstring gelé de
+`verif_ciel.py` déclare Stripe 82 comme −50 < RA < 60 et |dec| < 1,26, quand le corpus emploie
+partout (RA > 300 OU RA < 60) et |dec| < 1,25 : dix degrés de RA d'écart, d'où 412 SNe comptées
+au lieu de 416. Non amendé ; `verif_ciel_v2.py` le remplace en service avec la définition du
+corpus. **Le constat du π/2 ne dépend pas de ce défaut** — il a été revérifié séparément avec
+la sélection du corpus, qui rend bien 416 SNe et le même facteur π/2.
+
+## 24/08 (Claude Code) — #195 SIX CORRECTIONS, DONT UN BIAIS DE CONVENTION DANS CHAQUE ÉVALUATION
+Vérification **adversariale** de toutes les citations et de tous les nombres employés depuis le
+#188, menée en exigeant une citation verbatim de la source primaire pour chaque affirmation.
+Score : 20 confirmées mot pour mot, **6 corrigées**, 1 invérifiable à la source.
+
+**1. LES PRIORS DE DISTANCE NE SONT PAS DE QUI LE CORPUS CROIT, ET NE SONT PAS « COHÉRENTS »
+AVEC EUX.** `test_wE_v3.py` déclare ses priors tirés d'arXiv:2405.06618 annexe E et
+« cohérents avec Chen-Huang-Wang ». La source primaire est **Zhai & Wang, arXiv:1811.07425,
+JCAP 07 (2019) 005, Eq. (31)**, chaîne `base_plikHM_TTTEEE_lowl_lowE_lensing` — Dinda ne fait
+que la reciter. Et la cohérence annoncée est fausse : **l_A = 301,80845 contre 301,471 ± 0,090
+chez Chen-Huang-Wang, soit 3,75σ d'écart.** (R ne diffère que de 0,12σ, ω_b concorde.)
+
+**2. ET IL Y A UN VRAI BIAIS DERRIÈRE CETTE ÉTIQUETTE — vérifié par mon propre calcul.**
+Le l_A de Zhai & Wang correspond à 100θ = **1,040923**, c'est-à-dire au **θ_MC** de CosmoMC
+(Planck : 1,04090 ± 0,00031). Or notre χ² calcule l_A = π·D_c(z\*)/r\* à partir des `zstar` et
+`rstar` **exacts de CAMB**, c'est-à-dire en convention **θ\***. Mesuré à l'optimum ΛCDM du
+#193 : notre pipeline rend l_A = **301,75963**, soit 100θ = **1,041091** — le θ\* de Planck
+(1,04110) à 10⁻⁵ près.
+> **Le corpus compare donc une prédiction en θ\* à une donnée en θ_MC : un décalage
+> systématique de −0,0488 sur l_A, soit −0,54σ, DANS CHAQUE ÉVALUATION de la vraisemblance,
+> depuis la construction de `test_wE_v3.py`.**
+**Ce défaut n'est PAS corrigé dans cette entrée, et c'est délibéré** : changer la convention
+déplacerait tous les nombres de la campagne. Il est mesuré, versé, et son effet sur ε sera
+quantifié séparément avant toute décision. Corriger en silence serait pire que le laisser.
+
+**3. LE 2,4σ DE YANG, DAI & WANG EXIGE CINQ JEUX DE DONNÉES, ET J'AI OMIS DE LE DIRE.**
+Leur ε = −0,0073 (+0,0029/−0,0033) demande DESI + CMB + chronomètres + SNIa + fσ₈. Avec
+**DESI+CMB+CC seuls**, ils publient **ε = +0,0023 (+0,0055/−0,0067)** et écrivent : *« This
+suggests that there is no significant deviation from the standard evolution of dark matter
+energy density. »* **Aucune déviation, et le signe opposé.** Mes entrées #188 à #191 ont
+résumé leur résultat comme « priors comprimés + DESI → −0,0073 » : **une omission qui convertit
+un nul en détection**. Rectifié ici. Fait notable : leur propre paire de résultats est un
+renversement de signe de plus, dans une seule publication.
+
+**4. C'EST DESI DR1, PAS DR2.** Yang et al. listent nommément les six traceurs de DR1. Le
+tableau du #191 écrit « DESI » sans préciser et une entrée écrit DR2 : corrigé.
+
+**5. CMBComp N'EST PAS UN OBJET PLANCK 2018.** Sa phrase d'exclusion — citée exactement, elle,
+au #190 et au #192 — est calibrée sur **SPT-3G D1 + ACT DR6 + Planck PR3 + lentillage PR4**.
+L'invoquer comme mise en garde sur les priors de distance **Planck 2018** est un cadrage faux.
+La phrase reste vraie ; c'est mon usage qui était abusif.
+
+**6. LA CITATION DE SCHIAVONE ET AL. EST TRONQUÉE.** Le texte exact dit *« a compressed (also
+referred to as geometrical **or background**) CMB likelihood »*. J'avais laissé tomber
+« or background ». Rétabli.
+
+**CE QUE J'ACCORDE EN PLUS, SUR MES PROPRES CONVERSIONS (règle 5).**
+- Le facteur f = ρ_dm/ρ_m employé au #191 et au #192 ne réalise qu'un accord **au premier
+  ordre** : ρ_m est une SOMME de deux lois de puissance, pas une loi de puissance. f dérive de
+  0,8389 à 0,8368 entre a = 10⁻³ et a = 1. Inoffensif ici, mais c'est une approximation et non
+  une identité.
+- Mon f = 0,8389 **inclut les neutrinos massifs** (ω_m de Planck vaut 0,1430 et contient
+  ω_ν ≈ 0,00064). La fraction de matière noire dans baryons+CDM seuls vaut 0,8429. Je garde
+  0,8389 parce que c'est la valeur **la plus petite**, donc celle qui réduit l'ε converti et
+  dessert la thèse défendue (règle 6) — et je le déclare au lieu de l'avoir choisie sans le dire.
+- **L'objection la plus profonde, accordée** : le Λ(H)CDM2 de Tsiapi & Basilakos fait **courir
+  ρ_Λ** (leur Eq. 15) et porte un préfacteur Ω_dm/(1−ν) dans E² (Eq. 16). À ε égal, son H(z)
+  n'est pas le nôtre. Convertir leur intervalle vers notre loi à Λ constante reproduit le taux
+  de dilution de la matière **et rien d'autre**. Le #191 le disait ; il fallait le dire plus fort.
+- Sur Lima, Germano & Abramo : γ\* = γ(1−β) ne vaut **que pour β constant** (leur Eq. 18), et
+  la correspondance ε = 3β est **dépendante de l'espèce** — pour le rayonnement (γ = 4/3) le
+  même β donne ρ_r ∝ a^(−4(1−β)). Ne pas transporter ε = 3β à travers l'ère de rayonnement.
+
+**CE QUI SURVIT INTACT.** La totalité du jeu B : le modèle de Kumar, Ajith & Verma est bien
+ΛwDM à Λ constante, w sur la matière noire seule, baryons exactement en a⁻³, c_s² = 0, CAMB
+modifié + Cobaya, w_dm = +0,00077 ± 0,00038 en PL18+DESI et −0,084 ± 0,035 en DESI+DESY5. Ma
+conversion **ε = −3w = −0,00231 ± 0,00114 est juste, signe compris**, et l'algèbre a été
+revérifiée. Le jeu C (les tables de Tsiapi), le jeu D2 (Elgarøy & Multamäki), le jeu D3 (la
+compression DESI DR2) et le jeu F (Planck 2018) sont confirmés mot pour mot.
+
+**UN DÉTAIL TROUVÉ EN CHEMIN, À NE PAS « CORRIGER ».** La prose de Zhai & Wang annonce un
+vecteur (l_a, R, ω_b, n_s) alors que les nombres qu'elle imprime sont (R, l_A, ω_b, n_s).
+**Notre ordre suit les nombres, donc il est juste, et c'est l'étiquette de la source qui est
+fausse.** Consigné ici pour qu'aucun relecteur futur ne « répare » ce qui fonctionne.
+Également : `ZSTAR = 1089,91` dans `test_wE_v3.py` est du **code mort** — jamais référencé, le
+χ² appelant `z_star(ob, om)`. Laissé en place pendant la campagne, signalé pour retrait.

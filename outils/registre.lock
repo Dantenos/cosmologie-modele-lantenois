@@ -193,5 +193,10 @@
   "sha256": "1b806979d76b4b1581f4cce424be09fedfc8373e06ea6d27ea4ad508af400b07",
   "gele_le": "2026-08-24T02:00:00",
   "extrait": "genere_audience v1 — le visuel du Rôle (prédictions futures et leur suivi), 24/0"
+ },
+ "scripts/mcmc_planck_beta1.py": {
+  "sha256": "200263d74265f91088b4fa0377a51184674f37b2f65088932f36e57ec424655f",
+  "gele_le": "2026-08-24T02:32:38",
+  "extrait": "LA DECOUVERTE TENTEE — beta_1 SUR LE PLANCK COMPLET : la tension interne est-ell"
  }
 }

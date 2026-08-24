@@ -4,12 +4,14 @@
 \usepackage{amsmath,amssymb}
 \usepackage[margin=2.4cm]{geometry}
 \usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{natbib}
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
 
-\title{\bf Falsification-as-code:\\
-hash-frozen success criteria,\\
-and nine ways a pre-registered criterion still fails}
+\title{\bf Pre-registered scientific criteria are specifications:\\
+eleven observed failures from one cosmology campaign,\\
+mapped onto known specification pathologies}
 \author{\'Edouard Lantenois\thanks{\texttt{github.com/Dantenos}}}
 \date{August 2026}
 
@@ -18,242 +20,311 @@ and nine ways a pre-registered criterion still fails}
 
 \begin{abstract}
 \noindent
-Pre-registration is normally a document. We report a working protocol in which it is a
-\emph{hash}: the block of success criteria lives in the analysis script's own docstring, is
-frozen by SHA-256 before execution, and a verifier fails the build if it has moved
-afterwards. Amendments are possible but public. Over one cosmology corpus --- 88 frozen
-criteria, 198 numbered register entries, 78 adjudicated attacks --- the protocol behaved
-very differently from what its designers expected. It did not mainly catch \emph{wrong
-results}; it caught \emph{ill-posed criteria}. We give a taxonomy of nine distinct ways a
-pre-registered criterion can be formally satisfied while establishing nothing, each with a
-worked example that occurred: a criterion on a non-identifiable parameter; a bound unfit for
-the data's binning; a comparison against an unoptimised reference; the wrong comparator; a
-boundary minimum on a branch that was closed; two mutually incompatible requirements frozen
-together; a docstring asserting 60\,000 grid points while its own code used 240\,001; a
-validation passing at $10^{-4}$ relative while measuring a quantity that does not exist; and
-a verdict decided by the fourteenth decimal of a floating-point comparison. We then report
-the countermeasures that survived contact: mutation-testing the guardrails themselves,
-generic rather than hand-written detection of unsubstituted markers, regular expressions
-instead of string equality, testing the refuting branch before the confirming one, and
-declaring the direction of every substitution in advance --- and, after being caught
-needing it, a declared stopping rule, because hash-freezing protects each study and not the
-series of attempts. The protocol's cost is that
-studies stop themselves; over the corpus, five did. Its benefit is that 69 claims were
-retracted or downgraded, several of them the corpus's own headline results, and most of them
-by the analyst's own machinery rather than by a referee. We claim no generality beyond
-$N=1$, and we report what the protocol does \emph{not} catch.
+We report eleven ways a hash-frozen success criterion failed during one intensive cosmology
+campaign --- 89 frozen criteria, 201 register entries, 81 adjudicated attacks over two days
+--- and we map every one of them onto a pathology already named outside our field.
+\textbf{None of the eleven is a new failure mode.} One of them --- a validation passing at
+$10^{-4}$ relative while the quantity it converts does not exist --- is \emph{vacuity}, named
+by \citet{beer1997} in 1997, whose canonical example (``every request is eventually
+acknowledged'', satisfied by a system that never issues requests) is ours with a
+floating-point tolerance in place of a temporal operator. Another is code--comment
+inconsistency; another is a parameter on a physical boundary \citep{feldman1998}; another an
+unsatisfiable specification; another a flaky test on floating-point equality. Our claim is
+therefore a \emph{mapping}, not a discovery: pre-registered scientific acceptance criteria
+are specifications, and they inherit the entire known pathology of specifications. We argue
+this is worth stating because the existing taxonomies of pre-registration failure
+\citep{yamada2018,bakker2020} are \emph{behavioural} --- they classify what a researcher does
+--- whereas the failures we observed are \emph{structural}: they classify what the criterion
+\emph{is}, and every one occurred with no misconduct whatever. We give the instance count,
+the class each instance belongs to, and which existing tooling would have caught it. We
+report one protocol invariant for which we could find no prior art --- the criteria block is
+immutable while the script body stays freely mutable --- and we explicitly decline to claim
+the rest of the protocol, which is an integration of OSF-style registration,
+continuous-analysis CI \citep{bj2017} and design by contract. Finally we report the one
+failure that is not a criterion failure at all: after three frozen designs blocked on the
+same question, a fourth would have passed, and writing it would have been p-hacking one level
+up. Hash-freezing protects each study; it does not protect the series.
 \end{abstract}
 
-\section{The protocol}
+\section{The protocol, reported as a design note}
+\label{sec:protocole}
 
-The unit is a script. Its docstring opens with a block headed \textsc{crit\`eres
-pr\'e-enregistr\'es}, containing: the validations that must pass before anything is
-published, the criteria themselves --- required to be \emph{exhaustive} and
-\emph{exclusive}, so that every possible outcome maps to exactly one written verdict --- and
-a declaration of what the study will \emph{not} claim.
+We state the mechanism briefly, and we do not claim it. The unit is a script. Its docstring
+opens with a block of success criteria: the validations that must pass before anything is
+published, the criteria themselves --- required \emph{exhaustive} and \emph{exclusive}, so
+that every outcome maps to exactly one written verdict --- and a declaration of what the
+study will not claim. \texttt{freeze} extracts the docstring by AST and records its SHA-256;
+\texttt{verify} fails CI if the hash moved; amendments are permitted but written to a public
+log with a mandatory justification.
 
-Three commands operate on it:
-\begin{itemize}
-\item \texttt{freeze} extracts the docstring by AST, hashes it, and records
-      \texttt{path $\to$ sha256} in a lock file;
-\item \texttt{verify} recomputes and exits non-zero if any hash moved --- blocking in CI;
-\item \texttt{freeze -{}-amend} allows a criterion to change, but writes the old and new
-      hashes, with a mandatory justification, to a public retraction file.
-\end{itemize}
+Every component is off the shelf. Criteria inside the executable artefact is design by
+contract, and in Python specifically it is \texttt{doctest}. Hash-freezing an analysis plan
+is OSF registration, and in cryptographic form OriginStamp \citep{originstamp} and
+CryptSubmit \citep{cryptsubmit}; a search of OpenAlex returns of order a hundred
+physics and cosmology deposits already doing it, several from 2026 combining a SHA-256
+manifest with an OpenTimestamps attestation. CI enforcement of a research artefact is
+continuous analysis \citep{bj2017} and the Popper convention \citep{popper}. A public
+amendment log with justification is OSF's withdrawal mechanism, and reporting deviations has
+its own guidance literature \citep{willroth2024}. Fixing acceptance criteria before looking
+is blind analysis, standard in particle physics for two decades
+\citep{klein2005,maccoun2015} and in cosmology since DES \citep{muir2020}.
 
-Two consequences follow immediately and are worth stating because they are the whole point.
-First, editing the criteria \emph{after} seeing the result is not forbidden --- it is
-\emph{recorded}. Over the corpus reported here, the amendment channel was used zero times:
-88 frozen criteria all carry the hash of their first freeze. Second, the body of a script may
-be corrected freely; only the criteria are immutable. This separation is what makes the
-protocol usable, and it is also where the first surprise came from.
+\paragraph{The one invariant we could not find elsewhere.} Prior art freezes the
+\emph{artefact} --- the plan, the code, the manifest. We freeze only the \emph{acceptance
+predicate}, and leave the body freely mutable. That asymmetry is what makes correction and
+pre-registration compatible: a script may be debugged, re-parameterised and re-run without
+touching what would count as success. Over 89 frozen criteria the amendment channel was used
+zero times --- not because the criteria were always right, but because being wrong was
+survivable without editing them. We offer this asymmetry as the protocol's only contribution
+and would not defend more.
 
-\section{The surprise: it caught criteria, not results}
+\section{The thesis: criteria are specifications}
+\label{sec:these}
 
-We expected the protocol to catch results that drifted from their stated success condition.
-It did that rarely. What it caught, repeatedly, was criteria that were \emph{formally
-satisfiable without establishing anything}. Nine distinct failure modes occurred, and they do
-not reduce to carelessness --- each was written by an analyst trying to be rigorous, and each
-passed a reading at the time it was frozen.
+A pre-registered criterion is a predicate a computation must satisfy for a claim to count as
+established. That is what a specification is. The consequence is immediate and, as far as we
+can find, unstated: \textbf{pre-registered scientific criteria inherit the entire known
+pathology of specifications} --- vacuous satisfaction, unsatisfiability, drift from the
+implementation, insufficient sensitivity --- together with the detection literature attending
+each.
+
+We arrived at this the slow way. We wrote eleven criteria that failed, catalogued them as
+though they were new, and discovered on checking that every one already had a name.
+
+\section{Eleven observed instances, and the class each belongs to}
+\label{sec:mapping}
 
 \begin{table}[t]
 \centering
 \small
-\begin{tabular}{clp{8.1cm}}
+\begin{tabular}{p{4.9cm}p{3.6cm}p{5.9cm}}
 \toprule
-\# & failure mode & what happened \\
+observed instance & named class & where the name comes from \\
 \midrule
-1 & non-identifiable parameter &
-  A criterion was frozen on a quantity the data could not constrain. It was satisfiable by
-  any outcome, so it excluded nothing. \\
-2 & bound unfit for the binning &
-  A goodness-of-fit bound of the form $\chi^2/(N+17)$ was frozen for a dataset with 22 bins.
-  The offset was inherited from a different data configuration and made the bound
-  meaningless at that $N$. \\
-3 & unoptimised reference &
-  A validation compared the model at a \emph{fixed} parameter point against a reference at
-  its \emph{optimum}. The gap it measured was the optimisation, not the physics. \\
-4 & wrong comparator &
-  A validation was run against a comparator that reintroduced a radiation term the model had
-  removed. It failed for a reason unrelated to the hypothesis. \\
-5 & boundary minimum &
-  A criterion returned a very tight constraint. Re-examination showed the minimum sat on the
-  edge of the accessible domain: one branch of the parameter was closed by the
-  implementation, so the constraint was one-sided while being reported as two-sided. \\
-6 & mutually incompatible requirements &
-  Two constraints were frozen in the same block --- a grid of 41 points, and a tolerance of
-  $\pm0.3$ --- that could not both be met. The study could not succeed by construction. \\
-7 & docstring/code divergence &
-  A docstring asserted ``a dense grid (60\,000 points, log)''; the code, after successive
-  corrections to the body, used 240\,001. \textbf{The criterion would have been satisfied by
-  something other than what it stated.} \\
-8 & a check that measures nothing &
-  A validation required a conversion factor to be constant to better than $2\%$. It passed at
-  $0.010\%$. The quantity it converted did not exist: the source parameter had been misread,
-  and there was no lever arm to convert. \emph{A validation that passes perfectly while
-  measuring a phantom is more dangerous than one that fails.} \\
-9 & a verdict decided by rounding &
-  Two thresholds were compared with \texttt{>=} against floating-point grid arithmetic. The
-  measured values were exactly $2$ and exactly $1$; the computed values were
-  $1.9999999999999791$ and $0.9999999999999836$. Both comparisons failed, and both failures
-  fell in the direction convenient to the analyst. \\
+Criterion frozen on a quantity the data cannot constrain; satisfiable by any outcome. &
+\textbf{Non-identifiability} & standard estimation theory \\
+\addlinespace
+A goodness-of-fit bound $\chi^2/(N+17)$ frozen for a 22-bin dataset; the offset came from a
+different data configuration. &
+\textbf{Reduced-$\chi^2$ misuse} & \citet{andrae2010} \\
+\addlinespace
+A validation comparing the model at a \emph{fixed} parameter point against a reference at its
+\emph{optimum}; the gap it measured was the optimisation. &
+\multirow{3}{3.4cm}{\textbf{Weak or mismatched comparator} --- these two are one class, and a
+referee would say so} &
+\multirow{3}{5.7cm}{\citet{dacrema2019}; the comparator-bias domain of clinical
+risk-of-bias instruments} \\
+A validation run against a comparator that reintroduced a term the model had removed. & & \\
+ & & \\
+\addlinespace
+A tight constraint whose minimum sat on the edge of the accessible domain; one branch was
+closed by the implementation, so a one-sided result was reported as two-sided. &
+\textbf{Parameter on a physical boundary} & \citet{feldman1998}, whose entire subject is one-
+versus two-sided intervals at a boundary \\
+\addlinespace
+Two requirements frozen in one block --- a 41-point grid and a $\pm0.3$ tolerance --- that
+could not both be met. The study could not succeed by construction. &
+\textbf{Unsatisfiable specification} & \citet{rozier2007}; satisfiability checking is the
+standard sanity check \\
+\addlinespace
+A docstring asserting ``a dense grid (60\,000 points, log)'' while the code, after successive
+body corrections, used 240\,001. &
+\multirow{3}{3.4cm}{\textbf{Specification drift} / code--comment inconsistency} &
+\multirow{3}{5.7cm}{\citet{panthaplackel2021}, and an active detection subfield} \\
+A verification tool frozen with a sky-region definition differing by $10^\circ$ in right
+ascension from the one the corpus used everywhere else. & & \\
+ & & \\
+\addlinespace
+A validation requiring a conversion factor constant to $2\%$; it passed at $0.010\%$. The
+quantity it converted did not exist. &
+\textbf{Vacuity} & \citet{beer1997,kupferman2003}; twenty-five years of detection algorithms \\
+\addlinespace
+Two thresholds compared with \texttt{>=} on floating-point grid arithmetic; true values
+exactly $2$ and $1$, computed values $1.9999999999999791$ and $0.9999999999999836$. Both
+failed, both in the direction convenient to the analyst. &
+\textbf{Flaky test}, floating-point equality & \citet{luo2014}; a standard lint \\
+\addlinespace
+A validation requiring an uncertainty to shrink by a factor $k$; the scan grid could not
+resolve an uncertainty below one step, so the requirement receded as fast as the quantity it
+measured. &
+\textbf{Insufficient test sensitivity} & code verification uses order-of-accuracy under grid
+refinement, not a single-grid tolerance \citep{salari2000,roache1998} \\
 \bottomrule
 \end{tabular}
-\caption{Nine ways a pre-registered criterion was formally satisfied, or formally decided,
-without establishing what it was written to establish. Every row occurred in one corpus over
-two days of intensive use.}
-\label{tab:vices}
+\caption{Eleven instances observed in one campaign, mapped onto seven named classes. The
+compression from eleven to seven is deliberate and we perform it ourselves: presenting them
+as eleven distinct \emph{modes} would misrepresent them.}
+\label{tab:mapping}
 \end{table}
 
-Three further modes appeared during the writing of this paper and belong in the taxonomy
-although we have not numbered them. The third is the gravest, because it is a failure of the
-protocol itself rather than of any one criterion:
+Table~\ref{tab:mapping} is the paper. Three observations follow.
 
-\begin{itemize}
-\item \textbf{a frozen definition diverging from the operative one.} A verification tool was
-  frozen with a declared sky-region definition differing from the one the corpus used
-  everywhere else by $10^\circ$ in right ascension. It counted 412 objects where the corpus
-  counted 416. The tool was right about the defect it had found and wrong about the
-  definition it used to find it.
-\item \textbf{a validation blocked by its own resolution.} A test required an uncertainty to
-  shrink by a factor $k$; the scan grid could not resolve an uncertainty smaller than one
-  grid step, so at $k=4$ the measured factor was $2.0$ instead of $2.8$--$5.6$. The
-  validation correctly refused to conclude on a measurement its own mesh could not deliver.
-  Notably, an \emph{independent} signature in the same run --- the $\chi^2$ gains scaling as
-  $k^2$ to three decimals --- did establish that the manipulation was operative. We did not
-  substitute it: doing so is failure mode 7 in a different costume.
-\item 	extbf{the protocol's own failure mode: iterating designs until one passes.} The
-  question above was attempted three times. The first design blocked on a grid floor; the
-  second, with a ten-fold finer grid, blocked because the floor had been \emph{displaced}
-  rather than lifted; the third replaced the grid-walk estimator with a self-validating
-  parabolic fit --- which worked, with no floor at all, its uncertainty scaling as
-  $	imes2.00$ then $	imes4.00$ exactly --- and blocked because its own validation demanded
-  exact reproduction of the \emph{grid} values the new estimator had deliberately abandoned.
-  That last block is failure mode 6, authored by us after we had catalogued it.
+\paragraph{Vacuity is the one that should worry practitioners most.} \citet{beer1997} define
+vacuity as a specification ``satisfied too easily, or vacuously'', and warn that it
+``misleads users of model-checking into thinking that a system is correct''. Their canonical
+example --- ``every request is eventually followed by an acknowledgment'' is satisfied
+vacuously by a system that never generates requests --- is precisely our instance, with a
+tolerance in place of a temporal operator. Our validation passed at $10^{-4}$ relative and
+established nothing. \emph{A criterion that passes perfectly while measuring a phantom is
+more dangerous than one that fails}, and formal methods has known this since before the
+pre-registration movement existed. To our knowledge this is the first reported instance of
+vacuity in a pre-registered \emph{scientific} acceptance criterion; that is a far smaller
+claim than a new failure mode, and it is the true one.
 
-  A fourth design tolerating one grid step would have passed; every other validation already
-  did. We did not write it, and that is the point. 	extbf{Hash-freezing protects each study
-  in isolation and does not protect against the series.} What is frozen is every attempt, not
-  the decision to attempt again. Iterating designs until one passes is p-hacking one level up,
-  and pre-registration as usually practised has no defence against it. The only available
-  guard is a declared stopping rule. We adopted one --- \emph{at the third block on the same
-  question, stop and record the status as not established} --- and we note that it is
-  arbitrary, that its whole value lies in being public, and that we adopted it only after
-  needing it. The cost is real: a visible and coherent signature, an interval that stayed
-  strictly invariant under a four-fold reduction in uncertainty, remains unusable. We prefer
-  that cost to the alternative, which would have been a verdict obtained by design selection.
-\end{itemize}
+\paragraph{Existing tooling would have caught four of the seven classes.} Specification drift
+is detectable by code--comment inconsistency tools; unsatisfiability by a satisfiability check
+on the criteria block; floating-point flakiness by a lint; insufficient sensitivity by the
+order-of-accuracy discipline of code verification. Vacuity has dedicated algorithms. None of
+this tooling is applied to pre-registered scientific criteria today, and we know of no reason
+it could not be.
 
-\section{What actually works}
+\paragraph{What no tooling would have caught.} Non-identifiability, the boundary minimum and
+the weak comparator are statistical, not syntactic. The boundary minimum in particular was
+found only because a human reader remarked that a result looked \emph{too good to be true};
+every automated check had passed it.
 
-The countermeasures below are reported because they survived; several plausible-sounding
-alternatives did not.
+\section{How this differs from existing pre-registration taxonomies}
+\label{sec:yamada}
 
-\paragraph{Mutation-test the guardrails.} A verification tool returning ``55/55, no blocking
-failure'' establishes nothing until it is shown capable of failing. We injected five faults
-into the data files the tool reads --- a gain inflated by $5\%$, a weighted mean by $2\%$, a
-central value displaced, an uncertainty multiplied by four, a fraction pushed out of bounds
---- and required all five to be caught. All five were. Only then did the $55/55$ acquire
-meaning. \emph{We recommend this as mandatory, not optional.} It is the direct countermeasure
-to failure mode 8.
+\citet{yamada2018} gives four ways to ``crack'' pre-registration: selective reporting,
+infinite re-experimenting, overissuing, and pre-registering after results are known.
+\citet{bakker2020} enumerate 29 researcher degrees of freedom and find that structured
+formats reduce but do not eliminate them; \citet{claesen2021} audit adherence in the first
+generation of pre-registered studies; \citet{wicherts2016} give a 34-item checklist.
 
-\paragraph{Detect generically, never from a hand-written list.} A template-substitution
-check enumerated five placeholder names by hand. A sixth was added to the template later; the
-check passed; the published page failed at line 1 with every placeholder unsubstituted. The
-replacement check is a single regular expression over \texttt{\_\_[A-Z\_]+\_\_} and cannot
-miss a placeholder it has never heard of. The general rule: \emph{a check must be able to
-detect the case its author did not think of.}
+These are \emph{behavioural} taxonomies: they classify what a researcher does, and their
+modes are, in Yamada's own framing, things a malicious researcher might do. The failures we
+report are \emph{structural}. They classify what the criterion \emph{is}, and every one
+occurred with no misconduct: each was written by an analyst trying to be rigorous, each
+passed a reading at the moment it was frozen, and several were caught by the analyst's own
+machinery days later. That distinction is the gap we claim, and it is the only one.
 
-\paragraph{Regular expressions, never string equality, on text.} A guardrail written as an
-equality test against a line of prose broke silently when the file gained a line break. Every
-textual check in the corpus is now a regex insensitive to line breaks. This is rule 7 of the
-corpus's own constitution and it was written after the failure, not before.
+One adjacency is not a coincidence. Yamada's ``infinite re-experimenting'' --- repeating an
+experiment until the data cooperate --- is the behavioural sibling of \S\ref{sec:serie},
+where designs rather than datasets are repeated until one passes. The family resemblance is
+exact; the object differs.
 
-\paragraph{Test the refuting branch first.} Where a study is designed to confirm one of the
-analyst's own readings, the code evaluates the branch that would refute it \emph{before} the
-branch that would confirm it, and the confirmation threshold is set stricter than the
-refutation threshold (in our case a factor 3 against a factor 1). Twice this ordering
-mattered: a study of ours returned \textsc{explication r\'efut\'ee} on a mechanism we had
-asserted in two previous entries without ever testing it.
+\section{The failure that is not a criterion failure}
+\label{sec:serie}
 
-\paragraph{Declare the direction of every substitution.} Where a value must be assumed, the
-protocol requires it to be chosen \emph{against} the thesis being defended, and requires the
-choice to say so. A conversion factor of $0.8389$ was retained over an equally defensible
-$0.8429$ on exactly this ground; stating the reason is what distinguishes a conservative
-choice from a lucky one.
+One question in the campaign was attempted three times. The first design blocked on a grid
+floor. The second, with a ten-fold finer grid, blocked because the floor had been
+\emph{displaced} rather than lifted. The third replaced the grid-walk estimator with a
+self-validating parabolic fit --- which worked, with no floor at all, its uncertainty scaling
+as $\times2.00$ then $\times4.00$ exactly --- and blocked because its own validation demanded
+exact reproduction of the \emph{grid} values the new estimator had deliberately abandoned.
+That last block belongs to the unsatisfiability class, and we authored it after cataloguing
+that class.
 
-\paragraph{Let the study stop itself, and publish the stop.} Five studies in this corpus
-halted on their own validations and published nothing. In each case the stop was informative:
-one revealed that an anchor was being compared at the wrong optimum, another that a grid
-could not resolve what it was asked to measure. \emph{A protocol whose studies never stop is
-not being enforced.}
+A fourth design tolerating one grid step would have passed; every other validation already
+did, and the answer it would have returned was visible in the third design's output. We did
+not write it.
 
-\section{Cost and benefit}
+\textbf{Hash-freezing protects each study in isolation and does not protect the series.} What
+is frozen is every attempt, not the decision to attempt again. Iterating designs until one
+passes is p-hacking one level up, and pre-registration as usually practised has no defence
+against it --- each attempt is impeccably pre-registered. The only guard we can see is a
+declared stopping rule. We adopted one, \emph{at the third block on the same question, stop
+and record the status as not established}; we note that it is arbitrary, that its whole value
+lies in being public, and that we adopted it only after needing it. The cost is real: a
+signature that stayed strictly invariant under a four-fold reduction in uncertainty remains
+unusable. We prefer that cost to a verdict obtained by design selection.
 
-The cost is real. Studies stop. Criteria that were reasonable when written turn out to be
-ill-posed and cannot be repaired in place --- the corpus's rule is that a frozen criterion is
-a \emph{record}, not a claim to be rewritten, so a superseded tool is replaced rather than
-amended, and both remain in the register. This produces visible clutter, and we consider the
-clutter a feature: the amendment count stayed at zero not because criteria were always right
-but because being wrong was survivable without editing them.
+\section{Practices we adopted, and their prior art}
+\label{sec:pratiques}
 
-The benefit is measured on one axis we can report honestly: 69 claims were refuted,
-downgraded or corrected, and the majority were caught by the analyst's own machinery. Several
-were the corpus's headline results:
-\begin{itemize}
-\item a model leading a 25-entry comparison table was found to owe $8.62$ of its $9.84$ units
-  of advantage to a calibration artefact --- after three adversarial audits had validated it
-  without leaving the flawed pipeline;
-\item a sky-area fraction was found to be wrong by a factor $\pi/2$, having been copied
-  through six generations of artefacts, with the effect that the corpus had been
-  \emph{overstating its own anomaly} by $57\%$;
-\item a mechanism the analyst had asserted in two successive entries was refuted by the first
-  test ever applied to it.
-\end{itemize}
-We note without irony that the third of these is the protocol working exactly as intended and
-the analyst not having done so.
+We list these for completeness and attribute each; none is ours.
 
-\section{What the protocol does not catch}
+\emph{Mutation-test the verifier before believing its pass rate.} A tool returning ``55 of
+55, no blocking failure'' establishes nothing until it is shown capable of failing; we
+injected five faults and required all five to be caught. This is mutation testing
+\citep{jia2010} applied to the oracle rather than the code, which is \citet{knauth2009}; and
+mutating checkers specifically to detect vacuity is \citet{date2010} --- that is, the
+combination of our vacuity class with this practice was published in 2010. It has also been
+applied to scientific software \citep{hook2009}. We report only that we found it necessary.
 
-It is mechanical. It does not read equations, does not judge physics, and cannot tell whether
-a model is interesting. In this corpus, the most consequential single audit was triggered not
-by any tool but by a human reader saying the results looked \emph{too good to be true}; that
-audit found a boundary minimum (failure mode 5) that every automated check had passed. A
-later literature verification killed a planned paper outright by establishing that all four
-of its claimed results had been published, the oldest in 2015 and the newest four days
-earlier. Neither of those is reachable by hashing.
+\emph{Detect generically, never from a hand-written list.} A template check enumerating five
+placeholder names by hand passed while a sixth, added later, went unsubstituted and broke the
+published page at its first line. The replacement is one regular expression and cannot miss a
+placeholder it has never heard of.
 
-There is also a specific hazard the protocol creates. Because criteria are immutable, there is
-pressure to write them loosely enough to be safe. We countered this by requiring criteria to
-be \emph{exhaustive and exclusive} --- every outcome named in advance, including the ones that
-refute the analyst --- but we cannot claim the pressure is eliminated, only that it is visible.
+\emph{Test the refuting branch before the confirming one}, and set the confirmation threshold
+stricter than the refutation threshold. Twice this ordering mattered; once it returned a
+refutation of a mechanism we had asserted in two previous register entries without ever
+testing it.
 
-\section{Reproducibility}
+\emph{Declare the direction of every substitution.} Where a value must be assumed, choose it
+against the thesis being defended, and say that this is why.
 
-The protocol is 120 lines of Python and depends on nothing but the standard library. Its own
-success criteria are frozen by itself (commit 0): it succeeds if freeze-then-verify passes on
-at least two real scripts and if falsifying a criterion is detected with a non-zero exit; it
-fails and is not published if a false positive appears on an unmodified file. Both conditions
-have held over 88 frozen criteria.
+\section{Limits}
+
+$N=1$: one corpus, one analyst, two days. We cannot say how the eleven instances distribute in
+general, only that they occurred and that none required bad faith. The instance count is the
+empirical content: 89 criteria frozen, eleven failures of the kinds above, and five studies
+that halted on their own validations and published nothing.
+
+The protocol is also mechanical. It does not read equations and does not judge physics. In
+this campaign the most consequential single audit was triggered by a human reader, and a
+literature verification killed a planned companion paper outright by establishing that all
+four of its claimed results were already published --- the oldest in 2015, the newest four
+days earlier. Neither is reachable by hashing. The same kind of verification produced this
+paper's final form: it established that none of our eleven failures was a new mode, and the
+paper is better for it.
+
+\begin{thebibliography}{99}
+\bibitem[Andrae et al.(2010)]{andrae2010} Andrae, R., Schulze-Hartung, T., \& Melchior, P.
+  2010, \texttt{arXiv:1012.3754}
+\bibitem[Bakker et al.(2020)]{bakker2020} Bakker, M., et al. 2020, PLOS Biology, 18,
+  e3000937, \texttt{doi:10.1371/journal.pbio.3000937}
+\bibitem[Beaulieu-Jones \& Greene(2017)]{bj2017} Beaulieu-Jones, B.~K., \& Greene, C.~S.
+  2017, Nature Biotechnology, 35, 342, \texttt{doi:10.1038/nbt.3780}
+\bibitem[Beer et al.(1997)]{beer1997} Beer, I., Ben-David, S., Eisner, C., \& Rodeh, Y.
+  1997, in CAV 1997, \texttt{doi:10.1007/3-540-63166-6\_28}
+\bibitem[Claesen et al.(2021)]{claesen2021} Claesen, A., et al. 2021, Royal Society Open
+  Science, 8, 211037, \texttt{doi:10.1098/rsos.211037}
+\bibitem[Ferrari Dacrema et al.(2019)]{dacrema2019} Ferrari Dacrema, M., Cremonesi, P., \&
+  Jannach, D. 2019, in RecSys 2019, \texttt{doi:10.1145/3298689.3347058}
+\bibitem[Feldman \& Cousins(1998)]{feldman1998} Feldman, G.~J., \& Cousins, R.~D. 1998,
+  Phys.\ Rev.\ D, 57, 3873, \texttt{doi:10.1103/PhysRevD.57.3873}
+\bibitem[Gipp et al.(2017)]{cryptsubmit} Gipp, B., Breitinger, C., Meuschke, N., \&
+  Beel, J. 2017, in JCDL 2017, \texttt{doi:10.1109/JCDL.2017.7991588}
+\bibitem[Gipp et al.(2018)]{originstamp} Gipp, B., et al. 2018, it --- Information
+  Technology, 60, 47, \texttt{doi:10.1515/itit-2018-0020}
+\bibitem[Hook \& Kelly(2009)]{hook2009} Hook, D., \& Kelly, D. 2009, in ICSE SECSE 2009,
+  \texttt{doi:10.1109/SECSE.2009.5069163}
+\bibitem[Jia \& Harman(2010)]{jia2010} Jia, Y., \& Harman, M. 2010, IEEE Trans.\ Softw.\
+  Eng., 37, 649, \texttt{doi:10.1109/TSE.2010.62}
+\bibitem[Jimenez et al.(2017)]{popper} Jimenez, I., et al. 2017, in IPDPSW 2017,
+  \texttt{doi:10.1109/IPDPSW.2017.157}
+\bibitem[Klein \& Roodman(2005)]{klein2005} Klein, J.~R., \& Roodman, A. 2005, Ann.\ Rev.\
+  Nucl.\ Part.\ Sci., 55, 141, \texttt{doi:10.1146/annurev.nucl.55.090704.151521}
+\bibitem[Knauth et al.(2009)]{knauth2009} Knauth, T., Fetzer, C., \& Felber, P. 2009, in
+  ICSTW 2009, \texttt{doi:10.1109/ICSTW.2009.40}
+\bibitem[Kupferman \& Vardi(2003)]{kupferman2003} Kupferman, O., \& Vardi, M.~Y. 2003,
+  STTT, 4, 224, \texttt{doi:10.1007/s100090100062}
+\bibitem[Luo et al.(2014)]{luo2014} Luo, Q., Hariri, F., Eloussi, L., \& Marinov, D. 2014,
+  in FSE 2014, \texttt{doi:10.1145/2635868.2635920}
+\bibitem[MacCoun \& Perlmutter(2015)]{maccoun2015} MacCoun, R., \& Perlmutter, S. 2015,
+  Nature, 526, 187, \texttt{doi:10.1038/526187a}
+\bibitem[Muir et al.(2020)]{muir2020} Muir, J., et al. 2020, MNRAS, 494, 4454,
+  \texttt{doi:10.1093/mnras/staa965}
+\bibitem[Panthaplackel et al.(2021)]{panthaplackel2021} Panthaplackel, S., et al. 2021, in
+  AAAI 2021, \texttt{doi:10.1609/aaai.v35i1.16119}
+\bibitem[Roache(1998)]{roache1998} Roache, P.~J. 1998, AIAA Journal, 36, 696,
+  \texttt{doi:10.2514/2.457}
+\bibitem[Rozier \& Vardi(2007)]{rozier2007} Rozier, K.~Y., \& Vardi, M.~Y. 2007, in SPIN
+  2007, \texttt{doi:10.1007/978-3-540-73370-6\_11}
+\bibitem[Salari \& Knupp(2000)]{salari2000} Salari, K., \& Knupp, P. 2000, Sandia National
+  Laboratories report SAND2000-1444, \texttt{doi:10.2172/759450}
+\bibitem[Vacuity by checker mutation(2010)]{date2010} 2010, ``Vacuity analysis for property
+  qualification by mutation of checkers'', in DATE 2010,
+  \texttt{doi:10.1109/DATE.2010.5457158}
+\bibitem[Wicherts et al.(2016)]{wicherts2016} Wicherts, J.~M., et al. 2016, Frontiers in
+  Psychology, 7, 1832, \texttt{doi:10.3389/fpsyg.2016.01832}
+\bibitem[Willroth \& Atherton(2024)]{willroth2024} Willroth, E.~C., \& Atherton, O.~E.
+  2024, AMPPS, 7, \texttt{doi:10.1177/25152459231213802}
+\bibitem[Yamada(2018)]{yamada2018} Yamada, Y. 2018, Frontiers in Psychology, 9, 1831,
+  \texttt{doi:10.3389/fpsyg.2018.01831}
+\end{thebibliography}
 
 \end{document}

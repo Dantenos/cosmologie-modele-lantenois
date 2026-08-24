@@ -3980,3 +3980,77 @@ publique, et c'est ce qui la rend utile.
 strictement invariante sous quatre fois moins d'incertitude — reste inopposable. Nous
 préférons ce coût-là au précédent, qui aurait été de publier un verdict obtenu par
 sélection de conception.
+
+## 24/08 (Claude Code) — #201 LE PAPIER F DÉMOLI PAR VÉRIFICATION, ET RÉÉCRIT EN CONSÉQUENCE
+Vérification adversariale de nouveauté sur les trois revendications du papier F, commandée
+juste après l'avoir écrit. **Verdict : le protocole est un ré-emballage, la taxonomie est une
+CARTOGRAPHIE et non une découverte, et la troisième revendication existe intégralement.**
+Troisième démolition de la journée par vérification littérature, et la première qui vise un
+papier que je venais de terminer.
+
+**REVENDICATION 1 — LE PROTOCOLE. Partiellement neuf, et la part neuve est minuscule.**
+Chacune de ses quatre jambes repose sur le plancher de quelqu'un d'autre :
+| composant | antériorité |
+|---|---|
+| critères dans l'artefact exécutable | **Design by Contract** (Meyer, 1986) ; en Python, `doctest` depuis 1999 |
+| gel par empreinte du plan | **OSF Registrations**, OriginStamp (10.1515/itit-2018-0020), CryptSubmit (10.1109/jcdl.2017.7991588) |
+| application par intégration continue | **Beaulieu-Jones & Greene**, *Nature Biotechnology* 2017 (10.1038/nbt.3780), 164 citations ; convention Popper |
+| journal d'amendement public | OSF, plus toute une littérature de guidage sur les déviations |
+
+Et le plus gênant : **une centaine de dépôts en physique/cosmologie font déjà ce mécanisme**,
+dont plusieurs de 2026 combinant un manifeste SHA-256 et une attestation OpenTimestamps
+(par ex. `10.5281/zenodo.21356325`, `10.5281/zenodo.21478313`). Non relus, parfois
+manifestement générés, mais **publics, horodatés, et antérieurs**.
+
+**Ce qui survit — une seule phrase** : l'antériorité gèle **l'artefact** ; nous ne gelons que
+**le prédicat d'acceptation**, en laissant le corps librement modifiable. *Geler l'oracle,
+pas l'implémentation.* C'est ce qui rend correction et pré-enregistrement compatibles, et
+c'est la seule chose que je n'ai pas trouvée ailleurs. Le papier ne revendique plus que ça,
+et le présente comme une **note de conception**.
+
+**REVENDICATION 2 — LA TAXONOMIE. C'est le papier, mais mon cadrage était faux.**
+**Aucun de mes onze modes n'est neuf. Tous portent un nom.** Le plus cinglant :
+> **Mon mode 8 EST la vacuité, nommée en 1997** par Beer, Ben-David, Eisner & Rodeh (CAV,
+> 10.1007/3-540-63166-6_28), avec vingt-cinq ans d'algorithmes de détection derrière.
+> Leur exemple canonique — *« toute requête est finalement suivie d'un acquittement »,
+> satisfaite par un système qui n'émet jamais de requête* — **est le mien**, avec une
+> tolérance flottante à la place d'un opérateur temporel.
+
+Et le reste : mode 7 = incohérence code/commentaire (sous-domaine actif de détection) ;
+mode 5 = paramètre au bord du domaine physique, sujet entier de Feldman & Cousins 1998
+(3140 citations) ; mode 6 = spécification insatisfiable ; mode 9 = test instable sur égalité
+flottante ; modes 3 et 4 = **un seul** mode (comparant faible) ; mode 2 = mésusage du χ²
+réduit. Un référé aurait compressé mes onze en cinq ou six ; **je le fais moi-même**, et le
+papier présente désormais **onze instances observées cartographiées sur sept classes
+nommées**.
+
+**Ce qui survit, et c'est réel** : les taxonomies existantes du pré-enregistrement
+(Yamada 2018, 10.3389/fpsyg.2018.01831 ; Bakker 2020 ; Claesen 2021) sont
+**COMPORTEMENTALES** — elles classent ce que fait un chercheur, et parlent de « chercheurs
+malveillants ». Les nôtres sont **STRUCTURELLES** : elles classent ce que le critère **EST**,
+et **aucune n'a demandé la moindre malhonnêteté**. Le pont — *« un critère pré-enregistré est
+une spécification, donc il hérite de toute la pathologie connue des spécifications »* — est
+une phrase que personne n'a écrite. C'est une revendication de **transfert**, pas de
+découverte, et le papier le dit maintenant dès son titre.
+
+**REVENDICATION 3 — TESTER LES GARDE-FOUS PAR MUTATION. Elle existe intégralement.**
+Knauth, Fetzer & Felber 2009 (10.1109/icstw.2009.40) muent l'oracle plutôt que le code pour
+mesurer la qualité des contrats. Et surtout : **« Vacuity analysis for property qualification
+by mutation of checkers », DATE 2010** (10.1109/date.2010.5457158) — c'est-à-dire **ma classe
+« vacuité » ET ma pratique de mutation, réunies dans un seul article de 2010.** Retirée du
+résumé, réduite à une citation.
+
+**CE QUE ÇA CHANGE AU PAPIER.** Titre remplacé : *« Pre-registered scientific criteria are
+specifications: eleven observed failures from one cosmology campaign, mapped onto known
+specification pathologies »*. Le résumé annonce désormais **en deuxième phrase** qu'aucun des
+onze n'est neuf. Version anglaise réécrite et compilée : **0 erreur, 0 référence non définie,
+26 entrées bibliographiques**, dont Yamada 2018 et DATE 2010 — la vérification note que leur
+absence *« serait lue comme de l'ignorance ou de la dissimulation »*. L'ancienne version est
+conservée sous `papierF_v1_neuf_modes.tex.bak` : c'est une trace, pas une honte.
+
+**CE QUE JE RETIENS.** Trois fois aujourd'hui, une vérification de littérature a démoli une
+revendication que j'étais prêt à publier : l'attribution de Yang (#195), le papier E entier
+(#198), et maintenant les deux tiers du papier F. **Le protocole gelé n'a attrapé aucune des
+trois.** Il attrape des critères mal posés ; il ne sait pas qu'un résultat est déjà publié.
+C'est écrit dans la section « limites » du papier, et ça vient d'être démontré une troisième
+fois sur le papier lui-même.

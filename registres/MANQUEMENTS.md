@@ -2404,3 +2404,82 @@ plus que le +5,78 qu'elle avait déjà.
 sur `ilcdm_dm` : les deux sont faits (#166, #167). Verdict : **il ne reste AUCUNE préférence
 pour un échange sombre** — +1,21 et +0,00, contre +9,84 et +9,27 annoncés. La tension qui a
 occupé quatre entrées du registre et trois audits « adversariaux » portait sur un artefact.
+
+## 24/08 (Claude Code) — #168 CORRECTION DE MA PROPRE FORMULATION DU #163, APRÈS VÉRIFICATION DE LA LITTÉRATURE 2025-2026
+J'avais écrit au #163 : « le croisement est dominé par le systématique de FORME, **pas par
+les données** ». **C'est faux, et le vice est le mien : mes quatre mesures confondaient deux
+systématiques distincts.** Décomposition correcte de mes propres nombres :
+| | à jeu de données FIXE (systématique de forme) | à forme FIXE (systématique de jeu) |
+|---|---|---|
+| légère | 0,444 vs 0,240 → **0,204** | rigide : 0,444 vs 0,232 → **0,212** |
+| Planck | 0,232 vs 0,388 → **0,156** | libre : 0,240 vs 0,388 → **0,148** |
+**Les deux systématiques valent ~0,15-0,21. Aucun ne domine l'autre.**
+
+**CONFRONTATION À LA LITTÉRATURE (recherche du 24/08, résultats vérifiés).**
+- Li et al. (arXiv:2511.22512) : z× sur SIX paramétrisations lisses = 0,30 / 0,30 / 0,42 /
+  0,43 / 0,45 / 0,51 → étendue **0,21**. Mes 0,204 et 0,156 la reproduisent.
+- arXiv:2506.19053 : à CPL FIXE, changer de jeu déplace z× de 0,22 à 0,45 → étendue **0,23**.
+  Mes 0,212 et 0,148 la reproduisent aussi. **C'est exactement le systématique que j'avais
+  attribué à tort à la forme.**
+- Reconstruction GP (arXiv:2511.02220) : z× = 0,464 **+0,235/−0,120** — l'erreur STATISTIQUE
+  d'une seule détermination est du même ordre que les deux systématiques.
+- Reconstructions binnées/flexknot (arXiv:2503.08658, 2606.05853) : 0,2 à 0,8, w(a) en W,
+  **plusieurs croisements** ; approche cosmographique (arXiv:2508.13740) : **aucun croisement**.
+- DESI DR2 (arXiv:2503.14743) le dit en une phrase — « the exact redshift depends on the
+  chosen parametrization » — et note qu'en reconstruction binnée le croisement tombe à la
+  frontière entre deux bins, donc n'est même pas défini.
+
+**ÉNONCÉ CORRIGÉ, qui remplace celui du #163 :** *le redshift de croisement porte un
+systématique de forme d'environ 0,2 ET un systématique de jeu de données d'environ 0,2,
+chacun comparable à l'erreur statistique d'une détermination unique (~0,12-0,24). Ce n'est
+donc pas un observable de précision — mais il est faux de dire que la forme domine les
+données.* Reporté au papier A, dont la formulation avait la même faiblesse.
+
+**CE QUI RESTE À NOUS, ET CE QUI NE L'EST PAS.** L'observation elle-même est publiée
+(DESI DR2 en une phrase ; Li et al. la tabulent — mais la présentent comme une preuve de
+ROBUSTESSE, pas comme un budget d'erreur). Ce qui n'est fait nulle part : un **budget
+d'erreur à Δχ² apparié**, séparant σ_forme, σ_jeu et σ_stat, et affrontant le fait que pour
+flexknot et JBP z× n'est pas un nombre unique. Notre contribution possible est le CADRAGE et
+la SÉPARATION, pas la découverte. À dire ainsi, sans gonfler.
+
+**BÉNÉFICE COLLATÉRAL, à ne pas surinterpréter :** notre pipeline, sur des données et par une
+méthode différentes, retrouve les mêmes amplitudes de systématiques que trois équipes
+indépendantes. C'est un contrôle de sanité du pipeline, pas un résultat.
+
+## 24/08 (Claude Code) — #169 MON « IDENTITÉ » DU #161/#164 EST UNE REDÉCOUVERTE : ELLE EST PUBLIÉE DEPUIS 2020
+Vérification de littérature du 24/08. J'ai présenté l'identité *iΛCDM(Ω_m, ε) ≡ wCDM(Ω_m′, w′)*
+comme une trouvaille. **Elle ne l'est pas.**
+- **von Marttens, Lombriser, Kunz, Marra, Casarini & Alcaniz, arXiv:1911.02618** (Phys. Dark
+  Univ. 28, 100490, 2020), **Éq. (63)** : la même application, écrite dans l'autre sens. Avec
+  ε = 3(1+w₀) on retrouve **terme pour terme** mon Ω_m′ = Ω_m − εΩ_de/(3−ε), mon Ω_de′ et mon
+  Q = −εHρ_de. Les auteurs écrivent que les deux descriptions « yield exactly the same Hubble
+  rate » et qu'aucune mesure de distance ne peut les séparer.
+- **Kunz, arXiv:astro-ph/0702615** (PRD 80, 123001) — le théorème qui l'englobe : la gravité ne
+  sonde que le T_μν **total**, donc **Ω_m n'est pas mesurable**, et « interacting dark energy
+  is always equivalent to a family of non-interacting models ». Mon résultat en est un cas
+  particulier, le plus simple.
+- Lignée : Hu & Eisenstein (astro-ph/9809368), Wasserman (astro-ph/0203137), Aviles &
+  Cervantes-Cota (1108.2457), Carneiro & Borges (1402.2316) ; classe Q = ξHρ_de traitée par
+  **Gavela et al., arXiv:0901.1611** ; encore restatée en 2024-2026 (2403.12220, 2508.17955,
+  2607.11813) parce que la communauté la redécouvre régulièrement — moi compris.
+
+**ET LE #166 A LUI AUSSI UN ANTÉCÉDENT PROCHE.** Avelino & da Silva, **arXiv:1201.0550**
+(PLB 714, 6, 2012), écrivent déjà : « the fractional matter density estimated using the CMB
+assuming no interaction will in general be shifted with respect to its true value. This may
+result in an incorrect determination of the equation of state of dark energy, even if H(z)
+is known with arbitrary precision. » C'est, en une phrase et treize ans plus tôt, le vice que
+j'ai mis une nuit à trouver dans notre propre atlas. **La correction de notre pipeline reste
+nécessaire et le chiffre (8,62 sur 9,84) reste à nous ; le principe, non.**
+
+**CE QUI RESTE DÛ ET UTILE, tiré de la même recherche :**
+- Le pouvoir discriminant est **entièrement dans les perturbations** (fσ₈, ISW) : Petri, Marra
+  & von Marttens (**arXiv:2508.17955**) construisent un iΛCDM exactement dégénéré avec CPL sur
+  DESI DR2 et ne les séparent que par fσ₈. C'est cohérent avec P3 du papier A.
+- Bénéfice pour notre modèle : dans la classe Q = ξHρ_de, le « doom factor » de Gavela et al.
+  exige ξ < 0 **et** (1+w) > 0 pour la stabilité. Notre Q = −εHρ_de avec ε > 0 donne ξ < 0 et
+  (1+w′) > 0 : **le coin stable**. À vérifier proprement avant d'en faire quoi que ce soit.
+- **Notre modèle n'est PAS concerné par le vice du #166** : sa matière dilue en a⁻³ exact, donc
+  son Ω_m est le vrai et son étalonnage était juste. Kunz s'applique quand même à lui au sens
+  large (son fond est dégénéré avec un w(a)CDM), ce que le papier A dit déjà sous le nom de
+  « jumeaux phénoménologiques » de CPL et de prédiction P1 « à sens unique ».
+**Règle 9 appliquée à moi-même : une redécouverte n'est pas une découverte. Consigné.**

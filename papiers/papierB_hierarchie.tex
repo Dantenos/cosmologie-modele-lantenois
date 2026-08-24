@@ -99,8 +99,7 @@ hence $\epsilon$ runs, hence \emph{$\beta$ is not constant}. Writing
 $\beta(t) = \beta_0 + \beta_1\ln(t/t_0)$, the two readings predict
 $\beta_1 \simeq -0.42$ (peak, $K=2$) and $-0.56$ (rms, $K=4$), the values the frozen integrator returns. \textbf{Corrected in revision:} an earlier version quoted $-0.9$ to $-1.6$ (rms) against $-0.23$ to $-0.40$ (peak); Paper~A withdraws exactly those figures, and the script that produces them prints the withdrawal in its own output. Refitting Paper~A's
 likelihood with $\beta_1$ free gives $\beta_1 = +0.06 \pm 0.31$: the peak prediction costs
-$\Delta\chi^2 = 1.5$--$2.5$, the rms prediction $\Delta\chi^2 \geq 7.5$ and worse at its central
-values. \textbf{We therefore replace $\beta = 4/(n_{\rm eff}+3)$ by $\beta = 2/(n_{\rm eff}+3)$},
+$\Delta\chi^2 = 1.5$--$2.5$, the rms prediction $\Delta\chi^2 = 4.0$ (i.e.\ $2.0\sigma$, matching Paper~A). \textbf{Corrected in revision:} an earlier version wrote $\geq 7.5$, which back-solves to $\beta_1 \simeq -0.79$ --- inside the very range this same sentence retracts. \textbf{We therefore replace $\beta = 4/(n_{\rm eff}+3)$ by $\beta = 2/(n_{\rm eff}+3)$},
 and record that our original relation was a factor of two too large.
 
 \emph{A circularity in the replacement, found on inspection (added in revision).} The peak
@@ -173,7 +172,7 @@ $[K_{ab}]$ and its stability are not analysed; and the rotating case (Kerr--Vaid
 matching can now be stated precisely. \emph{(a) Multipole transmission.} Solving Laplace's equation
 inside a boundary carrying an $\ell$-pole of relative amplitude $\epsilon$ gives
 $\Phi_{\rm int} \propto \epsilon\,(r/R)^\ell/(2\ell+1)$: at $\ell = 2$ and $r/R \simeq 0.98$ this transmits with factor $0.98^2/5 = 0.192$. \textbf{Corrected in revision:} an earlier version quoted $0.58$, a factor three larger, which does not follow from the formula as written; the resulting bound below loosens accordingly, from $\epsilon \lesssim 0.35$ to $\epsilon \lesssim 1.0$. We also note that the same formula returns $1$, not $0$, at $\ell = 0$, so ``the monopole is screened entirely'' does not follow from it either --- the shell theorem screens the monopole, but this expression does not encode that, and the derivation as stated is incomplete. Requiring the induced quadrupole not to exceed the observed large-angle
-anomalies ($\lesssim 20\%$) bounds the parent's accretion asymmetry at $\epsilon \lesssim 0.35$.
+anomalies ($\lesssim 20\%$) bounds the parent's accretion asymmetry at $\epsilon \lesssim 1.0$ ($0.20/0.192$; the $0.35$ an earlier version printed here is $0.20/0.58$, i.e.\ the retracted transmission factor).
 \emph{Superseded in revision by a channel three orders of magnitude stronger, which we had
 missed.} The bound above is static --- a transmitted potential quadrupole. But the injection is
 \emph{continuous}: an anisotropic flux sources Bianchi~I shear throughout the dark-energy era, and

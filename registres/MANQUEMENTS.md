@@ -3070,3 +3070,70 @@ allaient toutes dans le même sens — le nôtre. Le protocole du corpus n'en av
 aucun ; c'est une lecture systématique qui les a trouvés, déclenchée par une phrase
 d'Édouard. Le garde-fou empêchera désormais la récidive de la moitié mécanique. **L'autre
 moitié demandera toujours quelqu'un pour lire.**
+
+## 24/08 (Claude Code) — #186 ⚠ LA SECONDE PASSE A TROUVÉ CE QUE LA PREMIÈRE AVAIT CASSÉ — DONT UNE SURVIVANCE FAVORABLE QUE J'AVAIS MOI-MÊME RECRÉÉE
+Édouard avait demandé, dès sa consigne initiale, de **refaire le processus entier une seconde
+fois**. Fait. Cette passe ne cherchait pas les défauts d'origine mais **ce que les cinquante
+éditions de la première passe avaient endommagé**. Vingt-trois signalements. Le premier est
+le seul qui compte vraiment.
+
+**LA RÉGRESSION LA PLUS GRAVE, ET ELLE EST DE MA MAIN.** Le défaut 5 — « trois quantités
+indépendantes » alors que deux sont les cibles d'étalonnage — je l'avais corrigé dans le
+papier A **et dans le résumé du papier C**. Mais le **corps** du papier C (§3, sous un titre
+« Validation of the CCBH implementation ») disait toujours *« Three quantities, three
+agreements below 2 %, on disjoint data »*, et sa **conclusion** le répétait. **Un lecteur du
+papier obtenait la version d'avant correction ; seul le résumé était honnête.** C'est
+exactement la faute que le #183 avait diagnostiquée — une survivance orientée — recréée par
+la correction elle-même, et dans le même sens. Corps et conclusion corrigés, avec le
+critère gelé en échec (Ξ = 2,149, 53 %) désormais énoncé aux trois endroits.
+Aggravation : mon résumé renvoyait à un « §4 » qui ne traite pas du sujet, et pointait §3
+pour un étalonnage qui est en §2. **Une note de correction qui décrit une couverture
+inexistante est pire que pas de note.** Les deux pointeurs sont corrigés.
+
+**DEUXIÈME CLASSE : l'ancienne valeur survivant DANS la phrase qui suit sa propre
+correction.** Papier B : ma note disait *« la borne se desserre de ε ≲ 0,35 à ε ≲ 1,0 »*, et
+la phrase suivante affichait toujours **ε ≲ 0,35**. La correction annonçait un changement
+qu'elle ne faisait pas.
+
+**TROISIÈME CLASSE : l'arithmétique en aval, non recalculée.** Sept cas.
+k_eff(0) = −3w₀ restait à **2,54** deux lignes sous le w₀ corrigé à −0,853 (soit 2,56) ;
+l'écart entre lectures d'hérédité restait à **0,20** alors que le couple corrigé donne
+**0,14**, et le σ requis à 0,07 au lieu de **0,047** — *la correction rend ce test plus
+difficile, et le texte survivant le sous-estimait* ; le coût rms du papier B restait à
+**≥ 7,5**, valeur qui rétro-résout à β₁ ≃ −0,79, **à l'intérieur de la plage que la même
+phrase rétracte** ; κ était donné à 1,6σ dans un paragraphe et 1,5σ dans l'autre pour la même
+statistique ; la fenêtre de coïncidence n'est plus équivalente « à ~10 % » mais de −1 % à
++15 % ; β₁ ≃ −0,43 et « facteur quatre » survivaient ; la plage de croisement citée ailleurs
+restait 0,2–0,45.
+
+**QUATRIÈME : la phrase d'introduction du tableau z× était devenue fausse par sa propre
+correction.** *« Nous avons cité z ≃ 0,46 partout. Ce chiffre vaut pour β = 2,42 »* — il ne
+vaut plus, puisque le tableau corrigé donne 0,4436 à ce même β. Réécrite : *le chiffre est
+faux même à son propre exposant.*
+
+**CINQUIÈME : la renumérotation mécanique a laissé un renvoi périmé.** « As paragraph~(iv) »
+pointait, après renumérotation, un paragraphe qui ne dit pas ce que le renvoi lui prête.
+Corrigé en (vi). C'était le seul pointeur cassé, et il était la conséquence directe du
+renommage automatique — **une renumérotation qui ne relit pas les renvois est incomplète**.
+
+**CE QUE LA SECONDE PASSE CONFIRME COMME PROPRE :** DES-SN5YR 1829 partout ; AIC 1401,9 ;
+l'erratum −8,2 ; la fenêtre 5,92–6,87 et sa rétro-résolution ; fσ₈ 1,5–2,0 % cohérent avec
+ses valeurs par redshift ; le déficit FRB 0,0357/4,4σ dans les deux papiers ; l'échelle du
+parent auto-cohérente ; σ₈ = 0,811 ; les trois tensions S₈ ; l'horloge à 1,9σ image exacte de
+β = 2,603 ; le facteur multipolaire 0,192 = 0,98²/5 ; les quatre z× ; **toute la colonne w₀,
+y compris le −0,874 à β = 2,49 que j'aurais pu croire périmé et qui est la bonne
+interpolation** ; les quatre tableaux d'AIC ; et huit conversions Δχ² → σ vérifiées une à une.
+
+**LA LEÇON, ET ELLE EST PLUS DURE QUE CELLE DU #183.** La première passe a corrigé 44
+défauts et en a créé au moins un de la même espèce — une survivance favorable — plus une
+douzaine d'incohérences arithmétiques en aval. **Corriger un corpus est une opération qui
+introduit des défauts du même type que ceux qu'elle retire.** Sans la seconde passe
+qu'Édouard avait exigée d'emblée, le papier C aurait circulé avec un résumé honnête et un
+corps qui ne l'était pas. **Une passe unique de correction ne suffit jamais, et le mode de
+défaillance de la correction est le mode de défaillance qu'elle corrige.**
+
+**RESTE DÛ, inventorié :** les incohérences profondes du papier B autour de la relation
+d'hérédité retractée (β = 4/(n+3) encore opératoire en cinq endroits après son remplacement,
+M_cut hérité de la relation superseded, R ~ 10^7,8 dérivé d'une base retirée), trois fragments
+de phrase, et une demi-douzaine de divergences inter-papiers signalées pour mémoire. Ce sont
+des travaux de fond, pas des corrections de valeurs, et je ne les maquille pas en « faits ».

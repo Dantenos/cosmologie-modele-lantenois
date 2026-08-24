@@ -1,6 +1,6 @@
 # LE REGISTRE DES TENSIONS — généré par `outils/greffier.py`, ne pas éditer à la main
 
-*2026-08-24 — 7 tensions : 6 ouvertes, 1 en jugement, 0 résolues. Règle du greffe : une tension ne se*
+*2026-08-24 — 7 tensions : 5 ouvertes, 2 en jugement, 0 résolues. Règle du greffe : une tension ne se*
 *résout que par l'arbitre nommé avant la résolution — on ne réécrit pas l'histoire d'une anomalie.*
 
 ## T1-beta-interne — ⚖ EN JUGEMENT <small>(ouverte le 2026-08-23)</small>
@@ -71,10 +71,10 @@ Lectures rivales :
 
 **Arbitre (gravé d'avance)** : manche 3 sur catalogue profond (DESI voids) avec les MÊMES algorithmes : si les signes restent opposés à grand N, la définition du vide devient elle-même l'objet
 
-## T7-epsilon-ilcdm — OUVERTE <small>(ouverte le 2026-08-24)</small>
+## T7-epsilon-ilcdm — ⚖ EN JUGEMENT <small>(ouverte le 2026-08-24)</small>
 
-**les deux iΛCDM d'interaction prennent la tête de l'atlas (ε ≈ +0,007/+0,021, χ² = −9,8 vs ΛCDM pour un paramètre)**  
-magnitude : **ΔAIC = −3 à −4 sur CCBH/accrétion — au tableau, pas au palmarès** · refs : #150, ATLAS.md
+**les deux iΛCDM d'interaction prennent la tête de l'atlas (ε ≈ +0,007/+0,021, χ² = −9,8 vs ΛCDM pour un paramètre) — premier volet de l'arbitre exécuté (#154) : le gain SURVIT aux variantes cohérentes (CDM seul, échange tardif z<3 : +9,85 / +9,64) ; l'hypothèse artefact primordial est réfutée ; restent LOO, split-z, trilogie SN**  
+magnitude : **ΔAIC = −3 à −4 sur CCBH/accrétion — au tableau, pas au palmarès** · refs : #150, ATLAS.md, #154
 
 Lectures rivales :
 - artefact de l'implémentation v1 (échange appliqué à toute la matière + fond tardif incohérent avec les distance-priors primordiaux — déclaré au gel)

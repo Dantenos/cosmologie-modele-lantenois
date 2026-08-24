@@ -2096,3 +2096,16 @@ ENTRE deux calculs de la même quantité, pas dans les calculs. Cinq paires ind�
 et confrontées (atlas/duel 0,00 % ; A et B dérivés/en-dur 0,00 % ; f_coll 10,3 % < 20 déclaré ;
 s(0) deux EDO 0,21 %) — 0 divergence, 141 s, en CI. La classe d'erreur la plus dangereuse du
 corpus a maintenant son garde-fou permanent.
+
+## 24/08 (Claude Code) — #154 AUDIT iΛCDM, PREMIER VOLET : LE GAIN SURVIT — MON HYPOTHÈSE ARTEFACT EST RÉFUTÉE
+`audit_ilcdm.py` (gelé fa73e66ea698). Validation : les deux χ² de l'atlas reproduits à l'identique.
+Puis les variantes COHÉRENTES : couplage CDM seul (baryons conservés) et échange gelé à z > 3
+(compatible avec les priors primordiaux). Résultat, écrit tel quel : **le gain tient partout** —
+Q~ρ_de : +9,85 (ε = +0,0215 ± 0,011 profil grossier, ≥ 2σ ; √Δχ² naïf : 3,1σ) → ROBUSTE par la
+grille gelée ; Q~ρ_dm : +9,64 (ε = +0,0159, 1,99σ) → INTERMÉDIAIRE (le critère ne pardonne pas à
+0,01 près). **L'hypothèse que j'avais déclarée au gel de l'atlas — artefact d'incohérence
+primordiale — est réfutée** : la préférence est tardive et réelle dans ce pipeline. Elle rejoint
+les indices d'échange sombre de la littérature DESI. T7 passe « en jugement » ; avant toute
+résolution ou tout palmarès : LOO traceurs, split-z, trilogie SN (le solde de l'arbitre gravé).
+Ironie consignée : le modèle du corpus est lui-même de la classe sourcée — si l'échange est réel,
+c'est la classe entière qui gagne, et le canal comptable qui départage (le Livre : rangée sombre v2).

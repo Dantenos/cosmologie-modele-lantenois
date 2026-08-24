@@ -213,5 +213,10 @@
   "sha256": "be4022402d5ed4ce9bdd79a1d162fd29390746d923043817586e2e13b0179fc3",
   "gele_le": "2026-08-24T02:58:44",
   "extrait": "confronteur v1 — la cohérence croisée as code (24/08/2026). CRITERES PRE-ENREGIS"
+ },
+ "scripts/audit_ilcdm.py": {
+  "sha256": "fa73e66ea698b39863e9c46000f47c0cfbd5b08677e60270254f16b263988840",
+  "gele_le": "2026-08-24T03:34:15",
+  "extrait": "AUDIT DES iLCDM — l'arbitre de la tension T7, premier volet. CRITERES PRE-ENREGI"
  }
 }

@@ -38,6 +38,24 @@ def main():
          "", "## Études (verdicts, depuis les rapports)", ""]
     for n, v in etudes: L.append(f"- `{n}` — {v}")
     (ROOT / "registres/ETAT.md").write_text("\n".join(L) + "\n", encoding="utf-8", newline="\n")
+    # facades AUTO (corps, 24/08) : les comptes derives du lock sont REECRITS dans les facades —
+    # trois fois cette session un compte recopie a la main a diverge ; plus jamais.
+    import re as _re
+    n = len(lock)
+    for rel, subs in [("README.md", [(r"registre-\d+%20crit", f"registre-{n}%20crit"),
+                                     (r"\d+ fichiers du corpus sont gelés", f"{n} fichiers du corpus sont gelés"),
+                                     (r"# \d+ fichiers, exit 0", f"# {n} fichiers, exit 0")]),
+                      ("outils/README_registre.md", [(r"\(\d+ fichiers gelés au [\d/]+\)", f"({n} fichiers gelés au {datetime.date.today():%d/%m/%Y})")])]:
+        f2 = ROOT / rel; txt = f2.read_text(encoding="utf-8"); t0 = txt
+        for pat, rep in subs: txt = _re.sub(pat, rep, txt)
+        if txt != t0:
+            f2.write_text(txt, encoding="utf-8", newline="\n"); print(f"[etat] façade mise à jour : {rel} -> {n}")
+    vc = ROOT / "outils/valeurs_canoniques.json"; cv = json.loads(vc.read_text(encoding="utf-8"))
+    for qte in cv["quantites"]:
+        if qte["nom"] == "critères gelés" and not qte["valeur_courante"].startswith(str(n)):
+            qte["valeur_courante"] = f"{n} ({datetime.date.today():%d/%m/%Y})"
+            vc.write_text(json.dumps(cv, indent=1, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
+            print(f"[etat] valeurs_canoniques : critères gelés = {n}")
     print("\n".join(L[2:9]))
     print(f"[etat] écrit : registres/ETAT.md ({len(etudes)} études)")
 

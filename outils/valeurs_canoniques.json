@@ -104,7 +104,7 @@
   },
   {
    "nom": "critères gelés",
-   "valeur_courante": "43 (24/08/2026)",
+   "valeur_courante": "44 (24/08/2026)",
    "source": "outils/registre.lock",
    "date": "2026-08-23",
    "valeurs_depreciees": [

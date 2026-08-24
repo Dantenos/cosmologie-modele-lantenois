@@ -28,7 +28,10 @@ def main():
     if n_frb != 69:
         sys.exit(f"[role] REFUS : {n_frb} FRB dans la table (gabarit calibre pour 69 — mettre a jour compteur ET gabarit)")
     tpl = (ROOT / "outils/audience_template.html").read_text(encoding="utf-8")
-    out = tpl.replace("__DATE__", str(datetime.date.today()))
+    ten = json.loads((ROOT / "outils/tensions.json").read_text(encoding="utf-8"))["tensions"]
+    ten_min = [dict(id=t["id"], statut=t["statut"], enonce=t["enonce"], magnitude=t["magnitude"],
+                    lectures=t["lectures"], arbitre=t["arbitre"]) for t in ten]
+    out = tpl.replace("__DATE__", str(datetime.date.today())).replace("__TENSIONS__", json.dumps(ten_min, ensure_ascii=False))
     dest = ROOT / "visuels/le_role.html"
     dest.write_text(out, encoding="utf-8", newline="\n")
     print(f"[role] ecrit : {dest.name} ({dest.stat().st_size//1024} ko) — 4 affaires, hash verifies, sceau intact, N(FRB) = {n_frb}")

@@ -47,7 +47,8 @@ border:1px solid #3a352c;padding:14px 17px;font-size:12px;line-height:1.55;color
 L&#8217;arc autour de chaque astre est sa progression vers le verdict.</p>
 <p><span class="or">&#9679;</span> DR3-&beta;, la bande scellée &middot; <span class="bleu">&#9679;</span> FRB-s, le canal décidable<br>
 <span class="vert">&#9679;</span> W-universel, le duel &middot; <span style="color:#a89f8d">&#9679;</span> k3-vs-0, le postérieur vivant</p>
-<p class="mono">cliquer un astre : l&#8217;affirmation gelée, les jauges, les verdicts</p></div>
+<p class="mono">cliquer un astre : l&#8217;affirmation gelée, les jauges, les verdicts<br>
+&loz; les tensions du greffe — losanges instables entre les orbites (or : en jugement)</p></div>
 <div id="casiers"><b>LES CASIERS</b>Lantenois2026 &mdash; 3 en attente<br>Claude_campagne0826 &mdash; 2<br>
 Croker2024 &mdash; 2 &middot; Goulet &mdash; 1 &middot; Horloge &mdash; 1<br>
 <span class="mono">validées 0 &middot; réfutées 0 &middot; le tribunal attend</span></div>
@@ -108,6 +109,7 @@ K:`<h3>k3-vs-0 — LE COUPLAGE DES TROUS NOIRS</h3>
 le fond, lui, ne tranchera jamais (direction quasi-plate, #139) — théorème du corpus.</div>
 <div class="verdicts"><b>règle E5</b> : postérieur émis sur bornes vérifiées aux sources primaires seulement (5/7) &middot;
 valeur de résumé secondaire = refusée.</div>`};
+const TEN=[{"id": "T1-beta-interne", "statut": "en_jugement", "enonce": "β marginalisé du fond léger (2,42 ± 0,07) contre β marginalisé du Planck complet (2,603 +0,046/−0,053)", "magnitude": "2,1σ", "lectures": ["systématique (calibration SNe / nuisances plik figées)", "running réel dβ/dlnt < 0 — la prédiction de l'EDO d'hérédité (β₁ = −0,42, heredite_edo.py)"], "arbitre": "chaîne (ωc, lnAs, β₀, β₁) sur le Planck complet — scripts/mcmc_planck_beta1.py, gelé 200263d74265, critères NON CONCLUANT / COMPATIBLE HÉRÉDITÉ / CONTRE gelés avant exécution ; à terme β₁(DR3), déjà dans le sceau"}, {"id": "T2-omega-b", "statut": "ouverte", "enonce": "ω_b BBN (D/H) contre ω_b CMB — l'écart dépend entièrement du taux nucléaire d(p,γ)³He adopté", "magnitude": "2,9σ (Cooke 2018, taux Marcucci) ou 0,3σ (Schöneberg 2024, conservateur)", "lectures": ["taux théorique Marcucci sous-estimé (systématique nucléaire)", "vraie physique entre BBN et recombinaison (aucun modèle de l'atlas n'en propose)"], "arbitre": "mesures directes du taux d(p,γ)³He aux énergies BBN (programme LUNA et successeurs) ; la rangée R3 du Grand Livre enregistre"}, {"id": "T3-FAP", "statut": "ouverte", "enonce": "F_AP(2,33) mesuré contre prédit : le modèle à −1,7σ, ΛCDM à −0,8σ, CPL à −1,9σ — toute la classe dynamique tire du même côté", "magnitude": "−1,7σ (défaite déclarée, gravée au papier A)", "lectures": ["fluctuation (partagée par la classe)", "tension interne DESI (DR2-IV préfère Ωm = 0,325, à 1,4σ des BAO)", "vraie géométrie contre w(z) dynamique à z > 1"], "arbitre": "Lyα DR3 (F_AP re-mesuré) — le point joint AP+BAO du protocole de mise à jour du papier A"}, {"id": "T4-union3", "statut": "ouverte", "enonce": "Union3 tire β vers le bas (2,31), résidus localisés z = 0,65-1,4 — la région du croisement, pas les bins suspects de calibration", "magnitude": "1,2σ du β de synthèse, 2,0σ du β Planck ; fissure ≈ 1,4 offsets-Efstathiou", "lectures": ["méthodologie Unity (hiérarchique bayésien, incomparable objet à objet)", "systématique SN commune (Efstathiou vs Vincenzi)", "vraie physique dans la zone motrice"], "arbitre": "Rubin/LSST (~2027-28) : une seule photométrie, plus de guerre de compilations"}, {"id": "T5-zx-fenetre", "statut": "ouverte", "enonce": "si β = 2,60 (Planck marginalisé), le croisement prédit tombe à z× ≈ 0,22 — sous la fenêtre indiquée par DESI (0,4-0,5, qui correspond à β = 2,38-2,45)", "magnitude": "naissante — dépend du verdict de T1", "lectures": ["T1 se résout côté systématique et β = 2,42 tient (z× = 0,44, dans la fenêtre)", "β = 2,60 réel et la fenêtre DESI actuelle est un artefact w₀wₐ"], "arbitre": "reconstruction non-paramétrique de w(z) sur DR3 : localisation directe de z× — le β-mètre secondaire du papier A"}, {"id": "T6-vides-algorithmes", "statut": "ouverte", "enonce": "VoidFinder (+0,52 ± 0,38) et VIDE (−0,40 ± 0,35) donnent des Δβ de signes opposés sur la même empreinte — écart 0,92 pour un seuil de divergence gelé à 1,04", "magnitude": "1,8σ entre juges (sous le seuil NON EXPLOITÉ, de peu)", "lectures": ["le « vide » n'est pas univoque (Jaccard 0,33 : ils trient des SNe différentes — expliqué, pas contradictoire)", "fluctuations pures à N ≈ 228 par moitié"], "arbitre": "manche 3 sur catalogue profond (DESI voids) avec les MÊMES algorithmes : si les signes restent opposés à grand N, la définition du vide devient elle-même l'objet"}, {"id": "T7-epsilon-ilcdm", "statut": "en_jugement", "enonce": "les deux iΛCDM d'interaction prennent la tête de l'atlas (ε ≈ +0,007/+0,021, χ² = −9,8 vs ΛCDM pour un paramètre) — premier volet de l'arbitre exécuté (#154) : le gain SURVIT aux variantes cohérentes (CDM seul, échange tardif z<3 : +9,85 / +9,64) ; l'hypothèse artefact primordial est réfutée ; restent LOO, split-z, trilogie SN", "magnitude": "ΔAIC = −3 à −4 sur CCBH/accrétion — au tableau, pas au palmarès", "lectures": ["artefact de l'implémentation v1 (échange appliqué à toute la matière + fond tardif incohérent avec les distance-priors primordiaux — déclaré au gel)", "vraie préférence pour l'échange sombre (des indices similaires existent dans la littérature DESI)"], "arbitre": "batterie adversariale v2 de l'atlas : couplage CDM seul, cohérence primordiale, LOO traceurs, split-z, trilogie SN, σ(ε) — avant tout droit au palmarès"}];
 function bande(){const el=document.getElementById('bande-beta');if(!el)return;
  const lo=2.20,hi=2.80,pc=v=>((v-lo)/(hi-lo)*100)+'%';
  el.innerHTML=`<div class="regle"></div>
@@ -122,7 +124,15 @@ function bande(){const el=document.getElementById('bande-beta');if(!el)return;
 let sel=null,hov=null,mx=-1,my=-1;
 cv.addEventListener('pointermove',e=>{mx=e.clientX*DPR;my=e.clientY*DPR});
 cv.addEventListener('click',()=>{const f=document.getElementById('fiche');
- if(hov){sel=hov;document.getElementById('fiche-corps').innerHTML=FICHES[sel.id];f.style.display='block';bande()}
+ if(hov&&hov.ten){const t=hov.ten;
+  document.getElementById('fiche-corps').innerHTML=
+  `<h3>${t.id} <span class="mono">${t.statut==='en_jugement'?'&#9878; EN JUGEMENT':t.statut.toUpperCase()}</span></h3>
+  <div class="juge">${t.enonce}</div>
+  <div class="legende"><b style="color:#e0d6c2;font-weight:normal">magnitude :</b> ${t.magnitude}</div>
+  <div class="legende"><b style="color:#e0d6c2;font-weight:normal">lectures rivales :</b> ${t.lectures.join(' &middot; ')}</div>
+  <div class="verdicts"><b class="vI">arbitre (gravé d&#8217;avance)</b> : ${t.arbitre}</div>`;
+  f.style.display='block'}
+ else if(hov){sel=hov;document.getElementById('fiche-corps').innerHTML=FICHES[sel.id];f.style.display='block';bande()}
  else{sel=null;f.style.display='none'}});
 document.querySelector('.fermer').addEventListener('click',()=>{sel=null;document.getElementById('fiche').style.display='none'});
 const DUST=[];for(let i=0;i<230;i++)DUST.push([Math.random(),Math.random(),Math.random()*0.5+0.15,Math.random()*6.28]);
@@ -173,11 +183,25 @@ for(const a of AFF){const R=a.ring*RU,ang=a.ang+t*a.vit;
  g.fillText(a.nom.split(' — ')[0],x,y+a.r*DPR+24*DPR);
  g.font=`${9*DPR}px ui-monospace,monospace`;g.fillStyle=`rgba(${a.rgb},0.9)`;
  g.fillText(a.progLab,x,y+a.r*DPR+36*DPR);
- const d2=(mx-x)**2+(my-y)**2;if(d2<(a.r*DPR*3)**2)hov=a}
+ a._x=x;a._y=y;const d2=(mx-x)**2+(my-y)**2;if(d2<(a.r*DPR*3)**2)hov=a}
+// les tensions : losanges instables entre les orbites
+TEN.forEach((tn,i)=>{
+ const R=(1.95+(i%3)*0.72)*RU, ang=i*2.399+0.9+t*0.006*((i%2)?1:-1);
+ const x=CX+R*Math.cos(ang), y=CY+R*Math.sin(ang);
+ const juge=tn.statut==='en_jugement';
+ const fl=juge?0.65+0.35*Math.sin(t*2.6+i):0.30+0.22*Math.max(0,Math.sin(t*1.1+i*2));
+ const c=juge?'217,185,106':'201,106,74', r=(juge?4.6:3.8)*DPR;
+ g.fillStyle=`rgba(${c},${fl})`;
+ g.beginPath();g.moveTo(x,y-r);g.lineTo(x+r*0.72,y);g.lineTo(x,y+r);g.lineTo(x-r*0.72,y);g.closePath();g.fill();
+ if(juge){g.strokeStyle=`rgba(217,185,106,${0.25+0.25*Math.sin(t*2.6+i)})`;g.lineWidth=1*DPR;
+  g.beginPath();g.arc(x,y,r+5*DPR,0,7);g.stroke()}
+ g.font=`${8.5*DPR}px ui-monospace,monospace`;g.textAlign='center';
+ g.fillStyle=`rgba(${c},${0.5+0.3*fl})`;g.fillText(tn.id.split('-')[0],x,y+r+10*DPR);
+ tn._x=x;tn._y=y;
+ const d2=(mx-x)**2+(my-y)**2;if(d2<(r*3.2)**2)hov={ten:tn,_x:x,_y:y,r:5}});
 if(hov){cv.style.cursor='pointer';
- const R=hov.ring*RU,ang=hov.ang+t*hov.vit,x=CX+R*Math.cos(ang),y=CY+R*Math.sin(ang);
  g.strokeStyle='rgba(239,233,220,0.8)';g.lineWidth=1.2*DPR;
- g.beginPath();g.arc(x,y,hov.r*DPR+12*DPR,0,7);g.stroke()}
+ g.beginPath();g.arc(hov._x,hov._y,(hov.r||9)*DPR+11*DPR,0,7);g.stroke()}
 else cv.style.cursor='default'}
 fr();
 </script></body></html>

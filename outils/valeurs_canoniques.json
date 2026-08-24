@@ -84,11 +84,11 @@
   },
   {
    "nom": "nombre d'entrées du registre",
-   "valeur_courante": "188 (24/08/2026)",
+   "valeur_courante": "191 (24/08/2026)",
    "source": "MANQUEMENTS #142",
    "date": "2026-08-23",
    "valeurs_depreciees": [
-    "\\\\b(?!188\\\\b)1\\\\d\\\\d entrées(?! à la naissance)"
+    "\\\\b(?!191\\\\b)1\\\\d\\\\d entrées(?! à la naissance)"
    ]
   },
   {

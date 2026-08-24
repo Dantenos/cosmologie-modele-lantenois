@@ -3034,3 +3034,39 @@ c'est exactement ainsi que la collision `DESI2025` s'était installée.
 pas :** il ne relit pas les équations, ne juge pas la physique, et n'aurait attrapé aucune
 des sept survivances orientées du #183. Celles-là demandent une lecture. Il empêche la
 récidive d'une classe de défauts, pas la classe de défauts qui compte le plus.
+
+## 24/08 (Claude Code) — #185 LES 44 DÉFAUTS SONT CLOS, ET LE GARDE-FOU EST À 5 SUR 126
+Fin du traitement de l'audit du #183. Les quatre derniers défauts, tous trouvés ou confirmés
+par `manuscrit.py` (gelé 94b74a08a854) :
+
+**#31 — sept identifiants arXiv nus dans le corps du papier A** ne figuraient dans aucune
+bibliographie : un lecteur ne pouvait pas les retrouver autrement qu'en les recopiant à la
+main. Transformés en citations avec entrées. **Règle d'honnêteté appliquée :** le corpus a
+déjà purgé une attribution d'auteur **fabriquée** (celle de 2509.13220). Je n'en ai donc
+inventé aucune — les cinq entrées dont je n'ai pas vérifié les auteurs portent l'identifiant
+seul et la mention explicite « author attribution not verified ». Ce sont les cinq
+signalements qui restent au contrôle B, et ils y resteront tant que l'attribution ne sera pas
+vérifiée. **Un signalement permanent vaut mieux qu'une fausse complétude.**
+
+**#38 — le Lyα, succès et défaite sans renvoi.** Le papier passait la prédiction hors
+échantillon du point BAO Lyα à 0,2σ/0,4σ, et enregistrait ailleurs la défaite de forme sur
+l'AP Lyα à 1,7σ — les deux exacts, mais un lecteur de la section de robustesse ne voyait que
+l'accord. Renvoi ajouté : *« le point BAO Lyman-α est passé hors échantillon, la forme AP
+Lyman-α ne l'est pas »*, les deux dans la même phrase.
+
+**#30 et #29 — clés et entrées.** La collision `DESI2025` levée, quatre entrées complétées ou
+signalées. Puis **treize variantes de onze clés homonymes alignées** sur la version la plus
+complète (celle qui porte un identifiant, la plus longue), chaque alignement imprimé — rien
+en silence. Le contrôle E passe de 11 à **0**. Ce n'est pas cosmétique : c'est exactement par
+la divergence libre des variantes que la collision `DESI2025` s'était installée, une
+divergence devenant une contradiction sans que rien ne le signale.
+
+**ÉTAT FINAL DU GARDE-FOU :** A validé (0 clé pendante, 0 doublon, 126 entrées), C à 0,
+D à 0, E à 0, B à 5 — les cinq attributions non vérifiées, délibérément laissées visibles.
+Trois papiers recompilés : **0 erreur, 0 référence indéfinie.**
+
+**BILAN DE L'AUDIT, en une ligne :** 44 défauts, 44 traités, dont sept survivances qui
+allaient toutes dans le même sens — le nôtre. Le protocole du corpus n'en avait attrapé
+aucun ; c'est une lecture systématique qui les a trouvés, déclenchée par une phrase
+d'Édouard. Le garde-fou empêchera désormais la récidive de la moitié mécanique. **L'autre
+moitié demandera toujours quelqu'un pour lire.**

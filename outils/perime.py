@@ -28,7 +28,7 @@ FACADE = ["README.md", "CLAUDE.md", "RETRACTATIONS.md", "REPRODUIRE.md", "regist
           "registres/ETUDE_E1_v0.md", "registres/ETUDE_E1_manche2.md", "registres/ETUDE_E7.md",
           "registres/POSTERIEUR_K_v1.md", "registres/RACHAT_DES_DETTES.md",
           "papiers/papierA_fluide_source_externe.tex", "papiers/papierB_hierarchie.tex", "papiers/papierC_comparaison.tex",
-          "visuels/le_role.html", "visuels/ciel_pantheon.html", "visuels/mur_retractations.html", "visuels/saga_du_bord.html", "visuels/video_explicative.html"]
+          "visuels/le_role.html", "visuels/le_role_tableau.html", "visuels/ciel_pantheon.html", "visuels/mur_retractations.html", "visuels/saga_du_bord.html", "visuels/video_explicative.html"]
 HISTORIQUE = ["registres/MANQUEMENTS.md", "registres/TRIAGE_DES_ATTAQUES.md", "registres/carnet.md",
               "registres/etude_complete_v2.md", "registres/etude_complete.txt", "registres/revue_litterature_annexeA.md",
               "registres/etude_univers_trou_noir.md", "registres/PLAN_ETUDE_RIVAUX.md", "registres/ATLAS_falsification_spec.md",

@@ -48,7 +48,7 @@ toute modification de l'arbitre casse le build. Nous compris.
 
 Quatre affaires au rôle d'[Audience](outils/audience.json), sept prévenus — dont deux
 théories et une IA avec casier.
-**Le tableau de bord visuel : [`visuels/le_role.html`](visuels/le_role.html)** — la ligne de temps des
+**Le suivi visuel : [`visuels/le_role.html`](visuels/le_role.html)** (le ciel orbital) · [`le_role_tableau.html`](visuels/le_role_tableau.html) (la version tableau, ligne de temps + cartes) — la ligne de temps des
 juges, les trois β sur la bande scellée, le compteur FRB, les manches, les bornes de k.
 
 | Affaire | Affirmation sous jugement | Juge | Échéance |

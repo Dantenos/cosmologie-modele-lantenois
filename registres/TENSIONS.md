@@ -1,6 +1,6 @@
 # LE REGISTRE DES TENSIONS — généré par `outils/greffier.py`, ne pas éditer à la main
 
-*2026-08-24 — 9 tensions : 7 ouvertes, 0 en jugement, 2 résolues. Règle du greffe : une tension ne se*
+*2026-08-24 — 10 tensions : 8 ouvertes, 0 en jugement, 2 résolues. Règle du greffe : une tension ne se*
 *résout que par l'arbitre nommé avant la résolution — on ne réécrit pas l'histoire d'une anomalie.*
 
 ## T1-beta-interne — OUVERTE <small>(ouverte le 2026-08-23)</small>
@@ -110,4 +110,16 @@ Lectures rivales :
 - LE CROISEMENT N'EST PAS MESURABLE AUJOURD'HUI (lecture ouverte par #163) : les quatre déterminations de z× (2 formes × 2 jeux) s'étalent de 0,23 à 0,44 sans tendance cohérente, pour des écarts de χ² inférieurs à 1,3 — tant que ce systématique de forme n'est pas maîtrisé, aucun z× publié, le nôtre compris, ne contraint quoi que ce soit.
 
 **Arbitre (gravé d'avance)** : la dilution de la matière : tout jeu contraignant ω_m à mieux que ~1 % SIMULTANÉMENT à la recombinaison (Planck/ACT/SPT) et à bas redshift (DR3 BAO + amas + croissance). Si l'écart mesuré est compatible avec 0 à moins de 1 %, la lecture interne à ε ≈ 0,023 est exclue et l'externe survit ; s'il vaut 1,5-2 %, c'est l'inverse. Aucun des deux modèles n'a le droit de réajuster ε ou β après coup pour absorber l'écart (règle 5 : ils gardent h, ω_b, Ω_m, rien de plus)
+
+## T10-signe-de-la-dilution — OUVERTE <small>(ouverte le 2026-08-24)</small>
+
+**#188 : dans la famille ρ_m ∝ a^(ε−3) à Λ constante — celle de la littérature sur la dilution non standard — le seul choix de l'Ω_m qui alimente les priors comprimés (r_d, z_*, r_*, R) fait passer ε de +0,0060 à −0,0030, **les deux à 3,0σ et avec des gains sur ΛCDM presque identiques (+9,37 et +9,23)**. Le choix de comptabilité ne déplace pas l'amplitude : il renverse le signe, donc la physique. Verdict gelé de l'étude : AMBIGU, règle 9, rien n'exploité.**  
+magnitude : **renversement de signe d'une détection à 3σ ; traduit en densités, +4,3 % contre −2,1 % d'écart entre la matière d'aujourd'hui et celle de la recombinaison** · refs : #166, #167, #173, #188
+
+Lectures rivales :
+- L'ÉTALONNAGE COHÉRENT EST LE BON (ce que #166 argumente) : les priors comprimés (R, l_A) et les formules de r_d mesurent ω_m AVANT recombinaison, donc y injecter l'étiquette Ω_m d'aujourd'hui est une erreur, et ε = −0,0030 est la mesure. Conséquence : la classe publiée de mesures de ce type porte un signe faux.
+- L'ÉTALONNAGE-ÉTIQUETTE EST DÉFENDABLE : si les priors comprimés sont re-dérivés de bout en bout pour chaque modèle (ce que la littérature prudente fait avec la vraisemblance complète), la question ne se pose pas dans ces termes et notre reformulation est un artefact de notre propre raccourci.
+- NI L'UN NI L'AUTRE : les deux détections à 3σ sont produites par la même dégénérescence Ω_m–ε que les priors comprimés ne peuvent pas lever, et le nombre publiable est qu'il n'y a rien de mesurable ici sans vraisemblance complète.
+
+**Arbitre (gravé d'avance)** : la vraisemblance CMB COMPLÈTE (CAMB + plik_lite, comme planck_theta.py l'utilise déjà pour β) appliquée à cette même famille ρ_m ∝ a^(ε−3), qui n'emploie aucun prior comprimé et ne laisse donc aucun choix d'étalonnage. Le signe qu'elle rend tranche les trois lectures d'un coup. Aucun des deux camps n'a le droit de réajuster ε après avoir vu ce résultat (règle 5 : ils gardent h, ω_b, ln10¹⁰A_s, rien de plus).
 

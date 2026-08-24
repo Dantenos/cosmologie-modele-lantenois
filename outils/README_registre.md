@@ -19,7 +19,7 @@ $ python3 outils/registre.py freeze scripts/voile_cisaillement.py scripts/frb_st
 $ python3 outils/registre.py verify
 [registre] OK    scripts/voile_cisaillement.py
 [registre] OK    scripts/frb_strategie.py
-[registre] OK    outils/registre.py      # exit 0   (74 fichiers gelés au 24/08/2026)
+[registre] OK    outils/registre.py      # exit 0   (75 fichiers gelés au 24/08/2026)
 
 $ sed -i 's/O(0,1-1)/O(0,01-10)/' scripts/voile_cisaillement.py   # on élargit un critère... après coup
 $ python3 outils/registre.py verify scripts/voile_cisaillement.py

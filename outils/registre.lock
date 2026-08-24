@@ -368,5 +368,10 @@
   "sha256": "94b74a08a8546c17faa421a7b836466f3643d0afc108dabb2ea1c2d1324277b6",
   "gele_le": "2026-08-24T14:39:24",
   "extrait": "manuscrit — LE GARDE-FOU QUI MANQUAIT AU CORPUS (24/08/2026)."
+ },
+ "scripts/dilution_matiere.py": {
+  "sha256": "19efe1c1451424fa75c86b8640c3d1854ba01c93b2e8c3402428ee034ea86aac",
+  "gele_le": "2026-08-24T15:53:23",
+  "extrait": "LA MATIERE DILUE-T-ELLE EN a^-3 ? — MESURE BILATERALE, ET LE TEST D'UNE CLASSE P"
  }
 }

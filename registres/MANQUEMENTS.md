@@ -3176,3 +3176,46 @@ se cherche par motif — `perime.py` sait le faire. Une relation périmée ne se
 il faut recalculer chaque image, une par une, en sachant laquelle. Aucun outil de ce corpus
 ne le fait, et le garde-fou de manuscrit ne le fera pas non plus. **C'est la troisième fois
 aujourd'hui qu'un défaut n'est trouvable que par la lecture.**
+
+## 24/08 (Claude Code) — #188 LA DILUTION DE LA MATIÈRE : LE CHOIX D'ÉTALONNAGE **RENVERSE LE SIGNE** D'UNE DÉTECTION À 3σ
+`dilution_matiere.py` (gelé 19efe1c14514). Étude conçue pour lever la limite du #173 — la
+branche ε < 0 était inaccessible dans notre implémentation, or **c'est le signe qu'annonce la
+littérature** (Yang, Dai & Wang, arXiv:2505.09879 : ε = −0,0073 à ~2,4σ). Modèle de la classe
+publiée : ρ_m = Ω_m a^(ε−3) avec Λ constante, **sans** imposer la conservation totale — c'est
+ce qui ouvre les deux signes, et c'est déclaré comme ce qui distingue cette famille de la
+nôtre. Validations : à ε = 0 les deux étalonnages redonnent ΛCDM à 10⁻³ ; **les deux branches
+sont accessibles à 100 %** — ce que le #167/#173 n'avait pas.
+
+**LE RÉSULTAT, ET IL N'EST PAS CELUI QUE J'ATTENDAIS.**
+| étalonnage | ε préféré | significativité | gain sur ΛCDM |
+|---|---|---|---|
+| **étiquette** (ce que fait la littérature) | **+0,0060** | **3,0σ** | +9,37 |
+| **cohérent** (Ω_m à la recombinaison) | **−0,0030** | **3,0σ** | +9,23 |
+
+**Les mêmes données, la même famille, la même significativité de 3σ — et un signe opposé
+selon lequel des deux Ω_m alimente les priors comprimés.** Ce n'est pas « la détection est un
+artefact » : c'est pire et plus intéressant. Le choix de comptabilité ne déplace pas
+l'amplitude, il **renverse la physique**. Sous l'étiquette, la matière se dilue plus
+lentement que a⁻³ (il y en a +4,3 % de plus aujourd'hui qu'à la recombinaison) ; sous
+l'étalonnage cohérent, plus vite (−2,1 %).
+
+**VERDICT GELÉ : AMBIGU — règle 9, rien n'est exploité.** Mon critère 3 prévoyait « artefact »
+(l'étiquette détecte, le cohérent non) ou « robuste » (même signe des deux côtés). Ni l'un ni
+l'autre. La branche AMBIGU existait et elle s'applique : **aucune conclusion scientifique
+n'est tirée de cette étude.** Ce qui est acquis, c'est la MESURE, pas le verdict.
+
+**CE QUE LA MESURE VAUT QUAND MÊME, dit sans l'exploiter.** Sous étalonnage cohérent
+l'intervalle bilatéral à 2σ est **ε ∈ [−0,0050 ; −0,0020]**, qui exclut zéro — et le contrôle
+de sensibilité à l'époque de référence est stable (écart 0,113 en χ² entre recombinaison et
+équivalence). Traduit en physique, cet intervalle dit que la densité de matière d'aujourd'hui
+serait **1,4 % à 3,4 % inférieure** à celle qu'implique la recombinaison. **C'est
+précisément l'ordre de grandeur du discriminant scellé de T9 (1,70 %, #161)** — mais avec un
+signe et sous une lecture que ce corpus n'a pas testés, et je m'interdis d'en faire un
+argument tant que le renversement de signe n'est pas tranché.
+
+**CE QUE CETTE ÉTUDE NE DIT PAS, écrit dans son propre docstring.** Elle ne réfute pas
+arXiv:2505.09879 : données, pipeline et nuisances diffèrent. Elle établit un fait vérifiable
+sur NOTRE pipeline — que le seul choix d'étalonnage suffit à produire une détection à 3σ, et
+à en renverser le signe. Si ce comportement vaut aussi dans le leur, alors la classe entière
+de ces mesures est à refaire ; s'il n'y vaut pas, il faut dire pourquoi. **C'est la question
+que cette étude ouvre, et elle est plus grande que le corpus.** Ouverte au greffe comme T10.

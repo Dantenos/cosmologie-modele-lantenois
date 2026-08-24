@@ -1,8 +1,8 @@
-# ÉTAT DU DÉPÔT — généré par `outils/etat.py` le 2026-08-24 — ne pas éditer à la main
+# ÉTAT DU DÉPÔT — généré par `outils/etat.py` le 2026-08-25 — ne pas éditer à la main
 
 - **Critères gelés** : 89 (`outils/registre.lock`) — 0 amendé (`RETRACTATIONS.md`)
-- **Registre** : 206 entrées numérotées (`INDEX_MANQUEMENTS.md`)
-- **Triage** : 10 attaques justes, 75 affirmations réfutées (dernier bilan)
+- **Registre** : 207 entrées numérotées (`INDEX_MANQUEMENTS.md`)
+- **Triage** : 10 attaques justes, 76 affirmations réfutées (dernier bilan)
 - **Affaires au rôle** : 4 (DR3-beta, FRB-s, W-universel, k3-vs-0)
 - **Données publiques** : 21 fichiers sous empreinte (`donnees/SHA256SUMS`)
 - **Scripts** : 83 dans `scripts/` ; **outils** : 34 dans `outils/`

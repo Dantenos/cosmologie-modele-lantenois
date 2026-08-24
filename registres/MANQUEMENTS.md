@@ -4054,3 +4054,53 @@ revendication que j'étais prêt à publier : l'attribution de Yang (#195), le p
 trois.** Il attrape des critères mal posés ; il ne sait pas qu'un résultat est déjà publié.
 C'est écrit dans la section « limites » du papier, et ça vient d'être démontré une troisième
 fois sur le papier lui-même.
+
+## 25/08 — #202 UNE ATTRIBUTION D'AUTEURS FAUSSE DANS LE PAPIER D, TROUVÉE EN CHERCHANT UNE ADRESSE
+Recherche des adresses publiques des auteurs engagés par le papier D, en vue de les prévenir
+avant soumission. Elle a rapporté trois choses, dont une qui était un défaut dans un
+manuscrit prêt à partir.
+
+**LE DÉFAUT. arXiv:2505.09879 n'est pas de qui le corpus le croyait.**
+Le corpus écrit depuis le #188 « Yang, Dai & Wang », et la bibliographie des DEUX éditions du
+papier D portait `Yang, W., Dai, W.-B., & Wang, D.`. Les auteurs réels sont
+**Yupeng Yang, Xinyi Dai et Yicheng Wang** (Qufu Normal University), et l'article est publié
+dans *Phys. Rev. D* **111**, 103534. Trois prénoms faux sur trois.
+**Corrigé dans les deux éditions**, avec la référence de journal ajoutée ; recompilées à 0
+erreur et 0 référence non définie.
+
+**POURQUOI AUCUN GARDE-FOU NE L'A VU, ET C'EST LE POINT INTÉRESSANT.** Le contrôle B de
+`manuscrit.py` vérifie qu'une entrée bibliographique porte **un identifiant**, pas que ses
+**noms** soient les bons. L'entrée fautive portait un arXiv valide et pointait vers le bon
+article — elle passait donc, et elle passera toujours. **Un identifiant juste avec des noms
+faux est invisible à un contrôle mécanique**, et c'est exactement la classe de défaut que le
+papier F range dans « ce qu'aucun outillage n'aurait attrapé ». Quatrième fois en deux jours
+qu'une vérification humaine ou bibliographique trouve ce que le protocole gelé ne peut pas
+voir.
+
+**DEUXIÈME FAIT : LA POLITIQUE arXiv A CHANGÉ LE 21 JANVIER 2026.**
+> « As of January 21, 2026, arXiv will no longer accept institutional email addresses as the
+> sole qualifier of endorsement for new authors. […] The first path requires **both** an
+> institutional email address **and** previous authorship on an existing paper accepted to
+> the arXiv endorsement domain. »
+Sans rattachement institutionnel et sans article arXiv antérieur, **la première voie est
+fermée** : l'endossement personnel est la seule route, et arXiv précise que son personnel
+« cannot waive endorsement requirements or provide a personal endorsement ». Le nombre
+d'articles requis pour être endosseur en astro-ph **n'est pas publié** ; la fenêtre l'est
+(3 mois à 5 ans). Consigné avec les citations dans `correspondance/`.
+
+**TROISIÈME FAIT, NÉGATIF ET UTILE : il n'y a pas de cosmologie à Lille.**
+Vérifié : les 66 unités de recherche de l'Université de Lille rendent **zéro** résultat pour
+« cosmologie » ou « astroparticule » ; l'Observatoire de Lille fait de la mécanique céleste,
+sa page le dit textuellement ; PhLAM fait lasers et molécules ; et **l'IN2P3 n'a aucun
+laboratoire en Hauts-de-France**. Le plan « aborder un labo local pour la proximité » était
+sans objet. Remplacé par les laboratoires français **réellement membres de DESI** — CPPM
+(Stéphanie Escoffier, responsable scientifique eBOSS/DESI), LAM, CEA-IRFU, LPNHE — plus l'APC,
+qui est le seul à publier les adresses de ses responsables de groupe en clair.
+**IJCLab, LPSC, l'IAP et l'OCA ne sont PAS dans DESI** : les aborder par cet angle serait
+faux, et la liste officielle a été lue intégralement pour l'établir.
+
+**CE QUI EST VERSÉ.** `correspondance/0_ADRESSES_ET_POLITIQUE.md` porte les onze adresses
+trouvées, chacune avec la source qui la publie. **Aucune n'est reconstruite** à partir d'un
+patron prénom-nom-institution ; là où rien n'est publié — adresses personnelles de l'IAP,
+bureau éditorial d'A&A, adresse éditoriale directe de MNRAS — c'est écrit `NON TROUVÉE`.
+Une adresse inventée ferait plus de mal que pas d'adresse.

@@ -416,3 +416,7 @@ crédit du binôme : le soupçon humain a vu ce que quatre relectures machine on
 | 84 | ma recommandation « testez vos garde-fous par mutation » | **PUBLIÉE EN 2009 ET 2010 (#201)** : Knauth et al. muent l'oracle pour mesurer la qualité des contrats, et DATE 2010 réunit **ma classe vacuité ET ma pratique de mutation** dans un seul article. Retirée du résumé. |
 
 **Bilan : 10 attaques justes, 75 affirmations réfutées, rétrogradées ou corrigées — dont trois, aujourd'hui, contre un papier que je venais de terminer.**
+
+| 85 | corpus : « Yang, W., Dai, W.-B. & Wang, D. » pour arXiv:2505.09879, depuis le #188 et dans les deux éditions du papier D | **TROIS PRÉNOMS FAUX SUR TROIS (#202)** : les auteurs sont **Yupeng Yang, Xinyi Dai et Yicheng Wang** (Qufu Normal University), publié dans Phys. Rev. D 111, 103534. Corrigé. **Aucun garde-fou ne pouvait le voir** : le contrôle B vérifie qu'une entrée porte un identifiant, pas que ses noms soient justes — et l'identifiant était bon. Un identifiant juste avec des noms faux est invisible à un contrôle mécanique. |
+
+**Bilan : 10 attaques justes, 76 affirmations réfutées, rétrogradées ou corrigées.**

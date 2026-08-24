@@ -58,15 +58,38 @@
 
 ---
 
+## ⚠️ La proximité géographique n'est pas jouable — vérifié
+
+> **Il n'existe aucun groupe de cosmologie ni d'astroparticule à Lille, ni en
+> Hauts-de-France.** Les 66 unités de recherche de l'Université de Lille rendent zéro
+> résultat pour « cosmologie » ou « astroparticule ». L'Observatoire de Lille fait de la
+> **mécanique céleste** — sa propre page le dit : « Le domaine de recherche est la mécanique
+> céleste et la planétologie dynamique ». PhLAM fait lasers et molécules. Et **l'IN2P3 n'a
+> aucun laboratoire dans la région** ; les plus proches sont à Paris et Orsay. ULCO et l'UPJV
+> Amiens non plus.
+
+Écrire à Lille « pour la proximité » reviendrait à demander à des mécaniciens célestes de
+juger un résultat de cosmologie. **Vise la proximité thématique.**
+
 ## Ordre d'approche suggéré
 
-1. **Un groupe français participant à DESI.** Les papiers emploient DESI DR2 : la proximité
-   thématique est réelle et immédiate à vérifier. C'est l'entrée la plus solide.
-2. **Un groupe de cosmologie théorique** travaillant sur l'énergie sombre dynamique ou les
-   secteurs sombres en interaction.
-3. **Le département de physique de l'Université de Lille**, pour la proximité géographique —
-   même si la cosmologie n'y est pas l'axe principal, un rattachement local facilite tout le
-   reste.
+1. **CPPM Marseille — le meilleur point d'entrée.** C'est un laboratoire membre de DESI, son
+   équipe **RENOIR** fait la cosmologie, et **Stéphanie Escoffier** y est nommément
+   « responsable scientifique eBOSS/DESI » : `escoffier@cppm.in2p3.fr`, adresse publiée en
+   clair dans l'annuaire du laboratoire. Tes papiers emploient DESI DR2 — le lien est direct.
+2. **APC Paris — le plus ouvert.** Son organigramme publie les adresses des responsables de
+   groupe en clair, ce qui est rare. **Cyrille Rosset**, responsable Cosmologie :
+   `cyrille.rosset@apc.in2p3.fr`. Pas de DESI (Euclid, Rubin, Simons) : ne pas l'aborder par
+   cet angle, ce serait faux.
+3. **LPNHE Paris** (`secr-dir@lpnhe.in2p3.fr`) et **CEA-IRFU Saclay**
+   (`Irfu-dphp-contact@cea.fr`), tous deux dans DESI — mais ce sont des adresses de
+   secrétariat, donc une réponse moins probable qu'un contact nommé.
+4. **IAP Paris** — GReCO (Cyril Pitrou) et Grandes structures (Florent Leclercq). **Aucune
+   adresse personnelle n'est publiée** : l'IAP impose un formulaire pré-adressé par personne.
+   Emprunter ce formulaire plutôt que deviner une adresse.
+
+**À ne pas faire :** aborder IJCLab, LPSC, l'IAP ou l'OCA par l'angle DESI. **Ils n'en font
+pas partie** — la liste officielle des institutions DESI a été vérifiée intégralement.
 
 > **Une adresse à la fois, personnalisée.** Un message identique envoyé à cinq laboratoires se
 > repère au premier coup d'œil et se jette. La phrase « je vous écris parce que… » doit être

@@ -13,6 +13,10 @@
 
 ## A. Kumar, Ajith & Verma — arXiv:2504.14419
 
+> **Adresses :** `utkarshkumar.physics@gmail.com` (Utkarsh Kumar, U. Ottawa, déposant) ·
+> `abhijith.ajith.421997@gmail.com` · `amreshverma702@gmail.com`. Ils ont republié sur le
+> même sujet le 20/07/2026 (arXiv:2607.18234) : à lire avant d'écrire.
+
 *Leur mesure PL18+DESI DR2 est la référence en vraisemblance complète du papier D.*
 
 **Objet :** `Your w_dm = 0.00077 ± 0.00038 used as a full-likelihood reference — a check on my conversion`
@@ -52,7 +56,12 @@
 
 ---
 
-## B. Yang, Dai & Wang — arXiv:2505.09879
+## B. Yupeng Yang, Xinyi Dai & Yicheng Wang — arXiv:2505.09879
+
+> **Adresse : `ypyang@aliyun.com`** (Yupeng Yang, auteur contact, publiée par PRD).
+> Qufu Normal University. Publié dans *Phys. Rev. D* **111**, 103534.
+> **Mon corpus les avait mal nommés** — « Weiqiang Yang, Wen-Bin Dai, Deng Wang » — et le
+> papier D le portait dans sa bibliographie. Corrigé (#202). Écris aux bons destinataires.
 
 *C'est le message le plus délicat : mon corpus a d'abord mal résumé leur résultat, et je l'ai
 rétracté au greffe (#195). Le message doit le dire.*
@@ -95,6 +104,9 @@ rétracté au greffe (#195). Le message doit le dire.*
 
 ## C. Tsiapi & Basilakos — arXiv:1810.12902
 
+> **Autrice correspondante : P. Tsiapi, `ptsiapi@mail.ntua.gr`** (publiée par MNRAS/OUP).
+> Basilakos : `svasil@academyofathens.gr`, adresse publiée dans un *autre* de ses articles.
+
 *Leur article est le seul en vraisemblance complète sur le cousin conservé ; le papier D
 l'emploie avec une réserve déclarée.*
 
@@ -127,6 +139,11 @@ l'emploie avec une réserve déclarée.*
 ---
 
 ## D. Bengaly, Andrade & Alcaniz — arXiv:1810.04966
+
+> **Auteur correspondant : C. A. P. Bengaly, `carlosap87@gmail.com`** (publié par Springer).
+> Andrade `uendertandrade@on.br` · Alcaniz `alcaniz@on.br`.
+> **Bengaly n'est plus à l'University of the Western Cape** : Observatório Nacional depuis
+> juillet 2020. Ne pas reprendre l'affiliation de l'article.
 
 *Ce message-là est un remerciement, pas une discussion : leur résultat a fermé un trou réel
 dans mon corpus.*

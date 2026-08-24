@@ -5,7 +5,20 @@
 > dans le message soulage la personne et double le taux de réponse : elle comprend qu'elle ne
 > s'engage pas scientifiquement.
 >
-> **Ne pas envoyer en masse.** Un message à la fois, à quelqu'un dont tu as lu le travail, et
+> **⚠️ LA POLITIQUE A CHANGÉ LE 21 JANVIER 2026, ET ÇA TE CONCERNE DIRECTEMENT.** arXiv
+> n'accepte plus une adresse institutionnelle comme seul qualifiant. Il faut désormais **une
+> adresse institutionnelle ET un article arXiv antérieur** dans le domaine — ou bien
+> l'endossement personnel. Sans rattachement et sans article antérieur, **la première voie
+> t'est fermée : l'endossement personnel est ta seule route.** Et arXiv précise que son
+> personnel « cannot waive endorsement requirements or provide a personal endorsement ».
+> Détails et citations : `0_ADRESSES_ET_POLITIQUE.md`.
+>
+> **Crée ton compte arXiv AVANT de chercher un endosseur.** Le lien « Which authors of this
+> paper are endorsers? » en bas de chaque page d'article renvoie une erreur 401 si tu n'es
+> pas connecté — c'est pourtant lui qui te dit qui est éligible.
+>
+> **Ne pas envoyer en masse.** arXiv l'écrit noir sur blanc : « it is inappropriate to email
+> large numbers of potential endorsers at once, or to repeatedly email the same endorser ». Un message à la fois, à quelqu'un dont tu as lu le travail, et
 > dont le papier est cité dans le tien. Un envoi groupé se repère et se jette.
 
 ---
@@ -90,8 +103,10 @@ Une fois qu'une personne accepte, arXiv te fournit un **code à six caractères*
 
 ## Ordre de priorité suggéré
 
-1. Un auteur **cité dans le papier D** et actif en astro-ph.CO — c'est le cas le plus naturel,
-   il verra que le lien est réel.
+1. **Utkarsh Kumar** (`utkarshkumar.physics@gmail.com`, U. Ottawa) — le meilleur candidat, et
+   de loin. Sa mesure PL18+DESI DR2 est la référence en vraisemblance complète de ton papier ;
+   il a publié à nouveau sur le même sujet le **20 juillet 2026** (arXiv:2607.18234), donc il
+   est actif dans la fenêtre requise ; et le lien avec ton travail est immédiat à voir.
 2. Un membre d'un groupe français DESI — proximité thématique et linguistique.
 3. Quelqu'un dont tu as lu le travail en profondeur et à qui tu peux le montrer en une phrase.
 

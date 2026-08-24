@@ -102,11 +102,11 @@
   },
   {
    "nom": "critères gelés",
-   "valeur_courante": "69 (24/08/2026)",
+   "valeur_courante": "70 (24/08/2026)",
    "source": "outils/registre.lock",
    "date": "2026-08-23",
    "valeurs_depreciees": [
-    "\\b(?!69\\b)\\d+ (critères|fichiers|scripts) (gelés|du corpus sont gelés)"
+    "\\b(?!70\\b)\\d+ (critères|fichiers|scripts) (gelés|du corpus sont gelés)"
    ]
   },
   {

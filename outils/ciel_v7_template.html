@@ -85,9 +85,9 @@ const TXT=[
  "Disque ambré : le <b>plan de l'écliptique</b>. Le semis extérieur est la <b>ceinture de Kuiper</b> (30–50 UA), qui s'estompe vers le <b>nuage de Oort</b> (2 000 – 100 000 UA, déclaré). C'est la frontière physique du système avant le vide interstellaire.<span class='mono'>rayons logarithmiques · aucune SN du catalogue ici</span>",
  "Spirale à quatre bras, Soleil à <b>8,2 kpc</b> (≈ 26 700 al). La bulle translucide est la <b>Bulle Locale</b> : coquille IRRÉGULIÈRE, entre ~50 et ~150 pc du Soleil selon la direction (cartographie 3D de la poussière). Plan galactique / écliptique : <b>"+M.gal_ecl+"°</b>, calculé.<span class='mono'>dessiner une sphère nette serait faux : la cavité n'en est pas une</span>",T4];
 const TPHARE="<b>Phare Sgr A*.</b> Tu regardes le cœur de la galaxie, b = "+M.sgr_b+"° (contrôlé). Dans les 15° autour : <b>"+M.n_sgr+" supernova</b>, pour "+M.att_sgr+" attendues si le ciel était isotrope.<span class='mono'>DEUX causes à ne pas confondre : l'extinction par la poussière ET l'évitement délibéré du plan par les relevés.</span>";
-const TOMB="<b>Cônes d\u2019ombre.</b> Chaque disque sombre est une cellule du ciel de "+M.aire_cell+" deg\u00b2 où <b>aucune</b> supernova n\u2019a été observée. Il y en a "+M.n_omb+" sur "+M.ncell+" : <b>"+M.f_omb+" % du ciel</b>. Un tirage isotrope de même taille n\u2019en laisserait que "+M.f_iso+" \u00b1 "+M.s_iso+" %.<span class='mono'>écart mesuré : "+M.sig_omb+"\u03c3 \u00b7 grille d\u2019aire égale (RA uniforme, sin(Dec) uniforme)<br>ce n\u2019est pas l\u2019Univers qui est vide là : c\u2019est nous qui n\u2019y avons pas regardé</span>";
-const TGRA="<b>Graphe de proximité</b> — "+M.n_ar+" arêtes, séparation médiane "+M.sep_med+" Mpc. <b>ATTENTION : ce n\u2019est PAS la toile cosmique.</b> Les supernovae sont des traceurs épars et sélectionnés ; relier chacune à sa plus proche voisine dessine <b>où les relevés ont regardé</b>, pas où sont les filaments.<span class='mono'>affiché parce que c\u2019est instructif, étiqueté parce que ce serait faux autrement</span>";
-const TVIDE="<b>Traversée du plus grand vide</b> du catalogue Stopyra : le n\u00b0"+M.kv+", rayon <b>"+M.rv+" Mpc</b>, centre à "+M.dv+" Mpc. La caméra s\u2019aligne dessus et le traverse.<span class='mono'>rayon et indice calculés, pas choisis à l\u2019\u0153il</span>";
+const TOMB="<b>Cônes d’ombre.</b> Chaque disque sombre est une cellule du ciel de "+M.aire_cell+" deg² où <b>aucune</b> supernova n’a été observée. Il y en a "+M.n_omb+" sur "+M.ncell+" : <b>"+M.f_omb+" % du ciel</b>. Un tirage isotrope de même taille n’en laisserait que "+M.f_iso+" ± "+M.s_iso+" %.<span class='mono'>écart mesuré : "+M.sig_omb+"σ · grille d’aire égale (RA uniforme, sin(Dec) uniforme)<br>ce n’est pas l’Univers qui est vide là : c’est nous qui n’y avons pas regardé</span>";
+const TGRA="<b>Graphe de proximité</b> — "+M.n_ar+" arêtes, séparation médiane "+M.sep_med+" Mpc. <b>ATTENTION : ce n’est PAS la toile cosmique.</b> Les supernovae sont des traceurs épars et sélectionnés ; relier chacune à sa plus proche voisine dessine <b>où les relevés ont regardé</b>, pas où sont les filaments.<span class='mono'>affiché parce que c’est instructif, étiqueté parce que ce serait faux autrement</span>";
+const TVIDE="<b>Traversée du plus grand vide</b> du catalogue Stopyra : le n°"+M.kv+", rayon <b>"+M.rv+" Mpc</b>, centre à "+M.dv+" Mpc. La caméra s’aligne dessus et le traverse.<span class='mono'>rayon et indice calculés, pas choisis à l’œil</span>";
 const TRADAR="<b>Scan radar.</b> Une impulsion partie de la Terre, à la vitesse de la lumière. Elle atteint Neptune en 4 h, le bord de la Bulle Locale en 490 ans, Sgr A* en 26 700 ans — et les supernovae les plus lointaines après <b>"+M.t_max+" milliards d'années</b>, sur un univers qui en a "+M.age+".<span class='mono'>regarder loin, c'est regarder tôt · temps calculés dans la fiduciaire déclarée</span>";
 function rs(){W=cv.width=innerWidth*devicePixelRatio;H=cv.height=innerHeight*devicePixelRatio;S=Math.min(W,H)*0.40}
 addEventListener('resize',rs);rs();
@@ -317,7 +317,7 @@ function fr(){requestAnimationFrame(fr);
     const sep=Math.hypot(A[0]-B2[0],A[1]-B2[1],A[2]-B2[2]);
     if(!clean){g.globalAlpha=1;g.fillStyle='#8faf7f';
      g.font=(11.5*devicePixelRatio)+'px ui-monospace,Menlo,monospace';
-     g.fillText(ang.toFixed(2)+'\u00b0  \u00b7  '+Math.round(sep)+' Mpc comobiles',
+     g.fillText(ang.toFixed(2)+'°  ·  '+Math.round(sep)+' Mpc comobiles',
       (p[0]+q[0])/2+8*devicePixelRatio,(p[1]+q[1])/2-6*devicePixelRatio)}}}
   for(const A of regle){const p=proj(A[0]*MPC,A[1]*MPC,A[2]*MPC);if(!p)continue;
    g.globalAlpha=1;g.strokeStyle='#8faf7f';g.lineWidth=1.8*devicePixelRatio;
@@ -398,7 +398,7 @@ B('f1','z1','masquer |b| < 10°',()=>{fZOA=fZOA===2?0:2;maj()},'alt');
 B('f2','iso','ciel isotrope',()=>{fISO=fISO?0:1;maj()},'alt');
 B('f2','obs','vue observateur',()=>{obs=!obs;if(obs)Rcible=Rview=RCOS;maj()});
 B('f2','las','balayage Stripe 82',()=>{laser=laser>=0?-1:0;maj()});
-B('f2','omb','cônes d\u2019ombre',()=>{fOMB=fOMB?0:1;
+B('f2','omb','cônes d’ombre',()=>{fOMB=fOMB?0:1;
  EL('txt').innerHTML=fOMB?TOMB:TXT[3];maj()},'alt');
 B('f2','gra','graphe de proximité',()=>{fGRA=fGRA?0:1;
  EL('txt').innerHTML=fGRA?TGRA:TXT[3];maj()},'alt');

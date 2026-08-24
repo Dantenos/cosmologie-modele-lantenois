@@ -343,5 +343,10 @@
   "sha256": "9c98718d675e76008db4e7f7b8004e1e8b23a795d4056137f13053553eba71ae",
   "gele_le": "2026-08-24T13:05:39",
   "extrait": "genere_ciel_v7 — LES CONES D'OMBRE, LA COUPE, LA REGLE ET LE DEPLIAGE (24/08/202"
+ },
+ "outils/genere_ciel_bilingue.py": {
+  "sha256": "fc8e0f3d28034f7534550aa498c73ccbc863c4526553ba2b5387aebcb6ed38d3",
+  "gele_le": "2026-08-24T13:14:51",
+  "extrait": "genere_ciel_bilingue — UNE VERSION ENTIEREMENT FRANCAISE ET UNE ENTIEREMENT ANGL"
  }
 }

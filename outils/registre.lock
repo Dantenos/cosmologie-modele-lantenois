@@ -363,5 +363,10 @@
   "sha256": "8ea9b94676afffe7be4a24a9a69541cf1af2e2bea4c2fe4dd3ecb843aa49a128",
   "gele_le": "2026-08-24T13:28:16",
   "extrait": "genere_ciel_v8b — INTERFACE REORGANISEE + CONTRASTE, CRITERE CORRIGE."
+ },
+ "outils/manuscrit.py": {
+  "sha256": "94b74a08a8546c17faa421a7b836466f3643d0afc108dabb2ea1c2d1324277b6",
+  "gele_le": "2026-08-24T14:39:24",
+  "extrait": "manuscrit — LE GARDE-FOU QUI MANQUAIT AU CORPUS (24/08/2026)."
  }
 }

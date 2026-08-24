@@ -2992,3 +2992,45 @@ valeurs canoniques, pas la cohérence interne des manuscrits. Le registre du cor
 révélé systématiquement plus honnête que les papiers. Ce n'est pas un hasard : le registre
 est écrit sous critère gelé, les papiers ne le sont pas. **Il manque au corpus un garde-fou
 de manuscrit.**
+
+## 24/08 (Claude Code) — #184 LE GARDE-FOU DE MANUSCRIT, ET SES DEUX PREMIERS FAUX POSITIFS
+`outils/manuscrit.py` (gelé 94b74a08a854). Le #183 avait établi le manque : `perime.py` et
+`registre.py verify` sont passés **sans attraper un seul des 44 défauts**, parce qu'ils
+surveillent les critères gelés et les valeurs canoniques, pas la cohérence interne des
+manuscrits. Cet outil comble exactement ce trou, et rien de plus.
+
+**CE QU'IL VÉRIFIE.** A — intégrité des citations, toutes formes natbib, **bloquant** (une
+clé pendante casse la compilation, un doublon trompe le lecteur). B — entrées sans
+identifiant retrouvable. C — sources nommées dans le texte sans citation. D — conversions
+Δχ² → σ incompatibles avec 1 ou 2 ddl. E — clés homonymes divergentes entre papiers.
+Sa validation refuse de rapporter quoi que ce soit si A trouve une clé pendante : dans ce
+cas c'est l'outil qui lit mal, pas les papiers qui sont cassés.
+
+**CE QU'IL A TROUVÉ ET QUI EST RÉEL.** La collision de clé `DESI2025` — la même clé
+désignant l'*Extended Dark Energy analysis* dans le papier A et *DR2 results II* dans le
+papier C, que A appelle déjà `DESIDR2BAO` : un lecteur qui suit la référence d'un papier à
+l'autre tombe sur autre chose. Renommée dans C. Plus quatre entrées sans identifiant
+(AntonSchmidt2026, Poplawski2024, Diemand2004 sans titre ni année, ECtheorems réduite à un
+identifiant nu dans B alors qu'elle porte auteurs et titre dans A) : complétées ou
+**signalées dans la bibliographie elle-même**, ce qui vaut mieux que de laisser un rapporteur
+les découvrir.
+
+**CE QU'IL A TROUVÉ ET QUI ÉTAIT FAUX — deux sur deux au contrôle D.** Il signalait
+Δχ² = −12,62 → « 1σ » et Δχ² = +6,36 → « 3,8σ ». Vérification : le « 1σ » appartient à
+β = 2,49 ± 0,05 (erreur de courbure) et le « 3,8σ » à l'excursion de l'offset d'étalonnage.
+**Ni l'un ni l'autre n'est la conversion d'un Δχ².** Ma fenêtre de 160 caractères ne
+distingue pas les propositions. Correction de corps : la fenêtre gelée est conservée, mais
+les couples séparés par une frontière de phrase sont désormais **étiquetés « probable faux
+positif »** au lieu d'être présentés comme des défauts — on ne les cache pas, on les classe.
+Le contrôle B signalait de même quatre **ouvrages** (Smolin, Penrose ×2) qui n'ont
+légitimement ni arXiv ni DOI ; ils sont maintenant étiquetés et comptés à part.
+
+**ÉTAT APRÈS CORRECTIONS :** A validé (0 pendante, 0 doublon sur 119 entrées), C à 0,
+D à 0, B à 5 et E à 11 — ces onze étant, pour la plupart, la **même** référence formatée
+différemment d'un papier à l'autre : cosmétique, mais l'outil a raison de le dire, parce que
+c'est exactement ainsi que la collision `DESI2025` s'était installée.
+
+**CE QUE CET OUTIL NE FERA JAMAIS, écrit dans son propre docstring pour qu'on ne l'oublie
+pas :** il ne relit pas les équations, ne juge pas la physique, et n'aurait attrapé aucune
+des sept survivances orientées du #183. Celles-là demandent une lecture. Il empêche la
+récidive d'une classe de défauts, pas la classe de défauts qui compte le plus.

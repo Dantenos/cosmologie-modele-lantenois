@@ -348,5 +348,10 @@
   "sha256": "fc8e0f3d28034f7534550aa498c73ccbc863c4526553ba2b5387aebcb6ed38d3",
   "gele_le": "2026-08-24T13:14:51",
   "extrait": "genere_ciel_bilingue — UNE VERSION ENTIEREMENT FRANCAISE ET UNE ENTIEREMENT ANGL"
+ },
+ "scripts/atlas_v2.py": {
+  "sha256": "9466cd5914ec644362214acd4ea4fc0f481461179e99b320c3e36668c1e086c3",
+  "gele_le": "2026-08-24T13:20:07",
+  "extrait": "ATLAS v2 — LE PALMARES CORRIGE, CONSOLIDE ET ANNOTE."
  }
 }

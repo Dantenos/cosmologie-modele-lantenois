@@ -2776,3 +2776,47 @@ contre 54,4 % (2592 cellules).
 en densité, il est **absent de plus de la moitié du ciel**. Toute inférence cosmologique tirée
 de Pantheon+ porte donc sur un demi-ciel troué et percé de pinceaux, jamais sur « le ciel ».
 Consigné comme fait de sélection, pas comme critique : c'est la condition normale d'un relevé.
+
+## 24/08 (Claude Code) — #179 ATLAS v2 : LE PALMARÈS CORRIGÉ NOUS MET 4ᵉ SUR 25 — ET CCBH NOUS DEVANCE PAR PARCIMONIE
+`atlas_v2.py` (gelé 9466cd5914ec). Ce n'est pas un re-calcul : `atlas_v1.py` est gelé avec ses
+ancres, le rejouer redonnerait les valeurs fautives. C'est une **consolidation** : elle prend
+les valeurs déjà validées par des scripts gelés, corrige là où une rétractation l'exige,
+annote là où un domaine est mutilé, et adjoint les six lois du banc. Validations : 19 modèles,
+les deux lignes iΛCDM portent bien le drapeau RETRACTÉ, ancres ΛCDM 1425,086 et accrétion
+1419,309 exactes, et le χ² corrigé de l'iΛCDM 'dm' vaut **exactement** celui de ΛCDM.
+
+| rang | modèle | k | χ² | AIC |
+|---|---|---|---|---|
+| 1 | K4 (Kessler et al., Éq. 8) | 4 | 1415,398 | **1423,398** |
+| 2 | **CCBH (Croker et al.)** | **3** | 1420,309 | **1426,309** |
+| 3 | K3 (Kessler et al., Éq. 7) | 4 | 1418,426 | 1426,426 |
+| **4** | **ACCRÉTION (β)** | **4** | **1419,309** | **1427,309** |
+| 5 | SR w₀/√a (Borghetto et al.) | 4 | 1419,361 | 1427,361 |
+| 6 | ACCRÉTION 5/2 (0 param. libre) | 3 | 1421,527 | 1427,527 |
+
+**LE FAIT NOUVEAU, ET IL EST DÉFAVORABLE : CCBH nous devance à l'AIC, non pas en ajustant
+mieux (χ² 1420,3 contre 1419,3 — nous ajustons MIEUX), mais parce qu'il a UN PARAMÈTRE DE
+MOINS.** C'est exactement la revendication de parcimonie que la vérification de littérature
+avait signalée au #172 (Croker et al., arXiv:2405.12282 : la densité d'énergie noire de DESI
+reproduite avec deux paramètres de moins que w₀wₐ). Le bandeau de rétractation posé sur
+l'ancien palmarès masquait ce reclassement : en retirant les deux iΛCDM fantômes, ce n'est
+pas nous qui remontons en tête, c'est CCBH.
+
+**CE QU'IL FAUT DIRE EN MÊME TEMPS, SANS CHOISIR.** CCBH gagne sur la parcimonie du FOND. Il
+est en difficulté sur le **budget baryonique** : duel FRB réel (#148, Δχ² = +4,71 ≈ 2,2σ en
+notre faveur) et Grand Livre (#152, il doit +14,19). Les deux constats sont vrais ensemble et
+portent sur des choses différentes. Écrire l'un sans l'autre serait malhonnête dans les deux
+sens.
+
+**UNE CURIOSITÉ QUI NOUS SERT, ET QU'IL FAUT MESURER AVANT DE L'AIMER :** la version
+**β = 5/2 FIXÉ, zéro paramètre libre**, arrive 6ᵉ à 1427,527 — soit **0,22 d'AIC** derrière
+la version à β libre. Geler complètement l'exposant ne coûte quasiment rien. Si cette
+robustesse tient à un examen dédié, c'est l'argument de parcimonie le plus fort dont dispose
+le corpus — et le seul terrain où l'on peut affronter CCBH à armes égales. À geler comme
+étude propre ; ce n'est pas établi ici.
+
+**MENTIONS PORTÉES DANS LE FICHIER GÉNÉRÉ (registres/ATLAS_V2.md).** Trois familles portent
+« MINIMUM DE BORD » (#175) : iΛCDM 'dm', JPS, thawing — leur χ² ne se lit pas comme un
+minimum. Et le fichier se termine par ce qu'il ne dit pas : rien sur les perturbations, rien
+sur la physique, et rien sur la robustesse aux systématiques de calibration SN — dont le #170
+montre qu'elles déplacent nos gains de 10 à 17 % à elles seules.

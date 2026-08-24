@@ -1,0 +1,190 @@
+{
+ "source": "scripts/atlas_v2.py",
+ "remplace": "atlas_leaderboard.json (#150)",
+ "retractations": [
+  "#166",
+  "#167"
+ ],
+ "annotations": [
+  "#175",
+  "#177"
+ ],
+ "rang_accretion": 4,
+ "modeles": [
+  {
+   "nom": "K4 (Kessler et al. 2025, Eq. 8)",
+   "k": 4,
+   "chi2": 1415.398,
+   "note": "banc a un parametre (w0 = -0,9916)",
+   "src": "#177"
+  },
+  {
+   "nom": "CCBH (Croker et al.)",
+   "k": 3,
+   "chi2": 1420.309,
+   "note": "",
+   "src": "#150"
+  },
+  {
+   "nom": "K3 (Kessler et al. 2025, Eq. 7)",
+   "k": 4,
+   "chi2": 1418.426,
+   "note": "banc a un parametre (w0 = -0,9081)",
+   "src": "#177"
+  },
+  {
+   "nom": "ACCRETION (Gamma∝1/t)",
+   "k": 4,
+   "chi2": 1419.309,
+   "note": "",
+   "src": "#150"
+  },
+  {
+   "nom": "SR w0/sqrt(a) (Borghetto et al. 2026)",
+   "k": 4,
+   "chi2": 1419.361,
+   "note": "banc a un parametre (w0 = -0,8844)",
+   "src": "#177"
+  },
+  {
+   "nom": "ACCRETION 5/2 (0 param.)",
+   "k": 3,
+   "chi2": 1421.527,
+   "note": "",
+   "src": "#150"
+  },
+  {
+   "nom": "w log(a) (Efstathiou)",
+   "k": 5,
+   "chi2": 1418.079,
+   "note": "",
+   "src": "#150"
+  },
+  {
+   "nom": "PC1 (creation, w_E libre)",
+   "k": 6,
+   "chi2": 1416.701,
+   "note": "",
+   "src": "#150"
+  },
+  {
+   "nom": "CPL = IDE degeneree",
+   "k": 5,
+   "chi2": 1418.927,
+   "note": "",
+   "src": "#150"
+  },
+  {
+   "nom": "Anton-Schmidt",
+   "k": 5,
+   "chi2": 1419.515,
+   "note": "",
+   "src": "#150"
+  },
+  {
+   "nom": "K1 (Kessler et al. 2025, Eq. 5)",
+   "k": 4,
+   "chi2": 1421.742,
+   "note": "banc a un parametre (w0 = -0,8362)",
+   "src": "#177"
+  },
+  {
+   "nom": "LCDM",
+   "k": 3,
+   "chi2": 1425.086,
+   "note": "",
+   "src": "#150"
+  },
+  {
+   "nom": "Lombriser (Om_de predit)",
+   "k": 2,
+   "chi2": 1427.607,
+   "note": "",
+   "src": "#150"
+  },
+  {
+   "nom": "wCDM",
+   "k": 4,
+   "chi2": 1423.843,
+   "note": "",
+   "src": "#150"
+  },
+  {
+   "nom": "iLCDM Q=eps H rho_de",
+   "k": 4,
+   "chi2": 1423.874,
+   "note": "RETRACTE-CORRIGE (#166, degenerescence_ilcdm_v4.py)",
+   "src": "#166"
+  },
+  {
+   "nom": "iLCDM Q=eps H rho_dm",
+   "k": 4,
+   "chi2": 1425.086,
+   "note": "RETRACTE-CORRIGE (#167, etalonnage_dm.py) · MINIMUM DE BORD (#175)",
+   "src": "#167"
+  },
+  {
+   "nom": "Quintessence thawing (Linder)",
+   "k": 4,
+   "chi2": 1425.107,
+   "note": "MINIMUM DE BORD (#175)",
+   "src": "#150"
+  },
+  {
+   "nom": "F83 w0 exp(1-a) (Borghetto et al. 2026)",
+   "k": 4,
+   "chi2": 1425.199,
+   "note": "banc a un parametre (w0 = -0,8078)",
+   "src": "#177"
+  },
+  {
+   "nom": "JPS / unimodulaire (accum.)",
+   "k": 4,
+   "chi2": 1426.117,
+   "note": "MINIMUM DE BORD (#175)",
+   "src": "#150"
+  },
+  {
+   "nom": "Chaplygin generalise (GCG)",
+   "k": 5,
+   "chi2": 1433.176,
+   "note": "",
+   "src": "#150"
+  },
+  {
+   "nom": "K2 (Kessler et al. 2025, Eq. 6)",
+   "k": 4,
+   "chi2": 1438.116,
+   "note": "banc a un parametre (w0 = -0,7438)",
+   "src": "#177"
+  },
+  {
+   "nom": "PEDE (emergente, 0 param.)",
+   "k": 3,
+   "chi2": 1460.906,
+   "note": "",
+   "src": "#150"
+  },
+  {
+   "nom": "Holographique (horizon futur)",
+   "k": 4,
+   "chi2": 1476.522,
+   "note": "",
+   "src": "#150"
+  },
+  {
+   "nom": "Bondi sature (M'∝M²)",
+   "k": 4,
+   "chi2": 4023.068,
+   "note": "",
+   "src": "#150"
+  },
+  {
+   "nom": "Rh = ct",
+   "k": 2,
+   "chi2": 7621960.093,
+   "note": "",
+   "src": "#150"
+  }
+ ]
+}

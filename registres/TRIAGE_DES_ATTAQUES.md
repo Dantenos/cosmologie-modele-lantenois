@@ -401,3 +401,7 @@ crédit du binôme : le soupçon humain a vu ce que quatre relectures machine on
 | 78 | le #116 (Δβ = +0,22 ± 0,23, hémisphères) portait-il de la significativité fabriquée par l'empreinte ? | **NON, ET C'EST MESURÉ (#198)** : 300 axes aléatoires, SNe jamais déplacées, donnent σ_axe = 0,2318 contre le σ_Δ = 0,2300 annoncé — rapport 1,01, covariance FIDÈLE — et p = 0,433, donc BANAL. Le verdict « universel » en sort conforté. **Mais l'empreinte peut fabriquer 1,14 σ_Δ ici, plus que les 0,7σ de Bengaly : toute affirmation hémisphérique future sous ~1,1σ est sans valeur sans nul préservant l'empreinte.** |
 
 **Bilan : 10 attaques justes, 69 affirmations réfutées, rétrogradées ou corrigées.**
+
+| 79 | mon test du référent, v2 (#199) | **ARRÊTÉ PAR SA VALIDATION D**, celle que j'avais ajoutée pour attraper un plancher *déplacé* plutôt que levé : le σ le plus petit vaut 2 pas fins au lieu des 5 exigés. Validation B passait pourtant deux fois (σ ×3,71 et gains ×16,00). **Structurel** : un estimateur de σ par marche de grille ne peut pas suivre une incertitude qui rétrécit sans borne — chaque raffinement repousse le blocage d'un facteur k. Une v3 ne résoudrait rien. 10e mode de défaillance : *une validation dont l'exigence de résolution recule aussi vite que la grandeur mesurée*. La lecture « référent » du #193 reste NON ÉTABLIE, deux études de suite. |
+
+**Bilan : 10 attaques justes, 70 affirmations réfutées, rétrogradées ou corrigées.**

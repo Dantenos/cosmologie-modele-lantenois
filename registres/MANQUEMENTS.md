@@ -3883,3 +3883,47 @@ reconstruit une fonction de sélection angulaire **par relevé** ni n'en propage
 — alors que les mêmes auteurs le font intégralement pour le dipôle des quasars
 (arXiv:2009.14826, arXiv:2206.05624). Cette asymétrie méthodologique est une ligne d'attaque
 légitime, et son livrable serait **un déplacement de paramètre**, pas un compte de déficit.
+
+## 24/08 (Claude Code) — #199 LE TEST DU RÉFÉRENT S'EST BLOQUÉ UNE SECONDE FOIS, ET C'EST STRUCTUREL
+`test_referent_v2.py` (gelé). Seconde tentative de tester la prédiction falsifiable laissée
+par le #193 : si l'ambiguïté est de référent, améliorer les données ne la réduit pas.
+
+**LA v2 A RÉPARÉ CE QUE LA v1 AVAIT RATÉ.** Validation B, qui avait arrêté la v1, passe
+maintenant **deux fois** :
+| k | σ médian | facteur (exigé) | gain médian | facteur (exigé) |
+|---|---|---|---|---|
+| 1 | 0,00130 | — | +9,61 | — |
+| 2 | 0,00070 | **×1,86** (1,4–2,8) ✓ | +38,45 | **×4,00** (3,2–5,0) ✓ |
+| 4 | 0,00035 | **×3,71** (2,8–5,6) ✓ | +153,81 | **×16,00** (12,8–20,0) ✓ |
+La mise à l'échelle est donc **vérifiablement opérante**, et la validation A redonne les
+quatre valeurs du #192 exactement.
+
+**ET ELLE S'EST ARRÊTÉE SUR LA VALIDATION D — celle que j'avais ajoutée précisément pour ce
+cas.** Le σ le plus petit mesuré vaut **0,00020, soit 2 pas fins** là où j'exigeais au moins
+5. **Le plancher n'a pas été levé, il a été déplacé.** C'est le libellé exact du critère, et
+il a mordu. **ÉCHEC. Rien n'est publié.**
+
+**CE QUI EST ÉTABLI, ET QUE JE NE FAIS PAS PASSER POUR UN VERDICT.**
+> E(1) = E(2) = E(4) = **0,01900**, identiques à cinq chiffres, pendant que σ est divisé
+> par 3,71 et que les gains sont multipliés par 16,00. Le rapport E/S passe de **14,6 à 54,3**.
+C'est la signature du référent, et elle est visible. **Elle n'est pas opposable** : deux
+études pré-enregistrées de suite ont refusé de la certifier, et la règle 9 interdit de
+convertir ça en victoire. **La lecture du #193 reste NON ÉTABLIE.**
+
+**LA LEÇON, ET ELLE EST STRUCTURELLE — 10e mode pour la taxonomie du papier F.**
+Un estimateur de σ **par marche de grille** ne peut pas suivre une incertitude qui rétrécit
+sans borne : chaque raffinement ne fait que **repousser** le blocage d'un facteur k. À k = 8
+il faudrait un pas de 4×10⁻⁵, à k = 16 un pas de 2×10⁻⁵, indéfiniment. **Une v3 plus fine ne
+résoudrait rien — elle déplacerait le plancher une troisième fois.**
+Le correctif n'est pas un raffinement mais un **changement d'estimateur** : ajuster une
+parabole au voisinage du minimum donne un σ sans résolution de grille. Ce serait une étude
+différente, pas une v3, et elle reste à écrire.
+Formulé pour la taxonomie : *« une validation dont l'exigence de résolution recule aussi vite
+que la grandeur qu'elle mesure »*. Aucun raffinement ne la satisfait ; seul un changement de
+méthode le peut.
+
+**BILAN HONNÊTE DE CETTE PISTE.** Le #193 a réfuté mon explication par perte d'information et
+proposé la lecture « référent ». Deux études conçues pour la tester se sont arrêtées sur leurs
+propres validations. **Je n'ai donc toujours pas le droit de m'en servir**, et le corpus doit
+la porter comme ce qu'elle est : une lecture suggérée par des nombres frappants, jamais
+certifiée. C'est exactement le statut que le #193 lui avait assigné, et il n'a pas bougé.

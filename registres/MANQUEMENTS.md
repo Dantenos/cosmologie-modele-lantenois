@@ -2173,3 +2173,14 @@ de 2,1σ n'existe que sous β = constante ; une seule liberté de forme l'absorb
 données la réclament (Δχ² = −0,6). T1 retourne OUVERTE au greffe, arbitre réduit à β₁(DR3) —
 déjà dans le sceau (RÉFUTÉE si β₁ exclut +0,06 ± 0,31 à 3σ ; l'hérédité prédit −0,42 : DR3
 départagera les trois lectures d'un coup). Le jackknife complet a pris le relais en file.
+
+## 24/08 (Claude Code) — #160 JACKKNIFE PLANCK COMPLET (RÉ-OPTIMISATION TOTALE) : SIGNAL ROBUSTE — LE −12,6 N'APPARTIENT À AUCUN POINT BAO
+`jackknife_planck.py` (gelé), 10 tours de relance chaude × 13 retraits (convergé : tours 9,
+10 et final identiques). Référence complète : Δχ² = −12,60, β = 2,59. **Les 13 retraits BAO,
+chacun avec ré-optimisation complète de (β, ω_c, ln10¹⁰As) des DEUX modèles : Δχ² ∈ [−14,69 ;
+−9,29], β ∈ [2,58 ; 2,61].** Critère pré-enregistré : SIGNAL ROBUSTE (tous ≤ −9). Le retrait
+le plus défavorable (LRG2 D_M, z = 0,706) laisse −9,29 (~3σ naïf) ; le retrait de LRG1 D_M
+(z = 0,510 — le point le plus contesté de la littérature) RENFORCE à −14,69. Le jackknife
+léger du papier A (β ∈ [2,40 ; 2,44]) a désormais son homologue Planck complet : même
+conclusion, aucun porteur unique. La préférence CMB (−5,1 en haut-ℓ) reste le socle que
+les retraits BAO ne peuvent pas toucher.

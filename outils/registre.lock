@@ -218,5 +218,10 @@
   "sha256": "fa73e66ea698b39863e9c46000f47c0cfbd5b08677e60270254f16b263988840",
   "gele_le": "2026-08-24T03:34:15",
   "extrait": "AUDIT DES iLCDM — l'arbitre de la tension T7, premier volet. CRITERES PRE-ENREGI"
+ },
+ "scripts/etude_E1_manche3.py": {
+  "sha256": "096c986f8ec1291a12353de0ffa3b834cd637e329132a159f5bc61f7d8a2c4fa",
+  "gele_le": "2026-08-24T03:39:50",
+  "extrait": "E1 MANCHE 3 — DESIVAST DR1 x PANTHEON+ : le troisieme juge, et l'ARBITRE DE T6."
  }
 }

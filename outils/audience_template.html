@@ -188,9 +188,9 @@ for(const a of AFF){const R=a.ring*RU,ang=a.ang+t*a.vit;
 TEN.forEach((tn,i)=>{
  const R=(1.95+(i%3)*0.72)*RU, ang=i*2.399+0.9+t*0.006*((i%2)?1:-1);
  const x=CX+R*Math.cos(ang), y=CY+R*Math.sin(ang);
- const juge=tn.statut==='en_jugement';
- const fl=juge?0.65+0.35*Math.sin(t*2.6+i):0.30+0.22*Math.max(0,Math.sin(t*1.1+i*2));
- const c=juge?'217,185,106':'201,106,74', r=(juge?4.6:3.8)*DPR;
+ const juge=tn.statut==='en_jugement', reso=tn.statut==='resolue';
+ const fl=juge?0.65+0.35*Math.sin(t*2.6+i):(reso?0.55:0.30+0.22*Math.max(0,Math.sin(t*1.1+i*2)));
+ const c=juge?'217,185,106':(reso?'143,175,127':'201,106,74'), r=(juge?4.6:3.8)*DPR;
  g.fillStyle=`rgba(${c},${fl})`;
  g.beginPath();g.moveTo(x,y-r);g.lineTo(x+r*0.72,y);g.lineTo(x,y+r);g.lineTo(x-r*0.72,y);g.closePath();g.fill();
  if(juge){g.strokeStyle=`rgba(217,185,106,${0.25+0.25*Math.sin(t*2.6+i)})`;g.lineWidth=1*DPR;

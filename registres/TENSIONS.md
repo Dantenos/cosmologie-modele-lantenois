@@ -1,6 +1,6 @@
 # LE REGISTRE DES TENSIONS — généré par `outils/greffier.py`, ne pas éditer à la main
 
-*2026-08-24 — 7 tensions : 5 ouvertes, 2 en jugement, 0 résolues. Règle du greffe : une tension ne se*
+*2026-08-24 — 7 tensions : 4 ouvertes, 2 en jugement, 1 résolues. Règle du greffe : une tension ne se*
 *résout que par l'arbitre nommé avant la résolution — on ne réécrit pas l'histoire d'une anomalie.*
 
 ## T1-beta-interne — ⚖ EN JUGEMENT <small>(ouverte le 2026-08-23)</small>
@@ -60,16 +60,18 @@ Lectures rivales :
 
 **Arbitre (gravé d'avance)** : reconstruction non-paramétrique de w(z) sur DR3 : localisation directe de z× — le β-mètre secondaire du papier A
 
-## T6-vides-algorithmes — OUVERTE <small>(ouverte le 2026-08-23)</small>
+## T6-vides-algorithmes — RÉSOLUE <small>(ouverte le 2026-08-23)</small>
 
 **VoidFinder (+0,52 ± 0,38) et VIDE (−0,40 ± 0,35) donnent des Δβ de signes opposés sur la même empreinte — écart 0,92 pour un seuil de divergence gelé à 1,04**  
-magnitude : **1,8σ entre juges (sous le seuil NON EXPLOITÉ, de peu)** · refs : #142, ETUDE_E1_manche2.md
+magnitude : **1,8σ entre juges (sous le seuil NON EXPLOITÉ, de peu)** · refs : #142, ETUDE_E1_manche2.md, #155
 
 Lectures rivales :
 - le « vide » n'est pas univoque (Jaccard 0,33 : ils trient des SNe différentes — expliqué, pas contradictoire)
 - fluctuations pures à N ≈ 228 par moitié
 
 **Arbitre (gravé d'avance)** : manche 3 sur catalogue profond (DESI voids) avec les MÊMES algorithmes : si les signes restent opposés à grand N, la définition du vide devient elle-même l'objet
+
+**Résolution** (2026-08-24, #155) : FLUCTUATIONS (bruit à petit N) — par le critère gelé de l'arbitre ; RÉSERVE : la branche ne conditionne pas sur la puissance (σ_Δ ≈ 0,7-1,0 ici) ; clause de réouverture : tout test des mêmes algorithmes à σ_Δ ≤ 0,4. Indice de soutien : Jaccard(VIDE,REVOLVER) = 0,97 sur DESIVAST contre 0,41 sur Douglass — par l'arbitre nommé.
 
 ## T7-epsilon-ilcdm — ⚖ EN JUGEMENT <small>(ouverte le 2026-08-24)</small>
 

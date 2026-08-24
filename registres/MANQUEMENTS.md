@@ -2109,3 +2109,15 @@ les indices d'échange sombre de la littérature DESI. T7 passe « en jugement �
 résolution ou tout palmarès : LOO traceurs, split-z, trilogie SN (le solde de l'arbitre gravé).
 Ironie consignée : le modèle du corpus est lui-même de la classe sourcée — si l'échange est réel,
 c'est la classe entière qui gagne, et le canal comptable qui départage (le Livre : rangée sombre v2).
+
+## 24/08 (Claude Code) — #155 MANCHE 3 (DESIVAST) : DUEL NON EXPLOITÉ, T6 RÉSOLUE « FLUCTUATIONS » — AVEC UN VICE DE CRITÈRE CONSIGNÉ
+`etude_E1_manche3.py` (gelé 096c986f8ec1) sur DESIVAST DR1 BGS (ramené du portail DESI par agent,
+3765/1478/1992 vides, z < 0,24 — la spec mère est enfin servie de son propre catalogue). Duel :
+NON EXPLOITÉ (66 SNe côté vides < plancher 80) — 2-0 inchangé. T6 : la branche FLUCTUATIONS du
+critère gelé a tranché (VF −0,09 à 0,1σ vs VIDE +0,34 à 0,3σ). **Vice consigné** : cette branche
+ne conditionne pas sur la puissance du test (σ_Δ ≈ 0,7-1,0 contre 0,36 quand T6 s'est ouverte) —
+même famille que le critère d'E3 v0 (#148). Résolution inscrite au greffe PAR l'arbitre nommé,
+AVEC réserve et clause de réouverture (σ_Δ ≤ 0,4). Indice de soutien indépendant : sur DESIVAST,
+Jaccard(VIDE, REVOLVER) = 0,97 et VF-V2 = 0,59 (contre 0,41 et 0,33 sur Douglass) — les
+algorithmes modernes trient presque pareil ; la non-univocité de Douglass ressemble à un artefact
+d'époque. Première résolution du greffe : par son arbitre, avec ses réserves — comme prévu.

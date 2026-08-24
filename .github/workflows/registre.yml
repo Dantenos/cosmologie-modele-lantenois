@@ -56,3 +56,9 @@ jobs:
       # critère modifié.
       - name: ancres numériques
         run: python3 outils/rejouer.py
+      # Le greffier : schema des tensions (une tension « resolue » sans arbitre nommé d'avance = rouge).
+      - name: registre des tensions
+        run: python3 outils/greffier.py
+      # Le confronteur : 5 paires de calculs indépendants de la même quantité (~2,5 min).
+      - name: cohérence croisée
+        run: python3 outils/confronteur.py

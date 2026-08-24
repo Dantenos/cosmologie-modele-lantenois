@@ -11,7 +11,7 @@ auditée contre Pantheon+, DESI DR2 et Planck, avec un registre adversarial tenu
 critères gelés avant chaque calcul, et des juges convoqués à date fixe. Le tout est ici, y
 compris les erreurs.
 
-[![registre](https://img.shields.io/badge/registre-41%20crit%C3%A8res%20gel%C3%A9s-blue)](outils/README_registre.md)
+[![registre](https://img.shields.io/badge/registre-43%20crit%C3%A8res%20gel%C3%A9s-blue)](outils/README_registre.md)
 <!-- une fois le dépôt en ligne : ![CI](https://github.com/ORG/REPO/actions/workflows/registre.yml/badge.svg) -->
 
 ---
@@ -69,13 +69,14 @@ Tout ce qui est tombé, numéroté, daté, avec le mécanisme de la chute :
 [`ATLAS.md`](registres/ATLAS.md) (**19 modèles, un pipeline, un classement — généré**, #150) ·
 [`ETAT.md`](registres/ETAT.md) (généré, jamais écrit à la main) ·
 [`LEDGER.md`](registres/LEDGER.md) (**le Grand Livre** : le bilan baryonique, #152) ·
+[`TENSIONS.md`](registres/TENSIONS.md) (**le registre des tensions** : 7 vivantes, leurs arbitres gravés, #153) ·
 [`AUDIT_2308.md`](registres/AUDIT_2308.md) (audit du dépôt du 23/08 : 38 scripts rejoués, un contrôle publié inopérant, six corrections propagées, ce qui reste à faire).
 
 ---
 
 ## II. L'écosystème d'outils
 
-Dix outils nés des cicatrices de la campagne, dans [`outils/`](outils/) — cinq d'août, deux du 23/08. Zéro dépendance,
+Douze outils nés des cicatrices de la campagne, dans [`outils/`](outils/) — cinq d'août, deux du 23/08. Zéro dépendance,
 Python ≥ 3.9. Ils survivront au verdict, quel qu'il soit.
 *Sous Windows : `$env:PYTHONUTF8 = 1` avant de les lancer (les registres sont en UTF-8).*
 
@@ -91,18 +92,20 @@ Python ≥ 3.9. Ils survivront au verdict, quel qu'il soit.
 | **Rejouer** | les résultats qui cessent de se reproduire sans qu'on le voie — 14 scripts rejoués contre `ancres.json`, bloquant en CI | `python3 outils/rejouer.py` |
 | **État** | les comptes recopiés à la main qui divergent — ETAT.md généré depuis lock, index, triage, audience | `python3 outils/etat.py` |
 | **Grand Livre** | les modèles qui consomment sans payer — le bilan baryonique par rangée (FRB, amas, ω_b), colonne de l'atlas | `python3 outils/ledger.py` |
+| **Greffier** | les anomalies dont on réécrit l'histoire — le registre des tensions vivantes, arbitre gravé avant résolution | `python3 outils/greffier.py` |
+| **Confronteur** | deux calculs de la même quantité qui divergent en silence — 5 paires indépendantes confrontées | `python3 outils/confronteur.py` |
 
 **Registre** est le socle : le critère vit dans le docstring du script, `freeze` le fige par
 SHA-256 dans [`registre.lock`](outils/registre.lock), `verify` échoue (exit 1, bloquant en CI)
 s'il a bougé. L'amendement est possible — mais public, dans `RETRACTATIONS.md`.
-41 fichiers du corpus sont gelés, Registre compris : il se protège lui-même.
+43 fichiers du corpus sont gelés, Registre compris : il se protège lui-même.
 
 ```console
 $ python3 outils/registre.py verify
 [registre] OK    scripts/voile_cisaillement.py
 [registre] OK    outils/registre.py
 [registre] OK    outils/scelle.py
-…                                          # 41 fichiers, exit 0
+…                                          # 43 fichiers, exit 0
 ```
 
 ---

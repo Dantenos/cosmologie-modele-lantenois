@@ -2083,3 +2083,16 @@ si le gaz des halos est blindé (ii, plausible si la consommation suit la format
 R2 est nulle et seul le FRB porte (+4,7). Correction d'agent avant gel : le 0,96 ± 0,09 de mon
 brouillon était Applegate 2016, pas le prior de Mantz — attrapé aux sources. Colonne « ledger »
 fusionnée dans l'atlas (fiches du Ciel des Modèles). Rangée matière sombre (iΛCDM) : v2.
+
+## 24/08 (Claude Code) — #153 LE GREFFIER ET LE CONFRONTEUR : LE PRÉSENT ANORMAL A SON REGISTRE
+Deux organes manquaient. **Le greffier** (`greffier.py`, gelé 0b6b5b809e9b) : MANQUEMENTS tient le
+passé, l'Audience le futur promis — personne ne tenait les TENSIONS, matière première des
+découvertes (la chaîne β₁ est née de T1 traitée ainsi). Sept greffées (`TENSIONS.md`, généré) :
+β interne 2,1σ (en jugement — l'arbitre tourne), ω_b BBN/CMB, F_AP, Union3, z×/fenêtre, les vides
+aux signes opposés, l'ε des iΛCDM. Règle du greffe, appliquée par le code : une tension ne se
+résout que par l'arbitre nommé AVANT — on ne réécrit pas l'histoire d'une anomalie. En CI.
+**Le confronteur** (`confronteur.py`, gelé be4022402d5e) : les six divergences de l'audit vivaient
+ENTRE deux calculs de la même quantité, pas dans les calculs. Cinq paires indépendantes exécutées
+et confrontées (atlas/duel 0,00 % ; A et B dérivés/en-dur 0,00 % ; f_coll 10,3 % < 20 déclaré ;
+s(0) deux EDO 0,21 %) — 0 divergence, 141 s, en CI. La classe d'erreur la plus dangereuse du
+corpus a maintenant son garde-fou permanent.

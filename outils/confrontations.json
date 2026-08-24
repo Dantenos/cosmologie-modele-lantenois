@@ -1,0 +1,31 @@
+{
+ "_doc": "Paires de calculs INDÉPENDANTS de la même quantité — là où six divergences ont été trouvées à la main le 23/08 (AUDIT §6). Lu par confronteur.py : chaque côté est soit un script+regex (exécuté depuis donnees/pantheon_plus), soit une constante avec sa source. ÉCHEC si |a−b|/|b| > tol_rel.",
+ "cwd": "donnees/pantheon_plus",
+ "paires": [
+  {"nom": "chi2 accrétion (w_E=0) : atlas vs duel",
+   "a": {"script": "scripts/atlas_rivaux.py", "regex": "ACCRETION \\(Gamma∝1/t\\)\\s+4\\s+([0-9.]+)", "timeout": 300},
+   "b": {"script": "scripts/duel_ccbh.py", "regex": "ACCRETION \\(Gamma∝1/t\\)\\s+4\\s+([0-9.]+)", "timeout": 600},
+   "tol_rel": 0.0005,
+   "note": "deux pipelines appellent le même fit ; une divergence = régression de protocole (ZCUT) ou de convergence"},
+  {"nom": "calibration A : dérivée vs codée en dur",
+   "a": {"script": "scripts/calibration_ccbh.py", "regex": "A = ([0-9.]+)\\s+B =", "timeout": 300},
+   "b": {"constante": 1.551, "source": "atlas_rivaux.py / attaque_croker_fond.py (en dur, #147)"},
+   "tol_rel": 0.005,
+   "note": "A doit rester dérivable par la procédure #91 à ω_c = 0,1237 ; sinon les scripts qui l'embarquent mentent"},
+  {"nom": "calibration B : dérivée vs codée en dur",
+   "a": {"script": "scripts/calibration_ccbh.py", "regex": "B = ([0-9.]+)\\s+\\(atlas", "timeout": 300},
+   "b": {"constante": 3.119, "source": "atlas_rivaux.py / attaque_croker_fond.py (en dur, #147)"},
+   "tol_rel": 0.01,
+   "note": "idem pour le rehaussement z > 4"},
+  {"nom": "f_coll(2,5e14) : machinerie gradient_v2 vs papier B",
+   "a": {"script": "scripts/penrose_fcoll.py", "regex": "f_coll=([0-9.]+) \\(publie", "timeout": 300},
+   "b": {"constante": 0.039, "source": "papier B, grand livre de Penrose (valeur publiée d'origine)"},
+   "tol_rel": 0.20,
+   "note": "tolérance déclarée du critère de penrose_fcoll : même pipeline si ±20 %"},
+  {"nom": "survie s(0) CCBH : attaque (leur triplet) vs trajectoire calibrée du Livre",
+   "a": {"script": "scripts/attaque_croker_fond.py", "regex": "ADVERSAIRE: survie_s ([0-9.]+)", "timeout": 300},
+   "b": {"constante": 0.7015, "source": "trajectoire s(z=0) de frb_likelihood (Ξ = 1,382 calibré), #152"},
+   "tol_rel": 0.01,
+   "note": "deux intégrations indépendantes de la même EDO (leur Ξ = 1,403 vs le calibré 1,382) doivent donner s(0) à 1 %"}
+ ]
+}

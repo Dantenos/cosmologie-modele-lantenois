@@ -203,5 +203,15 @@
   "sha256": "8a5e6a688c4558d0e7615bb5df3e08f610558a3734f67c88cb44405ebed1d091",
   "gele_le": "2026-08-24T02:41:08",
   "extrait": "GRAND LIVRE v1 — la comptabilite baryonique, par espece et par epoque. CRITERES"
+ },
+ "outils/greffier.py": {
+  "sha256": "0b6b5b809e9b9d5673f0a31966b31eced720c5321f29bb3ff84c9453cb4c4212",
+  "gele_le": "2026-08-24T02:58:44",
+  "extrait": "greffier v1 — le registre des tensions vivantes (24/08/2026). CRITERES PRE-ENREG"
+ },
+ "outils/confronteur.py": {
+  "sha256": "be4022402d5ed4ce9bdd79a1d162fd29390746d923043817586e2e13b0179fc3",
+  "gele_le": "2026-08-24T02:58:44",
+  "extrait": "confronteur v1 — la cohérence croisée as code (24/08/2026). CRITERES PRE-ENREGIS"
  }
 }

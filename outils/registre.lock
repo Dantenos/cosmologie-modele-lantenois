@@ -288,5 +288,15 @@
   "sha256": "780a9f9b8e8e5faaaec01eabacc4d7fb00249fce02f452f61c27445b5f32f60e",
   "gele_le": "2026-08-24T11:03:47",
   "extrait": "L'ETALONNAGE COMPRIME EST-IL SEULEMENT APPLICABLE A 'ilcdm_dm' ?"
+ },
+ "scripts/epreuve_lrg2.py": {
+  "sha256": "56fde1ef4ef186036140dbbe626e037dae41d50b73a18a9924422f0df99436cf",
+  "gele_le": "2026-08-24T11:15:56",
+  "extrait": "L'EPREUVE DE LRG2 — la critique 2026 la plus forte, appliquee a NOS modeles."
+ },
+ "scripts/banc_un_parametre.py": {
+  "sha256": "a38014b821a8d0e5d53b57e8029565bc0baf9ea43df2fa571b24d450376d266f",
+  "gele_le": "2026-08-24T11:21:37",
+  "extrait": "BANC D'ESSAI DES LOIS D'ENERGIE NOIRE A UN PARAMETRE."
  }
 }

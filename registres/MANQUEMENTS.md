@@ -2483,3 +2483,127 @@ nécessaire et le chiffre (8,62 sur 9,84) reste à nous ; le principe, non.**
   large (son fond est dégénéré avec un w(a)CDM), ce que le papier A dit déjà sous le nom de
   « jumeaux phénoménologiques » de CPL et de prédiction P1 « à sens unique ».
 **Règle 9 appliquée à moi-même : une redécouverte n'est pas une découverte. Consigné.**
+
+## 24/08 (Claude Code) — #170 L'ÉPREUVE DE LRG2 : NOTRE SIGNAL N'EST PAS PORTÉ PAR CE BIN — MAIS NOUS Y PERDONS PLUS QUE CPL
+`epreuve_lrg2.py` (gelé 56fde1ef4ef1). Validation : les quatre ancres #150 reproduites.
+Contexte : Kim, Mota & Tamosiunas (**arXiv:2607.28918**) montrent par e-process « anytime-valid »
+que l'évidence DESI DR2 pour l'énergie noire évolutive tient à un seul bin — retirer LRG2 fait
+tomber leur e-value de 33,97 à 0,49. C'est, avec Dovekie (**2511.07517**, 4,2σ → 3,2σ) et le
+traitement des SNe à bas z (**2502.04212**, **2512.10585**, < 2σ), l'attaque la plus sérieuse
+contre le signal dont **tout** notre corpus dépend.
+
+**CE QUI ME DESSERT, ÉCRIT EN PREMIER (critère 3 gelé) : l'accrétion perd 16,7 % de son gain
+en retirant LRG2, CPL n'en perd que 9,7 %.** Nous sommes plus sensibles à ce bin que le modèle
+que la critique vise.
+
+| modèle | gain complet | sans LRG2 | perdu |
+|---|---|---|---|
+| ACCRÉTION | +5,776 | **+4,811** | 16,7 % |
+| CPL | +6,159 | +5,562 | 9,7 % |
+| wCDM | +1,243 | +1,904 | −53 % (il *gagne*) |
+
+**VERDICT 1 : ROBUSTE À LRG2** (+4,81 ≥ 3,0). Notre préférence ne tient pas à ce bin, et le
+jackknife Planck complet (#160) dit la même chose plus durement : sans LRG2 D_M, Δχ² = −9,29
+contre −12,60, soit ~3σ résiduels.
+**VERDICT 2 : LA CRITIQUE NE SE REPRODUIT PAS chez nous** — CPL garde +5,56. Mais cela ne
+contredit RIEN : leur analyse porte sur DESI+CMB avec un e-process, la nôtre sur la
+vraisemblance légère avec des Δχ². Deux protocoles différents ; on rapporte, on n'argumente pas.
+
+## 24/08 (Claude Code) — #171 VERDICT DE LITTÉRATURE SUR LE #166 : LE PRINCIPE EST CONNU, LA QUANTIFICATION NE L'EST PAS — ET IL Y A UNE CIBLE
+Recherche du 24/08 (2023-2026). Réponse nuancée, à respecter dans les deux sens.
+
+**CE QUI EST DÉJÀ PUBLIÉ, ET QU'IL FAUDRA CITER SANS DISCUTER :**
+- **arXiv:2601.07361** (Li, Giarè, Du, Li, Di Valentino, Zhang & Zhang, janvier 2026) écrit
+  déjà, à propos de la formule de Hu-Sugiyama pour z_* : « highly accurate for the standard
+  non-interacting background evolution, **potentially invalid in IDE scenarios where the
+  energy density scaling laws and the recombination history can be modified** ». C'est notre
+  mécanisme, nommé pour l'IDE — mais en un paragraphe justifiant un choix d'échantillonnage,
+  sur z_* et non sur les priors comprimés (R, l_A), sans dérivation ni Δχ². **À citer.**
+- **arXiv:1201.0550** (Avelino & da Silva 2012) : la densité de matière déduite du CMB en
+  supposant l'absence d'interaction « will in general be shifted with respect to its true
+  value » — le principe, treize ans avant.
+- **astro-ph/0702343** (Elgarøy & Multamäki 2007), **arXiv:1912.04921** (Zhai, Park, Wang &
+  Ratra 2020 : biais « by as much as a few σ »), **arXiv:2606.18455** (CMBComp 2026 : clause
+  d'exclusion explicite pour toute extension modifiant la physique primordiale).
+- **arXiv:2505.24743** (Manoharan) : « essential to use the **effective matter density**
+  appearing in the Hubble flow when evaluating the Ω_m term » — l'énoncé le plus proche du
+  correctif, mais pour une classe holographique, et sans budget d'erreur.
+
+**CE QUI N'EST TROUVÉ NULLE PART (donc notre part réelle) :**
+1. L'algèbre explicite : **(R, l_A) mesurent ω_m À LA RECOMBINAISON** ; y injecter Ω_m,0 h²
+   assigne silencieusement la valeur primordiale à l'étiquette d'aujourd'hui. Avec l'expression
+   corrigée pour ρ_m ∝ a^(−3+ε).
+2. **Le biais chiffré** : Δχ² et décalage en σ en fonction de ε.
+3. **Une ré-analyse disant si une affirmation publiée y survit.** C'est le point qui ferait un
+   article plutôt qu'un commentaire.
+
+**LA CIBLE, ET ELLE EST EXACTEMENT NOTRE FAMILLE.** **arXiv:2505.09879** (Yang, Dai & Wang,
+mai 2025) contraignent **ρ_dm ∝ (1+z)^(3−ε)** — c'est-à-dire ρ_m ∝ a^(−3+ε), notre
+`ilcdm_dm` mot pour mot — avec les **priors de distance Planck** et la formule **Hu-Sugiyama**
+pour z_*, et annoncent **ε = −0,0073 +0,0029/−0,0033, soit ≈ 2,4σ**. Or notre #167 a mesuré,
+sur la même classe, que l'incohérence d'étalonnage fabrique à elle seule un
+**ε parasite de +0,00706** — *même ordre de grandeur, signe opposé*. Cela ne réfute pas leur
+résultat (données et pipeline différents) mais cela dit ceci, qui est vérifiable et nouveau :
+**le biais négligé est de la taille du signal annoncé dans cette classe de modèles.**
+
+**LA MISE EN GARDE À RESPECTER (elle vient de la recherche, pas de moi) :** l'amplitude dépend
+de la classe. Pour Q ∝ ρ_de avec une énergie noire négligeable avant recombinaison,
+ω_m^(pré-rec) ≈ Ω_m,0 h² et l'erreur est petite — l'hypothèse d'Artola et al.
+(**arXiv:2604.25373**) est alors défendable. Elle est grande précisément pour ρ_m ∝ a^(−3+ε),
+où l'écart croît comme (1+z_*)^ε ≈ e^(7ε). **Notre « Δχ² ~ 10 » doit donc être énoncé PAR
+CLASSE**, sinon un rapporteur produira un contre-exemple où il s'évanouit.
+
+**L'USAGE EST RÉPANDU ET S'ACCÉLÈRE AVEC DESI DR2** : au moins neuf analyses 2025-2026
+contraignent un secteur sombre en interaction avec des priors comprimés (2505.09879,
+2605.20060, 2604.25373, 2603.21675, 2602.11310, 2601.05646, 2601.01340, 2510.13436,
+2602.22840), quand les analyses prudentes passent par la vraisemblance complète (2601.07361,
+2503.23225, 2603.03284).
+**Décision : l'étude à mener n'est plus « avons-nous découvert un vice » — c'est
+« quantifions-le par classe, en citant ceux qui l'ont pressenti ».**
+
+## 24/08 (Claude Code) — #172 LA LOI w = −β/(3Ht) N'EST PAS PUBLIÉE — MAIS ELLE A UNE COUSINE QU'IL FAUT CITER, ET UN CONCURRENT PLUS PARCIMONIEUX
+Recherche du 24/08. Trois résultats, dont un qui manque au papier A.
+
+**1. LA LOI ELLE-MÊME : rien de trouvé.** Aucune publication ne pose w ∝ 1/(Ht), ni
+ρ_de·a³ ∝ t^β, ni une paramétrisation en Ht. Recherches menées sur ces trois formulations.
+
+**2. LA COUSINE — LACUNE À COMBLER DANS LE PAPIER A.** L'**énergie noire agegraphique** (Cai,
+**arXiv:0708.0349**, PLB 657, 228) pose ρ_q = 3n²M_p²/T² avec T l'âge de l'univers, et son
+équation d'état (Éq. 15) vaut **w_q = −1 + 2/(3nHT)** — *le même variable sans dimension Ht*,
+avec un paramètre unique n. Sa variante « new ADE » (Wei & Cai, **arXiv:0708.0884**, PLB 660,
+113) remplace t par le temps conforme. **Un rapporteur soulèvera cette parenté au premier
+coup d'œil, et notre papier n'en dit pas un mot.** À corriger — fait ce jour.
+**LA DISTINCTION EST NETTE ET NOUS SERT** : l'ADE est non-fantôme *par construction*
+(w = −1 + (2/3n)√Ω_q ≥ −1, jamais de croisement), alors que notre loi est fantôme dans le
+passé et **croise** w = −1. Les deux familles partagent la variable Ht et rien d'autre :
+l'ADE fixe la *densité* par l'âge, nous fixons le *taux d'injection*. À écrire ainsi, en
+créditant l'antériorité de la variable.
+
+**3. LE CONCURRENT SÉRIEUX EN PARCIMONIE.** Croker et al., **arXiv:2405.12282** (JCAP 10, 094,
+2024), « DESI Dark Energy Time Evolution is Recovered by Cosmologically Coupled Black Holes » :
+ils reproduisent la densité d'énergie noire du meilleur w₀wₐ de DESI **à 1σ, avec deux
+paramètres de MOINS**, et obtiennent H₀ = 69,94 ± 0,81. Sur le terrain de la parcimonie —
+le nôtre — c'est une affirmation plus forte que n'importe quelle loi w(z) à un paramètre.
+**C'est le CCBH, notre adversaire du papier C**, où le duel FRB (#148, +4,71 ≈ 2,2σ) et le
+Grand Livre (#152, il doit +14,19) le mettent en difficulté sur le budget baryonique — pas
+sur le fond. Les deux constats ne se contredisent pas : il gagne en parcimonie de fond, il
+perd en comptabilité baryonique. **À énoncer ensemble, sans choisir.**
+
+**4. LE MEILLEUR CADRAGE DISPONIBLE POUR NOTRE LOI, et il sort de nos propres échecs.**
+w = −1 exige exactement **Ht = β/3** — soit Ht = 0,807 (β = 2,42) à 0,867 (β = 2,60). Le
+croisement est donc **prédit par β dans une variable sans dimension**, non ajusté. Or #163 et
+#168 ont montré que le *redshift* de croisement flotte sur [0,22 ; 0,8] selon la forme et le
+jeu de données. **Une loi qui épingle le croisement à une valeur de Ht est un contraste
+falsifiable là où les paramétrisations libres n'ont rien à épingler.** C'est la formulation la
+plus forte que le corpus puisse tenir aujourd'hui — et elle naît de deux résultats qui nous
+étaient défavorables.
+
+**5. CE QU'IL FAUDRA POUR UN BANC D'ESSAI HONNÊTE (protocoles NON compatibles entre eux).**
+Kessler et al. (**arXiv:2504.00776**, quatre lois à un paramètre, Éqs. 5-8, prior w₀ ~ U[−2,0])
+calculent l'évidence par **MCEvidence** sur chaînes Cobaya ; Borghetto et al.
+(**arXiv:2606.17951**, w = w₀/√a, Éq. 4.1, forme fermée Éq. 5.8, prior U[−3,1]) par
+**PolyChord**, et dans le cadre VCDM (gravité minimalement modifiée) et non en RG. Un Δln B
+MCEvidence ne se cite pas à côté d'un Δln B PolyChord, et les volumes de prior diffèrent —
+**or avec un seul paramètre, le facteur d'Occam EST le résultat.** Tout banc d'essai devra
+donc être INTERNE : même pipeline, mêmes données, même estimateur, priors déclarés, et
+sensibilité au prior rapportée. Leurs chiffres serviront de repère, jamais de comparant direct.

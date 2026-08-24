@@ -110,7 +110,7 @@
   {
    "id": "T7-epsilon-ilcdm",
    "ouverte_le": "2026-08-24",
-   "statut": "ouverte",
+   "statut": "resolue",
    "enonce": "RÉSOLUTION RÉTRACTÉE (#166) — l'avance de l'iΛCDM sur l'atlas (ε ≈ +0,021, −9,8) est à 8,62/9,84 un ARTEFACT D'ÉTALONNAGE : même fond que wCDM (identité à 4,4e−16), mais r_d, z_*, r_* et R calculés avec l'étiquette Ω_m au lieu de la densité d'avant recombinaison Ω_m′. Le modèle cohérent gagne +1,21, derrière l'accrétion (+5,78) et CPL (+6,16). Les trois volets de l'arbitre (#154, #156, #158) ont tourné dans le pipeline vicié et ne valent plus. Question rouverte : reste-t-il UNE préférence pour un échange sombre à étalonnage cohérent ? À ce jour : +1,21, soit rien.",
    "magnitude": "ΔAIC = −3 à −4 sur CCBH/accrétion — au tableau, pas au palmarès",
    "refs": [
@@ -119,13 +119,20 @@
     "#154",
     "#156",
     "#158",
-    "#166"
+    "#166",
+    "#167"
    ],
    "lectures": [
     "artefact de l'implémentation v1 (échange appliqué à toute la matière + fond tardif incohérent avec les distance-priors primordiaux — déclaré au gel)",
     "vraie préférence pour l'échange sombre (des indices similaires existent dans la littérature DESI)"
    ],
-   "arbitre": "un atlas v2 dont l'étalonnage (r_d, z_*, r_*, R) est tiré de la densité de matière d'AVANT recombinaison pour chaque modèle, et non de son étiquette Ω_m ; plus une étude propre sur 'ilcdm_dm', dont la matière dérive de −4,76 % à a = 1e−3 (diagnostic #166, verdict non rendu)"
+   "arbitre": "un atlas v2 dont l'étalonnage (r_d, z_*, r_*, R) est tiré de la densité de matière d'AVANT recombinaison pour chaque modèle, et non de son étiquette Ω_m ; plus une étude propre sur 'ilcdm_dm', dont la matière dérive de −4,76 % à a = 1e−3 (diagnostic #166, verdict non rendu)",
+   "resolution": {
+    "arbitre": "un atlas v2 dont l'étalonnage (r_d, z_*, r_*, R) est tiré de",
+    "date": "2026-08-24",
+    "registre": "#167",
+    "verdict": "PAR LA NÉGATIVE : à étalonnage cohérent (densité de matière d'AVANT recombinaison, et non l'étiquette Ω_m), l'iΛCDM 'de' gagne +1,21 et l'iΛCDM 'dm' gagne exactement 0,000 (son ε préféré tombe à zéro). Contre +9,84 et +9,27 publiés. Il ne reste aucune préférence pour un échange sombre : la tension portait sur un artefact d'étalonnage, pas sur une physique. L'accrétion (+5,78, un paramètre) redevient première à l'AIC — par rétractation du rival, ce qui ne lui ajoute aucun mérite propre."
+   }
   },
   {
    "id": "T8-patch-desivast",

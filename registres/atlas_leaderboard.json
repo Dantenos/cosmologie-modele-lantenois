@@ -18,7 +18,8 @@
     "dchi2": 0.0,
     "detail": "s(z) = 1 : bilan baryonique neutre ; echange sombre en v2"
    },
-   "RETRACTE": "#166 — artefact d'étalonnage : χ² calculé avec l'étiquette Ω_m au lieu de Ω_m′ (densité d'avant recombinaison). Valeur cohérente pour 'de' : 1423,874 (gain +1,21). NE PAS UTILISER cette ligne."
+   "RETRACTE": "#166/#167 — artefact d'étalonnage (étiquette Ω_m au lieu de la densité d'avant recombinaison). Valeur cohérente : 1423.874 (gain +1.21). NE PAS UTILISER la valeur affichée.",
+   "chi2_corrige": 1423.874
   },
   {
    "nom": "iLCDM Q=eps H rho_dm",
@@ -34,7 +35,8 @@
     "dchi2": 0.0,
     "detail": "s(z) = 1 : bilan baryonique neutre ; echange sombre en v2"
    },
-   "RETRACTE": "#166 — artefact d'étalonnage : χ² calculé avec l'étiquette Ω_m au lieu de Ω_m′ (densité d'avant recombinaison). Valeur cohérente pour 'de' : 1423,874 (gain +1,21). NE PAS UTILISER cette ligne."
+   "RETRACTE": "#166/#167 — artefact d'étalonnage (étiquette Ω_m au lieu de la densité d'avant recombinaison). Valeur cohérente : 1425.086 (gain +0.00). NE PAS UTILISER la valeur affichée.",
+   "chi2_corrige": 1425.086
   },
   {
    "nom": "CCBH (Croker et al.)",

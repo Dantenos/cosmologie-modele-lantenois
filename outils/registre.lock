@@ -283,5 +283,10 @@
   "sha256": "1d5c847865d158a845dc757b73ece11187f9ddbbd6ef823e0463714c21626f0c",
   "gele_le": "2026-08-24T10:49:56",
   "extrait": "L'AVANCE DU CHAMPION DE L'ATLAS VIENT-ELLE DE L'ETALONNAGE ? — VALIDATION CORRIG"
+ },
+ "scripts/etalonnage_dm.py": {
+  "sha256": "780a9f9b8e8e5faaaec01eabacc4d7fb00249fce02f452f61c27445b5f32f60e",
+  "gele_le": "2026-08-24T11:03:47",
+  "extrait": "L'ETALONNAGE COMPRIME EST-IL SEULEMENT APPLICABLE A 'ilcdm_dm' ?"
  }
 }

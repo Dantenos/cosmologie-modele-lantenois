@@ -1,6 +1,6 @@
 # LE REGISTRE DES TENSIONS — généré par `outils/greffier.py`, ne pas éditer à la main
 
-*2026-08-24 — 9 tensions : 8 ouvertes, 0 en jugement, 1 résolues. Règle du greffe : une tension ne se*
+*2026-08-24 — 9 tensions : 7 ouvertes, 0 en jugement, 2 résolues. Règle du greffe : une tension ne se*
 *résout que par l'arbitre nommé avant la résolution — on ne réécrit pas l'histoire d'une anomalie.*
 
 ## T1-beta-interne — OUVERTE <small>(ouverte le 2026-08-23)</small>
@@ -73,16 +73,18 @@ Lectures rivales :
 
 **Résolution** (2026-08-24, #155) : FLUCTUATIONS (bruit à petit N) — par le critère gelé de l'arbitre ; RÉSERVE : la branche ne conditionne pas sur la puissance (σ_Δ ≈ 0,7-1,0 ici) ; clause de réouverture : tout test des mêmes algorithmes à σ_Δ ≤ 0,4. Indice de soutien : Jaccard(VIDE,REVOLVER) = 0,97 sur DESIVAST contre 0,41 sur Douglass — par l'arbitre nommé.
 
-## T7-epsilon-ilcdm — OUVERTE <small>(ouverte le 2026-08-24)</small>
+## T7-epsilon-ilcdm — RÉSOLUE <small>(ouverte le 2026-08-24)</small>
 
 **RÉSOLUTION RÉTRACTÉE (#166) — l'avance de l'iΛCDM sur l'atlas (ε ≈ +0,021, −9,8) est à 8,62/9,84 un ARTEFACT D'ÉTALONNAGE : même fond que wCDM (identité à 4,4e−16), mais r_d, z_*, r_* et R calculés avec l'étiquette Ω_m au lieu de la densité d'avant recombinaison Ω_m′. Le modèle cohérent gagne +1,21, derrière l'accrétion (+5,78) et CPL (+6,16). Les trois volets de l'arbitre (#154, #156, #158) ont tourné dans le pipeline vicié et ne valent plus. Question rouverte : reste-t-il UNE préférence pour un échange sombre à étalonnage cohérent ? À ce jour : +1,21, soit rien.**  
-magnitude : **ΔAIC = −3 à −4 sur CCBH/accrétion — au tableau, pas au palmarès** · refs : #150, ATLAS.md, #154, #156, #158, #166
+magnitude : **ΔAIC = −3 à −4 sur CCBH/accrétion — au tableau, pas au palmarès** · refs : #150, ATLAS.md, #154, #156, #158, #166, #167
 
 Lectures rivales :
 - artefact de l'implémentation v1 (échange appliqué à toute la matière + fond tardif incohérent avec les distance-priors primordiaux — déclaré au gel)
 - vraie préférence pour l'échange sombre (des indices similaires existent dans la littérature DESI)
 
 **Arbitre (gravé d'avance)** : un atlas v2 dont l'étalonnage (r_d, z_*, r_*, R) est tiré de la densité de matière d'AVANT recombinaison pour chaque modèle, et non de son étiquette Ω_m ; plus une étude propre sur 'ilcdm_dm', dont la matière dérive de −4,76 % à a = 1e−3 (diagnostic #166, verdict non rendu)
+
+**Résolution** (2026-08-24, #167) : PAR LA NÉGATIVE : à étalonnage cohérent (densité de matière d'AVANT recombinaison, et non l'étiquette Ω_m), l'iΛCDM 'de' gagne +1,21 et l'iΛCDM 'dm' gagne exactement 0,000 (son ε préféré tombe à zéro). Contre +9,84 et +9,27 publiés. Il ne reste aucune préférence pour un échange sombre : la tension portait sur un artefact d'étalonnage, pas sur une physique. L'accrétion (+5,78, un paramètre) redevient première à l'AIC — par rétractation du rival, ce qui ne lui ajoute aucun mérite propre. — par l'arbitre nommé.
 
 ## T8-patch-desivast — OUVERTE <small>(ouverte le 2026-08-24)</small>
 

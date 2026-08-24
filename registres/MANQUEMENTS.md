@@ -2365,3 +2365,42 @@ d'interaction où ce n'est plus vrai, en utilisant le Ω_m d'aujourd'hui plutôt
 d'avant recombinaison, ils **fabriquent un Δχ² de l'ordre de 10 — de quoi inventer une
 détection à 3σ**. Une large littérature sur l'énergie noire en interaction utilise exactement
 ce raccourci. C'est la note méthodologique la plus publiable sortie de ce corpus.
+
+## 24/08 (Claude Code) — #167 LA SECONDE LIGNE iΛCDM S'EFFONDRE EXACTEMENT SUR ΛCDM — T7 RÉSOLUE, PAR LA NÉGATIVE
+`etalonnage_dm.py` (gelé 780a9f9b8e8e). Validation : ancre #150 reproduite (1415,818).
+Contrôle interne à ε = 0 : les trois versions coïncident à 0,0000.
+
+**Le contraste structurel, d'abord.** `ilcdm_de` a une matière effective CONSTANTE avant
+recombinaison (C(a) → Ω_m′) : un ω_m unique existe, l'étalonnage est réparable. `ilcdm_dm` a
+ρ_m = Ω_m a^(ε−3), donc Ω_eff(a) = Ω_m·a^ε **dépend de l'époque** — les formules de r_d et
+R = √Ω_m·D_c(z_*) supposent a⁻³, aucun ω_m unique ne le représente. La question posée n'était
+donc pas « quelle valeur corriger » mais « la correction a-t-elle un sens ».
+
+**Réponse : oui.** Deux époques de référence également défendables — recombinaison
+(a_* = 1/1091) et équivalence (a_eq = 1/3388) — donnent des χ² séparés de **0,001**.
+Verdict gelé : ÉTALONNAGE ROBUSTE. Le nombre est donc publiable.
+
+**Et il vaut zéro.** À étalonnage cohérent, l'ε préféré tombe à **+0,00000** et
+χ² = **1425,086** — c'est-à-dire **exactement ΛCDM, gain 0,000** (contre +9,27 publié).
+Les données ne veulent aucun échange avec la matière noire une fois qu'on cesse de laisser
+au modèle deux densités de matière différentes.
+
+**LE PALMARÈS CORRIGÉ (vraisemblance légère, N = 1597, ΛCDM = 1425,086) :**
+| modèle | k | χ² | gain | AIC |
+|---|---|---|---|---|
+| CPL | 5 | 1418,927 | +6,16 | 1428,93 |
+| **ACCRÉTION (β)** | **4** | **1419,309** | **+5,78** | **1427,31 — 1ʳᵉ** |
+| wCDM | 4 | 1423,843 | +1,24 | 1431,84 |
+| iΛCDM 'de' (corrigé) | 4 | 1423,874 | +1,21 | 1431,87 |
+| iΛCDM 'dm' (corrigé) | 4 | 1425,086 | +0,00 | 1433,09 |
+| ΛCDM | 3 | 1425,086 | — | 1431,09 |
+**L'accrétion redevient première à l'AIC** — non pas parce qu'elle a progressé, mais parce
+que les deux modèles qui la dominaient n'existaient pas. C'est une promotion par
+rétractation, et elle vaut exactement ce que vaut une promotion par rétractation : rien de
+plus que le +5,78 qu'elle avait déjà.
+
+**T7 RÉSOLUE PAR SON ARBITRE RE-SPÉCIFIÉ (#166) — PAR LA NÉGATIVE.** L'arbitre exigeait un
+étalonnage tiré de la densité d'avant recombinaison pour chaque modèle, plus une étude propre
+sur `ilcdm_dm` : les deux sont faits (#166, #167). Verdict : **il ne reste AUCUNE préférence
+pour un échange sombre** — +1,21 et +0,00, contre +9,84 et +9,27 annoncés. La tension qui a
+occupé quatre entrées du registre et trois audits « adversariaux » portait sur un artefact.

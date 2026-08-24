@@ -3474,3 +3474,117 @@ même groupe sur des données emboîtées, ce qui corrèle leur χ² de cohéren
 mesure donc PAS ε — elle mesure une DISPERSION**, et c'est tout ce qu'elle a le droit de
 conclure. Le #190 en ressort confirmé **comme énoncé sur les priors comprimés**, pas comme
 mesure.
+
+## 24/08 (Claude Code) — #192 NOTRE FAMILLE N'A JAMAIS ÉTÉ CELLE QUE TROIS ENTRÉES LUI ONT PRÊTÉE
+`dilution_baryons.py` (gelé **863df81e97bd**). Étude née d'une relecture de notre propre
+définition de famille, et d'une vérification littérature commandée pour savoir si le travail
+n'était pas déjà fait. Il l'était — et deux fois plutôt qu'une.
+
+**LE FAIT QUI EFFACE UNE PARTIE DU #188 ET LA MOITIÉ DU #189.**
+Le #188 déclarait tester ρ_m = Ω_m a^(ε−3) « avec Λ constante, **SANS imposer la conservation
+totale** ». Le #189 a rétracté son attribution bibliographique en concluant que notre famille
+était « voisine de celle de la littérature mais **non publiée** ». **Les deux énoncés sont
+faux, et pour la même raison, qui est une identité géométrique.**
+
+Avec Λ **véritablement constante**, l'identité de Bianchi ∇_μ T^μν = 0 **impose** que le
+secteur de matière porte une pression p = −(ε/3) ρ_m dès lors que ρ_m ∝ a^(−3+ε). « Matière
+sans pression non conservée + Λ constante » n'est pas une alternative à « matière conservée
+d'équation d'état w = −ε/3 + Λ constante » : **c'est le même modèle écrit deux fois.** Au
+niveau du fond il n'y a qu'un modèle, et la « non-conservation » que le #188 revendiquait
+n'était pas un choix disponible.
+
+Le principe de substitution est publié **depuis 1996** : Lima, Germano & Abramo, *FRW
+Cosmologies with Adiabatic Matter Creation*, PRD **53**, 4287 (gr-qc/9511006), donnent
+γ* = γ(1−β), ρ ∝ a^(−3γ(1−β)) et p_c = −βρ. Pour la poussière (γ = 1) : **ε = 3β et
+w = −β = −ε/3**, exactement notre correspondance. Et la notation ε que nous avions empruntée
+vient de la littérature du **vide décroissant** (Alcaniz & Lima, astro-ph/0507372), où Λ
+n'est justement PAS constante — donc pas de notre modèle. Nous avions pris le symbole d'une
+famille et l'équation d'une autre.
+
+**Conséquence directe : notre famille EST le ΛwDM de Kumar, Ajith & Verma (arXiv:2504.14419),
+avec w_dm = −ε/3.** À une différence près, et c'est le défaut suivant.
+
+**LE DÉFAUT : NOTRE FAMILLE FAISAIT DILUER LES BARYONS.**
+Ω_m étant la matière **totale**, les baryons diluaient en a^(ε−3) comme le reste. Or le même
+χ² (i) compare ω_b au prior Planck 0,02237 ± 0,00015, mesuré en supposant a⁻³, et (ii) intègre
+r_s avec R_b = (3ω_b/4ω_γ)·a, forme qui suppose ρ_b ∝ a⁻³ — il faudrait R_b ∝ a^(1+ε).
+Mesuré (sonde 7, hors corpus) :
+| incohérence | à \|ε\| = 0,003 | à \|ε\| = 0,006 |
+|---|---|---|
+| r_s selon R_b ∝ a ou a^(1+ε) | **7,5σ sur l_A** | **15,1σ sur l_A** |
+| ω_b(recombinaison) contre le prior Planck | 4,8σ | 8,1σ |
+**Plus grand que tout ce que le #188 et le #190 ont mesuré.** Le modèle diluait les baryons
+d'un côté et les traitait comme standard des deux autres.
+
+**LA CORRECTION, ET CE QU'ELLE DONNE.** Famille corrigée : ρ_c = (Ω_m−Ω_b)a^(ε−3), baryons
+**exactement** a⁻³, Λ constante. Validation A : ε = 0 redonne 1425,0858 contre l'ancre
+1425,086. Validation B : la correction est **visible** (5,54 unités de χ² à ε = −0,006).
+Elle rend le fond identique à celui de Kumar et al., donc **comparable sans aucun facteur de
+conversion** — ce que le #191 n'avait pu faire qu'avec un f = 0,8389 approximatif.
+
+| configuration | ε | σ opposable | contre Kumar (**ε = −0,00231 ± 0,00114**) |
+|---|---|---|---|
+| table, étiquette | **+0,00700** | 2,33 | 2,90σ → **TENSION** |
+| table, cohérent | **−0,00400** | 2,00 | **0,73σ → COMPATIBLE** |
+| r_s direct, R retiré | −0,01200 | 3,14 | 4,21σ → **DÉSACCORD** |
+| r_s direct, R cohérent | **−0,00400** | 2,00 | **0,73σ → COMPATIBLE** |
+
+**L'étalonnage cohérent — celui que le #166 défendait — atterrit à 0,73σ de la mesure en
+vraisemblance complète. L'étalonnage-étiquette est à 2,90σ.** Sur la famille corrigée, sans
+facteur de conversion, contre un nombre publié. C'est le meilleur argument que ce corpus ait
+produit pour la lecture 1 de T10 — et il reste insuffisant, voir le contrôle d'équité.
+
+**LE 9e VICE DE CRITÈRE, ET IL EST D'UNE ESPÈCE NEUVE : DEUX VERDICTS DÉCIDÉS PAR UN ARRONDI.**
+- Critère 2 : `sig = 1,9999999999999791` a échoué le test `>= 2`, faisant basculer le verdict
+  de « RENVERSEMENT PERSISTANT » à « renversement supprimé ». La vraie valeur est
+  0,004/0,002 = **2 exactement**.
+- Critère 3 : `déplacement = 0,9999999999999836` a échoué `> 1,0`, donc la configuration
+  `direct_sansR` **n'a pas été retirée**. La vraie valeur est 0,002/0,002 = **1 exactement**.
+- **Les deux arrondis sont tombés du côté qui m'arrange** : pas de renversement à signaler,
+  pas de nombre à retirer. Coïncidence, mais elle illustre pourquoi la règle 9 existe.
+**Je lis donc les deux du côté défavorable, et c'est ce qui est appliqué au registre :
+RENVERSEMENT PERSISTANT, et `direct_sansR` RETIRÉ.**
+Leçon structurelle, à porter dans l'outillage : *un seuil comparé par `>=` sur une
+arithmétique de grille flottante peut être décidé par le 14e chiffre.* Correctif : tolérance
+déclarée dans le critère, ou grille construite pour ne pas tomber sur les seuils.
+
+**CRITÈRE 5 : ACQUIS DU #190 RENFORCÉ.** L'étendue des quatre configurations corrigées vaut
+**0,01900**, SUPÉRIEURE aux 0,01600 du #190. Le traitement des baryons est une **quatrième**
+source d'ambiguïté, qui s'ajoute aux trois précédentes au lieu d'en retirer une.
+
+**LE VIDE BIBLIOGRAPHIQUE, VÉRIFIÉ PAR BALAYAGE SYSTÉMATIQUE — et c'est ce qui vaut le plus
+ici.** Recherche menée sur l'API arXiv pour la classe entière des modèles de création de
+matière (CCDM) :
+> **Aucune analyse en vraisemblance CMB complète d'un modèle de création de matière n'existe.**
+Tous emploient SNe / BAO / H(z) / fσ₈, ou un CMB **comprimé**. L'état de l'art 2026 —
+Schiavone, De Angelis, Escamilla, Montani & Di Valentino (arXiv:2601.14222), groupe Di
+Valentino — emploie encore, textuellement, *« a compressed (also referred to as geometrical)
+CMB likelihood, where the CMB is treated as a BAO measurement at z ≈ 1100 »*.
+Sont également absents de la littérature : toute contrainte sur ε appliqué à la matière
+**totale** ; toute contrainte publiée sur l'exposant de dilution des **baryons** lui-même ;
+et toute quantification de ce qui sépare la lecture « matière créée » de la lecture
+« w constant » à fond identique. **Notre #190 mesure précisément l'ampleur du biais que
+cette classe entière encourt en restant sur des priors comprimés.**
+
+**CONTRÔLE D'ÉQUITÉ (règle 2), et il coupe contre moi.** Kumar et al. concèdent dans leur
+propre résumé que DESI+DESY5 donne w_dm = **−0,084 ± 0,035** — **signe opposé et deux ordres
+de grandeur** d'écart avec leur PL18+DESI = +0,00077. **Le renversement de signe existe donc
+AUSSI en vraisemblance complète, entre jeux de données.** Mon rapprochement du tableau
+ci-dessus repose sur une seule de leurs deux valeurs, et il faut le dire.
+Autres mesures en vraisemblance complète sur la famille corrigée, pour ne pas m'appuyer sur
+une seule : Thomas, Kopp & Skordis (arXiv:1601.05097, Planck 2015) donnent
+−0,000896 < w < 0,00238 à 99,7 %, soit **ε ∈ [−0,00714 ; +0,00269]** ; Xu & Chang
+(arXiv:1310.1532) donnent w = 0,000707 ± 0,000746, soit **ε = −0,00212 ± 0,00224**.
+Yao & Liu (arXiv:2507.00478) annoncent w_dm = 2,7×10⁻⁷ ± 2×10⁻⁷ — barre **mille fois** plus
+serrée que tout le monde sur le même paramètre nominal, inexpliquée, et sous un secteur de
+perturbations différent (c_s² = w au lieu de 0). **Signalée, non utilisée.**
+
+**RÈGLE 5, ACCORDÉ D'AVANCE.** Notre fond corrigé est celui de Kumar et al. ; nos
+**perturbations** ne le sont pas. Eux propagent dans CAMB une matière noire de pression non
+nulle avec c_s² = 0 explicitement non adiabatique ; nous ne propageons rien du tout. Notre
+comparaison porte sur le fond seul, et aucune de nos configurations n'est une vraisemblance
+complète. De plus la borne baryonique que j'aurais aimé invoquer (« BBN l'interdit ») est
+**trop forte** : la cohérence ω_b(BBN) ↔ ω_b(CMB) sur 12,5 e-folds ne donne que
+|ε_b| ≲ 2×10⁻³, à peine un facteur 2 sous la borne actuelle sur w_dm, et **aucune contrainte
+publiée sur l'exposant baryonique n'existe**. Notre défaut reste un défaut d'**incohérence
+interne** — mesuré à 7,5–15,1σ — pas une violation d'une borne extérieure.

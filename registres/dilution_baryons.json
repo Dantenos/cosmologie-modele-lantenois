@@ -1,0 +1,74 @@
+{
+ "table_etiq": {
+  "eps": 0.007000000000000048,
+  "chi2": 1415.728452656359,
+  "sp": 0.0030000000000000027,
+  "sm": 0.0030000000000000027,
+  "gain": 9.35729959512014,
+  "sig_loc": 2.3333333333333472,
+  "sig_wilks": 3.058970348846183,
+  "sig": 2.3333333333333472
+ },
+ "table_coh": {
+  "eps": -0.003999999999999962,
+  "chi2": 1415.7287415902076,
+  "sp": 0.0020000000000000018,
+  "sm": 0.0020000000000000018,
+  "gain": 9.35701066127126,
+  "sig_loc": 1.9999999999999791,
+  "sig_wilks": 3.0589231211770036,
+  "sig": 1.9999999999999791
+ },
+ "direct_sansR": {
+  "eps": -0.011999999999999969,
+  "chi2": 1409.2803995626487,
+  "sp": 0.0030000000000000027,
+  "sm": 0.0020000000000000018,
+  "gain": 9.868639857093058,
+  "sig_loc": 5.99999999999998,
+  "sig_wilks": 3.1414391378941366,
+  "sig": 3.1414391378941366
+ },
+ "direct_Rcoh": {
+  "eps": -0.003999999999999962,
+  "chi2": 1415.1063124815357,
+  "sp": 0.0020000000000000018,
+  "sm": 0.0020000000000000018,
+  "gain": 9.898502811133312,
+  "sig_loc": 1.9999999999999791,
+  "sig_wilks": 3.1461886165856794,
+  "sig": 1.9999999999999791
+ },
+ "_validation_B": "visible",
+ "_verdict_renversement": "RENVERSEMENT SUPPRIME (un seul etalonnage detecte)",
+ "_retires": [],
+ "_kumar": [
+  -0.00231,
+  0.00114
+ ],
+ "_confrontation": {
+  "table_etiq": [
+   2.9009450450925223,
+   "TENSION"
+  ],
+  "table_coh": [
+   0.7341167933127812,
+   "COMPATIBLE"
+  ],
+  "direct_sansR": [
+   4.209225874083425,
+   "DESACCORD"
+  ],
+  "direct_Rcoh": [
+   0.7341167933127812,
+   "COMPATIBLE"
+  ]
+ },
+ "_etendue": 0.019000000000000017,
+ "_verdict_acquis": "ACQUIS RENFORCE",
+ "_verdict_renversement_applique": "RENVERSEMENT PERSISTANT — le code a rendu « supprimé » sur sig = 1,9999999999999791, arrondi et non physique ; relu du côté défavorable (règle 9, #192, triage 70).",
+ "_retires_appliques": [
+  "direct_sansR"
+ ],
+ "_note_arrondi": "Deux seuils tranchés par le 14e chiffre flottant : sig >= 2 (vraie valeur 2 exactement) et deplacement > 1,0 (vraie valeur 1 exactement). Les deux dans le sens favorable ; les deux relus contre."
+}

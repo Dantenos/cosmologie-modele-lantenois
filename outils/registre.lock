@@ -393,5 +393,10 @@
   "sha256": "7eee4fed04eacff26e21c0c68fdf8051b36bf4560c4d50d9cc6b6c5ba7fbd20d",
   "gele_le": "2026-08-24T19:23:58",
   "extrait": "LE #190 EST-IL VRAI ? — TEST DE MA PROPRE AFFIRMATION PAR LES DONNEES DES AUTRES"
+ },
+ "scripts/dilution_baryons.py": {
+  "sha256": "863df81e97bd7504daa71e648f4bd60b0069d99b8e74eebf0dc14ce92a0f365f",
+  "gele_le": "2026-08-24T19:53:25",
+  "extrait": "LA FAMILLE DU #188 FAISAIT DILUER LES BARYONS. ELLE N'AURAIT PAS DU."
  }
 }

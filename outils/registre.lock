@@ -248,5 +248,15 @@
   "sha256": "3e708bd480401199a537e022046ba5a547627175c76e39555b2aa72254d50675",
   "gele_le": "2026-08-24T09:28:56",
   "extrait": "LA CONFLUENCE — les deux vainqueurs du corpus mesurent-ils la MEME fonction ?"
+ },
+ "scripts/confluence_planck.py": {
+  "sha256": "74bf63bdcc2aa7d2ee880205d0072801c18d8af4f4894713fa11f06aea320062",
+  "gele_le": "2026-08-24T10:09:11",
+  "extrait": "LA CONFLUENCE SUR PLANCK COMPLET — le croisement, mesure par une forme LIBRE."
+ },
+ "scripts/confluence_planck_v2.py": {
+  "sha256": "ce4d9b65ec246e849221bf4dce463115a3f3c4baef1b84d8abdd0b589c699007",
+  "gele_le": "2026-08-24T10:10:56",
+  "extrait": "LA CONFLUENCE SUR PLANCK COMPLET, v2 — VALIDATION CORRIGEE."
  }
 }

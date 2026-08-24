@@ -2240,3 +2240,25 @@ C(a→0) − C(1) = −εΩ_de/(3−ε) = **−1,70 % de matière à la recombin
 qu'implique le bas redshift ; l'externe exige **0,00 %, par construction**. C'est un
 discriminant net, à portée de DR3 + CMB, et il ne dépend d'aucun des deux modèles : il
 sépare *où va l'énergie*. Ouvert au greffe comme T9.
+
+## 24/08 (Claude Code) — #162 VICE DE CONCEPTION D'UN CRITÈRE : LA v1 DE LA CONFLUENCE-PLANCK ÉCHOUE SA PROPRE VALIDATION, RIEN N'EST PUBLIÉ
+`confluence_planck.py` (gelé 74bf63bdcc2a) devait mesurer la pente s(a) sur Planck complet.
+Sa validation exigeait que χ²(pente, ε₀ = ε₁ = 0) reproduise le ΛCDM de Planck, 1998,63,
+à ±0,5. **Résultat : 2009,02 → ÉCHEC → aucune ligne publiée**, conformément au critère gelé.
+
+**Le vice est de MA conception, pas des données.** Je comparais une évaluation au point de
+DÉPART (ω_c = 0,1200 ; ln10As = 3,044) à une référence OPTIMISÉE (le minimum ΛCDM, atteint
+en (0,1182 ; 3,039) par `planck_theta.py` gelé). Un point non optimisé contre un minimum :
+la validation ne pouvait pas passer, quel que soit l'état du branchement. Elle n'a rien
+appris sur la physique — elle a détecté ma négligence, ce qui est exactement son office.
+Lignée : #148 (critère sur un paramètre non identifiable) et #158 (borne χ²/(N+17) inadaptée
+à 22 bins). Trois vices de critère en deux jours, tous rattrapés par le protocole avant
+écriture : c'est le taux réel, il est consigné.
+
+**Suite : `confluence_planck_v2.py` (gelé ce4d9b65ec24)**, validation corrigée — χ²(pente,
+0, 0) évalué AU MINIMUM ΛCDM lui-même. Déclaration d'honnêteté portée dans son docstring :
+la valeur 2009,02 a été vue avant l'écriture de la v2 ; elle ne renseigne ni sur ε₁ ni sur
+z₀, les critères scientifiques (1 à 4) sont repris SANS AUCUN changement, et le code du
+modèle est importé tel quel depuis la v1, non modifié. **Validation v2 : 1998,633 contre
+1998,633 — la branche PPF à w = −1 redonne ΛCDM à la troisième décimale.** Le branchement
+était correct depuis le début ; seul le critère était mal posé.

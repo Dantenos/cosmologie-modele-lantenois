@@ -1,6 +1,6 @@
 # LE REGISTRE DES TENSIONS — généré par `outils/greffier.py`, ne pas éditer à la main
 
-*2026-08-24 — 10 tensions : 8 ouvertes, 0 en jugement, 2 résolues. Règle du greffe : une tension ne se*
+*2026-08-25 — 10 tensions : 8 ouvertes, 0 en jugement, 2 résolues. Règle du greffe : une tension ne se*
 *résout que par l'arbitre nommé avant la résolution — on ne réécrit pas l'histoire d'une anomalie.*
 
 ## T1-beta-interne — OUVERTE <small>(ouverte le 2026-08-23)</small>
@@ -113,13 +113,13 @@ Lectures rivales :
 
 ## T10-signe-de-la-dilution — OUVERTE <small>(ouverte le 2026-08-24)</small>
 
-**#188 : dans la famille ρ_m ∝ a^(ε−3) à Λ constante — celle de la littérature sur la dilution non standard — le seul choix de l'Ω_m qui alimente les priors comprimés (r_d, z_*, r_*, R) fait passer ε de +0,0060 à −0,0030, **les deux à 3,0σ et avec des gains sur ΛCDM presque identiques (+9,37 et +9,23)**. Le choix de comptabilité ne déplace pas l'amplitude : il renverse le signe, donc la physique. Verdict gelé de l'étude : AMBIGU, règle 9, rien n'exploité.**  
-magnitude : **renversement de signe d'une détection à 3σ ; traduit en densités, +4,3 % contre −2,1 % d'écart entre la matière d'aujourd'hui et celle de la recombinaison** · refs : #166, #167, #173, #188
+**#188 : dans la famille ρ_m ∝ a^(ε−3) à Λ constante et SANS conservation totale — famille voisine de celle de la littérature mais **distincte d'elle**, cf. la rétractation #189 : arXiv:2505.09879 emploie un vide dynamique où l'énergie totale EST conservée, et le #188 lui avait attribué à tort le modèle testé — le seul choix de l'Ω_m qui alimente les priors comprimés (r_d, z_*, r_*, R) fait passer ε de +0,0060 à −0,0030, **les deux à 3,0σ et avec des gains sur ΛCDM presque identiques (+9,37 et +9,23)**. Le choix de comptabilité ne déplace pas l'amplitude : il renverse le signe, donc la physique. Verdict gelé de l'étude : AMBIGU, règle 9, rien n'exploité.**  
+magnitude : **renversement de signe d'une détection à 3σ ; traduit en densités, +4,3 % contre −2,1 % d'écart entre la matière d'aujourd'hui et celle de la recombinaison** · refs : #166, #167, #173, #188, #189, #190, #191, #192, #193
 
 Lectures rivales :
 - L'ÉTALONNAGE COHÉRENT EST LE BON (ce que #166 argumente) : les priors comprimés (R, l_A) et les formules de r_d mesurent ω_m AVANT recombinaison, donc y injecter l'étiquette Ω_m d'aujourd'hui est une erreur, et ε = −0,0030 est la mesure. Conséquence : la classe publiée de mesures de ce type porte un signe faux.
 - L'ÉTALONNAGE-ÉTIQUETTE EST DÉFENDABLE : si les priors comprimés sont re-dérivés de bout en bout pour chaque modèle (ce que la littérature prudente fait avec la vraisemblance complète), la question ne se pose pas dans ces termes et notre reformulation est un artefact de notre propre raccourci.
 - NI L'UN NI L'AUTRE : les deux détections à 3σ sont produites par la même dégénérescence Ω_m–ε que les priors comprimés ne peuvent pas lever, et le nombre publiable est qu'il n'y a rien de mesurable ici sans vraisemblance complète.
 
-**Arbitre (gravé d'avance)** : la vraisemblance CMB COMPLÈTE (CAMB + plik_lite, comme planck_theta.py l'utilise déjà pour β) appliquée à cette même famille ρ_m ∝ a^(ε−3), qui n'emploie aucun prior comprimé et ne laisse donc aucun choix d'étalonnage. Le signe qu'elle rend tranche les trois lectures d'un coup. Aucun des deux camps n'a le droit de réajuster ε après avoir vu ce résultat (règle 5 : ils gardent h, ω_b, ln10¹⁰A_s, rien de plus).
+**Arbitre (gravé d'avance)** : PRÉCISÉ (#192). Le vide bibliographique est établi par balayage systématique : AUCUNE analyse en vraisemblance CMB complète d'un modèle de création de matière n'existe — l'état de l'art 2026 (arXiv:2601.14222) emploie encore un CMB comprimé. L'arbitre reste donc à construire, et il est désormais nommé sans ambiguïté : propager la famille corrigée dans un code de Boltzmann, avec le secteur de perturbations DÉCLARÉ (c_s² = 0 à la Kumar, ou c_s² = w à la Yao & Liu — les deux partagent notre fond et diffèrent seulement là), sur Planck 2018 + DESI DR2. Tant que ce n'est pas fait, aucun nombre du #188, du #190 ni du #192 n'est opposable. Règle 5 inchangée.
 

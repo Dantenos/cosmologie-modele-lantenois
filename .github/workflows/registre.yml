@@ -51,6 +51,14 @@ jobs:
       # une valeur dépréciée sans contexte de rétractation fait rougir le build. Bloquant, comme
       # la spec l'exige. Vert au 23/08 (0 occurrence sur 27 documents).
       - run: python3 outils/perime.py
+      # rejouer/greffier/confronteur exécutent de VRAIS scripts du corpus (numpy/scipy) sur
+      # les données publiques : ce job a donc besoin du même socle que 'reproduction'.
+      # (perime.py ci-dessus est pur-stdlib et tourne sans ce socle.)
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install numpy scipy
+      - name: données publiques
+        run: sh donnees/TELECHARGER.sh
       # Les ancres numériques rejouées (registre run, feuille de route v0.2) : 14 scripts,
       # ~35 s. Un résultat qui cesse de se reproduire = build rouge, pas seulement un
       # critère modifié.

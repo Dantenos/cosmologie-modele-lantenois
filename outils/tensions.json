@@ -178,7 +178,8 @@
   {
    "id": "T10-signe-de-la-dilution",
    "ouverte_le": "2026-08-24",
-   "statut": "ouverte — famille redéfinie (#192), renversement PERSISTANT après correction",
+   "statut": "ouverte",
+   "note_statut": "famille redéfinie (#192), renversement PERSISTANT après correction — reste OUVERTE (rien exploité, règle 9)",
    "enonce": "#188 : dans la famille ρ_m ∝ a^(ε−3) à Λ constante et SANS conservation totale — famille voisine de celle de la littérature mais **distincte d'elle**, cf. la rétractation #189 : arXiv:2505.09879 emploie un vide dynamique où l'énergie totale EST conservée, et le #188 lui avait attribué à tort le modèle testé — le seul choix de l'Ω_m qui alimente les priors comprimés (r_d, z_*, r_*, R) fait passer ε de +0,0060 à −0,0030, **les deux à 3,0σ et avec des gains sur ΛCDM presque identiques (+9,37 et +9,23)**. Le choix de comptabilité ne déplace pas l'amplitude : il renverse le signe, donc la physique. Verdict gelé de l'étude : AMBIGU, règle 9, rien n'exploité.",
    "magnitude": "renversement de signe d'une détection à 3σ ; traduit en densités, +4,3 % contre −2,1 % d'écart entre la matière d'aujourd'hui et celle de la recombinaison",
    "refs": [

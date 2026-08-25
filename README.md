@@ -151,4 +151,3 @@ Données publiques : `sh donnees/TELECHARGER.sh` (empreintes vérifiées). Ligne
 Édouard Lantenois — [@Dantenos](https://github.com/Dantenos) ·
 [linkedin.com/in/edlanteno](https://linkedin.com/in/edlanteno)
 
-*« Les tests empêchent le code de mentir. Registre empêche l'analyste. »*

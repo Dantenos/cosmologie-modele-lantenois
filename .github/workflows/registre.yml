@@ -56,7 +56,9 @@ jobs:
       # (perime.py ci-dessus est pur-stdlib et tourne sans ce socle.)
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - run: pip install numpy scipy
+      # camb : attaque_croker_fond.py -> duel_ccbh -> test_wE_v3 calcule r_d via camb au niveau
+      # module (build_rd() l.71). Sans lui, cette seule ancre tombe (les 13 autres = numpy/scipy).
+      - run: pip install numpy scipy camb
       - name: données publiques
         run: sh donnees/TELECHARGER.sh
       # Les ancres numériques rejouées (registre run, feuille de route v0.2) : 14 scripts,

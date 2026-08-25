@@ -54,7 +54,7 @@
    "id": "bgg_sigma",
    "source": "scripts/etude_kappa_sigma_bgg.py (ce depot, spec gelee 25/08) ; primaire Farrah 2023",
    "statut": "a_verifier",
-   "note": "canal dk/dln(sigma) ouvert le 25/08 : le couplage depend-il de la dispersion de vitesse des BGG ? Aucune donnee ingeree -> non combinable (regle k-tracker). Discriminant universalite (CCBH + P5) vs croissance environnementale."
+   "note": "canal dk/dln(sigma) : le couplage depend-il de la dispersion de vitesse des BGG ? NON EXPLOITE au 25/08 (ETUDE_KAPPA_SIGMA_BGG.md) : aucune table (sigma, M_BH) par hote publique (Farrah 2023 = mesure agregee, pas de depot). Reconstruire = resume secondaire, interdit (regle E5). Reste a_verifier tant que la table par objet n'est pas deposee sous donnees/. Non combinable."
   }
  ]
 }

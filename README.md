@@ -12,7 +12,10 @@ critères gelés avant chaque calcul, et des juges convoqués à date fixe. Le t
 compris les erreurs.
 
 [![registre](https://img.shields.io/badge/registre-91%20crit%C3%A8res%20gel%C3%A9s-blue)](outils/README_registre.md)
-<!-- une fois le dépôt en ligne : ![CI](https://github.com/ORG/REPO/actions/workflows/registre.yml/badge.svg) -->
+[![CI](https://github.com/Dantenos/cosmologie-modele-lantenois/actions/workflows/registre.yml/badge.svg)](https://github.com/Dantenos/cosmologie-modele-lantenois/actions/workflows/registre.yml)
+<!-- DOI Zenodo : badge à coller ici une fois le premier tag archivé (release v1.0-pre) -->
+<!-- [![DOI](https://zenodo.org/badge/DOI/XX.XXXX/zenodo.XXXXXXX.svg)](https://doi.org/XX.XXXX/zenodo.XXXXXXX) -->
+
 
 ---
 

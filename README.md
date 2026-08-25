@@ -1,9 +1,6 @@
 # Énergie noire à source externe — corpus, juges et outils
 
 > **140 entrées de registre. 54 affirmations tombées — la plupart produites par l'assistant.**
->
-> *La science n'est pas d'avoir raison. C'est d'écrire, avant de savoir, ce qui prouverait
-> qu'on a tort — et de tenir le registre quand ça arrive. Cent quarante fois.*
 > — [`registres/CONCLUSION.md`](registres/CONCLUSION.md)
 
 Neuf jours (16-24 août 2026). Une loi à un paramètre, **w(z) = −β/(3Ht)**, β = 2,42-2,60,

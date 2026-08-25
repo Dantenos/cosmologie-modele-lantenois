@@ -49,6 +49,12 @@
    "statut": "verifie",
    "borne": "k:=3 viable sur fond (AIC 1426,31) — compatibilite, pas une borne",
    "relecteur": "session 23/08"
+  },
+  {
+   "id": "bgg_sigma",
+   "source": "scripts/etude_kappa_sigma_bgg.py (ce depot, spec gelee 25/08) ; primaire Farrah 2023",
+   "statut": "a_verifier",
+   "note": "canal dk/dln(sigma) ouvert le 25/08 : le couplage depend-il de la dispersion de vitesse des BGG ? Aucune donnee ingeree -> non combinable (regle k-tracker). Discriminant universalite (CCBH + P5) vs croissance environnementale."
   }
  ]
 }

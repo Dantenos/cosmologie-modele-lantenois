@@ -443,5 +443,15 @@
   "sha256": "aac9fdc68f7fbb2769f3c2a86ab1d964c39f1b68ad07350340d33380315f4da8",
   "gele_le": "2026-08-24T22:50:20",
   "extrait": "REFERENT OU PRECISION, v3 — UN SIGMA SANS RESOLUTION DE GRILLE, ET QUI SE VALIDE"
+ },
+ "scripts/etude_kappa_sigma_bgg.py": {
+  "sha256": "70ed033cc3b0f85e5a490f086216d883fe4a3bd6333f99b15e109c5081384e55",
+  "gele_le": "2026-08-25T04:44:39",
+  "extrait": "kappa(sigma) BGG — le couplage cosmologique depend-il de la dispersion de vitess"
+ },
+ "scripts/etude_kappa_deltav.py": {
+  "sha256": "f6cc47899ee163efa8182db452b5ac8679a5ab532e1f35545f7d56b82478d15e",
+  "gele_le": "2026-08-25T04:44:39",
+  "extrait": "kappa-Delta_v — le couplage (k_eff = -3w, w = -beta/(3Ht)) depend-il de la PROFO"
  }
 }

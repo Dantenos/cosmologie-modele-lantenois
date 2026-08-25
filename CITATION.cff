@@ -7,7 +7,10 @@ authors:
     city: "Lille"
     country: "FR"
 version: "1.0-pre"
-date-released: "2026-08-24"
+date-released: "2026-08-25"
+repository-code: "https://github.com/Dantenos/cosmologie-modele-lantenois"
+url: "https://github.com/Dantenos/cosmologie-modele-lantenois"
+type: software
 keywords:
   - dark energy
   - cosmology
@@ -18,7 +21,7 @@ keywords:
 license: MIT
 abstract: >-
   Une loi d'énergie noire à un paramètre, w(z) = -beta/(3Ht), auditée contre Pantheon+,
-  DESI DR2 et Planck sous critères pré-enregistrés (38 gelés, 152 entrées de registre,
-  54 rétractations publiques) ; un arbitre DR3 scellé par hash avant les données
+  DESI DR2 et Planck sous critères pré-enregistrés (91 gelés, 207 entrées de registre,
+  76 affirmations réfutées) ; un arbitre DR3 scellé par hash avant les données
   (sha256 68d06bcc...) ; un atlas de 19 modèles sous pipeline unique ; et cinq outils
-  de falsification-as-code (registre, adversaire, audience, périmé, rejouer).
+  de falsification-as-code (Registre, Adversaire, Audience, k-tracker, Scellé).

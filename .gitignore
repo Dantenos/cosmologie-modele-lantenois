@@ -35,3 +35,6 @@ donnees/pantheon_plus/jk_state_*.json
 
 # Fichier de configuration d'outillage local (non publié)
 CLAUDE.md
+
+# Correspondance privée (brouillons d'emails, adresses, plan de contacts) — local seulement, jamais publié
+correspondance/

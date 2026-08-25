@@ -1,0 +1,23 @@
+{
+  "upload_type": "software",
+  "title": "Énergie noire à source externe — corpus, juges et outils (falsification-as-code)",
+  "version": "1.0-pre",
+  "creators": [
+    {
+      "name": "Lantenois, Édouard",
+      "affiliation": "Independent researcher, Lille, France"
+    }
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": [
+    "dark energy",
+    "cosmology",
+    "DESI",
+    "preregistration",
+    "falsification-as-code",
+    "fast radio bursts",
+    "cosmological coupling"
+  ],
+  "description": "Une loi d'énergie noire à un paramètre, w(z) = -beta/(3Ht), dérivée de l'accrétion d'un trou noir parent, auditée contre Pantheon+, DESI DR2 et Planck sous critères pré-enregistrés (91 gelés, 207 entrées de registre, 76 affirmations réfutées). Un arbitre pour DESI DR3 est scellé par hash AVANT les données — sha256(scelle.py) = 68d06bcccbecf2276919c05dc841c6d878ca2516427e533af38d64344aed45a2 — avec verdicts exhaustifs et seuils non modifiables. Inclut un atlas de 19 modèles rivaux sous pipeline unique et cinq outils de falsification-as-code (Registre, Adversaire, Audience, k-tracker, Scellé) qui figent un critère de succès dans le docstring d'un script et cassent le build s'il bouge après coup. Cette version 1.0-pre est déposée avant DESI DR3 : son horodatage Zenodo prouve l'antériorité de la prédiction scellée."
+}

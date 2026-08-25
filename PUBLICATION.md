@@ -21,7 +21,7 @@ git push -u origin main
 
 ```bash
 git status --porcelain          # doit être vide
-python outils/registre.py verify   # 89 critères, 0 échec
+python outils/registre.py verify   # 91 critères, 0 échec
 python outils/perime.py            # 0 occurrence
 ```
 
@@ -39,7 +39,7 @@ littérature a trouvés (dépôts SHA-256 + attestation, 2026).
 
 1. Aller sur <https://zenodo.org>, se connecter **avec le compte GitHub**.
 2. Menu *GitHub* → activer le dépôt (l'interrupteur passe à **ON**).
-3. Sur GitHub : *Releases* → *Create a new release* → tag `v1.0-sceau`.
+3. Sur GitHub : *Releases* → *Create a new release* → tag `v1.0-pre` (déjà poussé) ; `.zenodo.json` (déjà au dépôt) pré-remplit les métadonnées du DOI.
 4. Zenodo capture automatiquement l'archive et émet un DOI.
 5. **Reporter ce DOI dans le papier A**, section données, à côté du sceau.
 
@@ -88,8 +88,9 @@ vérifie ensuite la date sans faire confiance à personne — ni à toi, ni à Z
 | tâche | état | bloquant ? |
 |---|---|---|
 | Dépôt propre, garde-fous verts | **fait** | — |
-| Remote GitHub configuré | **à faire** (aucun remote) | oui |
-| DOI Zenodo | à faire après le push | oui pour le sceau |
+| Remote GitHub + push, CI verte | **fait** (Dantenos/cosmologie-modele-lantenois, privé) | — |
+| Tag `v1.0-pre` + `.zenodo.json` | **fait** (prêts pour la release) | — |
+| Dépôt public + toggle Zenodo + Release → DOI | **à faire** (geste utilisateur) | oui pour le sceau |
 | Endossement arXiv (astro-ph.CO) | à faire | **oui pour arXiv** |
 | Papier F, édition française | à faire | non |
 | Papiers A/B/C, éditions françaises | non entamé | non |

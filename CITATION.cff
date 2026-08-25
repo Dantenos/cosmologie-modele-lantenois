@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "Si vous utilisez ce corpus (loi, pipeline, outils de falsification-as-code ou registres), citez-le ainsi."
-title: "Énergie noire à source externe — corpus, juges et outils (falsification-as-code)"
+title: "Externally sourced dark energy — corpus, judges, and tools (falsification-as-code)"
 authors:
   - family-names: "Lantenois"
     given-names: "Édouard"

@@ -20,7 +20,7 @@ import sys, re, json, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CV = json.loads((ROOT / "outils" / "valeurs_canoniques.json").read_text(encoding="utf-8"))
-FACADE = ["README.md", "README.fr.md", "CLAUDE.md", "RETRACTATIONS.md", "REPRODUIRE.md", "registres/POUR_2027.md", "outils/README_registre.md",
+FACADE = ["README.md", "CLAUDE.md", "RETRACTATIONS.md", "REPRODUIRE.md", "registres/POUR_2027.md", "outils/README_registre.md",
           "registres/CONCLUSION.md", "registres/SYNTHESE_FINALE.md", "registres/SYNTHESE_ET_OUVERTURES.md",
           "registres/LISEZMOI_MANIFEST.md", "registres/TROIS_CHANTIERS.md", "registres/THEORIE_GOULET.md",
           "registres/THEORIE_HORLOGE.md", "registres/THEORIE_SATURATION.md", "registres/BALAYAGE_CONSEQUENCES.md",

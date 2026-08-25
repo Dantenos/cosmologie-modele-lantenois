@@ -1,5 +1,9 @@
 # Énergie noire à source externe — corpus, juges et outils
 
+> *« Tchouang-tseu rêva qu'il était un papillon. À son réveil, il ne savait plus s'il était
+> un homme qui avait rêvé qu'il était un papillon, ou un papillon qui rêvait qu'il était un homme. »*
+> — Tchouang-tseu (Zhuangzi), IVᵉ s. av. J.-C.
+
 > **140 entrées de registre. 54 affirmations tombées — la plupart produites par l'assistant.**
 > — [`registres/CONCLUSION.md`](registres/CONCLUSION.md)
 

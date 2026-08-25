@@ -16,8 +16,7 @@ compris les erreurs.
 
 [![registre](https://img.shields.io/badge/registre-91%20crit%C3%A8res%20gel%C3%A9s-blue)](outils/README_registre.md)
 [![CI](https://github.com/Dantenos/cosmologie-modele-lantenois/actions/workflows/registre.yml/badge.svg)](https://github.com/Dantenos/cosmologie-modele-lantenois/actions/workflows/registre.yml)
-<!-- DOI Zenodo : badge à coller ici une fois le premier tag archivé (release v1.0-pre) -->
-<!-- [![DOI](https://zenodo.org/badge/DOI/XX.XXXX/zenodo.XXXXXXX.svg)](https://doi.org/XX.XXXX/zenodo.XXXXXXX) -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22095425.svg)](https://doi.org/10.5281/zenodo.22095425)
 
 ---
 

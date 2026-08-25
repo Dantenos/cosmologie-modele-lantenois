@@ -16,8 +16,7 @@ here, the errors included.
 
 [![registre](https://img.shields.io/badge/registre-91%20frozen%20criteria-blue)](outils/README_registre.md)
 [![CI](https://github.com/Dantenos/cosmologie-modele-lantenois/actions/workflows/registre.yml/badge.svg)](https://github.com/Dantenos/cosmologie-modele-lantenois/actions/workflows/registre.yml)
-<!-- Zenodo DOI: badge to paste here once the first tag is archived (release v1.0-pre) -->
-<!-- [![DOI](https://zenodo.org/badge/DOI/XX.XXXX/zenodo.XXXXXXX.svg)](https://doi.org/XX.XXXX/zenodo.XXXXXXX) -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22095425.svg)](https://doi.org/10.5281/zenodo.22095425)
 
 ---
 

@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Si vous utilisez ce corpus (loi, pipeline, outils de falsification-as-code ou registres), citez-le ainsi ; un DOI Zenodo sera attaché au premier tag public."
+message: "Si vous utilisez ce corpus (loi, pipeline, outils de falsification-as-code ou registres), citez-le ainsi."
 title: "Énergie noire à source externe — corpus, juges et outils (falsification-as-code)"
 authors:
   - family-names: "Lantenois"
@@ -7,6 +7,7 @@ authors:
     city: "Lille"
     country: "FR"
 version: "1.0-pre"
+doi: "10.5281/zenodo.22095425"
 date-released: "2026-08-25"
 repository-code: "https://github.com/Dantenos/cosmologie-modele-lantenois"
 url: "https://github.com/Dantenos/cosmologie-modele-lantenois"
